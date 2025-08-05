@@ -40,7 +40,10 @@
       "Bash(ls:*)",
       "Bash(tar:*)",
       "Bash(scp:*)",
-      "Bash(sudo iptables:*)"
+      "Bash(sudo iptables:*)",
+      "Bash(rm:*)",
+      "Bash(rmdir:*)",
+      "Bash(true)"
     ],
     "deny": []
   }

@@ -32,8 +32,8 @@ export const ContactPage = () => {
     setSubmitStatus('');
 
     try {
-      // Use Vercel API route as proxy to Oracle backend
-      const response = await fetch('/api/contact', {
+      // Use direct connection to Oracle backend (CORS enabled)
+      const response = await fetch('http://168.138.65.108:8080/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
