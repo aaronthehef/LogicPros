@@ -32,8 +32,8 @@ export const ContactPage = () => {
     setSubmitStatus('');
 
     try {
-      // Use direct connection to Oracle backend (CORS enabled)
-      const response = await fetch('http://168.138.65.108:8080/api/contact', {
+      // Use HTTPS connection to Oracle backend via nginx proxy
+      const response = await fetch('https://168.138.65.108/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,26 +41,17 @@ export const ContactPage = () => {
         body: JSON.stringify(formData)
       });
       
-      console.log('Response status:', response.status);
-      console.log('Response ok:', response.ok);
-      
       if (response.ok) {
-        const result = await response.json();
-        console.log('Success response:', result);
         setSubmitStatus('success');
         setFormData({
           name: '', email: '', phone: '', company: '', trade: '',
           projectType: '', timeline: '', budget: '', message: '', hearAbout: ''
         });
       } else {
-        const errorResult = await response.text();
-        console.error('Error response:', errorResult);
         setSubmitStatus('error');
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      console.error('Response status:', response?.status);
-      console.error('Response text:', await response?.text?.().catch(() => 'No response text'));
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
