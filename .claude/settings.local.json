@@ -30,7 +30,16 @@
       "Bash(git commit:*)",
       "Bash(git config:*)",
       "Bash(git remote add:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(git push:*)",
+      "Bash(gh:*)",
+      "Bash(winget install:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(git remote set-url:*)",
+      "Bash(ssh:*)",
+      "Bash(ls:*)",
+      "Bash(tar:*)",
+      "Bash(scp:*)"
     ],
     "deny": []
   }

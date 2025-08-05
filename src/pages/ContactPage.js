@@ -32,51 +32,24 @@ export const ContactPage = () => {
     setSubmitStatus('');
 
     try {
-      // For now, just simulate success since email backend needs proper credentials
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Log the form data for now (while email is being configured)
-      console.log('=== NEW CONTACT FORM SUBMISSION ===');
-      console.log('Timestamp:', new Date().toLocaleString());
-      console.log('Name:', formData.name);
-      console.log('Email:', formData.email);
-      console.log('Phone:', formData.phone);
-      console.log('Company:', formData.company);
-      console.log('Trade:', formData.trade);
-      console.log('Project Type:', formData.projectType);
-      console.log('Timeline:', formData.timeline);
-      console.log('Budget:', formData.budget);
-      console.log('How they heard about us:', formData.hearAbout);
-      console.log('Message:', formData.message);
-      console.log('=== END SUBMISSION ===');
-      
-      // Try the backend, but don't fail if it's not working
-      try {
-        const response = await fetch('http://localhost:5000/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData)
-        });
-        
-        if (response.ok) {
-          setSubmitStatus('success');
-        } else {
-          // Fallback to success message
-          setSubmitStatus('success');
-          console.log('Backend responded but email may not be configured');
-        }
-      } catch (error) {
-        // Fallback to success message
-        setSubmitStatus('success');
-        console.log('Backend not available, form data logged to console');
-      }
-      
-      setFormData({
-        name: '', email: '', phone: '', company: '', trade: '',
-        projectType: '', timeline: '', budget: '', message: '', hearAbout: ''
+      // Use LogicPros backend on Oracle server
+      const response = await fetch('http://168.138.65.108:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
       });
+      
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '', email: '', phone: '', company: '', trade: '',
+          projectType: '', timeline: '', budget: '', message: '', hearAbout: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
