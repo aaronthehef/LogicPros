@@ -41,17 +41,26 @@ export const ContactPage = () => {
         body: JSON.stringify(formData)
       });
       
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+      
       if (response.ok) {
+        const result = await response.json();
+        console.log('Success response:', result);
         setSubmitStatus('success');
         setFormData({
           name: '', email: '', phone: '', company: '', trade: '',
           projectType: '', timeline: '', budget: '', message: '', hearAbout: ''
         });
       } else {
+        const errorResult = await response.text();
+        console.error('Error response:', errorResult);
         setSubmitStatus('error');
       }
     } catch (error) {
       console.error('Form submission error:', error);
+      console.error('Response status:', response?.status);
+      console.error('Response text:', await response?.text?.().catch(() => 'No response text'));
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
