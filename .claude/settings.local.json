@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:www.figma.com)",
+      "Bash(npx figma-developer-mcp:*)",
+      "Bash(curl:*)",
+      "Bash(taskkill:*)",
+      "mcp__ide__executeCode",
+      "Bash(code:*)",
+      "Bash(powershell Expand-Archive:*)",
+      "Bash(cat:*)",
+      "Bash(npm install)",
+      "Bash(npm start)",
+      "Bash(mkdir:*)",
+      "Bash(move:*)",
+      "Bash(move index.js src/)",
+      "Bash(move App.js src/)",
+      "Bash(mv:*)",
+      "WebFetch(domain:logicpros.ca)",
+      "Bash(timeout 5s npm start)",
+      "Bash(timeout 10s npm start)",
+      "Bash(node:*)",
+      "Bash(npm start:*)",
+      "Bash(timeout:*)",
+      "Bash(powershell:*)",
+      "Bash(ren:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git remote add:*)",
+      "Bash(find:*)"
+    ],
+    "deny": []
+  }
+}

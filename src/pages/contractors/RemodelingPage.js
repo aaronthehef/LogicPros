@@ -1,0 +1,295 @@
+import React from 'react';
+import '../../responsive-style.css';
+import { Logo } from '../../components/Logo';
+
+export const RemodelingPage = () => {
+  return (
+    <div className="landing-page">
+      <header className="sticky-header">
+        <div className="header-content">
+          <div className="logo"><Logo /></div>
+          <nav className="nav-menu">
+            <div className="nav-links">
+              <a href="/services" className="nav-link">Services</a>
+              <a href="/portfolio" className="nav-link">Portfolio</a>
+              <a href="/about" className="nav-link">About</a>
+              <a href="/contact" className="nav-link">Contact</a>
+            </div>
+            <a href="/free-example" className="btn btn-primary">Free Example</a>
+          </nav>
+        </div>
+      </header>
+
+      <main className="main-content">
+        <section className="hero-section">
+          <div className="container">
+            <div className="hero-content">
+              <h1 className="hero-title">Professional Websites for Home Remodeling Contractors</h1>
+              <p className="hero-subtitle">
+                Transform your remodeling business with a website that showcases stunning 
+                transformations, builds trust for major investments, and converts dreamers into clients. 
+                Specialized web development for remodeling professionals who create beautiful living spaces.
+              </p>
+              <a href="/contact" className="btn btn-primary btn-large">Get My Remodeling Website</a>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2>Challenges Every Remodeling Business Owner Faces</h2>
+            <div className="challenges-grid">
+              <div className="challenge-item">
+                <h3>🏠 Major Investment Decisions</h3>
+                <p>Home remodeling projects cost $15,000-$100,000+. Homeowners research extensively, get multiple bids, and need absolute confidence before committing to such major investments.</p>
+              </div>
+              <div className="challenge-item">
+                <h3>🎨 Vision Communication Challenge</h3>
+                <p>Customers struggle to envision their transformed space. Your website must help them visualize possibilities and understand your design process and capabilities.</p>
+              </div>
+              <div className="challenge-item">
+                <h3>📋 Complex Project Management</h3>
+                <p>Remodeling involves permits, timelines, material selections, and coordination of multiple trades. Customers need assurance you can manage all aspects professionally.</p>
+              </div>
+              <div className="challenge-item">
+                <h3>🔍 Trust & Credibility Requirements</h3>
+                <p>Inviting contractors into their home for major work requires absolute trust. Your website must establish credibility, showcase quality work, and provide social proof.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2>How LogicPros Transforms Your Remodeling Success</h2>
+            <div className="solutions-grid">
+              <div className="solution-item">
+                <h3>💎 Stunning Transformation Showcase</h3>
+                <p><strong>What we do:</strong> Create dramatic before/after galleries, detailed process documentation, and room-by-room transformation stories that demonstrate your design and construction expertise.</p>
+                <p><strong>Result:</strong> Higher-quality leads who can envision their space transformed.</p>
+              </div>
+              <div className="solution-item">
+                <h3>🏆 Trust & Expertise Building</h3>
+                <p><strong>What we do:</strong> Showcase licenses, certifications, awards, insurance, and detailed customer testimonials with real names and photos to establish absolute credibility.</p>
+                <p><strong>Result:</strong> Increased trust and confidence for major investment decisions.</p>
+              </div>
+              <div className="solution-item">
+                <h3>📝 Process Transparency System</h3>
+                <p><strong>What we do:</strong> Detailed pages explaining design consultation, permitting, timeline management, material selection, and project coordination processes.</p>
+                <p><strong>Result:</strong> Reduced customer anxiety and smoother project completion.</p>
+              </div>
+              <div className="solution-item">
+                <h3>🎯 Premium Market Positioning</h3>
+                <p><strong>What we do:</strong> Position you as a design-build professional who creates custom living spaces, not just a contractor who does repairs.</p>
+                <p><strong>Result:</strong> Attract customers willing to invest in quality remodeling and design.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2>Remodeling Services We Help You Market</h2>
+            <div className="services-grid">
+              <div className="service-category">
+                <h3>🍳 Kitchen Remodeling</h3>
+                <ul>
+                  <li>Complete kitchen renovations</li>
+                  <li>Custom cabinet installation</li>
+                  <li>Kitchen design & planning</li>
+                  <li>Countertop installation</li>
+                  <li>Kitchen island design</li>
+                </ul>
+              </div>
+              <div className="service-category">
+                <h3>🛁 Bathroom Remodeling</h3>
+                <ul>
+                  <li>Master bathroom renovations</li>
+                  <li>Bathroom design & layout</li>
+                  <li>Shower & tub installations</li>
+                  <li>Vanity & storage solutions</li>
+                  <li>Accessibility modifications</li>
+                </ul>
+              </div>
+              <div className="service-category">
+                <h3>🏠 Whole Home Renovations</h3>
+                <ul>
+                  <li>Complete home makeovers</li>
+                  <li>Open floor plan conversions</li>
+                  <li>Home additions & expansions</li>
+                  <li>Historic home restoration</li>
+                  <li>Multi-room renovations</li>
+                </ul>
+              </div>
+              <div className="service-category">
+                <h3>🏡 Specialty Remodeling</h3>
+                <ul>
+                  <li>Basement finishing</li>
+                  <li>Attic conversions</li>
+                  <li>Home office creation</li>
+                  <li>Outdoor living spaces</li>
+                  <li>Aging-in-place modifications</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2>Real Results for Remodeling Contractors</h2>
+            <div className="results-grid">
+              <div className="result-item">
+                <h3>Elite Home Transformations</h3>
+                <p><strong>Challenge:</strong> Customers couldn't visualize how their outdated spaces could be transformed into modern, functional areas.</p>
+                <p><strong>Solution:</strong> Comprehensive website with dramatic before/after galleries, 3D renderings, and detailed transformation stories.</p>
+                <p><strong>Results:</strong> 220% increase in kitchen and bathroom remodeling inquiries, average project value increased to $45K.</p>
+              </div>
+              <div className="result-item">
+                <h3>Heritage Home Renovations</h3>
+                <p><strong>Challenge:</strong> Competing against larger remodeling companies for high-end whole home renovation projects.</p>
+                <p><strong>Solution:</strong> Premium website showcasing custom work, design expertise, and personalized service approach for luxury remodeling.</p>
+                <p><strong>Results:</strong> Won 4 major whole home projects worth $380K, established reputation as luxury remodeling specialist.</p>
+              </div>
+              <div className="result-item">
+                <h3>Modern Living Renovations</h3>
+                <p><strong>Challenge:</strong> Complex remodeling projects scared potential customers due to perceived complications and timeline concerns.</p>
+                <p><strong>Solution:</strong> Process-focused website with detailed project management explanations, timeline tools, and customer communication systems.</p>
+                <p><strong>Results:</strong> 165% increase in remodeling consultations, 40% reduction in project timeline concerns.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2>Remodeling Website Packages</h2>
+            <div className="pricing-grid">
+              <div className="pricing-card">
+                <h3>Renovation Starter</h3>
+                <div className="price">$4,500</div>
+                <ul>
+                  <li>12-page transformation-focused site</li>
+                  <li>Before/after photo galleries</li>
+                  <li>Service specialty pages</li>
+                  <li>Design process explanation</li>
+                  <li>Consultation request forms</li>
+                  <li>Mobile-optimized design</li>
+                </ul>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
+              </div>
+              <div className="pricing-card featured">
+                <h3>Remodeling Professional</h3>
+                <div className="price">$7,800</div>
+                <ul>
+                  <li>20-page comprehensive site</li>
+                  <li>Extensive project galleries</li>
+                  <li>Design consultation tools</li>
+                  <li>Process timeline management</li>
+                  <li>Customer testimonial system</li>
+                  <li>Portfolio case studies</li>
+                  <li>Advanced local SEO</li>
+                </ul>
+                <a href="/contact" className="btn btn-primary">Most Popular</a>
+              </div>
+              <div className="pricing-card">
+                <h3>Design-Build Master</h3>
+                <div className="price">$12,500</div>
+                <ul>
+                  <li>Unlimited pages & features</li>
+                  <li>Custom design visualization tools</li>
+                  <li>Client project portals</li>
+                  <li>Advanced project management</li>
+                  <li>3D rendering integration</li>
+                  <li>Comprehensive analytics</li>
+                  <li>Monthly content marketing</li>
+                </ul>
+                <a href="/contact" className="btn btn-primary">Dominate Your Market</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <h2>Common Questions from Remodeling Contractors</h2>
+            <div className="faq-grid">
+              <div className="faq-item">
+                <h3>How do you help customers visualize their remodeling transformation?</h3>
+                <p>We create stunning before/after galleries, detailed transformation stories, and showcase your design process. This helps customers envision their space transformed and builds confidence in your capabilities.</p>
+              </div>
+              <div className="faq-item">
+                <h3>Can you help justify premium remodeling pricing?</h3>
+                <p>Absolutely! We emphasize your design expertise, quality materials, project management skills, and attention to detail. This positions you as a design-build professional, not just a contractor.</p>
+              </div>
+              <div className="faq-item">
+                <h3>How do you address customer concerns about remodeling disruption?</h3>
+                <p>We create detailed process pages explaining project timelines, dust control measures, living arrangements, and communication systems. This reduces anxiety and sets proper expectations.</p>
+              </div>
+              <div className="faq-item">
+                <h3>Do you showcase different remodeling specialties effectively?</h3>
+                <p>Yes! We create dedicated sections for kitchen, bathroom, whole home, and specialty remodeling, with specific galleries, processes, and pricing information for each service type.</p>
+              </div>
+              <div className="faq-item">
+                <h3>How do you help build trust for major home investments?</h3>
+                <p>We prominently display licenses, insurance, certifications, awards, and detailed customer testimonials with real names and photos. This establishes the credibility needed for major investments.</p>
+              </div>
+              <div className="faq-item">
+                <h3>Can you integrate with design software and project management tools?</h3>
+                <p>We can showcase your use of professional design software, integrate with project management platforms, and even create client portals where customers can track their remodeling progress.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section cta-section">
+          <div className="container">
+            <div className="cta-content">
+              <h2>Ready to Remodel Your Business Success?</h2>
+              <p>Join 55+ remodeling contractors who've transformed their revenue with LogicPros websites. Kitchen renovations, bathroom makeovers, and whole home transformations - all flowing to your business.</p>
+              <div className="cta-buttons">
+                <a href="/free-example" className="btn btn-primary btn-large">See My Free Remodeling Website Example</a>
+                <a href="/contact" className="btn btn-outline btn-large">Get My Custom Quote</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-brand">
+              <h3>LogicPros</h3>
+              <p>Professional websites for remodeling contractors</p>
+            </div>
+            <div className="footer-links">
+              <div className="footer-column">
+                <h4>Contractor Services</h4>
+                <a href="/contractors/remodeling">Remodeling Websites</a>
+                <a href="/contractors/construction">Construction Websites</a>
+                <a href="/contractors/flooring">Flooring Websites</a>
+                <a href="/contractors/painting">Painting Websites</a>
+              </div>
+              <div className="footer-column">
+                <h4>Company</h4>
+                <a href="/about">About Us</a>
+                <a href="/portfolio">Portfolio</a>
+                <a href="/contact">Contact</a>
+                <a href="/free-example">Free Example</a>
+              </div>
+              <div className="footer-column">
+                <h4>Contact</h4>
+                <p>hello@logicpros.ca</p>
+                <p>(555) LOGIC-1</p>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p>&copy; 2024 LogicPros. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
