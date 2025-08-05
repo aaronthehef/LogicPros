@@ -39,7 +39,8 @@
       "Bash(ssh:*)",
       "Bash(ls:*)",
       "Bash(tar:*)",
-      "Bash(scp:*)"
+      "Bash(scp:*)",
+      "Bash(sudo iptables:*)"
     ],
     "deny": []
   }

@@ -33,7 +33,7 @@ export const ContactPage = () => {
 
     try {
       // Use LogicPros backend on Oracle server
-      const response = await fetch('http://168.138.65.108:5000/api/contact', {
+      const response = await fetch('http://168.138.65.108:8080/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
