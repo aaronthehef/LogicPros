@@ -52,6 +52,8 @@ export const ContactPage = () => {
       }
     } catch (error) {
       console.error('Form submission error:', error);
+      console.error('Error details:', error.message);
+      alert('Debug: ' + error.message); // Temporary debug
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
