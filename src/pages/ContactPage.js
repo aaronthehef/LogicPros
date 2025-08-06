@@ -34,7 +34,7 @@ export const ContactPage = () => {
     console.log('Starting contact form submission...');
 
     try {
-      // Submit form via Vercel serverless API route
+      // Submit form via serverless API route
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {

@@ -31,17 +31,52 @@ module.exports = async function handler(req, res) {
     console.log('Message:', formData.message || 'No message provided');
     console.log('Forwarding to Oracle backend server...');
 
-    // Forward to your Oracle backend server
-    const backendResponse = await fetch('https://168.138.65.108/api/contact', {
+    // Forward to your Oracle backend server using node-https directly
+    // since Vercel's fetch doesn't properly support custom agents
+    const https = require('https');
+    
+    const postData = JSON.stringify(formData);
+    
+    const options = {
+      hostname: '168.138.65.108',
+      port: 443,
+      path: '/api/contact',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(postData)
       },
-      body: JSON.stringify(formData),
-      // Disable SSL certificate validation for this internal request
-      agent: process.env.NODE_TLS_REJECT_UNAUTHORIZED === '0' ? 
-        new (require('https').Agent)({ rejectUnauthorized: false }) : 
-        undefined
+      rejectUnauthorized: false, // Ignore SSL certificate errors
+      timeout: 30000 // 30 second timeout
+    };
+    
+    const backendResponse = await new Promise((resolve, reject) => {
+      const req = https.request(options, (res) => {
+        let data = '';
+        res.on('data', (chunk) => {
+          data += chunk;
+        });
+        res.on('end', () => {
+          resolve({
+            ok: res.statusCode >= 200 && res.statusCode < 300,
+            status: res.statusCode,
+            statusText: res.statusMessage,
+            text: () => Promise.resolve(data)
+          });
+        });
+      });
+      
+      req.on('error', (error) => {
+        reject(error);
+      });
+      
+      req.on('timeout', () => {
+        req.destroy();
+        reject(new Error('Request timeout'));
+      });
+      
+      req.write(postData);
+      req.end();
     });
 
     if (backendResponse.ok) {
@@ -60,11 +95,27 @@ module.exports = async function handler(req, res) {
 
   } catch (error) {
     console.error('Contact form error:', error);
+    console.error('Error message:', error.message);
+    console.error('Error code:', error.code);
     console.error('Error stack:', error.stack);
+    
+    // More specific error messages based on error type
+    let errorMessage = 'Backend forwarding failed';
+    if (error.code === 'ECONNREFUSED') {
+      errorMessage = 'Cannot connect to backend server - connection refused';
+    } else if (error.code === 'ENOTFOUND') {
+      errorMessage = 'Cannot find backend server - DNS resolution failed';
+    } else if (error.code === 'ETIMEDOUT' || error.name === 'AbortError') {
+      errorMessage = 'Backend server connection timeout';
+    } else if (error.message.includes('certificate')) {
+      errorMessage = 'SSL certificate error with backend server';
+    }
     
     return res.status(500).json({ 
       error: 'Failed to submit contact form. Please try again or email us directly at aaron@logicpros.ca',
-      details: process.env.NODE_ENV === 'development' ? error.message : 'Backend forwarding failed'
+      details: errorMessage,
+      errorCode: error.code,
+      errorName: error.name
     });
   }
 }

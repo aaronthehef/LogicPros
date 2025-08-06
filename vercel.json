@@ -1,5 +1,5 @@
 {
-  "name": "logicpros-contact-final",
+  "name": "logicproswebsite",
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "framework": "create-react-app"
