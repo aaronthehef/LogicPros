@@ -51,17 +51,14 @@ module.exports = async function handler(req, res) {
     let transporter;
     
     try {
-      // Try Canadian Zoho server first
+      // Try Canadian Zoho server first with SSL
       transporter = nodemailer.createTransport({
         host: 'smtppro.zoho.ca',
-        port: 587,
-        secure: false, // true for 465, false for other ports
+        port: 465,
+        secure: true, // true for 465, false for other ports
         auth: {
           user: process.env.ZOHO_EMAIL,
           pass: process.env.ZOHO_PASSWORD
-        },
-        tls: {
-          rejectUnauthorized: false
         }
       });
       
