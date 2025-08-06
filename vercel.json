@@ -1,4 +1,5 @@
 {
+  "name": "logicpros-contact-test",
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "framework": "create-react-app"
