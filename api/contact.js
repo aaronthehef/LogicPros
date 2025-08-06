@@ -1,5 +1,3 @@
-import nodemailer from 'nodemailer';
-
 export default async function handler(req, res) {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -18,62 +16,26 @@ export default async function handler(req, res) {
   try {
     const formData = req.body;
     
-    // Log the submission (for debugging)
-    console.log('Contact form submission:', formData);
-    
-    // Create transporter for Zoho Mail
-    const transporter = nodemailer.createTransporter({
-      host: 'smtppro.zoho.ca',
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.ZOHO_EMAIL || 'aaron@logicpros.ca',
-        pass: process.env.ZOHO_PASSWORD || process.env.EMAIL_PASSWORD
-      }
-    });
+    // Log the submission (for debugging and manual processing)
+    console.log('=== CONTACT FORM SUBMISSION ===');
+    console.log('Name:', formData.name);
+    console.log('Email:', formData.email);
+    console.log('Phone:', formData.phone);
+    console.log('Company:', formData.company);
+    console.log('Trade:', formData.trade);
+    console.log('Project Type:', formData.projectType);
+    console.log('Timeline:', formData.timeline);
+    console.log('Budget:', formData.budget);
+    console.log('How they heard:', formData.hearAbout);
+    console.log('Message:', formData.message);
+    console.log('Timestamp:', new Date().toISOString());
+    console.log('===============================');
 
-    // Format the email content
-    const emailContent = `
-      <h2>New Contact Form Submission - LogicPros</h2>
-      <p><strong>Name:</strong> ${formData.name}</p>
-      <p><strong>Email:</strong> ${formData.email}</p>
-      <p><strong>Phone:</strong> ${formData.phone}</p>
-      <p><strong>Company:</strong> ${formData.company || 'Not provided'}</p>
-      <p><strong>Trade/Industry:</strong> ${formData.trade || 'Not provided'}</p>
-      <p><strong>Project Type:</strong> ${formData.projectType || 'Not provided'}</p>
-      <p><strong>Timeline:</strong> ${formData.timeline || 'Not provided'}</p>
-      <p><strong>Budget:</strong> ${formData.budget || 'Not provided'}</p>
-      <p><strong>How they heard about us:</strong> ${formData.hearAbout || 'Not provided'}</p>
-      <p><strong>Message:</strong></p>
-      <p>${formData.message || 'No message provided'}</p>
-    `;
-
-    // Send notification email to LogicPros
-    await transporter.sendMail({
-      from: 'aaron@logicpros.ca',
-      to: 'aaron@logicpros.ca',
-      subject: `New Contact Form Submission from ${formData.name}`,
-      html: emailContent
-    });
-
-    // Send auto-reply to customer
-    await transporter.sendMail({
-      from: 'aaron@logicpros.ca',
-      to: formData.email,
-      subject: 'Thank you for contacting LogicPros',
-      html: `
-        <h2>Thank you for your inquiry!</h2>
-        <p>Hi ${formData.name},</p>
-        <p>Thank you for reaching out to LogicPros. We've received your message and will respond within 24 hours.</p>
-        <p>Our team is excited to help you with your project!</p>
-        <p>Best regards,<br>Aaron & The LogicPros Team</p>
-        <p><a href="mailto:aaron@logicpros.ca">aaron@logicpros.ca</a></p>
-      `
-    });
-
+    // For now, just return success - you can check the Vercel logs to see submissions
+    // We'll add email functionality once credentials are set up
     return res.status(200).json({ 
       success: true, 
-      message: 'Contact form submitted successfully' 
+      message: 'Contact form submitted successfully. We will respond within 24 hours!' 
     });
 
   } catch (error) {
