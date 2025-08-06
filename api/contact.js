@@ -52,7 +52,7 @@ module.exports = async function handler(req, res) {
     
     try {
       // Try Canadian Zoho server first
-      transporter = nodemailer.createTransporter({
+      transporter = nodemailer.createTransport({
         host: 'smtppro.zoho.ca',
         port: 587,
         secure: false, // true for 465, false for other ports
@@ -73,7 +73,7 @@ module.exports = async function handler(req, res) {
       console.log('Canada server failed, trying US server:', canadaError.message);
       
       // Try US Zoho server as fallback
-      transporter = nodemailer.createTransporter({
+      transporter = nodemailer.createTransport({
         host: 'smtp.zoho.com',
         port: 587,
         secure: false,
