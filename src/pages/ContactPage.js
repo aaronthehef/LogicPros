@@ -30,9 +30,11 @@ export const ContactPage = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('');
+    
+    console.log('Starting contact form submission...');
 
     try {
-      // Use Vercel API route to handle contact form submission
+      // Submit form via Vercel serverless API route
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {

@@ -45,7 +45,8 @@
       "Bash(rmdir:*)",
       "Bash(true)",
       "Bash(npm run build:*)",
-      "Bash(npx vercel:*)"
+      "Bash(npx vercel:*)",
+      "WebFetch(domain:test-jzsaomuj6-aaronthehefs-projects.vercel.app)"
     ],
     "deny": []
   }
