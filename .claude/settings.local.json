@@ -43,7 +43,9 @@
       "Bash(sudo iptables:*)",
       "Bash(rm:*)",
       "Bash(rmdir:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(npm run build:*)",
+      "Bash(npx vercel:*)"
     ],
     "deny": []
   }
