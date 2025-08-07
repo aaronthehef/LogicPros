@@ -54,28 +54,18 @@ export const FreeExamplePage = () => {
           timeline: formData.timeline,
           budget: 'Free Example - No Budget',
           hearAbout: 'Free Example Request',
-          serviceArea: formData.targetArea,
-          mainServices: formData.mainServices,
-          currentWebsite: formData.website,
-          facebook: formData.facebook,
-          instagram: formData.instagram,
-          preferredStyle: formData.preferredStyle,
-          competitors: formData.competitors,
+          serviceArea: formData.targetArea || 'Not specified',
+          mainServices: formData.mainServices || 'Not specified', 
+          currentWebsite: formData.website || 'None',
+          facebook: formData.facebook || 'None',
+          instagram: formData.instagram || 'None',
+          preferredStyle: formData.preferredStyle || 'Not specified',
+          competitors: formData.competitors || 'Not provided',
           message: `🆓 FREE EXAMPLE WEBSITE REQUEST - 48 HOUR DEADLINE
 
-This is a completely FREE example website request with no obligations.
+This client is requesting a completely FREE example website with no obligations. Please prioritize this request and create a custom homepage mockup based on their business information above.
 
-SERVICE AREA: ${formData.targetArea || 'Not specified'}
-MAIN SERVICES: ${formData.mainServices || 'Not specified'}
-CURRENT WEBSITE: ${formData.website || 'None'}
-FACEBOOK: ${formData.facebook || 'None'}
-INSTAGRAM: ${formData.instagram || 'None'}
-PREFERRED STYLE: ${formData.preferredStyle || 'Not specified'}
-
-COMPETITOR RESEARCH:
-${formData.competitors || 'Not provided'}
-
-✅ NEXT STEPS: Create custom homepage mockup within 48 hours using above business details.`
+✅ NEXT STEPS: Create custom homepage mockup within 48 hours using the business details provided in Project Details section.`
         })
       });
       
