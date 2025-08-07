@@ -62,17 +62,10 @@ export const FreeExamplePage = () => {
     console.log('Starting free example form submission...');
 
     try {
-      // Convert logo to base64 if provided
-      let logoBase64 = null;
-      if (formData.logo) {
-        const reader = new FileReader();
-        logoBase64 = await new Promise((resolve) => {
-          reader.onload = (e) => resolve(e.target.result);
-          reader.readAsDataURL(formData.logo);
-        });
-      }
-
-      // Submit form via serverless API route
+      // Skip logo upload for now to avoid backend issues
+      // TODO: Configure backend to handle large base64 payloads
+      
+      // Submit form via serverless API route (without logo for now)
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -80,7 +73,7 @@ export const FreeExamplePage = () => {
         },
         body: JSON.stringify({
           ...formData,
-          logo: logoBase64,
+          logo: null, // Temporarily disabled
           projectType: 'Free Example Website Request',
           message: `🆓 FREE EXAMPLE WEBSITE REQUEST
 =====================================
@@ -97,7 +90,7 @@ export const FreeExamplePage = () => {
 • Current Website: ${formData.website || 'None'}
 • Facebook: ${formData.facebook || 'None'}
 • Instagram: ${formData.instagram || 'None'}
-• Logo: ${formData.logo ? `${formData.logo.name} (${Math.round(formData.logo.size/1024)}KB)` : 'Not provided'}
+• Logo: ${formData.logo ? `${formData.logo.name} - Will be requested separately via email` : 'Not provided'}
 
 💼 SERVICES & OFFERINGS:
 ${formData.mainServices || 'Not specified'}
@@ -460,7 +453,7 @@ This client is requesting a completely FREE example website with no obligations.
                       className="file-input"
                     />
                     <small className="file-help">
-                      Upload your logo in PNG, JPG, or SVG format (max 2MB). This will help us create a more realistic example.
+                      Select your logo file (PNG, JPG, or SVG, max 2MB). We'll request it via email after you submit this form to create a more realistic example.
                     </small>
                     {formData.logo && (
                       <div className="file-preview">
