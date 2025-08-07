@@ -49,37 +49,37 @@ export const FreeExamplePage = () => {
           projectType: 'Free Example Website Request',
           message: `🆓 FREE EXAMPLE WEBSITE REQUEST
 =====================================
+⚡ DEADLINE: 48 hours
 
-📋 CLIENT INFORMATION:
-• Name: ${formData.name}
-• Email: ${formData.email}
-• Phone: ${formData.phone}
+📞 CONTACT DETAILS:
+• ${formData.name} | ${formData.email} | ${formData.phone}
 • Company: ${formData.company || 'Not provided'}
 
-🏢 BUSINESS DETAILS:
-• Primary Trade: ${formData.trade || 'Not specified'}
+🎯 BUSINESS PROFILE:
+• Trade/Industry: ${formData.trade || 'Not specified'}  
 • Service Area: ${formData.targetArea || 'Not specified'}
-• Current Website: ${formData.website || 'None'}
-• Facebook: ${formData.facebook || 'None'}
+• Timeline: ${formData.timeline || 'Not specified'}
+
+🌐 CURRENT ONLINE PRESENCE:
+• Website: ${formData.website || 'None'}
+• Facebook: ${formData.facebook || 'None'}  
 • Instagram: ${formData.instagram || 'None'}
 
-💼 SERVICES & OFFERINGS:
+💼 MAIN SERVICES:
 ${formData.mainServices || 'Not specified'}
 
-🎨 DESIGN PREFERENCES:
-• Preferred Style: ${formData.preferredStyle || 'Not specified'}
+🎨 DESIGN PREFERENCE: ${formData.preferredStyle || 'Not specified'}
 
-🔍 COMPETITIVE ANALYSIS:
+🔍 COMPETITOR RESEARCH:
 ${formData.competitors || 'Not provided'}
 
-⏰ PROJECT TIMELINE:
-${formData.timeline || 'Not specified'}
-
 =====================================
-⚡ ACTION REQUIRED: Create FREE example website within 48 hours
-=====================================
-
-This client is requesting a completely FREE example website with no obligations. Please prioritize this request and create a custom homepage mockup based on their business information.`
+✅ NEXT STEPS:
+1. Create custom homepage mockup 
+2. Use business details above for content
+3. Send example link within 48 hours
+4. No obligation - this is completely FREE
+=====================================`
         })
       });
       
