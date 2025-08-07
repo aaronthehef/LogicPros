@@ -1,5 +1,6 @@
 import React from 'react';
 import { ResponsiveLandingPage } from './ResponsiveLandingPage';
+import { PageTransition } from './components/PageTransition';
 import { ServicesPage } from './pages/ServicesPage';
 import { PortfolioPage } from './pages/PortfolioPage';
 import { AboutPage } from './pages/AboutPage';
@@ -15,6 +16,12 @@ import { PaintingPage } from './pages/contractors/PaintingPage';
 import { FlooringPage } from './pages/contractors/FlooringPage';
 import { ConcretePage } from './pages/contractors/ConcretePage';
 import { RemodelingPage } from './pages/contractors/RemodelingPage';
+import { WebsitesPage } from './pages/services/WebsitesPage';
+import { AutomationsPage } from './pages/services/AutomationsPage';
+import { ITServicesPage } from './pages/services/ITServicesPage';
+import { FrederictonPage } from './pages/locations/FrederictonPage';
+import { MonctonPage } from './pages/locations/MonctonPage';
+import { SaintJohnPage } from './pages/locations/SaintJohnPage';
 
 export const Router = () => {
   const [currentPath, setCurrentPath] = React.useState(
@@ -70,13 +77,29 @@ export const Router = () => {
         return <ConcretePage />;
       case '/contractors/remodeling':
         return <RemodelingPage />;
+      case '/services/websites':
+        return <WebsitesPage />;
+      case '/services/automations':
+        return <AutomationsPage />;
+      case '/services/it-services':
+        return <ITServicesPage />;
+      case '/locations/fredericton':
+        return <FrederictonPage />;
+      case '/locations/moncton':
+        return <MonctonPage />;
+      case '/locations/saint-john':
+        return <SaintJohnPage />;
       default:
         console.log('No route matched, showing landing page for path:', currentPath);
         return <ResponsiveLandingPage />;
     }
   };
 
-  return renderPage();
+  return (
+    <PageTransition key={currentPath}>
+      {renderPage()}
+    </PageTransition>
+  );
 };
 
 // Update links to use hash routing

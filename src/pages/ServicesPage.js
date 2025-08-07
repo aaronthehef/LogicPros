@@ -1,6 +1,7 @@
 import React from 'react';
 import '../responsive-style.css';
 import { Logo } from '../components/Logo';
+import { Navigation } from '../components/Navigation';
 
 export const ServicesPage = () => {
   return (
@@ -11,15 +12,7 @@ export const ServicesPage = () => {
           <div className="logo">
             <Logo />
           </div>
-          <nav className="nav-menu">
-            <div className="nav-links">
-              <a href="/services" className="nav-link">Services</a>
-              <a href="/portfolio" className="nav-link">Portfolio</a>
-              <a href="/about" className="nav-link">About</a>
-              <a href="/contact" className="nav-link">Contact</a>
-            </div>
-            <a href="/contact" className="btn btn-primary">Get Quote</a>
-          </nav>
+          <Navigation />
         </div>
       </header>
 
@@ -28,10 +21,10 @@ export const ServicesPage = () => {
         <section className="hero-section">
           <div className="container">
             <div className="hero-content">
-              <h1>Professional Web Development Services for Contractors</h1>
+              <h1>Complete Digital Solutions for Your Business</h1>
               <p>
-                Specialized web solutions designed to help contractors win more projects, 
-                streamline operations, and grow their business online.
+                Based in New Brunswick, serving contractors and small businesses across Canada and the U.S. 
+                From websites to AI automations to managed IT services – everything you need to modernize and grow.
               </p>
               <a href="/free-example" className="btn btn-primary">Get Your Free Example Website</a>
             </div>
@@ -41,10 +34,10 @@ export const ServicesPage = () => {
         {/* Contractor Specialties */}
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2 className="section-title">Specialized Websites by Contractor Type</h2>
+            <h2 className="section-title">Websites Built for Your Industry</h2>
             <p className="service-intro">
-              Get a website designed specifically for your trade, with industry-specific content, 
-              targeted SEO, and features that speak directly to your customers.
+              We specialize in contractor and trades websites, but work with any business that values results. 
+              Industry-specific content, local SEO, and features that convert visitors into customers.
             </p>
             <div className="contractor-grid">
               <a href="/contractors/plumbing" className="contractor-card-link">
@@ -135,51 +128,53 @@ export const ServicesPage = () => {
         <section className="section">
           <div className="container">
             <div className="service-detail">
-              <h2>Lead Generation Websites</h2>
+              <h2>Contractor & Business Websites</h2>
               <p className="service-intro">
-                Turn your website into a 24/7 lead generation machine that attracts qualified prospects 
-                and converts them into paying customers.
+                WordPress, Wix, or React websites designed for SEO and lead generation. 
+                AI-powered copywriting, 2-4 week turnaround, mobile-responsive design. 
+                Perfect for contractors and service businesses.
               </p>
               
               <div className="features-grid">
                 <div className="feature-item">
-                  <h3>📱 Mobile-First Design</h3>
-                  <p>Over 70% of contractor searches happen on mobile. Your website will look perfect and load fast on every device.</p>
+                  <h3>🌐 WordPress, Wix, or React</h3>
+                  <p>Choose the platform that fits your needs and budget. All options include mobile-responsive design and SEO optimization.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>🎯 Local SEO Optimization</h3>
-                  <p>Dominate local search results for "[your service] near me" searches. Get found by customers in your service area.</p>
+                  <h3>🤖 AI-Powered Copywriting</h3>
+                  <p>Professional content written with AI assistance, tailored to your industry and target customers. No generic templates.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>📋 Smart Contact Forms</h3>
-                  <p>Custom quote request forms that gather all project details upfront, saving you time on unqualified leads.</p>
+                  <h3>📋 Lead Capture Forms</h3>
+                  <p>Custom contact and quote request forms that gather the information you need to qualify prospects effectively.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>⚡ Lightning Fast Loading</h3>
-                  <p>Google prioritizes fast websites. We optimize for speed to improve your search rankings and user experience.</p>
+                  <h3>📍 Local SEO Focus</h3>
+                  <p>Optimized for local search results so customers in your service area find you first. Google My Business integration included.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>🔄 Easy Content Updates</h3>
-                  <p>Update your services, prices, and portfolio without technical knowledge. Full training included.</p>
+                  <h3>⏱️ 2-4 Week Turnaround</h3>
+                  <p>Fast delivery without compromising quality. Your business needs results quickly, and we deliver on time.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>📊 Performance Analytics</h3>
-                  <p>Track leads, conversions, and ROI with built-in analytics. Know exactly how your website performs.</p>
+                  <h3>📊 Hosting Options</h3>
+                  <p>We can provide hosting or work with your preferred provider. Flexible solutions that fit your existing setup.</p>
                 </div>
               </div>
 
               <div className="pricing-highlight">
-                <h3>Lead Generation Website Package</h3>
+                <h3>Website Package</h3>
                 <ul>
-                  <li>5-8 Page Professional Website</li>
+                  <li>WordPress, Wix, or React Website</li>
+                  <li>AI-Powered Content Writing</li>
                   <li>Mobile-Responsive Design</li>
-                  <li>Local SEO Setup</li>
-                  <li>Contact Forms & Quote Requests</li>
-                  <li>Google My Business Integration</li>
-                  <li>3 Months Free Maintenance</li>
+                  <li>Local SEO Optimization</li>
+                  <li>Contact & Quote Forms</li>
+                  <li>2-4 Week Delivery</li>
+                  <li>Training & Support</li>
                 </ul>
-                <p className="price">Starting at $2,497</p>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <p className="price">Get Your Custom Quote</p>
+                <a href="/contact" className="btn btn-primary">Get Quote</a>
               </div>
             </div>
           </div>
@@ -189,52 +184,52 @@ export const ServicesPage = () => {
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
             <div className="service-detail">
-              <h2>E-Commerce Solutions for Contractors</h2>
+              <h2>AI Business Automations</h2>
               <p className="service-intro">
-                Sell tools, equipment, materials, or services online with a custom e-commerce platform 
-                built specifically for the construction industry.
+                Google review request systems, social media auto-posting, calendar integrations, and more. 
+                Built with n8n automation platform with full backend setup and ongoing monitoring.
               </p>
               
               <div className="features-grid">
                 <div className="feature-item">
-                  <h3>🛒 Custom Product Catalogs</h3>
-                  <p>Organize your inventory by category, brand, or project type. Easy search and filtering for customers.</p>
+                  <h3>⭐ Google Review Automation</h3>
+                  <p>Automatically request reviews from satisfied customers via email and SMS. Increase your star rating and local search visibility.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>💳 Secure Payment Processing</h3>
-                  <p>Accept credit cards, PayPal, and contractor accounts. PCI-compliant security for customer trust.</p>
+                  <h3>📱 Social Media Auto-Posting</h3>
+                  <p>Schedule and automatically post content across Facebook, Instagram, and LinkedIn. Maintain consistent online presence.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>📦 Inventory Management</h3>
-                  <p>Track stock levels, automatic reorder alerts, and integration with your existing systems.</p>
+                  <h3>📅 Calendar Integrations</h3>
+                  <p>Sync appointments between your scheduling system, website bookings, and team calendars. Eliminate double-booking.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>👥 Customer Account Portals</h3>
-                  <p>Let customers track orders, view purchase history, and manage their account information.</p>
+                  <h3>🔄 Workflow Automations</h3>
+                  <p>Custom automations for lead follow-up, customer communications, and internal processes. Save hours each week.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>🚚 Shipping Integration</h3>
-                  <p>Real-time shipping rates, tracking, and delivery scheduling for equipment and materials.</p>
+                  <h3>📊 Backend Monitoring</h3>
+                  <p>Full setup with ongoing monitoring to ensure your automations keep running smoothly. We handle the technical details.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>📈 Sales Analytics</h3>
-                  <p>Detailed reports on best-selling products, customer behavior, and revenue trends.</p>
+                  <h3>🚀 n8n Platform</h3>
+                  <p>Built on the powerful n8n automation platform with hundreds of integrations available for future expansion.</p>
                 </div>
               </div>
 
               <div className="pricing-highlight">
-                <h3>E-Commerce Platform Package</h3>
+                <h3>AI Automation Package</h3>
                 <ul>
-                  <li>Custom Online Store Design</li>
-                  <li>Product Catalog (up to 500 items)</li>
-                  <li>Payment Gateway Integration</li>
-                  <li>Inventory Management System</li>
-                  <li>Customer Account Portal</li>
-                  <li>Mobile Shopping Experience</li>
-                  <li>6 Months Support & Training</li>
+                  <li>Google Review Request System</li>
+                  <li>Social Media Auto-Posting</li>
+                  <li>Calendar Integration Setup</li>
+                  <li>Custom Workflow Automations</li>
+                  <li>Full Backend Configuration</li>
+                  <li>Ongoing Monitoring & Support</li>
+                  <li>n8n Platform Access</li>
                 </ul>
-                <p className="price">Starting at $4,997</p>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <p className="price">Get Your Custom Quote</p>
+                <a href="/contact" className="btn btn-primary">Get Quote</a>
               </div>
             </div>
           </div>
@@ -244,53 +239,52 @@ export const ServicesPage = () => {
         <section className="section">
           <div className="container">
             <div className="service-detail">
-              <h2>Project Management Portals</h2>
+              <h2>Managed IT Services (MSP)</h2>
               <p className="service-intro">
-                Keep clients informed and streamline your workflow with custom client portals 
-                that improve communication and project transparency.
+                Complete IT management for small businesses. Software updates, cybersecurity, 
+                backups, and remote support so you can focus on what you do best.
               </p>
               
               <div className="features-grid">
                 <div className="feature-item">
-                  <h3>📋 Project Dashboard</h3>
-                  <p>Visual project timeline, milestones, and progress tracking that clients can access 24/7.</p>
+                  <h3>🔄 Software Updates</h3>
+                  <p>Keep all your business software current with automated updates and security patches. No more outdated systems.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>📁 Document Sharing</h3>
-                  <p>Secure file sharing for contracts, permits, plans, and photos. Version control included.</p>
+                  <h3>🔒 Cybersecurity Protection</h3>
+                  <p>Comprehensive security monitoring, threat detection, and incident response to protect your business data.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>💬 Communication Hub</h3>
-                  <p>Centralized messaging, change requests, and approval workflows to eliminate email chaos.</p>
+                  <h3>💾 Automated Backups</h3>
+                  <p>Regular, tested backups of your critical business data with quick recovery options when you need them.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>📅 Scheduling Integration</h3>
-                  <p>Sync with your calendar, send automatic updates, and manage subcontractor schedules.</p>
+                  <h3>💻 Remote Support</h3>
+                  <p>Fast resolution of IT issues without disrupting your workday. Remote access support when possible.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>💰 Invoice & Payment Portal</h3>
-                  <p>Online invoicing, payment processing, and financial tracking for each project.</p>
+                  <h3>🔍 System Audits</h3>
+                  <p>Regular IT infrastructure assessments to identify potential issues before they become problems.</p>
                 </div>
                 <div className="feature-item">
-                  <h3>📸 Progress Photo Updates</h3>
-                  <p>Automated photo uploads with timestamp and location data for project documentation.</p>
+                  <h3>📞 Proactive Monitoring</h3>
+                  <p>24/7 system monitoring to catch and resolve issues before they impact your business operations.</p>
                 </div>
               </div>
 
               <div className="pricing-highlight">
-                <h3>Project Management Portal Package</h3>
+                <h3>Managed IT Services Package</h3>
                 <ul>
-                  <li>Custom Client Portal Interface</li>
-                  <li>Project Timeline & Milestones</li>
-                  <li>Document Management System</li>
-                  <li>Communication Tools</li>
-                  <li>Invoice & Payment Integration</li>
-                  <li>Mobile App Access</li>
-                  <li>Unlimited Projects</li>
-                  <li>12 Months Support</li>
+                  <li>Software Updates & Patches</li>
+                  <li>Cybersecurity Monitoring</li>
+                  <li>Automated Backup Systems</li>
+                  <li>Remote Technical Support</li>
+                  <li>Regular System Audits</li>
+                  <li>Proactive Issue Resolution</li>
+                  <li>24/7 System Monitoring</li>
                 </ul>
-                <p className="price">Starting at $3,997</p>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <p className="price">Get Your Custom Quote</p>
+                <a href="/contact" className="btn btn-primary">Get Quote</a>
               </div>
             </div>
           </div>
@@ -299,23 +293,23 @@ export const ServicesPage = () => {
         {/* Additional Services */}
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2 className="section-title">Additional Services</h2>
+            <h2 className="section-title">Why Choose LogicPros</h2>
             <div className="services-grid">
               <div className="service-card">
-                <h3>🔧 Website Maintenance</h3>
-                <p>Keep your website secure, updated, and performing optimally with our maintenance plans starting at $197/month.</p>
+                <h3>🇨🇦 Local Expertise</h3>
+                <p>Based in New Brunswick with deep understanding of Canadian and U.S. markets. We know what works in both regions.</p>
               </div>
               <div className="service-card">
-                <h3>📈 SEO & Digital Marketing</h3>
-                <p>Ongoing SEO, Google Ads management, and social media marketing to continuously grow your online presence.</p>
+                <h3>🔨 Contractor Specialists</h3>
+                <p>We specialize in contractors and trades but work with any business that values results and professional service.</p>
               </div>
               <div className="service-card">
-                <h3>🔗 System Integrations</h3>
-                <p>Connect your website with CRM, accounting software, scheduling tools, and other business systems.</p>
+                <h3>⏱️ Fast Turnaround</h3>
+                <p>2-4 week website delivery with AI-powered content. Automations deployed with ongoing monitoring included.</p>
               </div>
               <div className="service-card">
-                <h3>🎓 Training & Support</h3>
-                <p>Comprehensive training for your team and ongoing technical support to maximize your investment.</p>
+                <h3>🎯 Complete Solutions</h3>
+                <p>From websites to automations to managed IT services. Everything you need to modernize your business operations.</p>
               </div>
             </div>
           </div>
@@ -324,27 +318,27 @@ export const ServicesPage = () => {
         {/* Process Section */}
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Our Development Process</h2>
+            <h2 className="section-title">How We Work</h2>
             <div className="process-grid">
               <div className="process-step">
                 <div className="step-number">1</div>
-                <h3>Discovery & Planning</h3>
-                <p>We analyze your business, competitors, and target customers to create a strategic plan for your website.</p>
+                <h3>Initial Consultation</h3>
+                <p>We discuss your business needs, target customers, and goals to determine the best solutions for your situation.</p>
               </div>
               <div className="process-step">
                 <div className="step-number">2</div>
-                <h3>Design & Prototyping</h3>
-                <p>Custom designs that reflect your brand and appeal to your target customers. Full approval before development.</p>
+                <h3>Strategy & Planning</h3>
+                <p>Choose your platform (WordPress, Wix, or React), plan automations, and outline the project scope and timeline.</p>
               </div>
               <div className="process-step">
                 <div className="step-number">3</div>
-                <h3>Development & Testing</h3>
-                <p>Clean, secure code with thorough testing across all devices and browsers. SEO optimization included.</p>
+                <h3>Build & Configure</h3>
+                <p>Website development with AI-powered content, automation setup, and system integrations. Regular updates throughout.</p>
               </div>
               <div className="process-step">
                 <div className="step-number">4</div>
-                <h3>Launch & Training</h3>
-                <p>Smooth launch with full training for your team. Ongoing support to ensure your success.</p>
+                <h3>Launch & Support</h3>
+                <p>Go live with full training and ongoing support. Automation monitoring ensures everything keeps working smoothly.</p>
               </div>
             </div>
           </div>
@@ -356,7 +350,7 @@ export const ServicesPage = () => {
             <div className="section-header">
               <h2 className="section-title" style={{ color: 'white' }}>Ready to Start Your Project?</h2>
               <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
-                Get a free consultation and see exactly what your website will look like before you commit.
+                Get a free consultation to discuss your needs and see how we can help modernize your business operations.
               </p>
             </div>
             <div className="cta-buttons">

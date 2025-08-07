@@ -1,43 +1,40 @@
 import React from 'react';
 import './responsive-style.css';
 import { Logo } from './components/Logo';
+import { Navigation } from './components/Navigation';
+import { Animations } from './components/Animations';
+import heroImage from './assets/hero-growtika.jpg';
 
 export const ResponsiveLandingPage = () => {
   return (
-    <div className="landing-page">
+    <div className="landing-page homepage">
+      <Animations />
       {/* Sticky Header */}
       <header className="sticky-header">
         <div className="header-content">
           <div className="logo">
             <Logo />
           </div>
-          <nav className="nav-menu">
-            <div className="nav-links">
-              <a href="/services" className="nav-link">Services</a>
-              <a href="/portfolio" className="nav-link">Portfolio</a>
-              <a href="/about" className="nav-link">About</a>
-              <a href="/contact" className="nav-link">Contact</a>
-            </div>
-            <a href="/free-example" className="btn btn-primary">Free Example</a>
-            <button className="mobile-menu-toggle">☰</button>
-          </nav>
+          <Navigation />
         </div>
       </header>
 
       {/* Main Content */}
       <main className="main-content">
         {/* Hero Section */}
-        <section className="hero-section">
-          <div className="container">
-            <div className="hero-image">Hero Image Placeholder</div>
-            <div className="hero-content">
-              <h1>Professional Websites That Win Contracts</h1>
-              <p>
-                Custom web development for contractors who want to dominate their local market. 
-                Get more leads, build trust, and convert visitors into paying customers with a website 
-                that showcases your expertise and reliability.
-              </p>
-              <a href="/contact" className="btn btn-primary">Start Your Project</a>
+        <section className="hero-section homepage-hero">
+          <div className="hero-image">
+            <img src={heroImage} alt="Professional team working on digital solutions" />
+            <div className="hero-overlay">
+              <div className="hero-content">
+                <h1 className="typewriter-text">Websites & Business Automation That Get Results</h1>
+                <p>
+                  Based in New Brunswick, serving contractors and small businesses across Canada and the U.S. 
+                  Get more leads with WordPress, Wix, or React websites, plus AI-powered automations that 
+                  handle Google reviews, social media, and scheduling while you focus on what you do best.
+                </p>
+                <a href="/contact" className="btn btn-primary">Start Your Project</a>
+              </div>
             </div>
           </div>
         </section>
@@ -46,33 +43,40 @@ export const ResponsiveLandingPage = () => {
         <section id="services" className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Our Specialized Services</h2>
+              <h2 className="section-title">Complete Digital Solutions for Your Business</h2>
             </div>
-            <div className="services-grid">
-              <div className="service-card">
-                <div className="service-icon">🎯</div>
-                <h3>Lead Generation Websites</h3>
-                <p>
-                  Mobile-responsive websites designed to capture leads and convert visitors 
-                  into qualified prospects. Includes contact forms, quote requests, and local SEO optimization.
-                </p>
-              </div>
-              <div className="service-card">
-                <div className="service-icon">🛒</div>
-                <h3>E-Commerce Solutions</h3>
-                <p>
-                  Custom online stores for contractors selling tools, equipment, or materials. 
-                  Secure payment processing, inventory management, and customer portals.
-                </p>
-              </div>
-              <div className="service-card">
-                <div className="service-icon">📊</div>
-                <h3>Project Management Portals</h3>
-                <p>
-                  Client portals for project tracking, document sharing, progress updates, 
-                  and communication. Keep clients informed and streamline your workflow.
-                </p>
-              </div>
+            <div className="services-grid animate-on-scroll">
+              <a href="/services/websites" className="service-card-link">
+                <div className="service-card">
+                  <div className="service-icon floating-icon">🌐</div>
+                  <h3>Contractor & Business Websites</h3>
+                  <p>
+                    WordPress, Wix, or React websites built for SEO and lead generation. 
+                    AI-powered copywriting, mobile-responsive design, and 2-4 week turnaround. 
+                    Perfect for trades and service businesses.
+                  </p>
+                </div>
+              </a>
+              <a href="/services/automations" className="service-card-link">
+                <div className="service-card">
+                  <div className="service-icon floating-icon">🤖</div>
+                  <h3>AI Business Automations</h3>
+                  <p>
+                    Google review request systems, social media auto-posting, and calendar integrations. 
+                    Full backend setup with ongoing monitoring using n8n automation platform.
+                  </p>
+                </div>
+              </a>
+              <a href="/services/it-services" className="service-card-link">
+                <div className="service-card">
+                  <div className="service-icon floating-icon">💻</div>
+                  <h3>Managed IT Services</h3>
+                  <p>
+                    Software updates, cybersecurity, backups, and remote support. 
+                    Complete IT management so you can focus on growing your business.
+                  </p>
+                </div>
+              </a>
             </div>
           </div>
         </section>
@@ -81,28 +85,28 @@ export const ResponsiveLandingPage = () => {
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Why Contractors Choose LogicPros</h2>
+              <h2 className="section-title">Why Small Businesses Choose LogicPros</h2>
             </div>
-            <div className="features-grid">
+            <div className="features-grid animate-on-scroll">
               <div className="feature-item">
-                <h3>Industry Expertise</h3>
+                <h3>Local Expertise, Wider Reach</h3>
                 <p>
-                  We understand contractor workflows, bidding processes, and client relationships. 
-                  Your website will speak directly to potential customers in your industry.
+                  Based in New Brunswick with deep understanding of Canadian and U.S. markets. 
+                  We specialize in contractors and trades but work with any business that values results.
                 </p>
               </div>
               <div className="feature-item">
-                <h3>Local SEO Mastery</h3>
+                <h3>Complete Digital Solutions</h3>
                 <p>
-                  Dominate local search results in your service area. We optimize for 
-                  "contractor near me" searches and Google My Business integration.
+                  From website design to AI automations to managed IT services. 
+                  Everything you need to modernize your business operations in one place.
                 </p>
               </div>
               <div className="feature-item">
-                <h3>Fast Turnaround</h3>
+                <h3>Quick Results</h3>
                 <p>
-                  Get your professional website launched in 2-3 weeks, not months. 
-                  We know contractors need results quickly to stay competitive.
+                  2-4 week website turnaround with AI-powered copywriting. 
+                  Automations deployed with ongoing monitoring so they just work.
                 </p>
               </div>
             </div>
@@ -117,26 +121,26 @@ export const ResponsiveLandingPage = () => {
         <section id="portfolio" className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Recent Success Stories</h2>
+              <h2 className="section-title">Client Success Stories</h2>
             </div>
-            <div className="case-studies-grid">
+            <div className="case-studies-grid animate-on-scroll">
               <div className="case-study-card">
                 <div className="case-study-image">Project Image</div>
                 <div className="case-study-content">
-                  <h3>ABC Roofing Solutions</h3>
+                  <h3>Maritime Roofing Co.</h3>
                   <p>
-                    Increased online leads by 350% in 6 months with a mobile-first design 
-                    and local SEO optimization. Now ranking #1 for "roofing contractor [city]".
+                    New WordPress site with local SEO increased leads by 280% in 4 months. 
+                    Google review automation maintains 4.9-star rating with 40+ new reviews.
                   </p>
                 </div>
               </div>
               <div className="case-study-card">
                 <div className="case-study-image">Project Image</div>
                 <div className="case-study-content">
-                  <h3>Elite Landscaping Co.</h3>
+                  <h3>Pro Electric Solutions</h3>
                   <p>
-                    Custom project management portal reduced client communication time by 60% 
-                    and improved customer satisfaction scores to 98%.
+                    React website with AI-powered content plus automated social posting 
+                    resulted in 150% more service calls and stronger online presence.
                   </p>
                 </div>
               </div>
@@ -148,45 +152,72 @@ export const ResponsiveLandingPage = () => {
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">What Our Contractor Clients Say</h2>
+              <h2 className="section-title">What Our Clients Say</h2>
             </div>
-            <div className="testimonials-grid">
+            <div className="testimonials-grid animate-on-scroll">
               <div className="testimonial-card">
                 <p className="testimonial-quote">
-                  "LogicPros built us a website that actually gets results. We've tripled our online leads and the project management portal keeps our clients happy. Best investment we've made for our business."
+                  "The WordPress site and Google review automation from LogicPros transformed our business. We went from 2-3 leads per week to 15+ qualified prospects. The 4-week turnaround was exactly what we needed."
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar"></div>
                   <div className="author-info">
-                    <h4>Mike Rodriguez</h4>
-                    <p>Owner, Rodriguez Construction</p>
+                    <h4>Dave Mitchell</h4>
+                    <p>Owner, Atlantic HVAC Services</p>
                   </div>
                 </div>
               </div>
               <div className="testimonial-card">
                 <p className="testimonial-quote">
-                  "The e-commerce site LogicPros built for our supply business increased our online sales by 400%. The inventory management system saves us hours every week."
+                  "The AI automations handle our social media posting and review requests perfectly. It's like having a marketing assistant that never takes a day off. Great value for the investment."
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar"></div>
                   <div className="author-info">
-                    <h4>Sarah Chen</h4>
-                    <p>Manager, ProTools Supply</p>
+                    <h4>Lisa Thompson</h4>
+                    <p>Manager, Thompson Electric</p>
                   </div>
                 </div>
               </div>
               <div className="testimonial-card">
                 <p className="testimonial-quote">
-                  "Professional, fast, and they understand the construction industry. Our new website looks amazing and we're getting calls from customers who found us online. Highly recommended!"
+                  "Professional service from start to finish. They built our React website with modern design and the managed IT services keep everything running smoothly. Highly recommended for any contractor."
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar"></div>
                   <div className="author-info">
-                    <h4>Tom Anderson</h4>
-                    <p>CEO, Anderson Plumbing</p>
+                    <h4>Mark Sullivan</h4>
+                    <p>CEO, Sullivan Construction</p>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Free Example CTA Section */}
+        <section className="section" style={{ backgroundColor: '#000', color: 'white' }}>
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title" style={{ color: 'white' }}>Not Sure? See Your Website Before You Buy!</h2>
+              <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
+                Get a FREE custom website example created specifically for your business. 
+                See exactly how your website will look - no commitment required.
+              </p>
+            </div>
+            <div className="free-example-benefits">
+              <div className="benefit-item">✓ Completely FREE with no obligations</div>
+              <div className="benefit-item">✓ Custom design for YOUR business</div>
+              <div className="benefit-item">✓ Delivered within 48 hours</div>
+              <div className="benefit-item">✓ See it before you decide</div>
+            </div>
+            <div className="cta-buttons">
+              <a href="/free-example" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+                Get My Free Example Website
+              </a>
+              <a href="/contact" className="btn btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
+                Ask Questions First
+              </a>
             </div>
           </div>
         </section>
@@ -230,7 +261,8 @@ export const ResponsiveLandingPage = () => {
             <div className="footer-column">
               <h4>Contact Info</h4>
               <p>LogicPros Web Development</p>
-              <p>Serving Contractors Nationwide</p>
+              <p>New Brunswick, Canada</p>
+              <p>Serving Canada & U.S.</p>
               <a href="mailto:info@logicpros.ca">info@logicpros.ca</a>
             </div>
           </div>

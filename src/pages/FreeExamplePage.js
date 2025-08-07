@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../responsive-style.css';
 import { Logo } from '../components/Logo';
+import { Navigation } from '../components/Navigation';
 
 export const FreeExamplePage = () => {
   const [formData, setFormData] = useState({
@@ -38,27 +39,19 @@ export const FreeExamplePage = () => {
           <div className="logo">
             <Logo />
           </div>
-          <nav className="nav-menu">
-            <div className="nav-links">
-              <a href="/services" className="nav-link">Services</a>
-              <a href="/portfolio" className="nav-link">Portfolio</a>
-              <a href="/about" className="nav-link">About</a>
-              <a href="/contact" className="nav-link">Contact</a>
-            </div>
-            <a href="/contact" className="btn btn-primary">Get Quote</a>
-          </nav>
+          <Navigation />
         </div>
       </header>
 
       <main className="main-content">
         {/* Hero Section */}
-        <section className="hero-section" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white' }}>
+        <section className="hero-section">
           <div className="container">
             <div className="hero-content">
-              <h1 style={{ color: 'white' }}>See Your Website Before You Buy It</h1>
-              <p style={{ color: 'rgba(255,255,255,0.9)' }}>
-                Get a FREE sample page showing exactly what your contractor website will look like. 
-                No commitment required - see the design first, then decide if you want to proceed.
+              <h1>See Your Website Before You Buy It</h1>
+              <p>
+                Get a FREE sample page showing exactly what your business website will look like. 
+                WordPress, Wix, or React with AI-powered content - no commitment required.
               </p>
               <div className="hero-benefits">
                 <div className="benefit-item">✓ Completely FREE - No strings attached</div>
@@ -78,7 +71,7 @@ export const FreeExamplePage = () => {
               <div className="step-card">
                 <div className="step-icon">📝</div>
                 <h3>1. Tell Us About Your Business</h3>
-                <p>Fill out our quick form with details about your contracting business, services, and style preferences.</p>
+                <p>Fill out our quick form with details about your business, services, and style preferences.</p>
               </div>
 
               <div className="step-card">
@@ -155,7 +148,7 @@ export const FreeExamplePage = () => {
                 <p>The more details you provide, the better we can customize your example. All fields are optional except the first three.</p>
               </div>
 
-              <form onSubmit={handleSubmit} className="example-form">
+              <form onSubmit={handleSubmit} className="contact-form">
                 <div className="form-section">
                   <h3>Basic Information</h3>
                   <div className="form-row">
@@ -290,12 +283,12 @@ export const FreeExamplePage = () => {
                     <div className="form-group">
                       <label htmlFor="website">Current Website (if any)</label>
                       <input
-                        type="url"
+                        type="text"
                         id="website"
                         name="website"
                         value={formData.website}
                         onChange={handleChange}
-                        placeholder="https://your-current-website.com"
+                        placeholder="your-current-website.com (optional)"
                       />
                     </div>
                   </div>
@@ -544,11 +537,8 @@ const exampleStyles = `
   margin-bottom: 15px;
 }
 
-.example-form {
-  background: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+.contact-form {
+  /* Uses existing contact form styling */
 }
 
 .form-section {
@@ -653,8 +643,8 @@ const exampleStyles = `
     grid-template-columns: 1fr;
   }
   
-  .example-form {
-    padding: 30px 20px;
+  .contact-form {
+    /* Uses responsive contact form styling */
   }
   
   .why-free-content {

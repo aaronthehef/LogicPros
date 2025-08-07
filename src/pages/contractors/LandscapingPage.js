@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
+import { Navigation } from '../../components/Navigation';
 
 export const LandscapingPage = () => {
   return (
@@ -8,15 +9,7 @@ export const LandscapingPage = () => {
       <header className="sticky-header">
         <div className="header-content">
           <div className="logo"><Logo /></div>
-          <nav className="nav-menu">
-            <div className="nav-links">
-              <a href="/services" className="nav-link">Services</a>
-              <a href="/portfolio" className="nav-link">Portfolio</a>
-              <a href="/about" className="nav-link">About</a>
-              <a href="/contact" className="nav-link">Contact</a>
-            </div>
-            <a href="/free-example" className="btn btn-primary">Free Example</a>
-          </nav>
+          <Navigation />
         </div>
       </header>
 
@@ -248,8 +241,8 @@ export const LandscapingPage = () => {
               </div>
               <div className="footer-column">
                 <h4>Contact</h4>
-                <p>hello@logicpros.ca</p>
-                <p>(555) LOGIC-1</p>
+                <p>aaron@logicpros.ca</p>
+                <p>(506) 478-2949</p>
               </div>
             </div>
           </div>

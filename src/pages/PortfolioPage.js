@@ -1,6 +1,7 @@
 import React from 'react';
 import '../responsive-style.css';
 import { Logo } from '../components/Logo';
+import { Navigation } from '../components/Navigation';
 
 export const PortfolioPage = () => {
   return (
@@ -11,15 +12,7 @@ export const PortfolioPage = () => {
           <div className="logo">
             <Logo />
           </div>
-          <nav className="nav-menu">
-            <div className="nav-links">
-              <a href="/services" className="nav-link">Services</a>
-              <a href="/portfolio" className="nav-link">Portfolio</a>
-              <a href="/about" className="nav-link">About</a>
-              <a href="/contact" className="nav-link">Contact</a>
-            </div>
-            <a href="/contact" className="btn btn-primary">Get Quote</a>
-          </nav>
+          <Navigation />
         </div>
       </header>
 

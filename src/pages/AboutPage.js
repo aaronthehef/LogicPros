@@ -1,6 +1,7 @@
 import React from 'react';
 import '../responsive-style.css';
 import { Logo } from '../components/Logo';
+import { Navigation } from '../components/Navigation';
 
 export const AboutPage = () => {
   return (
@@ -11,15 +12,7 @@ export const AboutPage = () => {
           <div className="logo">
             <Logo />
           </div>
-          <nav className="nav-menu">
-            <div className="nav-links">
-              <a href="/services" className="nav-link">Services</a>
-              <a href="/portfolio" className="nav-link">Portfolio</a>
-              <a href="/about" className="nav-link">About</a>
-              <a href="/contact" className="nav-link">Contact</a>
-            </div>
-            <a href="/contact" className="btn btn-primary">Get Quote</a>
-          </nav>
+          <Navigation />
         </div>
       </header>
 
@@ -28,10 +21,10 @@ export const AboutPage = () => {
         <section className="hero-section">
           <div className="container">
             <div className="hero-content">
-              <h1>About LogicPros: Your Partner in Digital Growth</h1>
+              <h1>About LogicPros: Complete Digital Solutions</h1>
               <p>
-                We specialize in building high-performance websites and digital solutions 
-                exclusively for contractors and construction businesses across North America.
+                Based in New Brunswick, Canada, we provide websites, AI business automations, 
+                and managed IT services to contractors and small businesses across Canada and the U.S.
               </p>
             </div>
           </div>
@@ -150,7 +143,7 @@ export const AboutPage = () => {
         {/* Our Expertise */}
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Why Contractors Choose Us</h2>
+            <h2 className="section-title">Why Businesses Choose LogicPros</h2>
             <div className="expertise-grid">
               <div className="expertise-item">
                 <div className="expertise-icon">🏗️</div>

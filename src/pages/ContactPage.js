@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../responsive-style.css';
 import { Logo } from '../components/Logo';
+import { Navigation } from '../components/Navigation';
 
 export const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -68,15 +69,7 @@ export const ContactPage = () => {
           <div className="logo">
             <Logo />
           </div>
-          <nav className="nav-menu">
-            <div className="nav-links">
-              <a href="/services" className="nav-link">Services</a>
-              <a href="/portfolio" className="nav-link">Portfolio</a>
-              <a href="/about" className="nav-link">About</a>
-              <a href="/contact" className="nav-link">Contact</a>
-            </div>
-            <a href="/free-example" className="btn btn-primary">Free Example</a>
-          </nav>
+          <Navigation />
         </div>
       </header>
 
@@ -307,7 +300,7 @@ export const ContactPage = () => {
                   
                   <div className="contact-item">
                     <h4>📱 Office Phone</h4>
-                    <p><a href="tel:+1-555-LOGIC-1">(555) LOGIC-1</a></p>
+                    <p><a href="tel:+15064782949">(506) 478-2949</a></p>
                     <small>Mon-Fri 8am-6pm EST</small>
                   </div>
                   
@@ -321,7 +314,7 @@ export const ContactPage = () => {
                 <div className="contact-cta">
                   <h4>🎯 Need It Done Fast?</h4>
                   <p>Call our office directly for rush projects and immediate quotes.</p>
-                  <a href="tel:+1-555-LOGIC-1" className="btn btn-outline">Call Our Team</a>
+                  <a href="tel:+15064782949" className="btn btn-outline">Call Our Team</a>
                 </div>
               </div>
             </div>
@@ -374,7 +367,7 @@ export const ContactPage = () => {
               <p>Join 200+ contractors who've increased their leads by 350% with LogicPros websites.</p>
               <div className="cta-buttons">
                 <a href="/free-example" className="btn btn-primary btn-large">Get Free Example</a>
-                <a href="tel:+1-555-LOGIC-1" className="btn btn-outline btn-large">Call Now</a>
+                <a href="tel:+15064782949" className="btn btn-outline btn-large">Call Now</a>
               </div>
             </div>
           </div>
@@ -409,8 +402,8 @@ export const ContactPage = () => {
               
               <div className="footer-column">
                 <h4>Contact</h4>
-                <p>hello@logicpros.ca</p>
-                <p>(555) LOGIC-1</p>
+                <p>aaron@logicpros.ca</p>
+                <p>(506) 478-2949</p>
               </div>
             </div>
           </div>
