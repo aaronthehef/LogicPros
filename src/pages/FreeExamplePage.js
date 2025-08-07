@@ -17,8 +17,7 @@ export const FreeExamplePage = () => {
     targetArea: '',
     preferredStyle: '',
     competitors: '',
-    timeline: '',
-    logo: null
+    timeline: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,28 +30,6 @@ export const FreeExamplePage = () => {
     });
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      // Check file size (2MB limit)
-      if (file.size > 2 * 1024 * 1024) {
-        alert('Logo file must be smaller than 2MB');
-        return;
-      }
-      
-      // Check file type
-      const allowedTypes = ['image/jpeg', 'image/png', 'image/svg+xml'];
-      if (!allowedTypes.includes(file.type)) {
-        alert('Logo must be a PNG, JPG, or SVG file');
-        return;
-      }
-      
-      setFormData({
-        ...formData,
-        logo: file
-      });
-    }
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,10 +39,6 @@ export const FreeExamplePage = () => {
     console.log('Starting free example form submission...');
 
     try {
-      // Skip logo upload for now to avoid backend issues
-      // TODO: Configure backend to handle large base64 payloads
-      
-      // Submit form via serverless API route (without logo for now)
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -73,7 +46,6 @@ export const FreeExamplePage = () => {
         },
         body: JSON.stringify({
           ...formData,
-          logo: null, // Temporarily disabled
           projectType: 'Free Example Website Request',
           message: `🆓 FREE EXAMPLE WEBSITE REQUEST
 =====================================
@@ -90,7 +62,6 @@ export const FreeExamplePage = () => {
 • Current Website: ${formData.website || 'None'}
 • Facebook: ${formData.facebook || 'None'}
 • Instagram: ${formData.instagram || 'None'}
-• Logo: ${formData.logo ? `${formData.logo.name} - Will be requested separately via email` : 'Not provided'}
 
 💼 SERVICES & OFFERINGS:
 ${formData.mainServices || 'Not specified'}
@@ -117,7 +88,7 @@ This client is requesting a completely FREE example website with no obligations.
         setFormData({
           name: '', email: '', phone: '', company: '', trade: '', website: '',
           facebook: '', instagram: '', mainServices: '', targetArea: '', 
-          preferredStyle: '', competitors: '', timeline: '', logo: null
+          preferredStyle: '', competitors: '', timeline: ''
         });
         
         // Auto-scroll to success message
@@ -442,25 +413,6 @@ This client is requesting a completely FREE example website with no obligations.
                     </div>
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="logo">Business Logo (Optional)</label>
-                    <input
-                      type="file"
-                      id="logo"
-                      name="logo"
-                      onChange={handleFileChange}
-                      accept="image/png,image/jpeg,image/svg+xml"
-                      className="file-input"
-                    />
-                    <small className="file-help">
-                      Select your logo file (PNG, JPG, or SVG, max 2MB). We'll request it via email after you submit this form to create a more realistic example.
-                    </small>
-                    {formData.logo && (
-                      <div className="file-preview">
-                        ✅ {formData.logo.name} ({Math.round(formData.logo.size/1024)}KB)
-                      </div>
-                    )}
-                  </div>
 
                   <div className="form-group">
                     <label htmlFor="competitors">Competitor Websites You Like/Dislike</label>
