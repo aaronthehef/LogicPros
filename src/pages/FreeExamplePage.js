@@ -45,41 +45,37 @@ export const FreeExamplePage = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...formData,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          trade: formData.trade,
           projectType: 'Free Example Website Request',
-          message: `🆓 FREE EXAMPLE WEBSITE REQUEST
-=====================================
-⚡ DEADLINE: 48 hours
+          timeline: formData.timeline,
+          budget: 'Free Example - No Budget',
+          hearAbout: 'Free Example Request',
+          serviceArea: formData.targetArea,
+          mainServices: formData.mainServices,
+          currentWebsite: formData.website,
+          facebook: formData.facebook,
+          instagram: formData.instagram,
+          preferredStyle: formData.preferredStyle,
+          competitors: formData.competitors,
+          message: `🆓 FREE EXAMPLE WEBSITE REQUEST - 48 HOUR DEADLINE
 
-📞 CONTACT DETAILS:
-• ${formData.name} | ${formData.email} | ${formData.phone}
-• Company: ${formData.company || 'Not provided'}
+This is a completely FREE example website request with no obligations.
 
-🎯 BUSINESS PROFILE:
-• Trade/Industry: ${formData.trade || 'Not specified'}  
-• Service Area: ${formData.targetArea || 'Not specified'}
-• Timeline: ${formData.timeline || 'Not specified'}
+SERVICE AREA: ${formData.targetArea || 'Not specified'}
+MAIN SERVICES: ${formData.mainServices || 'Not specified'}
+CURRENT WEBSITE: ${formData.website || 'None'}
+FACEBOOK: ${formData.facebook || 'None'}
+INSTAGRAM: ${formData.instagram || 'None'}
+PREFERRED STYLE: ${formData.preferredStyle || 'Not specified'}
 
-🌐 CURRENT ONLINE PRESENCE:
-• Website: ${formData.website || 'None'}
-• Facebook: ${formData.facebook || 'None'}  
-• Instagram: ${formData.instagram || 'None'}
-
-💼 MAIN SERVICES:
-${formData.mainServices || 'Not specified'}
-
-🎨 DESIGN PREFERENCE: ${formData.preferredStyle || 'Not specified'}
-
-🔍 COMPETITOR RESEARCH:
+COMPETITOR RESEARCH:
 ${formData.competitors || 'Not provided'}
 
-=====================================
-✅ NEXT STEPS:
-1. Create custom homepage mockup 
-2. Use business details above for content
-3. Send example link within 48 hours
-4. No obligation - this is completely FREE
-=====================================`
+✅ NEXT STEPS: Create custom homepage mockup within 48 hours using above business details.`
         })
       });
       
