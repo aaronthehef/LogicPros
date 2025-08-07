@@ -45,18 +45,37 @@ export const FreeExamplePage = () => {
         body: JSON.stringify({
           ...formData,
           projectType: 'Free Example Website Request',
-          message: `Free Example Request Details:
-          
-Business/Company: ${formData.company}
-Trade/Industry: ${formData.trade}
-Current Website: ${formData.website || 'None'}
-Main Services: ${formData.mainServices}
-Target Area: ${formData.targetArea}
-Preferred Style: ${formData.preferredStyle}
-Competitors/Inspiration: ${formData.competitors}
-Timeline: ${formData.timeline}
+          message: `🆓 FREE EXAMPLE WEBSITE REQUEST
+=====================================
 
-This is a request for a FREE example website.`
+📋 CLIENT INFORMATION:
+• Name: ${formData.name}
+• Email: ${formData.email}
+• Phone: ${formData.phone}
+• Company: ${formData.company || 'Not provided'}
+
+🏢 BUSINESS DETAILS:
+• Primary Trade: ${formData.trade || 'Not specified'}
+• Service Area: ${formData.targetArea || 'Not specified'}
+• Current Website: ${formData.website || 'None'}
+
+💼 SERVICES & OFFERINGS:
+${formData.mainServices || 'Not specified'}
+
+🎨 DESIGN PREFERENCES:
+• Preferred Style: ${formData.preferredStyle || 'Not specified'}
+
+🔍 COMPETITIVE ANALYSIS:
+${formData.competitors || 'Not provided'}
+
+⏰ PROJECT TIMELINE:
+${formData.timeline || 'Not specified'}
+
+=====================================
+⚡ ACTION REQUIRED: Create FREE example website within 48 hours
+=====================================
+
+This client is requesting a completely FREE example website with no obligations. Please prioritize this request and create a custom homepage mockup based on their business information.`
         })
       });
       
@@ -66,6 +85,17 @@ This is a request for a FREE example website.`
           name: '', email: '', phone: '', company: '', trade: '', website: '',
           mainServices: '', targetArea: '', preferredStyle: '', competitors: '', timeline: ''
         });
+        
+        // Auto-scroll to success message
+        setTimeout(() => {
+          const successAlert = document.querySelector('.alert-success');
+          if (successAlert) {
+            successAlert.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'center' 
+            });
+          }
+        }, 100);
       } else {
         setSubmitStatus('error');
       }
