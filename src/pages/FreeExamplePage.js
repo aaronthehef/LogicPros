@@ -11,11 +11,14 @@ export const FreeExamplePage = () => {
     company: '',
     trade: '',
     website: '',
+    facebook: '',
+    instagram: '',
     mainServices: '',
     targetArea: '',
     preferredStyle: '',
     competitors: '',
-    timeline: ''
+    timeline: '',
+    logo: null
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,6 +31,29 @@ export const FreeExamplePage = () => {
     });
   };
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // Check file size (2MB limit)
+      if (file.size > 2 * 1024 * 1024) {
+        alert('Logo file must be smaller than 2MB');
+        return;
+      }
+      
+      // Check file type
+      const allowedTypes = ['image/jpeg', 'image/png', 'image/svg+xml'];
+      if (!allowedTypes.includes(file.type)) {
+        alert('Logo must be a PNG, JPG, or SVG file');
+        return;
+      }
+      
+      setFormData({
+        ...formData,
+        logo: file
+      });
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -36,6 +62,16 @@ export const FreeExamplePage = () => {
     console.log('Starting free example form submission...');
 
     try {
+      // Convert logo to base64 if provided
+      let logoBase64 = null;
+      if (formData.logo) {
+        const reader = new FileReader();
+        logoBase64 = await new Promise((resolve) => {
+          reader.onload = (e) => resolve(e.target.result);
+          reader.readAsDataURL(formData.logo);
+        });
+      }
+
       // Submit form via serverless API route
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -44,6 +80,7 @@ export const FreeExamplePage = () => {
         },
         body: JSON.stringify({
           ...formData,
+          logo: logoBase64,
           projectType: 'Free Example Website Request',
           message: `🆓 FREE EXAMPLE WEBSITE REQUEST
 =====================================
@@ -58,6 +95,9 @@ export const FreeExamplePage = () => {
 • Primary Trade: ${formData.trade || 'Not specified'}
 • Service Area: ${formData.targetArea || 'Not specified'}
 • Current Website: ${formData.website || 'None'}
+• Facebook: ${formData.facebook || 'None'}
+• Instagram: ${formData.instagram || 'None'}
+• Logo: ${formData.logo ? `${formData.logo.name} (${Math.round(formData.logo.size/1024)}KB)` : 'Not provided'}
 
 💼 SERVICES & OFFERINGS:
 ${formData.mainServices || 'Not specified'}
@@ -83,7 +123,8 @@ This client is requesting a completely FREE example website with no obligations.
         setSubmitStatus('success');
         setFormData({
           name: '', email: '', phone: '', company: '', trade: '', website: '',
-          mainServices: '', targetArea: '', preferredStyle: '', competitors: '', timeline: ''
+          facebook: '', instagram: '', mainServices: '', targetArea: '', 
+          preferredStyle: '', competitors: '', timeline: '', logo: null
         });
         
         // Auto-scroll to success message
@@ -381,6 +422,51 @@ This client is requesting a completely FREE example website with no obligations.
                         placeholder="your-current-website.com (optional)"
                       />
                     </div>
+                  </div>
+
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="facebook">Facebook Page</label>
+                      <input
+                        type="text"
+                        id="facebook"
+                        name="facebook"
+                        value={formData.facebook}
+                        onChange={handleChange}
+                        placeholder="facebook.com/your-business-name (optional)"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="instagram">Instagram Profile</label>
+                      <input
+                        type="text"
+                        id="instagram"
+                        name="instagram"
+                        value={formData.instagram}
+                        onChange={handleChange}
+                        placeholder="instagram.com/your-business (optional)"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="logo">Business Logo (Optional)</label>
+                    <input
+                      type="file"
+                      id="logo"
+                      name="logo"
+                      onChange={handleFileChange}
+                      accept="image/png,image/jpeg,image/svg+xml"
+                      className="file-input"
+                    />
+                    <small className="file-help">
+                      Upload your logo in PNG, JPG, or SVG format (max 2MB). This will help us create a more realistic example.
+                    </small>
+                    {formData.logo && (
+                      <div className="file-preview">
+                        ✅ {formData.logo.name} ({Math.round(formData.logo.size/1024)}KB)
+                      </div>
+                    )}
                   </div>
 
                   <div className="form-group">
@@ -726,6 +812,39 @@ const exampleStyles = `
   height: 400px;
   border-radius: 12px;
   overflow: hidden;
+}
+
+.file-input {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  background: #fafafa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-input:hover {
+  border-color: var(--primary-color);
+  background: #f0f0f0;
+}
+
+.file-help {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.file-preview {
+  background: #e8f5e8;
+  border: 1px solid #4caf50;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 10px;
+  color: #2e7d32;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
