@@ -46,7 +46,7 @@ export const FrederictonPage = () => {
                 <div className="service-icon">🌐</div>
                 <h3>Fredericton Website Design</h3>
                 <p>
-                  WordPress, Wix, or React websites optimized for local search. Perfect for contractors, 
+                  WordPress or React websites optimized for local search. Perfect for contractors, 
                   professionals, and retailers serving Fredericton and surrounding areas.
                 </p>
                 <ul className="service-benefits">

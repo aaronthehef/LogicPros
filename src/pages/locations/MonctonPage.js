@@ -46,7 +46,7 @@ export const MonctonPage = () => {
                 <div className="service-icon">🌐</div>
                 <h3>Moncton Website Development</h3>
                 <p>
-                  Custom WordPress, Wix, and React websites optimized for Greater Moncton searches. 
+                  Custom WordPress and React websites optimized for Greater Moncton searches. 
                   Perfect for contractors, retailers, and service providers in Canada's fastest-growing city.
                 </p>
                 <ul className="service-benefits">

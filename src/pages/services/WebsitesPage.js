@@ -25,7 +25,7 @@ export const WebsitesPage = () => {
             <div className="hero-content">
               <h1 className="typewriter-text">Professional Websites for Contractors & Small Businesses</h1>
               <p>
-                WordPress, Wix, or React websites built for SEO and lead generation. 
+                WordPress or React websites built for SEO and lead generation. 
                 AI-powered copywriting, mobile-responsive design, and 2-4 week turnaround. 
                 Perfect for trades and service businesses across New Brunswick, Canada, and the U.S.
               </p>
@@ -58,20 +58,6 @@ export const WebsitesPage = () => {
                 <p><strong>Best for:</strong> Contractors who want full control and easy updates</p>
               </div>
 
-              <div className="platform-card featured-platform">
-                <div className="platform-badge">Recommended</div>
-                <div className="platform-icon floating-icon">✨</div>
-                <h3>Wix Websites</h3>
-                <p className="platform-subtitle">Easiest to Manage</p>
-                <ul className="platform-features">
-                  <li>Drag-and-drop editing</li>
-                  <li>Built-in hosting included</li>
-                  <li>No technical knowledge needed</li>
-                  <li>Mobile app for updates</li>
-                  <li>24/7 support</li>
-                </ul>
-                <p><strong>Best for:</strong> Business owners who want simplicity and reliability</p>
-              </div>
 
               <div className="platform-card">
                 <div className="platform-icon floating-icon">⚡</div>
@@ -229,17 +215,17 @@ export const WebsitesPage = () => {
             <div className="faq-grid">
               <div className="faq-item">
                 <h3>Which platform should I choose?</h3>
-                <p>We recommend Wix for most small businesses due to its ease of use. WordPress is great if you want more control. React is best for businesses needing custom features or maximum performance.</p>
+                <p>We recommend WordPress for most small businesses due to its flexibility and ease of use. React is best for businesses needing custom features or maximum performance.</p>
               </div>
               
               <div className="faq-item">
                 <h3>Do you provide hosting?</h3>
-                <p>We can provide hosting or work with your existing provider. Wix includes hosting built-in. For WordPress and React, we recommend reliable hosting partners.</p>
+                <p>We can provide hosting or work with your existing provider. For WordPress and React, we recommend reliable hosting partners.</p>
               </div>
               
               <div className="faq-item">
                 <h3>Can I update the website myself?</h3>
-                <p>Absolutely! We provide full training and documentation. Wix is the easiest to update, WordPress requires basic learning, and React sites typically need developer updates.</p>
+                <p>Absolutely! We provide full training and documentation. WordPress requires basic learning, and React sites typically need developer updates.</p>
               </div>
               
               <div className="faq-item">

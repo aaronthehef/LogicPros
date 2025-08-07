@@ -30,7 +30,7 @@ export const ResponsiveLandingPage = () => {
                 <h1 className="typewriter-text">Websites & Business Automation That Get Results</h1>
                 <p>
                   Based in New Brunswick, serving contractors and small businesses across Canada and the U.S. 
-                  Get more leads with WordPress, Wix, or React websites, plus AI-powered automations that 
+                  Get more leads with WordPress or React websites, plus AI-powered automations that 
                   handle Google reviews, social media, and scheduling while you focus on what you do best.
                 </p>
                 <a href="/contact" className="btn btn-primary">Start Your Project</a>
@@ -51,7 +51,7 @@ export const ResponsiveLandingPage = () => {
                   <div className="service-icon floating-icon">🌐</div>
                   <h3>Contractor & Business Websites</h3>
                   <p>
-                    WordPress, Wix, or React websites built for SEO and lead generation. 
+                    WordPress or React websites built for SEO and lead generation. 
                     AI-powered copywriting, mobile-responsive design, and 2-4 week turnaround. 
                     Perfect for trades and service businesses.
                   </p>

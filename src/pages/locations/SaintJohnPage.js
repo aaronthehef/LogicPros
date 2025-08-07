@@ -46,7 +46,7 @@ export const SaintJohnPage = () => {
                 <div className="service-icon">🌐</div>
                 <h3>Saint John Web Design</h3>
                 <p>
-                  Professional WordPress, Wix, and React websites built for Saint John's diverse business community. 
+                  Professional WordPress and React websites built for Saint John's diverse business community. 
                   From industrial services to tourism, we create websites that work for your industry.
                 </p>
                 <ul className="service-benefits">

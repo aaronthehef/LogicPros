@@ -130,14 +130,14 @@ export const ServicesPage = () => {
             <div className="service-detail">
               <h2>Contractor & Business Websites</h2>
               <p className="service-intro">
-                WordPress, Wix, or React websites designed for SEO and lead generation. 
+                WordPress or React websites designed for SEO and lead generation. 
                 AI-powered copywriting, 2-4 week turnaround, mobile-responsive design. 
                 Perfect for contractors and service businesses.
               </p>
               
               <div className="features-grid">
                 <div className="feature-item">
-                  <h3>🌐 WordPress, Wix, or React</h3>
+                  <h3>🌐 WordPress or React</h3>
                   <p>Choose the platform that fits your needs and budget. All options include mobile-responsive design and SEO optimization.</p>
                 </div>
                 <div className="feature-item">
@@ -165,7 +165,7 @@ export const ServicesPage = () => {
               <div className="pricing-highlight">
                 <h3>Website Package</h3>
                 <ul>
-                  <li>WordPress, Wix, or React Website</li>
+                  <li>WordPress or React Website</li>
                   <li>AI-Powered Content Writing</li>
                   <li>Mobile-Responsive Design</li>
                   <li>Local SEO Optimization</li>
@@ -328,7 +328,7 @@ export const ServicesPage = () => {
               <div className="process-step">
                 <div className="step-number">2</div>
                 <h3>Strategy & Planning</h3>
-                <p>Choose your platform (WordPress, Wix, or React), plan automations, and outline the project scope and timeline.</p>
+                <p>Choose your platform (WordPress or React), plan automations, and outline the project scope and timeline.</p>
               </div>
               <div className="process-step">
                 <div className="step-number">3</div>

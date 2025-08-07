@@ -126,7 +126,7 @@ ${formData.competitors || 'Not provided'}
               <h1>See Your Website Before You Buy It</h1>
               <p>
                 Get a FREE sample page showing exactly what your business website will look like. 
-                WordPress, Wix, or React with AI-powered content - no commitment required.
+                WordPress or React with AI-powered content - no commitment required.
               </p>
               <div className="hero-benefits">
                 <div className="benefit-item">✓ Completely FREE - No strings attached</div>
