@@ -18,6 +18,9 @@ export const FreeExamplePage = () => {
     timeline: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -25,10 +28,53 @@ export const FreeExamplePage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Free example request:', formData);
-    alert('Thank you! We\'ll create your free example website and send it to you within 48 hours.');
+    setIsSubmitting(true);
+    setSubmitStatus('');
+    
+    console.log('Starting free example form submission...');
+
+    try {
+      // Submit form via serverless API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          projectType: 'Free Example Website Request',
+          message: `Free Example Request Details:
+          
+Business/Company: ${formData.company}
+Trade/Industry: ${formData.trade}
+Current Website: ${formData.website || 'None'}
+Main Services: ${formData.mainServices}
+Target Area: ${formData.targetArea}
+Preferred Style: ${formData.preferredStyle}
+Competitors/Inspiration: ${formData.competitors}
+Timeline: ${formData.timeline}
+
+This is a request for a FREE example website.`
+        })
+      });
+      
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '', email: '', phone: '', company: '', trade: '', website: '',
+          mainServices: '', targetArea: '', preferredStyle: '', competitors: '', timeline: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -147,6 +193,20 @@ export const FreeExamplePage = () => {
                 <h2>Get Your Free Example Website</h2>
                 <p>The more details you provide, the better we can customize your example. All fields are optional except the first three.</p>
               </div>
+
+              {submitStatus === 'success' && (
+                <div className="alert alert-success">
+                  <h3>Thank You!</h3>
+                  <p>Your free example website request has been received! We'll create your custom example and send it to you within 48 hours.</p>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="alert alert-error">
+                  <h3>Oops! Something went wrong.</h3>
+                  <p>Please try again or contact our office directly at aaron@logicpros.ca</p>
+                </div>
+              )}
 
               <form onSubmit={handleSubmit} className="contact-form">
                 <div className="form-section">
@@ -327,9 +387,17 @@ export const FreeExamplePage = () => {
                   </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-large">
-                  Get My Free Example Website
+                <button 
+                  type="submit" 
+                  className="btn btn-primary btn-large"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending Request...' : 'Get My Free Example Website'}
                 </button>
+
+                <p className="form-note">
+                  * Required fields. Your request will be reviewed by our team and we typically respond within 2-4 hours during business hours.
+                </p>
 
                 <div className="form-guarantee">
                   <h4>Our Promise to You:</h4>
