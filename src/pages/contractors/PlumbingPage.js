@@ -43,8 +43,8 @@ export const PlumbingPage = () => {
                 <p>When pipes burst at 2 AM, customers need to find you instantly. Your website needs to be the first result they see with clear emergency contact information.</p>
               </div>
               <div className="challenge-item">
-                <h3>💰 Price Shopping Customers</h3>
-                <p>Customers call multiple plumbers for quotes. Your website needs to demonstrate value and expertise before they even pick up the phone.</p>
+                <h3>💰 Value-Focused Customers</h3>
+                <p>Customers compare multiple plumbers online. Your website needs to demonstrate value and expertise before they even pick up the phone.</p>
               </div>
               <div className="challenge-item">
                 <h3>🔧 Trust & Credibility Issues</h3>
@@ -70,17 +70,17 @@ export const PlumbingPage = () => {
               </div>
               <div className="solution-item">
                 <h3>📋 Service Showcase System</h3>
-                <p><strong>What we do:</strong> Detailed service pages for drain cleaning, pipe repair, water heater installation, bathroom remodeling, and emergency services with transparent pricing guides.</p>
+                <p><strong>What we do:</strong> Detailed service pages for drain cleaning, pipe repair, water heater installation, bathroom remodeling, and emergency services with clear service information.</p>
                 <p><strong>Result:</strong> Pre-qualified leads who understand your value before calling.</p>
               </div>
               <div className="solution-item">
                 <h3>🏆 Trust Building Elements</h3>
                 <p><strong>What we do:</strong> Showcase licenses, certifications, insurance information, before/after photos, customer testimonials, and warranty information prominently.</p>
-                <p><strong>Result:</strong> Higher conversion rates and premium pricing acceptance.</p>
+                <p><strong>Result:</strong> Higher conversion rates and better qualified leads.</p>
               </div>
               <div className="solution-item">
                 <h3>⚡ Lightning Fast Mobile Experience</h3>
-                <p><strong>What we do:</strong> Mobile-first design with emergency contact buttons, click-to-call functionality, and instant quote request forms.</p>
+                <p><strong>What we do:</strong> Mobile-first design with emergency contact buttons, click-to-call functionality, and instant inquiry forms.</p>
                 <p><strong>Result:</strong> Capture more emergency and non-emergency leads from mobile searches.</p>
               </div>
             </div>
@@ -149,7 +149,7 @@ export const PlumbingPage = () => {
               </div>
               <div className="result-item">
                 <h3>Elite Drain Services</h3>
-                <p><strong>Challenge:</strong> Customers only calling for prices, not booking services.</p>
+                <p><strong>Challenge:</strong> Customers only calling for information, not booking services.</p>
                 <p><strong>Solution:</strong> Value-focused website with service explanations and trust indicators.</p>
                 <p><strong>Results:</strong> 45% higher conversion rate, 25% increase in average job value.</p>
               </div>
@@ -163,14 +163,13 @@ export const PlumbingPage = () => {
           </div>
         </section>
 
-        {/* Pricing Packages */}
+        {/* Solutions Section */}
         <section className="section">
           <div className="container">
-            <h2>Plumbing Website Packages</h2>
-            <div className="pricing-grid">
-              <div className="pricing-card">
-                <h3>Emergency Response</h3>
-                <div className="price">$2,500</div>
+            <h2>Plumbing Website Solutions</h2>
+            <div className="solutions-grid">
+              <div className="solution-card">
+                <h3>Emergency Response Sites</h3>
                 <ul>
                   <li>5-page mobile-optimized site</li>
                   <li>Emergency call buttons</li>
@@ -179,11 +178,10 @@ export const PlumbingPage = () => {
                   <li>Basic SEO setup</li>
                   <li>Contact forms</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
               </div>
-              <div className="pricing-card featured">
-                <h3>Lead Generation Pro</h3>
-                <div className="price">$4,500</div>
+              <div className="solution-card featured">
+                <h3>Lead Generation Sites</h3>
                 <ul>
                   <li>10-page comprehensive site</li>
                   <li>Advanced local SEO</li>
@@ -193,11 +191,10 @@ export const PlumbingPage = () => {
                   <li>Google Ads integration</li>
                   <li>Review management</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Most Popular</a>
+                <a href="/contact" className="btn btn-primary">Schedule Consultation</a>
               </div>
-              <div className="pricing-card">
-                <h3>Market Dominator</h3>
-                <div className="price">$7,500</div>
+              <div className="solution-card">
+                <h3>Market Domination Sites</h3>
                 <ul>
                   <li>Unlimited pages</li>
                   <li>Custom functionality</li>
@@ -207,7 +204,7 @@ export const PlumbingPage = () => {
                   <li>Monthly SEO optimization</li>
                   <li>Pay-per-click management</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Dominate Your Market</a>
+                <a href="/contact" className="btn btn-primary">Explore Possibilities</a>
               </div>
             </div>
           </div>
@@ -254,7 +251,7 @@ export const PlumbingPage = () => {
               <p>Join 50+ plumbing contractors who've increased their revenue with LogicPros websites. Emergency calls, service requests, and customer referrals - all flowing to your business 24/7.</p>
               <div className="cta-buttons">
                 <a href="/free-example" className="btn btn-primary btn-large">See My Free Plumbing Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Get My Custom Quote</a>
+                <a href="/contact" className="btn btn-outline btn-large">Schedule Free Consultation</a>
               </div>
             </div>
           </div>
