@@ -44,7 +44,7 @@ export const HVACPage = () => {
               </div>
               <div className="challenge-item">
                 <h3>💰 High-Ticket Sales Complexity</h3>
-                <p>New HVAC systems cost $5,000-$15,000+. Customers research extensively and compare multiple contractors. Your website must educate and build confidence for these major purchases.</p>
+                <p>New HVAC systems are significant investments. Customers research extensively and compare multiple contractors. Your website must educate and build confidence for these major purchases.</p>
               </div>
               <div className="challenge-item">
                 <h3>🔧 Emergency vs. Planned Services</h3>
@@ -163,14 +163,13 @@ export const HVACPage = () => {
           </div>
         </section>
 
-        {/* Pricing Packages */}
+        {/* Solutions Section */}
         <section className="section">
           <div className="container">
-            <h2>HVAC Website Packages</h2>
-            <div className="pricing-grid">
-              <div className="pricing-card">
-                <h3>Comfort Zone</h3>
-                <div className="price">$3,200</div>
+            <h2>HVAC Website Solutions</h2>
+            <div className="solutions-grid">
+              <div className="solution-card">
+                <h3>Comfort Zone Sites</h3>
                 <ul>
                   <li>7-page seasonal-optimized site</li>
                   <li>Emergency service emphasis</li>
@@ -179,11 +178,10 @@ export const HVACPage = () => {
                   <li>Mobile emergency contact</li>
                   <li>Basic maintenance programs</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
               </div>
-              <div className="pricing-card featured">
-                <h3>Climate Control Pro</h3>
-                <div className="price">$5,800</div>
+              <div className="solution-card featured">
+                <h3>Climate Control Pro Sites</h3>
                 <ul>
                   <li>15-page comprehensive site</li>
                   <li>Advanced seasonal campaigns</li>
@@ -193,11 +191,10 @@ export const HVACPage = () => {
                   <li>Maintenance plan automation</li>
                   <li>Review & reputation management</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Most Popular</a>
+                <a href="/contact" className="btn btn-primary">Schedule Consultation</a>
               </div>
-              <div className="pricing-card">
-                <h3>Market Dominator</h3>
-                <div className="price">$9,500</div>
+              <div className="solution-card">
+                <h3>Market Domination Sites</h3>
                 <ul>
                   <li>Unlimited pages & features</li>
                   <li>Custom HVAC calculators</li>
@@ -207,7 +204,7 @@ export const HVACPage = () => {
                   <li>Customer portal & scheduling</li>
                   <li>Comprehensive analytics</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Dominate Your Market</a>
+                <a href="/contact" className="btn btn-primary">Explore Possibilities</a>
               </div>
             </div>
           </div>
@@ -236,7 +233,7 @@ export const HVACPage = () => {
               </div>
               <div className="faq-item">
                 <h3>How do you help me compete with big HVAC companies?</h3>
-                <p>We emphasize your personal service, local expertise, faster response times, and competitive pricing. We position independent HVAC contractors as more flexible and customer-focused than large corporations.</p>
+                <p>We emphasize your personal service, local expertise, faster response times, and competitive service. We position independent HVAC contractors as more flexible and customer-focused than large corporations.</p>
               </div>
               <div className="faq-item">
                 <h3>Can you integrate with HVAC software and scheduling systems?</h3>
@@ -254,7 +251,7 @@ export const HVACPage = () => {
               <p>Join 60+ HVAC contractors who've increased their revenue with LogicPros websites. Emergency repairs, system installations, and maintenance contracts - all flowing to your business.</p>
               <div className="cta-buttons">
                 <a href="/free-example" className="btn btn-primary btn-large">See My Free HVAC Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Get My Custom Quote</a>
+                <a href="/contact" className="btn btn-outline btn-large">Schedule Free Consultation</a>
               </div>
             </div>
           </div>

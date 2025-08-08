@@ -44,7 +44,7 @@ export const ElectricalPage = () => {
               </div>
               <div className="challenge-item">
                 <h3>🏆 Premium Service Positioning</h3>
-                <p>Quality electrical work commands premium prices, but customers often shop on price alone. Your website needs to demonstrate why your expertise is worth the investment.</p>
+                <p>Quality electrical work commands premium rates, but customers often focus on cost alone. Your website needs to demonstrate why your expertise is worth the investment.</p>
               </div>
               <div className="challenge-item">
                 <h3>📋 Complex Service Explanation</h3>
@@ -66,11 +66,11 @@ export const ElectricalPage = () => {
               <div className="solution-item">
                 <h3>🛡️ Safety & Credibility Showcase</h3>
                 <p><strong>What we do:</strong> Prominently display licenses, certifications, insurance, safety awards, and code compliance information. Include detailed safety protocols and team qualifications.</p>
-                <p><strong>Result:</strong> Higher trust levels and acceptance of premium pricing.</p>
+                <p><strong>Result:</strong> Higher trust levels and acceptance of premium service.</p>
               </div>
               <div className="solution-item">
                 <h3>💡 Service Education System</h3>
-                <p><strong>What we do:</strong> Create detailed pages explaining electrical services in customer-friendly terms, with cost breakdowns, timelines, and safety benefits.</p>
+                <p><strong>What we do:</strong> Create detailed pages explaining electrical services in customer-friendly terms, with service breakdowns, timelines, and safety benefits.</p>
                 <p><strong>Result:</strong> More qualified leads who understand your value proposition.</p>
               </div>
               <div className="solution-item">
@@ -163,14 +163,13 @@ export const ElectricalPage = () => {
           </div>
         </section>
 
-        {/* Pricing Packages */}
+        {/* Solutions Section */}
         <section className="section">
           <div className="container">
-            <h2>Electrical Contractor Website Packages</h2>
-            <div className="pricing-grid">
-              <div className="pricing-card">
-                <h3>Safety First</h3>
-                <div className="price">$2,800</div>
+            <h2>Electrical Website Solutions</h2>
+            <div className="solutions-grid">
+              <div className="solution-card">
+                <h3>Safety First Sites</h3>
                 <ul>
                   <li>6-page professional site</li>
                   <li>License & certification display</li>
@@ -179,11 +178,10 @@ export const ElectricalPage = () => {
                   <li>Safety-focused messaging</li>
                   <li>Mobile emergency buttons</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
               </div>
-              <div className="pricing-card featured">
-                <h3>Power Professional</h3>
-                <div className="price">$5,200</div>
+              <div className="solution-card featured">
+                <h3>Power Professional Sites</h3>
                 <ul>
                   <li>12-page comprehensive site</li>
                   <li>Smart home service showcase</li>
@@ -193,11 +191,10 @@ export const ElectricalPage = () => {
                   <li>Safety certification pages</li>
                   <li>Review management system</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Most Popular</a>
+                <a href="/contact" className="btn btn-primary">Schedule Consultation</a>
               </div>
-              <div className="pricing-card">
-                <h3>Market Leader</h3>
-                <div className="price">$8,500</div>
+              <div className="solution-card">
+                <h3>Market Leader Sites</h3>
                 <ul>
                   <li>Unlimited pages & features</li>
                   <li>Custom project portal</li>
@@ -207,7 +204,7 @@ export const ElectricalPage = () => {
                   <li>Monthly optimization</li>
                   <li>Pay-per-click advertising</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Dominate Your Market</a>
+                <a href="/contact" className="btn btn-primary">Explore Possibilities</a>
               </div>
             </div>
           </div>
@@ -228,7 +225,7 @@ export const ElectricalPage = () => {
               </div>
               <div className="faq-item">
                 <h3>How do you handle complex electrical service explanations?</h3>
-                <p>We break down complex electrical work into customer-friendly language, using diagrams, before/after photos, and benefit-focused explanations. Customers understand what they're buying and why it's worth your premium pricing.</p>
+                <p>We break down complex electrical work into customer-friendly language, using diagrams, before/after photos, and benefit-focused explanations. Customers understand what they're buying and why it's worth your premium service.</p>
               </div>
               <div className="faq-item">
                 <h3>Do you optimize for both emergency and planned electrical work?</h3>
@@ -254,7 +251,7 @@ export const ElectricalPage = () => {
               <p>Join 40+ electrical contractors who've increased their revenue with LogicPros websites. Emergency calls, smart home projects, and commercial contracts - all flowing to your business.</p>
               <div className="cta-buttons">
                 <a href="/free-example" className="btn btn-primary btn-large">See My Free Electrical Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Get My Custom Quote</a>
+                <a href="/contact" className="btn btn-outline btn-large">Schedule Free Consultation</a>
               </div>
             </div>
           </div>
