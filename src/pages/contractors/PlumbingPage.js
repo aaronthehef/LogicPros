@@ -2,6 +2,7 @@ import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
+import heroImage from '../../assets/hero-growtika.jpg';
 
 export const PlumbingPage = () => {
   return (
@@ -16,8 +17,9 @@ export const PlumbingPage = () => {
       </header>
 
       <main className="main-content">
-        <section className="hero-section">
+        <section className="hero-section homepage-hero">
           <div className="hero-image">
+            <img src={heroImage} alt="Professional plumber at work" />
             <div className="hero-overlay">
               <div className="hero-content">
                 <h1 className="typewriter-text">Websites That Get Plumbers More Jobs</h1>
