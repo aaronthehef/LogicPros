@@ -215,7 +215,7 @@ export const ResponsiveLandingPage = () => {
               <a href="/free-example" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
                 Get My Free Example Website
               </a>
-              <a href="/contact" className="btn btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
+              <a href="/contact" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>
                 Ask Questions First
               </a>
             </div>
