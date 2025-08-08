@@ -129,7 +129,7 @@ export const ResponsiveLandingPage = () => {
                   </div>
                   <ul className="comparison-bullets">
                     <li>📱 Perfect on all devices</li>
-                    <li>🔍 Ranks #1 in local search</li>
+                    <li>🔍 Shows up on page 1 of Google</li>
                     <li>💼 Professional, trustworthy</li>
                     <li>📞 Clear path to contact you</li>
                   </ul>
