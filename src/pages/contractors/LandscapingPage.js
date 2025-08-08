@@ -130,32 +130,6 @@ export const LandscapingPage = () => {
 
         <section className="section">
           <div className="container">
-            <h2>Real Results for Landscaping Contractors</h2>
-            <div className="results-grid">
-              <div className="result-item">
-                <h3>Artisan Landscapes</h3>
-                <p><strong>Challenge:</strong> Competing against low-cost lawn care services for premium landscape design projects.</p>
-                <p><strong>Solution:</strong> Sophisticated website showcasing artistic designs, luxury installations, and high-end client testimonials.</p>
-                <p><strong>Results:</strong> 275% increase in design consultation requests, average project value increased to $25K.</p>
-              </div>
-              <div className="result-item">
-                <h3>Seasonal Scapes Pro</h3>
-                <p><strong>Challenge:</strong> Revenue dropped 60% during winter months with no design or planning work.</p>
-                <p><strong>Solution:</strong> Year-round marketing strategy with winter design planning and early spring booking incentives.</p>
-                <p><strong>Results:</strong> Maintained 80% revenue during off-season, booked $180K in spring work during winter.</p>
-              </div>
-              <div className="result-item">
-                <h3>Elite Outdoor Living</h3>
-                <p><strong>Challenge:</strong> Customers couldn't visualize completed projects from basic proposals and estimates.</p>
-                <p><strong>Solution:</strong> Visual-heavy website with extensive before/after galleries and 3D design showcases.</p>
-                <p><strong>Results:</strong> 65% higher proposal acceptance rate, 40% increase in project add-ons and upgrades.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
             <h2>Landscaping Website Solutions</h2>
             <div className="solutions-grid">
               <div className="solution-card">

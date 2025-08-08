@@ -58,7 +58,6 @@ export const RoofingPage = () => {
           </div>
         </section>
 
-        {/* Solutions Section */}
         <section className="section">
           <div className="container">
             <h2>How LogicPros Elevates Your Roofing Business</h2>
@@ -136,34 +135,6 @@ export const RoofingPage = () => {
           </div>
         </section>
 
-        {/* ROI & Results */}
-        <section className="section">
-          <div className="container">
-            <h2>Real Results for Roofing Contractors</h2>
-            <div className="results-grid">
-              <div className="result-item">
-                <h3>Storm Shield Roofing</h3>
-                <p><strong>Challenge:</strong> Missing out on storm damage work to competitors with faster response times.</p>
-                <p><strong>Solution:</strong> Storm-optimized website with emergency contact system and instant estimate requests.</p>
-                <p><strong>Results:</strong> 500% increase in storm leads, captured $2.1M in storm work in first season.</p>
-              </div>
-              <div className="result-item">
-                <h3>Heritage Roof Systems</h3>
-                <p><strong>Challenge:</strong> Customers choosing cheaper competitors due to lack of trust and credibility.</p>
-                <p><strong>Solution:</strong> Trust-focused website showcasing certifications, warranties, and detailed customer testimonials.</p>
-                <p><strong>Results:</strong> 65% increase in estimate-to-sale conversion, 30% higher average project value.</p>
-              </div>
-              <div className="result-item">
-                <h3>Pinnacle Roofing Co.</h3>
-                <p><strong>Challenge:</strong> Complex insurance claim process scared away potential customers.</p>
-                <p><strong>Solution:</strong> Educational website explaining insurance claims process and how they handle everything.</p>
-                <p><strong>Results:</strong> 250% increase in insurance claim jobs, became preferred contractor for 3 insurance companies.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Solutions Section */}
         <section className="section">
           <div className="container">
             <h2>Roofing Website Solutions</h2>

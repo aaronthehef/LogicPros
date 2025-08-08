@@ -58,7 +58,6 @@ export const HVACPage = () => {
           </div>
         </section>
 
-        {/* Solutions Section */}
         <section className="section">
           <div className="container">
             <h2>How LogicPros Optimizes Your HVAC Marketing</h2>
@@ -136,34 +135,6 @@ export const HVACPage = () => {
           </div>
         </section>
 
-        {/* ROI & Results */}
-        <section className="section">
-          <div className="container">
-            <h2>Real Results for HVAC Contractors</h2>
-            <div className="results-grid">
-              <div className="result-item">
-                <h3>Climate Control Experts</h3>
-                <p><strong>Challenge:</strong> Losing high-value system sales to competitors with better online presence.</p>
-                <p><strong>Solution:</strong> Comprehensive equipment showcase with financing options and energy savings information.</p>
-                <p><strong>Results:</strong> 85% increase in system installation inquiries, $450K additional revenue.</p>
-              </div>
-              <div className="result-item">
-                <h3>Arctic Air Solutions</h3>
-                <p><strong>Challenge:</strong> Emergency calls going to competitors during peak summer season.</p>
-                <p><strong>Solution:</strong> Emergency-optimized website with seasonal SEO and mobile-first design.</p>
-                <p><strong>Results:</strong> 320% increase in emergency calls, became area's top AC repair service.</p>
-              </div>
-              <div className="result-item">
-                <h3>Green HVAC Technologies</h3>
-                <p><strong>Challenge:</strong> Attracting customers interested in energy-efficient and smart HVAC systems.</p>
-                <p><strong>Solution:</strong> Energy-focused website highlighting smart systems, rebates, and long-term savings.</p>
-                <p><strong>Results:</strong> 200% increase in high-efficiency system sales, average job value up 40%.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Solutions Section */}
         <section className="section">
           <div className="container">
             <h2>HVAC Website Solutions</h2>

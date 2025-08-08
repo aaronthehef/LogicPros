@@ -58,7 +58,6 @@ export const ElectricalPage = () => {
           </div>
         </section>
 
-        {/* Solutions Section */}
         <section className="section">
           <div className="container">
             <h2>How LogicPros Elevates Your Electrical Business</h2>
@@ -136,34 +135,6 @@ export const ElectricalPage = () => {
           </div>
         </section>
 
-        {/* ROI & Results */}
-        <section className="section">
-          <div className="container">
-            <h2>Real Results for Electrical Contractors</h2>
-            <div className="results-grid">
-              <div className="result-item">
-                <h3>Apex Electrical Solutions</h3>
-                <p><strong>Challenge:</strong> Customers choosing cheaper, unlicensed electricians over their premium services.</p>
-                <p><strong>Solution:</strong> Safety-focused website emphasizing licensing, insurance, and quality workmanship value.</p>
-                <p><strong>Results:</strong> 60% increase in project inquiries, 35% higher average job value.</p>
-              </div>
-              <div className="result-item">
-                <h3>Modern Electric Co.</h3>
-                <p><strong>Challenge:</strong> Missing out on lucrative smart home and EV charger installation market.</p>
-                <p><strong>Solution:</strong> Tech-forward website showcasing modern electrical services and smart home expertise.</p>
-                <p><strong>Results:</strong> $250K in new smart home projects, became area's go-to EV charger installer.</p>
-              </div>
-              <div className="result-item">
-                <h3>Heritage Electrical Services</h3>
-                <p><strong>Challenge:</strong> Emergency calls going to competitors with better online visibility.</p>
-                <p><strong>Solution:</strong> Emergency-optimized website with local SEO and 24/7 contact options.</p>
-                <p><strong>Results:</strong> 400% increase in emergency calls, ranked #1 for "emergency electrician near me".</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Solutions Section */}
         <section className="section">
           <div className="container">
             <h2>Electrical Website Solutions</h2>

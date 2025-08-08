@@ -58,7 +58,6 @@ export const PlumbingPage = () => {
           </div>
         </section>
 
-        {/* Solutions Section */}
         <section className="section">
           <div className="container">
             <h2>How LogicPros Solves Your Plumbing Marketing Problems</h2>
@@ -136,34 +135,6 @@ export const PlumbingPage = () => {
           </div>
         </section>
 
-        {/* ROI & Results */}
-        <section className="section">
-          <div className="container">
-            <h2>Real Results for Plumbing Contractors</h2>
-            <div className="results-grid">
-              <div className="result-item">
-                <h3>Metro Plumbing Pro</h3>
-                <p><strong>Challenge:</strong> Losing emergency calls to competitors with better online presence.</p>
-                <p><strong>Solution:</strong> Emergency-optimized website with local SEO and mobile-first design.</p>
-                <p><strong>Results:</strong> 380% increase in emergency calls, $180K additional revenue in first year.</p>
-              </div>
-              <div className="result-item">
-                <h3>Elite Drain Services</h3>
-                <p><strong>Challenge:</strong> Customers only calling for information, not booking services.</p>
-                <p><strong>Solution:</strong> Value-focused website with service explanations and trust indicators.</p>
-                <p><strong>Results:</strong> 45% higher conversion rate, 25% increase in average job value.</p>
-              </div>
-              <div className="result-item">
-                <h3>Anderson Plumbing</h3>
-                <p><strong>Challenge:</strong> Competing against big franchise plumbers in their area.</p>
-                <p><strong>Solution:</strong> Local-focused website highlighting family business values and community involvement.</p>
-                <p><strong>Results:</strong> Ranked #1 for "plumber near me", 300% increase in residential calls.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Solutions Section */}
         <section className="section">
           <div className="container">
             <h2>Plumbing Website Solutions</h2>

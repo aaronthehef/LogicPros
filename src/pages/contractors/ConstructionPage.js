@@ -58,7 +58,6 @@ export const ConstructionPage = () => {
           </div>
         </section>
 
-        {/* Solutions Section */}
         <section className="section">
           <div className="container">
             <h2>How LogicPros Builds Your Construction Success</h2>
@@ -136,34 +135,6 @@ export const ConstructionPage = () => {
           </div>
         </section>
 
-        {/* ROI & Results */}
-        <section className="section">
-          <div className="container">
-            <h2>Real Results for General Contractors</h2>
-            <div className="results-grid">
-              <div className="result-item">
-                <h3>Premier Custom Builders</h3>
-                <p><strong>Challenge:</strong> Attracting high-end custom home clients willing to invest in quality construction.</p>
-                <p><strong>Solution:</strong> Luxury-focused website showcasing premium projects, detailed craftsmanship, and white-glove service approach.</p>
-                <p><strong>Results:</strong> 180% increase in custom home inquiries, average project value increased to $350K.</p>
-              </div>
-              <div className="result-item">
-                <h3>Solid Foundation Construction</h3>
-                <p><strong>Challenge:</strong> Competing against larger construction companies for commercial projects.</p>
-                <p><strong>Solution:</strong> Professional website highlighting specialized expertise, faster timelines, and personalized service.</p>
-                <p><strong>Results:</strong> Won 3 major commercial contracts worth $2.8M, established preferred contractor relationships.</p>
-              </div>
-              <div className="result-item">
-                <h3>Heritage Home Builders</h3>
-                <p><strong>Challenge:</strong> Complex renovation projects scared away potential customers due to process uncertainty.</p>
-                <p><strong>Solution:</strong> Educational website with detailed renovation processes, timelines, and project management approach.</p>
-                <p><strong>Results:</strong> 220% increase in major renovation leads, 45% higher project completion rate.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Solutions Section */}
         <section className="section">
           <div className="container">
             <h2>Construction Website Solutions</h2>
