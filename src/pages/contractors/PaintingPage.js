@@ -156,7 +156,7 @@ export const PaintingPage = () => {
 
         <section className="section">
           <div className="container">
-            <h2>Painting Website Packages</h2>
+            <h2>Painting Website Solutions</h2>
             <div className="pricing-grid">
               <div className="pricing-card">
                 <h3>Color Starter</h3>

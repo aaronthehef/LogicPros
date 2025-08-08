@@ -48,7 +48,8 @@
       "Bash(npx vercel:*)",
       "WebFetch(domain:test-jzsaomuj6-aaronthehefs-projects.vercel.app)",
       "WebFetch(domain:test-e5v85cmyi-aaronthehefs-projects.vercel.app)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(sed:*)"
     ],
     "deny": []
   }

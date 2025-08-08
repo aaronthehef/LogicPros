@@ -156,7 +156,7 @@ export const RemodelingPage = () => {
 
         <section className="section">
           <div className="container">
-            <h2>Remodeling Website Packages</h2>
+            <h2>Remodeling Website Solutions</h2>
             <div className="pricing-grid">
               <div className="pricing-card">
                 <h3>Renovation Starter</h3>

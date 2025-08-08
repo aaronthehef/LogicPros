@@ -156,7 +156,7 @@ export const FlooringPage = () => {
 
         <section className="section">
           <div className="container">
-            <h2>Flooring Website Packages</h2>
+            <h2>Flooring Website Solutions</h2>
             <div className="pricing-grid">
               <div className="pricing-card">
                 <h3>Foundation</h3>
