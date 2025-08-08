@@ -40,11 +40,11 @@ export const ConstructionPage = () => {
             <div className="challenges-grid">
               <div className="challenge-item">
                 <h3>🏗️ Project Complexity Communication</h3>
-                <p>Construction projects are complex with multiple phases, permits, and timelines. Customers need clear explanations of processes, costs, and what to expect at each stage.</p>
+                <p>Construction projects are complex with multiple phases, permits, and timelines. Customers need clear explanations of processes, timelines, and what to expect at each stage.</p>
               </div>
               <div className="challenge-item">
                 <h3>💰 High-Value Project Competition</h3>
-                <p>Custom homes, additions, and major renovations cost $50,000-$500,000+. Customers research extensively and compare multiple contractors before making decisions.</p>
+                <p>Custom homes, additions, and major renovations are significant investments. Customers research extensively and compare multiple contractors before making decisions.</p>
               </div>
               <div className="challenge-item">
                 <h3>📋 Licensing & Insurance Verification</h3>
@@ -70,7 +70,7 @@ export const ConstructionPage = () => {
               </div>
               <div className="solution-item">
                 <h3>🏆 Premium Project Positioning</h3>
-                <p><strong>What we do:</strong> Showcase high-end projects, custom work, and attention to detail that justifies premium pricing and attracts serious clients.</p>
+                <p><strong>What we do:</strong> Showcase high-end projects, custom work, and attention to detail that justifies premium service and attracts serious clients.</p>
                 <p><strong>Result:</strong> Higher-value projects and clients willing to pay for quality workmanship.</p>
               </div>
               <div className="solution-item">
@@ -143,7 +143,7 @@ export const ConstructionPage = () => {
             <div className="results-grid">
               <div className="result-item">
                 <h3>Premier Custom Builders</h3>
-                <p><strong>Challenge:</strong> Attracting high-end custom home clients willing to pay premium prices for quality construction.</p>
+                <p><strong>Challenge:</strong> Attracting high-end custom home clients willing to invest in quality construction.</p>
                 <p><strong>Solution:</strong> Luxury-focused website showcasing premium projects, detailed craftsmanship, and white-glove service approach.</p>
                 <p><strong>Results:</strong> 180% increase in custom home inquiries, average project value increased to $350K.</p>
               </div>
@@ -163,14 +163,13 @@ export const ConstructionPage = () => {
           </div>
         </section>
 
-        {/* Pricing Packages */}
+        {/* Solutions Section */}
         <section className="section">
           <div className="container">
-            <h2>Construction Website Packages</h2>
-            <div className="pricing-grid">
-              <div className="pricing-card">
-                <h3>Foundation</h3>
-                <div className="price">$4,200</div>
+            <h2>Construction Website Solutions</h2>
+            <div className="solutions-grid">
+              <div className="solution-card">
+                <h3>Foundation Sites</h3>
                 <ul>
                   <li>10-page professional site</li>
                   <li>Project portfolio gallery</li>
@@ -179,11 +178,10 @@ export const ConstructionPage = () => {
                   <li>Contact & estimate forms</li>
                   <li>Basic SEO optimization</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
               </div>
-              <div className="pricing-card featured">
-                <h3>Custom Builder Pro</h3>
-                <div className="price">$7,500</div>
+              <div className="solution-card featured">
+                <h3>Custom Builder Pro Sites</h3>
                 <ul>
                   <li>20-page comprehensive site</li>
                   <li>Detailed project process pages</li>
@@ -193,11 +191,10 @@ export const ConstructionPage = () => {
                   <li>Advanced local SEO</li>
                   <li>Lead management integration</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Most Popular</a>
+                <a href="/contact" className="btn btn-primary">Schedule Consultation</a>
               </div>
-              <div className="pricing-card">
-                <h3>Market Dominator</h3>
-                <div className="price">$12,500</div>
+              <div className="solution-card">
+                <h3>Market Domination Sites</h3>
                 <ul>
                   <li>Unlimited pages & features</li>
                   <li>Custom project management portal</li>
@@ -207,7 +204,7 @@ export const ConstructionPage = () => {
                   <li>Ongoing content marketing</li>
                   <li>Complete digital marketing suite</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Dominate Your Market</a>
+                <a href="/contact" className="btn btn-primary">Explore Possibilities</a>
               </div>
             </div>
           </div>
@@ -228,7 +225,7 @@ export const ConstructionPage = () => {
               </div>
               <div className="faq-item">
                 <h3>How do you handle the complex construction sales process?</h3>
-                <p>We create educational content explaining construction phases, permitting processes, timeline expectations, and cost factors. This helps customers understand the value and complexity before they contact you.</p>
+                <p>We create educational content explaining construction phases, permitting processes, timeline expectations, and project factors. This helps customers understand the value and complexity before they contact you.</p>
               </div>
               <div className="faq-item">
                 <h3>Do you help with licensing and insurance credibility?</h3>
@@ -254,7 +251,7 @@ export const ConstructionPage = () => {
               <p>Join 85+ general contractors who've increased their revenue with LogicPros websites. Custom homes, major renovations, and commercial projects - all flowing to your business.</p>
               <div className="cta-buttons">
                 <a href="/free-example" className="btn btn-primary btn-large">See My Free Construction Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Get My Custom Quote</a>
+                <a href="/contact" className="btn btn-outline btn-large">Schedule Free Consultation</a>
               </div>
             </div>
           </div>

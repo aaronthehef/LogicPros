@@ -42,7 +42,7 @@ export const LandscapingPage = () => {
               </div>
               <div className="challenge-item">
                 <h3>💰 Premium Service Positioning</h3>
-                <p>Quality landscaping commands premium prices, but customers often shop based on price alone. Your website must demonstrate value and artistry to justify higher rates.</p>
+                <p>Quality landscaping commands premium rates, but customers often shop based on cost alone. Your website must demonstrate value and artistry to justify higher service levels.</p>
               </div>
               <div className="challenge-item">
                 <h3>🏠 Diverse Client Education</h3>
@@ -156,11 +156,10 @@ export const LandscapingPage = () => {
 
         <section className="section">
           <div className="container">
-            <h2>Landscaping Website Packages</h2>
-            <div className="pricing-grid">
-              <div className="pricing-card">
-                <h3>Garden Starter</h3>
-                <div className="price">$2,900</div>
+            <h2>Landscaping Website Solutions</h2>
+            <div className="solutions-grid">
+              <div className="solution-card">
+                <h3>Garden Starter Sites</h3>
                 <ul>
                   <li>8-page visual-focused site</li>
                   <li>Photo gallery showcase</li>
@@ -169,11 +168,10 @@ export const LandscapingPage = () => {
                   <li>Contact & estimate forms</li>
                   <li>Mobile-optimized design</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
               </div>
-              <div className="pricing-card featured">
-                <h3>Landscape Professional</h3>
-                <div className="price">$5,400</div>
+              <div className="solution-card featured">
+                <h3>Landscape Professional Sites</h3>
                 <ul>
                   <li>15-page comprehensive site</li>
                   <li>Extensive before/after galleries</li>
@@ -183,11 +181,10 @@ export const LandscapingPage = () => {
                   <li>Maintenance program pages</li>
                   <li>Local SEO optimization</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Most Popular</a>
+                <a href="/contact" className="btn btn-primary">Schedule Consultation</a>
               </div>
-              <div className="pricing-card">
-                <h3>Landscape Artist</h3>
-                <div className="price">$8,800</div>
+              <div className="solution-card">
+                <h3>Landscape Artist Sites</h3>
                 <ul>
                   <li>Unlimited pages & galleries</li>
                   <li>Custom design tools</li>
@@ -197,7 +194,7 @@ export const LandscapingPage = () => {
                   <li>Comprehensive analytics</li>
                   <li>Monthly content updates</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Dominate Your Market</a>
+                <a href="/contact" className="btn btn-primary">Explore Possibilities</a>
               </div>
             </div>
           </div>
