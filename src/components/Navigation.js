@@ -138,7 +138,8 @@ export const Navigation = () => {
         <a href="/about" className="nav-link">About</a>
         <a href="/contact" className="nav-link">Contact</a>
       </div>
-      <a href="/contact" className="btn btn-primary">Request Quote</a>
+      <a href="/free-example" className="btn btn-primary btn-highlighted">Get Free Example</a>
+      <a href="/contact" className="btn btn-secondary">Request Quote</a>
       <button className="mobile-menu-toggle">☰</button>
     </nav>
   );

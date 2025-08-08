@@ -27,14 +27,93 @@ export const ResponsiveLandingPage = () => {
             <img src={heroImage} alt="Professional team working on digital solutions" />
             <div className="hero-overlay">
               <div className="hero-content">
-                <h1 className="typewriter-text">Websites & Business Automation That Get Results</h1>
+                <h1 className="typewriter-text">See Your New Website Before You Buy</h1>
                 <p>
-                  Based in New Brunswick, serving contractors and small businesses across Canada and the U.S. 
-                  Get more leads with WordPress or React websites, plus AI-powered automations that 
-                  handle Google reviews, social media, and scheduling while you focus on what you do best.
+                  Get a FREE custom website example built specifically for your business. 
+                  See exactly how your website will look with no commitment required. 
+                  Delivered within 48 hours - completely free, no obligation.
                 </p>
-                <a href="/contact" className="btn btn-primary">Start Your Project</a>
+                <a href="/free-example" className="btn btn-primary">Get My Free Website Example</a>
+                <a href="/contact" className="btn btn-secondary" style={{ marginLeft: '1rem' }}>Ask Questions First</a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Free Example Visual Section */}
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">See The Difference a Professional Website Makes</h2>
+              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
+                Here's how your business website transforms from basic to professional - 
+                and why customers choose businesses with better websites.
+              </p>
+            </div>
+            <div className="before-after-comparison">
+              <div className="comparison-item">
+                <div className="before-section">
+                  <h3>❌ Before: What Most Businesses Have</h3>
+                  <div className="website-mockup before">
+                    <div className="mockup-header">Basic Website</div>
+                    <div className="mockup-content">
+                      <div className="mock-text short"></div>
+                      <div className="mock-text medium"></div>
+                      <div className="mock-button basic">Call Us</div>
+                      <div className="mock-list">
+                        <div className="list-item">• Service 1</div>
+                        <div className="list-item">• Service 2</div>
+                        <div className="list-item">• Service 3</div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul className="comparison-list">
+                    <li>Hard to find on Google</li>
+                    <li>Looks outdated on phones</li>
+                    <li>No clear call-to-action</li>
+                    <li>Generic, forgettable content</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="comparison-arrow">
+                <div className="arrow-circle">→</div>
+                <span className="transform-text">Your FREE Example</span>
+              </div>
+              
+              <div className="comparison-item">
+                <div className="after-section">
+                  <h3>✅ After: What We Build For You</h3>
+                  <div className="website-mockup after">
+                    <div className="mockup-header professional">Professional Website</div>
+                    <div className="mockup-content">
+                      <div className="mock-hero">Your Business Name</div>
+                      <div className="mock-text pro"></div>
+                      <div className="mock-buttons">
+                        <div className="mock-button primary">Get Free Quote</div>
+                        <div className="mock-button secondary">Call Now</div>
+                      </div>
+                      <div className="mock-features">
+                        <div className="feature-item">⭐ 5-Star Reviews</div>
+                        <div className="feature-item">🏆 Licensed & Insured</div>
+                        <div className="feature-item">📱 Mobile-Friendly</div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul className="comparison-list">
+                    <li>Shows up first in local searches</li>
+                    <li>Works perfectly on all devices</li>
+                    <li>Clear path for customers to contact you</li>
+                    <li>Professional, trustworthy appearance</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div className="cta-section-inline">
+              <h3>Want to see YOUR website before you buy it?</h3>
+              <p>We'll create a custom example specifically for your business - delivered in 48 hours, completely free.</p>
+              <a href="/free-example" className="btn btn-primary btn-large">Get My Free Website Example</a>
             </div>
           </div>
         </section>

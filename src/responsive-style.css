@@ -128,6 +128,273 @@ body {
   transform: translateY(-2px);
 }
 
+.btn-highlighted {
+  background: linear-gradient(45deg, #ff6b35, #f7931e);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  animation: pulse-glow 2s infinite;
+}
+
+.btn-highlighted:hover {
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  transform: translateY(-3px);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3); 
+  }
+  50% { 
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.5); 
+  }
+}
+
+/* Before/After Comparison Section */
+.before-after-comparison {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.comparison-item {
+  text-align: center;
+}
+
+.comparison-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrow-circle {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #ff6b35, #f7931e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  animation: pulse-transform 2s infinite;
+}
+
+.transform-text {
+  font-weight: 600;
+  color: #ff6b35;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@keyframes pulse-transform {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  }
+  50% { 
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  }
+}
+
+.website-mockup {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  max-width: 300px;
+  margin: 1rem auto;
+  border: 1px solid #eee;
+}
+
+.website-mockup.before {
+  filter: grayscale(20%) opacity(0.9);
+}
+
+.website-mockup.after {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%);
+  border: 2px solid #e8f5e8;
+}
+
+.mockup-header {
+  background: #ddd;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.mockup-header.professional {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.mock-hero {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.mock-text {
+  height: 12px;
+  background: #ddd;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.mock-text.short {
+  width: 60%;
+}
+
+.mock-text.medium {
+  width: 80%;
+}
+
+.mock-text.pro {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  width: 90%;
+  height: 16px;
+}
+
+.mock-button {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  margin: 0.5rem 0.25rem;
+  text-align: center;
+}
+
+.mock-button.basic {
+  background: #ccc;
+  color: #666;
+}
+
+.mock-button.primary {
+  background: #ff6b35;
+  color: white;
+}
+
+.mock-button.secondary {
+  border: 2px solid #ff6b35;
+  color: #ff6b35;
+  background: white;
+}
+
+.mock-buttons {
+  margin: 0.5rem 0;
+}
+
+.mock-list {
+  text-align: left;
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.list-item {
+  margin-bottom: 0.25rem;
+  color: #666;
+}
+
+.mock-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.feature-item {
+  font-size: 0.65rem;
+  color: #4CAF50;
+  font-weight: 500;
+}
+
+.comparison-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 280px;
+  margin: 1rem auto;
+}
+
+.comparison-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.comparison-list li:last-child {
+  border-bottom: none;
+}
+
+.before-section h3 {
+  color: #e74c3c;
+  margin-bottom: 1rem;
+}
+
+.after-section h3 {
+  color: #27ae60;
+  margin-bottom: 1rem;
+}
+
+.cta-section-inline {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 3rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.cta-section-inline h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.cta-section-inline p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Mobile responsive design for comparison */
+@media (max-width: 768px) {
+  .before-after-comparison {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .comparison-arrow {
+    transform: rotate(90deg);
+  }
+  
+  .transform-text {
+    transform: rotate(-90deg);
+    white-space: nowrap;
+  }
+  
+  .website-mockup {
+    max-width: 280px;
+  }
+  
+  .cta-section-inline {
+    padding: 1.5rem;
+  }
+  
+  .cta-section-inline h3 {
+    font-size: 1.3rem;
+  }
+}
+
 .btn-secondary {
   background-color: var(--secondary-color);
   color: var(--text-primary);

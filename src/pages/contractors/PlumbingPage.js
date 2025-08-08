@@ -22,11 +22,13 @@ export const PlumbingPage = () => {
             <img src={heroImage} alt="Professional plumber at work" />
             <div className="hero-overlay">
               <div className="hero-content">
-                <h1 className="typewriter-text">Websites That Get Plumbers More Jobs</h1>
+                <h1 className="typewriter-text">See Your Plumbing Website Before You Buy</h1>
                 <p>
-                  Show up first when people search for plumbers. Get more emergency calls and bigger jobs with a website that works.
+                  Get a FREE custom website example built for your plumbing business. 
+                  See exactly how it will look - delivered in 48 hours, no commitment required.
                 </p>
-                <a href="/contact" className="btn btn-primary">Get My Website</a>
+                <a href="/free-example" className="btn btn-primary">Get My Free Website Example</a>
+                <a href="/contact" className="btn btn-secondary" style={{ marginLeft: '1rem' }}>Ask Questions First</a>
               </div>
             </div>
           </div>
@@ -196,11 +198,11 @@ export const PlumbingPage = () => {
               </p>
             </div>
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
-                Get Started
+              <a href="/free-example" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+                Get My Free Example
               </a>
-              <a href="/free-example" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>
-                See an Example
+              <a href="/contact" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>
+                Ask Questions First
               </a>
             </div>
           </div>
