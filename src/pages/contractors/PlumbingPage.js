@@ -17,21 +17,24 @@ export const PlumbingPage = () => {
 
       <main className="main-content">
         <section className="hero-section">
-          <div className="container">
-            <div className="hero-content">
-              <h1 className="hero-title">Get More Emergency Plumbing Calls with a Professional Website</h1>
-              <p className="hero-subtitle">
-                Stop losing customers to competitors. Get a website that shows up first for "emergency plumber near me" 
-                and converts visitors into paying customers - even at 2 AM.
-              </p>
-              <a href="/contact" className="btn btn-primary btn-large">Get More Plumbing Leads Now</a>
+          <div className="hero-image">
+            <div className="hero-overlay">
+              <div className="hero-content">
+                <h1 className="typewriter-text">Websites That Get Plumbers More Jobs</h1>
+                <p>
+                  Show up first when people search for plumbers. Get more emergency calls and bigger jobs with a website that works.
+                </p>
+                <a href="/contact" className="btn btn-primary">Get My Website</a>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="section">
           <div className="container">
-            <h2>Why Plumbers Are Losing Customers Online</h2>
+            <div className="section-header">
+              <h2 className="section-title">Why Your Phone Isn't Ringing</h2>
+            </div>
             <div className="challenges-grid">
               <div className="challenge-item">
                 <h3>🚨 Can't Be Found During Emergencies</h3>
@@ -49,21 +52,23 @@ export const PlumbingPage = () => {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2>How We Make Your Phone Ring More</h2>
+            <div className="section-header">
+              <h2 className="section-title">How We Get You More Jobs</h2>
+            </div>
             <div className="solutions-grid">
               <div className="solution-item">
-                <h3>🎯 Show Up First for "Emergency Plumber"</h3>
-                <p>We optimize your site to dominate local emergency searches. When someone's toilet overflows at midnight, they find YOU first.</p>
+                <h3>🎯 Show Up First in Google</h3>
+                <p>When people search for a plumber, your business comes up first. More searches mean more jobs.</p>
               </div>
               <div className="solution-item">
-                <h3>⚡ Lightning-Fast Mobile Experience</h3>
-                <p>One-tap calling, instant quotes, and emergency buttons that work perfectly on every phone. No more lost mobile customers.</p>
+                <h3>⚡ Easy to Use on Phones</h3>
+                <p>Big call buttons that work. People can reach you fast when they need a plumber.</p>
               </div>
               <div className="solution-item">
-                <h3>🏆 Justify Your Premium Pricing</h3>
-                <p>Showcase your licenses, insurance, guarantees, and 5-star reviews. Customers choose quality over cheap when they understand the difference.</p>
+                <h3>🏆 Show Why You're Worth More</h3>
+                <p>Display your licenses, insurance, and good reviews. Customers will pay fair prices for good work.</p>
               </div>
             </div>
           </div>
@@ -71,7 +76,9 @@ export const PlumbingPage = () => {
 
         <section className="section">
           <div className="container">
-            <h2>Services That Make You Money</h2>
+            <div className="section-header">
+              <h2 className="section-title">Services That Make You Money</h2>
+            </div>
             <div className="services-grid">
               <div className="service-category">
                 <h3>🚨 Emergency Services</h3>
@@ -107,9 +114,11 @@ export const PlumbingPage = () => {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2>Get Your Plumbing Website That Actually Works</h2>
+            <div className="section-header">
+              <h2 className="section-title">Get Your Website That Actually Works</h2>
+            </div>
             <div className="solutions-grid">
               <div className="solution-card">
                 <h3>Emergency-First Website</h3>
@@ -122,7 +131,7 @@ export const PlumbingPage = () => {
                 </div>
                 <a href="/contact" className="btn btn-primary">Get Started</a>
               </div>
-              <div className="solution-card featured">
+              <div className="solution-card">
                 <h3>Lead Magnet Website</h3>
                 <p className="solution-price">For growing plumbing businesses</p>
                 <div className="solution-features">
@@ -132,7 +141,7 @@ export const PlumbingPage = () => {
                   <div className="feature">✅ Online booking system</div>
                   <div className="feature">✅ Google Ads optimization</div>
                 </div>
-                <a href="/contact" className="btn btn-primary">Dominate Your Market</a>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
               </div>
               <div className="solution-card">
                 <h3>Custom Plumbing Portal</h3>
@@ -144,7 +153,7 @@ export const PlumbingPage = () => {
                   <div className="feature">✅ Advanced analytics dashboard</div>
                   <div className="feature">✅ Monthly optimization & content</div>
                 </div>
-                <a href="/contact" className="btn btn-primary">Scale Your Business</a>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
               </div>
             </div>
           </div>
@@ -152,7 +161,9 @@ export const PlumbingPage = () => {
 
         <section className="section">
           <div className="container">
-            <h2>Questions Plumbers Ask Us</h2>
+            <div className="section-header">
+              <h2 className="section-title">Common Questions</h2>
+            </div>
             <div className="faq-grid">
               <div className="faq-item">
                 <h3>Will I actually show up first for "emergency plumber near me"?</h3>
@@ -174,15 +185,21 @@ export const PlumbingPage = () => {
           </div>
         </section>
 
-        <section className="section cta-section">
+        <section className="section" style={{ backgroundColor: '#000', color: 'white' }}>
           <div className="container">
-            <div className="cta-content">
-              <h2>Stop Losing Emergency Calls to Competitors</h2>
-              <p>Every day without a professional website, you're losing $500+ emergency calls to plumbers who show up first in Google. Get your website that makes your phone ring.</p>
-              <div className="cta-buttons">
-                <a href="/contact" className="btn btn-primary btn-large">Get My Plumbing Website Now</a>
-                <a href="/free-example" className="btn btn-outline btn-large">See a Plumbing Website Example</a>
-              </div>
+            <div className="section-header">
+              <h2 className="section-title" style={{ color: 'white' }}>Ready to Get More Jobs?</h2>
+              <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
+                Get a website that brings you more customers. Simple as that.
+              </p>
+            </div>
+            <div className="cta-buttons">
+              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+                Get Started
+              </a>
+              <a href="/free-example" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>
+                See an Example
+              </a>
             </div>
           </div>
         </section>
