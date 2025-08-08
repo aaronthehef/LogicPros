@@ -2,6 +2,7 @@ import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
+import { Footer } from '../../components/Footer';
 import heroImage from '../../assets/hero-growtika.jpg';
 
 export const LandscapingPage = () => {
@@ -207,39 +208,7 @@ export const LandscapingPage = () => {
         </section>
       </main>
 
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-brand">
-              <h3>LogicPros</h3>
-              <p>Websites that make landscapers money</p>
-            </div>
-            <div className="footer-links">
-              <div className="footer-column">
-                <h4>Contractor Websites</h4>
-                <a href="/contractors/landscaping">Landscaping Websites</a>
-                <a href="/contractors/construction">Construction Websites</a>
-                <a href="/contractors/plumbing">Plumbing Websites</a>
-                <a href="/contractors/hvac">HVAC Websites</a>
-              </div>
-              <div className="footer-column">
-                <h4>Company</h4>
-                <a href="/about">About</a>
-                <a href="/contact">Contact</a>
-                <a href="/free-example">Free Example</a>
-              </div>
-              <div className="footer-column">
-                <h4>Get Started</h4>
-                <p>aaron@logicpros.ca</p>
-                <p>(506) 478-2949</p>
-              </div>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <p>&copy; 2024 LogicPros. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
