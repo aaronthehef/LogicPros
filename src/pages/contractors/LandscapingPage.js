@@ -207,7 +207,7 @@ export const LandscapingPage = () => {
               <p>Join 45+ landscaping contractors who've flourished with LogicPros websites. Design projects, installations, and maintenance contracts - blooming year-round.</p>
               <div className="cta-buttons">
                 <a href="/free-example" className="btn btn-primary btn-large">See My Free Landscaping Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Get My Custom Quote</a>
+                <a href="/contact" className="btn btn-outline btn-large">Schedule Free Consultation</a>
               </div>
             </div>
           </div>

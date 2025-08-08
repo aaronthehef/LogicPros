@@ -157,10 +157,9 @@ export const PaintingPage = () => {
         <section className="section">
           <div className="container">
             <h2>Painting Website Solutions</h2>
-            <div className="pricing-grid">
-              <div className="pricing-card">
+            <div className="solutions-grid">
+              <div className="solution-card">
                 <h3>Color Starter</h3>
-                <div className="price">$2,600</div>
                 <ul>
                   <li>8-page visual-focused site</li>
                   <li>Before/after photo gallery</li>
@@ -169,11 +168,10 @@ export const PaintingPage = () => {
                   <li>Contact & estimate forms</li>
                   <li>Mobile-optimized design</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
               </div>
-              <div className="pricing-card featured">
+              <div className="solution-card featured">
                 <h3>Professional Painter</h3>
-                <div className="price">$4,800</div>
                 <ul>
                   <li>15-page comprehensive site</li>
                   <li>Extensive project galleries</li>
@@ -183,11 +181,10 @@ export const PaintingPage = () => {
                   <li>Local SEO optimization</li>
                   <li>Review management</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Most Popular</a>
+                <a href="/contact" className="btn btn-primary">Schedule Consultation</a>
               </div>
-              <div className="pricing-card">
+              <div className="solution-card">
                 <h3>Paint Master</h3>
-                <div className="price">$7,900</div>
                 <ul>
                   <li>Unlimited pages & galleries</li>
                   <li>Custom color visualization tools</li>
@@ -197,7 +194,7 @@ export const PaintingPage = () => {
                   <li>Comprehensive analytics</li>
                   <li>Monthly content updates</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Dominate Your Market</a>
+                <a href="/contact" className="btn btn-primary">Explore Possibilities</a>
               </div>
             </div>
           </div>
@@ -213,7 +210,7 @@ export const PaintingPage = () => {
               </div>
               <div className="faq-item">
                 <h3>Can you help me compete against cheap, unlicensed painters?</h3>
-                <p>Absolutely! We emphasize your licensing, insurance, quality materials, proper preparation, and warranties. This positions you as the professional choice and justifies premium pricing over weekend painters.</p>
+                <p>Absolutely! We emphasize your licensing, insurance, quality materials, proper preparation, and warranties. This positions you as the professional choice and demonstrates your value over weekend painters.</p>
               </div>
               <div className="faq-item">
                 <h3>How do you handle seasonal fluctuations in painting demand?</h3>
@@ -225,7 +222,7 @@ export const PaintingPage = () => {
               </div>
               <div className="faq-item">
                 <h3>How do you help customers understand paint quality differences?</h3>
-                <p>We create educational content explaining paint grades, surface preparation importance, application techniques, and long-term value. This helps customers understand why professional painting costs more.</p>
+                <p>We create educational content explaining paint grades, surface preparation importance, application techniques, and long-term value. This helps customers understand the investment in professional painting services.</p>
               </div>
               <div className="faq-item">
                 <h3>Can you integrate color consultation and design services?</h3>
@@ -242,7 +239,7 @@ export const PaintingPage = () => {
               <p>Join 50+ painting contractors who've transformed their business with LogicPros websites. Residential makeovers, commercial projects, and specialty finishes - all flowing to your business.</p>
               <div className="cta-buttons">
                 <a href="/free-example" className="btn btn-primary btn-large">See My Free Painting Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Get My Custom Quote</a>
+                <a href="/contact" className="btn btn-outline btn-large">Schedule Free Consultation</a>
               </div>
             </div>
           </div>

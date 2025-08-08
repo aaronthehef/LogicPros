@@ -157,10 +157,9 @@ export const RemodelingPage = () => {
         <section className="section">
           <div className="container">
             <h2>Remodeling Website Solutions</h2>
-            <div className="pricing-grid">
-              <div className="pricing-card">
+            <div className="solutions-grid">
+              <div className="solution-card">
                 <h3>Renovation Starter</h3>
-                <div className="price">$4,500</div>
                 <ul>
                   <li>12-page transformation-focused site</li>
                   <li>Before/after photo galleries</li>
@@ -169,11 +168,10 @@ export const RemodelingPage = () => {
                   <li>Consultation request forms</li>
                   <li>Mobile-optimized design</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
               </div>
-              <div className="pricing-card featured">
+              <div className="solution-card featured">
                 <h3>Remodeling Professional</h3>
-                <div className="price">$7,800</div>
                 <ul>
                   <li>20-page comprehensive site</li>
                   <li>Extensive project galleries</li>
@@ -183,11 +181,10 @@ export const RemodelingPage = () => {
                   <li>Portfolio case studies</li>
                   <li>Advanced local SEO</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Most Popular</a>
+                <a href="/contact" className="btn btn-primary">Schedule Consultation</a>
               </div>
-              <div className="pricing-card">
+              <div className="solution-card">
                 <h3>Design-Build Master</h3>
-                <div className="price">$12,500</div>
                 <ul>
                   <li>Unlimited pages & features</li>
                   <li>Custom design visualization tools</li>
@@ -197,7 +194,7 @@ export const RemodelingPage = () => {
                   <li>Comprehensive analytics</li>
                   <li>Monthly content marketing</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Dominate Your Market</a>
+                <a href="/contact" className="btn btn-primary">Explore Possibilities</a>
               </div>
             </div>
           </div>
@@ -212,8 +209,8 @@ export const RemodelingPage = () => {
                 <p>We create stunning before/after galleries, detailed transformation stories, and showcase your design process. This helps customers envision their space transformed and builds confidence in your capabilities.</p>
               </div>
               <div className="faq-item">
-                <h3>Can you help justify premium remodeling pricing?</h3>
-                <p>Absolutely! We emphasize your design expertise, quality materials, project management skills, and attention to detail. This positions you as a design-build professional, not just a contractor.</p>
+                <h3>How do you help position me as a premium remodeling professional?</h3>
+                <p>We emphasize your design expertise, quality materials, project management skills, and attention to detail. This positions you as a design-build professional, not just a contractor.</p>
               </div>
               <div className="faq-item">
                 <h3>How do you address customer concerns about remodeling disruption?</h3>
@@ -221,7 +218,7 @@ export const RemodelingPage = () => {
               </div>
               <div className="faq-item">
                 <h3>Do you showcase different remodeling specialties effectively?</h3>
-                <p>Yes! We create dedicated sections for kitchen, bathroom, whole home, and specialty remodeling, with specific galleries, processes, and pricing information for each service type.</p>
+                <p>Yes! We create dedicated sections for kitchen, bathroom, whole home, and specialty remodeling, with specific galleries, processes, and consultation information for each service type.</p>
               </div>
               <div className="faq-item">
                 <h3>How do you help build trust for major home investments?</h3>
@@ -242,7 +239,7 @@ export const RemodelingPage = () => {
               <p>Join 55+ remodeling contractors who've transformed their revenue with LogicPros websites. Kitchen renovations, bathroom makeovers, and whole home transformations - all flowing to your business.</p>
               <div className="cta-buttons">
                 <a href="/free-example" className="btn btn-primary btn-large">See My Free Remodeling Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Get My Custom Quote</a>
+                <a href="/contact" className="btn btn-outline btn-large">Schedule Free Consultation</a>
               </div>
             </div>
           </div>
