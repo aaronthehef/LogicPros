@@ -27,7 +27,7 @@ export const AutomationsPage = () => {
                 Full backend setup with ongoing monitoring using the powerful n8n automation platform. 
                 Save hours each week with intelligent business automation.
               </p>
-              <a href="/contact" className="btn btn-primary">Request Your Quote</a>
+              <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
             </div>
           </div>
         </section>
@@ -143,14 +143,14 @@ export const AutomationsPage = () => {
                 <h3>🔧 No Vendor Lock-In</h3>
                 <p>Unlike Zapier or other proprietary platforms, n8n is open-source and self-hosted. You own your automations completely.</p>
                 
-                <h3>💰 Cost-Effective</h3>
-                <p>No per-automation fees or usage limits. Once set up, your automations run without ongoing subscription costs.</p>
+                <h3>💰 Value-Driven</h3>
+                <p>No per-automation fees or usage limits. Once set up, your automations run reliably without ongoing subscription fees.</p>
                 
                 <h3>🔒 Data Security</h3>
                 <p>All data stays on your servers or our secure infrastructure. No third-party services handling your sensitive business data.</p>
                 
                 <h3>🚀 Unlimited Scalability</h3>
-                <p>Add as many automations as you need without worrying about hitting limits or increased costs.</p>
+                <p>Add as many automations as you need without worrying about hitting limits or restrictions.</p>
                 
                 <h3>🔗 Powerful Integrations</h3>
                 <p>Connect to virtually any service or application, including custom integrations specific to your business needs.</p>
@@ -285,7 +285,7 @@ export const AutomationsPage = () => {
                 </div>
                 <div className="roi-total">
                   <h4>Total Weekly Savings: 14-22 hours</h4>
-                  <p>That's equivalent to hiring a part-time employee, but without the ongoing costs!</p>
+                  <p>That's equivalent to hiring a part-time employee, but completely automated!</p>
                 </div>
               </div>
             </div>
@@ -323,8 +323,8 @@ export const AutomationsPage = () => {
               </div>
               
               <div className="faq-item">
-                <h3>What's the ongoing cost?</h3>
-                <p>Much lower than traditional automation platforms! Contact us for a detailed quote based on your specific automation needs.</p>
+                <h3>How do I get started?</h3>
+                <p>Contact us for a free consultation where we'll assess your current processes and recommend the best automation solutions for your business.</p>
               </div>
             </div>
           </div>

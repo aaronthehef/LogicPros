@@ -27,7 +27,7 @@ export const ITServicesPage = () => {
                 Based in New Brunswick, serving businesses across Canada and the U.S. 
                 Focus on growing your business while we handle the technology.
               </p>
-              <a href="/contact" className="btn btn-primary">Request Your Quote</a>
+              <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
             </div>
           </div>
         </section>

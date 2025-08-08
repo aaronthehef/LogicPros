@@ -138,7 +138,7 @@ export const ServicesPage = () => {
               <div className="features-grid">
                 <div className="feature-item">
                   <h3>🌐 WordPress or React</h3>
-                  <p>Choose the platform that fits your needs and budget. All options include mobile-responsive design and SEO optimization.</p>
+                  <p>Choose the platform that fits your needs and goals. All options include mobile-responsive design and SEO optimization.</p>
                 </div>
                 <div className="feature-item">
                   <h3>🤖 AI-Powered Copywriting</h3>
@@ -146,7 +146,7 @@ export const ServicesPage = () => {
                 </div>
                 <div className="feature-item">
                   <h3>📋 Lead Capture Forms</h3>
-                  <p>Custom contact and quote request forms that gather the information you need to qualify prospects effectively.</p>
+                  <p>Custom contact and inquiry forms that gather the information you need to qualify prospects effectively.</p>
                 </div>
                 <div className="feature-item">
                   <h3>📍 Local SEO Focus</h3>
@@ -163,18 +163,18 @@ export const ServicesPage = () => {
               </div>
 
               <div className="pricing-highlight">
-                <h3>Website Package</h3>
+                <h3>Website Solutions</h3>
                 <ul>
                   <li>WordPress or React Website</li>
                   <li>AI-Powered Content Writing</li>
                   <li>Mobile-Responsive Design</li>
                   <li>Local SEO Optimization</li>
-                  <li>Contact & Quote Forms</li>
+                  <li>Contact & Inquiry Forms</li>
                   <li>2-4 Week Delivery</li>
                   <li>Training & Support</li>
                 </ul>
-                <p className="price">Get Your Custom Quote</p>
-                <a href="/contact" className="btn btn-primary">Get Quote</a>
+                <p className="price">Ready to Get Started?</p>
+                <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
               </div>
             </div>
           </div>
@@ -218,7 +218,7 @@ export const ServicesPage = () => {
               </div>
 
               <div className="pricing-highlight">
-                <h3>AI Automation Package</h3>
+                <h3>AI Automation Solutions</h3>
                 <ul>
                   <li>Google Review Request System</li>
                   <li>Social Media Auto-Posting</li>
@@ -228,8 +228,8 @@ export const ServicesPage = () => {
                   <li>Ongoing Monitoring & Support</li>
                   <li>n8n Platform Access</li>
                 </ul>
-                <p className="price">Get Your Custom Quote</p>
-                <a href="/contact" className="btn btn-primary">Get Quote</a>
+                <p className="price">Interested in Automation?</p>
+                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
               </div>
             </div>
           </div>
@@ -273,7 +273,7 @@ export const ServicesPage = () => {
               </div>
 
               <div className="pricing-highlight">
-                <h3>Managed IT Services Package</h3>
+                <h3>Managed IT Solutions</h3>
                 <ul>
                   <li>Software Updates & Patches</li>
                   <li>Cybersecurity Monitoring</li>
@@ -283,8 +283,8 @@ export const ServicesPage = () => {
                   <li>Proactive Issue Resolution</li>
                   <li>24/7 System Monitoring</li>
                 </ul>
-                <p className="price">Get Your Custom Quote</p>
-                <a href="/contact" className="btn btn-primary">Get Quote</a>
+                <p className="price">Need IT Support?</p>
+                <a href="/contact" className="btn btn-primary">Let's Talk Solutions</a>
               </div>
             </div>
           </div>

@@ -29,7 +29,7 @@ export const WebsitesPage = () => {
                 AI-powered copywriting, mobile-responsive design, and 2-4 week turnaround. 
                 Perfect for trades and service businesses across New Brunswick, Canada, and the U.S.
               </p>
-              <a href="/contact" className="btn btn-primary">Request Your Quote</a>
+              <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
             </div>
           </div>
         </section>
@@ -39,7 +39,7 @@ export const WebsitesPage = () => {
           <div className="container">
             <h2 className="section-title">Choose Your Perfect Platform</h2>
             <p className="service-intro">
-              We recommend the best platform based on your needs, budget, and technical comfort level. 
+              We recommend the best platform based on your needs, goals, and technical comfort level. 
               All options include mobile-responsive design, SEO optimization, and lead capture features.
             </p>
             
@@ -52,7 +52,7 @@ export const WebsitesPage = () => {
                   <li>Easy content updates</li>
                   <li>Thousands of plugins available</li>
                   <li>Great for SEO</li>
-                  <li>Cost-effective hosting</li>
+                  <li>Flexible hosting options</li>
                   <li>Perfect for contractors</li>
                 </ul>
                 <p><strong>Best for:</strong> Contractors who want full control and easy updates</p>
@@ -99,7 +99,7 @@ export const WebsitesPage = () => {
               
               <div className="feature-item">
                 <h3>📋 Lead Capture Forms</h3>
-                <p>Custom contact and quote request forms that gather the information you need to qualify prospects effectively.</p>
+                <p>Custom contact and inquiry forms that gather the information you need to qualify prospects effectively.</p>
               </div>
               
               <div className="feature-item">
@@ -230,7 +230,7 @@ export const WebsitesPage = () => {
               
               <div className="faq-item">
                 <h3>What if I need changes after launch?</h3>
-                <p>Minor updates are included for the first month. After that, we offer maintenance packages or train your team to make updates independently.</p>
+                <p>Minor updates are included for the first month. After that, we offer ongoing support or train your team to make updates independently.</p>
               </div>
               
               <div className="faq-item">
@@ -239,8 +239,8 @@ export const WebsitesPage = () => {
               </div>
               
               <div className="faq-item">
-                <h3>How much does a website cost?</h3>
-                <p>Pricing varies based on platform, features, and complexity. Contact us for a personalized quote based on your specific needs and goals.</p>
+                <h3>How do I get started?</h3>
+                <p>Contact us for a free consultation where we'll discuss your needs, goals, and the best approach for your business. We'll create a custom plan tailored to your specific situation.</p>
               </div>
             </div>
           </div>
@@ -257,7 +257,7 @@ export const WebsitesPage = () => {
             </div>
             <div className="cta-buttons">
               <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
-                Request Your Quote
+                Schedule Free Consultation
               </a>
               <a href="/free-example" className="btn btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
                 See a Free Example

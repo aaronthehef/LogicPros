@@ -12,7 +12,6 @@ export const ContactPage = () => {
     trade: '',
     projectType: '',
     timeline: '',
-    budget: '',
     message: '',
     hearAbout: ''
   });
@@ -48,7 +47,7 @@ export const ContactPage = () => {
         setSubmitStatus('success');
         setFormData({
           name: '', email: '', phone: '', company: '', trade: '',
-          projectType: '', timeline: '', budget: '', message: '', hearAbout: ''
+          projectType: '', timeline: '', message: '', hearAbout: ''
         });
       } else {
         setSubmitStatus('error');
@@ -82,7 +81,7 @@ export const ContactPage = () => {
               <h1 className="hero-title">Let's Build Your Perfect Website</h1>
               <p className="hero-subtitle">
                 Ready to attract more customers and grow your contracting business? 
-                Get your free consultation and project quote today.
+                Get your free consultation today.
               </p>
             </div>
           </div>
@@ -228,40 +227,24 @@ export const ContactPage = () => {
                       </select>
                     </div>
                     <div className="form-group">
-                      <label htmlFor="budget">Budget Range</label>
+                      <label htmlFor="hearAbout">How did you hear about us?</label>
                       <select
-                        id="budget"
-                        name="budget"
-                        value={formData.budget}
+                        id="hearAbout"
+                        name="hearAbout"
+                        value={formData.hearAbout}
                         onChange={handleChange}
                       >
-                        <option value="">Select budget range</option>
-                        <option value="under-2500">Under $2,500</option>
-                        <option value="2500-5000">$2,500 - $5,000</option>
-                        <option value="5000-10000">$5,000 - $10,000</option>
-                        <option value="10000-plus">$10,000+</option>
-                        <option value="discuss">Let's Discuss</option>
+                        <option value="">Select source</option>
+                        <option value="google">Google Search</option>
+                        <option value="referral">Referral from Friend/Client</option>
+                        <option value="social-media">Social Media</option>
+                        <option value="industry-event">Industry Event</option>
+                        <option value="existing-client">I'm an Existing Client</option>
+                        <option value="other">Other</option>
                       </select>
                     </div>
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="hearAbout">How did you hear about us?</label>
-                    <select
-                      id="hearAbout"
-                      name="hearAbout"
-                      value={formData.hearAbout}
-                      onChange={handleChange}
-                    >
-                      <option value="">Select source</option>
-                      <option value="google">Google Search</option>
-                      <option value="referral">Referral from Friend/Client</option>
-                      <option value="social-media">Social Media</option>
-                      <option value="industry-event">Industry Event</option>
-                      <option value="existing-client">I'm an Existing Client</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
 
                   <div className="form-group">
                     <label htmlFor="message">Project Details</label>
@@ -313,7 +296,7 @@ export const ContactPage = () => {
 
                 <div className="contact-cta">
                   <h4>🎯 Need It Done Fast?</h4>
-                  <p>Call our office directly for rush projects and immediate quotes.</p>
+                  <p>Call our office directly for rush projects and immediate consultations.</p>
                   <a href="tel:+15064782949" className="btn btn-outline">Call Our Team</a>
                 </div>
               </div>
@@ -327,23 +310,23 @@ export const ContactPage = () => {
             <h2>Frequently Asked Questions</h2>
             <div className="faq-grid">
               <div className="faq-item">
-                <h3>How much does a website cost?</h3>
-                <p>Professional contractor websites start at $2,500. We offer packages from basic business sites to advanced project management portals. Every quote is customized to your specific needs and budget.</p>
+                <h3>How do I get started?</h3>
+                <p>Contact us for a free consultation where we'll discuss your needs, goals, and create a custom solution tailored to your business. We'll walk you through the entire process step by step.</p>
               </div>
               
               <div className="faq-item">
                 <h3>How long does it take?</h3>
-                <p>Most websites are completed in 2-4 weeks. Rush jobs can be done in 5-7 days for an additional fee. We'll give you an exact timeline during your consultation.</p>
+                <p>Most websites are completed in 2-4 weeks. Rush jobs can be accommodated when needed. We'll give you an exact timeline during your consultation.</p>
               </div>
               
               <div className="faq-item">
                 <h3>Do you handle SEO?</h3>
-                <p>Yes! Every website includes basic SEO setup. We also offer advanced SEO packages to help you rank higher in local searches and attract more customers.</p>
+                <p>Yes! Every website includes basic SEO setup. We also offer advanced SEO services to help you rank higher in local searches and attract more customers.</p>
               </div>
               
               <div className="faq-item">
                 <h3>What's included in maintenance?</h3>
-                <p>Security updates, content changes, performance monitoring, and technical support. Plans start at $99/month and include hosting.</p>
+                <p>Security updates, content changes, performance monitoring, and technical support. Contact us to discuss ongoing maintenance options that fit your needs.</p>
               </div>
               
               <div className="faq-item">

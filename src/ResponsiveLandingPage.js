@@ -111,7 +111,7 @@ export const ResponsiveLandingPage = () => {
               </div>
             </div>
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary">Get Free Quote</a>
+              <a href="/contact" className="btn btn-primary">Get Free Consultation</a>
               <a href="/portfolio" className="btn btn-secondary">View Portfolio</a>
             </div>
           </div>
@@ -169,7 +169,7 @@ export const ResponsiveLandingPage = () => {
               </div>
               <div className="testimonial-card">
                 <p className="testimonial-quote">
-                  "The AI automations handle our social media posting and review requests perfectly. It's like having a marketing assistant that never takes a day off. Great value for the investment."
+                  "The AI automations handle our social media posting and review requests perfectly. It's like having a marketing assistant that never takes a day off. Excellent solution for our business."
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar"></div>
