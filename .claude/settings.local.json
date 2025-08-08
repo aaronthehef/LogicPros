@@ -49,7 +49,8 @@
       "WebFetch(domain:test-jzsaomuj6-aaronthehefs-projects.vercel.app)",
       "WebFetch(domain:test-e5v85cmyi-aaronthehefs-projects.vercel.app)",
       "Bash(npm install:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "WebFetch(domain:logicpros-contact-final.vercel.app)"
     ],
     "deny": []
   }
