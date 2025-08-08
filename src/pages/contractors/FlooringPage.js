@@ -2,79 +2,75 @@ import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
+import heroImage from '../../assets/hero-growtika.jpg';
 
 export const FlooringPage = () => {
   return (
     <div className="landing-page">
       <header className="sticky-header">
         <div className="header-content">
-          <div className="logo"><Logo /></div>
+          <div className="logo">
+            <Logo />
+          </div>
           <Navigation />
         </div>
       </header>
 
       <main className="main-content">
-        <section className="hero-section">
-          <div className="container">
-            <div className="hero-content">
-              <h1 className="hero-title">Professional Websites for Flooring Contractors</h1>
-              <p className="hero-subtitle">
-                Build your flooring business on solid ground with a website that showcases your 
-                craftsmanship, educates customers on material choices, and converts browsers into buyers. 
-                Specialized web development for flooring professionals who create beautiful foundations.
-              </p>
-              <a href="/contact" className="btn btn-primary btn-large">Get My Flooring Website</a>
+        <section className="hero-section homepage-hero">
+          <div className="hero-image">
+            <img src={heroImage} alt="Professional flooring installer at work" />
+            <div className="hero-overlay">
+              <div className="hero-content">
+                <h1 className="typewriter-text">Websites That Get Flooring Contractors More Jobs</h1>
+                <p>
+                  Get more hardwood installs and tile projects. Show customers you're the flooring contractor who creates beautiful, lasting floors.
+                </p>
+                <a href="/contact" className="btn btn-primary">Get My Website</a>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="section">
           <div className="container">
-            <h2>Challenges Every Flooring Business Owner Faces</h2>
+            <div className="section-header">
+              <h2 className="section-title">Why Your Phone Isn't Ringing</h2>
+            </div>
             <div className="challenges-grid">
               <div className="challenge-item">
-                <h3>📐 Complex Material Education</h3>
-                <p>Customers are overwhelmed by flooring options - hardwood, laminate, vinyl, tile, carpet. Your website must educate them on differences, benefits, and costs to guide informed decisions.</p>
+                <h3>🏠 Too Many Material Options</h3>
+                <p>Hardwood, laminate, vinyl, tile, carpet - customers get overwhelmed by choices. They need help understanding what works best for their space and budget.</p>
               </div>
               <div className="challenge-item">
-                <h3>💰 High-Value Purchase Hesitation</h3>
-                <p>Flooring is expensive ($3,000-$15,000+ projects) and long-lasting. Customers research extensively and get multiple quotes. Your website must build trust and demonstrate value.</p>
+                <h3>💰 Competing Against Big Box Stores</h3>
+                <p>Home stores sell cheap materials and installation. Customers don't understand why professional installation costs more until they see the difference.</p>
               </div>
               <div className="challenge-item">
-                <h3>🏠 Installation Complexity Concerns</h3>
-                <p>Customers worry about installation disruption, timeline, dust, and moving furniture. Your website needs to address these concerns and showcase your professional process.</p>
-              </div>
-              <div className="challenge-item">
-                <h3>🎨 Visual Showroom Limitations</h3>
-                <p>Physical showrooms can't display every option. Your website needs extensive galleries showing materials in real homes to help customers visualize their space.</p>
+                <h3>📱 Hard to Show Quality Online</h3>
+                <p>Flooring quality is about craftsmanship, precision cuts, and perfect transitions. Your website needs to showcase these professional details.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2>How LogicPros Lays the Foundation for Your Success</h2>
+            <div className="section-header">
+              <h2 className="section-title">How We Get You More Work</h2>
+            </div>
             <div className="solutions-grid">
               <div className="solution-item">
-                <h3>📚 Comprehensive Material Guide</h3>
-                <p><strong>What we do:</strong> Create detailed comparison pages for each flooring type with pros/cons, cost ranges, durability ratings, and room-specific recommendations.</p>
-                <p><strong>Result:</strong> Better educated customers who come to you knowing what they want.</p>
+                <h3>🎯 Show Up First for Flooring Jobs</h3>
+                <p>When someone searches "flooring contractor near me", you show up first. More searches mean more hardwood and tile installs.</p>
               </div>
               <div className="solution-item">
-                <h3>🏆 Trust & Value Building</h3>
-                <p><strong>What we do:</strong> Showcase warranties, certifications, installation process, timeline management, and customer testimonials to justify premium pricing.</p>
-                <p><strong>Result:</strong> Higher conversion rates and acceptance of professional pricing.</p>
+                <h3>⚡ Beautiful Project Galleries</h3>
+                <p>Show your best installations with detailed photos. Customers see your craftsmanship and want that quality in their home.</p>
               </div>
               <div className="solution-item">
-                <h3>🛠️ Process Transparency</h3>
-                <p><strong>What we do:</strong> Detailed installation process pages, timeline expectations, dust protection measures, and furniture handling procedures.</p>
-                <p><strong>Result:</strong> Reduced customer anxiety and smoother project completion.</p>
-              </div>
-              <div className="solution-item">
-                <h3>🖼️ Virtual Showroom Experience</h3>
-                <p><strong>What we do:</strong> Extensive photo galleries showing each flooring type in various room settings, lighting conditions, and design styles.</p>
-                <p><strong>Result:</strong> Customers can envision their space and make confident decisions.</p>
+                <h3>🏆 Show Why You're Worth More</h3>
+                <p>Display your expertise, quality materials, and installation guarantees. Customers understand why professional flooring is worth the investment.</p>
               </div>
             </div>
           </div>
@@ -82,47 +78,84 @@ export const FlooringPage = () => {
 
         <section className="section">
           <div className="container">
-            <h2>Flooring Services We Help You Market</h2>
+            <div className="section-header">
+              <h2 className="section-title">Services That Make You Money</h2>
+            </div>
             <div className="services-grid">
               <div className="service-category">
                 <h3>🌳 Hardwood Flooring</h3>
-                <ul>
-                  <li>Solid hardwood installation</li>
-                  <li>Engineered hardwood systems</li>
-                  <li>Hardwood refinishing</li>
-                  <li>Custom wood flooring</li>
-                  <li>Hardwood repair & restoration</li>
-                </ul>
+                <p className="service-description">Premium installations that add serious value to homes.</p>
+                <div className="service-examples">
+                  <span>Solid Hardwood</span>
+                  <span>Engineered Flooring</span>
+                  <span>Hardwood Refinishing</span>
+                  <span>Custom Installation</span>
+                </div>
               </div>
               <div className="service-category">
                 <h3>🏢 Luxury Vinyl & Laminate</h3>
-                <ul>
-                  <li>Luxury vinyl plank (LVP)</li>
-                  <li>Luxury vinyl tile (LVT)</li>
-                  <li>Laminate flooring installation</li>
-                  <li>Waterproof flooring systems</li>
-                  <li>Commercial vinyl flooring</li>
-                </ul>
+                <p className="service-description">Popular modern options with great margins.</p>
+                <div className="service-examples">
+                  <span>Luxury Vinyl Plank</span>
+                  <span>Waterproof Flooring</span>
+                  <span>Laminate Installation</span>
+                  <span>Commercial Vinyl</span>
+                </div>
               </div>
               <div className="service-category">
                 <h3>🏺 Tile & Stone</h3>
-                <ul>
-                  <li>Ceramic & porcelain tile</li>
-                  <li>Natural stone installation</li>
-                  <li>Tile backsplashes</li>
-                  <li>Bathroom & kitchen tiling</li>
-                  <li>Tile repair & replacement</li>
-                </ul>
+                <p className="service-description">High-skill work that commands premium prices.</p>
+                <div className="service-examples">
+                  <span>Ceramic Tile</span>
+                  <span>Natural Stone</span>
+                  <span>Bathroom Tiling</span>
+                  <span>Custom Patterns</span>
+                </div>
               </div>
-              <div className="service-category">
-                <h3>🏠 Carpet & Specialty</h3>
-                <ul>
-                  <li>Residential carpet installation</li>
-                  <li>Commercial carpet systems</li>
-                  <li>Carpet removal & disposal</li>
-                  <li>Subfloor preparation</li>
-                  <li>Floor leveling & repair</li>
-                </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Get Your Website That Actually Works</h2>
+            </div>
+            <div className="solutions-grid">
+              <div className="solution-card">
+                <h3>Basic Flooring Website</h3>
+                <p className="solution-price">Perfect for solo flooring contractors</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Beautiful project galleries</div>
+                  <div className="feature">✅ Show up first in Google</div>
+                  <div className="feature">✅ Material comparison guides</div>
+                  <div className="feature">✅ Installation guarantees display</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
+              </div>
+              <div className="solution-card">
+                <h3>Professional Flooring Website</h3>
+                <p className="solution-price">For growing flooring businesses</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Everything in Basic</div>
+                  <div className="feature">✅ Room-by-room showcases</div>
+                  <div className="feature">✅ Before/after transformations</div>
+                  <div className="feature">✅ Online estimate requests</div>
+                  <div className="feature">✅ Google Ads optimization</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
+              </div>
+              <div className="solution-card">
+                <h3>Custom Flooring Portal</h3>
+                <p className="solution-price">For established companies</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Everything in Professional</div>
+                  <div className="feature">✅ Multi-location optimization</div>
+                  <div className="feature">✅ Virtual showroom features</div>
+                  <div className="feature">✅ Customer project portals</div>
+                  <div className="feature">✅ Monthly content updates</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
               </div>
             </div>
           </div>
@@ -130,45 +163,45 @@ export const FlooringPage = () => {
 
         <section className="section">
           <div className="container">
-            <h2>Common Questions from Flooring Contractors</h2>
+            <div className="section-header">
+              <h2 className="section-title">Common Questions</h2>
+            </div>
             <div className="faq-grid">
               <div className="faq-item">
-                <h3>How do you help customers choose between flooring materials?</h3>
-                <p>We create comprehensive comparison guides with pros/cons, cost ranges, durability ratings, and room-specific recommendations. Customers arrive at your showroom already educated about their options.</p>
+                <h3>Will I get more hardwood and tile jobs?</h3>
+                <p>Yes. We make sure you show up first when people search for flooring contractors. We also showcase your best work to attract customers who want quality flooring.</p>
               </div>
               <div className="faq-item">
-                <h3>Can you showcase different flooring materials effectively online?</h3>
-                <p>Absolutely! We create extensive photo galleries showing each material in various room settings, lighting conditions, and design styles. It's like having an unlimited virtual showroom.</p>
+                <h3>How do you help me compete against big box stores?</h3>
+                <p>We emphasize your professional installation expertise, quality guarantees, and long-term value. Customers learn why professional flooring is worth the investment.</p>
               </div>
               <div className="faq-item">
-                <h3>How do you address customer concerns about installation disruption?</h3>
-                <p>We create detailed process pages explaining installation timelines, dust protection measures, furniture handling, and cleanup procedures. This reduces anxiety and sets proper expectations.</p>
+                <h3>Can you help customers choose the right flooring material?</h3>
+                <p>Absolutely. We create material comparison guides and room-specific recommendations that educate customers and position you as the flooring expert.</p>
               </div>
               <div className="faq-item">
-                <h3>Do you help compete against big box store pricing?</h3>
-                <p>Yes! We emphasize your professional installation expertise, warranties, customer service, and long-term value versus big box stores' lower-quality installation and limited support.</p>
-              </div>
-              <div className="faq-item">
-                <h3>How do you showcase flooring durability and warranties?</h3>
-                <p>We create detailed pages about material durability, manufacturer warranties, installation guarantees, and long-term care. This justifies professional pricing and builds confidence.</p>
-              </div>
-              <div className="faq-item">
-                <h3>Can you integrate with flooring suppliers and manufacturers?</h3>
-                <p>We can showcase your partnerships with quality manufacturers, highlight available materials, and even integrate with supplier inventory systems for real-time availability and pricing.</p>
+                <h3>How fast can my flooring website be ready?</h3>
+                <p>7-14 days. We know every day without a professional website is a lost opportunity for high-value flooring projects.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section cta-section">
+        <section className="section" style={{ backgroundColor: '#000', color: 'white' }}>
           <div className="container">
-            <div className="cta-content">
-              <h2>Ready to Floor Your Competition?</h2>
-              <p>Join 35+ flooring contractors who've elevated their business with LogicPros websites. Hardwood installations, luxury vinyl projects, and tile transformations - all flowing to your business.</p>
-              <div className="cta-buttons">
-                <a href="/free-example" className="btn btn-primary btn-large">See My Free Flooring Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Get My Custom Quote</a>
-              </div>
+            <div className="section-header">
+              <h2 className="section-title" style={{ color: 'white' }}>Ready to Get More Jobs?</h2>
+              <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
+                Get a website that brings you more flooring work. Simple as that.
+              </p>
+            </div>
+            <div className="cta-buttons">
+              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+                Get Started
+              </a>
+              <a href="/free-example" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>
+                See an Example
+              </a>
             </div>
           </div>
         </section>
@@ -179,11 +212,11 @@ export const FlooringPage = () => {
           <div className="footer-content">
             <div className="footer-brand">
               <h3>LogicPros</h3>
-              <p>Professional websites for flooring contractors</p>
+              <p>Websites that make flooring contractors money</p>
             </div>
             <div className="footer-links">
               <div className="footer-column">
-                <h4>Contractor Services</h4>
+                <h4>Contractor Websites</h4>
                 <a href="/contractors/flooring">Flooring Websites</a>
                 <a href="/contractors/painting">Painting Websites</a>
                 <a href="/contractors/concrete">Concrete Websites</a>
@@ -191,13 +224,12 @@ export const FlooringPage = () => {
               </div>
               <div className="footer-column">
                 <h4>Company</h4>
-                <a href="/about">About Us</a>
-                <a href="/portfolio">Portfolio</a>
+                <a href="/about">About</a>
                 <a href="/contact">Contact</a>
                 <a href="/free-example">Free Example</a>
               </div>
               <div className="footer-column">
-                <h4>Contact</h4>
+                <h4>Get Started</h4>
                 <p>aaron@logicpros.ca</p>
                 <p>(506) 478-2949</p>
               </div>

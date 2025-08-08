@@ -2,11 +2,11 @@ import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
+import heroImage from '../../assets/hero-growtika.jpg';
 
 export const RoofingPage = () => {
   return (
     <div className="landing-page">
-      {/* Header */}
       <header className="sticky-header">
         <div className="header-content">
           <div className="logo">
@@ -16,253 +16,225 @@ export const RoofingPage = () => {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="main-content">
-        {/* Hero Section */}
-        <section className="hero-section">
-          <div className="container">
-            <div className="hero-content">
-              <h1 className="hero-title">Professional Websites for Roofing Contractors</h1>
-              <p className="hero-subtitle">
-                Build your roofing business from the ground up with a website that captures storm 
-                damage leads, showcases quality workmanship, and converts estimates into signed contracts. 
-                Specialized web development for roofers who want to weather any competition.
-              </p>
-              <a href="/contact" className="btn btn-primary btn-large">Get My Roofing Website</a>
+        <section className="hero-section homepage-hero">
+          <div className="hero-image">
+            <img src={heroImage} alt="Professional roofer at work" />
+            <div className="hero-overlay">
+              <div className="hero-content">
+                <h1 className="typewriter-text">Websites That Get Roofers More Jobs</h1>
+                <p>
+                  Get more storm damage calls and big roof installations. Show customers you're the roofing contractor they can trust.
+                </p>
+                <a href="/contact" className="btn btn-primary">Get My Website</a>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Roofing-Specific Challenges */}
         <section className="section">
           <div className="container">
-            <h2>Challenges Every Roofing Business Owner Faces</h2>
+            <div className="section-header">
+              <h2 className="section-title">Why Your Phone Isn't Ringing</h2>
+            </div>
             <div className="challenges-grid">
               <div className="challenge-item">
-                <h3>⛈️ Storm Damage Competition</h3>
-                <p>After storms, dozens of roofers flood the area. You need to capture leads immediately when homeowners are researching insurance claims and emergency repairs.</p>
+                <h3>⛈️ Storm Chasers Beat You to Leads</h3>
+                <p>After every storm, out-of-town roofers flood your area and grab the best jobs. You need to capture leads first.</p>
               </div>
               <div className="challenge-item">
-                <h3>🏠 High-Value Sales Process</h3>
-                <p>Roof replacements are major investments. Homeowners get multiple estimates and research extensively. Your website must build trust and demonstrate value before the sales call.</p>
+                <h3>💰 Customers Pick the Cheapest Bid</h3>
+                <p>Big roofing jobs are expensive. Homeowners get multiple quotes and often choose the lowest price instead of best quality.</p>
               </div>
               <div className="challenge-item">
-                <h3>📋 Insurance Claim Complexity</h3>
-                <p>Most customers don't understand insurance claims, material choices, or roofing processes. Your website needs to educate and guide them through the entire journey.</p>
-              </div>
-              <div className="challenge-item">
-                <h3>🔍 Reputation & Trust Issues</h3>
-                <p>Roofing has a reputation problem with fly-by-night contractors. Customers are skeptical and need proof of quality work, proper licensing, and business stability.</p>
+                <h3>📱 Insurance Claims Are Confusing</h3>
+                <p>Customers don't understand the insurance process. They need a roofer who can guide them through it professionally.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2>How LogicPros Elevates Your Roofing Business</h2>
+            <div className="section-header">
+              <h2 className="section-title">How We Get You More Work</h2>
+            </div>
             <div className="solutions-grid">
               <div className="solution-item">
-                <h3>⚡ Storm Response System</h3>
-                <p><strong>What we do:</strong> Create storm damage landing pages, emergency contact systems, and rapid-response messaging to capture leads immediately after weather events.</p>
-                <p><strong>Result:</strong> First to market after storms, capturing premium emergency work.</p>
+                <h3>🎯 Show Up First for Storm Damage</h3>
+                <p>When someone searches "roof repair near me" after a storm, you show up first. More storm calls mean bigger jobs.</p>
               </div>
               <div className="solution-item">
-                <h3>🎯 Insurance Claims Education</h3>
-                <p><strong>What we do:</strong> Detailed pages explaining insurance processes, material options, timeline expectations, and how you handle claims from start to finish.</p>
-                <p><strong>Result:</strong> More qualified leads who understand the value of working with experienced roofers.</p>
+                <h3>⚡ Easy Insurance Help</h3>
+                <p>Show customers you handle insurance claims professionally. They'll choose you over fly-by-night contractors.</p>
               </div>
               <div className="solution-item">
-                <h3>🏆 Trust & Credibility Showcase</h3>
-                <p><strong>What we do:</strong> Prominent display of licenses, insurance, warranties, certifications, before/after galleries, and customer testimonials with real names and photos.</p>
-                <p><strong>Result:</strong> Higher conversion rates and ability to command premium rates.</p>
-              </div>
-              <div className="solution-item">
-                <h3>📱 Mobile Estimate System</h3>
-                <p><strong>What we do:</strong> Mobile-optimized estimate request forms, photo upload capabilities, and instant contact options for homeowners researching on their phones.</p>
-                <p><strong>Result:</strong> More estimate requests and faster response to time-sensitive opportunities.</p>
+                <h3>🏆 Show Why You're Worth More</h3>
+                <p>Display your licenses, insurance, and quality work. Customers will pay fair prices for trusted roofers.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Roofing Services We Highlight */}
         <section className="section">
           <div className="container">
-            <h2>Roofing Services We Help You Market</h2>
+            <div className="section-header">
+              <h2 className="section-title">Services That Make You Money</h2>
+            </div>
             <div className="services-grid">
               <div className="service-category">
-                <h3>⛈️ Storm & Emergency</h3>
-                <ul>
-                  <li>Storm damage assessment</li>
-                  <li>Emergency roof repair</li>
-                  <li>Tarp & temporary protection</li>
-                  <li>Insurance claim assistance</li>
-                  <li>Wind & hail damage repair</li>
-                </ul>
+                <h3>⛈️ Storm Damage</h3>
+                <p className="service-description">High-profit emergency work that happens year-round.</p>
+                <div className="service-examples">
+                  <span>Hail Damage</span>
+                  <span>Wind Damage</span>
+                  <span>Emergency Repairs</span>
+                  <span>Insurance Claims</span>
+                </div>
               </div>
               <div className="service-category">
-                <h3>🏠 Residential Roofing</h3>
-                <ul>
-                  <li>Complete roof replacement</li>
-                  <li>Asphalt shingle installation</li>
-                  <li>Metal roofing systems</li>
-                  <li>Tile & slate roofing</li>
-                  <li>Roof maintenance programs</li>
-                </ul>
+                <h3>🏠 Roof Replacements</h3>
+                <p className="service-description">Big-ticket jobs that boost your monthly revenue.</p>
+                <div className="service-examples">
+                  <span>Shingle Roofs</span>
+                  <span>Metal Roofing</span>
+                  <span>Tile Systems</span>
+                  <span>Complete Tear-offs</span>
+                </div>
               </div>
               <div className="service-category">
-                <h3>🔧 Repair & Maintenance</h3>
-                <ul>
-                  <li>Leak detection & repair</li>
-                  <li>Gutter installation & repair</li>
-                  <li>Chimney flashing repair</li>
-                  <li>Roof inspection services</li>
-                  <li>Preventive maintenance</li>
-                </ul>
-              </div>
-              <div className="service-category">
-                <h3>🏢 Commercial Roofing</h3>
-                <ul>
-                  <li>Flat roof systems</li>
-                  <li>TPO & EPDM installation</li>
-                  <li>Commercial roof repair</li>
-                  <li>Building envelope services</li>
-                  <li>Roof coating applications</li>
-                </ul>
+                <h3>🔧 Repair Services</h3>
+                <p className="service-description">Steady work that keeps your schedule full.</p>
+                <div className="service-examples">
+                  <span>Leak Repairs</span>
+                  <span>Gutter Work</span>
+                  <span>Flashing Fixes</span>
+                  <span>Maintenance</span>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2>Roofing Website Solutions</h2>
+            <div className="section-header">
+              <h2 className="section-title">Get Your Website That Actually Works</h2>
+            </div>
             <div className="solutions-grid">
               <div className="solution-card">
-                <h3>Storm Response Sites</h3>
-                <ul>
-                  <li>8-page storm-optimized site</li>
-                  <li>Emergency contact system</li>
-                  <li>Basic photo gallery</li>
-                  <li>Insurance claim information</li>
-                  <li>Mobile estimate forms</li>
-                  <li>Service area targeting</li>
-                </ul>
-                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
-              </div>
-              <div className="solution-card featured">
-                <h3>Professional Roofing Sites</h3>
-                <ul>
-                  <li>15-page comprehensive site</li>
-                  <li>Advanced storm damage pages</li>
-                  <li>Extensive before/after galleries</li>
-                  <li>Insurance claim assistance pages</li>
-                  <li>Material comparison guides</li>
-                  <li>Customer testimonial system</li>
-                  <li>Local SEO optimization</li>
-                </ul>
-                <a href="/contact" className="btn btn-primary">Schedule Consultation</a>
+                <h3>Storm Response Website</h3>
+                <p className="solution-price">Perfect for solo roofers</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Storm damage emergency buttons</div>
+                  <div className="feature">✅ Show up first in Google</div>
+                  <div className="feature">✅ Insurance claim help pages</div>
+                  <div className="feature">✅ Before/after photo galleries</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
               </div>
               <div className="solution-card">
-                <h3>Market Leader Sites</h3>
-                <ul>
-                  <li>Unlimited pages & features</li>
-                  <li>Custom storm tracking integration</li>
-                  <li>Advanced lead management</li>
-                  <li>Insurance company partnerships</li>
-                  <li>Drone inspection showcases</li>
-                  <li>Comprehensive analytics</li>
-                  <li>Ongoing storm campaign management</li>
-                </ul>
-                <a href="/contact" className="btn btn-primary">Explore Possibilities</a>
+                <h3>Professional Roofing Website</h3>
+                <p className="solution-price">For growing roofing businesses</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Everything in Storm Response</div>
+                  <div className="feature">✅ Material comparison guides</div>
+                  <div className="feature">✅ Customer testimonial system</div>
+                  <div className="feature">✅ Online estimate requests</div>
+                  <div className="feature">✅ Google Ads optimization</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
+              </div>
+              <div className="solution-card">
+                <h3>Custom Roofing Portal</h3>
+                <p className="solution-price">For established companies</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Everything in Professional</div>
+                  <div className="feature">✅ Multi-location optimization</div>
+                  <div className="feature">✅ Advanced storm tracking</div>
+                  <div className="feature">✅ Customer portals</div>
+                  <div className="feature">✅ Monthly optimization updates</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
         <section className="section">
           <div className="container">
-            <h2>Common Questions from Roofing Contractors</h2>
+            <div className="section-header">
+              <h2 className="section-title">Common Questions</h2>
+            </div>
             <div className="faq-grid">
               <div className="faq-item">
-                <h3>How do you help me capture storm damage leads quickly?</h3>
-                <p>We create storm-specific landing pages that can be activated immediately after weather events, with emergency contact forms, photo upload capabilities, and rapid response messaging to capture leads before competitors.</p>
+                <h3>Will I get more storm damage calls?</h3>
+                <p>Yes. We make sure you show up first when people search for storm damage help. That means more emergency calls and bigger insurance jobs.</p>
               </div>
               <div className="faq-item">
-                <h3>Can you help me stand out from fly-by-night roofers?</h3>
-                <p>Absolutely! We prominently showcase your licenses, insurance, certifications, warranties, and local business history. This immediately differentiates you from temporary storm chasers and builds customer confidence.</p>
+                <h3>How do you help me beat storm chasers?</h3>
+                <p>We create storm response pages that go live immediately after weather events. You'll capture leads while out-of-town contractors are still driving to your area.</p>
               </div>
               <div className="faq-item">
-                <h3>How do you handle the complex roofing sales process?</h3>
-                <p>We create educational content explaining insurance claims, material options, installation processes, and timelines. This helps customers understand the value before they meet with you, leading to higher conversion rates.</p>
+                <h3>Do you help with insurance claim marketing?</h3>
+                <p>Absolutely. We create pages that explain how you handle insurance claims professionally. This builds trust and gets you more insurance work.</p>
               </div>
               <div className="faq-item">
-                <h3>Do you optimize for both residential and commercial roofing?</h3>
-                <p>Yes! We create separate sections for residential and commercial services, with different messaging, service approaches, and customer testimonials relevant to each market segment.</p>
-              </div>
-              <div className="faq-item">
-                <h3>How do you showcase roofing work visually?</h3>
-                <p>We create comprehensive photo galleries with before/after comparisons, drone footage capabilities, material close-ups, and progress photos to visually demonstrate your quality workmanship.</p>
-              </div>
-              <div className="faq-item">
-                <h3>Can you help with insurance company relationships?</h3>
-                <p>We create pages highlighting your insurance claim expertise, preferred contractor relationships, and streamlined claim processes. This positions you as the insurance-friendly choice for customers.</p>
+                <h3>How fast can my roofing website be ready?</h3>
+                <p>7-14 days. We know storm season doesn't wait. Your website will be ready to capture leads as soon as possible.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="section cta-section">
+        <section className="section" style={{ backgroundColor: '#000', color: 'white' }}>
           <div className="container">
-            <div className="cta-content">
-              <h2>Ready to Weather Any Competition?</h2>
-              <p>Join 75+ roofing contractors who've increased their revenue with LogicPros websites. Storm damage leads, insurance jobs, and premium installations - all flowing to your business.</p>
-              <div className="cta-buttons">
-                <a href="/free-example" className="btn btn-primary btn-large">See My Free Roofing Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Schedule Free Consultation</a>
-              </div>
+            <div className="section-header">
+              <h2 className="section-title" style={{ color: 'white' }}>Ready to Get More Jobs?</h2>
+              <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
+                Get a website that brings you more roofing work. Simple as that.
+              </p>
+            </div>
+            <div className="cta-buttons">
+              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+                Get Started
+              </a>
+              <a href="/free-example" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>
+                See an Example
+              </a>
             </div>
           </div>
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
               <h3>LogicPros</h3>
-              <p>Professional websites for roofing contractors</p>
+              <p>Websites that make roofers money</p>
             </div>
-            
             <div className="footer-links">
               <div className="footer-column">
-                <h4>Contractor Services</h4>
+                <h4>Contractor Websites</h4>
                 <a href="/contractors/roofing">Roofing Websites</a>
-                <a href="/contractors/construction">Construction Websites</a>
-                <a href="/contractors/landscaping">Landscaping Websites</a>
-                <a href="/contractors/painting">Painting Websites</a>
+                <a href="/contractors/plumbing">Plumbing Websites</a>
+                <a href="/contractors/hvac">HVAC Websites</a>
+                <a href="/contractors/electrical">Electrical Websites</a>
               </div>
-              
               <div className="footer-column">
                 <h4>Company</h4>
-                <a href="/about">About Us</a>
-                <a href="/portfolio">Portfolio</a>
+                <a href="/about">About</a>
                 <a href="/contact">Contact</a>
                 <a href="/free-example">Free Example</a>
               </div>
-              
               <div className="footer-column">
-                <h4>Contact</h4>
+                <h4>Get Started</h4>
                 <p>aaron@logicpros.ca</p>
                 <p>(506) 478-2949</p>
               </div>
             </div>
           </div>
-          
           <div className="footer-bottom">
             <p>&copy; 2024 LogicPros. All rights reserved.</p>
           </div>

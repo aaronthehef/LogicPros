@@ -2,6 +2,7 @@ import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
+import heroImage from '../../assets/hero-growtika.jpg';
 
 export const ElectricalPage = () => {
   return (
@@ -19,16 +20,17 @@ export const ElectricalPage = () => {
       {/* Main Content */}
       <main className="main-content">
         {/* Hero Section */}
-        <section className="hero-section">
-          <div className="container">
-            <div className="hero-content">
-              <h1 className="hero-title">Professional Websites for Electrical Contractors</h1>
-              <p className="hero-subtitle">
-                Power up your electrical business with a website that showcases your expertise, 
-                builds trust for safety-critical work, and generates qualified leads. Specialized 
-                web development for electricians who want to charge premium rates.
-              </p>
-              <a href="/contact" className="btn btn-primary btn-large">Get My Electrical Website</a>
+        <section className="hero-section homepage-hero">
+          <div className="hero-image">
+            <img src={heroImage} alt="Professional electrician at work" />
+            <div className="hero-overlay">
+              <div className="hero-content">
+                <h1 className="typewriter-text">Websites That Get Electricians More Jobs</h1>
+                <p>
+                  Show customers you're licensed, safe, and skilled. Get more emergency calls and bigger electrical projects.
+                </p>
+                <a href="/contact" className="btn btn-primary">Get My Website</a>
+              </div>
             </div>
           </div>
         </section>
@@ -36,51 +38,51 @@ export const ElectricalPage = () => {
         {/* Electrical-Specific Challenges */}
         <section className="section">
           <div className="container">
-            <h2>Challenges Every Electrical Business Owner Faces</h2>
+            <div className="section-header">
+              <h2 className="section-title">Why Customers Don't Call You</h2>
+            </div>
             <div className="challenges-grid">
               <div className="challenge-item">
-                <h3>⚡ Safety & Trust Concerns</h3>
-                <p>Electrical work is dangerous and expensive. Customers need absolute confidence you're licensed, insured, and follow all safety codes before they'll trust you in their home.</p>
+                <h3>⚡ Safety Worries</h3>
+                <p>Customers are scared of electrical work. They need to see your licenses and insurance before they trust you in their home.</p>
               </div>
               <div className="challenge-item">
-                <h3>🏆 Premium Service Positioning</h3>
-                <p>Quality electrical work commands premium rates, but customers often focus on cost alone. Your website needs to demonstrate why your expertise is worth the investment.</p>
+                <h3>🏆 Price Shopping</h3>
+                <p>Everyone wants cheap electrical work. Show them why good work costs more and saves money long-term.</p>
               </div>
               <div className="challenge-item">
-                <h3>📋 Complex Service Explanation</h3>
-                <p>Panel upgrades, rewiring, smart home installation - electrical services are complex. Customers need clear explanations to understand what they're buying.</p>
+                <h3>📋 Confusing Services</h3>
+                <p>Panel upgrades, rewiring, smart homes - customers don't understand what they need. Make it simple.</p>
               </div>
               <div className="challenge-item">
-                <h3>🚨 Emergency vs. Planned Work</h3>
-                <p>You handle both emergency repairs and planned installations. Your website needs to capture both urgent calls and qualified project leads.</p>
+                <h3>🚨 Emergency and Big Jobs</h3>
+                <p>You want both emergency calls and big installation projects. Your website needs to get both.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2>How LogicPros Elevates Your Electrical Business</h2>
+            <div className="section-header">
+              <h2 className="section-title">How We Get You More Work</h2>
+            </div>
             <div className="solutions-grid">
               <div className="solution-item">
-                <h3>🛡️ Safety & Credibility Showcase</h3>
-                <p><strong>What we do:</strong> Prominently display licenses, certifications, insurance, safety awards, and code compliance information. Include detailed safety protocols and team qualifications.</p>
-                <p><strong>Result:</strong> Higher trust levels and acceptance of premium service.</p>
+                <h3>🛡️ Show You're Safe</h3>
+                <p>Display your licenses, insurance, and certifications prominently. Customers see you're qualified and trustworthy.</p>
               </div>
               <div className="solution-item">
-                <h3>💡 Service Education System</h3>
-                <p><strong>What we do:</strong> Create detailed pages explaining electrical services in customer-friendly terms, with service breakdowns, timelines, and safety benefits.</p>
-                <p><strong>Result:</strong> More qualified leads who understand your value proposition.</p>
+                <h3>💡 Explain Your Services</h3>
+                <p>Break down complex electrical work into simple terms. Customers understand what they need and why.</p>
               </div>
               <div className="solution-item">
-                <h3>🎯 Dual-Purpose Lead Capture</h3>
-                <p><strong>What we do:</strong> Separate emergency and project inquiry systems with different messaging and urgency levels to capture both types of work.</p>
-                <p><strong>Result:</strong> Increased emergency calls and larger planned project bookings.</p>
+                <h3>🎯 Emergency and Project Leads</h3>
+                <p>Different contact methods for urgent repairs and planned installations. Get both types of work.</p>
               </div>
               <div className="solution-item">
-                <h3>📱 Smart Home Integration Focus</h3>
-                <p><strong>What we do:</strong> Highlight modern electrical services like smart home installation, EV chargers, and energy efficiency upgrades to attract high-value customers.</p>
-                <p><strong>Result:</strong> Position your business as a modern, tech-savvy electrical contractor.</p>
+                <h3>📱 Modern Electrical Work</h3>
+                <p>Showcase smart homes, EV chargers, and modern electrical services. Get the high-paying jobs.</p>
               </div>
             </div>
           </div>
@@ -89,93 +91,94 @@ export const ElectricalPage = () => {
         {/* Electrical Services We Highlight */}
         <section className="section">
           <div className="container">
-            <h2>Electrical Services We Help You Market</h2>
+            <div className="section-header">
+              <h2 className="section-title">Services That Make You Money</h2>
+            </div>
             <div className="services-grid">
               <div className="service-category">
-                <h3>🚨 Emergency Electrical</h3>
-                <ul>
-                  <li>Power outage troubleshooting</li>
-                  <li>Electrical fire prevention</li>
-                  <li>Circuit breaker repair</li>
-                  <li>Emergency panel service</li>
-                  <li>Electrical fault finding</li>
-                </ul>
+                <h3>🚨 Emergency Work</h3>
+                <p className="service-description">High-profit emergency calls that happen any time.</p>
+                <div className="service-examples">
+                  <span>Power Outages</span>
+                  <span>Circuit Problems</span>
+                  <span>Panel Failures</span>
+                  <span>Electrical Faults</span>
+                </div>
               </div>
               <div className="service-category">
-                <h3>🔌 Residential Services</h3>
-                <ul>
-                  <li>Panel upgrades & replacement</li>
-                  <li>Whole house rewiring</li>
-                  <li>Outlet & switch installation</li>
-                  <li>Lighting design & installation</li>
-                  <li>Ceiling fan installation</li>
-                </ul>
+                <h3>🔌 Big Home Projects</h3>
+                <p className="service-description">Large installations that bring in serious money.</p>
+                <div className="service-examples">
+                  <span>Panel Upgrades</span>
+                  <span>House Rewiring</span>
+                  <span>New Outlets</span>
+                  <span>Lighting Install</span>
+                </div>
               </div>
               <div className="service-category">
-                <h3>🏠 Smart Home & Modern</h3>
-                <ul>
-                  <li>Smart home automation</li>
-                  <li>EV charging station installation</li>
-                  <li>Home security systems</li>
-                  <li>Smart lighting controls</li>
-                  <li>Energy management systems</li>
-                </ul>
+                <h3>🏠 Modern Tech Work</h3>
+                <p className="service-description">High-value modern electrical services customers want.</p>
+                <div className="service-examples">
+                  <span>Smart Homes</span>
+                  <span>EV Chargers</span>
+                  <span>Security Systems</span>
+                  <span>Smart Controls</span>
+                </div>
               </div>
               <div className="service-category">
-                <h3>🏢 Commercial Electrical</h3>
-                <ul>
-                  <li>Office electrical systems</li>
-                  <li>Retail store lighting</li>
-                  <li>Industrial wiring</li>
-                  <li>Data center power</li>
-                  <li>Emergency generator systems</li>
-                </ul>
+                <h3>🏢 Business Work</h3>
+                <p className="service-description">Commercial jobs with steady, reliable income.</p>
+                <div className="service-examples">
+                  <span>Office Electrical</span>
+                  <span>Store Lighting</span>
+                  <span>Industrial Work</span>
+                  <span>Generators</span>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2>Electrical Website Solutions</h2>
+            <div className="section-header">
+              <h2 className="section-title">Get Your Website That Actually Works</h2>
+            </div>
             <div className="solutions-grid">
               <div className="solution-card">
-                <h3>Safety First Sites</h3>
-                <ul>
-                  <li>6-page professional site</li>
-                  <li>License & certification display</li>
-                  <li>Emergency contact system</li>
-                  <li>Service area optimization</li>
-                  <li>Safety-focused messaging</li>
-                  <li>Mobile emergency buttons</li>
-                </ul>
-                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
-              </div>
-              <div className="solution-card featured">
-                <h3>Power Professional Sites</h3>
-                <ul>
-                  <li>12-page comprehensive site</li>
-                  <li>Smart home service showcase</li>
-                  <li>Project gallery & testimonials</li>
-                  <li>Advanced local SEO</li>
-                  <li>Online estimate requests</li>
-                  <li>Safety certification pages</li>
-                  <li>Review management system</li>
-                </ul>
-                <a href="/contact" className="btn btn-primary">Schedule Consultation</a>
+                <h3>Basic Electrical Website</h3>
+                <p className="solution-price">Perfect for solo electricians</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Show licenses and insurance</div>
+                  <div className="feature">✅ Emergency call buttons</div>
+                  <div className="feature">✅ Service area pages</div>
+                  <div className="feature">✅ Customer reviews</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
               </div>
               <div className="solution-card">
-                <h3>Market Leader Sites</h3>
-                <ul>
-                  <li>Unlimited pages & features</li>
-                  <li>Custom project portal</li>
-                  <li>Advanced analytics & tracking</li>
-                  <li>Competitor SEO analysis</li>
-                  <li>Smart home content marketing</li>
-                  <li>Monthly optimization</li>
-                  <li>Pay-per-click advertising</li>
-                </ul>
-                <a href="/contact" className="btn btn-primary">Explore Possibilities</a>
+                <h3>Professional Electrical Website</h3>
+                <p className="solution-price">For growing electrical businesses</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Everything in Basic</div>
+                  <div className="feature">✅ Smart home showcase</div>
+                  <div className="feature">✅ Project photo galleries</div>
+                  <div className="feature">✅ Online estimates</div>
+                  <div className="feature">✅ Google Ads ready</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
+              </div>
+              <div className="solution-card">
+                <h3>Custom Electrical Portal</h3>
+                <p className="solution-price">For established companies</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Everything in Professional</div>
+                  <div className="feature">✅ Customer portals</div>
+                  <div className="feature">✅ Multi-location sites</div>
+                  <div className="feature">✅ Advanced tracking</div>
+                  <div className="feature">✅ Monthly updates</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
               </div>
             </div>
           </div>
@@ -184,7 +187,9 @@ export const ElectricalPage = () => {
         {/* FAQ Section */}
         <section className="section">
           <div className="container">
-            <h2>Common Questions from Electrical Contractors</h2>
+            <div className="section-header">
+              <h2 className="section-title">Common Questions</h2>
+            </div>
             <div className="faq-grid">
               <div className="faq-item">
                 <h3>How do you showcase electrical safety and licensing?</h3>
@@ -215,15 +220,21 @@ export const ElectricalPage = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="section cta-section">
+        <section className="section" style={{ backgroundColor: '#000', color: 'white' }}>
           <div className="container">
-            <div className="cta-content">
-              <h2>Ready to Energize Your Electrical Business?</h2>
-              <p>Join 40+ electrical contractors who've increased their revenue with LogicPros websites. Emergency calls, smart home projects, and commercial contracts - all flowing to your business.</p>
-              <div className="cta-buttons">
-                <a href="/free-example" className="btn btn-primary btn-large">See My Free Electrical Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Schedule Free Consultation</a>
-              </div>
+            <div className="section-header">
+              <h2 className="section-title" style={{ color: 'white' }}>Ready to Get More Jobs?</h2>
+              <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
+                Get a website that brings you more electrical work. Simple as that.
+              </p>
+            </div>
+            <div className="cta-buttons">
+              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+                Get Started
+              </a>
+              <a href="/free-example" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>
+                See an Example
+              </a>
             </div>
           </div>
         </section>

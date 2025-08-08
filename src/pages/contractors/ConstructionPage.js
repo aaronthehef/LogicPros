@@ -2,11 +2,11 @@ import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
+import heroImage from '../../assets/hero-growtika.jpg';
 
 export const ConstructionPage = () => {
   return (
     <div className="landing-page">
-      {/* Header */}
       <header className="sticky-header">
         <div className="header-content">
           <div className="logo">
@@ -16,253 +16,225 @@ export const ConstructionPage = () => {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="main-content">
-        {/* Hero Section */}
-        <section className="hero-section">
-          <div className="container">
-            <div className="hero-content">
-              <h1 className="hero-title">Professional Websites for General Contractors</h1>
-              <p className="hero-subtitle">
-                Build your construction business on a solid foundation with a website that showcases 
-                your craftsmanship, attracts premium projects, and converts leads into signed contracts. 
-                Specialized web development for general contractors who build success.
-              </p>
-              <a href="/contact" className="btn btn-primary btn-large">Get My Construction Website</a>
+        <section className="hero-section homepage-hero">
+          <div className="hero-image">
+            <img src={heroImage} alt="Professional construction worker at work" />
+            <div className="hero-overlay">
+              <div className="hero-content">
+                <h1 className="typewriter-text">Websites That Get Contractors More Jobs</h1>
+                <p>
+                  Get more custom homes and big renovation projects. Show customers you're the builder they can trust with their investment.
+                </p>
+                <a href="/contact" className="btn btn-primary">Get My Website</a>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Construction-Specific Challenges */}
         <section className="section">
           <div className="container">
-            <h2>Challenges Every General Contractor Faces</h2>
+            <div className="section-header">
+              <h2 className="section-title">Why Your Phone Isn't Ringing</h2>
+            </div>
             <div className="challenges-grid">
               <div className="challenge-item">
-                <h3>🏗️ Project Complexity Communication</h3>
-                <p>Construction projects are complex with multiple phases, permits, and timelines. Customers need clear explanations of processes, timelines, and what to expect at each stage.</p>
+                <h3>🏗️ Projects Are Too Complex to Explain</h3>
+                <p>Construction projects involve permits, timelines, and multiple phases. Customers need simple explanations of what you do and how you do it.</p>
               </div>
               <div className="challenge-item">
-                <h3>💰 High-Value Project Competition</h3>
-                <p>Custom homes, additions, and major renovations are significant investments. Customers research extensively and compare multiple contractors before making decisions.</p>
+                <h3>💰 Customers Pick the Cheapest Bid</h3>
+                <p>Big construction jobs cost serious money. Homeowners get multiple quotes and often choose price over quality and experience.</p>
               </div>
               <div className="challenge-item">
-                <h3>📋 Licensing & Insurance Verification</h3>
-                <p>Construction requires proper licensing, bonding, and insurance. Customers need proof you're legitimate and their investment is protected before they'll trust you with major projects.</p>
-              </div>
-              <div className="challenge-item">
-                <h3>🎯 Diverse Service Portfolio</h3>
-                <p>General contractors handle everything from small repairs to custom homes. Your website needs to showcase your range while positioning you for the most profitable work.</p>
+                <h3>📱 Trust Issues with Contractors</h3>
+                <p>Construction has a reputation problem. Customers need proof you're licensed, insured, and actually finish the job.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2>How LogicPros Builds Your Construction Success</h2>
+            <div className="section-header">
+              <h2 className="section-title">How We Get You More Work</h2>
+            </div>
             <div className="solutions-grid">
               <div className="solution-item">
-                <h3>🎯 Project Process Visualization</h3>
-                <p><strong>What we do:</strong> Create detailed project timeline pages, phase-by-phase explanations, permit processes, and progress tracking systems to demystify construction.</p>
-                <p><strong>Result:</strong> Better qualified leads who understand the process and value your expertise.</p>
+                <h3>🎯 Show Up First for Big Projects</h3>
+                <p>When someone searches "custom home builder near me", you show up first. More searches mean bigger jobs.</p>
               </div>
               <div className="solution-item">
-                <h3>🏆 Premium Project Positioning</h3>
-                <p><strong>What we do:</strong> Showcase high-end projects, custom work, and attention to detail that justifies premium service and attracts serious clients.</p>
-                <p><strong>Result:</strong> Higher-value projects and clients willing to pay for quality workmanship.</p>
+                <h3>⚡ Make Complex Projects Simple</h3>
+                <p>We explain your construction process in plain language. Customers understand what they're getting and why it's worth paying for.</p>
               </div>
               <div className="solution-item">
-                <h3>📜 Credibility & Trust Building</h3>
-                <p><strong>What we do:</strong> Prominently display licenses, bonding, insurance, certifications, awards, and detailed customer testimonials with project photos.</p>
-                <p><strong>Result:</strong> Increased trust and confidence in your ability to handle major investments.</p>
-              </div>
-              <div className="solution-item">
-                <h3>🔧 Service Specialization Strategy</h3>
-                <p><strong>What we do:</strong> Create dedicated pages for your most profitable services while showing your full capabilities, targeting the work you want most.</p>
-                <p><strong>Result:</strong> More leads for your preferred project types and higher profit margins.</p>
+                <h3>🏆 Show Why You're Worth More</h3>
+                <p>Display your licenses, insurance, and completed projects. Customers will pay fair prices for trusted builders.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Construction Services We Highlight */}
         <section className="section">
           <div className="container">
-            <h2>Construction Services We Help You Market</h2>
+            <div className="section-header">
+              <h2 className="section-title">Services That Make You Money</h2>
+            </div>
             <div className="services-grid">
               <div className="service-category">
-                <h3>🏠 Custom Home Building</h3>
-                <ul>
-                  <li>Custom home construction</li>
-                  <li>Luxury home building</li>
-                  <li>Design-build services</li>
-                  <li>New construction consulting</li>
-                  <li>Spec home development</li>
-                </ul>
+                <h3>🏠 Custom Homes</h3>
+                <p className="service-description">High-profit custom builds and spec homes.</p>
+                <div className="service-examples">
+                  <span>Custom Builds</span>
+                  <span>Luxury Homes</span>
+                  <span>Design-Build</span>
+                  <span>Spec Homes</span>
+                </div>
               </div>
               <div className="service-category">
                 <h3>🔧 Major Renovations</h3>
-                <ul>
-                  <li>Whole house renovations</li>
-                  <li>Kitchen & bathroom remodels</li>
-                  <li>Home additions</li>
-                  <li>Basement finishing</li>
-                  <li>Historic restoration</li>
-                </ul>
+                <p className="service-description">Big-ticket renovation projects that transform homes.</p>
+                <div className="service-examples">
+                  <span>Whole House</span>
+                  <span>Additions</span>
+                  <span>Kitchen Remodels</span>
+                  <span>Basement Finishing</span>
+                </div>
               </div>
               <div className="service-category">
-                <h3>🏢 Commercial Construction</h3>
-                <ul>
-                  <li>Office building construction</li>
-                  <li>Retail space buildouts</li>
-                  <li>Restaurant construction</li>
-                  <li>Warehouse & industrial</li>
-                  <li>Tenant improvements</li>
-                </ul>
-              </div>
-              <div className="service-category">
-                <h3>🔨 Repair & Maintenance</h3>
-                <ul>
-                  <li>Structural repairs</li>
-                  <li>Storm damage restoration</li>
-                  <li>Foundation work</li>
-                  <li>Siding & exterior work</li>
-                  <li>Handyman services</li>
-                </ul>
+                <h3>🏢 Commercial Work</h3>
+                <p className="service-description">Steady commercial projects with good margins.</p>
+                <div className="service-examples">
+                  <span>Office Buildings</span>
+                  <span>Retail Spaces</span>
+                  <span>Warehouses</span>
+                  <span>Tenant Improvements</span>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2>Construction Website Solutions</h2>
+            <div className="section-header">
+              <h2 className="section-title">Get Your Website That Actually Works</h2>
+            </div>
             <div className="solutions-grid">
               <div className="solution-card">
-                <h3>Foundation Sites</h3>
-                <ul>
-                  <li>10-page professional site</li>
-                  <li>Project portfolio gallery</li>
-                  <li>Service capability pages</li>
-                  <li>Licensing & insurance display</li>
-                  <li>Contact & estimate forms</li>
-                  <li>Basic SEO optimization</li>
-                </ul>
-                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
-              </div>
-              <div className="solution-card featured">
-                <h3>Custom Builder Pro Sites</h3>
-                <ul>
-                  <li>20-page comprehensive site</li>
-                  <li>Detailed project process pages</li>
-                  <li>Premium portfolio showcases</li>
-                  <li>Client testimonial system</li>
-                  <li>Project timeline tools</li>
-                  <li>Advanced local SEO</li>
-                  <li>Lead management integration</li>
-                </ul>
-                <a href="/contact" className="btn btn-primary">Schedule Consultation</a>
+                <h3>Builder Basic Website</h3>
+                <p className="solution-price">Perfect for starting contractors</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Project showcase galleries</div>
+                  <div className="feature">✅ Show up first in Google</div>
+                  <div className="feature">✅ License and insurance display</div>
+                  <div className="feature">✅ Customer testimonials</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
               </div>
               <div className="solution-card">
-                <h3>Market Domination Sites</h3>
-                <ul>
-                  <li>Unlimited pages & features</li>
-                  <li>Custom project management portal</li>
-                  <li>Advanced client communication tools</li>
-                  <li>Comprehensive analytics dashboard</li>
-                  <li>Multi-location optimization</li>
-                  <li>Ongoing content marketing</li>
-                  <li>Complete digital marketing suite</li>
-                </ul>
-                <a href="/contact" className="btn btn-primary">Explore Possibilities</a>
+                <h3>Professional Builder Website</h3>
+                <p className="solution-price">For growing construction companies</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Everything in Builder Basic</div>
+                  <div className="feature">✅ Detailed process explanations</div>
+                  <div className="feature">✅ Before/during/after galleries</div>
+                  <div className="feature">✅ Online estimate requests</div>
+                  <div className="feature">✅ Google Ads optimization</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
+              </div>
+              <div className="solution-card">
+                <h3>Custom Builder Portal</h3>
+                <p className="solution-price">For established companies</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Everything in Professional</div>
+                  <div className="feature">✅ Client project portals</div>
+                  <div className="feature">✅ Multi-location optimization</div>
+                  <div className="feature">✅ Advanced project tracking</div>
+                  <div className="feature">✅ Monthly content updates</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
         <section className="section">
           <div className="container">
-            <h2>Common Questions from General Contractors</h2>
+            <div className="section-header">
+              <h2 className="section-title">Common Questions</h2>
+            </div>
             <div className="faq-grid">
               <div className="faq-item">
-                <h3>How do you help me attract higher-value construction projects?</h3>
-                <p>We position you as a premium contractor through high-quality project galleries, detailed process explanations, and testimonials from satisfied clients. This attracts customers willing to invest in quality construction.</p>
+                <h3>Will I get more custom home projects?</h3>
+                <p>Yes. We make sure you show up first when people search for custom builders. We also showcase your best work to attract serious clients.</p>
               </div>
               <div className="faq-item">
-                <h3>Can you showcase both residential and commercial capabilities?</h3>
-                <p>Absolutely! We create separate sections for residential and commercial work, with tailored messaging, project examples, and client testimonials relevant to each market segment.</p>
+                <h3>How do you help with the long construction sales cycle?</h3>
+                <p>We create educational content that builds trust over time. By the time customers contact you, they understand your process and value.</p>
               </div>
               <div className="faq-item">
-                <h3>How do you handle the complex construction sales process?</h3>
-                <p>We create educational content explaining construction phases, permitting processes, timeline expectations, and project factors. This helps customers understand the value and complexity before they contact you.</p>
+                <h3>Do you showcase both residential and commercial work?</h3>
+                <p>Absolutely. We create separate sections for residential and commercial projects, targeting the specific customers you want most.</p>
               </div>
               <div className="faq-item">
-                <h3>Do you help with licensing and insurance credibility?</h3>
-                <p>Yes! We prominently display all licenses, bonding information, insurance coverage, certifications, and safety records. This immediately establishes credibility and trust with potential clients.</p>
-              </div>
-              <div className="faq-item">
-                <h3>How do you showcase construction quality and craftsmanship?</h3>
-                <p>We create detailed project galleries with before/during/after photos, close-up craftsmanship shots, material details, and progress documentation to visually demonstrate your quality work.</p>
-              </div>
-              <div className="faq-item">
-                <h3>Can you integrate with construction management software?</h3>
-                <p>Yes! We integrate with popular construction software like Buildertrend, CoConstruct, and Procore, allowing clients to track project progress and communicate seamlessly.</p>
+                <h3>How fast can my construction website be ready?</h3>
+                <p>7-14 days. We know construction projects book months ahead, so we get your website working quickly to capture future work.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="section cta-section">
+        <section className="section" style={{ backgroundColor: '#000', color: 'white' }}>
           <div className="container">
-            <div className="cta-content">
-              <h2>Ready to Build Your Construction Empire?</h2>
-              <p>Join 85+ general contractors who've increased their revenue with LogicPros websites. Custom homes, major renovations, and commercial projects - all flowing to your business.</p>
-              <div className="cta-buttons">
-                <a href="/free-example" className="btn btn-primary btn-large">See My Free Construction Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Schedule Free Consultation</a>
-              </div>
+            <div className="section-header">
+              <h2 className="section-title" style={{ color: 'white' }}>Ready to Get More Jobs?</h2>
+              <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
+                Get a website that brings you more construction work. Simple as that.
+              </p>
+            </div>
+            <div className="cta-buttons">
+              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+                Get Started
+              </a>
+              <a href="/free-example" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>
+                See an Example
+              </a>
             </div>
           </div>
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
               <h3>LogicPros</h3>
-              <p>Professional websites for general contractors</p>
+              <p>Websites that make contractors money</p>
             </div>
-            
             <div className="footer-links">
               <div className="footer-column">
-                <h4>Contractor Services</h4>
+                <h4>Contractor Websites</h4>
                 <a href="/contractors/construction">Construction Websites</a>
                 <a href="/contractors/roofing">Roofing Websites</a>
-                <a href="/contractors/remodeling">Remodeling Websites</a>
-                <a href="/contractors/concrete">Concrete Websites</a>
+                <a href="/contractors/plumbing">Plumbing Websites</a>
+                <a href="/contractors/hvac">HVAC Websites</a>
               </div>
-              
               <div className="footer-column">
                 <h4>Company</h4>
-                <a href="/about">About Us</a>
-                <a href="/portfolio">Portfolio</a>
+                <a href="/about">About</a>
                 <a href="/contact">Contact</a>
                 <a href="/free-example">Free Example</a>
               </div>
-              
               <div className="footer-column">
-                <h4>Contact</h4>
+                <h4>Get Started</h4>
                 <p>aaron@logicpros.ca</p>
                 <p>(506) 478-2949</p>
               </div>
             </div>
           </div>
-          
           <div className="footer-bottom">
             <p>&copy; 2024 LogicPros. All rights reserved.</p>
           </div>

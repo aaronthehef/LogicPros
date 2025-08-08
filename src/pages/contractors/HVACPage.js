@@ -2,11 +2,11 @@ import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
+import heroImage from '../../assets/hero-growtika.jpg';
 
 export const HVACPage = () => {
   return (
     <div className="landing-page">
-      {/* Header */}
       <header className="sticky-header">
         <div className="header-content">
           <div className="logo">
@@ -16,253 +16,235 @@ export const HVACPage = () => {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="main-content">
-        {/* Hero Section */}
-        <section className="hero-section">
-          <div className="container">
-            <div className="hero-content">
-              <h1 className="hero-title">Professional Websites for HVAC Contractors</h1>
-              <p className="hero-subtitle">
-                Keep your HVAC business running at peak performance with a website that captures 
-                emergency repairs, seasonal installations, and year-round maintenance contracts. 
-                Specialized web development for heating and cooling professionals.
-              </p>
-              <a href="/contact" className="btn btn-primary btn-large">Get My HVAC Website</a>
+        <section className="hero-section homepage-hero">
+          <div className="hero-image">
+            <img src={heroImage} alt="Professional HVAC technician at work" />
+            <div className="hero-overlay">
+              <div className="hero-content">
+                <h1 className="typewriter-text">Websites That Get HVAC Contractors More Jobs</h1>
+                <p>
+                  Get more emergency calls and big system installations. Show customers you're the heating and cooling expert they need.
+                </p>
+                <a href="/contact" className="btn btn-primary">Get My Website</a>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* HVAC-Specific Challenges */}
         <section className="section">
           <div className="container">
-            <h2>Challenges Every HVAC Business Owner Faces</h2>
+            <div className="section-header">
+              <h2 className="section-title">Why Your Phone Isn't Ringing</h2>
+            </div>
             <div className="challenges-grid">
               <div className="challenge-item">
-                <h3>🌡️ Seasonal Demand Fluctuations</h3>
-                <p>HVAC work peaks in extreme weather. Your website needs to capture emergency repairs in summer/winter while building a pipeline for installations and maintenance year-round.</p>
+                <h3>🌡️ Seasonal Work Problems</h3>
+                <p>Busy in summer and winter, slow the rest of the year. You need steady work all year round.</p>
               </div>
               <div className="challenge-item">
-                <h3>💰 High-Ticket Sales Complexity</h3>
-                <p>New HVAC systems are significant investments. Customers research extensively and compare multiple contractors. Your website must educate and build confidence for these major purchases.</p>
+                <h3>💰 Expensive System Sales</h3>
+                <p>New HVAC systems cost thousands. Customers shop around and pick the cheapest guy, not the best.</p>
               </div>
               <div className="challenge-item">
-                <h3>🔧 Emergency vs. Planned Services</h3>
-                <p>You handle urgent repairs when systems fail and planned installations/maintenance. Each requires different messaging, urgency, and customer psychology.</p>
-              </div>
-              <div className="challenge-item">
-                <h3>🏆 Energy Efficiency Focus</h3>
-                <p>Modern customers want energy-efficient systems and smart home integration. Your website needs to position you as the modern HVAC expert, not just a repair service.</p>
+                <h3>📱 Emergency Calls Going Elsewhere</h3>
+                <p>When someone's AC dies in July, they call whoever shows up first in Google. That should be you.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2>How LogicPros Optimizes Your HVAC Marketing</h2>
+            <div className="section-header">
+              <h2 className="section-title">How We Get You More Work</h2>
+            </div>
             <div className="solutions-grid">
               <div className="solution-item">
-                <h3>🎯 Seasonal Campaign System</h3>
-                <p><strong>What we do:</strong> Dynamic content that adapts seasonally - highlighting AC repair in summer, heating service in winter, and maintenance programs year-round.</p>
-                <p><strong>Result:</strong> Consistent lead flow regardless of season, maximizing revenue potential.</p>
+                <h3>🎯 Show Up First for Emergency HVAC</h3>
+                <p>When someone searches "AC repair near me" at 2 AM, you show up first. More emergency calls mean more money.</p>
               </div>
               <div className="solution-item">
-                <h3>💡 High-Value System Sales</h3>
-                <p><strong>What we do:</strong> Create detailed system comparison pages, financing options, energy savings calculators, and installation processes to support big-ticket sales.</p>
-                <p><strong>Result:</strong> Higher conversion rates on equipment sales and premium installations.</p>
+                <h3>⚡ Easy to Use on Phones</h3>
+                <p>Big call buttons that work when customers need you most. No more lost emergency calls.</p>
               </div>
               <div className="solution-item">
-                <h3>⚡ Emergency Response Optimization</h3>
-                <p><strong>What we do:</strong> Prominent emergency contact options, 24/7 availability messaging, and fast-loading mobile pages for customers in HVAC crisis situations.</p>
-                <p><strong>Result:</strong> Increased emergency call capture and faster response reputation.</p>
-              </div>
-              <div className="solution-item">
-                <h3>🏠 Smart HVAC Positioning</h3>
-                <p><strong>What we do:</strong> Showcase smart thermostats, zoning systems, air quality solutions, and energy-efficient upgrades to position you as a modern HVAC professional.</p>
-                <p><strong>Result:</strong> Attract tech-savvy customers willing to pay premium for advanced systems.</p>
+                <h3>🏆 Show Why You're Worth More</h3>
+                <p>Display your certifications, warranties, and good reviews. Customers will pay fair prices for quality work.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* HVAC Services We Highlight */}
         <section className="section">
           <div className="container">
-            <h2>HVAC Services We Help You Market</h2>
+            <div className="section-header">
+              <h2 className="section-title">Services That Make You Money</h2>
+            </div>
             <div className="services-grid">
               <div className="service-category">
                 <h3>🚨 Emergency HVAC</h3>
-                <ul>
-                  <li>24/7 AC repair</li>
-                  <li>Emergency heating service</li>
-                  <li>System breakdown diagnosis</li>
-                  <li>Urgent part replacement</li>
-                  <li>Holiday/weekend service</li>
-                </ul>
+                <p className="service-description">High-profit emergency calls that happen any time.</p>
+                <div className="service-examples">
+                  <span>AC Breakdowns</span>
+                  <span>Heating Failures</span>
+                  <span>System Repairs</span>
+                  <span>24/7 Service</span>
+                </div>
               </div>
               <div className="service-category">
-                <h3>❄️ Heating Services</h3>
-                <ul>
-                  <li>Furnace installation & repair</li>
-                  <li>Heat pump systems</li>
-                  <li>Boiler service & maintenance</li>
-                  <li>Ductwork installation</li>
-                  <li>Thermostat upgrades</li>
-                </ul>
+                <h3>❄️ Heating Systems</h3>
+                <p className="service-description">Big-ticket heating installs and repairs.</p>
+                <div className="service-examples">
+                  <span>Furnace Install</span>
+                  <span>Heat Pumps</span>
+                  <span>Boiler Service</span>
+                  <span>Ductwork</span>
+                </div>
               </div>
               <div className="service-category">
-                <h3>🌬️ Cooling Services</h3>
-                <ul>
-                  <li>Central AC installation</li>
-                  <li>Ductless mini-split systems</li>
-                  <li>AC tune-ups & maintenance</li>
-                  <li>Refrigerant services</li>
-                  <li>Energy efficiency upgrades</li>
-                </ul>
+                <h3>🌬️ Cooling Systems</h3>
+                <p className="service-description">High-value AC installs and maintenance.</p>
+                <div className="service-examples">
+                  <span>Central AC</span>
+                  <span>Mini Splits</span>
+                  <span>AC Tune-ups</span>
+                  <span>System Upgrades</span>
+                </div>
               </div>
               <div className="service-category">
-                <h3>🏠 Indoor Air Quality</h3>
-                <ul>
-                  <li>Air purification systems</li>
-                  <li>Humidity control</li>
-                  <li>Duct cleaning & sealing</li>
-                  <li>Ventilation improvements</li>
-                  <li>Allergen reduction solutions</li>
-                </ul>
+                <h3>🏠 Air Quality</h3>
+                <p className="service-description">Modern services customers are willing to pay for.</p>
+                <div className="service-examples">
+                  <span>Air Purifiers</span>
+                  <span>Humidity Control</span>
+                  <span>Duct Cleaning</span>
+                  <span>Smart Thermostats</span>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2>HVAC Website Solutions</h2>
+            <div className="section-header">
+              <h2 className="section-title">Get Your Website That Actually Works</h2>
+            </div>
             <div className="solutions-grid">
               <div className="solution-card">
-                <h3>Comfort Zone Sites</h3>
-                <ul>
-                  <li>7-page seasonal-optimized site</li>
-                  <li>Emergency service emphasis</li>
-                  <li>Equipment showcase pages</li>
-                  <li>Service area targeting</li>
-                  <li>Mobile emergency contact</li>
-                  <li>Basic maintenance programs</li>
-                </ul>
-                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
-              </div>
-              <div className="solution-card featured">
-                <h3>Climate Control Pro Sites</h3>
-                <ul>
-                  <li>15-page comprehensive site</li>
-                  <li>Advanced seasonal campaigns</li>
-                  <li>Equipment comparison tools</li>
-                  <li>Financing integration</li>
-                  <li>Smart HVAC showcase</li>
-                  <li>Maintenance plan automation</li>
-                  <li>Review & reputation management</li>
-                </ul>
-                <a href="/contact" className="btn btn-primary">Schedule Consultation</a>
+                <h3>Basic HVAC Website</h3>
+                <p className="solution-price">Perfect for solo HVAC techs</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Emergency call buttons</div>
+                  <div className="feature">✅ Show up first in Google</div>
+                  <div className="feature">✅ Service area pages</div>
+                  <div className="feature">✅ Customer reviews display</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
               </div>
               <div className="solution-card">
-                <h3>Market Domination Sites</h3>
-                <ul>
-                  <li>Unlimited pages & features</li>
-                  <li>Custom HVAC calculators</li>
-                  <li>Advanced lead scoring</li>
-                  <li>Seasonal PPC campaigns</li>
-                  <li>Energy audit tools</li>
-                  <li>Customer portal & scheduling</li>
-                  <li>Comprehensive analytics</li>
-                </ul>
-                <a href="/contact" className="btn btn-primary">Explore Possibilities</a>
+                <h3>Professional HVAC Website</h3>
+                <p className="solution-price">For growing HVAC businesses</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Everything in Basic</div>
+                  <div className="feature">✅ Equipment showcases</div>
+                  <div className="feature">✅ Before/after galleries</div>
+                  <div className="feature">✅ Online estimates</div>
+                  <div className="feature">✅ Google Ads ready</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
+              </div>
+              <div className="solution-card">
+                <h3>Custom HVAC Portal</h3>
+                <p className="solution-price">For established companies</p>
+                <div className="solution-features">
+                  <div className="feature">✅ Everything in Professional</div>
+                  <div className="feature">✅ Customer portals</div>
+                  <div className="feature">✅ Multi-location sites</div>
+                  <div className="feature">✅ Advanced tracking</div>
+                  <div className="feature">✅ Monthly updates</div>
+                </div>
+                <a href="/contact" className="btn btn-primary">Get Started</a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
         <section className="section">
           <div className="container">
-            <h2>Common Questions from HVAC Contractors</h2>
+            <div className="section-header">
+              <h2 className="section-title">Common Questions</h2>
+            </div>
             <div className="faq-grid">
               <div className="faq-item">
-                <h3>How do you handle seasonal fluctuations in HVAC demand?</h3>
-                <p>We create dynamic seasonal content strategies - promoting AC services in spring/summer, heating in fall/winter, and maintenance year-round. Your website automatically adapts to seasonal search patterns and customer needs.</p>
+                <h3>Will I get more emergency calls?</h3>
+                <p>Yes. We make sure you show up first when people search for emergency HVAC help. That means more urgent calls and higher-paying jobs.</p>
               </div>
               <div className="faq-item">
-                <h3>Can you help me sell high-value HVAC systems online?</h3>
-                <p>Absolutely! We create detailed equipment pages with comparisons, financing options, energy savings calculators, and installation timelines. This helps customers understand the value before they call.</p>
+                <h3>How fast can I get my website running?</h3>
+                <p>7-14 days. We know every day without a good website is money lost, especially during busy seasons.</p>
               </div>
               <div className="faq-item">
-                <h3>How do you optimize for both emergency and planned HVAC work?</h3>
-                <p>We use different messaging strategies - urgent, prominent emergency contact for breakdowns, and educational, value-focused content for planned installations and maintenance contracts.</p>
+                <h3>What if I'm not good with computers?</h3>
+                <p>Perfect. We handle everything. You focus on HVAC work, we handle the website. Updates, changes, new content - all handled.</p>
               </div>
               <div className="faq-item">
-                <h3>Do you showcase energy efficiency and smart HVAC features?</h3>
-                <p>Yes! We highlight smart thermostats, energy-efficient systems, air quality solutions, and rebate programs. This positions you as a modern HVAC contractor who offers the latest technology.</p>
-              </div>
-              <div className="faq-item">
-                <h3>How do you help me compete with big HVAC companies?</h3>
-                <p>We emphasize your personal service, local expertise, faster response times, and competitive service. We position independent HVAC contractors as more flexible and customer-focused than large corporations.</p>
-              </div>
-              <div className="faq-item">
-                <h3>Can you integrate with HVAC software and scheduling systems?</h3>
-                <p>Yes! We integrate with popular HVAC software like ServiceTitan, Housecall Pro, and FieldEdge. Your website connects seamlessly with your existing business management systems.</p>
+                <h3>Do you work with ServiceTitan, Housecall Pro, etc.?</h3>
+                <p>Yes. We connect with all major HVAC software. Leads from your website go straight into your system automatically.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="section cta-section">
+        <section className="section" style={{ backgroundColor: '#000', color: 'white' }}>
           <div className="container">
-            <div className="cta-content">
-              <h2>Ready to Heat Up Your HVAC Business?</h2>
-              <p>Join 60+ HVAC contractors who've increased their revenue with LogicPros websites. Emergency repairs, system installations, and maintenance contracts - all flowing to your business.</p>
-              <div className="cta-buttons">
-                <a href="/free-example" className="btn btn-primary btn-large">See My Free HVAC Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Schedule Free Consultation</a>
-              </div>
+            <div className="section-header">
+              <h2 className="section-title" style={{ color: 'white' }}>Ready to Get More Jobs?</h2>
+              <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
+                Get a website that brings you more HVAC work. Simple as that.
+              </p>
+            </div>
+            <div className="cta-buttons">
+              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+                Get Started
+              </a>
+              <a href="/free-example" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>
+                See an Example
+              </a>
             </div>
           </div>
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
               <h3>LogicPros</h3>
-              <p>Professional websites for HVAC contractors</p>
+              <p>Websites that make HVAC contractors money</p>
             </div>
-            
             <div className="footer-links">
               <div className="footer-column">
-                <h4>Contractor Services</h4>
+                <h4>Contractor Websites</h4>
                 <a href="/contractors/hvac">HVAC Websites</a>
                 <a href="/contractors/plumbing">Plumbing Websites</a>
                 <a href="/contractors/electrical">Electrical Websites</a>
                 <a href="/contractors/roofing">Roofing Websites</a>
               </div>
-              
               <div className="footer-column">
                 <h4>Company</h4>
-                <a href="/about">About Us</a>
-                <a href="/portfolio">Portfolio</a>
+                <a href="/about">About</a>
                 <a href="/contact">Contact</a>
                 <a href="/free-example">Free Example</a>
               </div>
-              
               <div className="footer-column">
-                <h4>Contact</h4>
+                <h4>Get Started</h4>
                 <p>aaron@logicpros.ca</p>
                 <p>(506) 478-2949</p>
               </div>
             </div>
           </div>
-          
           <div className="footer-bottom">
             <p>&copy; 2024 LogicPros. All rights reserved.</p>
           </div>
