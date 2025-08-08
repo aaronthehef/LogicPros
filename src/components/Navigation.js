@@ -138,8 +138,8 @@ export const Navigation = () => {
         <a href="/about" className="nav-link">About</a>
         <a href="/contact" className="nav-link">Contact</a>
       </div>
-      <a href="/free-example" className="btn btn-primary btn-highlighted">Get Free Example</a>
       <a href="/contact" className="btn btn-secondary">Request Quote</a>
+      <a href="/free-example" className="btn btn-primary btn-nav-cta">Free Website Example</a>
       <button className="mobile-menu-toggle">☰</button>
     </nav>
   );
