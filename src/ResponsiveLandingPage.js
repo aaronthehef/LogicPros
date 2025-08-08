@@ -149,7 +149,7 @@ export const ResponsiveLandingPage = () => {
         <section id="services" className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Why 200+ Contractors Choose LogicPros</h2>
+              <h2 className="section-title">Why Smart Contractors Choose LogicPros</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
                 We specialize in contractor websites that actually get you more customers
               </p>
@@ -168,10 +168,10 @@ export const ResponsiveLandingPage = () => {
                 <div className="service-icon floating-icon">🏆</div>
                 <h3>Proven Results That Matter</h3>
                 <p>
-                  Our contractor websites generate 3x more leads on average. 
+                  Professional websites get contractors significantly more leads. 
                   We track what works and focus on getting your phone ringing with qualified customers.
                 </p>
-                <div className="feature-highlight">200+ successful contractor sites</div>
+                <div className="feature-highlight">Proven contractor website system</div>
               </div>
               <div className="service-card">
                 <div className="service-icon floating-icon">🔧</div>
@@ -180,7 +180,7 @@ export const ResponsiveLandingPage = () => {
                   We specialize in contractors - plumbing, electrical, HVAC, roofing, and more. 
                   Your website speaks your customers' language and addresses their specific needs.
                 </p>
-                <div className="feature-highlight">10 contractor specializations</div>
+                <div className="feature-highlight">Multiple contractor specializations</div>
               </div>
             </div>
           </div>
@@ -226,9 +226,9 @@ export const ResponsiveLandingPage = () => {
         <section id="portfolio" className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Real Results from Real Contractors</h2>
+              <h2 className="section-title">See What's Possible for Your Business</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-                See how our websites transformed these contractor businesses
+                Here's how professional websites transform contractor businesses
               </p>
             </div>
             <div className="case-studies-grid animate-on-scroll">
@@ -287,17 +287,17 @@ export const ResponsiveLandingPage = () => {
                   <h3>Climate Control Experts</h3>
                   <div className="results-grid">
                     <div className="result-item">
-                      <div className="result-number">#1</div>
-                      <div className="result-label">Google ranking</div>
+                      <div className="result-number">Page 1</div>
+                      <div className="result-label">Google results</div>
                     </div>
                     <div className="result-item">
-                      <div className="result-number">200+</div>
-                      <div className="result-label">New customers/year</div>
+                      <div className="result-number">3x</div>
+                      <div className="result-label">More website leads</div>
                     </div>
                   </div>
                   <p>
-                    "We dominate local search now. When people need HVAC work, 
-                    they find us first and choose us over the competition."
+                    "Our new website shows up when people search for HVAC work. 
+                    We're getting way more calls from customers who found us online."
                   </p>
                 </div>
               </div>
