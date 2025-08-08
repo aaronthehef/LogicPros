@@ -44,7 +44,7 @@ export const RoofingPage = () => {
               </div>
               <div className="challenge-item">
                 <h3>🏠 High-Value Sales Process</h3>
-                <p>Roof replacements cost $8,000-$25,000+. Homeowners get multiple estimates and research extensively. Your website must build trust and demonstrate value before the sales call.</p>
+                <p>Roof replacements are major investments. Homeowners get multiple estimates and research extensively. Your website must build trust and demonstrate value before the sales call.</p>
               </div>
               <div className="challenge-item">
                 <h3>📋 Insurance Claim Complexity</h3>
@@ -76,7 +76,7 @@ export const RoofingPage = () => {
               <div className="solution-item">
                 <h3>🏆 Trust & Credibility Showcase</h3>
                 <p><strong>What we do:</strong> Prominent display of licenses, insurance, warranties, certifications, before/after galleries, and customer testimonials with real names and photos.</p>
-                <p><strong>Result:</strong> Higher conversion rates and ability to command premium pricing.</p>
+                <p><strong>Result:</strong> Higher conversion rates and ability to command premium rates.</p>
               </div>
               <div className="solution-item">
                 <h3>📱 Mobile Estimate System</h3>
@@ -163,14 +163,13 @@ export const RoofingPage = () => {
           </div>
         </section>
 
-        {/* Pricing Packages */}
+        {/* Solutions Section */}
         <section className="section">
           <div className="container">
-            <h2>Roofing Website Packages</h2>
-            <div className="pricing-grid">
-              <div className="pricing-card">
-                <h3>Storm Chaser</h3>
-                <div className="price">$3,500</div>
+            <h2>Roofing Website Solutions</h2>
+            <div className="solutions-grid">
+              <div className="solution-card">
+                <h3>Storm Response Sites</h3>
                 <ul>
                   <li>8-page storm-optimized site</li>
                   <li>Emergency contact system</li>
@@ -179,11 +178,10 @@ export const RoofingPage = () => {
                   <li>Mobile estimate forms</li>
                   <li>Service area targeting</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" className="btn btn-primary">Discuss Your Needs</a>
               </div>
-              <div className="pricing-card featured">
-                <h3>Roofing Professional</h3>
-                <div className="price">$6,200</div>
+              <div className="solution-card featured">
+                <h3>Professional Roofing Sites</h3>
                 <ul>
                   <li>15-page comprehensive site</li>
                   <li>Advanced storm damage pages</li>
@@ -193,11 +191,10 @@ export const RoofingPage = () => {
                   <li>Customer testimonial system</li>
                   <li>Local SEO optimization</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Most Popular</a>
+                <a href="/contact" className="btn btn-primary">Schedule Consultation</a>
               </div>
-              <div className="pricing-card">
-                <h3>Market Leader</h3>
-                <div className="price">$10,500</div>
+              <div className="solution-card">
+                <h3>Market Leader Sites</h3>
                 <ul>
                   <li>Unlimited pages & features</li>
                   <li>Custom storm tracking integration</li>
@@ -207,7 +204,7 @@ export const RoofingPage = () => {
                   <li>Comprehensive analytics</li>
                   <li>Ongoing storm campaign management</li>
                 </ul>
-                <a href="/contact" className="btn btn-primary">Dominate Your Market</a>
+                <a href="/contact" className="btn btn-primary">Explore Possibilities</a>
               </div>
             </div>
           </div>
@@ -232,7 +229,7 @@ export const RoofingPage = () => {
               </div>
               <div className="faq-item">
                 <h3>Do you optimize for both residential and commercial roofing?</h3>
-                <p>Yes! We create separate sections for residential and commercial services, with different messaging, pricing approaches, and customer testimonials relevant to each market segment.</p>
+                <p>Yes! We create separate sections for residential and commercial services, with different messaging, service approaches, and customer testimonials relevant to each market segment.</p>
               </div>
               <div className="faq-item">
                 <h3>How do you showcase roofing work visually?</h3>
@@ -254,7 +251,7 @@ export const RoofingPage = () => {
               <p>Join 75+ roofing contractors who've increased their revenue with LogicPros websites. Storm damage leads, insurance jobs, and premium installations - all flowing to your business.</p>
               <div className="cta-buttons">
                 <a href="/free-example" className="btn btn-primary btn-large">See My Free Roofing Website Example</a>
-                <a href="/contact" className="btn btn-outline btn-large">Get My Custom Quote</a>
+                <a href="/contact" className="btn btn-outline btn-large">Schedule Free Consultation</a>
               </div>
             </div>
           </div>
