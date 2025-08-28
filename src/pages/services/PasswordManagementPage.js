@@ -38,7 +38,7 @@ export const PasswordManagementPage = () => {
         {/* Password Problem Statistics */}
         <section className="section" style={{ backgroundColor: '#fff3cd' }}>
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">The Password Problem Facing New Brunswick Businesses</h2>
             </div>
             <div className="features-grid animate-on-scroll">
@@ -67,7 +67,7 @@ export const PasswordManagementPage = () => {
         {/* What is Password Management */}
         <section className="section">
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">Enterprise Password Management Solutions</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
                 Secure, centralized password storage and generation that eliminates weak passwords 
@@ -106,7 +106,7 @@ export const PasswordManagementPage = () => {
         {/* Benefits */}
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">Benefits of Professional Password Management</h2>
             </div>
             <div className="features-grid animate-on-scroll">
@@ -142,7 +142,7 @@ export const PasswordManagementPage = () => {
         {/* Implementation Process */}
         <section className="section">
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">Our Password Management Implementation Process</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
                 Professional implementation process designed for New Brunswick businesses
@@ -180,7 +180,7 @@ export const PasswordManagementPage = () => {
         {/* Local Service Areas */}
         <section className="section" style={{ backgroundColor: '#f0f9ff' }}>
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">Password Management Services Across New Brunswick</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
                 Professional password security solutions for businesses throughout New Brunswick
@@ -215,7 +215,7 @@ export const PasswordManagementPage = () => {
         {/* Final CTA */}
         <section className="section">
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '30px' }}>
               <h2 className="section-title">Ready to Eliminate Password Security Risks?</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
                 Protect your New Brunswick business with professional password management implementation

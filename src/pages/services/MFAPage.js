@@ -38,7 +38,7 @@ export const MFAPage = () => {
         {/* Why MFA Matters Statistics */}
         <section className="section" style={{ backgroundColor: '#fff3cd' }}>
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">Why Multi-Factor Authentication is Essential</h2>
             </div>
             <div className="features-grid animate-on-scroll">
@@ -67,7 +67,7 @@ export const MFAPage = () => {
         {/* What is MFA */}
         <section className="section">
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">What is Multi-Factor Authentication?</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
                 MFA requires multiple forms of verification before accessing systems, combining something you know 
@@ -109,7 +109,7 @@ export const MFAPage = () => {
         {/* Benefits */}
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">Benefits of Professional MFA Implementation</h2>
             </div>
             <div className="features-grid animate-on-scroll">
@@ -145,7 +145,7 @@ export const MFAPage = () => {
         {/* Implementation Process */}
         <section className="section">
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">Our MFA Implementation Process</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
                 Professional multi-factor authentication implementation for New Brunswick businesses
@@ -183,7 +183,7 @@ export const MFAPage = () => {
         {/* Local Service Areas */}
         <section className="section" style={{ backgroundColor: '#f0f9ff' }}>
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">MFA Services Across New Brunswick</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
                 Professional multi-factor authentication services for businesses throughout New Brunswick
@@ -218,7 +218,7 @@ export const MFAPage = () => {
         {/* Final CTA */}
         <section className="section">
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '30px' }}>
               <h2 className="section-title">Ready to Add Critical Security Layers?</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
                 Protect your New Brunswick business with professional multi-factor authentication implementation

@@ -38,7 +38,7 @@ export const SecurityAuditPage = () => {
         {/* What is Security Audit */}
         <section className="section">
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">What is a Cybersecurity Audit?</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
                 A comprehensive evaluation of your organization's security posture to identify vulnerabilities 
@@ -77,7 +77,7 @@ export const SecurityAuditPage = () => {
         {/* Benefits */}
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">Why New Brunswick Businesses Need Security Audits</h2>
             </div>
             <div className="features-grid animate-on-scroll">
@@ -110,7 +110,7 @@ export const SecurityAuditPage = () => {
         {/* Process */}
         <section className="section">
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">Our Security Audit Process</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
                 Professional security assessment process designed for New Brunswick businesses
@@ -148,7 +148,7 @@ export const SecurityAuditPage = () => {
         {/* Local Service Areas */}
         <section className="section" style={{ backgroundColor: '#f0f9ff' }}>
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 className="section-title">Cybersecurity Audit Services Across New Brunswick</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
                 Professional security assessments for businesses throughout New Brunswick
@@ -183,7 +183,7 @@ export const SecurityAuditPage = () => {
         {/* Final CTA */}
         <section className="section">
           <div className="container">
-            <div className="section-header">
+            <div className="section-header" style={{ marginBottom: '30px' }}>
               <h2 className="section-title">Ready to Strengthen Your Business Security?</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
                 Get a comprehensive cybersecurity audit from New Brunswick's trusted security experts
