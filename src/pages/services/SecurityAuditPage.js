@@ -44,7 +44,7 @@ export const SecurityAuditPage = () => {
                 Don't become another statistic. Professional security audits protect your New Brunswick business from growing cyber threats.
               </p>
             </div>
-            <div className="features-grid animate-on-scroll">
+            <div className="features-grid">
               <div className="feature-item" style={{ textAlign: 'center', background: 'rgba(255,255,255,0.8)', padding: '25px', borderRadius: '12px' }}>
                 <h3 style={{ fontSize: '3rem', color: '#d63384', marginBottom: '10px' }}>85%</h3>
                 <p style={{ color: '#333', fontWeight: '600' }}>of Canadian SMEs experienced a cyber attack in 2024</p>
@@ -73,7 +73,7 @@ export const SecurityAuditPage = () => {
               </p>
             </div>
 
-            <div className="services-grid animate-on-scroll" style={{ marginBottom: '60px' }}>
+            <div className="services-grid" style={{ marginBottom: '60px' }}>
               <div className="service-card" style={{ background: '#f8f9fa', border: '1px solid #e9ecef', padding: '30px', borderRadius: '12px' }}>
                 <div className="service-icon floating-icon" style={{ fontSize: '3rem', marginBottom: '20px' }}>🔍</div>
                 <h3 style={{ color: '#000', marginBottom: '15px' }}>Network Security Assessment</h3>
@@ -164,7 +164,7 @@ export const SecurityAuditPage = () => {
                 Regular security audits ensure your defenses keep pace with emerging threats.
               </p>
             </div>
-            <div className="features-grid animate-on-scroll" style={{ marginBottom: '40px' }}>
+            <div className="features-grid" style={{ marginBottom: '40px' }}>
               <div className="feature-item" style={{ background: 'white', padding: '30px', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
                 <h3 style={{ color: '#dc3545', marginBottom: '15px' }}>🎯 Identify Hidden Vulnerabilities</h3>
                 <p style={{ color: '#333', lineHeight: '1.6' }}>
@@ -213,7 +213,7 @@ export const SecurityAuditPage = () => {
                 Every audit follows our proven methodology developed specifically for New Brunswick businesses.
               </p>
             </div>
-            <div className="services-grid animate-on-scroll" style={{ marginBottom: '50px' }}>
+            <div className="services-grid" style={{ marginBottom: '50px' }}>
               <div className="service-card" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '35px', borderRadius: '15px' }}>
                 <div className="service-icon floating-icon" style={{ fontSize: '3rem', marginBottom: '20px' }}>1️⃣</div>
                 <h3 style={{ marginBottom: '15px' }}>Discovery & Planning</h3>
@@ -270,7 +270,7 @@ export const SecurityAuditPage = () => {
                 that understand regional compliance requirements and industry challenges.
               </p>
             </div>
-            <div className="features-grid animate-on-scroll">
+            <div className="features-grid">
               <div className="feature-item" style={{ background: 'white', padding: '35px', borderRadius: '15px', boxShadow: '0 6px 20px rgba(0,0,0,0.1)', textAlign: 'center' }}>
                 <h3 style={{ color: '#6f42c1', marginBottom: '20px' }}>🏛️ Fredericton Region</h3>
                 <p style={{ color: '#333', lineHeight: '1.6', marginBottom: '20px' }}>

@@ -44,7 +44,7 @@ export const PasswordManagementPage = () => {
                 Weak passwords are the #1 cause of data breaches. Don't let poor password practices destroy your New Brunswick business.
               </p>
             </div>
-            <div className="features-grid animate-on-scroll">
+            <div className="features-grid">
               <div className="feature-item" style={{ textAlign: 'center', background: 'rgba(255,255,255,0.8)', padding: '25px', borderRadius: '12px' }}>
                 <h3 style={{ fontSize: '3rem', color: '#d63384', marginBottom: '10px' }}>81%</h3>
                 <p style={{ color: '#333', fontWeight: '600' }}>of data breaches involve weak or stolen passwords</p>
@@ -73,7 +73,7 @@ export const PasswordManagementPage = () => {
               </p>
             </div>
 
-            <div className="services-grid animate-on-scroll" style={{ marginBottom: '60px' }}>
+            <div className="services-grid" style={{ marginBottom: '60px' }}>
               <div className="service-card" style={{ background: '#f8f9fa', border: '1px solid #e9ecef', padding: '30px', borderRadius: '12px' }}>
                 <div className="service-icon floating-icon" style={{ fontSize: '3rem', marginBottom: '20px' }}>🔐</div>
                 <h3 style={{ color: '#000', marginBottom: '15px' }}>Secure Password Generation</h3>
@@ -166,7 +166,7 @@ export const PasswordManagementPage = () => {
                 benefits for your New Brunswick business.
               </p>
             </div>
-            <div className="services-grid animate-on-scroll" style={{ marginBottom: '40px' }}>
+            <div className="services-grid" style={{ marginBottom: '40px' }}>
               <div className="service-card" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '35px', borderRadius: '15px' }}>
                 <div className="service-icon floating-icon" style={{ fontSize: '3rem', marginBottom: '20px' }}>1️⃣</div>
                 <h3 style={{ marginBottom: '15px' }}>Security Assessment</h3>
@@ -234,7 +234,7 @@ export const PasswordManagementPage = () => {
                 from small startups to large enterprises.
               </p>
             </div>
-            <div className="features-grid animate-on-scroll">
+            <div className="features-grid">
               <div className="feature-item" style={{ background: 'white', padding: '35px', borderRadius: '15px', boxShadow: '0 6px 20px rgba(0,0,0,0.1)', textAlign: 'center' }}>
                 <h3 style={{ color: '#6f42c1', marginBottom: '20px' }}>🏛️ Fredericton Region</h3>
                 <p style={{ color: '#333', lineHeight: '1.6', marginBottom: '20px' }}>

@@ -45,7 +45,7 @@ export const MFAPage = () => {
                 against modern attack methods targeting New Brunswick businesses.
               </p>
             </div>
-            <div className="features-grid animate-on-scroll" style={{ marginBottom: '50px' }}>
+            <div className="features-grid" style={{ marginBottom: '50px' }}>
               <div className="feature-item" style={{ textAlign: 'center', padding: '30px' }}>
                 <h3 style={{ fontSize: '3rem', color: '#e74c3c', fontWeight: '700', margin: '0 0 10px 0' }}>99.9%</h3>
                 <p style={{ fontSize: '1.1rem', color: '#2c3e50', fontWeight: '600' }}>of password attacks can be blocked by MFA</p>
@@ -100,7 +100,7 @@ export const MFAPage = () => {
             {/* Three Factors Explained */}
             <div style={{ marginBottom: '60px' }}>
               <h3 style={{ textAlign: 'center', color: '#2c3e50', marginBottom: '40px', fontSize: '1.8rem' }}>The Three Authentication Factors</h3>
-              <div className="features-grid animate-on-scroll">
+              <div className="features-grid">
                 <div style={{ textAlign: 'center', padding: '30px', background: '#f8f9fa', borderRadius: '15px' }}>
                   <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🧠</div>
                   <h4 style={{ color: '#2c3e50', marginBottom: '15px' }}>Something You Know</h4>
@@ -119,7 +119,7 @@ export const MFAPage = () => {
               </div>
             </div>
             
-            <div className="services-grid animate-on-scroll">
+            <div className="services-grid">
               <div className="service-card" style={{ border: '2px solid #3498db' }}>
                 <div className="service-icon floating-icon">📱</div>
                 <h3 style={{ color: '#2c3e50' }}>Mobile Authenticator Apps</h3>
@@ -195,7 +195,7 @@ export const MFAPage = () => {
               </p>
             </div>
             
-            <div className="features-grid animate-on-scroll" style={{ marginBottom: '50px' }}>
+            <div className="features-grid" style={{ marginBottom: '50px' }}>
               <div className="feature-item" style={{ padding: '40px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🛡️</div>
                 <h3 style={{ color: '#2c3e50', marginBottom: '20px', fontSize: '1.4rem' }}>Prevent Account Takeovers</h3>
@@ -294,7 +294,7 @@ export const MFAPage = () => {
               </p>
             </div>
             
-            <div className="services-grid animate-on-scroll" style={{ marginBottom: '60px' }}>
+            <div className="services-grid" style={{ marginBottom: '60px' }}>
               <div className="service-card" style={{ padding: '40px', border: '3px solid #3498db', borderRadius: '15px' }}>
                 <div className="service-icon floating-icon" style={{ fontSize: '3rem', marginBottom: '25px' }}>1️⃣</div>
                 <h3 style={{ color: '#2c3e50', marginBottom: '25px', fontSize: '1.4rem' }}>Security Assessment & Planning</h3>
@@ -400,7 +400,7 @@ export const MFAPage = () => {
               </p>
             </div>
             
-            <div className="features-grid animate-on-scroll" style={{ marginBottom: '50px' }}>
+            <div className="features-grid" style={{ marginBottom: '50px' }}>
               <div className="feature-item" style={{ textAlign: 'center', padding: '40px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
                 <div style={{ fontSize: '4rem', marginBottom: '25px' }}>🏛️</div>
                 <h3 style={{ color: '#2c3e50', marginBottom: '20px', fontSize: '1.5rem' }}>Fredericton Region</h3>
