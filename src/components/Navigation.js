@@ -100,8 +100,8 @@ export const Navigation = () => {
               AI Automations
             </a>
             <a href="/services/it-services" onClick={handleLinkClick}>
-              <span className="dropdown-icon">💻</span>
-              Managed IT
+              <span className="dropdown-icon">🔒</span>
+              Cybersecurity & IT Services
             </a>
           </div>
           <div className="dropdown-hover-bridge"></div>
@@ -134,7 +134,6 @@ export const Navigation = () => {
           <div className="dropdown-hover-bridge"></div>
         </div>
 
-        <a href="/portfolio" className="nav-link">Portfolio</a>
         <a href="/about" className="nav-link">About</a>
         <a href="/contact" className="nav-link">Contact</a>
       </div>

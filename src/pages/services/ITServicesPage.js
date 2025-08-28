@@ -21,11 +21,11 @@ export const ITServicesPage = () => {
         <section className="hero-section">
           <div className="container">
             <div className="hero-content">
-              <h1>Managed IT Services for Small Businesses</h1>
+              <h1>Cybersecurity & IT Services for New Brunswick Businesses</h1>
               <p>
-                Complete IT management including software updates, cybersecurity, backups, and remote support. 
-                Based in New Brunswick, serving businesses across Canada and the U.S. 
-                Focus on growing your business while we handle the technology.
+                Comprehensive cybersecurity audits, managed IT services, and digital protection solutions. 
+                Cybersecure NB grant eligible services up to $3,000. Based in New Brunswick, 
+                serving SMEs across the province with expert security and IT support.
               </p>
               <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
             </div>
@@ -35,101 +35,105 @@ export const ITServicesPage = () => {
         {/* Core Services */}
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2 className="section-title">Complete IT Management Services</h2>
+            <h2 className="section-title">Cybersecurity & IT Management Services</h2>
             <p className="service-intro">
-              Everything your business needs to stay secure, updated, and running smoothly. 
-              No more IT headaches or unexpected downtime.
+              Cybersecure NB grant eligible services to protect your business and streamline IT operations. 
+              Comprehensive security audits, AI integration, and managed IT support.
             </p>
             
             <div className="it-services-grid">
-              <div className="it-service-card">
-                <div className="service-icon">🔄</div>
-                <h3>Software Updates & Patches</h3>
+              <div className="it-service-card featured-service">
+                <div className="service-badge">Grant Eligible</div>
+                <div className="service-icon">🔐</div>
+                <h3>Password Management Systems</h3>
                 <ul className="service-features">
-                  <li>Automatic operating system updates</li>
-                  <li>Business software patch management</li>
-                  <li>Security update prioritization</li>
-                  <li>Update testing and rollback capabilities</li>
-                  <li>Scheduled maintenance windows</li>
+                  <li>Enterprise password manager implementation</li>
+                  <li>Strong password policy enforcement</li>
+                  <li>Secure password sharing for teams</li>
+                  <li>Password breach monitoring</li>
+                  <li>Employee training and adoption support</li>
                 </ul>
                 <div className="service-benefit">
-                  Prevents security vulnerabilities and ensures optimal software performance
+                  Cybersecure NB Grant Eligible - Eliminate password-related security risks
                 </div>
               </div>
 
               <div className="it-service-card featured-service">
-                <div className="service-badge">Essential</div>
-                <div className="service-icon">🔒</div>
-                <h3>Cybersecurity Protection</h3>
+                <div className="service-badge">Grant Eligible</div>
+                <div className="service-icon">🛡️</div>
+                <h3>Multi-Factor Authentication (MFA)</h3>
                 <ul className="service-features">
-                  <li>24/7 threat monitoring and detection</li>
-                  <li>Firewall configuration and management</li>
-                  <li>Email security and spam filtering</li>
-                  <li>Employee security awareness training</li>
-                  <li>Incident response and recovery</li>
+                  <li>MFA implementation across all business systems</li>
+                  <li>Mobile authenticator app setup</li>
+                  <li>Hardware token integration where needed</li>
+                  <li>User training and support</li>
+                  <li>Ongoing MFA monitoring and management</li>
                 </ul>
                 <div className="service-benefit">
-                  Protects your business data and prevents costly cyber attacks
+                  Cybersecure NB Grant Eligible - Add critical extra layer of security
                 </div>
               </div>
 
-              <div className="it-service-card">
-                <div className="service-icon">💾</div>
-                <h3>Automated Backup Systems</h3>
-                <ul className="service-features">
-                  <li>Daily automated backups of critical data</li>
-                  <li>Cloud and local backup redundancy</li>
-                  <li>Regular backup testing and verification</li>
-                  <li>Quick data recovery procedures</li>
-                  <li>Disaster recovery planning</li>
-                </ul>
-                <div className="service-benefit">
-                  Ensures your business data is always safe and recoverable
-                </div>
-              </div>
-
-              <div className="it-service-card">
-                <div className="service-icon">💻</div>
-                <h3>Remote Technical Support</h3>
-                <ul className="service-features">
-                  <li>Fast resolution of IT issues</li>
-                  <li>Remote desktop support when possible</li>
-                  <li>Software troubleshooting and optimization</li>
-                  <li>Hardware diagnostic and repair coordination</li>
-                  <li>User training and guidance</li>
-                </ul>
-                <div className="service-benefit">
-                  Minimizes downtime and keeps your team productive
-                </div>
-              </div>
-
-              <div className="it-service-card">
+              <div className="it-service-card featured-service">
+                <div className="service-badge">Grant Eligible</div>
                 <div className="service-icon">🔍</div>
-                <h3>System Monitoring & Audits</h3>
+                <h3>Comprehensive Security Audits</h3>
                 <ul className="service-features">
-                  <li>Proactive system health monitoring</li>
-                  <li>Performance optimization recommendations</li>
-                  <li>Regular IT infrastructure assessments</li>
-                  <li>Compliance and security audits</li>
-                  <li>Technology upgrade planning</li>
+                  <li>Complete cybersecurity assessment</li>
+                  <li>Vulnerability identification and remediation</li>
+                  <li>Security policy development</li>
+                  <li>Compliance gap analysis</li>
+                  <li>Detailed security improvement roadmap</li>
                 </ul>
                 <div className="service-benefit">
-                  Identifies and prevents issues before they impact your business
+                  Cybersecure NB Grant Eligible - Identify and fix security weaknesses
+                </div>
+              </div>
+
+              <div className="it-service-card featured-service">
+                <div className="service-badge">Grant Eligible</div>
+                <div className="service-icon">🔧</div>
+                <h3>Security Headers & Web Protection</h3>
+                <ul className="service-features">
+                  <li>HTTP security headers implementation</li>
+                  <li>SSL/TLS certificate management</li>
+                  <li>Web application firewall setup</li>
+                  <li>Website security monitoring</li>
+                  <li>Protection against common web vulnerabilities</li>
+                </ul>
+                <div className="service-benefit">
+                  Cybersecure NB Grant Eligible - Secure your web presence
+                </div>
+              </div>
+
+              <div className="it-service-card featured-service">
+                <div className="service-badge">Grant Eligible</div>
+                <div className="service-icon">💻</div>
+                <h3>Endpoint Security & Patch Management</h3>
+                <ul className="service-features">
+                  <li>Advanced antivirus and anti-malware protection</li>
+                  <li>Automated security patch deployment</li>
+                  <li>Device encryption and management</li>
+                  <li>Regular security scanning</li>
+                  <li>Incident response planning</li>
+                </ul>
+                <div className="service-benefit">
+                  Cybersecure NB Grant Eligible - Protect all business devices
                 </div>
               </div>
 
               <div className="it-service-card">
-                <div className="service-icon">📞</div>
-                <h3>Proactive IT Management</h3>
+                <div className="service-icon">📊</div>
+                <h3>Managed IT Services</h3>
                 <ul className="service-features">
-                  <li>24/7 system monitoring and alerts</li>
-                  <li>Predictive maintenance and optimization</li>
-                  <li>Regular system health reports</li>
-                  <li>Technology roadmap planning</li>
-                  <li>Budget planning for IT expenses</li>
+                  <li>24/7 system monitoring and support</li>
+                  <li>Regular maintenance and updates</li>
+                  <li>Backup and disaster recovery</li>
+                  <li>Help desk and technical support</li>
+                  <li>Technology planning and budgeting</li>
                 </ul>
                 <div className="service-benefit">
-                  Prevents problems before they happen and plans for growth
+                  Complete IT management so you can focus on your business
                 </div>
               </div>
             </div>
@@ -192,13 +196,13 @@ export const ITServicesPage = () => {
         {/* Why Choose Our MSP Services */}
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2 className="section-title">Why Choose LogicPros for IT Management</h2>
+            <h2 className="section-title">Why Choose LogicPros for Cybersecurity & IT Services</h2>
             
             <div className="msp-benefits">
               <div className="benefit-content">
                 <div className="benefit-item">
-                  <h3>🇨🇦 Local Expertise, Wide Reach</h3>
-                  <p>Based in New Brunswick with deep understanding of Canadian business needs and regulations. We also serve clients across the United States with the same level of dedicated service.</p>
+                  <h3>🇨🇦 Cybersecure NB Grant Partner</h3>
+                  <p>Official provider for Cybersecure NB program services. We help New Brunswick SMEs maximize their $3,000 grant eligibility for cybersecurity and AI implementations.</p>
                 </div>
                 
                 <div className="benefit-item">
@@ -230,21 +234,37 @@ export const ITServicesPage = () => {
           </div>
         </section>
 
+        {/* Grant Information */}
+        <section className="section" style={{ backgroundColor: '#e8f5e8' }}>
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Cybersecure NB Grant Available</h2>
+              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
+                New Brunswick businesses may be eligible for grants to help cover cybersecurity and AI implementation costs. 
+                Contact us for details on eligibility and application assistance.
+              </p>
+              <a href="/contact" className="btn btn-primary" style={{ marginTop: '20px' }}>
+                Ask About Grant Eligibility
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Service Packages */}
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Managed IT Service Packages</h2>
+            <h2 className="section-title">Cybersecurity & IT Service Packages</h2>
             
             <div className="package-grid">
               <div className="package-card">
-                <h3>Essential IT Support</h3>
+                <h3>Essential Security Package</h3>
                 <p className="package-subtitle">Perfect for Small Businesses</p>
                 <ul className="package-features">
-                  <li>Basic system monitoring</li>
-                  <li>Software updates and patches</li>
-                  <li>Email and phone support</li>
-                  <li>Monthly backup verification</li>
-                  <li>Basic security protection</li>
+                  <li>Basic security audit</li>
+                  <li>Password manager implementation</li>
+                  <li>MFA setup for key systems</li>
+                  <li>Security awareness training</li>
+                  <li>Basic endpoint protection</li>
                 </ul>
                 <div className="package-cta">
                   <a href="/contact" className="btn btn-secondary">Request Quote</a>
@@ -253,15 +273,15 @@ export const ITServicesPage = () => {
 
               <div className="package-card featured-package">
                 <div className="package-badge">Most Popular</div>
-                <h3>Complete IT Management</h3>
+                <h3>Complete Security & IT Package</h3>
                 <p className="package-subtitle">Comprehensive Business Protection</p>
                 <ul className="package-features">
-                  <li>24/7 system monitoring and alerts</li>
-                  <li>Proactive maintenance and optimization</li>
-                  <li>Advanced cybersecurity protection</li>
-                  <li>Daily automated backups</li>
-                  <li>Remote and on-site support</li>
-                  <li>Regular IT audits and reporting</li>
+                  <li>Comprehensive security audit</li>
+                  <li>Full MFA and password management</li>
+                  <li>Security headers and web protection</li>
+                  <li>Endpoint security and patch management</li>
+                  <li>AI chatbot integration</li>
+                  <li>Managed IT support included</li>
                 </ul>
                 <div className="package-cta">
                   <a href="/contact" className="btn btn-primary">Request Quote</a>

@@ -28,14 +28,14 @@ export const ResponsiveLandingPage = () => {
             <img src={heroImage} alt="Professional team working on digital solutions" />
             <div className="hero-overlay">
               <div className="hero-content">
-                <h1 className="typewriter-text">Get Your FREE Website Example - See It Before You Buy</h1>
+                <h1 className="typewriter-text">Professional Cybersecurity, AI Solutions & Website Development</h1>
                 <p className="hero-subheadline">
-                  We'll build a custom website example for YOUR business in 48 hours. 
-                  Completely free, no commitment required.
+                  New Brunswick's trusted partner for cybersecurity audits, AI automation, and professional websites. 
+                  Eligible for Cybersecure NB grants up to $3,000.
                 </p>
                 <div className="hero-cta-section">
-                  <a href="/free-example" className="btn btn-primary btn-hero">Get My Free Website Example</a>
-                  <a href="/contact" className="secondary-link">Have questions? Ask us first →</a>
+                  <a href="/contact" className="btn btn-primary btn-hero">Get Security Assessment</a>
+                  <a href="/free-example" className="secondary-link">Or get a free website example →</a>
                 </div>
               </div>
             </div>
@@ -150,38 +150,47 @@ export const ResponsiveLandingPage = () => {
         <section id="services" className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Why Smart Contractors Choose LogicPros</h2>
+              <h2 className="section-title">Complete Digital Security & Growth Solutions</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-                We specialize in contractor websites that actually get you more customers
+                Cybersecurity audits, AI automation, professional websites, and IT support - all eligible for Cybersecure NB grants
               </p>
             </div>
             <div className="services-grid animate-on-scroll">
               <div className="service-card">
-                <div className="service-icon floating-icon">⚡</div>
-                <h3>Lightning-Fast Turnaround</h3>
+                <div className="service-icon floating-icon">🔒</div>
+                <h3>Cybersecurity Audits & Protection</h3>
                 <p>
-                  Get your professional website in 2-4 weeks, not months. 
-                  We understand contractors can't wait - every day without a good website is money lost.
+                  Comprehensive security assessments, password management, MFA implementation, and incident response planning. 
+                  Protect your business from cyber threats with expert security solutions.
+                </p>
+                <div className="feature-highlight">Cybersecure NB Grant Eligible - Up to $3,000</div>
+              </div>
+              <div className="service-card">
+                <div className="service-icon floating-icon">🤖</div>
+                <h3>AI Automation & Integration</h3>
+                <p>
+                  Chatbots, automated marketing, predictive analytics, and AI-powered business processes. 
+                  Streamline operations and reduce manual work with intelligent automation.
+                </p>
+                <div className="feature-highlight">Cybersecure NB Grant Eligible - Up to $3,000</div>
+              </div>
+              <div className="service-card">
+                <div className="service-icon floating-icon">🌐</div>
+                <h3>Professional Website Development</h3>
+                <p>
+                  Modern, secure websites built with the latest technology. Mobile-responsive, SEO-optimized, 
+                  and designed to convert visitors into customers.
                 </p>
                 <div className="feature-highlight">Free example in 48 hours</div>
               </div>
               <div className="service-card">
-                <div className="service-icon floating-icon">🏆</div>
-                <h3>Proven Results That Matter</h3>
+                <div className="service-icon floating-icon">💻</div>
+                <h3>Managed IT Services</h3>
                 <p>
-                  Professional websites get contractors significantly more leads. 
-                  We track what works and focus on getting your phone ringing with qualified customers.
+                  24/7 monitoring, patch management, endpoint security, and technical support. 
+                  Keep your systems secure and running smoothly with proactive IT management.
                 </p>
-                <div className="feature-highlight">Proven contractor website system</div>
-              </div>
-              <div className="service-card">
-                <div className="service-icon floating-icon">🔧</div>
-                <h3>Built for Your Industry</h3>
-                <p>
-                  We specialize in contractors - plumbing, electrical, HVAC, roofing, and more. 
-                  Your website speaks your customers' language and addresses their specific needs.
-                </p>
-                <div className="feature-highlight">Multiple contractor specializations</div>
+                <div className="feature-highlight">New Brunswick based support</div>
               </div>
             </div>
           </div>
@@ -191,34 +200,34 @@ export const ResponsiveLandingPage = () => {
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Why Small Businesses Choose LogicPros</h2>
+              <h2 className="section-title">Why New Brunswick Businesses Choose LogicPros</h2>
             </div>
             <div className="features-grid animate-on-scroll">
               <div className="feature-item">
-                <h3>Local Expertise, Wider Reach</h3>
+                <h3>Cybersecure NB Program Partner</h3>
                 <p>
-                  Based in New Brunswick with deep understanding of Canadian and U.S. markets. 
-                  We specialize in contractors and trades but work with any business that values results.
+                  Officially recognized provider for cybersecurity and AI services under the Cybersecure NB program. 
+                  Get up to $3,000 in grants to enhance your business security and AI capabilities.
                 </p>
               </div>
               <div className="feature-item">
-                <h3>Complete Digital Solutions</h3>
+                <h3>Local New Brunswick Expertise</h3>
                 <p>
-                  From website design to AI automations to managed IT services. 
-                  Everything you need to modernize your business operations in one place.
+                  Based in New Brunswick with deep understanding of local business needs. 
+                  We work with SMEs across all industries to improve their digital security and operations.
                 </p>
               </div>
               <div className="feature-item">
-                <h3>Quick Results</h3>
+                <h3>Complete Security & Growth Solutions</h3>
                 <p>
-                  2-4 week website turnaround with AI-powered copywriting. 
-                  Automations deployed with ongoing monitoring so they just work.
+                  From cybersecurity audits to AI automation to professional websites. 
+                  Everything your business needs to stay secure and competitive in the digital age.
                 </p>
               </div>
             </div>
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary">Get Free Consultation</a>
-              <a href="/portfolio" className="btn btn-secondary">View Portfolio</a>
+              <a href="/contact" className="btn btn-primary">Get Security Assessment</a>
+              <a href="/free-example" className="btn btn-secondary">View Free Website Example</a>
             </div>
           </div>
         </section>
@@ -227,80 +236,38 @@ export const ResponsiveLandingPage = () => {
         <section id="portfolio" className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">See What's Possible for Your Business</h2>
+              <h2 className="section-title">Cybersecurity, Website Development & AI Solutions</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-                Here's how professional websites transform contractor businesses
+                Comprehensive digital services for New Brunswick businesses - from security audits to modern websites
               </p>
             </div>
-            <div className="case-studies-grid animate-on-scroll">
-              <div className="case-study-card enhanced">
-                <div className="case-study-header">
-                  <div className="business-type">Plumbing Contractor</div>
-                  <div className="location">Fredericton, NB</div>
-                </div>
-                <div className="case-study-content">
-                  <h3>Atlantic Drain Services</h3>
-                  <div className="results-grid">
-                    <div className="result-item">
-                      <div className="result-number">280%</div>
-                      <div className="result-label">More emergency calls</div>
-                    </div>
-                    <div className="result-item">
-                      <div className="result-number">4.9⭐</div>
-                      <div className="result-label">Google rating</div>
-                    </div>
-                  </div>
-                  <p>
-                    "After 3 months with our new LogicPros website, we're booked solid. 
-                    The phone rings constantly with qualified customers who found us on Google."
-                  </p>
-                </div>
+            <div className="services-grid animate-on-scroll">
+              <div className="service-card">
+                <div className="service-icon floating-icon">🔒</div>
+                <h3>Cybersecurity Audits</h3>
+                <p>
+                  Comprehensive security assessments including password management, MFA implementation, 
+                  security headers, patch management, and incident response planning.
+                </p>
+                <div className="feature-highlight">Cybersecure NB Grant Eligible - Up to $3,000</div>
               </div>
-              <div className="case-study-card enhanced">
-                <div className="case-study-header">
-                  <div className="business-type">Electrical Contractor</div>
-                  <div className="location">Saint John, NB</div>
-                </div>
-                <div className="case-study-content">
-                  <h3>Pro Electric Solutions</h3>
-                  <div className="results-grid">
-                    <div className="result-item">
-                      <div className="result-number">150%</div>
-                      <div className="result-label">More service calls</div>
-                    </div>
-                    <div className="result-item">
-                      <div className="result-number">$50k+</div>
-                      <div className="result-label">Extra monthly revenue</div>
-                    </div>
-                  </div>
-                  <p>
-                    "The website pays for itself every month. We're getting bigger jobs 
-                    and customers who appreciate quality work."
-                  </p>
-                </div>
+              <div className="service-card">
+                <div className="service-icon floating-icon">🌐</div>
+                <h3>Professional Websites</h3>
+                <p>
+                  Modern, secure, mobile-responsive websites built with React or WordPress. 
+                  SEO-optimized and designed to convert visitors into customers.
+                </p>
+                <div className="feature-highlight">Free example delivered in 48 hours</div>
               </div>
-              <div className="case-study-card enhanced">
-                <div className="case-study-header">
-                  <div className="business-type">HVAC Contractor</div>
-                  <div className="location">Moncton, NB</div>
-                </div>
-                <div className="case-study-content">
-                  <h3>Climate Control Experts</h3>
-                  <div className="results-grid">
-                    <div className="result-item">
-                      <div className="result-number">Page 1</div>
-                      <div className="result-label">Google results</div>
-                    </div>
-                    <div className="result-item">
-                      <div className="result-number">3x</div>
-                      <div className="result-label">More website leads</div>
-                    </div>
-                  </div>
-                  <p>
-                    "Our new website shows up when people search for HVAC work. 
-                    We're getting way more calls from customers who found us online."
-                  </p>
-                </div>
+              <div className="service-card">
+                <div className="service-icon floating-icon">🤖</div>
+                <h3>AI & Automation</h3>
+                <p>
+                  Chatbots, automated email marketing, predictive analytics, social media management, 
+                  and AI-powered business process automation.
+                </p>
+                <div className="feature-highlight">Cybersecure NB Grant Eligible - Up to $3,000</div>
               </div>
             </div>
           </div>
@@ -310,44 +277,29 @@ export const ResponsiveLandingPage = () => {
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">What Our Clients Say</h2>
+              <h2 className="section-title">Why Choose LogicPros for Cybersecurity & Website Development</h2>
             </div>
-            <div className="testimonials-grid animate-on-scroll">
-              <div className="testimonial-card">
-                <p className="testimonial-quote">
-                  "The WordPress site and Google review automation from LogicPros transformed our business. We went from 2-3 leads per week to 15+ qualified prospects. The 4-week turnaround was exactly what we needed."
+            <div className="features-grid animate-on-scroll">
+              <div className="feature-item">
+                <h3>🏆 Proven Expertise</h3>
+                <p>
+                  Years of experience in cybersecurity, web development, and IT services. 
+                  We understand the unique challenges facing New Brunswick businesses.
                 </p>
-                <div className="testimonial-author">
-                  <div className="author-avatar"></div>
-                  <div className="author-info">
-                    <h4>Dave Mitchell</h4>
-                    <p>Owner, Atlantic HVAC Services</p>
-                  </div>
-                </div>
               </div>
-              <div className="testimonial-card">
-                <p className="testimonial-quote">
-                  "The AI automations handle our social media posting and review requests perfectly. It's like having a marketing assistant that never takes a day off. Excellent solution for our business."
+              <div className="feature-item">
+                <h3>💰 Maximize Your Grants</h3>
+                <p>
+                  Expert guidance on Cybersecure NB grant applications and implementation. 
+                  We help you get the full $3,000 grant for eligible cybersecurity and AI services.
                 </p>
-                <div className="testimonial-author">
-                  <div className="author-avatar"></div>
-                  <div className="author-info">
-                    <h4>Lisa Thompson</h4>
-                    <p>Manager, Thompson Electric</p>
-                  </div>
-                </div>
               </div>
-              <div className="testimonial-card">
-                <p className="testimonial-quote">
-                  "Professional service from start to finish. They built our React website with modern design and the managed IT services keep everything running smoothly. Highly recommended for any contractor."
+              <div className="feature-item">
+                <h3>⚡ Fast Implementation</h3>
+                <p>
+                  Quick turnaround on all projects - website examples in 48 hours, 
+                  security audits within a week, AI solutions deployed rapidly.
                 </p>
-                <div className="testimonial-author">
-                  <div className="author-avatar"></div>
-                  <div className="author-info">
-                    <h4>Mark Sullivan</h4>
-                    <p>CEO, Sullivan Construction</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -380,15 +332,54 @@ export const ResponsiveLandingPage = () => {
           </div>
         </section>
 
+        {/* New Brunswick Service Areas */}
+        <section className="section" style={{ backgroundColor: '#f0f9ff' }}>
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Serving New Brunswick Businesses</h2>
+              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
+                Local cybersecurity, AI automation, and IT services across New Brunswick. 
+                Cybersecure NB grant eligible services available province-wide.
+              </p>
+            </div>
+            <div className="features-grid animate-on-scroll">
+              <div className="feature-item" style={{ textAlign: 'center' }}>
+                <h3>🏢 Fredericton</h3>
+                <p>
+                  Cybersecurity audits, AI chatbots, managed IT services, and professional websites 
+                  for Fredericton businesses. Cybersecure NB grants available.
+                </p>
+              </div>
+              <div className="feature-item" style={{ textAlign: 'center' }}>
+                <h3>🏭 Moncton</h3>
+                <p>
+                  Security assessments, automated marketing, endpoint protection, and web development 
+                  for Moncton area SMEs. Full grant eligibility support.
+                </p>
+              </div>
+              <div className="feature-item" style={{ textAlign: 'center' }}>
+                <h3>⚓ Saint John</h3>
+                <p>
+                  MFA implementation, predictive analytics, patch management, and digital solutions 
+                  for Saint John businesses. Maximize your $3,000 grant.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA Section */}
         <section className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Ready to Grow Your Business?</h2>
+              <h2 className="section-title">Ready to Secure & Grow Your New Brunswick Business?</h2>
+              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
+                Get up to $3,000 in Cybersecure NB grants for cybersecurity and AI services
+              </p>
             </div>
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary">Get Started Today</a>
-              <a href="/contact" className="btn btn-secondary">Schedule Consultation</a>
+              <a href="/contact" className="btn btn-primary">Get Security Assessment</a>
+              <a href="/contact" className="btn btn-secondary">Learn About Grants</a>
             </div>
           </div>
         </section>
