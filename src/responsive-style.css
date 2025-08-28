@@ -110,6 +110,25 @@ body {
   margin: 8px 0;
 }
 
+.dropdown-submenu {
+  margin: 8px 0;
+}
+
+.submenu-header a {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.submenu-content {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.submenu-content a {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
 /* Buttons */
 .btn {
   padding: 12px 24px;

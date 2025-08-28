@@ -99,23 +99,29 @@ export const Navigation = () => {
               <span className="dropdown-icon">🤖</span>
               AI Automations
             </a>
-            <a href="/services/it-services" onClick={handleLinkClick}>
-              <span className="dropdown-icon">🔒</span>
-              Cybersecurity & IT Services
-            </a>
-            <div className="dropdown-divider"></div>
-            <a href="/services/security-audits" onClick={handleLinkClick}>
-              <span className="dropdown-icon">🔍</span>
-              Security Audits
-            </a>
-            <a href="/services/password-management" onClick={handleLinkClick}>
-              <span className="dropdown-icon">🔐</span>
-              Password Management
-            </a>
-            <a href="/services/multi-factor-authentication" onClick={handleLinkClick}>
-              <span className="dropdown-icon">🛡️</span>
-              Multi-Factor Authentication
-            </a>
+            
+            <div className="dropdown-submenu">
+              <div className="submenu-header">
+                <a href="/services/it-services" onClick={handleLinkClick}>
+                  <span className="dropdown-icon">🔒</span>
+                  Cybersecurity & IT Services
+                </a>
+              </div>
+              <div className="submenu-content">
+                <a href="/services/security-audits" onClick={handleLinkClick}>
+                  <span className="dropdown-icon">🔍</span>
+                  Security Audits
+                </a>
+                <a href="/services/password-management" onClick={handleLinkClick}>
+                  <span className="dropdown-icon">🔐</span>
+                  Password Management
+                </a>
+                <a href="/services/multi-factor-authentication" onClick={handleLinkClick}>
+                  <span className="dropdown-icon">🛡️</span>
+                  Multi-Factor Authentication
+                </a>
+              </div>
+            </div>
           </div>
           <div className="dropdown-hover-bridge"></div>
         </div>
