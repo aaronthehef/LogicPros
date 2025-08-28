@@ -196,7 +196,7 @@ export const MFAPage = () => {
                 </p>
               </div>
               <div className="benefit-item">
-                <div benefit-icon">🔍</div>
+                <div className="benefit-icon">🔍</div>
                 <h3>Enhanced Visibility</h3>
                 <p>
                   Monitor authentication attempts, detect suspicious login patterns, and receive 
