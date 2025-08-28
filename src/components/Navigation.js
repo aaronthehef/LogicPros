@@ -100,14 +100,17 @@ export const Navigation = () => {
               AI Automations
             </a>
             
-            <div className="dropdown-submenu">
-              <div className="submenu-header">
-                <a href="/services/it-services" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">🔒</span>
-                  Cybersecurity & IT Services
-                </a>
-              </div>
-              <div className="submenu-content">
+            <div 
+              className="nav-subdropdown"
+              onMouseEnter={() => handleMouseEnter('cybersecurity')}
+              onMouseLeave={() => handleMouseEnter('services')}
+            >
+              <a href="/services/it-services" className="dropdown-item-with-submenu">
+                <span className="dropdown-icon">🔒</span>
+                Cybersecurity & IT Services
+                <span className="submenu-arrow">▶</span>
+              </a>
+              <div className={`submenu-content ${dropdownOpen === 'cybersecurity' ? 'show' : ''}`}>
                 <a href="/services/security-audits" onClick={handleLinkClick}>
                   <span className="dropdown-icon">🔍</span>
                   Security Audits
