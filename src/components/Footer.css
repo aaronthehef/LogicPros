@@ -70,21 +70,17 @@
 }
 
 .contact-item a {
-  color: #ffffff !important;
+  color: #000000 !important;
   text-decoration: none;
   font-weight: 600;
-  background-color: rgba(59, 130, 246, 0.2);
-  padding: 4px 8px;
-  border-radius: 4px;
 }
 
 .contact-item a:hover {
-  color: #ffffff !important;
-  background-color: rgba(59, 130, 246, 0.4);
+  color: #333333 !important;
 }
 
 .contact-item span:not(.contact-icon) {
-  color: #ffffff !important;
+  color: #000000 !important;
   font-weight: 600;
 }
 
