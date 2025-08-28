@@ -103,6 +103,19 @@ export const Navigation = () => {
               <span className="dropdown-icon">🔒</span>
               Cybersecurity & IT Services
             </a>
+            <div className="dropdown-divider"></div>
+            <a href="/services/security-audits" onClick={handleLinkClick}>
+              <span className="dropdown-icon">🔍</span>
+              Security Audits
+            </a>
+            <a href="/services/password-management" onClick={handleLinkClick}>
+              <span className="dropdown-icon">🔐</span>
+              Password Management
+            </a>
+            <a href="/services/multi-factor-authentication" onClick={handleLinkClick}>
+              <span className="dropdown-icon">🛡️</span>
+              Multi-Factor Authentication
+            </a>
           </div>
           <div className="dropdown-hover-bridge"></div>
         </div>

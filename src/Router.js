@@ -19,6 +19,9 @@ import { RemodelingPage } from './pages/contractors/RemodelingPage';
 import { WebsitesPage } from './pages/services/WebsitesPage';
 import { AutomationsPage } from './pages/services/AutomationsPage';
 import { ITServicesPage } from './pages/services/ITServicesPage';
+import { SecurityAuditPage } from './pages/services/SecurityAuditPage';
+import { PasswordManagementPage } from './pages/services/PasswordManagementPage';
+import { MFAPage } from './pages/services/MFAPage';
 import { FrederictonPage } from './pages/locations/FrederictonPage';
 import { MonctonPage } from './pages/locations/MonctonPage';
 import { SaintJohnPage } from './pages/locations/SaintJohnPage';
@@ -83,6 +86,12 @@ export const Router = () => {
         return <AutomationsPage />;
       case '/services/it-services':
         return <ITServicesPage />;
+      case '/services/security-audits':
+        return <SecurityAuditPage />;
+      case '/services/password-management':
+        return <PasswordManagementPage />;
+      case '/services/multi-factor-authentication':
+        return <MFAPage />;
       case '/locations/fredericton':
         return <FrederictonPage />;
       case '/locations/moncton':
