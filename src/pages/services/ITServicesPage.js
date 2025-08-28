@@ -24,8 +24,7 @@ export const ITServicesPage = () => {
               <h1>Cybersecurity & IT Services for New Brunswick Businesses</h1>
               <p>
                 Comprehensive cybersecurity audits, managed IT services, and digital protection solutions. 
-                Cybersecure NB grant eligible services up to $3,000. Based in New Brunswick, 
-                serving SMEs across the province with expert security and IT support.
+                Based in New Brunswick, serving SMEs across the province with expert security and IT support.
               </p>
               <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
             </div>
@@ -37,13 +36,13 @@ export const ITServicesPage = () => {
           <div className="container">
             <h2 className="section-title">Cybersecurity & IT Management Services</h2>
             <p className="service-intro">
-              Cybersecure NB grant eligible services to protect your business and streamline IT operations. 
+              Professional cybersecurity services to protect your business and streamline IT operations. 
               Comprehensive security audits, AI integration, and managed IT support.
             </p>
             
             <div className="it-services-grid">
               <div className="it-service-card featured-service">
-                <div className="service-badge">Grant Eligible</div>
+                <div className="service-badge">Essential Security</div>
                 <div className="service-icon">🔐</div>
                 <h3>Password Management Systems</h3>
                 <ul className="service-features">
@@ -54,12 +53,12 @@ export const ITServicesPage = () => {
                   <li>Employee training and adoption support</li>
                 </ul>
                 <div className="service-benefit">
-                  Cybersecure NB Grant Eligible - Eliminate password-related security risks
+                  Eliminate password-related security risks with enterprise-grade solutions
                 </div>
               </div>
 
               <div className="it-service-card featured-service">
-                <div className="service-badge">Grant Eligible</div>
+                <div className="service-badge">Essential Security</div>
                 <div className="service-icon">🛡️</div>
                 <h3>Multi-Factor Authentication (MFA)</h3>
                 <ul className="service-features">
@@ -70,12 +69,12 @@ export const ITServicesPage = () => {
                   <li>Ongoing MFA monitoring and management</li>
                 </ul>
                 <div className="service-benefit">
-                  Cybersecure NB Grant Eligible - Add critical extra layer of security
+                  Add critical extra layer of security to all business systems
                 </div>
               </div>
 
               <div className="it-service-card featured-service">
-                <div className="service-badge">Grant Eligible</div>
+                <div className="service-badge">Essential Security</div>
                 <div className="service-icon">🔍</div>
                 <h3>Comprehensive Security Audits</h3>
                 <ul className="service-features">
@@ -86,12 +85,12 @@ export const ITServicesPage = () => {
                   <li>Detailed security improvement roadmap</li>
                 </ul>
                 <div className="service-benefit">
-                  Cybersecure NB Grant Eligible - Identify and fix security weaknesses
+                  Identify and fix security weaknesses with comprehensive assessments
                 </div>
               </div>
 
               <div className="it-service-card featured-service">
-                <div className="service-badge">Grant Eligible</div>
+                <div className="service-badge">Essential Security</div>
                 <div className="service-icon">🔧</div>
                 <h3>Security Headers & Web Protection</h3>
                 <ul className="service-features">
@@ -102,12 +101,12 @@ export const ITServicesPage = () => {
                   <li>Protection against common web vulnerabilities</li>
                 </ul>
                 <div className="service-benefit">
-                  Cybersecure NB Grant Eligible - Secure your web presence
+                  Secure your web presence against modern cyber threats
                 </div>
               </div>
 
               <div className="it-service-card featured-service">
-                <div className="service-badge">Grant Eligible</div>
+                <div className="service-badge">Essential Security</div>
                 <div className="service-icon">💻</div>
                 <h3>Endpoint Security & Patch Management</h3>
                 <ul className="service-features">
@@ -118,7 +117,7 @@ export const ITServicesPage = () => {
                   <li>Incident response planning</li>
                 </ul>
                 <div className="service-benefit">
-                  Cybersecure NB Grant Eligible - Protect all business devices
+                  Protect all business devices with advanced security measures
                 </div>
               </div>
 
@@ -201,8 +200,8 @@ export const ITServicesPage = () => {
             <div className="msp-benefits">
               <div className="benefit-content">
                 <div className="benefit-item">
-                  <h3>🇨🇦 Cybersecure NB Grant Partner</h3>
-                  <p>Official provider for Cybersecure NB program services. We help New Brunswick SMEs maximize their $3,000 grant eligibility for cybersecurity and AI implementations.</p>
+                  <h3>🇨🇦 New Brunswick Based</h3>
+                  <p>Local cybersecurity experts serving New Brunswick businesses. We understand the unique challenges facing SMEs and provide tailored security solutions.</p>
                 </div>
                 
                 <div className="benefit-item">
@@ -238,13 +237,13 @@ export const ITServicesPage = () => {
         <section className="section" style={{ backgroundColor: '#e8f5e8' }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Cybersecure NB Grant Available</h2>
-              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-                New Brunswick businesses may be eligible for grants to help cover cybersecurity and AI implementation costs. 
-                Contact us for details on eligibility and application assistance.
+              <h2 className="section-title">Cybersecurity Grant Opportunities</h2>
+              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
+                New Brunswick businesses may be eligible for various grants to help cover cybersecurity and technology implementation costs. 
+                We can help you research available programs and determine if your business qualifies for funding assistance.
               </p>
               <a href="/contact" className="btn btn-primary" style={{ marginTop: '20px' }}>
-                Ask About Grant Eligibility
+                Help Me Find Grant Opportunities
               </a>
             </div>
           </div>

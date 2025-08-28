@@ -30,8 +30,7 @@ export const ResponsiveLandingPage = () => {
               <div className="hero-content">
                 <h1 className="typewriter-text">Professional Cybersecurity, AI Solutions & Website Development</h1>
                 <p className="hero-subheadline">
-                  New Brunswick's trusted partner for cybersecurity audits, AI automation, and professional websites. 
-                  Eligible for Cybersecure NB grants up to $3,000.
+                  New Brunswick's trusted partner for cybersecurity audits, AI automation, and professional websites.
                 </p>
                 <div className="hero-cta-section">
                   <a href="/contact" className="btn btn-primary btn-hero">Get Security Assessment</a>
