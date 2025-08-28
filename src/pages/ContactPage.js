@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../responsive-style.css';
 import { Logo } from '../components/Logo';
 import { Navigation } from '../components/Navigation';
+import { Footer } from '../components/Footer';
 
 export const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -363,44 +364,7 @@ export const ContactPage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-brand">
-              <h3>LogicPros</h3>
-              <p>Professional websites that win contracts</p>
-            </div>
-            
-            <div className="footer-links">
-              <div className="footer-column">
-                <h4>Services</h4>
-                <a href="/services">Website Design</a>
-                <a href="/services">E-Commerce</a>
-                <a href="/services">SEO & Marketing</a>
-                <a href="/services">Maintenance</a>
-              </div>
-              
-              <div className="footer-column">
-                <h4>Company</h4>
-                <a href="/about">About Us</a>
-                <a href="/portfolio">Portfolio</a>
-                <a href="/contact">Contact</a>
-                <a href="/free-example">Free Example</a>
-              </div>
-              
-              <div className="footer-column">
-                <h4>Contact</h4>
-                <p>aaron@logicpros.ca</p>
-                <p>(506) 478-2949</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="footer-bottom">
-            <p>&copy; 2024 LogicPros. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
