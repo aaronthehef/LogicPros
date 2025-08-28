@@ -420,7 +420,7 @@ export const ResponsiveLandingPage = () => {
               <a href="/contact" className="btn btn-primary" style={{ marginRight: '15px' }}>
                 Check My Grant Eligibility
               </a>
-              <a href="/contact" className="btn btn-outline">
+              <a href="/contact" className="btn btn-secondary">
                 Learn More About Funding
               </a>
             </div>
