@@ -2,6 +2,7 @@ import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
+import { Footer } from '../../components/Footer';
 
 export const ITServicesPage = () => {
   return (
@@ -21,10 +22,10 @@ export const ITServicesPage = () => {
         <section className="hero-section">
           <div className="container">
             <div className="hero-content">
-              <h1>Cybersecurity & IT Services for New Brunswick Businesses</h1>
-              <p>
-                Comprehensive cybersecurity audits, managed IT services, and digital protection solutions. 
-                Based in New Brunswick, serving SMEs across the province with expert security and IT support.
+              <h1>Complete Digital Solutions for New Brunswick Businesses</h1>
+              <p className="hero-subheadline">
+                Professional website design, AI automation, and cybersecurity services. 
+                Everything you need to grow your business online and protect it from digital threats.
               </p>
               <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
             </div>
@@ -34,199 +35,311 @@ export const ITServicesPage = () => {
         {/* Core Services */}
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2 className="section-title">Cybersecurity & IT Management Services</h2>
-            <p className="service-intro">
-              Professional cybersecurity services to protect your business and streamline IT operations. 
-              Comprehensive security audits, AI integration, and managed IT support.
+            <h2 className="section-title" style={{ color: '#2c3e50' }}>Our Complete Service Portfolio</h2>
+            <p style={{ fontSize: '1.2rem', color: '#5d6d7e', maxWidth: '800px', margin: '0 auto 50px', textAlign: 'center' }}>
+              From professional websites that convert visitors into customers, to AI automation that saves time, 
+              to cybersecurity that protects your business - we provide everything you need to succeed online.
             </p>
             
-            <div className="it-services-grid">
-              <div className="it-service-card featured-service">
-                <div className="service-badge">Essential Security</div>
-                <div className="service-icon">🔐</div>
-                <h3>Password Management Systems</h3>
-                <ul className="service-features">
-                  <li>Enterprise password manager implementation</li>
-                  <li>Strong password policy enforcement</li>
-                  <li>Secure password sharing for teams</li>
-                  <li>Password breach monitoring</li>
-                  <li>Employee training and adoption support</li>
+            <div className="services-grid">
+              {/* Website Design Services */}
+              <div className="service-card">
+                <div className="service-icon floating-icon">🌐</div>
+                <h3 style={{ color: '#2c3e50' }}>Professional Website Design</h3>
+                <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
+                  Custom websites designed to convert visitors into customers. Mobile-optimized, 
+                  fast-loading, and built with modern SEO best practices.
+                </p>
+                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
+                  <li>Responsive mobile-first design</li>
+                  <li>Search engine optimization (SEO)</li>
+                  <li>Fast loading speeds & performance</li>
+                  <li>Content management systems</li>
+                  <li>E-commerce integration</li>
+                  <li>Ongoing maintenance & updates</li>
                 </ul>
-                <div className="service-benefit">
-                  Eliminate password-related security risks with enterprise-grade solutions
+                <div className="cta-buttons">
+                  <a href="/services/websites" className="btn btn-primary">Learn More</a>
+                  <a href="/free-example" className="btn btn-secondary">Free Example</a>
                 </div>
               </div>
 
-              <div className="it-service-card featured-service">
-                <div className="service-badge">Essential Security</div>
-                <div className="service-icon">🛡️</div>
-                <h3>Multi-Factor Authentication (MFA)</h3>
-                <ul className="service-features">
-                  <li>MFA implementation across all business systems</li>
-                  <li>Mobile authenticator app setup</li>
-                  <li>Hardware token integration where needed</li>
-                  <li>User training and support</li>
-                  <li>Ongoing MFA monitoring and management</li>
+              {/* AI Automation Services */}
+              <div className="service-card">
+                <div className="service-icon floating-icon">🤖</div>
+                <h3 style={{ color: '#2c3e50' }}>AI Automation Solutions</h3>
+                <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
+                  Intelligent chatbots and automation tools that handle customer inquiries 24/7, 
+                  qualify leads, and streamline your business operations.
+                </p>
+                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
+                  <li>Custom AI chatbots for your website</li>
+                  <li>Lead qualification automation</li>
+                  <li>Customer support automation</li>
+                  <li>Appointment scheduling bots</li>
+                  <li>Email marketing automation</li>
+                  <li>Business process optimization</li>
                 </ul>
-                <div className="service-benefit">
-                  Add critical extra layer of security to all business systems
+                <div className="cta-buttons">
+                  <a href="/services/automations" className="btn btn-primary">Learn More</a>
+                  <a href="/contact" className="btn btn-secondary">Get Quote</a>
                 </div>
               </div>
 
-              <div className="it-service-card featured-service">
-                <div className="service-badge">Essential Security</div>
-                <div className="service-icon">🔍</div>
-                <h3>Comprehensive Security Audits</h3>
-                <ul className="service-features">
-                  <li>Complete cybersecurity assessment</li>
-                  <li>Vulnerability identification and remediation</li>
-                  <li>Security policy development</li>
-                  <li>Compliance gap analysis</li>
-                  <li>Detailed security improvement roadmap</li>
+              {/* Cybersecurity Services */}
+              <div className="service-card">
+                <div className="service-icon floating-icon">🔒</div>
+                <h3 style={{ color: '#2c3e50' }}>Cybersecurity & IT Services</h3>
+                <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
+                  Comprehensive cybersecurity protection including security audits, multi-factor 
+                  authentication, password management, and managed IT services.
+                </p>
+                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
+                  <li>Complete security audits</li>
+                  <li>Multi-factor authentication (MFA)</li>
+                  <li>Enterprise password management</li>
+                  <li>Endpoint security & monitoring</li>
+                  <li>Compliance & risk assessment</li>
+                  <li>24/7 IT support & monitoring</li>
                 </ul>
-                <div className="service-benefit">
-                  Identify and fix security weaknesses with comprehensive assessments
-                </div>
-              </div>
-
-              <div className="it-service-card featured-service">
-                <div className="service-badge">Essential Security</div>
-                <div className="service-icon">🔧</div>
-                <h3>Security Headers & Web Protection</h3>
-                <ul className="service-features">
-                  <li>HTTP security headers implementation</li>
-                  <li>SSL/TLS certificate management</li>
-                  <li>Web application firewall setup</li>
-                  <li>Website security monitoring</li>
-                  <li>Protection against common web vulnerabilities</li>
-                </ul>
-                <div className="service-benefit">
-                  Secure your web presence against modern cyber threats
-                </div>
-              </div>
-
-              <div className="it-service-card featured-service">
-                <div className="service-badge">Essential Security</div>
-                <div className="service-icon">💻</div>
-                <h3>Endpoint Security & Patch Management</h3>
-                <ul className="service-features">
-                  <li>Advanced antivirus and anti-malware protection</li>
-                  <li>Automated security patch deployment</li>
-                  <li>Device encryption and management</li>
-                  <li>Regular security scanning</li>
-                  <li>Incident response planning</li>
-                </ul>
-                <div className="service-benefit">
-                  Protect all business devices with advanced security measures
-                </div>
-              </div>
-
-              <div className="it-service-card">
-                <div className="service-icon">📊</div>
-                <h3>Managed IT Services</h3>
-                <ul className="service-features">
-                  <li>24/7 system monitoring and support</li>
-                  <li>Regular maintenance and updates</li>
-                  <li>Backup and disaster recovery</li>
-                  <li>Help desk and technical support</li>
-                  <li>Technology planning and budgeting</li>
-                </ul>
-                <div className="service-benefit">
-                  Complete IT management so you can focus on your business
+                <div className="cta-buttons">
+                  <a href="/services/security-audits" className="btn btn-primary">Security Audits</a>
+                  <a href="/services/password-management" className="btn btn-secondary">Password Mgmt</a>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Industry Focus */}
+        {/* Service Specializations */}
         <section className="section">
           <div className="container">
-            <h2 className="section-title">Specialized IT Support for Your Industry</h2>
+            <h2 className="section-title" style={{ color: '#2c3e50' }}>Industry-Specific Solutions</h2>
+            <p style={{ fontSize: '1.1rem', color: '#5d6d7e', maxWidth: '700px', margin: '0 auto 50px', textAlign: 'center' }}>
+              We understand that every industry has unique digital needs. Our solutions are tailored 
+              to help your specific business type succeed online and stay secure.
+            </p>
             
-            <div className="industry-it-grid">
-              <div className="industry-it-item">
-                <div className="industry-icon">🔨</div>
-                <h4>Contractor IT Support</h4>
-                <ul>
-                  <li>Job site connectivity and mobile device management</li>
-                  <li>Project management software optimization</li>
-                  <li>Customer database security and backup</li>
-                  <li>Accounting software integration and support</li>
+            <div className="features-grid">
+              <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🏗️</div>
+                <h3 style={{ color: '#2c3e50', marginBottom: '20px' }}>Contractors & Trades</h3>
+                <ul style={{ color: '#5d6d7e', textAlign: 'left', paddingLeft: '20px' }}>
+                  <li>Lead-generating contractor websites</li>
+                  <li>Job estimate automation with AI chatbots</li>
+                  <li>Project management system security</li>
+                  <li>Mobile-optimized quote forms</li>
+                  <li>Customer database protection</li>
                 </ul>
               </div>
               
-              <div className="industry-it-item">
-                <div className="industry-icon">💼</div>
-                <h4>Professional Services</h4>
-                <ul>
-                  <li>Client data security and confidentiality</li>
-                  <li>Document management and version control</li>
-                  <li>Communication system optimization</li>
-                  <li>Compliance monitoring and reporting</li>
+              <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>💼</div>
+                <h3 style={{ color: '#2c3e50', marginBottom: '20px' }}>Professional Services</h3>
+                <ul style={{ color: '#5d6d7e', textAlign: 'left', paddingLeft: '20px' }}>
+                  <li>Professional service websites with booking</li>
+                  <li>Client consultation automation</li>
+                  <li>Secure client data management</li>
+                  <li>Appointment scheduling chatbots</li>
+                  <li>Compliance and confidentiality protection</li>
                 </ul>
               </div>
               
-              <div className="industry-it-item">
-                <div className="industry-icon">🏪</div>
-                <h4>Retail & E-commerce</h4>
-                <ul>
-                  <li>Point-of-sale system management</li>
-                  <li>Inventory system integration</li>
+              <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🏪</div>
+                <h3 style={{ color: '#2c3e50', marginBottom: '20px' }}>Retail & E-commerce</h3>
+                <ul style={{ color: '#5d6d7e', textAlign: 'left', paddingLeft: '20px' }}>
+                  <li>High-converting e-commerce websites</li>
+                  <li>Product recommendation AI</li>
                   <li>Payment processing security</li>
-                  <li>Website and online store support</li>
-                </ul>
-              </div>
-              
-              <div className="industry-it-item">
-                <div className="industry-icon">🏥</div>
-                <h4>Healthcare Practices</h4>
-                <ul>
-                  <li>HIPAA compliance and security</li>
-                  <li>Electronic health record support</li>
-                  <li>Patient data backup and recovery</li>
-                  <li>Telehealth technology support</li>
+                  <li>Inventory management automation</li>
+                  <li>Customer support chatbots</li>
                 </ul>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Why Choose Our MSP Services */}
+        {/* Why Choose LogicPros */}
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
-            <h2 className="section-title">Why Choose LogicPros for Cybersecurity & IT Services</h2>
+            <h2 className="section-title" style={{ color: '#2c3e50' }}>Why Choose LogicPros for Your Digital Success</h2>
+            <p style={{ fontSize: '1.1rem', color: '#5d6d7e', maxWidth: '700px', margin: '0 auto 50px', textAlign: 'center' }}>
+              We're more than just a service provider - we're your digital growth partner, helping New Brunswick 
+              businesses thrive online while staying secure and efficient.
+            </p>
             
-            <div className="msp-benefits">
-              <div className="benefit-content">
-                <div className="benefit-item">
-                  <h3>🇨🇦 New Brunswick Based</h3>
-                  <p>Local cybersecurity experts serving New Brunswick businesses. We understand the unique challenges facing SMEs and provide tailored security solutions.</p>
+            <div className="features-grid">
+              <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🇨🇦</div>
+                <h3 style={{ color: '#2c3e50', marginBottom: '15px' }}>New Brunswick Local</h3>
+                <p style={{ color: '#5d6d7e' }}>Based right here in New Brunswick, we understand local business needs and provide personalized service you can't get from distant corporations.</p>
+              </div>
+              
+              <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🎯</div>
+                <h3 style={{ color: '#2c3e50', marginBottom: '15px' }}>Complete Digital Solution</h3>
+                <p style={{ color: '#5d6d7e' }}>Websites, AI automation, and cybersecurity all under one roof. No need to juggle multiple vendors for your digital needs.</p>
+              </div>
+              
+              <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🚀</div>
+                <h3 style={{ color: '#2c3e50', marginBottom: '15px' }}>Growth-Focused Approach</h3>
+                <p style={{ color: '#5d6d7e' }}>Every solution is designed to help you get more customers, save time, and protect your business while you focus on growth.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Success Stories Preview */}
+        <section className="section" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white' }}>
+          <div className="container">
+            <h2 className="section-title" style={{ color: 'white', marginBottom: '40px' }}>Helping New Brunswick Businesses Succeed</h2>
+            
+            <div className="features-grid">
+              <div style={{ textAlign: 'center', padding: '30px', background: 'rgba(255,255,255,0.1)', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>📈</div>
+                <h3 style={{ color: 'white', marginBottom: '15px' }}>300% Lead Increase</h3>
+                <p style={{ color: 'white', opacity: '0.9' }}>Fredericton contractor saw 3x more leads after website redesign and AI chatbot implementation</p>
+              </div>
+              
+              <div style={{ textAlign: 'center', padding: '30px', background: 'rgba(255,255,255,0.1)', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🛡️</div>
+                <h3 style={{ color: 'white', marginBottom: '15px' }}>Zero Security Incidents</h3>
+                <p style={{ color: 'white', opacity: '0.9' }}>Moncton professional services firm prevented cyber attacks with our comprehensive security audit</p>
+              </div>
+              
+              <div style={{ textAlign: 'center', padding: '30px', background: 'rgba(255,255,255,0.1)', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>⏱️</div>
+                <h3 style={{ color: 'white', marginBottom: '15px' }}>10 Hours Saved Weekly</h3>
+                <p style={{ color: 'white', opacity: '0.9' }}>Saint John retailer saves time with automated customer inquiries and appointment scheduling</p>
+              </div>
+            </div>
+            
+            <div style={{ textAlign: 'center', marginTop: '40px' }}>
+              <a href="/contact" className="btn btn-primary" style={{ background: 'white', color: '#667eea', padding: '15px 30px', fontWeight: '600' }}>Get Your Success Story</a>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Packages */}
+        <section className="section">
+          <div className="container">
+            <h2 className="section-title" style={{ color: '#2c3e50' }}>Complete Digital Growth Packages</h2>
+            <p style={{ fontSize: '1.1rem', color: '#5d6d7e', maxWidth: '700px', margin: '0 auto 50px', textAlign: 'center' }}>
+              Choose the perfect combination of website design, AI automation, and cybersecurity 
+              services to take your business to the next level.
+            </p>
+            
+            <div className="services-grid">
+              <div className="service-card" style={{ border: '2px solid #3498db' }}>
+                <div className="service-icon floating-icon" style={{ color: '#3498db' }}>🌱</div>
+                <h3 style={{ color: '#2c3e50' }}>Starter Growth Package</h3>
+                <p style={{ color: '#5d6d7e', marginBottom: '20px', fontWeight: '500' }}>Perfect for New Businesses</p>
+                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '25px' }}>
+                  <li>Professional 5-page website</li>
+                  <li>Basic AI chatbot for inquiries</li>
+                  <li>Essential security audit</li>
+                  <li>SSL certificate & basic protection</li>
+                  <li>Mobile optimization</li>
+                  <li>3 months support included</li>
+                </ul>
+                <div className="cta-buttons">
+                  <a href="/contact" className="btn btn-primary">Get Quote</a>
                 </div>
-                
-                <div className="benefit-item">
-                  <h3>💰 Predictable IT Costs</h3>
-                  <p>Fixed monthly pricing means no surprise IT bills. Budget your technology costs with confidence and avoid unexpected repair expenses.</p>
+              </div>
+
+              <div className="service-card" style={{ border: '3px solid #e74c3c', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-15px', left: '50%', transform: 'translateX(-50%)', background: '#e74c3c', color: 'white', padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', fontWeight: '600' }}>Most Popular</div>
+                <div className="service-icon floating-icon" style={{ color: '#e74c3c' }}>🚀</div>
+                <h3 style={{ color: '#2c3e50' }}>Complete Business Package</h3>
+                <p style={{ color: '#5d6d7e', marginBottom: '20px', fontWeight: '500' }}>Everything You Need to Succeed</p>
+                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '25px' }}>
+                  <li>Custom website with lead generation</li>
+                  <li>Advanced AI chatbot & automation</li>
+                  <li>Comprehensive security audit</li>
+                  <li>Multi-factor authentication setup</li>
+                  <li>Password management system</li>
+                  <li>6 months support & optimization</li>
+                </ul>
+                <div className="cta-buttons">
+                  <a href="/contact" className="btn btn-primary">Get Quote</a>
                 </div>
-                
-                <div className="benefit-item">
-                  <h3>🚀 Proactive Approach</h3>
-                  <p>We prevent problems before they happen rather than just fixing issues after they occur. This approach minimizes downtime and keeps your business running smoothly.</p>
+              </div>
+
+              <div className="service-card" style={{ border: '2px solid #8e44ad' }}>
+                <div className="service-icon floating-icon" style={{ color: '#8e44ad' }}>🏆</div>
+                <h3 style={{ color: '#2c3e50' }}>Enterprise Solution</h3>
+                <p style={{ color: '#5d6d7e', marginBottom: '20px', fontWeight: '500' }}>Maximum Growth & Protection</p>
+                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '25px' }}>
+                  <li>Custom e-commerce or advanced website</li>
+                  <li>Full AI automation suite</li>
+                  <li>Complete cybersecurity implementation</li>
+                  <li>24/7 monitoring & managed IT</li>
+                  <li>Priority support & dedicated account manager</li>
+                  <li>12 months comprehensive service</li>
+                </ul>
+                <div className="cta-buttons">
+                  <a href="/contact" className="btn btn-primary">Get Quote</a>
                 </div>
-                
-                <div className="benefit-item">
-                  <h3>📞 Responsive Support</h3>
-                  <p>Fast response times with a team that understands your business. We prioritize critical issues and provide clear communication throughout the resolution process.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Digital Growth Statistics */}
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+          <div className="container">
+            <h2 className="section-title" style={{ color: '#2c3e50' }}>The Digital Advantage for New Brunswick Businesses</h2>
+            <p style={{ fontSize: '1.1rem', color: '#5d6d7e', maxWidth: '800px', margin: '0 auto 40px', textAlign: 'center' }}>
+              Modern digital solutions aren't just nice to have - they're essential for business growth and protection in today's competitive landscape.
+            </p>
+            
+            <div className="features-grid" style={{ marginBottom: '50px' }}>
+              <div style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                <h3 style={{ fontSize: '3rem', color: '#3498db', fontWeight: '700', margin: '0 0 15px 0' }}>75%</h3>
+                <h4 style={{ color: '#2c3e50', marginBottom: '15px' }}>More Leads with Professional Websites</h4>
+                <p style={{ color: '#5d6d7e', fontSize: '0.95rem' }}>Businesses with modern, mobile-optimized websites generate significantly more qualified leads</p>
+              </div>
+              
+              <div style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                <h3 style={{ fontSize: '3rem', color: '#e74c3c', fontWeight: '700', margin: '0 0 15px 0' }}>60%</h3>
+                <h4 style={{ color: '#2c3e50', marginBottom: '15px' }}>Time Saved with AI Automation</h4>
+                <p style={{ color: '#5d6d7e', fontSize: '0.95rem' }}>Businesses using AI chatbots reduce customer service workload by over half</p>
+              </div>
+              
+              <div style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                <h3 style={{ fontSize: '3rem', color: '#8e44ad', fontWeight: '700', margin: '0 0 15px 0' }}>99.9%</h3>
+                <h4 style={{ color: '#2c3e50', marginBottom: '15px' }}>Attack Prevention with MFA</h4>
+                <p style={{ color: '#5d6d7e', fontSize: '0.95rem' }}>Multi-factor authentication blocks nearly all automated password attacks</p>
+              </div>
+            </div>
+            
+            <div style={{ background: 'white', borderRadius: '20px', padding: '40px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+              <h3 style={{ textAlign: 'center', color: '#2c3e50', marginBottom: '30px', fontSize: '1.5rem' }}>The Complete Digital Growth Formula</h3>
+              <div className="features-grid" style={{ gap: '30px' }}>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🌐</div>
+                  <h4 style={{ color: '#2c3e50', marginBottom: '10px' }}>Professional Website</h4>
+                  <p style={{ color: '#5d6d7e', fontSize: '0.9rem' }}>Attracts and converts visitors into customers 24/7</p>
                 </div>
-                
-                <div className="benefit-item">
-                  <h3>🔧 Complete Solution</h3>
-                  <p>From websites to automation to IT management - we handle all your technology needs. One point of contact for all your digital business requirements.</p>
+                <div style={{ textAlign: 'center', fontSize: '2rem', color: '#ddd' }}>+</div>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🤖</div>
+                  <h4 style={{ color: '#2c3e50', marginBottom: '10px' }}>AI Automation</h4>
+                  <p style={{ color: '#5d6d7e', fontSize: '0.9rem' }}>Handles inquiries and qualifies leads automatically</p>
                 </div>
-                
-                <div className="benefit-item">
-                  <h3>📈 Scalable Services</h3>
-                  <p>Our services grow with your business. Add employees, locations, or services without worrying about IT infrastructure limitations.</p>
+                <div style={{ textAlign: 'center', fontSize: '2rem', color: '#ddd' }}>+</div>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🔒</div>
+                  <h4 style={{ color: '#2c3e50', marginBottom: '10px' }}>Cybersecurity</h4>
+                  <p style={{ color: '#5d6d7e', fontSize: '0.9rem' }}>Protects your business and customer data</p>
+                </div>
+                <div style={{ textAlign: 'center', fontSize: '2rem', color: '#ddd' }}>=</div>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>📈</div>
+                  <h4 style={{ color: '#2c3e50', marginBottom: '10px' }}>Business Growth</h4>
+                  <p style={{ color: '#5d6d7e', fontSize: '0.9rem' }}>More customers, less work, complete protection</p>
                 </div>
               </div>
             </div>
@@ -236,180 +349,65 @@ export const ITServicesPage = () => {
         {/* Grant Information */}
         <section className="section" style={{ backgroundColor: '#e8f5e8' }}>
           <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">Cybersecurity Grant Opportunities</h2>
-              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
-                New Brunswick businesses may be eligible for various grants to help cover cybersecurity and technology implementation costs. 
-                We can help you research available programs and determine if your business qualifies for funding assistance.
+            <div style={{ textAlign: 'center' }}>
+              <h2 className="section-title" style={{ color: '#2c3e50', marginBottom: '20px' }}>Funding Opportunities Available</h2>
+              <p style={{ fontSize: '1.2rem', color: '#5d6d7e', maxWidth: '700px', margin: '0 auto 30px' }}>
+                New Brunswick businesses may be eligible for various grants to help cover website development, 
+                AI automation, and cybersecurity implementation costs. We can help you research available programs.
               </p>
-              <a href="/contact" className="btn btn-primary" style={{ marginTop: '20px' }}>
+              <div style={{ background: 'white', borderRadius: '15px', padding: '30px', marginBottom: '30px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                <h3 style={{ color: '#27ae60', marginBottom: '15px' }}>🌱 Digital Transformation Grants</h3>
+                <p style={{ color: '#5d6d7e', marginBottom: '15px' }}>Many programs support website development, e-commerce, and digital marketing initiatives</p>
+                <h3 style={{ color: '#3498db', marginBottom: '15px' }}>🔒 Cybersecurity Funding</h3>
+                <p style={{ color: '#5d6d7e', marginBottom: '15px' }}>Special funding available for security audits, MFA implementation, and IT infrastructure</p>
+                <h3 style={{ color: '#e74c3c', marginBottom: '15px' }}>🤖 Innovation & AI Support</h3>
+                <p style={{ color: '#5d6d7e' }}>Grants for businesses adopting AI and automation technologies to improve efficiency</p>
+              </div>
+              <a href="/contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '15px 30px' }}>
                 Help Me Find Grant Opportunities
               </a>
             </div>
           </div>
         </section>
 
-        {/* Service Packages */}
-        <section className="section">
+        {/* Final CTA Section */}
+        <section className="section" style={{ background: 'linear-gradient(135deg, #2c3e50 0%, #34495e 100%)', color: 'white' }}>
           <div className="container">
-            <h2 className="section-title">Cybersecurity & IT Service Packages</h2>
-            
-            <div className="package-grid">
-              <div className="package-card">
-                <h3>Essential Security Package</h3>
-                <p className="package-subtitle">Perfect for Small Businesses</p>
-                <ul className="package-features">
-                  <li>Basic security audit</li>
-                  <li>Password manager implementation</li>
-                  <li>MFA setup for key systems</li>
-                  <li>Security awareness training</li>
-                  <li>Basic endpoint protection</li>
-                </ul>
-                <div className="package-cta">
-                  <a href="/contact" className="btn btn-secondary">Request Quote</a>
-                </div>
-              </div>
-
-              <div className="package-card featured-package">
-                <div className="package-badge">Most Popular</div>
-                <h3>Complete Security & IT Package</h3>
-                <p className="package-subtitle">Comprehensive Business Protection</p>
-                <ul className="package-features">
-                  <li>Comprehensive security audit</li>
-                  <li>Full MFA and password management</li>
-                  <li>Security headers and web protection</li>
-                  <li>Endpoint security and patch management</li>
-                  <li>AI chatbot integration</li>
-                  <li>Managed IT support included</li>
-                </ul>
-                <div className="package-cta">
-                  <a href="/contact" className="btn btn-primary">Request Quote</a>
-                </div>
-              </div>
-
-              <div className="package-card">
-                <h3>Enterprise IT Solutions</h3>
-                <p className="package-subtitle">Advanced Business Technology</p>
-                <ul className="package-features">
-                  <li>Custom IT infrastructure design</li>
-                  <li>Advanced security and compliance</li>
-                  <li>Disaster recovery planning</li>
-                  <li>Technology strategic planning</li>
-                  <li>Priority support and response</li>
-                  <li>Dedicated account management</li>
-                </ul>
-                <div className="package-cta">
-                  <a href="/contact" className="btn btn-secondary">Request Quote</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* IT Security Focus */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
-          <div className="container">
-            <h2 className="section-title">Cybersecurity You Can Trust</h2>
-            
-            <div className="security-content">
-              <div className="security-stats">
-                <div className="stat-item">
-                  <h4>60%</h4>
-                  <p>of small businesses close within 6 months of a cyber attack</p>
-                </div>
-                <div className="stat-item">
-                  <h4>$4.45M</h4>
-                  <p>average cost of a data breach in 2023</p>
-                </div>
-                <div className="stat-item">
-                  <h4>43%</h4>
-                  <p>of cyber attacks target small businesses</p>
-                </div>
-              </div>
-              
-              <div className="security-features">
-                <h3>Our Multi-Layer Security Approach</h3>
-                <div className="security-layers">
-                  <div className="security-layer">
-                    <h4>🛡️ Network Protection</h4>
-                    <p>Firewalls, intrusion detection, and network monitoring</p>
-                  </div>
-                  <div className="security-layer">
-                    <h4>📧 Email Security</h4>
-                    <p>Advanced spam filtering and phishing protection</p>
-                  </div>
-                  <div className="security-layer">
-                    <h4>💻 Endpoint Protection</h4>
-                    <p>Antivirus, anti-malware, and device management</p>
-                  </div>
-                  <div className="security-layer">
-                    <h4>👥 User Training</h4>
-                    <p>Security awareness training and best practices</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="section">
-          <div className="container">
-            <h2 className="section-title">IT Services FAQ</h2>
-            <div className="faq-grid">
-              <div className="faq-item">
-                <h3>What's included in managed IT services?</h3>
-                <p>Our services include system monitoring, software updates, cybersecurity, backups, technical support, and regular IT audits. Specific features depend on your chosen package.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>How quickly do you respond to IT issues?</h3>
-                <p>Critical issues receive immediate attention (within 1 hour). Non-critical issues are typically addressed within 4-8 business hours, depending on your service level.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>Do you work with businesses outside New Brunswick?</h3>
-                <p>Yes! We serve clients across Canada and the United States. Most IT management is done remotely, with on-site visits arranged when needed.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>Can you work with our existing IT setup?</h3>
-                <p>Absolutely! We assess your current systems and integrate our services seamlessly. We can work with most existing hardware and software configurations.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>What happens if you can't fix an issue remotely?</h3>
-                <p>We coordinate on-site support through our network of trusted local technicians, or guide your team through solutions via phone/video support.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>How do you handle data backup and recovery?</h3>
-                <p>We implement automated daily backups with both cloud and local storage options. Regular testing ensures your data can be quickly recovered when needed.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="section" style={{ backgroundColor: '#000', color: 'white' }}>
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title" style={{ color: 'white' }}>Ready for Worry-Free IT?</h2>
-              <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
-                Let us handle your technology so you can focus on what you do best - growing your business.
+            <div style={{ textAlign: 'center' }}>
+              <h2 style={{ marginBottom: '25px', fontSize: '2.5rem', color: 'white' }}>Ready to Transform Your Business?</h2>
+              <p style={{ fontSize: '1.3rem', opacity: '0.9', maxWidth: '700px', margin: '0 auto 40px', lineHeight: '1.6' }}>
+                Join hundreds of New Brunswick businesses who've chosen LogicPros for their complete digital transformation. 
+                Get more customers, save time, and stay secure.
               </p>
-            </div>
-            <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
-                Request IT Assessment
-              </a>
-              <a href="/contact" className="btn btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
-                Schedule Consultation
-              </a>
+              
+              <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '15px', padding: '30px', marginBottom: '40px' }}>
+                <h3 style={{ marginBottom: '20px', fontSize: '1.3rem', color: 'white' }}>🎯 What Happens Next?</h3>
+                <div className="features-grid" style={{ textAlign: 'center' }}>
+                  <div>
+                    <div style={{ fontSize: '1.8rem', marginBottom: '10px' }}>📞</div>
+                    <p style={{ fontSize: '0.95rem', opacity: '0.9', color: 'white' }}>Free consultation to understand your needs</p>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '1.8rem', marginBottom: '10px' }}>📊</div>
+                    <p style={{ fontSize: '0.95rem', opacity: '0.9', color: 'white' }}>Custom proposal with transparent pricing</p>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '1.8rem', marginBottom: '10px' }}>🚀</div>
+                    <p style={{ fontSize: '0.95rem', opacity: '0.9', color: 'white' }}>Professional implementation & support</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="cta-buttons">
+                <a href="/contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '15px 35px', marginRight: '20px', background: 'white', color: '#2c3e50' }}>Get Started Today</a>
+                <a href="/free-example" className="btn btn-secondary" style={{ fontSize: '1.1rem', padding: '15px 35px', background: 'transparent', border: '2px solid white', color: 'white' }}>See Free Example</a>
+              </div>
             </div>
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 };
