@@ -260,18 +260,18 @@ export const MFAPage = () => {
               <div className="features-grid">
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>📊</div>
-                  <h4 style={{ marginBottom: '15px', fontSize: '1.2rem' }}>Enhanced Productivity</h4>
-                  <p style={{ opacity: '0.9', fontSize: '0.95rem' }}>Single sign-on integration reduces password fatigue while improving security</p>
+                  <h4 style={{ marginBottom: '15px', fontSize: '1.2rem', color: 'white' }}>Enhanced Productivity</h4>
+                  <p style={{ opacity: '0.9', fontSize: '0.95rem', color: 'white' }}>Single sign-on integration reduces password fatigue while improving security</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🌍</div>
-                  <h4 style={{ marginBottom: '15px', fontSize: '1.2rem' }}>Secure Remote Work</h4>
-                  <p style={{ opacity: '0.9', fontSize: '0.95rem' }}>Enable confident remote access to business systems from anywhere</p>
+                  <h4 style={{ marginBottom: '15px', fontSize: '1.2rem', color: 'white' }}>Secure Remote Work</h4>
+                  <p style={{ opacity: '0.9', fontSize: '0.95rem', color: 'white' }}>Enable confident remote access to business systems from anywhere</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🎯</div>
-                  <h4 style={{ marginBottom: '15px', fontSize: '1.2rem' }}>Competitive Advantage</h4>
-                  <p style={{ opacity: '0.9', fontSize: '0.95rem' }}>Demonstrate security maturity to clients and business partners</p>
+                  <h4 style={{ marginBottom: '15px', fontSize: '1.2rem', color: 'white' }}>Competitive Advantage</h4>
+                  <p style={{ opacity: '0.9', fontSize: '0.95rem', color: 'white' }}>Demonstrate security maturity to clients and business partners</p>
                 </div>
               </div>
             </div>
@@ -546,26 +546,26 @@ export const MFAPage = () => {
         <section className="section">
           <div className="container">
             <div style={{ textAlign: 'center', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', borderRadius: '25px', padding: '60px', color: 'white' }}>
-              <h2 style={{ marginBottom: '25px', fontSize: '2.5rem' }}>Ready to Secure Your Business?</h2>
-              <p style={{ fontSize: '1.3rem', opacity: '0.9', maxWidth: '700px', margin: '0 auto 40px', lineHeight: '1.6' }}>
+              <h2 style={{ marginBottom: '25px', fontSize: '2.5rem', color: 'white' }}>Ready to Secure Your Business?</h2>
+              <p style={{ fontSize: '1.3rem', opacity: '0.9', maxWidth: '700px', margin: '0 auto 40px', lineHeight: '1.6', color: 'white' }}>
                 Don't wait for a security incident. Protect your New Brunswick business with professional 
                 multi-factor authentication that your employees will actually use.
               </p>
               
               <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '15px', padding: '30px', marginBottom: '40px' }}>
-                <h3 style={{ marginBottom: '20px', fontSize: '1.3rem' }}>🎯 Get Started Today</h3>
+                <h3 style={{ marginBottom: '20px', fontSize: '1.3rem', color: 'white' }}>🎯 Get Started Today</h3>
                 <div className="features-grid" style={{ textAlign: 'center' }}>
                   <div>
                     <div style={{ fontSize: '1.8rem', marginBottom: '10px' }}>📞</div>
-                    <p style={{ fontSize: '0.95rem', opacity: '0.9' }}>Free consultation call to discuss your needs</p>
+                    <p style={{ fontSize: '0.95rem', opacity: '0.9', color: 'white' }}>Free consultation call to discuss your needs</p>
                   </div>
                   <div>
                     <div style={{ fontSize: '1.8rem', marginBottom: '10px' }}>📊</div>
-                    <p style={{ fontSize: '0.95rem', opacity: '0.9' }}>Security assessment and customized proposal</p>
+                    <p style={{ fontSize: '0.95rem', opacity: '0.9', color: 'white' }}>Security assessment and customized proposal</p>
                   </div>
                   <div>
                     <div style={{ fontSize: '1.8rem', marginBottom: '10px' }}>🚀</div>
-                    <p style={{ fontSize: '0.95rem', opacity: '0.9' }}>Professional implementation and training</p>
+                    <p style={{ fontSize: '0.95rem', opacity: '0.9', color: 'white' }}>Professional implementation and training</p>
                   </div>
                 </div>
               </div>
