@@ -78,9 +78,9 @@ export const ContactPage = () => {
         <section className="hero-section">
           <div className="container">
             <div className="hero-content">
-              <h1 className="hero-title">Let's Build Your Perfect Website</h1>
+              <h1 className="hero-title">Let's Grow Your Business Together</h1>
               <p className="hero-subtitle">
-                Ready to attract more customers and grow your contracting business? 
+                Ready to enhance your cybersecurity, streamline operations, or attract more customers? 
                 Get your free consultation today.
               </p>
             </div>
@@ -95,7 +95,7 @@ export const ContactPage = () => {
               <div className="contact-form-container">
                 <h2>Get Your Free Consultation</h2>
                 <p className="form-subtitle">
-                  Tell us about your business and project goals. Our team will review your inquiry and provide a customized solution.
+                  Tell us about your business and goals. Whether you need cybersecurity, AI automation, website development, or IT support - our team will provide a customized solution.
                 </p>
 
                 {submitStatus === 'success' && (
@@ -168,43 +168,48 @@ export const ContactPage = () => {
 
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="trade">Your Trade/Industry</label>
+                      <label htmlFor="trade">Your Industry</label>
                       <select
                         id="trade"
                         name="trade"
                         value={formData.trade}
                         onChange={handleChange}
                       >
-                        <option value="">Select your trade</option>
-                        <option value="roofing">Roofing</option>
-                        <option value="plumbing">Plumbing</option>
-                        <option value="electrical">Electrical</option>
-                        <option value="hvac">HVAC</option>
-                        <option value="landscaping">Landscaping</option>
-                        <option value="construction">General Construction</option>
-                        <option value="remodeling">Home Remodeling</option>
-                        <option value="painting">Painting</option>
-                        <option value="flooring">Flooring</option>
-                        <option value="concrete">Concrete</option>
+                        <option value="">Select your industry</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="legal">Legal Services</option>
+                        <option value="accounting">Accounting/Finance</option>
+                        <option value="consulting">Consulting</option>
+                        <option value="retail">Retail</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="construction">Construction</option>
+                        <option value="real-estate">Real Estate</option>
+                        <option value="technology">Technology</option>
+                        <option value="education">Education</option>
+                        <option value="nonprofit">Non-Profit</option>
                         <option value="other">Other</option>
                       </select>
                     </div>
                     <div className="form-group">
-                      <label htmlFor="projectType">Project Type</label>
+                      <label htmlFor="projectType">Service Interest</label>
                       <select
                         id="projectType"
                         name="projectType"
                         value={formData.projectType}
                         onChange={handleChange}
                       >
-                        <option value="">Select project type</option>
+                        <option value="">Select service type</option>
+                        <option value="cybersecurity-audit">Cybersecurity Audit</option>
+                        <option value="password-management">Password Management</option>
+                        <option value="mfa-setup">Multi-Factor Authentication</option>
+                        <option value="it-support">Managed IT Services</option>
+                        <option value="ai-automation">AI Automation</option>
                         <option value="new-website">New Website</option>
                         <option value="website-redesign">Website Redesign</option>
                         <option value="ecommerce">E-Commerce Store</option>
-                        <option value="project-portal">Project Management Portal</option>
-                        <option value="maintenance">Website Maintenance</option>
                         <option value="seo">SEO & Marketing</option>
-                        <option value="not-sure">Not Sure - Need Consultation</option>
+                        <option value="consultation">General Consultation</option>
+                        <option value="not-sure">Not Sure - Need Help Deciding</option>
                       </select>
                     </div>
                   </div>
@@ -254,7 +259,7 @@ export const ContactPage = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows="6"
-                      placeholder="Tell us about your business, current website (if any), goals, target customers, and any specific requirements or questions you have."
+                      placeholder="Tell us about your business, current challenges, goals, and any specific requirements. Whether it's cybersecurity, IT support, automation, or web development - we're here to help."
                     ></textarea>
                   </div>
 
@@ -311,22 +316,22 @@ export const ContactPage = () => {
             <div className="faq-grid">
               <div className="faq-item">
                 <h3>How do I get started?</h3>
-                <p>Contact us for a free consultation where we'll discuss your needs, goals, and create a custom solution tailored to your business. We'll walk you through the entire process step by step.</p>
+                <p>Contact us for a free consultation where we'll discuss your business needs, security concerns, and growth goals. We'll create a custom solution whether you need cybersecurity, IT support, automation, or web development.</p>
               </div>
               
               <div className="faq-item">
                 <h3>How long does it take?</h3>
-                <p>Most websites are completed in 2-4 weeks. Rush jobs can be accommodated when needed. We'll give you an exact timeline during your consultation.</p>
+                <p>Timelines vary by service: security audits (1-2 weeks), websites (2-4 weeks), IT setup (1-3 weeks). We'll provide an exact timeline during your consultation based on your specific needs.</p>
               </div>
               
               <div className="faq-item">
-                <h3>Do you handle SEO?</h3>
-                <p>Yes! Every website includes basic SEO setup. We also offer advanced SEO services to help you rank higher in local searches and attract more customers.</p>
+                <h3>Do you provide ongoing support?</h3>
+                <p>Yes! We offer managed IT services, security monitoring, website maintenance, and ongoing support packages. We're here to help your business stay secure and grow long-term.</p>
               </div>
               
               <div className="faq-item">
-                <h3>What's included in maintenance?</h3>
-                <p>Security updates, content changes, performance monitoring, and technical support. Contact us to discuss ongoing maintenance options that fit your needs.</p>
+                <h3>What cybersecurity services do you offer?</h3>
+                <p>We provide security audits, password management, multi-factor authentication, endpoint protection, security training, and incident response planning to keep your business secure.</p>
               </div>
               
               <div className="faq-item">

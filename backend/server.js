@@ -167,7 +167,7 @@ app.post('/api/contact', async (req, res) => {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #000;">Thank You, ${name}!</h2>
           
-          <p>We received your inquiry about ${projectType || 'web development services'} and will respond within 24 hours.</p>
+          <p>We received your inquiry about ${projectType || 'our services'} and will respond within 24 hours.</p>
           
           <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3>What happens next?</h3>
@@ -175,7 +175,7 @@ app.post('/api/contact', async (req, res) => {
               <li>Aaron will personally review your inquiry</li>
               <li>We'll respond with initial questions and next steps</li>
               <li>If it's a good fit, we'll schedule a consultation call</li>
-              <li>We can often provide a free example of your website</li>
+              <li>We'll discuss solutions tailored to your business needs</li>
             </ul>
           </div>
           
@@ -189,7 +189,7 @@ app.post('/api/contact', async (req, res) => {
           
           <hr style="margin: 30px 0;">
           <p style="color: #666; font-size: 12px;">
-            LogicPros - Professional Web Development for Contractors<br>
+            LogicPros - Cybersecurity, AI Solutions & Professional Web Development<br>
             This is an automated confirmation. Please don't reply to this email.
           </p>
         </div>
