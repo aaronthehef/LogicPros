@@ -151,7 +151,7 @@ export const ResponsiveLandingPage = () => {
             <div className="section-header">
               <h2 className="section-title">Complete Digital Security & Growth Solutions</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-                Cybersecurity audits, AI automation, professional websites, and IT support - all eligible for Cybersecure NB grants
+                Cybersecurity audits, AI automation, professional websites, and IT support for New Brunswick businesses
               </p>
             </div>
             <div className="services-grid animate-on-scroll">
@@ -162,7 +162,7 @@ export const ResponsiveLandingPage = () => {
                   Comprehensive security assessments, password management, MFA implementation, and incident response planning. 
                   Protect your business from cyber threats with expert security solutions.
                 </p>
-                <div className="feature-highlight">Cybersecure NB Grant Eligible - Up to $3,000</div>
+                <div className="feature-highlight">Professional Security Solutions</div>
               </div>
               <div className="service-card">
                 <div className="service-icon floating-icon">🤖</div>
@@ -171,7 +171,7 @@ export const ResponsiveLandingPage = () => {
                   Chatbots, automated marketing, predictive analytics, and AI-powered business processes. 
                   Streamline operations and reduce manual work with intelligent automation.
                 </p>
-                <div className="feature-highlight">Cybersecure NB Grant Eligible - Up to $3,000</div>
+                <div className="feature-highlight">Professional Security Solutions</div>
               </div>
               <div className="service-card">
                 <div className="service-icon floating-icon">🌐</div>
@@ -203,10 +203,10 @@ export const ResponsiveLandingPage = () => {
             </div>
             <div className="features-grid animate-on-scroll">
               <div className="feature-item">
-                <h3>Cybersecure NB Program Partner</h3>
+                <h3>Grant Funding Available</h3>
                 <p>
-                  Officially recognized provider for cybersecurity and AI services under the Cybersecure NB program. 
-                  Get up to $3,000 in grants to enhance your business security and AI capabilities.
+                  New Brunswick businesses may qualify for cybersecurity and technology grants. 
+                  We can help you research available programs and determine eligibility for your projects.
                 </p>
               </div>
               <div className="feature-item">
@@ -248,7 +248,7 @@ export const ResponsiveLandingPage = () => {
                   Comprehensive security assessments including password management, MFA implementation, 
                   security headers, patch management, and incident response planning.
                 </p>
-                <div className="feature-highlight">Cybersecure NB Grant Eligible - Up to $3,000</div>
+                <div className="feature-highlight">Professional Security Solutions</div>
               </div>
               <div className="service-card">
                 <div className="service-icon floating-icon">🌐</div>
@@ -266,7 +266,7 @@ export const ResponsiveLandingPage = () => {
                   Chatbots, automated email marketing, predictive analytics, social media management, 
                   and AI-powered business process automation.
                 </p>
-                <div className="feature-highlight">Cybersecure NB Grant Eligible - Up to $3,000</div>
+                <div className="feature-highlight">Professional Security Solutions</div>
               </div>
             </div>
           </div>
@@ -287,10 +287,10 @@ export const ResponsiveLandingPage = () => {
                 </p>
               </div>
               <div className="feature-item">
-                <h3>💰 Maximize Your Grants</h3>
+                <h3>💰 Funding Assistance</h3>
                 <p>
-                  Expert guidance on Cybersecure NB grant applications and implementation. 
-                  We help you get the full $3,000 grant for eligible cybersecurity and AI services.
+                  We help you research and apply for available cybersecurity and technology grants. 
+                  Many New Brunswick businesses can access funding to offset implementation costs.
                 </p>
               </div>
               <div className="feature-item">
@@ -338,7 +338,7 @@ export const ResponsiveLandingPage = () => {
               <h2 className="section-title">Serving New Brunswick Businesses</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
                 Local cybersecurity, AI automation, and IT services across New Brunswick. 
-                Cybersecure NB grant eligible services available province-wide.
+                Professional technology solutions available province-wide.
               </p>
             </div>
             <div className="features-grid animate-on-scroll">
@@ -346,21 +346,21 @@ export const ResponsiveLandingPage = () => {
                 <h3>🏢 Fredericton</h3>
                 <p>
                   Cybersecurity audits, AI chatbots, managed IT services, and professional websites 
-                  for Fredericton businesses. Cybersecure NB grants available.
+                  for Fredericton businesses. Expert technology solutions.
                 </p>
               </div>
               <div className="feature-item" style={{ textAlign: 'center' }}>
                 <h3>🏭 Moncton</h3>
                 <p>
                   Security assessments, automated marketing, endpoint protection, and web development 
-                  for Moncton area SMEs. Full grant eligibility support.
+                  for Moncton area SMEs. Comprehensive technology support.
                 </p>
               </div>
               <div className="feature-item" style={{ textAlign: 'center' }}>
                 <h3>⚓ Saint John</h3>
                 <p>
                   MFA implementation, predictive analytics, patch management, and digital solutions 
-                  for Saint John businesses. Maximize your $3,000 grant.
+                  for Saint John businesses. Professional implementation support.
                 </p>
               </div>
             </div>
@@ -373,12 +373,56 @@ export const ResponsiveLandingPage = () => {
             <div className="section-header">
               <h2 className="section-title">Ready to Secure & Grow Your New Brunswick Business?</h2>
               <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-                Get up to $3,000 in Cybersecure NB grants for cybersecurity and AI services
+                Professional cybersecurity, AI automation, and technology solutions
               </p>
             </div>
             <div className="cta-buttons">
               <a href="/contact" className="btn btn-primary">Get Security Assessment</a>
-              <a href="/contact" className="btn btn-secondary">Learn About Grants</a>
+              <a href="/contact" className="btn btn-secondary">Get Free Consultation</a>
+            </div>
+          </div>
+        </section>
+
+        {/* Grant Eligibility Section */}
+        <section className="section" style={{ backgroundColor: '#f0f9ff', borderTop: '2px solid #3b82f6' }}>
+          <div className="container">
+            <div className="section-header" style={{ textAlign: 'center' }}>
+              <h2 className="section-title" style={{ color: '#1e40af' }}>💰 Is Your Project Eligible for a Cybersecurity Grant?</h2>
+              <p style={{ fontSize: '1.1rem', color: '#374151', maxWidth: '700px', margin: '0 auto' }}>
+                Many New Brunswick businesses qualify for government grants to improve their cybersecurity and technology infrastructure. 
+                We can help you research available programs and determine if your project qualifies for funding.
+              </p>
+            </div>
+            <div className="features-grid animate-on-scroll" style={{ marginTop: '40px' }}>
+              <div className="feature-item" style={{ textAlign: 'center' }}>
+                <h3>🔍 Grant Research</h3>
+                <p>
+                  We help you identify relevant grant programs including Cybersecure NB, 
+                  federal cybersecurity initiatives, and technology modernization funds.
+                </p>
+              </div>
+              <div className="feature-item" style={{ textAlign: 'center' }}>
+                <h3>📋 Eligibility Assessment</h3>
+                <p>
+                  Free consultation to determine if your business and project requirements 
+                  match available grant criteria and funding opportunities.
+                </p>
+              </div>
+              <div className="feature-item" style={{ textAlign: 'center' }}>
+                <h3>📄 Application Support</h3>
+                <p>
+                  Assistance with grant applications, project documentation, 
+                  and ensuring your implementation meets funding requirements.
+                </p>
+              </div>
+            </div>
+            <div style={{ textAlign: 'center', marginTop: '40px' }}>
+              <a href="/contact" className="btn btn-primary" style={{ marginRight: '15px' }}>
+                Check My Grant Eligibility
+              </a>
+              <a href="/contact" className="btn btn-outline">
+                Learn More About Funding
+              </a>
             </div>
           </div>
         </section>
