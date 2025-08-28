@@ -87,7 +87,7 @@ export const MFAPage = () => {
         </section>
 
         {/* What is MFA */}
-        <section className="section" style={{ padding: '80px 0' }}>
+        <section className="section">
           <div className="container">
             <div className="section-header" style={{ marginBottom: '60px' }}>
               <h2 className="section-title" style={{ color: '#2c3e50' }}>Understanding Multi-Factor Authentication</h2>
@@ -185,7 +185,7 @@ export const MFAPage = () => {
         </section>
 
         {/* Benefits */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa', padding: '80px 0' }}>
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
             <div className="section-header" style={{ marginBottom: '60px' }}>
               <h2 className="section-title" style={{ color: '#2c3e50' }}>Why Your New Brunswick Business Needs Professional MFA</h2>
@@ -284,7 +284,7 @@ export const MFAPage = () => {
         </section>
 
         {/* Implementation Process */}
-        <section className="section" style={{ padding: '80px 0' }}>
+        <section className="section">
           <div className="container">
             <div className="section-header" style={{ marginBottom: '60px' }}>
               <h2 className="section-title" style={{ color: '#2c3e50' }}>Our Comprehensive MFA Implementation Process</h2>
@@ -390,7 +390,7 @@ export const MFAPage = () => {
         </section>
 
         {/* Local Service Areas */}
-        <section className="section" style={{ backgroundColor: '#f0f9ff', padding: '80px 0' }}>
+        <section className="section" style={{ backgroundColor: '#f0f9ff' }}>
           <div className="container">
             <div className="section-header" style={{ marginBottom: '60px' }}>
               <h2 className="section-title" style={{ color: '#2c3e50' }}>MFA Services Across New Brunswick</h2>
@@ -481,7 +481,7 @@ export const MFAPage = () => {
         </section>
 
         {/* Common MFA Questions */}
-        <section className="section" style={{ backgroundColor: '#2c3e50', color: 'white', padding: '80px 0' }}>
+        <section className="section" style={{ backgroundColor: '#2c3e50', color: 'white' }}>
           <div className="container">
             <div className="section-header" style={{ marginBottom: '60px' }}>
               <h2 className="section-title" style={{ color: 'white' }}>Common MFA Questions</h2>
@@ -543,7 +543,7 @@ export const MFAPage = () => {
         </section>
         
         {/* Final CTA */}
-        <section className="section" style={{ padding: '80px 0' }}>
+        <section className="section">
           <div className="container">
             <div style={{ textAlign: 'center', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', borderRadius: '25px', padding: '60px', color: 'white' }}>
               <h2 style={{ marginBottom: '25px', fontSize: '2.5rem' }}>Ready to Secure Your Business?</h2>

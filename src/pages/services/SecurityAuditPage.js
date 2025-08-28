@@ -62,7 +62,7 @@ export const SecurityAuditPage = () => {
         </section>
 
         {/* What is Security Audit */}
-        <section className="section" style={{ padding: '80px 20px' }}>
+        <section className="section">
           <div className="container">
             <div className="section-header" style={{ marginBottom: '50px' }}>
               <h2 className="section-title" style={{ color: '#000' }}>What is a Cybersecurity Audit?</h2>
@@ -155,7 +155,7 @@ export const SecurityAuditPage = () => {
         </section>
 
         {/* Why Audits Matter */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
             <div className="section-header" style={{ marginBottom: '50px' }}>
               <h2 className="section-title" style={{ color: '#000' }}>Why New Brunswick Businesses Need Security Audits</h2>
@@ -204,7 +204,7 @@ export const SecurityAuditPage = () => {
         </section>
 
         {/* Process Section */}
-        <section className="section" style={{ padding: '80px 20px' }}>
+        <section className="section">
           <div className="container">
             <div className="section-header" style={{ marginBottom: '50px' }}>
               <h2 className="section-title" style={{ color: '#000' }}>Our Proven Security Audit Process</h2>
@@ -261,7 +261,7 @@ export const SecurityAuditPage = () => {
         </section>
 
         {/* Local Service Areas */}
-        <section className="section" style={{ backgroundColor: '#f0f9ff', padding: '80px 20px' }}>
+        <section className="section" style={{ backgroundColor: '#f0f9ff' }}>
           <div className="container">
             <div className="section-header" style={{ marginBottom: '50px' }}>
               <h2 className="section-title" style={{ color: '#000' }}>Cybersecurity Audit Services Across New Brunswick</h2>
@@ -309,7 +309,7 @@ export const SecurityAuditPage = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="section" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', padding: '80px 20px', color: 'white' }}>
+        <section className="section" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white' }}>
           <div className="container">
             <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 style={{ color: 'white', fontSize: '2.5rem', marginBottom: '20px' }}>Don't Wait for a Cyber Attack</h2>

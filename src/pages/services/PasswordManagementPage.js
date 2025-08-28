@@ -62,7 +62,7 @@ export const PasswordManagementPage = () => {
         </section>
 
         {/* What is Password Management */}
-        <section className="section" style={{ padding: '80px 20px' }}>
+        <section className="section">
           <div className="container">
             <div className="section-header" style={{ marginBottom: '50px' }}>
               <h2 className="section-title" style={{ color: '#000' }}>Enterprise Password Management Solutions</h2>
@@ -157,7 +157,7 @@ export const PasswordManagementPage = () => {
         </section>
 
         {/* Implementation Process */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
+        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
             <div className="section-header" style={{ marginBottom: '50px' }}>
               <h2 className="section-title" style={{ color: '#000' }}>Our Password Management Implementation Process</h2>
@@ -225,7 +225,7 @@ export const PasswordManagementPage = () => {
         </section>
 
         {/* Local Service Areas */}
-        <section className="section" style={{ backgroundColor: '#f0f9ff', padding: '80px 20px' }}>
+        <section className="section" style={{ backgroundColor: '#f0f9ff' }}>
           <div className="container">
             <div className="section-header" style={{ marginBottom: '50px' }}>
               <h2 className="section-title" style={{ color: '#000' }}>Password Management Services Across New Brunswick</h2>
@@ -273,7 +273,7 @@ export const PasswordManagementPage = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="section" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', padding: '80px 20px', color: 'white' }}>
+        <section className="section" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white' }}>
           <div className="container">
             <div className="section-header" style={{ marginBottom: '40px' }}>
               <h2 style={{ color: 'white', fontSize: '2.5rem', marginBottom: '20px' }}>Stop Password-Related Breaches Today</h2>
