@@ -42,13 +42,35 @@ export const ITServicesPage = () => {
             </p>
             
             <div className="services-grid">
-              {/* Website Design Services */}
+              {/* Cybersecurity & Managed IT Services - MOVED TO TOP */}
+              <div className="service-card">
+                <div className="service-icon floating-icon">🔒</div>
+                <h3 style={{ color: '#2c3e50' }}>Cybersecurity & Managed IT Services</h3>
+                <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
+                  Complete cybersecurity protection with comprehensive security audits, multi-factor 
+                  authentication, password management, and 24/7 managed IT services for total peace of mind.
+                </p>
+                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
+                  <li>Comprehensive security audits & vulnerability assessments</li>
+                  <li>Multi-factor authentication (MFA) implementation</li>
+                  <li>Enterprise password management systems</li>
+                  <li>Endpoint security & automated patch management</li>
+                  <li>24/7 system monitoring & managed IT support</li>
+                  <li>Compliance & risk assessment services</li>
+                </ul>
+                <div className="cta-buttons">
+                  <a href="/services/security-audits" className="btn btn-primary">Security Audits</a>
+                  <a href="/services/multi-factor-authentication" className="btn btn-secondary">Learn More</a>
+                </div>
+              </div>
+
+              {/* Professional Website Design */}
               <div className="service-card">
                 <div className="service-icon floating-icon">🌐</div>
                 <h3 style={{ color: '#2c3e50' }}>Professional Website Design</h3>
                 <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
                   Custom websites designed to convert visitors into customers. Mobile-optimized, 
-                  fast-loading, and built with modern SEO best practices.
+                  fast-loading, and built with modern SEO best practices to grow your business online.
                 </p>
                 <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
                   <li>Responsive mobile-first design</li>
@@ -64,13 +86,13 @@ export const ITServicesPage = () => {
                 </div>
               </div>
 
-              {/* AI Automation Services */}
+              {/* AI Automation Solutions */}
               <div className="service-card">
                 <div className="service-icon floating-icon">🤖</div>
                 <h3 style={{ color: '#2c3e50' }}>AI Automation Solutions</h3>
                 <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
                   Intelligent chatbots and automation tools that handle customer inquiries 24/7, 
-                  qualify leads, and streamline your business operations.
+                  qualify leads, and streamline your business operations to save time and increase efficiency.
                 </p>
                 <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
                   <li>Custom AI chatbots for your website</li>
@@ -83,28 +105,6 @@ export const ITServicesPage = () => {
                 <div className="cta-buttons">
                   <a href="/services/automations" className="btn btn-primary">Learn More</a>
                   <a href="/contact" className="btn btn-secondary">Get Quote</a>
-                </div>
-              </div>
-
-              {/* Cybersecurity Services */}
-              <div className="service-card">
-                <div className="service-icon floating-icon">🔒</div>
-                <h3 style={{ color: '#2c3e50' }}>Cybersecurity & IT Services</h3>
-                <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
-                  Comprehensive cybersecurity protection including security audits, multi-factor 
-                  authentication, password management, and managed IT services.
-                </p>
-                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
-                  <li>Complete security audits</li>
-                  <li>Multi-factor authentication (MFA)</li>
-                  <li>Enterprise password management</li>
-                  <li>Endpoint security & monitoring</li>
-                  <li>Compliance & risk assessment</li>
-                  <li>24/7 IT support & monitoring</li>
-                </ul>
-                <div className="cta-buttons">
-                  <a href="/services/security-audits" className="btn btn-primary">Security Audits</a>
-                  <a href="/services/password-management" className="btn btn-secondary">Password Mgmt</a>
                 </div>
               </div>
             </div>
@@ -412,330 +412,4 @@ export const ITServicesPage = () => {
   );
 };
 
-// Additional styles for IT services page
-const itServicesStyles = `
-.it-services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.it-service-card {
-  background: white;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 2px solid transparent;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.it-service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.featured-service {
-  border-color: var(--primary-color);
-  transform: scale(1.02);
-}
-
-.service-badge {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--primary-color);
-  color: white;
-  padding: 5px 20px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.service-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.it-service-card h3 {
-  color: var(--primary-color);
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 1.4rem;
-}
-
-.service-features {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.service-features li {
-  padding: 8px 0;
-  color: var(--text-secondary);
-  position: relative;
-  padding-left: 20px;
-}
-
-.service-features li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--primary-color);
-  font-weight: bold;
-}
-
-.service-benefit {
-  background: #f8f9fa;
-  padding: 15px;
-  border-radius: 8px;
-  color: var(--primary-color);
-  font-weight: 600;
-  text-align: center;
-  font-size: 0.95rem;
-}
-
-.industry-it-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.industry-it-item {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
-
-.industry-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
-.industry-it-item h4 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
-
-.industry-it-item ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-}
-
-.industry-it-item li {
-  padding: 5px 0;
-  color: var(--text-secondary);
-  position: relative;
-  padding-left: 20px;
-}
-
-.industry-it-item li::before {
-  content: "▶";
-  position: absolute;
-  left: 0;
-  color: var(--primary-color);
-  font-size: 0.8rem;
-}
-
-.msp-benefits {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-}
-
-.benefit-item {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.benefit-item h3 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
-
-.benefit-item p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.package-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.package-card {
-  background: white;
-  border-radius: 12px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 2px solid transparent;
-  position: relative;
-  transition: transform 0.3s ease;
-}
-
-.package-card:hover {
-  transform: translateY(-5px);
-}
-
-.featured-package {
-  border-color: var(--primary-color);
-  transform: scale(1.05);
-}
-
-.package-badge {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--primary-color);
-  color: white;
-  padding: 5px 20px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.package-card h3 {
-  color: var(--primary-color);
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-}
-
-.package-subtitle {
-  color: var(--text-secondary);
-  margin-bottom: 25px;
-  font-weight: 500;
-}
-
-.package-features {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-.package-features li {
-  padding: 8px 0;
-  color: var(--text-secondary);
-  position: relative;
-  padding-left: 20px;
-}
-
-.package-features li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--primary-color);
-  font-weight: bold;
-}
-
-.security-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-.security-stats {
-  display: grid;
-  gap: 30px;
-}
-
-.stat-item {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.stat-item h4 {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-.stat-item p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.security-features h3 {
-  color: var(--primary-color);
-  margin-bottom: 25px;
-  font-size: 1.5rem;
-}
-
-.security-layers {
-  display: grid;
-  gap: 20px;
-}
-
-.security-layer {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.security-layer h4 {
-  color: var(--primary-color);
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-}
-
-.security-layer p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-@media (max-width: 768px) {
-  .it-services-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .featured-service {
-    transform: none;
-  }
-  
-  .industry-it-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .package-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .featured-package {
-    transform: none;
-  }
-  
-  .security-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-`;
-
-// Inject additional styles
-if (typeof document !== 'undefined') {
-  const styleSheet = document.createElement('style');
-  styleSheet.textContent = itServicesStyles;
-  document.head.appendChild(styleSheet);
-}
+// This page now uses standard CSS classes from responsive-style.css
