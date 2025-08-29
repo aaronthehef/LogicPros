@@ -51,7 +51,7 @@ export const Router = () => {
     console.log('Current path:', currentPath); // Debug log
     switch (currentPath) {
       case '/services':
-        return <ServicesPage />;
+        return <ITServicesPage />;
       case '/portfolio':
         return <PortfolioPage />;
       case '/about':
