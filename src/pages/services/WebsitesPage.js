@@ -120,27 +120,27 @@ export const WebsitesPage = () => {
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
             <h2 className="section-title">Our 2-4 Week Website Process</h2>
-            <div className="services-grid" style={{ marginTop: '80px', paddingTop: '30px' }}>
+            <div className="services-grid" style={{ marginTop: '80px', paddingTop: '50px' }}>
               <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-10px', left: '30px', background: '#3498db', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(52, 152, 219, 0.3)', zIndex: 10 }}>1</div>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: '#3498db', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(52, 152, 219, 0.3)', zIndex: 10 }}>1</div>
                 <h3 style={{ color: '#2c3e50', marginBottom: '15px', marginTop: '20px' }}>Strategy Session</h3>
                 <p style={{ color: '#5d6d7e', lineHeight: '1.6' }}>We discuss your business, target customers, competitors, and goals. Choose your platform and plan the site structure.</p>
               </div>
               
               <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-10px', left: '30px', background: '#e74c3c', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(231, 76, 60, 0.3)', zIndex: 10 }}>2</div>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: '#e74c3c', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(231, 76, 60, 0.3)', zIndex: 10 }}>2</div>
                 <h3 style={{ color: '#2c3e50', marginBottom: '15px', marginTop: '20px' }}>Content Creation</h3>
                 <p style={{ color: '#5d6d7e', lineHeight: '1.6' }}>AI-powered copywriting tailored to your industry. We create all text content while you focus on running your business.</p>
               </div>
               
               <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-10px', left: '30px', background: '#27ae60', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(39, 174, 96, 0.3)', zIndex: 10 }}>3</div>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: '#27ae60', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(39, 174, 96, 0.3)', zIndex: 10 }}>3</div>
                 <h3 style={{ color: '#2c3e50', marginBottom: '15px', marginTop: '20px' }}>Design & Build</h3>
                 <p style={{ color: '#5d6d7e', lineHeight: '1.6' }}>Professional design and development with regular updates. You'll see progress throughout the build process.</p>
               </div>
               
               <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-10px', left: '30px', background: '#8e44ad', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(142, 68, 173, 0.3)', zIndex: 10 }}>4</div>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: '#8e44ad', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(142, 68, 173, 0.3)', zIndex: 10 }}>4</div>
                 <h3 style={{ color: '#2c3e50', marginBottom: '15px', marginTop: '20px' }}>Launch & Training</h3>
                 <p style={{ color: '#5d6d7e', lineHeight: '1.6' }}>Go live with full training on how to update content, add photos, and track your website's performance.</p>
               </div>
@@ -248,7 +248,7 @@ export const WebsitesPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="section" style={{ backgroundColor: '#000', color: 'white', marginBottom: '0' }}>
+        <section className="section" style={{ backgroundColor: '#000', color: 'white', marginBottom: '0', paddingBottom: '0' }}>
           <div className="container">
             <div className="section-header">
               <h2 className="section-title" style={{ color: 'white' }}>Ready to Get Started?</h2>
