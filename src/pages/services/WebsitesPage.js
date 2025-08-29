@@ -3,6 +3,7 @@ import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
 import { Animations } from '../../components/Animations';
+import { Footer } from '../../components/Footer';
 
 export const WebsitesPage = () => {
   return (
@@ -119,29 +120,29 @@ export const WebsitesPage = () => {
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
             <h2 className="section-title">Our 2-4 Week Website Process</h2>
-            <div className="process-grid">
-              <div className="process-step">
-                <div className="step-number">1</div>
-                <h3>Strategy Session</h3>
-                <p>We discuss your business, target customers, competitors, and goals. Choose your platform and plan the site structure.</p>
+            <div className="services-grid">
+              <div className="service-card" style={{ position: 'relative', padding: '40px' }}>
+                <div style={{ position: 'absolute', top: '-20px', left: '30px', background: '#3498db', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold' }}>1</div>
+                <h3 style={{ color: '#2c3e50', marginBottom: '15px', marginTop: '20px' }}>Strategy Session</h3>
+                <p style={{ color: '#5d6d7e', lineHeight: '1.6' }}>We discuss your business, target customers, competitors, and goals. Choose your platform and plan the site structure.</p>
               </div>
               
-              <div className="process-step">
-                <div className="step-number">2</div>
-                <h3>Content Creation</h3>
-                <p>AI-powered copywriting tailored to your industry. We create all text content while you focus on running your business.</p>
+              <div className="service-card" style={{ position: 'relative', padding: '40px' }}>
+                <div style={{ position: 'absolute', top: '-20px', left: '30px', background: '#e74c3c', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold' }}>2</div>
+                <h3 style={{ color: '#2c3e50', marginBottom: '15px', marginTop: '20px' }}>Content Creation</h3>
+                <p style={{ color: '#5d6d7e', lineHeight: '1.6' }}>AI-powered copywriting tailored to your industry. We create all text content while you focus on running your business.</p>
               </div>
               
-              <div className="process-step">
-                <div className="step-number">3</div>
-                <h3>Design & Build</h3>
-                <p>Professional design and development with regular updates. You'll see progress throughout the build process.</p>
+              <div className="service-card" style={{ position: 'relative', padding: '40px' }}>
+                <div style={{ position: 'absolute', top: '-20px', left: '30px', background: '#27ae60', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold' }}>3</div>
+                <h3 style={{ color: '#2c3e50', marginBottom: '15px', marginTop: '20px' }}>Design & Build</h3>
+                <p style={{ color: '#5d6d7e', lineHeight: '1.6' }}>Professional design and development with regular updates. You'll see progress throughout the build process.</p>
               </div>
               
-              <div className="process-step">
-                <div className="step-number">4</div>
-                <h3>Launch & Training</h3>
-                <p>Go live with full training on how to update content, add photos, and track your website's performance.</p>
+              <div className="service-card" style={{ position: 'relative', padding: '40px' }}>
+                <div style={{ position: 'absolute', top: '-20px', left: '30px', background: '#8e44ad', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold' }}>4</div>
+                <h3 style={{ color: '#2c3e50', marginBottom: '15px', marginTop: '20px' }}>Launch & Training</h3>
+                <p style={{ color: '#5d6d7e', lineHeight: '1.6' }}>Go live with full training on how to update content, add photos, and track your website's performance.</p>
               </div>
             </div>
           </div>
@@ -266,6 +267,8 @@ export const WebsitesPage = () => {
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 };
