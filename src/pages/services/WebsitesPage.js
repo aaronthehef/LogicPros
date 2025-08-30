@@ -183,8 +183,8 @@ export const WebsitesPage = () => {
               that convert visitors into customers.
             </p>
             
-            <div className="industries-grid animate-on-scroll">
-              <a href="/#/contractors/plumbing" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div className="industries-grid animate-on-scroll" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+              <a href="/contractors/plumbing" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="industry-item">
                   <div className="industry-icon">🚰</div>
                   <h4>Plumbing Contractors</h4>
@@ -192,7 +192,7 @@ export const WebsitesPage = () => {
                 </div>
               </a>
               
-              <a href="/#/contractors/electrical" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="/contractors/electrical" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="industry-item">
                   <div className="industry-icon">⚡</div>
                   <h4>Electrical Contractors</h4>
@@ -200,7 +200,7 @@ export const WebsitesPage = () => {
                 </div>
               </a>
               
-              <a href="/#/contractors/hvac" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="/contractors/hvac" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="industry-item">
                   <div className="industry-icon">🌡️</div>
                   <h4>HVAC Contractors</h4>
@@ -208,7 +208,7 @@ export const WebsitesPage = () => {
                 </div>
               </a>
               
-              <a href="/#/contractors/roofing" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="/contractors/roofing" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="industry-item">
                   <div className="industry-icon">🏠</div>
                   <h4>Roofing Contractors</h4>
@@ -216,7 +216,7 @@ export const WebsitesPage = () => {
                 </div>
               </a>
               
-              <a href="/#/contractors/landscaping" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="/contractors/landscaping" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="industry-item">
                   <div className="industry-icon">🌿</div>
                   <h4>Landscaping Companies</h4>
@@ -224,7 +224,7 @@ export const WebsitesPage = () => {
                 </div>
               </a>
               
-              <a href="/#/contractors/general" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="/contractors/construction" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="industry-item">
                   <div className="industry-icon">🏗️</div>
                   <h4>General Contractors</h4>
@@ -232,19 +232,19 @@ export const WebsitesPage = () => {
                 </div>
               </a>
               
-              <a href="/#/contractors/home-services" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="/contractors/painting" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="industry-item">
                   <div className="industry-icon">🎨</div>
-                  <h4>Home Services</h4>
-                  <p>Painting, flooring, remodeling - before/after showcases and trust-building</p>
+                  <h4>Painting Contractors</h4>
+                  <p>Residential and commercial painting with color consultation and finish options</p>
                 </div>
               </a>
               
-              <a href="/#/contractors/professional" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="/contractors/flooring" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="industry-item">
-                  <div className="industry-icon">💼</div>
-                  <h4>Professional Services</h4>
-                  <p>Lawyers, accountants, consultants - credibility and lead generation focus</p>
+                  <div className="industry-icon">📐</div>
+                  <h4>Flooring Contractors</h4>
+                  <p>Hardwood, tile, carpet installation with material showcases and testimonials</p>
                 </div>
               </a>
             </div>
