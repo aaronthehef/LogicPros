@@ -21,16 +21,38 @@ export const WebsitesPage = () => {
       <main className="main-content">
         <Animations />
         {/* Hero Section */}
-        <section className="hero-section">
-          <div className="container">
-            <div className="hero-content">
-              <h1 className="typewriter-text">Professional Websites for Contractors & Small Businesses</h1>
-              <p>
+        <section className="hero-section" style={{ textAlign: 'center' }}>
+          <div className="container" style={{ textAlign: 'center' }}>
+            <div className="hero-content" style={{ 
+              textAlign: 'center !important', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto'
+            }}>
+              <h1 className="typewriter-text" style={{ 
+                textAlign: 'center !important', 
+                width: '100%',
+                margin: '0 auto 24px auto'
+              }}>Professional Websites for Contractors & Small Businesses</h1>
+              <p style={{ 
+                textAlign: 'center !important', 
+                width: '100%', 
+                margin: '0 auto 40px auto'
+              }}>
                 WordPress or React websites built for SEO and lead generation. 
                 AI-powered copywriting, mobile-responsive design, and 2-4 week turnaround. 
                 Perfect for trades and service businesses across New Brunswick, Canada, and the U.S.
               </p>
-              <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
+              <div style={{ 
+                textAlign: 'center !important', 
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center'
+              }}>
+                <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
+              </div>
             </div>
           </div>
         </section>

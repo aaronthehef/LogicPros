@@ -18,16 +18,38 @@ export const AutomationsPage = () => {
 
       <main className="main-content">
         {/* Hero Section */}
-        <section className="hero-section">
-          <div className="container">
-            <div className="hero-content">
-              <h1>AI Business Automations That Work While You Sleep</h1>
-              <p>
+        <section className="hero-section" style={{ textAlign: 'center' }}>
+          <div className="container" style={{ textAlign: 'center' }}>
+            <div className="hero-content" style={{ 
+              textAlign: 'center !important', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto'
+            }}>
+              <h1 style={{ 
+                textAlign: 'center !important', 
+                width: '100%',
+                margin: '0 auto 24px auto'
+              }}>AI Business Automations That Work While You Sleep</h1>
+              <p style={{ 
+                textAlign: 'center !important', 
+                width: '100%', 
+                margin: '0 auto 40px auto'
+              }}>
                 Google review request systems, social media auto-posting, calendar integrations, and more. 
                 Full backend setup with ongoing monitoring using the powerful n8n automation platform. 
                 Save hours each week with intelligent business automation.
               </p>
-              <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
+              <div style={{ 
+                textAlign: 'center !important', 
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center'
+              }}>
+                <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
+              </div>
             </div>
           </div>
         </section>
