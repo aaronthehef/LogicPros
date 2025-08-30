@@ -47,8 +47,7 @@ export const ITServicesPage = () => {
                 <div className="service-icon floating-icon">🔒</div>
                 <h3 style={{ color: '#2c3e50' }}>Cybersecurity & Managed IT Services</h3>
                 <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
-                  Professional cybersecurity services including security audits, multi-factor 
-                  authentication, and managed IT support to protect your business.
+                  Professional cybersecurity services including security audits, MFA, and managed IT support to protect your business from cyber threats.
                 </p>
                 <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
                   <li>Comprehensive security audits & vulnerability assessments</li>
@@ -69,8 +68,7 @@ export const ITServicesPage = () => {
                 <div className="service-icon floating-icon">🌐</div>
                 <h3 style={{ color: '#2c3e50' }}>Professional Website Design</h3>
                 <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
-                  Custom websites designed to convert visitors into customers. Mobile-optimized, 
-                  fast-loading, and built with modern SEO best practices.
+                  Custom websites designed to convert visitors into customers. Mobile-optimized, fast-loading, and built with modern SEO practices.
                 </p>
                 <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
                   <li>Responsive mobile-first design</li>
@@ -91,8 +89,7 @@ export const ITServicesPage = () => {
                 <div className="service-icon floating-icon">🤖</div>
                 <h3 style={{ color: '#2c3e50' }}>AI Automation Solutions</h3>
                 <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
-                  Intelligent chatbots and automation tools that handle customer inquiries 24/7, 
-                  qualify leads, and streamline your business operations.
+                  Intelligent chatbots and automation tools that handle customer inquiries, qualify leads, and streamline business operations.
                 </p>
                 <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
                   <li>Custom AI chatbots for your website</li>
