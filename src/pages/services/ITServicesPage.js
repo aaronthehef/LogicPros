@@ -50,12 +50,12 @@ export const ITServicesPage = () => {
                   Professional cybersecurity services including security audits, MFA, and managed IT support to protect your business from cyber threats.
                 </p>
                 <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
-                  <li>Comprehensive security audits & vulnerability assessments</li>
-                  <li>Multi-factor authentication (MFA) implementation</li>
-                  <li>Enterprise password management systems</li>
-                  <li>Endpoint security & automated patch management</li>
-                  <li>24/7 system monitoring & managed IT support</li>
-                  <li>Compliance & risk assessment services</li>
+                  <li>Security audits & vulnerability assessments</li>
+                  <li>Multi-factor authentication (MFA)</li>
+                  <li>Password management systems</li>
+                  <li>Endpoint security & patch management</li>
+                  <li>24/7 system monitoring & IT support</li>
+                  <li>Compliance & risk assessment</li>
                 </ul>
                 <div className="cta-buttons">
                   <a href="/services/security-audits" className="btn btn-primary">Security Audits</a>
