@@ -3,6 +3,7 @@ import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
 import { Footer } from '../../components/Footer';
+import { colors } from '../../styles/colors';
 
 export const ITServicesPage = () => {
   return (
@@ -19,24 +20,50 @@ export const ITServicesPage = () => {
 
       <main className="main-content">
         {/* Hero Section */}
-        <section className="hero-section">
-          <div className="container">
-            <div className="hero-content">
-              <h1>Complete Digital Solutions for New Brunswick Businesses</h1>
-              <p className="hero-subheadline">
+        <section className="hero-section" style={{ textAlign: 'center' }}>
+          <div className="container" style={{ textAlign: 'center' }}>
+            <div className="hero-content" style={{ 
+              textAlign: 'center !important', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto',
+              left: '0',
+              right: '0',
+              position: 'relative'
+            }}>
+              <h1 style={{ 
+                textAlign: 'center !important', 
+                width: '100%',
+                margin: '0 auto 24px auto'
+              }}>Complete Digital Solutions for New Brunswick Businesses</h1>
+              <p className="hero-subheadline" style={{ 
+                textAlign: 'center !important', 
+                width: '100%', 
+                margin: '0 auto 40px auto',
+                display: 'block'
+              }}>
                 Professional website design, AI automation, and cybersecurity services. 
                 Everything you need to grow your business online and protect it from digital threats.
               </p>
-              <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
+              <div style={{ 
+                textAlign: 'center !important', 
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center'
+              }}>
+                <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Core Services */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <h2 className="section-title" style={{ color: '#2c3e50' }}>Our Complete Service Portfolio</h2>
-            <p style={{ fontSize: '1.2rem', color: '#5d6d7e', maxWidth: '800px', margin: '0 auto 50px', textAlign: 'center' }}>
+            <h2 className="section-title" style={{ color: colors.text.primary }}>Our Complete Service Portfolio</h2>
+            <p style={{ fontSize: '1.2rem', color: colors.text.secondary, maxWidth: '800px', margin: '0 auto 50px', textAlign: 'center' }}>
               From professional websites that convert visitors into customers, to AI automation that saves time, 
               to cybersecurity that protects your business - we provide everything you need to succeed online.
             </p>
@@ -45,11 +72,11 @@ export const ITServicesPage = () => {
               {/* Cybersecurity & Managed IT Services - MOVED TO TOP */}
               <div className="service-card">
                 <div className="service-icon floating-icon">🔒</div>
-                <h3 style={{ color: '#2c3e50' }}>Cybersecurity & IT Services</h3>
-                <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
+                <h3 style={{ color: colors.text.primary }}>Cybersecurity & IT Services</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6', marginBottom: '20px' }}>
                   Professional cybersecurity services including security audits, MFA, and managed IT support to protect your business from cyber threats.
                 </p>
-                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
+                <ul style={{ color: colors.text.secondary, paddingLeft: '20px', marginBottom: '20px' }}>
                   <li>Security audits & vulnerability assessments</li>
                   <li>Multi-factor authentication (MFA)</li>
                   <li>Password management systems</li>
@@ -66,11 +93,11 @@ export const ITServicesPage = () => {
               {/* Professional Website Design */}
               <div className="service-card">
                 <div className="service-icon floating-icon">🌐</div>
-                <h3 style={{ color: '#2c3e50' }}>Website Design & Development</h3>
-                <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
+                <h3 style={{ color: colors.text.primary }}>Website Design & Development</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6', marginBottom: '20px' }}>
                   Custom websites designed to convert visitors into customers. Mobile-optimized, fast-loading, and built with modern SEO practices.
                 </p>
-                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
+                <ul style={{ color: colors.text.secondary, paddingLeft: '20px', marginBottom: '20px' }}>
                   <li>Responsive mobile-first design</li>
                   <li>Search engine optimization (SEO)</li>
                   <li>Fast loading speeds & performance</li>
@@ -87,11 +114,11 @@ export const ITServicesPage = () => {
               {/* AI Automation Solutions */}
               <div className="service-card">
                 <div className="service-icon floating-icon">🤖</div>
-                <h3 style={{ color: '#2c3e50' }}>AI Automation Solutions</h3>
-                <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
+                <h3 style={{ color: colors.text.primary }}>AI Automation Solutions</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6', marginBottom: '20px' }}>
                   Intelligent chatbots and automation tools that handle customer inquiries, qualify leads, and streamline business operations.
                 </p>
-                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '20px' }}>
+                <ul style={{ color: colors.text.secondary, paddingLeft: '20px', marginBottom: '20px' }}>
                   <li>Custom AI chatbots for your website</li>
                   <li>Lead qualification automation</li>
                   <li>Customer support automation</li>
@@ -111,8 +138,8 @@ export const ITServicesPage = () => {
         {/* Service Specializations */}
         <section className="section">
           <div className="container">
-            <h2 className="section-title" style={{ color: '#2c3e50' }}>Industry-Specific Solutions</h2>
-            <p style={{ fontSize: '1.1rem', color: '#5d6d7e', maxWidth: '700px', margin: '0 auto 50px', textAlign: 'center' }}>
+            <h2 className="section-title" style={{ color: 'colors.text.primary' }}>Industry-Specific Solutions</h2>
+            <p style={{ fontSize: '1.1rem', color: 'colors.text.secondary', maxWidth: '700px', margin: '0 auto 50px', textAlign: 'center' }}>
               We understand that every industry has unique digital needs. Our solutions are tailored 
               to help your specific business type succeed online and stay secure.
             </p>
@@ -120,8 +147,8 @@ export const ITServicesPage = () => {
             <div className="features-grid">
               <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🏗️</div>
-                <h3 style={{ color: '#2c3e50', marginBottom: '20px' }}>Contractors & Trades</h3>
-                <ul style={{ color: '#5d6d7e', textAlign: 'left', paddingLeft: '20px' }}>
+                <h3 style={{ color: colors.text.primary, marginBottom: '20px', fontSize: '1.3rem' }}>Contractors & Trades</h3>
+                <ul style={{ color: colors.text.secondary, textAlign: 'left', paddingLeft: '20px', fontSize: '1rem' }}>
                   <li>Lead-generating contractor websites</li>
                   <li>Job estimate automation with AI chatbots</li>
                   <li>Project management system security</li>
@@ -132,8 +159,8 @@ export const ITServicesPage = () => {
               
               <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '20px' }}>💼</div>
-                <h3 style={{ color: '#2c3e50', marginBottom: '20px' }}>Professional Services</h3>
-                <ul style={{ color: '#5d6d7e', textAlign: 'left', paddingLeft: '20px' }}>
+                <h3 style={{ color: colors.text.primary, marginBottom: '20px', fontSize: '1.3rem' }}>Professional Services</h3>
+                <ul style={{ color: colors.text.secondary, textAlign: 'left', paddingLeft: '20px', fontSize: '1rem' }}>
                   <li>Professional service websites with booking</li>
                   <li>Client consultation automation</li>
                   <li>Secure client data management</li>
@@ -144,8 +171,8 @@ export const ITServicesPage = () => {
               
               <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🏪</div>
-                <h3 style={{ color: '#2c3e50', marginBottom: '20px' }}>Retail & E-commerce</h3>
-                <ul style={{ color: '#5d6d7e', textAlign: 'left', paddingLeft: '20px' }}>
+                <h3 style={{ color: colors.text.primary, marginBottom: '20px', fontSize: '1.3rem' }}>Retail & E-commerce</h3>
+                <ul style={{ color: colors.text.secondary, textAlign: 'left', paddingLeft: '20px', fontSize: '1rem' }}>
                   <li>High-converting e-commerce websites</li>
                   <li>Product recommendation AI</li>
                   <li>Payment processing security</li>
@@ -158,10 +185,10 @@ export const ITServicesPage = () => {
         </section>
 
         {/* Why Choose LogicPros */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <h2 className="section-title" style={{ color: '#2c3e50' }}>Why Choose LogicPros for Your Digital Success</h2>
-            <p style={{ fontSize: '1.1rem', color: '#5d6d7e', maxWidth: '700px', margin: '0 auto 50px', textAlign: 'center' }}>
+            <h2 className="section-title" style={{ color: 'colors.text.primary' }}>Why Choose LogicPros for Your Digital Success</h2>
+            <p style={{ fontSize: '1.1rem', color: 'colors.text.secondary', maxWidth: '700px', margin: '0 auto 50px', textAlign: 'center' }}>
               We're more than just a service provider - we're your digital growth partner, helping New Brunswick 
               businesses thrive online while staying secure and efficient.
             </p>
@@ -169,27 +196,27 @@ export const ITServicesPage = () => {
             <div className="features-grid">
               <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🇨🇦</div>
-                <h3 style={{ color: '#2c3e50', marginBottom: '15px' }}>New Brunswick Local</h3>
-                <p style={{ color: '#5d6d7e' }}>Based right here in New Brunswick, we understand local business needs and provide personalized service you can't get from distant corporations.</p>
+                <h3 style={{ color: 'colors.text.primary', marginBottom: '15px' }}>New Brunswick Local</h3>
+                <p style={{ color: 'colors.text.secondary' }}>Based right here in New Brunswick, we understand local business needs and provide personalized service you can't get from distant corporations.</p>
               </div>
               
               <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🎯</div>
-                <h3 style={{ color: '#2c3e50', marginBottom: '15px' }}>Complete Digital Solution</h3>
-                <p style={{ color: '#5d6d7e' }}>Websites, AI automation, and cybersecurity all under one roof. No need to juggle multiple vendors for your digital needs.</p>
+                <h3 style={{ color: 'colors.text.primary', marginBottom: '15px' }}>Complete Digital Solution</h3>
+                <p style={{ color: 'colors.text.secondary' }}>Websites, AI automation, and cybersecurity all under one roof. No need to juggle multiple vendors for your digital needs.</p>
               </div>
               
               <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🚀</div>
-                <h3 style={{ color: '#2c3e50', marginBottom: '15px' }}>Growth-Focused Approach</h3>
-                <p style={{ color: '#5d6d7e' }}>Every solution is designed to help you get more customers, save time, and protect your business while you focus on growth.</p>
+                <h3 style={{ color: 'colors.text.primary', marginBottom: '15px' }}>Growth-Focused Approach</h3>
+                <p style={{ color: 'colors.text.secondary' }}>Every solution is designed to help you get more customers, save time, and protect your business while you focus on growth.</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Success Stories Preview */}
-        <section className="section" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white' }}>
+        <section className="section" style={{ background: colors.backgrounds.gradientPrimary, color: colors.text.light }}>
           <div className="container">
             <h2 className="section-title" style={{ color: 'white', marginBottom: '40px' }}>Helping New Brunswick Businesses Succeed</h2>
             
@@ -214,7 +241,7 @@ export const ITServicesPage = () => {
             </div>
             
             <div style={{ textAlign: 'center', marginTop: '40px' }}>
-              <a href="/contact" className="btn btn-primary" style={{ background: 'white', color: '#667eea', padding: '15px 30px', fontWeight: '600' }}>Get Your Success Story</a>
+              <a href="/contact" className="btn btn-primary" style={{ background: colors.accent, color: colors.text.light, padding: '15px 30px', fontWeight: '600' }}>Get Your Success Story</a>
             </div>
           </div>
         </section>
@@ -222,8 +249,8 @@ export const ITServicesPage = () => {
         {/* Service Packages */}
         <section className="section">
           <div className="container">
-            <h2 className="section-title" style={{ color: '#2c3e50' }}>Complete Digital Growth Packages</h2>
-            <p style={{ fontSize: '1.1rem', color: '#5d6d7e', maxWidth: '700px', margin: '0 auto 50px', textAlign: 'center' }}>
+            <h2 className="section-title" style={{ color: 'colors.text.primary' }}>Complete Digital Growth Packages</h2>
+            <p style={{ fontSize: '1.1rem', color: 'colors.text.secondary', maxWidth: '700px', margin: '0 auto 50px', textAlign: 'center' }}>
               Choose the perfect combination of website design, AI automation, and cybersecurity 
               services to take your business to the next level.
             </p>
@@ -231,9 +258,9 @@ export const ITServicesPage = () => {
             <div className="services-grid">
               <div className="service-card" style={{ border: '2px solid #3498db' }}>
                 <div className="service-icon floating-icon" style={{ color: '#3498db' }}>🌱</div>
-                <h3 style={{ color: '#2c3e50' }}>Starter Growth Package</h3>
-                <p style={{ color: '#5d6d7e', marginBottom: '20px', fontWeight: '500' }}>Perfect for New Businesses</p>
-                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '25px' }}>
+                <h3 style={{ color: 'colors.text.primary' }}>Starter Growth Package</h3>
+                <p style={{ color: 'colors.text.secondary', marginBottom: '20px', fontWeight: '500' }}>Perfect for New Businesses</p>
+                <ul style={{ color: 'colors.text.secondary', paddingLeft: '20px', marginBottom: '25px' }}>
                   <li>Professional 5-page website</li>
                   <li>Basic AI chatbot for inquiries</li>
                   <li>Essential security audit</li>
@@ -246,12 +273,12 @@ export const ITServicesPage = () => {
                 </div>
               </div>
 
-              <div className="service-card" style={{ border: '3px solid #e74c3c', position: 'relative' }}>
-                <div style={{ position: 'absolute', top: '-15px', left: '50%', transform: 'translateX(-50%)', background: '#e74c3c', color: 'white', padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', fontWeight: '600' }}>Most Popular</div>
-                <div className="service-icon floating-icon" style={{ color: '#e74c3c' }}>🚀</div>
-                <h3 style={{ color: '#2c3e50' }}>Complete Business Package</h3>
-                <p style={{ color: '#5d6d7e', marginBottom: '20px', fontWeight: '500' }}>Everything You Need to Succeed</p>
-                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '25px' }}>
+              <div className="service-card" style={{ border: `3px solid ${colors.accent}`, position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-15px', left: '50%', transform: 'translateX(-50%)', background: colors.accent, color: 'white', padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', fontWeight: '600' }}>Most Popular</div>
+                <div className="service-icon floating-icon" style={{ color: colors.accent }}>🚀</div>
+                <h3 style={{ color: 'colors.text.primary' }}>Complete Business Package</h3>
+                <p style={{ color: 'colors.text.secondary', marginBottom: '20px', fontWeight: '500' }}>Everything You Need to Succeed</p>
+                <ul style={{ color: 'colors.text.secondary', paddingLeft: '20px', marginBottom: '25px' }}>
                   <li>Custom website with lead generation</li>
                   <li>Advanced AI chatbot & automation</li>
                   <li>Comprehensive security audit</li>
@@ -266,9 +293,9 @@ export const ITServicesPage = () => {
 
               <div className="service-card" style={{ border: '2px solid #8e44ad' }}>
                 <div className="service-icon floating-icon" style={{ color: '#8e44ad' }}>🏆</div>
-                <h3 style={{ color: '#2c3e50' }}>Enterprise Solution</h3>
-                <p style={{ color: '#5d6d7e', marginBottom: '20px', fontWeight: '500' }}>Maximum Growth & Protection</p>
-                <ul style={{ color: '#5d6d7e', paddingLeft: '20px', marginBottom: '25px' }}>
+                <h3 style={{ color: 'colors.text.primary' }}>Enterprise Solution</h3>
+                <p style={{ color: 'colors.text.secondary', marginBottom: '20px', fontWeight: '500' }}>Maximum Growth & Protection</p>
+                <ul style={{ color: 'colors.text.secondary', paddingLeft: '20px', marginBottom: '25px' }}>
                   <li>Custom e-commerce or advanced website</li>
                   <li>Full AI automation suite</li>
                   <li>Complete cybersecurity implementation</li>
@@ -285,58 +312,58 @@ export const ITServicesPage = () => {
         </section>
 
         {/* Digital Growth Statistics */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <h2 className="section-title" style={{ color: '#2c3e50' }}>The Digital Advantage for New Brunswick Businesses</h2>
-            <p style={{ fontSize: '1.1rem', color: '#5d6d7e', maxWidth: '800px', margin: '0 auto 40px', textAlign: 'center' }}>
+            <h2 className="section-title" style={{ color: 'colors.text.primary' }}>The Digital Advantage for New Brunswick Businesses</h2>
+            <p style={{ fontSize: '1.1rem', color: 'colors.text.secondary', maxWidth: '800px', margin: '0 auto 40px', textAlign: 'center' }}>
               Modern digital solutions aren't just nice to have - they're essential for business growth and protection in today's competitive landscape.
             </p>
             
             <div className="features-grid" style={{ marginBottom: '50px' }}>
               <div style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
                 <h3 style={{ fontSize: '3rem', color: '#3498db', fontWeight: '700', margin: '0 0 15px 0' }}>75%</h3>
-                <h4 style={{ color: '#2c3e50', marginBottom: '15px' }}>More Leads with Professional Websites</h4>
-                <p style={{ color: '#5d6d7e', fontSize: '0.95rem' }}>Businesses with modern, mobile-optimized websites generate significantly more qualified leads</p>
+                <h4 style={{ color: 'colors.text.primary', marginBottom: '15px' }}>More Leads with Professional Websites</h4>
+                <p style={{ color: 'colors.text.secondary', fontSize: '0.95rem' }}>Businesses with modern, mobile-optimized websites generate significantly more qualified leads</p>
               </div>
               
               <div style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <h3 style={{ fontSize: '3rem', color: '#e74c3c', fontWeight: '700', margin: '0 0 15px 0' }}>60%</h3>
-                <h4 style={{ color: '#2c3e50', marginBottom: '15px' }}>Time Saved with AI Automation</h4>
-                <p style={{ color: '#5d6d7e', fontSize: '0.95rem' }}>Businesses using AI chatbots reduce customer service workload by over half</p>
+                <h3 style={{ fontSize: '3rem', color: colors.accent, fontWeight: '700', margin: '0 0 15px 0' }}>60%</h3>
+                <h4 style={{ color: 'colors.text.primary', marginBottom: '15px' }}>Time Saved with AI Automation</h4>
+                <p style={{ color: 'colors.text.secondary', fontSize: '0.95rem' }}>Businesses using AI chatbots reduce customer service workload by over half</p>
               </div>
               
               <div style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
                 <h3 style={{ fontSize: '3rem', color: '#8e44ad', fontWeight: '700', margin: '0 0 15px 0' }}>99.9%</h3>
-                <h4 style={{ color: '#2c3e50', marginBottom: '15px' }}>Attack Prevention with MFA</h4>
-                <p style={{ color: '#5d6d7e', fontSize: '0.95rem' }}>Multi-factor authentication blocks nearly all automated password attacks</p>
+                <h4 style={{ color: 'colors.text.primary', marginBottom: '15px' }}>Attack Prevention with MFA</h4>
+                <p style={{ color: 'colors.text.secondary', fontSize: '0.95rem' }}>Multi-factor authentication blocks nearly all automated password attacks</p>
               </div>
             </div>
             
             <div style={{ background: 'white', borderRadius: '20px', padding: '40px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
-              <h3 style={{ textAlign: 'center', color: '#2c3e50', marginBottom: '30px', fontSize: '1.5rem' }}>The Complete Digital Growth Formula</h3>
-              <div className="features-grid" style={{ gap: '30px' }}>
-                <div style={{ textAlign: 'center' }}>
+              <h3 style={{ textAlign: 'center', color: colors.text.primary, marginBottom: '30px', fontSize: '1.5rem' }}>The Complete Digital Growth Formula</h3>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '20px' }}>
+                <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', minHeight: '140px', justifyContent: 'space-between', width: '160px', flex: '0 0 160px' }}>
                   <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🌐</div>
-                  <h4 style={{ color: '#2c3e50', marginBottom: '10px' }}>Professional Website</h4>
-                  <p style={{ color: '#5d6d7e', fontSize: '0.9rem' }}>Attracts and converts visitors into customers 24/7</p>
+                  <h4 style={{ color: colors.text.primary, marginBottom: '10px' }}>Professional Website</h4>
+                  <p style={{ color: colors.text.secondary, fontSize: '0.9rem' }}>Attracts and converts visitors into customers 24/7</p>
                 </div>
-                <div style={{ textAlign: 'center', fontSize: '2rem', color: '#ddd' }}>+</div>
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ textAlign: 'center', fontSize: '1.5rem', color: colors.text.secondary, flex: '0 0 auto', padding: '0 10px' }}>+</div>
+                <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', minHeight: '140px', justifyContent: 'space-between', width: '160px', flex: '0 0 160px' }}>
                   <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🤖</div>
-                  <h4 style={{ color: '#2c3e50', marginBottom: '10px' }}>AI Automation</h4>
-                  <p style={{ color: '#5d6d7e', fontSize: '0.9rem' }}>Handles inquiries and qualifies leads automatically</p>
+                  <h4 style={{ color: colors.text.primary, marginBottom: '10px' }}>AI Automation</h4>
+                  <p style={{ color: colors.text.secondary, fontSize: '0.9rem' }}>Handles inquiries and qualifies leads automatically</p>
                 </div>
-                <div style={{ textAlign: 'center', fontSize: '2rem', color: '#ddd' }}>+</div>
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ textAlign: 'center', fontSize: '1.5rem', color: colors.text.secondary, flex: '0 0 auto', padding: '0 10px' }}>+</div>
+                <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', minHeight: '140px', justifyContent: 'space-between', width: '160px', flex: '0 0 160px' }}>
                   <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🔒</div>
-                  <h4 style={{ color: '#2c3e50', marginBottom: '10px' }}>Cybersecurity</h4>
-                  <p style={{ color: '#5d6d7e', fontSize: '0.9rem' }}>Protects your business and customer data</p>
+                  <h4 style={{ color: colors.text.primary, marginBottom: '10px' }}>Cybersecurity</h4>
+                  <p style={{ color: colors.text.secondary, fontSize: '0.9rem' }}>Protects your business and customer data</p>
                 </div>
-                <div style={{ textAlign: 'center', fontSize: '2rem', color: '#ddd' }}>=</div>
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ textAlign: 'center', fontSize: '1.5rem', color: colors.accent, flex: '0 0 auto', padding: '0 10px', fontWeight: 'bold' }}>=</div>
+                <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', minHeight: '140px', justifyContent: 'space-between', width: '160px', flex: '0 0 160px' }}>
                   <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>📈</div>
-                  <h4 style={{ color: '#2c3e50', marginBottom: '10px' }}>Business Growth</h4>
-                  <p style={{ color: '#5d6d7e', fontSize: '0.9rem' }}>More customers, less work, complete protection</p>
+                  <h4 style={{ color: colors.text.primary, marginBottom: '10px' }}>Business Growth</h4>
+                  <p style={{ color: colors.text.secondary, fontSize: '0.9rem' }}>More customers, less work, complete protection</p>
                 </div>
               </div>
             </div>
@@ -344,21 +371,21 @@ export const ITServicesPage = () => {
         </section>
 
         {/* Grant Information */}
-        <section className="section" style={{ backgroundColor: '#e8f5e8' }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <div style={{ textAlign: 'center' }}>
-              <h2 className="section-title" style={{ color: '#2c3e50', marginBottom: '20px' }}>Funding Opportunities Available</h2>
-              <p style={{ fontSize: '1.2rem', color: '#5d6d7e', maxWidth: '700px', margin: '0 auto 30px' }}>
+              <h2 className="section-title" style={{ color: colors.text.primary, marginBottom: '20px' }}>Funding Opportunities Available</h2>
+              <p style={{ fontSize: '1.2rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto 30px' }}>
                 New Brunswick businesses may be eligible for various grants to help cover website development, 
                 AI automation, and cybersecurity implementation costs. We can help you research available programs.
               </p>
               <div style={{ background: 'white', borderRadius: '15px', padding: '30px', marginBottom: '30px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <h3 style={{ color: '#27ae60', marginBottom: '15px' }}>🌱 Digital Transformation Grants</h3>
-                <p style={{ color: '#5d6d7e', marginBottom: '15px' }}>Many programs support website development, e-commerce, and digital marketing initiatives</p>
-                <h3 style={{ color: '#3498db', marginBottom: '15px' }}>🔒 Cybersecurity Funding</h3>
-                <p style={{ color: '#5d6d7e', marginBottom: '15px' }}>Special funding available for security audits, MFA implementation, and IT infrastructure</p>
-                <h3 style={{ color: '#e74c3c', marginBottom: '15px' }}>🤖 Innovation & AI Support</h3>
-                <p style={{ color: '#5d6d7e' }}>Grants for businesses adopting AI and automation technologies to improve efficiency</p>
+                <h3 style={{ color: colors.primary, marginBottom: '15px' }}>🌱 Digital Transformation Grants</h3>
+                <p style={{ color: colors.text.secondary, marginBottom: '15px' }}>Many programs support website development, e-commerce, and digital marketing initiatives</p>
+                <h3 style={{ color: colors.primary, marginBottom: '15px' }}>🔒 Cybersecurity Funding</h3>
+                <p style={{ color: colors.text.secondary, marginBottom: '15px' }}>Special funding available for security audits, MFA implementation, and IT infrastructure</p>
+                <h3 style={{ color: colors.accent, marginBottom: '15px' }}>🤖 Innovation & AI Support</h3>
+                <p style={{ color: colors.text.secondary }}>Grants for businesses adopting AI and automation technologies to improve efficiency</p>
               </div>
               <a href="/contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '15px 30px' }}>
                 Help Me Find Grant Opportunities
@@ -368,7 +395,7 @@ export const ITServicesPage = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="section" style={{ background: 'linear-gradient(135deg, #2c3e50 0%, #34495e 100%)', color: 'white' }}>
+        <section className="section" style={{ background: colors.backgrounds.gradientPrimary, color: colors.text.light }}>
           <div className="container">
             <div style={{ textAlign: 'center' }}>
               <h2 style={{ marginBottom: '25px', fontSize: '2.5rem', color: 'white' }}>Ready to Transform Your Business?</h2>
@@ -396,8 +423,8 @@ export const ITServicesPage = () => {
               </div>
               
               <div className="cta-buttons">
-                <a href="/contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '15px 35px', marginRight: '20px', background: 'white', color: '#2c3e50' }}>Get Started Today</a>
-                <a href="/free-example" className="btn btn-secondary" style={{ fontSize: '1.1rem', padding: '15px 35px', background: 'transparent', border: '2px solid white', color: 'white' }}>See Free Example</a>
+                <a href="/contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '15px 35px', marginRight: '20px', background: colors.accent, color: colors.text.light }}>Get Started Today</a>
+                <a href="/free-example" className="btn btn-secondary" style={{ fontSize: '1.1rem', padding: '15px 35px', background: 'transparent', border: `2px solid ${colors.text.light}`, color: colors.text.light }}>See Free Example</a>
               </div>
             </div>
           </div>

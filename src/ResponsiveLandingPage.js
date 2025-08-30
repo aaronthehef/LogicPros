@@ -4,6 +4,7 @@ import { Logo } from './components/Logo';
 import { Navigation } from './components/Navigation';
 import { Animations } from './components/Animations';
 import { Footer } from './components/Footer';
+import { colors } from './styles/colors';
 import heroImage from './assets/hero-growtika.jpg';
 
 export const ResponsiveLandingPage = () => {
@@ -42,11 +43,11 @@ export const ResponsiveLandingPage = () => {
         </section>
 
         {/* Free Example Visual Section */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">See The Difference a Professional Website Makes</h2>
-              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
+              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '600px', margin: '0 auto' }}>
                 Here's how your business website transforms from basic to professional - 
                 and why customers choose businesses with better websites.
               </p>
@@ -150,53 +151,41 @@ export const ResponsiveLandingPage = () => {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Complete Digital Security & Growth Solutions</h2>
-              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
+              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '600px', margin: '0 auto' }}>
                 Cybersecurity audits, AI automation, professional websites, and IT support for New Brunswick businesses
               </p>
             </div>
             <div className="services-grid animate-on-scroll">
-              <div className="service-card">
+              <a href="/services" className="service-card" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="service-icon floating-icon">🔒</div>
-                <h3>Cybersecurity Audits & Protection</h3>
+                <h3>Cybersecurity & IT Services</h3>
                 <p>
-                  Comprehensive security assessments, password management, MFA implementation, and incident response planning. 
-                  Protect your business from cyber threats with expert security solutions.
+                  Professional cybersecurity services including security audits, MFA, and managed IT support to protect your business from cyber threats.
                 </p>
                 <div className="feature-highlight">Professional Security Solutions</div>
-              </div>
-              <div className="service-card">
-                <div className="service-icon floating-icon">🤖</div>
-                <h3>AI Automation & Integration</h3>
-                <p>
-                  Chatbots, automated marketing, predictive analytics, and AI-powered business processes. 
-                  Streamline operations and reduce manual work with intelligent automation.
-                </p>
-                <div className="feature-highlight">Professional Security Solutions</div>
-              </div>
-              <div className="service-card">
+              </a>
+              <a href="/services/websites" className="service-card" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="service-icon floating-icon">🌐</div>
-                <h3>Professional Website Development</h3>
+                <h3>Website Design & Development</h3>
                 <p>
-                  Modern, secure websites built with the latest technology. Mobile-responsive, SEO-optimized, 
-                  and designed to convert visitors into customers.
+                  Custom websites designed to convert visitors into customers. Mobile-optimized, fast-loading, and built with modern SEO practices.
                 </p>
                 <div className="feature-highlight">Free example in 48 hours</div>
-              </div>
-              <div className="service-card">
-                <div className="service-icon floating-icon">💻</div>
-                <h3>Managed IT Services</h3>
+              </a>
+              <a href="/services/automations" className="service-card" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="service-icon floating-icon">🤖</div>
+                <h3>AI Automation Solutions</h3>
                 <p>
-                  24/7 monitoring, patch management, endpoint security, and technical support. 
-                  Keep your systems secure and running smoothly with proactive IT management.
+                  Intelligent chatbots and automation tools that handle customer inquiries, qualify leads, and streamline business operations.
                 </p>
-                <div className="feature-highlight">New Brunswick based support</div>
-              </div>
+                <div className="feature-highlight">Streamline Operations</div>
+              </a>
             </div>
           </div>
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Why New Brunswick Businesses Choose LogicPros</h2>
@@ -231,49 +220,9 @@ export const ResponsiveLandingPage = () => {
           </div>
         </section>
 
-        {/* Case Studies Section */}
-        <section id="portfolio" className="section">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">Cybersecurity, Website Development & AI Solutions</h2>
-              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-                Comprehensive digital services for New Brunswick businesses - from security audits to modern websites
-              </p>
-            </div>
-            <div className="services-grid animate-on-scroll">
-              <div className="service-card">
-                <div className="service-icon floating-icon">🔒</div>
-                <h3>Cybersecurity Audits</h3>
-                <p>
-                  Comprehensive security assessments including password management, MFA implementation, 
-                  security headers, patch management, and incident response planning.
-                </p>
-                <div className="feature-highlight">Professional Security Solutions</div>
-              </div>
-              <div className="service-card">
-                <div className="service-icon floating-icon">🌐</div>
-                <h3>Professional Websites</h3>
-                <p>
-                  Modern, secure, mobile-responsive websites built with React or WordPress. 
-                  SEO-optimized and designed to convert visitors into customers.
-                </p>
-                <div className="feature-highlight">Free example delivered in 48 hours</div>
-              </div>
-              <div className="service-card">
-                <div className="service-icon floating-icon">🤖</div>
-                <h3>AI & Automation</h3>
-                <p>
-                  Chatbots, automated email marketing, predictive analytics, social media management, 
-                  and AI-powered business process automation.
-                </p>
-                <div className="feature-highlight">Professional Security Solutions</div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Testimonials Section */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Why Choose LogicPros for Cybersecurity & Website Development</h2>
@@ -305,11 +254,11 @@ export const ResponsiveLandingPage = () => {
         </section>
 
         {/* Free Example CTA Section */}
-        <section className="section" style={{ backgroundColor: '#000', color: 'white' }}>
+        <section className="section" style={{ backgroundColor: colors.secondary, color: colors.text.light }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title" style={{ color: 'white' }}>Not Sure? See Your Website Before You Buy!</h2>
-              <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
+              <h2 className="section-title" style={{ color: colors.text.light }}>Not Sure? See Your Website Before You Buy!</h2>
+              <p style={{ color: colors.text.light, fontSize: '1.2rem', opacity: 0.9 }}>
                 Get a FREE custom website example created specifically for your business. 
                 See exactly how your website will look - no commitment required.
               </p>
@@ -321,10 +270,10 @@ export const ResponsiveLandingPage = () => {
               <div className="benefit-item">✓ See it before you decide</div>
             </div>
             <div className="cta-buttons">
-              <a href="/free-example" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+              <a href="/free-example" className="btn btn-primary" style={{ backgroundColor: colors.accent, color: colors.text.light }}>
                 Get My Free Example Website
               </a>
-              <a href="/contact" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>
+              <a href="/contact" className="btn" style={{ backgroundColor: 'transparent', color: colors.text.light, border: `2px solid ${colors.text.light}` }}>
                 Ask Questions First
               </a>
             </div>
@@ -336,7 +285,7 @@ export const ResponsiveLandingPage = () => {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Serving New Brunswick Businesses</h2>
-              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '700px', margin: '0 auto' }}>
+              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
                 Local cybersecurity, AI automation, and IT services across New Brunswick. 
                 Professional technology solutions available province-wide.
               </p>
@@ -372,7 +321,7 @@ export const ResponsiveLandingPage = () => {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Ready to Secure & Grow Your New Brunswick Business?</h2>
-              <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
+              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '600px', margin: '0 auto' }}>
                 Professional cybersecurity, AI automation, and technology solutions
               </p>
             </div>
@@ -383,45 +332,25 @@ export const ResponsiveLandingPage = () => {
           </div>
         </section>
 
-        {/* Grant Eligibility Section */}
-        <section className="section" style={{ backgroundColor: '#f0f9ff', borderTop: '2px solid #3b82f6' }}>
+        {/* Grant Information */}
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <div className="section-header" style={{ textAlign: 'center' }}>
-              <h2 className="section-title" style={{ color: '#1e40af' }}>💰 Is Your Project Eligible for a Cybersecurity Grant?</h2>
-              <p style={{ fontSize: '1.1rem', color: '#374151', maxWidth: '700px', margin: '0 auto' }}>
-                Many New Brunswick businesses qualify for government grants to improve their cybersecurity and technology infrastructure. 
-                We can help you research available programs and determine if your project qualifies for funding.
+            <div style={{ textAlign: 'center' }}>
+              <h2 className="section-title" style={{ color: colors.text.primary, marginBottom: '20px' }}>Funding Opportunities Available</h2>
+              <p style={{ fontSize: '1.2rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto 30px' }}>
+                New Brunswick businesses may be eligible for various grants to help cover website development, 
+                AI automation, and cybersecurity implementation costs. We can help you research available programs.
               </p>
-            </div>
-            <div className="features-grid animate-on-scroll" style={{ marginTop: '40px' }}>
-              <div className="feature-item" style={{ textAlign: 'center' }}>
-                <h3>🔍 Grant Research</h3>
-                <p>
-                  We help you identify relevant grant programs including Cybersecure NB, 
-                  federal cybersecurity initiatives, and technology modernization funds.
-                </p>
+              <div style={{ background: 'white', borderRadius: '15px', padding: '30px', marginBottom: '30px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                <h3 style={{ color: colors.primary, marginBottom: '15px' }}>🌱 Digital Transformation Grants</h3>
+                <p style={{ color: colors.text.secondary, marginBottom: '15px' }}>Many programs support website development, e-commerce, and digital marketing initiatives</p>
+                <h3 style={{ color: colors.primary, marginBottom: '15px' }}>🔒 Cybersecurity Funding</h3>
+                <p style={{ color: colors.text.secondary, marginBottom: '15px' }}>Special funding available for security audits, MFA implementation, and IT infrastructure</p>
+                <h3 style={{ color: colors.accent, marginBottom: '15px' }}>🤖 Innovation & AI Support</h3>
+                <p style={{ color: colors.text.secondary }}>Grants for businesses adopting AI and automation technologies to improve efficiency</p>
               </div>
-              <div className="feature-item" style={{ textAlign: 'center' }}>
-                <h3>📋 Eligibility Assessment</h3>
-                <p>
-                  Free consultation to determine if your business and project requirements 
-                  match available grant criteria and funding opportunities.
-                </p>
-              </div>
-              <div className="feature-item" style={{ textAlign: 'center' }}>
-                <h3>📄 Application Support</h3>
-                <p>
-                  Assistance with grant applications, project documentation, 
-                  and ensuring your implementation meets funding requirements.
-                </p>
-              </div>
-            </div>
-            <div style={{ textAlign: 'center', marginTop: '40px' }}>
-              <a href="/contact" className="btn btn-primary" style={{ marginRight: '15px' }}>
-                Check My Grant Eligibility
-              </a>
-              <a href="/contact" className="btn btn-secondary">
-                Learn More About Funding
+              <a href="/contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '15px 30px' }}>
+                Help Me Find Grant Opportunities
               </a>
             </div>
           </div>

@@ -47,14 +47,19 @@
 .footer-description {
   color: #9ca3af;
   line-height: 1.6;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-size: 0.95rem;
 }
 
 .footer-contact-info {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 4px;
+  margin-bottom: 0 !important;
 }
 
 .contact-item {
@@ -62,6 +67,12 @@
   align-items: center;
   gap: 10px;
   color: #e5e7eb;
+  padding: 0;
+  border: none;
+  background: none;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  margin-bottom: 0 !important;
 }
 
 .contact-icon {
@@ -70,18 +81,24 @@
 }
 
 .contact-item a {
-  color: #000000 !important;
+  color: #ffffff !important;
   text-decoration: none;
   font-weight: 600;
+  flex: 1;
+}
+
+.contact-item:hover {
+  color: #ffffff;
 }
 
 .contact-item a:hover {
-  color: #333333 !important;
+  color: #ffffff !important;
 }
 
 .contact-item span:not(.contact-icon) {
-  color: #000000 !important;
+  color: #ffffff !important;
   font-weight: 600;
+  flex: 1;
 }
 
 .modern-footer .footer-column h4 {
@@ -97,7 +114,7 @@
   display: block;
   color: #d1d5db;
   text-decoration: none;
-  padding: 6px 0;
+  padding: 0;
   font-size: 0.95rem;
   transition: color 0.2s ease;
 }
