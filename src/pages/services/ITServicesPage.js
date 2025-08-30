@@ -45,7 +45,7 @@ export const ITServicesPage = () => {
               {/* Cybersecurity & Managed IT Services - MOVED TO TOP */}
               <div className="service-card">
                 <div className="service-icon floating-icon">🔒</div>
-                <h3 style={{ color: '#2c3e50' }}>Cybersecurity & Managed IT Services</h3>
+                <h3 style={{ color: '#2c3e50' }}>Cybersecurity & IT Services</h3>
                 <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
                   Professional cybersecurity services including security audits, MFA, and managed IT support to protect your business from cyber threats.
                 </p>
@@ -58,15 +58,15 @@ export const ITServicesPage = () => {
                   <li>Compliance & risk assessment</li>
                 </ul>
                 <div className="cta-buttons">
-                  <a href="/services/security-audits" className="btn btn-primary">Security Audits</a>
-                  <a href="/services/multi-factor-authentication" className="btn btn-secondary">Learn More</a>
+                  <a href="/services/security-audits" className="btn btn-primary">Learn More</a>
+                  <a href="/free-example" className="btn btn-secondary">Get Quote</a>
                 </div>
               </div>
 
               {/* Professional Website Design */}
               <div className="service-card">
                 <div className="service-icon floating-icon">🌐</div>
-                <h3 style={{ color: '#2c3e50' }}>Professional Website Design</h3>
+                <h3 style={{ color: '#2c3e50' }}>Website Design & Development</h3>
                 <p style={{ color: '#5d6d7e', lineHeight: '1.6', marginBottom: '20px' }}>
                   Custom websites designed to convert visitors into customers. Mobile-optimized, fast-loading, and built with modern SEO practices.
                 </p>
@@ -80,7 +80,7 @@ export const ITServicesPage = () => {
                 </ul>
                 <div className="cta-buttons">
                   <a href="/services/websites" className="btn btn-primary">Learn More</a>
-                  <a href="/free-example" className="btn btn-secondary">Free Example</a>
+                  <a href="/free-example" className="btn btn-secondary">Get Quote</a>
                 </div>
               </div>
 
