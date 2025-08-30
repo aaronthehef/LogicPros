@@ -4,6 +4,7 @@ import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
 import { Animations } from '../../components/Animations';
 import { Footer } from '../../components/Footer';
+import { colors } from '../../styles/colors';
 
 export const WebsitesPage = () => {
   return (
@@ -49,16 +50,19 @@ export const WebsitesPage = () => {
                 textAlign: 'center !important', 
                 width: '100%',
                 display: 'flex',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                gap: '15px',
+                flexWrap: 'wrap'
               }}>
                 <a href="/contact" className="btn btn-primary">Schedule Free Consultation</a>
+                <a href="/free-example" className="btn btn-secondary">Get Free Website Example</a>
               </div>
             </div>
           </div>
         </section>
 
         {/* Platform Options */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <h2 className="section-title">Choose Your Perfect Platform</h2>
             <p className="service-intro">
@@ -104,7 +108,7 @@ export const WebsitesPage = () => {
           <div className="container">
             <h2 className="section-title">Everything You Need to Succeed Online</h2>
             
-            <div className="features-grid animate-on-scroll">
+            <div className="features-grid animate-on-scroll" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
               <div className="feature-item">
                 <h3>🤖 AI-Powered Copywriting</h3>
                 <p>Professional content written specifically for your industry and target customers. No generic templates or cookie-cutter copy.</p>
@@ -139,32 +143,32 @@ export const WebsitesPage = () => {
         </section>
 
         {/* Process */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <h2 className="section-title">Our 2-4 Week Website Process</h2>
-            <div className="services-grid" style={{ marginTop: '80px', paddingTop: '50px' }}>
+            <div className="services-grid" style={{ marginTop: '40px', paddingTop: '20px', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
               <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: '#3498db', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(52, 152, 219, 0.3)', zIndex: 10 }}>1</div>
-                <h3 style={{ color: '#2c3e50', marginBottom: '15px', marginTop: '20px' }}>Strategy Session</h3>
-                <p style={{ color: '#5d6d7e', lineHeight: '1.6' }}>We discuss your business, target customers, competitors, and goals. Choose your platform and plan the site structure.</p>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(26, 121, 175, 0.3)', zIndex: 10 }}>1</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Strategy Session</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We discuss your business, target customers, competitors, and goals. Choose your platform and plan the site structure.</p>
               </div>
               
               <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: '#e74c3c', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(231, 76, 60, 0.3)', zIndex: 10 }}>2</div>
-                <h3 style={{ color: '#2c3e50', marginBottom: '15px', marginTop: '20px' }}>Content Creation</h3>
-                <p style={{ color: '#5d6d7e', lineHeight: '1.6' }}>AI-powered copywriting tailored to your industry. We create all text content while you focus on running your business.</p>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.accent, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)', zIndex: 10 }}>2</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Content Creation</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>AI-powered copywriting tailored to your industry. We create all text content while you focus on running your business.</p>
               </div>
               
               <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: '#27ae60', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(39, 174, 96, 0.3)', zIndex: 10 }}>3</div>
-                <h3 style={{ color: '#2c3e50', marginBottom: '15px', marginTop: '20px' }}>Design & Build</h3>
-                <p style={{ color: '#5d6d7e', lineHeight: '1.6' }}>Professional design and development with regular updates. You'll see progress throughout the build process.</p>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.secondary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(49, 66, 81, 0.3)', zIndex: 10 }}>3</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Design & Build</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Professional design and development with regular updates. You'll see progress throughout the build process.</p>
               </div>
               
               <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: '#8e44ad', color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(142, 68, 173, 0.3)', zIndex: 10 }}>4</div>
-                <h3 style={{ color: '#2c3e50', marginBottom: '15px', marginTop: '20px' }}>Launch & Training</h3>
-                <p style={{ color: '#5d6d7e', lineHeight: '1.6' }}>Go live with full training on how to update content, add photos, and track your website's performance.</p>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primaryDark, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(21, 94, 138, 0.3)', zIndex: 10 }}>4</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Launch & Training</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Go live with full training on how to update content, add photos, and track your website's performance.</p>
               </div>
             </div>
           </div>
@@ -180,59 +184,75 @@ export const WebsitesPage = () => {
             </p>
             
             <div className="industries-grid animate-on-scroll">
-              <div className="industry-item">
-                <div className="industry-icon">🚰</div>
-                <h4>Plumbing Contractors</h4>
-                <p>Emergency repair focus, service area mapping, before/after galleries</p>
-              </div>
+              <a href="/#/contractors/plumbing" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="industry-item">
+                  <div className="industry-icon">🚰</div>
+                  <h4>Plumbing Contractors</h4>
+                  <p>Emergency repair focus, service area mapping, before/after galleries</p>
+                </div>
+              </a>
               
-              <div className="industry-item">
-                <div className="industry-icon">⚡</div>
-                <h4>Electrical Contractors</h4>
-                <p>Safety credentials, residential/commercial services, smart home features</p>
-              </div>
+              <a href="/#/contractors/electrical" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="industry-item">
+                  <div className="industry-icon">⚡</div>
+                  <h4>Electrical Contractors</h4>
+                  <p>Safety credentials, residential/commercial services, smart home features</p>
+                </div>
+              </a>
               
-              <div className="industry-item">
-                <div className="industry-icon">🌡️</div>
-                <h4>HVAC Contractors</h4>
-                <p>Seasonal campaigns, energy efficiency focus, emergency service capture</p>
-              </div>
+              <a href="/#/contractors/hvac" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="industry-item">
+                  <div className="industry-icon">🌡️</div>
+                  <h4>HVAC Contractors</h4>
+                  <p>Seasonal campaigns, energy efficiency focus, emergency service capture</p>
+                </div>
+              </a>
               
-              <div className="industry-item">
-                <div className="industry-icon">🏠</div>
-                <h4>Roofing Contractors</h4>
-                <p>Storm damage expertise, insurance claim support, material showcases</p>
-              </div>
+              <a href="/#/contractors/roofing" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="industry-item">
+                  <div className="industry-icon">🏠</div>
+                  <h4>Roofing Contractors</h4>
+                  <p>Storm damage expertise, insurance claim support, material showcases</p>
+                </div>
+              </a>
               
-              <div className="industry-item">
-                <div className="industry-icon">🌿</div>
-                <h4>Landscaping Companies</h4>
-                <p>Visual portfolios, seasonal services, design consultation booking</p>
-              </div>
+              <a href="/#/contractors/landscaping" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="industry-item">
+                  <div className="industry-icon">🌿</div>
+                  <h4>Landscaping Companies</h4>
+                  <p>Visual portfolios, seasonal services, design consultation booking</p>
+                </div>
+              </a>
               
-              <div className="industry-item">
-                <div className="industry-icon">🏗️</div>
-                <h4>General Contractors</h4>
-                <p>Project portfolios, testimonial integration, multi-service positioning</p>
-              </div>
+              <a href="/#/contractors/general" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="industry-item">
+                  <div className="industry-icon">🏗️</div>
+                  <h4>General Contractors</h4>
+                  <p>Project portfolios, testimonial integration, multi-service positioning</p>
+                </div>
+              </a>
               
-              <div className="industry-item">
-                <div className="industry-icon">🎨</div>
-                <h4>Home Services</h4>
-                <p>Painting, flooring, remodeling - before/after showcases and trust-building</p>
-              </div>
+              <a href="/#/contractors/home-services" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="industry-item">
+                  <div className="industry-icon">🎨</div>
+                  <h4>Home Services</h4>
+                  <p>Painting, flooring, remodeling - before/after showcases and trust-building</p>
+                </div>
+              </a>
               
-              <div className="industry-item">
-                <div className="industry-icon">💼</div>
-                <h4>Professional Services</h4>
-                <p>Lawyers, accountants, consultants - credibility and lead generation focus</p>
-              </div>
+              <a href="/#/contractors/professional" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="industry-item">
+                  <div className="industry-icon">💼</div>
+                  <h4>Professional Services</h4>
+                  <p>Lawyers, accountants, consultants - credibility and lead generation focus</p>
+                </div>
+              </a>
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <h2 className="section-title">Frequently Asked Questions</h2>
             <div className="faq-grid">
@@ -270,7 +290,7 @@ export const WebsitesPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="section" style={{ backgroundColor: '#000', color: 'white', marginBottom: '0', paddingBottom: '0' }}>
+        <section className="section" style={{ backgroundColor: '#000', color: 'white', marginBottom: '0', paddingBottom: '60px' }}>
           <div className="container">
             <div className="section-header">
               <h2 className="section-title" style={{ color: 'white' }}>Ready to Get Started?</h2>
@@ -282,7 +302,7 @@ export const WebsitesPage = () => {
               <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
                 Schedule Free Consultation
               </a>
-              <a href="/free-example" className="btn btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
+              <a href="/free-example" className="btn btn-secondary" style={{ borderColor: 'white', color: '#000', backgroundColor: 'white' }}>
                 See a Free Example
               </a>
             </div>
@@ -318,6 +338,29 @@ const websiteStyles = `
 .platform-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Prevent layout shifts on process cards specifically */
+.services-grid .service-card {
+  box-sizing: border-box !important;
+  contain: layout style;
+  transform: translateZ(0);
+}
+
+.services-grid .service-card:hover {
+  transform: translateY(-2px) translateZ(0) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
 }
 
 .featured-platform {
