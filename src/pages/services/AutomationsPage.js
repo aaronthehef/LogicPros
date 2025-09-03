@@ -2,6 +2,8 @@ import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
+import { Footer } from '../../components/Footer';
+import { colors } from '../../styles/colors';
 
 export const AutomationsPage = () => {
   return (
@@ -151,6 +153,11 @@ export const AutomationsPage = () => {
                 <p>Real-time reporting on leads, conversions, revenue, and customer satisfaction metrics. Make data-driven decisions.</p>
               </div>
             </div>
+            
+            <div style={{ textAlign: 'center', marginTop: '50px', padding: '30px', backgroundColor: 'rgba(26, 121, 175, 0.05)', borderRadius: '12px', border: '1px solid rgba(26, 121, 175, 0.1)' }}>
+              <p style={{ color: colors.text.secondary, fontSize: '1.1rem', marginBottom: '20px' }}>Ready to eliminate repetitive tasks in your business?</p>
+              <a href="/contact" className="btn btn-primary">Get Your Free Automation Assessment</a>
+            </div>
           </div>
         </section>
 
@@ -177,19 +184,18 @@ export const AutomationsPage = () => {
                 <p>Connect to virtually any service or application, including custom integrations specific to your business needs.</p>
               </div>
               
-              <div className="benefit-image">
+              <div className="benefit-image n8n-workflow-container">
                 <img 
                   src="/n8n.png" 
                   alt="n8n Automation Workflow Dashboard showing AI Agent, HTTP Request, Google Sheets integration" 
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
-                    objectFit: 'cover', 
-                    borderRadius: '12px',
-                    border: '1px solid #e9ecef'
-                  }} 
+                  className="n8n-workflow-image"
                 />
               </div>
+            </div>
+            
+            <div style={{ textAlign: 'center', marginTop: '40px' }}>
+              <p style={{ color: colors.text.secondary, fontSize: '1rem', marginBottom: '15px' }}>Want to see n8n automation in action for your business?</p>
+              <a href="/contact" className="btn btn-secondary">Request a Demo</a>
             </div>
           </div>
         </section>
@@ -198,130 +204,241 @@ export const AutomationsPage = () => {
         <section className="section">
           <div className="container">
             <h2 className="section-title">Our Automation Implementation Process</h2>
-            <div className="process-grid">
-              <div className="process-step">
-                <div className="step-number">1</div>
-                <h3>Business Analysis</h3>
-                <p>We analyze your current workflows, identify repetitive tasks, and determine the highest-impact automation opportunities.</p>
+            <div className="services-grid" style={{ marginTop: '30px', paddingTop: '10px', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px' }}>
+              <div className="service-card" style={{ position: 'relative', padding: '50px 30px 30px 30px', marginTop: '25px', overflow: 'visible' }}>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(26, 121, 175, 0.3)', zIndex: 10 }}>1</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '12px', marginTop: '15px' }}>Business Analysis</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We analyze your current workflows, identify repetitive tasks, and determine the highest-impact automation opportunities.</p>
               </div>
               
-              <div className="process-step">
-                <div className="step-number">2</div>
-                <h3>Custom Design</h3>
-                <p>Create automated workflows tailored to your specific business processes and existing tools and systems.</p>
+              <div className="service-card" style={{ position: 'relative', padding: '50px 30px 30px 30px', marginTop: '25px', overflow: 'visible' }}>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.accent, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)', zIndex: 10 }}>2</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '12px', marginTop: '15px' }}>Custom Design</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Create automated workflows tailored to your specific business processes and existing tools and systems.</p>
               </div>
               
-              <div className="process-step">
-                <div className="step-number">3</div>
-                <h3>Backend Setup</h3>
-                <p>Full technical implementation including server setup, integrations, testing, and security configuration.</p>
+              <div className="service-card" style={{ position: 'relative', padding: '50px 30px 30px 30px', marginTop: '25px', overflow: 'visible' }}>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.secondary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(49, 66, 81, 0.3)', zIndex: 10 }}>3</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '12px', marginTop: '15px' }}>Backend Setup</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Full technical implementation including server setup, integrations, testing, and security configuration.</p>
               </div>
               
-              <div className="process-step">
-                <div className="step-number">4</div>
-                <h3>Monitoring & Support</h3>
-                <p>Ongoing monitoring to ensure automations run smoothly, with proactive maintenance and optimization.</p>
+              <div className="service-card" style={{ position: 'relative', padding: '50px 30px 30px 30px', marginTop: '25px', overflow: 'visible' }}>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primaryDark, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(21, 94, 138, 0.3)', zIndex: 10 }}>4</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '12px', marginTop: '15px' }}>Monitoring & Support</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Ongoing monitoring to ensure automations run smoothly, with proactive maintenance and optimization.</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Industry Applications */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <h2 className="section-title">Automation Applications by Industry</h2>
+            <h2 className="section-title">Real-World Automation Solutions by Industry</h2>
+            <p className="service-intro">
+              See how specific automations solve common pain points in different trades and professional services. 
+              These workflows are designed to reduce overhead, improve customer satisfaction, and increase revenue.
+            </p>
             
-            <div className="industry-automations">
-              <div className="industry-automation">
-                <h4>🚰 Plumbing Contractors</h4>
-                <ul>
-                  <li>Emergency call routing and response automation</li>
-                  <li>Seasonal maintenance reminder campaigns</li>
-                  <li>Service completion follow-up and upselling</li>
-                </ul>
+            <div className="industry-detailed-grid">
+              {/* Plumbing */}
+              <div className="industry-detailed-card">
+                <div className="industry-header">
+                  <div className="industry-icon-large">🚰</div>
+                  <div>
+                    <h3>Plumbing Contractors</h3>
+                    <p className="industry-subtitle">Reduce missed calls, no-shows and admin overhead so your crew spends more time fixing pipes and less time chasing paperwork.</p>
+                  </div>
+                </div>
+                
+                <div className="automation-solutions">
+                  <div className="solution-item">
+                    <h4>Smart Scheduling & Dispatch</h4>
+                    <p>Automate intake (phone, web form or SMS), check technician availability, calculate travel time, and push appointments to crew calendars with ETA links.</p>
+                    <div className="benefit-tag">Fewer missed jobs, better ETA accuracy, less dispatcher burnout</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Post-Job Billing & Payment Flow</h4>
+                    <p>When a job is completed, automatically generate an invoice (QuickBooks/Xero), send a secure payment link (Stripe/Moneris), and follow up on overdue invoices with staged reminders.</p>
+                    <div className="benefit-tag">Faster cash collection, fewer late payments</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>No-Show & Late Arrival Escalation</h4>
+                    <p>If a tech updates status as delayed, automatically notify customers with revised ETA + reschedule options and inform the office via Slack/SMS. Optionally issue a small discount code for service recovery.</p>
+                    <div className="benefit-tag">Reduced cancellations and improved customer satisfaction</div>
+                  </div>
+                </div>
               </div>
-              
-              <div className="industry-automation">
-                <h4>⚡ Electrical Contractors</h4>
-                <ul>
-                  <li>Safety inspection reminder automation</li>
-                  <li>Smart home upgrade follow-up sequences</li>
-                  <li>Commercial client retention campaigns</li>
-                </ul>
+
+              {/* Electrical */}
+              <div className="industry-detailed-card">
+                <div className="industry-header">
+                  <div className="industry-icon-large">⚡</div>
+                  <div>
+                    <h3>Electrical Contractors</h3>
+                    <p className="industry-subtitle">Streamline permits, recurring safety checks, and estimate-to-contract workflows so projects move smoothly from quote to completion.</p>
+                  </div>
+                </div>
+                
+                <div className="automation-solutions">
+                  <div className="solution-item">
+                    <h4>Permit & Inspection Tracker</h4>
+                    <p>Automate permit creation, upload required documents, and schedule reminders for inspection windows—notify clients and inspectors automatically.</p>
+                    <div className="benefit-tag">Fewer inspection delays and missed filings</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Quote → Contract → Job Creation</h4>
+                    <p>Approved estimate triggers a contract signature request (DocuSign/HelloSign). Once signed, the system creates the job in your PM tool and books the first visit.</p>
+                    <div className="benefit-tag">Faster onboarding of projects, fewer manual entries</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Recurring Maintenance Automation</h4>
+                    <p>Set up recurring safety inspection schedules for commercial clients with auto-generated work orders and automatic invoicing.</p>
+                    <div className="benefit-tag">Stable recurring revenue and improved client retention</div>
+                  </div>
+                </div>
               </div>
-              
-              <div className="industry-automation">
-                <h4>🏠 Roofing Contractors</h4>
-                <ul>
-                  <li>Weather-triggered marketing campaigns</li>
-                  <li>Insurance claim support automation</li>
-                  <li>Annual inspection reminder systems</li>
-                </ul>
+
+              {/* Roofing */}
+              <div className="industry-detailed-card">
+                <div className="industry-header">
+                  <div className="industry-icon-large">🏠</div>
+                  <div>
+                    <h3>Roofing Contractors</h3>
+                    <p className="industry-subtitle">Get clients through storm season faster—automate damage intake, claim packets, and warranty/inspection reminders.</p>
+                  </div>
+                </div>
+                
+                <div className="automation-solutions">
+                  <div className="solution-item">
+                    <h4>Storm-Damage Intake & Claim Kit</h4>
+                    <p>Client uploads photos (EXIF/GPS verified), the system builds a claim packet (photos, estimate, property info) and shares it with client and insurer.</p>
+                    <div className="benefit-tag">Faster claims, clearer documentation, better trust</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Insurance Liaison Workflow</h4>
+                    <p>Automate timeline creation, adjuster follow-ups, and templated client updates. Track all touchpoints in a single record.</p>
+                    <div className="benefit-tag">Less back-and-forth and improved claim approval rates</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Warranty & Annual Inspection Reminders</h4>
+                    <p>Automatically notify homeowners when warranties or yearly roof checks are due and offer one-click booking.</p>
+                    <div className="benefit-tag">Repeat business and fewer warranty disputes</div>
+                  </div>
+                </div>
               </div>
-              
-              <div className="industry-automation">
-                <h4>🌿 Landscaping Companies</h4>
-                <ul>
-                  <li>Seasonal service transition automation</li>
-                  <li>Weather-based scheduling adjustments</li>
-                  <li>Plant care reminder sequences for clients</li>
-                </ul>
+
+              {/* Landscaping */}
+              <div className="industry-detailed-card">
+                <div className="industry-header">
+                  <div className="industry-icon-large">🌿</div>
+                  <div>
+                    <h3>Landscaping Companies</h3>
+                    <p className="industry-subtitle">Cut fuel costs, improve crew productivity, and lock in seasonal work with automation that handles routes, renewals and change orders.</p>
+                  </div>
+                </div>
+                
+                <div className="automation-solutions">
+                  <div className="solution-item">
+                    <h4>Route Optimization & Crew Assignment</h4>
+                    <p>Group same-day jobs into efficient routes and push turn-by-turn directions to technicians' phones.</p>
+                    <div className="benefit-tag">Lower fuel and labour costs, more jobs per day</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Seasonal Plan Automation</h4>
+                    <p>Automatically transition customers between seasonal packages (spring/summer/fall/winter), send renewal offers and collect approvals.</p>
+                    <div className="benefit-tag">Lower churn and predictable seasonal revenue</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Field Change-Order Approvals</h4>
+                    <p>Field techs submit on-site changes via mobile form → client receives digital quote for approval → once accepted the job and invoice update automatically.</p>
+                    <div className="benefit-tag">Faster approvals and fewer disputes</div>
+                  </div>
+                </div>
               </div>
-              
-              <div className="industry-automation">
-                <h4>💼 Professional Services</h4>
-                <ul>
-                  <li>Client onboarding automation</li>
-                  <li>Document collection and processing</li>
-                  <li>Compliance reminder systems</li>
-                </ul>
+
+              {/* Professional Services */}
+              <div className="industry-detailed-card">
+                <div className="industry-header">
+                  <div className="industry-icon-large">💼</div>
+                  <div>
+                    <h3>Professional Services</h3>
+                    <p className="industry-subtitle">Remove onboarding friction, tighten compliance calendars, and automate billing so professionals focus on client work, not paperwork.</p>
+                  </div>
+                </div>
+                
+                <div className="automation-solutions">
+                  <div className="solution-item">
+                    <h4>Automated Client Onboarding</h4>
+                    <p>Send secure intake forms, collect ID/docs, create client folders, and assign internal checklists automatically.</p>
+                    <div className="benefit-tag">Faster client ramp-up, fewer missing documents</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Deadline & Compliance Engine</h4>
+                    <p>Map client-specific compliance dates (tax deadlines, renewals) to a calendar that triggers client reminders and internal escalation if items are late.</p>
+                    <div className="benefit-tag">Fewer missed deadlines and reduced liability</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Time Tracking → Invoicing Pipeline</h4>
+                    <p>Automate time capture reminders, convert approved time entries to invoices in QuickBooks/Xero, and handle retainer draws automatically.</p>
+                    <div className="benefit-tag">Faster invoicing and predictability in cashflow</div>
+                  </div>
+                </div>
               </div>
-              
-              <div className="industry-automation">
-                <h4>🏗️ General Contractors</h4>
-                <ul>
-                  <li>Project milestone communication automation</li>
-                  <li>Subcontractor coordination systems</li>
-                  <li>Material ordering and tracking automation</li>
-                </ul>
+
+              {/* General Contractors */}
+              <div className="industry-detailed-card">
+                <div className="industry-header">
+                  <div className="industry-icon-large">🏗️</div>
+                  <div>
+                    <h3>General Contractors</h3>
+                    <p className="industry-subtitle">Keep projects on schedule by automating sub coordination, material re-orders and milestone acceptance.</p>
+                  </div>
+                </div>
+                
+                <div className="automation-solutions">
+                  <div className="solution-item">
+                    <h4>Subcontractor Coordination Hub</h4>
+                    <p>When a milestone is met, auto-notify subs with scope docs and request confirmations/ETAs; escalate if no response.</p>
+                    <div className="benefit-tag">Fewer coordination bottlenecks and faster turnaround</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Material & Inventory Auto-Reorder</h4>
+                    <p>Trigger POs when material thresholds are met and email suppliers with current lead-time estimates.</p>
+                    <div className="benefit-tag">Fewer project stoppages due to missing materials</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Milestone Sign-Off & Billing</h4>
+                    <p>Client receives digital milestone acceptance; when signed the system issues invoices, updates cashflow dashboards, and notifies accounting.</p>
+                    <div className="benefit-tag">Faster payment cycles and clearer project finances</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div style={{ textAlign: 'center', marginTop: '50px' }}>
+              <p style={{ color: colors.text.secondary, fontSize: '1.1rem', marginBottom: '20px' }}>See how these automations could work for your specific business.</p>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
+                <a href="/contact" className="btn btn-primary">Schedule Strategy Session</a>
+                <a href="/contact" className="btn btn-secondary">Ask About Your Industry</a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ROI Calculator */}
-        <section className="section">
-          <div className="container">
-            <h2 className="section-title">Calculate Your Time Savings</h2>
-            <div className="roi-calculator">
-              <div className="roi-content">
-                <h3>Typical Time Savings per Week:</h3>
-                <div className="savings-grid">
-                  <div className="savings-item">
-                    <h4>Google Review Management</h4>
-                    <p><strong>5-8 hours</strong> → <strong>15 minutes</strong></p>
-                  </div>
-                  <div className="savings-item">
-                    <h4>Social Media Posting</h4>
-                    <p><strong>3-5 hours</strong> → <strong>30 minutes setup</strong></p>
-                  </div>
-                  <div className="savings-item">
-                    <h4>Lead Follow-Up</h4>
-                    <p><strong>4-6 hours</strong> → <strong>Automated</strong></p>
-                  </div>
-                  <div className="savings-item">
-                    <h4>Appointment Scheduling</h4>
-                    <p><strong>2-3 hours</strong> → <strong>Automated</strong></p>
-                  </div>
-                </div>
-                <div className="roi-total">
-                  <h4>Total Weekly Savings: 14-22 hours</h4>
-                  <p>That's equivalent to hiring a part-time employee, but completely automated!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* FAQ */}
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
@@ -374,13 +491,15 @@ export const AutomationsPage = () => {
               <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
                 Request Automation Consultation
               </a>
-              <a href="/contact" className="btn btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
+              <a href="/contact" className="btn btn-secondary" style={{ borderColor: 'white', color: '#000', backgroundColor: 'white' }}>
                 Schedule Discovery Call
               </a>
             </div>
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 };
@@ -488,44 +607,99 @@ const automationStyles = `
   overflow: hidden;
 }
 
-.industry-automations {
+.industry-detailed-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 50px;
 }
 
-.industry-automation {
+.industry-detailed-card {
   background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(26, 121, 175, 0.1);
+}
+
+.industry-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+.industry-icon-large {
+  font-size: 3.5rem;
+  min-width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(26, 121, 175, 0.1);
+}
+
+.industry-header h3 {
+  color: ${colors.primary};
+  font-size: 1.8rem;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.industry-subtitle {
+  color: ${colors.text.secondary};
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0;
+  font-style: italic;
+}
+
+.automation-solutions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.solution-item {
+  background: #fafbfc;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid ${colors.primary};
+  transition: all 0.2s ease;
 }
 
-.industry-automation h4 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  font-size: 1.2rem;
+.solution-item:hover {
+  background: #f1f8fc;
+  border-left-color: ${colors.accent};
 }
 
-.industry-automation ul {
-  list-style: none;
-  padding: 0;
+.solution-item h4 {
+  color: ${colors.text.primary};
+  font-size: 1.3rem;
+  margin: 0 0 12px 0;
+  font-weight: 600;
 }
 
-.industry-automation li {
-  padding: 5px 0;
-  color: var(--text-secondary);
-  position: relative;
-  padding-left: 20px;
+.solution-item p {
+  color: ${colors.text.secondary};
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+  font-size: 1rem;
 }
 
-.industry-automation li::before {
-  content: "▶";
-  position: absolute;
-  left: 0;
-  color: var(--primary-color);
-  font-size: 0.8rem;
+.benefit-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, ${colors.primary} 0%, ${colors.primaryDark} 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(26, 121, 175, 0.3);
 }
 
 .roi-calculator {
@@ -573,6 +747,46 @@ const automationStyles = `
   font-size: 1.5rem;
 }
 
+.n8n-workflow-container {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  background: #f8f9fa;
+  position: relative;
+}
+
+.n8n-workflow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomPan 20s ease-in-out infinite;
+  animation-play-state: running !important;
+  transform-origin: center center;
+}
+
+.n8n-workflow-container:hover .n8n-workflow-image {
+  animation-play-state: running !important;
+}
+
+@keyframes zoomPan {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  25% {
+    transform: scale(1.8) translate(-15%, -10%);
+  }
+  50% {
+    transform: scale(2.2) translate(10%, -15%);
+  }
+  75% {
+    transform: scale(1.6) translate(-5%, 10%);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+
 @media (max-width: 768px) {
   .automation-grid {
     grid-template-columns: 1fr;
@@ -591,8 +805,63 @@ const automationStyles = `
     grid-template-columns: 1fr;
   }
   
-  .industry-automations {
+  .industry-detailed-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .industry-detailed-card {
+    padding: 25px;
+  }
+  
+  .industry-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .industry-icon-large {
+    align-self: center;
+    min-width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
+  }
+  
+  .industry-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .industry-subtitle {
+    font-size: 1rem;
+  }
+  
+  .solution-item {
+    padding: 20px;
+  }
+  
+  .solution-item h4 {
+    font-size: 1.1rem;
+  }
+  
+  .n8n-workflow-image {
+    animation-duration: 15s;
+  }
+  
+  @keyframes zoomPan {
+    0% {
+      transform: scale(1) translate(0, 0);
+    }
+    25% {
+      transform: scale(1.5) translate(-10%, -5%);
+    }
+    50% {
+      transform: scale(1.8) translate(8%, -10%);
+    }
+    75% {
+      transform: scale(1.3) translate(-3%, 8%);
+    }
+    100% {
+      transform: scale(1) translate(0, 0);
+    }
   }
 }
 `;
