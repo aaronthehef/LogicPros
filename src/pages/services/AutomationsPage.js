@@ -64,8 +64,7 @@ export const AutomationsPage = () => {
             </p>
             
             <div className="automation-grid">
-              <div className="automation-card featured-automation">
-                <div className="automation-badge">Most Popular</div>
+              <div className="automation-card">
                 <div className="automation-icon">⭐</div>
                 <h3>Google Review Automation</h3>
                 <p className="automation-subtitle">Build Your Online Reputation</p>
@@ -121,7 +120,7 @@ export const AutomationsPage = () => {
           <div className="container">
             <h2 className="section-title">Advanced Workflow Automations</h2>
             
-            <div className="features-grid">
+            <div className="features-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
               <div className="feature-item">
                 <h3>🔄 Lead Follow-Up Sequences</h3>
                 <p>Automatically nurture leads with personalized email and SMS sequences. Convert more prospects into customers with consistent follow-up.</p>
@@ -179,7 +178,17 @@ export const AutomationsPage = () => {
               </div>
               
               <div className="benefit-image">
-                <div className="placeholder-image">n8n Dashboard Screenshot</div>
+                <img 
+                  src="/n8n-workflow-screenshot.png" 
+                  alt="n8n Automation Workflow Dashboard" 
+                  style={{ 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover', 
+                    borderRadius: '12px',
+                    border: '1px solid #e9ecef'
+                  }} 
+                />
               </div>
             </div>
           </div>
