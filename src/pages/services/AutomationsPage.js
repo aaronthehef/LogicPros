@@ -179,8 +179,8 @@ export const AutomationsPage = () => {
               
               <div className="benefit-image">
                 <img 
-                  src="/n8n-workflow-screenshot.png" 
-                  alt="n8n Automation Workflow Dashboard" 
+                  src="/n8n.png" 
+                  alt="n8n Automation Workflow Dashboard showing AI Agent, HTTP Request, Google Sheets integration" 
                   style={{ 
                     width: '100%', 
                     height: '100%', 
