@@ -48,55 +48,43 @@ export const Navigation = () => {
               onMouseLeave={() => handleMouseEnter('services')}
             >
               <a href="/services/websites" className="dropdown-item-with-submenu">
-                <span className="dropdown-icon">🌐</span>
                 Website Design
                 <span className="submenu-arrow">▶</span>
               </a>
               <div className={`submenu-content ${dropdownOpen === 'websites' ? 'show' : ''}`}>
                 <a href="/contractors/plumbing" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">🚰</span>
                   Plumbing Contractors
                 </a>
                 <a href="/contractors/electrical" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">⚡</span>
                   Electrical Contractors
                 </a>
                 <a href="/contractors/hvac" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">🌡️</span>
                   HVAC Contractors
                 </a>
                 <a href="/contractors/roofing" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">🏠</span>
                   Roofing Contractors
                 </a>
                 <a href="/contractors/construction" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">🏗️</span>
                   Construction
                 </a>
                 <a href="/contractors/landscaping" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">🌿</span>
                   Landscaping
                 </a>
                 <a href="/contractors/painting" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">🎨</span>
                   Painting Contractors
                 </a>
                 <a href="/contractors/flooring" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">📐</span>
                   Flooring Contractors
                 </a>
                 <a href="/contractors/concrete" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">🏗️</span>
                   Concrete Contractors
                 </a>
                 <a href="/contractors/remodeling" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">🏡</span>
                   Home Remodeling
                 </a>
               </div>
             </div>
             <a href="/services/automations" onClick={handleLinkClick}>
-              <span className="dropdown-icon">🤖</span>
               AI Automations
             </a>
             
@@ -106,21 +94,17 @@ export const Navigation = () => {
               onMouseLeave={() => handleMouseEnter('services')}
             >
               <a href="/services/it-services" className="dropdown-item-with-submenu">
-                <span className="dropdown-icon">🔒</span>
                 Cybersecurity & IT Services
                 <span className="submenu-arrow">▶</span>
               </a>
               <div className={`submenu-content ${dropdownOpen === 'cybersecurity' ? 'show' : ''}`}>
                 <a href="/services/security-audits" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">🔍</span>
                   Security Audits
                 </a>
                 <a href="/services/password-management" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">🔐</span>
                   Password Management
                 </a>
                 <a href="/services/multi-factor-authentication" onClick={handleLinkClick}>
-                  <span className="dropdown-icon">🛡️</span>
                   Multi-Factor Authentication
                 </a>
               </div>
@@ -141,15 +125,12 @@ export const Navigation = () => {
           <div className={`dropdown-content ${dropdownOpen === 'locations' ? 'show' : ''}`}>
             <div className="dropdown-arrow-up"></div>
             <a href="/locations/fredericton" onClick={handleLinkClick}>
-              <span className="dropdown-icon">🏢</span>
               Fredericton
             </a>
             <a href="/locations/moncton" onClick={handleLinkClick}>
-              <span className="dropdown-icon">🏭</span>
               Moncton
             </a>
             <a href="/locations/saint-john" onClick={handleLinkClick}>
-              <span className="dropdown-icon">⚓</span>
               Saint John
             </a>
           </div>
@@ -159,8 +140,7 @@ export const Navigation = () => {
         <a href="/about" className="nav-link">About</a>
         <a href="/contact" className="nav-link">Contact</a>
       </div>
-      <a href="/contact" className="btn btn-secondary">Request Quote</a>
-      <a href="/free-example" className="btn btn-primary btn-nav-cta">Free Website Example</a>
+      <a href="/contact" className="btn btn-nav-cta">Start Security Assessment</a>
       <button className="mobile-menu-toggle">☰</button>
     </nav>
   );
@@ -179,6 +159,11 @@ const dropdownStyles = `
 
 .nav-hidden {
   transform: translateY(-100%);
+}
+
+/* Mobile menu toggle - hidden by default */
+.mobile-menu-toggle {
+  display: none;
 }
 
 /* Navigation dropdown container */
@@ -214,15 +199,15 @@ const dropdownStyles = `
 /* Main dropdown content */
 .dropdown-content {
   position: absolute;
-  background: white;
+  background: #1a1a1a;
   min-width: 240px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3), 0 5px 15px rgba(0,0,0,0.2);
   border-radius: 12px;
   z-index: 1000;
   top: calc(100% + 15px);
   left: 0;
   padding: 12px 0;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
   
   /* Sliding animation properties */
   opacity: 0;
@@ -248,8 +233,8 @@ const dropdownStyles = `
   left: 24px;
   width: 16px;
   height: 16px;
-  background: white;
-  border: 1px solid rgba(0,0,0,0.06);
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.1);
   border-bottom: none;
   border-right: none;
   transform: rotate(45deg);
@@ -258,7 +243,7 @@ const dropdownStyles = `
 
 /* Dropdown menu items */
 .dropdown-content a {
-  color: #314251;
+  color: #ffffff;
   padding: 14px 20px;
   text-decoration: none;
   display: flex;
@@ -294,8 +279,8 @@ const dropdownStyles = `
 }
 
 .dropdown-content a:hover {
-  background: rgba(26, 121, 175, 0.08);
-  color: #1a79af;
+  background: rgba(29, 122, 175, 0.2);
+  color: #1d7aaf;
   transform: translateX(8px);
   padding-left: 28px;
 }
@@ -336,20 +321,20 @@ const dropdownStyles = `
 
 .nav-subdropdown:hover .submenu-arrow {
   transform: rotate(90deg);
-  color: #1a79af;
+  color: #1d7aaf;
 }
 
 .submenu-content {
   position: absolute;
   left: 100%;
   top: 0;
-  background: white;
+  background: #1a1a1a;
   min-width: 280px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3), 0 5px 15px rgba(0,0,0,0.2);
   border-radius: 12px;
   z-index: 1001;
   padding: 12px 0;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
   margin-left: 8px;
   
   /* Animation properties */
@@ -370,7 +355,7 @@ const dropdownStyles = `
 }
 
 .submenu-content a {
-  color: #314251;
+  color: #ffffff;
   padding: 10px 16px;
   text-decoration: none;
   display: flex;
@@ -384,8 +369,8 @@ const dropdownStyles = `
 }
 
 .submenu-content a:hover {
-  background: rgba(26, 121, 175, 0.08);
-  color: #1a79af;
+  background: rgba(29, 122, 175, 0.2);
+  color: #1d7aaf;
   transform: translateX(4px);
   padding-left: 20px;
 }
@@ -428,100 +413,55 @@ const dropdownStyles = `
   transform: translateY(0);
 }
 
+.btn-nav-cta {
+  background: transparent !important;
+  color: white !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.3s ease !important;
+  display: inline-block !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+.btn-nav-cta:hover {
+  border-color: rgba(29, 122, 175, 0.8) !important;
+  box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4), 0 0 20px rgba(29, 122, 175, 0.3) !important;
+  transform: translateY(-2px) !important;
+  color: white !important;
+  background: transparent !important;
+}
+
 /* Mobile responsive design */
 @media (max-width: 768px) {
-  .nav-dropdown {
-    display: block;
-    width: 100%;
-  }
-  
-  .dropdown-hover-bridge {
+  .nav-links {
     display: none;
   }
   
-  .dropdown-content {
-    position: static;
-    box-shadow: inset 0 3px 8px rgba(0,0,0,0.08);
-    border: none;
-    background: #f8f9fa;
-    margin-top: 8px;
+  .btn-nav-cta {
+    display: none !important;
+  }
+  
+  .mobile-menu-toggle {
+    display: block !important;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 8px;
-    transform: none;
-    backdrop-filter: none;
-    max-height: 0;
-    overflow: hidden;
-    padding: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
   
-  .dropdown-content.show {
-    max-height: 300px;
-    padding: 8px 0;
-  }
-  
-  .dropdown-arrow-up {
-    display: none;
-  }
-  
-  .dropdown-content a {
-    margin: 0;
-    border-radius: 0;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    padding: 12px 20px;
-  }
-  
-  .dropdown-content a:hover {
-    transform: none;
-    padding-left: 32px;
-    background: rgba(0,0,0,0.05);
-  }
-  
-  .dropdown-arrow {
-    font-size: 0.8rem;
-  }
-  
-  /* Submenu mobile styles */
-  .nav-subdropdown {
-    display: block;
-    width: 100%;
-  }
-  
-  .submenu-content {
-    position: static;
-    box-shadow: inset 0 3px 8px rgba(0,0,0,0.12);
-    border: none;
-    background: #efefef;
-    margin: 8px 0 0 20px;
-    border-radius: 8px;
-    transform: none;
-    backdrop-filter: none;
-    max-height: 0;
-    overflow: hidden;
-    padding: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .submenu-content.show {
-    max-height: 500px;
-    padding: 8px 0;
-  }
-  
-  .submenu-content a {
-    margin: 0;
-    border-radius: 0;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-    padding: 10px 16px;
-    font-size: 0.85rem;
-  }
-  
-  .submenu-content a:hover {
-    transform: none;
-    padding-left: 24px;
-    background: rgba(0,0,0,0.08);
-  }
-  
-  .submenu-arrow {
-    font-size: 0.7rem;
+  .mobile-menu-toggle:hover {
+    border-color: rgba(29, 122, 175, 0.8);
+    color: #1d7aaf;
   }
 }
 `;

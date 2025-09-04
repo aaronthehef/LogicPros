@@ -225,7 +225,7 @@ export const ResponsiveLandingPage = () => {
                 </div>
               </div>
 
-              <div style={{ 
+              <div className="hero-service-cards" style={{ 
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '1rem',

@@ -1366,6 +1366,19 @@ body {
     padding-top: 100px; /* 60px for mobile header + 40px for section spacing */
   }
 
+  /* Hide hero service cards on mobile */
+  .hero-service-cards {
+    display: none !important;
+  }
+
+  /* Make homepage hero grid single column on mobile */
+  .hero-section.homepage-hero .container > div {
+    display: block !important;
+    grid-template-columns: unset !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+
   .hero-image {
     height: 70vh; /* Better proportion on mobile */
     margin-left: calc(-50vw + 50%);
