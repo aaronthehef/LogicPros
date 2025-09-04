@@ -51,7 +51,13 @@
       "Bash(npm install:*)",
       "Bash(sed:*)",
       "WebFetch(domain:logicpros-contact-final.vercel.app)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:localhost)",
+      "Bash(npx eslint:*)",
+      "Bash(npx serve:*)",
+      "Bash(grep:*)",
+      "Bash(git restore:*)",
+      "Bash(npx kill-port:*)"
     ],
     "deny": []
   }

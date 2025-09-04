@@ -2,6 +2,7 @@ import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
+import { Footer } from '../../components/Footer';
 
 export const MonctonPage = () => {
   return (
@@ -392,6 +393,7 @@ export const MonctonPage = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

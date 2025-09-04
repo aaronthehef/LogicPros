@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './responsive-style.css';
 import { Logo } from './components/Logo';
 import { Navigation } from './components/Navigation';
@@ -6,8 +6,87 @@ import { Animations } from './components/Animations';
 import { Footer } from './components/Footer';
 import { colors } from './styles/colors';
 import heroImage from './assets/hero-growtika.jpg';
+import { gsap } from 'gsap';
 
 export const ResponsiveLandingPage = () => {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    // Background panning animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes panLeft {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-200px); }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 0.9; }
+      }
+      @keyframes glow {
+        0%, 100% { filter: brightness(1); }
+        50% { filter: brightness(1.4); }
+      }
+      @keyframes float1 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.3; }
+        33% { transform: translate(30px, -50px) rotate(120deg); opacity: 0.6; }
+        66% { transform: translate(-20px, -80px) rotate(240deg); opacity: 0.4; }
+      }
+      @keyframes float2 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.4; }
+        50% { transform: translate(-40px, -60px) rotate(180deg); opacity: 0.2; }
+      }
+      @keyframes float3 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.2; }
+        25% { transform: translate(50px, -30px) rotate(90deg); opacity: 0.5; }
+        75% { transform: translate(-30px, -70px) rotate(270deg); opacity: 0.3; }
+      }
+      .hero-background-svg {
+        animation: panLeft 30s linear infinite, pulse 4s ease-in-out infinite;
+      }
+      .tech-nodes circle {
+        animation: glow 3s ease-in-out infinite alternate;
+      }
+      .glowing-orbs circle {
+        animation: pulse 2s ease-in-out infinite alternate;
+      }
+      .floating-particle {
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .floating-particle:nth-child(1) { animation: float1 15s ease-in-out infinite; }
+      .floating-particle:nth-child(2) { animation: float2 18s ease-in-out infinite; }
+      .floating-particle:nth-child(3) { animation: float3 20s ease-in-out infinite; }
+      .floating-particle:nth-child(4) { animation: float1 22s ease-in-out infinite reverse; }
+      .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
+      .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
+      .hero-button {
+        background: transparent !important;
+        color: white !important;
+        padding: 1rem 2rem !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border: 2px solid rgba(255, 255, 255, 0.3) !important;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1) !important;
+        transition: all 0.3s ease !important;
+        display: inline-block !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+      }
+      .hero-button:hover {
+        border-color: rgba(29, 122, 175, 0.8) !important;
+        box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4), 0 0 20px rgba(29, 122, 175, 0.3) !important;
+        transform: translateY(-2px) !important;
+        color: white !important;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // CSS animation handles seamless card scrolling - no GSAP needed
+  }, []);
   return (
     <div className="landing-page homepage">
       <Animations />
@@ -24,18 +103,218 @@ export const ResponsiveLandingPage = () => {
       {/* Main Content */}
       <main className="main-content">
         {/* Hero Section */}
-        <section className="hero-section homepage-hero">
-          <div className="hero-image">
-            <img src={heroImage} alt="Professional team working on digital solutions" />
-            <div className="hero-overlay">
-              <div className="hero-content">
-                <h1 className="typewriter-text">Professional Cybersecurity, AI Solutions & Website Development</h1>
-                <p className="hero-subheadline">
-                  New Brunswick's trusted partner for cybersecurity audits, AI automation, and professional websites.
+        <section ref={heroRef} className="hero-section homepage-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', overflow: 'hidden' }}>
+          <svg 
+            className="hero-background-svg"
+            style={{ 
+              position: 'absolute', 
+              top: '-10%', 
+              left: '-10%', 
+              width: '120%', 
+              height: '120%', 
+              zIndex: 1,
+              opacity: 0.7
+            }} 
+            viewBox="0 0 1200 800" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#1d7aaf" />
+                <stop offset="100%" stopColor="#1e40af" />
+              </linearGradient>
+              <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#1d7aaf" stopOpacity="0.8" />
+                <stop offset="50%" stopColor="#1e40af" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#1d7aaf" stopOpacity="0.8" />
+              </linearGradient>
+            </defs>
+            
+            {/* Main Grid Lines */}
+            <g className="grid-lines" filter="blur(0.5px)">
+              <line x1="0" y1="100" x2="1200" y2="100" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.4" strokeDasharray="20,10" />
+              <line x1="0" y1="200" x2="1200" y2="200" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
+              <line x1="0" y1="300" x2="1200" y2="300" stroke="#1d7aaf" strokeWidth="2" opacity="0.5" strokeDasharray="25,5" />
+              <line x1="0" y1="400" x2="1200" y2="400" stroke="#1e40af" strokeWidth="1" opacity="0.2" strokeDasharray="30,10" />
+              <line x1="0" y1="500" x2="1200" y2="500" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.3" strokeDasharray="20,15" />
+              
+              <line x1="200" y1="0" x2="200" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,10" />
+              <line x1="400" y1="0" x2="400" y2="800" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
+              <line x1="600" y1="0" x2="600" y2="800" stroke="#1d7aaf" strokeWidth="2" opacity="0.4" strokeDasharray="25,5" />
+              <line x1="800" y1="0" x2="800" y2="800" stroke="#1e40af" strokeWidth="1" opacity="0.1" strokeDasharray="30,10" />
+              <line x1="1000" y1="0" x2="1000" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,15" />
+            </g>
+
+            {/* Circuit Board Patterns */}
+            <g className="circuit-patterns" filter="blur(0.3px)">
+              {/* Horizontal circuit paths */}
+              <path d="M100,150 L250,150 L270,170 L400,170 L420,150 L600,150" stroke="#1d7aaf" strokeWidth="1" opacity="0.4" fill="none" strokeDasharray="5,3" />
+              <path d="M150,250 L300,250 L320,230 L500,230 L520,250 L750,250" stroke="#1e40af" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="8,4" />
+              <path d="M80,350 L200,350 L220,330 L350,330 L370,350 L550,350" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.5" fill="none" strokeDasharray="6,2" />
+              
+              {/* Vertical circuit paths */}
+              <path d="M300,50 L300,180 L280,200 L280,320 L300,340 L300,450" stroke="#1e40af" strokeWidth="1" opacity="0.2" fill="none" strokeDasharray="4,3" />
+              <path d="M500,80 L500,200 L520,220 L520,300 L500,320 L500,480" stroke="#1d7aaf" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="7,3" />
+              <path d="M700,60 L700,150 L680,170 L680,280 L700,300 L700,420" stroke="#1e40af" strokeWidth="1.5" opacity="0.4" fill="none" strokeDasharray="5,4" />
+            </g>
+
+            {/* Tech Nodes/Connection Points */}
+            <g className="tech-nodes">
+              <circle cx="150" cy="120" r="4" fill="#1d7aaf" opacity="0.9" />
+              <circle cx="270" cy="170" r="3" fill="#1e40af" opacity="0.8" />
+              <circle cx="420" cy="150" r="5" fill="#1d7aaf" opacity="1.0" />
+              <circle cx="350" cy="180" r="3" fill="#1e40af" opacity="0.7" />
+              <circle cx="520" cy="250" r="4" fill="#1d7aaf" opacity="0.8" />
+              <circle cx="650" cy="110" r="6" fill="#1e40af" opacity="0.9" />
+              <circle cx="850" cy="200" r="3" fill="#1d7aaf" opacity="0.9" />
+              <circle cx="950" cy="140" r="4" fill="#1e40af" opacity="0.8" />
+              <circle cx="300" cy="340" r="5" fill="#1d7aaf" opacity="0.9" />
+              <circle cx="500" cy="320" r="3" fill="#1e40af" opacity="0.7" />
+              <circle cx="700" cy="300" r="4" fill="#1d7aaf" opacity="0.8" />
+            </g>
+
+            {/* Glowing Orbs */}
+            <g className="glowing-orbs">
+              <circle cx="100" cy="100" r="8" fill="url(#techGradient)" opacity="0.4" />
+              <circle cx="900" cy="300" r="6" fill="url(#techGradient)" opacity="0.5" />
+              <circle cx="1100" cy="150" r="10" fill="url(#techGradient)" opacity="0.3" />
+              <circle cx="200" cy="400" r="7" fill="url(#techGradient)" opacity="0.4" />
+            </g>
+          </svg>
+
+          {/* Floating Particles */}
+          <div className="floating-particle" style={{ top: '15%', left: '10%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
+          <div className="floating-particle" style={{ top: '25%', right: '15%', width: '6px', height: '6px', background: '#1e40af', borderRadius: '50%' }}></div>
+          <div className="floating-particle" style={{ top: '45%', left: '20%', width: '3px', height: '3px', background: '#1d7aaf', borderRadius: '50%' }}></div>
+          <div className="floating-particle" style={{ top: '35%', right: '25%', width: '5px', height: '5px', background: '#1e40af', borderRadius: '50%' }}></div>
+          <div className="floating-particle" style={{ top: '60%', left: '15%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
+          <div className="floating-particle" style={{ top: '70%', right: '20%', width: '3px', height: '3px', background: '#1e40af', borderRadius: '50%' }}></div>
+
+          <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '4rem', alignItems: 'center' }}>
+              <div style={{ textAlign: 'left', color: 'white' }}>
+                <h1 style={{ 
+                  fontSize: 'clamp(2.5rem, 6vw, 5rem)', 
+                  fontWeight: '900', 
+                  lineHeight: '0.9', 
+                  marginBottom: '1rem',
+                  color: '#1d7aaf'
+                }}>
+                  BUILD<br />
+                  AUTOMATE<br />
+                  SECURE
+                </h1>
+                <p style={{ 
+                  fontSize: 'clamp(1rem, 2vw, 1.3rem)', 
+                  color: '#e2e8f0', 
+                  marginBottom: '2.5rem',
+                  fontWeight: '300',
+                  maxWidth: '500px'
+                }}>
+                  Professional cybersecurity, AI automation, and web development for New Brunswick businesses
                 </p>
-                <div className="hero-cta-section">
-                  <a href="/contact" className="btn btn-primary btn-hero">Get Security Assessment</a>
-                  <a href="/free-example" className="secondary-link">Or get a free website example →</a>
+                
+                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                  <a href="/contact" className="hero-button">
+                    Start Security Assessment
+                  </a>
+                  
+                  <a href="/free-example" className="hero-button">
+                    Free Example Website
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ 
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                height: '500px',
+                justifyContent: 'center'
+              }}>
+                <div style={{
+                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
+                  border: '1px solid rgba(0, 0, 0, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem'
+                }}>
+                  <div>
+                    <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: '0 0 0.3rem 0' }}>Security Audits & Vulnerability Assessments</h3>
+                    <p style={{ color: '#e2e8f0', fontSize: '0.85rem', margin: '0' }}>Comprehensive security testing and threat analysis</p>
+                  </div>
+                </div>
+
+                <div style={{
+                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
+                  border: '1px solid rgba(0, 0, 0, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem'
+                }}>
+                  <div>
+                    <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: '0 0 0.3rem 0' }}>Multi-Factor Authentication (MFA)</h3>
+                    <p style={{ color: '#e2e8f0', fontSize: '0.85rem', margin: '0' }}>Enhanced login security and access control</p>
+                  </div>
+                </div>
+
+                <div style={{
+                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
+                  border: '1px solid rgba(0, 0, 0, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem'
+                }}>
+                  <div>
+                    <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: '0 0 0.3rem 0' }}>Custom AI Chatbots for Your Website</h3>
+                    <p style={{ color: '#e2e8f0', fontSize: '0.85rem', margin: '0' }}>Intelligent customer service automation</p>
+                  </div>
+                </div>
+
+                <div style={{
+                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
+                  border: '1px solid rgba(0, 0, 0, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem'
+                }}>
+                  <div>
+                    <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: '0 0 0.3rem 0' }}>Responsive Mobile-First Design</h3>
+                    <p style={{ color: '#e2e8f0', fontSize: '0.85rem', margin: '0' }}>Modern websites optimized for all devices</p>
+                  </div>
+                </div>
+
+                <div style={{
+                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
+                  border: '1px solid rgba(0, 0, 0, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem'
+                }}>
+                  <div>
+                    <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: '0 0 0.3rem 0' }}>24/7 System Monitoring & IT Support</h3>
+                    <p style={{ color: '#e2e8f0', fontSize: '0.85rem', margin: '0' }}>Round-the-clock infrastructure monitoring</p>
+                  </div>
                 </div>
               </div>
             </div>

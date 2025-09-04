@@ -2,6 +2,7 @@ import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
+import { Footer } from '../../components/Footer';
 
 export const SaintJohnPage = () => {
   return (
@@ -434,6 +435,7 @@ export const SaintJohnPage = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

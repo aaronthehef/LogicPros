@@ -2,6 +2,7 @@ import React from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
+import { Footer } from '../../components/Footer';
 
 export const FrederictonPage = () => {
   return (
@@ -351,6 +352,7 @@ export const FrederictonPage = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };
