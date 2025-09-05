@@ -469,23 +469,23 @@ export const ResponsiveLandingPage = () => {
             <div className="section-header">
               <h2 className="section-title">Why New Brunswick Businesses Choose LogicPros</h2>
             </div>
-            <div className="features-grid animate-on-scroll">
-              <div className="feature-item">
-                <h3>Grant Funding Available</h3>
+            <div className="services-grid animate-on-scroll">
+              <div className="service-card">
+                <h3>💰 Grant Funding Available</h3>
                 <p>
                   New Brunswick businesses may qualify for cybersecurity and technology grants. 
                   We can help you research available programs and determine eligibility for your projects.
                 </p>
               </div>
-              <div className="feature-item">
-                <h3>Local New Brunswick Expertise</h3>
+              <div className="service-card">
+                <h3>🏠 Local New Brunswick Expertise</h3>
                 <p>
                   Based in New Brunswick with deep understanding of local business needs. 
                   We work with SMEs across all industries to improve their digital security and operations.
                 </p>
               </div>
-              <div className="feature-item">
-                <h3>Complete Security & Growth Solutions</h3>
+              <div className="service-card">
+                <h3>🔐 Complete Security & Growth Solutions</h3>
                 <p>
                   From cybersecurity audits to AI automation to professional websites. 
                   Everything your business needs to stay secure and competitive in the digital age.
@@ -506,22 +506,22 @@ export const ResponsiveLandingPage = () => {
             <div className="section-header">
               <h2 className="section-title">Why Choose LogicPros for Cybersecurity & Website Development</h2>
             </div>
-            <div className="features-grid animate-on-scroll">
-              <div className="feature-item">
+            <div className="services-grid animate-on-scroll">
+              <div className="service-card">
                 <h3>🏆 Proven Expertise</h3>
                 <p>
                   Years of experience in cybersecurity, web development, and IT services. 
                   We understand the unique challenges facing New Brunswick businesses.
                 </p>
               </div>
-              <div className="feature-item">
+              <div className="service-card">
                 <h3>💰 Funding Assistance</h3>
                 <p>
                   We help you research and apply for available cybersecurity and technology grants. 
                   Many New Brunswick businesses can access funding to offset implementation costs.
                 </p>
               </div>
-              <div className="feature-item">
+              <div className="service-card">
                 <h3>⚡ Fast Implementation</h3>
                 <p>
                   Quick turnaround on all projects - website examples in 48 hours, 
@@ -560,7 +560,7 @@ export const ResponsiveLandingPage = () => {
         </section>
 
         {/* New Brunswick Service Areas */}
-        <section className="section" style={{ backgroundColor: '#f0f9ff' }}>
+        <section className="section" style={{ backgroundColor: '#e8f2ff' }}>
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Serving New Brunswick Businesses</h2>
@@ -569,22 +569,22 @@ export const ResponsiveLandingPage = () => {
                 Professional technology solutions available province-wide.
               </p>
             </div>
-            <div className="features-grid animate-on-scroll">
-              <div className="feature-item" style={{ textAlign: 'center' }}>
+            <div className="services-grid animate-on-scroll">
+              <div className="service-card" style={{ textAlign: 'center' }}>
                 <h3>🏢 Fredericton</h3>
                 <p>
                   Cybersecurity audits, AI chatbots, managed IT services, and professional websites 
                   for Fredericton businesses. Expert technology solutions.
                 </p>
               </div>
-              <div className="feature-item" style={{ textAlign: 'center' }}>
+              <div className="service-card" style={{ textAlign: 'center' }}>
                 <h3>🏭 Moncton</h3>
                 <p>
                   Security assessments, automated marketing, endpoint protection, and web development 
                   for Moncton area SMEs. Comprehensive technology support.
                 </p>
               </div>
-              <div className="feature-item" style={{ textAlign: 'center' }}>
+              <div className="service-card" style={{ textAlign: 'center' }}>
                 <h3>⚓ Saint John</h3>
                 <p>
                   MFA implementation, predictive analytics, patch management, and digital solutions 

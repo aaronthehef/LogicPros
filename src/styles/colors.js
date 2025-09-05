@@ -17,8 +17,8 @@ export const colors = {
   accentDark: '#e55a2b',       // Darker orange
   
   // Neutral Colors
-  white: '#ffffff',
-  lightGray: '#f8f9fa',
+  white: '#f5f8fc',
+  lightGray: '#f5f8fc',
   gray: '#6c757d',
   darkGray: '#495057',
   
@@ -26,8 +26,8 @@ export const colors = {
   backgrounds: {
     primary: '#1a79af',
     secondary: '#314251',
-    light: '#f8f9fa',
-    white: '#ffffff',
+    light: '#f5f8fc',
+    white: '#f5f8fc',
     gradientPrimary: 'linear-gradient(135deg, #1a79af 0%, #314251 100%)',
     gradientLight: 'linear-gradient(135deg, #2b8bc7 0%, #1a79af 100%)',
   },

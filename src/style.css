@@ -1,6 +1,6 @@
 .landing-page {
   align-items: start;
-  background-color: #ffffff;
+  background-color: #f5f8fc;
   display: grid;
   height: 100%;
   justify-items: center;
@@ -24,7 +24,7 @@
 }
 
 .landing-page .div {
-  background-color: #ffffff;
+  background-color: #f5f8fc;
   height: 4811px;
   position: relative;
   width: 1440px;
@@ -121,7 +121,7 @@
 }
 
 .landing-page .navigation-footer {
-  background-color: #ffffff;
+  background-color: #f5f8fc;
   height: 264px;
   left: 0;
   position: absolute;

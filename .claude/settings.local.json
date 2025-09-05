@@ -57,7 +57,9 @@
       "Bash(npx serve:*)",
       "Bash(grep:*)",
       "Bash(git restore:*)",
-      "Bash(npx kill-port:*)"
+      "Bash(npx kill-port:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(rg:*)"
     ],
     "deny": []
   }
