@@ -145,6 +145,67 @@ export const ResponsiveLandingPage = () => {
       .logo:hover {
         transform: translateY(-1px);
       }
+      
+      /* Professional Service Cards Hover Effects */
+      .professional-card:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 20px 60px rgba(29, 122, 175, 0.15), 0 8px 32px rgba(29, 122, 175, 0.2) !important;
+        border-color: rgba(29, 122, 175, 0.3) !important;
+      }
+      
+      .professional-card:hover .service-icon {
+        transform: scale(1.1) rotate(5deg) !important;
+        box-shadow: 0 12px 35px rgba(29, 122, 175, 0.4) !important;
+      }
+      
+      .professional-card:hover .feature-highlight {
+        background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+        transform: scale(1.05) !important;
+      }
+      
+      /* Override existing service card styles for professional cards */
+      .professional-card .service-icon {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 1rem !important;
+        background-color: transparent !important;
+        border-radius: 20px !important;
+      }
+      
+      .professional-card h3 {
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.3 !important;
+      }
+      
+      .professional-card p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 0 !important;
+      }
+      
+      /* Ensure cards are visible */
+      .services-grid {
+        display: grid !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      
+      .professional-card {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+      }
+      
+      /* Responsive 2x2 grid */
+      @media (max-width: 768px) {
+        .services-grid {
+          grid-template-columns: 1fr !important;
+          grid-template-rows: auto !important;
+        }
+      }
     `;
     document.head.appendChild(style);
 
@@ -345,8 +406,8 @@ export const ResponsiveLandingPage = () => {
                   gap: '1rem'
                 }}>
                   <div>
-                    <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: '0 0 0.3rem 0' }}>Custom AI Chatbots for Your Website</h3>
-                    <p style={{ color: '#e2e8f0', fontSize: '0.85rem', margin: '0' }}>Intelligent customer service automation</p>
+                    <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: '0 0 0.3rem 0' }}>Hands Free Marketing Automation</h3>
+                    <p style={{ color: '#e2e8f0', fontSize: '0.85rem', margin: '0' }}>SEO, email sequences, and lead nurturing on autopilot</p>
                   </div>
                 </div>
 
@@ -384,6 +445,155 @@ export const ResponsiveLandingPage = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Complete Digital Security & Growth Solutions Section */}
+        <section id="services" className="section">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Complete Digital Security & Growth Solutions</h2>
+              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
+                Cybersecurity audits, AI automation, professional websites, hands free marketing, and IT support for New Brunswick businesses
+              </p>
+            </div>
+            <div className="services-grid animate-on-scroll" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gridTemplateRows: 'repeat(2, 1fr)',
+              gap: '2rem',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <a href="/services" className="service-card professional-card" style={{ 
+                textDecoration: 'none', 
+                color: 'inherit',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                display: 'block',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div className="service-icon floating-icon" style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>🔒</div>
+                <h3>Cybersecurity & IT Services</h3>
+                <p>
+                  Professional cybersecurity services including security audits, MFA, and managed IT support to protect your business from cyber threats.
+                </p>
+                <div className="feature-highlight">Professional Security Solutions</div>
+              </a>
+              <a href="/services/websites" className="service-card professional-card" style={{ 
+                textDecoration: 'none', 
+                color: 'inherit',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                display: 'block',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div className="service-icon floating-icon" style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>🌐</div>
+                <h3>Website Design & Development</h3>
+                <p>
+                  Custom websites designed to convert visitors into customers. Mobile-optimized, fast-loading, and built with modern SEO practices.
+                </p>
+                <div className="feature-highlight">Free example in 48 hours</div>
+              </a>
+              <a href="/services/automations" className="service-card professional-card" style={{ 
+                textDecoration: 'none', 
+                color: 'inherit',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                display: 'block',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div className="service-icon floating-icon" style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>🤖</div>
+                <h3>AI Automation Solutions</h3>
+                <p>
+                  Intelligent chatbots and automation tools that handle customer inquiries, qualify leads, and streamline business operations.
+                </p>
+                <div className="feature-highlight">Streamline Operations</div>
+              </a>
+              <a href="/services/marketing" className="service-card professional-card" style={{ 
+                textDecoration: 'none', 
+                color: 'inherit',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                display: 'block',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div className="service-icon floating-icon" style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #e11d48, #be123c)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(225, 29, 72, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>📈</div>
+                <h3>SEO & Hands Free Marketing</h3>
+                <p>
+                  Get found on Google and convert visitors with automated email sequences, lead nurturing, and customer retention - completely hands free.
+                </p>
+                <div className="feature-highlight">Set It & Forget It Marketing</div>
+              </a>
             </div>
           </div>
         </section>
@@ -487,45 +697,19 @@ export const ResponsiveLandingPage = () => {
             <div className="cta-section-inline">
               <h3>Want to see YOUR website before you buy it?</h3>
               <p>We'll create a custom example specifically for your business - delivered in 48 hours, completely free.</p>
-              <a href="/free-example" className="btn btn-primary btn-large">Get My Free Website Example</a>
-            </div>
-          </div>
-        </section>
-
-        {/* Key Differentiators Section */}
-        <section id="services" className="section">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">Complete Digital Security & Growth Solutions</h2>
-              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '600px', margin: '0 auto' }}>
-                Cybersecurity audits, AI automation, professional websites, and IT support for New Brunswick businesses
-              </p>
-            </div>
-            <div className="services-grid animate-on-scroll">
-              <a href="/services" className="service-card" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="service-icon floating-icon">🔒</div>
-                <h3>Cybersecurity & IT Services</h3>
-                <p>
-                  Professional cybersecurity services including security audits, MFA, and managed IT support to protect your business from cyber threats.
-                </p>
-                <div className="feature-highlight">Professional Security Solutions</div>
-              </a>
-              <a href="/services/websites" className="service-card" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="service-icon floating-icon">🌐</div>
-                <h3>Website Design & Development</h3>
-                <p>
-                  Custom websites designed to convert visitors into customers. Mobile-optimized, fast-loading, and built with modern SEO practices.
-                </p>
-                <div className="feature-highlight">Free example in 48 hours</div>
-              </a>
-              <a href="/services/automations" className="service-card" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="service-icon floating-icon">🤖</div>
-                <h3>AI Automation Solutions</h3>
-                <p>
-                  Intelligent chatbots and automation tools that handle customer inquiries, qualify leads, and streamline business operations.
-                </p>
-                <div className="feature-highlight">Streamline Operations</div>
-              </a>
+              <a href="/free-example" className="btn btn-primary btn-large" style={{
+                background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                color: 'white',
+                padding: '1rem 2rem',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                display: 'inline-block',
+                boxShadow: '0 4px 12px rgba(29, 122, 175, 0.3)',
+                transition: 'all 0.3s ease',
+                border: 'none'
+              }}>Get My Free Website Example</a>
             </div>
           </div>
         </section>
@@ -535,93 +719,468 @@ export const ResponsiveLandingPage = () => {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Why New Brunswick Businesses Choose LogicPros</h2>
+              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
+                Local expertise, proven results, funding assistance, and fast implementation for New Brunswick businesses
+              </p>
             </div>
-            <div className="services-grid animate-on-scroll">
-              <div className="service-card">
-                <h3>💰 Grant Funding Available</h3>
-                <p>
-                  New Brunswick businesses may qualify for cybersecurity and technology grants. 
-                  We can help you research available programs and determine eligibility for your projects.
+            <div className="services-grid" style={{
+              display: 'grid !important',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
+              maxWidth: '1400px',
+              margin: '0 auto',
+              opacity: '1 !important',
+              visibility: 'visible !important'
+            }}>
+              <div className="service-card professional-card" style={{ 
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden',
+                display: 'block',
+                opacity: 1,
+                visibility: 'visible'
+              }}>
+                <div className="service-icon" style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(34, 197, 94, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>💰</div>
+                <h3 style={{ 
+                  color: colors.text.primary, 
+                  fontSize: '1.4rem', 
+                  fontWeight: '700',
+                  marginBottom: '1rem',
+                  lineHeight: '1.3'
+                }}>Funding Assistance Available</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  marginBottom: '0'
+                }}>
+                  Many New Brunswick businesses qualify for cybersecurity and technology grants. We help you research programs and determine eligibility for digital transformation, security audits, and AI automation projects.
                 </p>
               </div>
-              <div className="service-card">
-                <h3>🏠 Local New Brunswick Expertise</h3>
-                <p>
-                  Based in New Brunswick with deep understanding of local business needs. 
-                  We work with SMEs across all industries to improve their digital security and operations.
+
+              <div className="service-card professional-card" style={{ 
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden',
+                display: 'block',
+                opacity: 1,
+                visibility: 'visible'
+              }}>
+                <div className="service-icon" style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(245, 158, 11, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>🏠</div>
+                <h3 style={{ 
+                  color: colors.text.primary, 
+                  fontSize: '1.4rem', 
+                  fontWeight: '700',
+                  marginBottom: '1rem',
+                  lineHeight: '1.3'
+                }}>Local New Brunswick Expertise</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  marginBottom: '0'
+                }}>
+                  Based in New Brunswick with deep understanding of local business needs. Years of experience helping SMEs across all industries improve their digital security and operations.
                 </p>
               </div>
-              <div className="service-card">
-                <h3>🔐 Complete Security & Growth Solutions</h3>
-                <p>
-                  From cybersecurity audits to AI automation to professional websites. 
-                  Everything your business needs to stay secure and competitive in the digital age.
+
+              <div className="service-card professional-card" style={{ 
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden',
+                display: 'block',
+                opacity: 1,
+                visibility: 'visible'
+              }}>
+                <div className="service-icon" style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>🔐</div>
+                <h3 style={{ 
+                  color: colors.text.primary, 
+                  fontSize: '1.4rem', 
+                  fontWeight: '700',
+                  marginBottom: '1rem',
+                  lineHeight: '1.3'
+                }}>Complete Security & Growth Solutions</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  marginBottom: '0'
+                }}>
+                  From cybersecurity audits to AI automation to professional websites and hands free marketing. Everything your business needs to stay secure and competitive in the digital age.
                 </p>
               </div>
+
+              <div className="service-card professional-card" style={{ 
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden',
+                display: 'block',
+                opacity: 1,
+                visibility: 'visible'
+              }}>
+                <div className="service-icon" style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #7c3aed, #5b21b6)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(124, 58, 237, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>🏆</div>
+                <h3 style={{ 
+                  color: colors.text.primary, 
+                  fontSize: '1.4rem', 
+                  fontWeight: '700',
+                  marginBottom: '1rem',
+                  lineHeight: '1.3'
+                }}>Proven Expertise</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  marginBottom: '0'
+                }}>
+                  Years of experience in cybersecurity, web development, and IT services. We understand the unique challenges facing New Brunswick businesses and deliver results.
+                </p>
+              </div>
+
+              <div className="service-card professional-card" style={{ 
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden',
+                display: 'block',
+                opacity: 1,
+                visibility: 'visible'
+              }}>
+                <div className="service-icon" style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #ec4899, #be185d)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(236, 72, 153, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>⚡</div>
+                <h3 style={{ 
+                  color: colors.text.primary, 
+                  fontSize: '1.4rem', 
+                  fontWeight: '700',
+                  marginBottom: '1rem',
+                  lineHeight: '1.3'
+                }}>Fast Implementation</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  marginBottom: '0'
+                }}>
+                  Quick turnaround on all projects - website examples in 48 hours, security audits within a week, AI solutions deployed rapidly to get you results fast.
+                </p>
+              </div>
+
+              <div className="service-card professional-card" style={{ 
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden',
+                display: 'block',
+                opacity: 1,
+                visibility: 'visible'
+              }}>
+                <div className="service-icon" style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #e11d48, #be123c)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(225, 29, 72, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>📈</div>
+                <h3 style={{ 
+                  color: colors.text.primary, 
+                  fontSize: '1.4rem', 
+                  fontWeight: '700',
+                  marginBottom: '1rem',
+                  lineHeight: '1.3'
+                }}>Hands Free Marketing Systems</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  marginBottom: '0'
+                }}>
+                  Automated email sequences, social media scheduling, lead scoring, and customer retention systems that generate results while you focus on running your business.
+                </p>
+              </div>
+
             </div>
-            <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary">Get Security Assessment</a>
-              <a href="/free-example" className="btn btn-secondary">View Free Website Example</a>
+            <div className="cta-buttons" style={{ marginTop: '3rem', textAlign: 'center' }}>
+              <a href="/contact" className="btn btn-primary" style={{
+                background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                color: 'white',
+                padding: '1rem 2rem',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                display: 'inline-block',
+                boxShadow: '0 4px 12px rgba(29, 122, 175, 0.3)',
+                transition: 'all 0.3s ease',
+                border: 'none'
+              }}>Start the Conversation</a>
             </div>
           </div>
         </section>
 
-
-        {/* Testimonials Section */}
+        {/* Grant & Funding Programs Section */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Why Choose LogicPros for Cybersecurity & Website Development</h2>
-            </div>
-            <div className="services-grid animate-on-scroll">
-              <div className="service-card">
-                <h3>🏆 Proven Expertise</h3>
-                <p>
-                  Years of experience in cybersecurity, web development, and IT services. 
-                  We understand the unique challenges facing New Brunswick businesses.
-                </p>
-              </div>
-              <div className="service-card">
-                <h3>💰 Funding Assistance</h3>
-                <p>
-                  We help you research and apply for available cybersecurity and technology grants. 
-                  Many New Brunswick businesses can access funding to offset implementation costs.
-                </p>
-              </div>
-              <div className="service-card">
-                <h3>⚡ Fast Implementation</h3>
-                <p>
-                  Quick turnaround on all projects - website examples in 48 hours, 
-                  security audits within a week, AI solutions deployed rapidly.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Free Example CTA Section */}
-        <section className="section" style={{ backgroundColor: colors.secondary, color: colors.text.light }}>
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title" style={{ color: colors.text.light }}>Not Sure? See Your Website Before You Buy!</h2>
-              <p style={{ color: colors.text.light, fontSize: '1.2rem', opacity: 0.9 }}>
-                Get a FREE custom website example created specifically for your business. 
-                See exactly how your website will look - no commitment required.
+              <h2 className="section-title">Funding Opportunities Available</h2>
+              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
+                New Brunswick businesses may be eligible for various grants to help cover technology implementation costs. 
+                We help you research and apply for available programs.
               </p>
             </div>
-            <div className="free-example-benefits">
-              <div className="benefit-item">✓ Completely FREE with no obligations</div>
-              <div className="benefit-item">✓ Custom design for YOUR business</div>
-              <div className="benefit-item">✓ Delivered within 48 hours</div>
-              <div className="benefit-item">✓ See it before you decide</div>
+            <div className="services-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gridTemplateRows: 'repeat(2, 1fr)',
+              gap: '2rem',
+              maxWidth: '800px',
+              margin: '0 auto 3rem auto',
+              opacity: '1 !important',
+              visibility: 'visible !important'
+            }}>
+              <div className="service-card professional-card" style={{ 
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(34, 197, 94, 0.2)',
+                borderRadius: '12px',
+                padding: '1.5rem',
+                boxShadow: '0 4px 16px rgba(34, 197, 94, 0.1)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                textAlign: 'center',
+                display: 'block',
+                opacity: 1,
+                visibility: 'visible'
+              }}>
+                <div style={{ 
+                  fontSize: '2rem', 
+                  marginBottom: '1rem'
+                }}>🌐</div>
+                <h4 style={{ 
+                  color: colors.primary, 
+                  fontSize: '1.2rem', 
+                  fontWeight: '700', 
+                  marginBottom: '0.8rem' 
+                }}>Digital Transformation</h4>
+                <p style={{ 
+                  color: colors.text.secondary, 
+                  fontSize: '1rem', 
+                  lineHeight: '1.5', 
+                  margin: '0' 
+                }}>Website development, e-commerce, digital marketing</p>
+              </div>
+
+              <div className="service-card professional-card" style={{ 
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.2)',
+                borderRadius: '12px',
+                padding: '1.5rem',
+                boxShadow: '0 4px 16px rgba(29, 122, 175, 0.1)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                textAlign: 'center',
+                display: 'block',
+                opacity: 1,
+                visibility: 'visible'
+              }}>
+                <div style={{ 
+                  fontSize: '2rem', 
+                  marginBottom: '1rem'
+                }}>🔒</div>
+                <h4 style={{ 
+                  color: colors.primary, 
+                  fontSize: '1.2rem', 
+                  fontWeight: '700', 
+                  marginBottom: '0.8rem' 
+                }}>Cybersecurity Funding</h4>
+                <p style={{ 
+                  color: colors.text.secondary, 
+                  fontSize: '1rem', 
+                  lineHeight: '1.5', 
+                  margin: '0' 
+                }}>Security audits, MFA implementation, IT infrastructure</p>
+              </div>
+
+              <div className="service-card professional-card" style={{ 
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(124, 58, 237, 0.2)',
+                borderRadius: '12px',
+                padding: '1.5rem',
+                boxShadow: '0 4px 16px rgba(124, 58, 237, 0.1)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                textAlign: 'center',
+                display: 'block',
+                opacity: 1,
+                visibility: 'visible'
+              }}>
+                <div style={{ 
+                  fontSize: '2rem', 
+                  marginBottom: '1rem'
+                }}>🤖</div>
+                <h4 style={{ 
+                  color: colors.primary, 
+                  fontSize: '1.2rem', 
+                  fontWeight: '700', 
+                  marginBottom: '0.8rem' 
+                }}>Innovation & AI Support</h4>
+                <p style={{ 
+                  color: colors.text.secondary, 
+                  fontSize: '1rem', 
+                  lineHeight: '1.5', 
+                  margin: '0' 
+                }}>AI automation, chatbots, efficiency improvements</p>
+              </div>
+
+              <div className="service-card professional-card" style={{ 
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(225, 29, 72, 0.2)',
+                borderRadius: '12px',
+                padding: '1.5rem',
+                boxShadow: '0 4px 16px rgba(225, 29, 72, 0.1)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                textAlign: 'center',
+                display: 'block',
+                opacity: 1,
+                visibility: 'visible'
+              }}>
+                <div style={{ 
+                  fontSize: '2rem', 
+                  marginBottom: '1rem'
+                }}>📈</div>
+                <h4 style={{ 
+                  color: colors.primary, 
+                  fontSize: '1.2rem', 
+                  fontWeight: '700', 
+                  marginBottom: '0.8rem' 
+                }}>Marketing Automation</h4>
+                <p style={{ 
+                  color: colors.text.secondary, 
+                  fontSize: '1rem', 
+                  lineHeight: '1.5', 
+                  margin: '0' 
+                }}>Email marketing, SEO, social media automation</p>
+              </div>
             </div>
-            <div className="cta-buttons">
-              <a href="/free-example" className="btn btn-primary" style={{ backgroundColor: colors.accent, color: colors.text.light }}>
-                Get My Free Example Website
-              </a>
-              <a href="/contact" className="btn" style={{ backgroundColor: 'transparent', color: colors.text.light, border: `2px solid ${colors.text.light}` }}>
-                Ask Questions First
-              </a>
+
+            <div style={{ 
+              textAlign: 'center',
+              padding: '2rem',
+              background: 'rgba(29, 122, 175, 0.05)',
+              borderRadius: '12px',
+              border: '1px solid rgba(29, 122, 175, 0.1)',
+              maxWidth: '600px',
+              margin: '0 auto'
+            }}>
+              <p style={{
+                color: colors.text.secondary,
+                fontSize: '1.1rem',
+                lineHeight: '1.6',
+                marginBottom: '1.5rem',
+                fontWeight: '500'
+              }}>
+                Ready to explore funding opportunities for your technology projects?
+              </p>
+              <a href="/contact" className="btn btn-primary" style={{
+                background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                color: 'white',
+                padding: '1rem 2rem',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                display: 'inline-block',
+                boxShadow: '0 4px 12px rgba(29, 122, 175, 0.3)',
+                transition: 'all 0.3s ease',
+                border: 'none'
+              }}>Help Me Find Grant Opportunities</a>
             </div>
           </div>
         </section>
@@ -632,7 +1191,7 @@ export const ResponsiveLandingPage = () => {
             <div className="section-header">
               <h2 className="section-title">Serving New Brunswick Businesses</h2>
               <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
-                Local cybersecurity, AI automation, and IT services across New Brunswick. 
+                Local cybersecurity, AI automation, hands free marketing, and IT services across New Brunswick. 
                 Professional technology solutions available province-wide.
               </p>
             </div>
@@ -640,7 +1199,7 @@ export const ResponsiveLandingPage = () => {
               <div className="service-card" style={{ textAlign: 'center' }}>
                 <h3>🏢 Fredericton</h3>
                 <p>
-                  Cybersecurity audits, AI chatbots, managed IT services, and professional websites 
+                  Cybersecurity audits, AI chatbots, hands free marketing, managed IT services, and professional websites 
                   for Fredericton businesses. Expert technology solutions.
                 </p>
               </div>
@@ -654,7 +1213,7 @@ export const ResponsiveLandingPage = () => {
               <div className="service-card" style={{ textAlign: 'center' }}>
                 <h3>⚓ Saint John</h3>
                 <p>
-                  MFA implementation, predictive analytics, patch management, and digital solutions 
+                  MFA implementation, SEO optimization, patch management, and digital solutions 
                   for Saint John businesses. Professional implementation support.
                 </p>
               </div>
@@ -671,49 +1230,38 @@ export const ResponsiveLandingPage = () => {
                 Professional cybersecurity, AI automation, and technology solutions
               </p>
             </div>
-            <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary">Get Security Assessment</a>
-              <a href="/contact" className="btn btn-secondary">Get Free Consultation</a>
+            <div className="cta-buttons" style={{ textAlign: 'center', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a href="/contact" className="btn btn-primary" style={{
+                background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                color: 'white',
+                padding: '1rem 2rem',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                display: 'inline-block',
+                boxShadow: '0 4px 12px rgba(29, 122, 175, 0.3)',
+                transition: 'all 0.3s ease',
+                border: 'none'
+              }}>Get Security Assessment</a>
+              <a href="/contact" className="btn btn-secondary" style={{
+                background: 'transparent',
+                color: '#1d7aaf',
+                padding: '1rem 2rem',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                display: 'inline-block',
+                border: '2px solid #1d7aaf',
+                transition: 'all 0.3s ease'
+              }}>Get Free Consultation</a>
             </div>
           </div>
         </section>
 
-        {/* Grant Information */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-          <div className="container">
-            <div style={{ textAlign: 'center' }}>
-              <h2 className="section-title" style={{ color: colors.text.primary, marginBottom: '20px' }}>Funding Opportunities Available</h2>
-              <p style={{ fontSize: '1.2rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto 30px' }}>
-                New Brunswick businesses may be eligible for various grants to help cover website development, 
-                AI automation, and cybersecurity implementation costs. We can help you research available programs.
-              </p>
-              <div style={{ background: 'white', borderRadius: '15px', padding: '30px', marginBottom: '30px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <h3 style={{ color: colors.primary, marginBottom: '15px' }}>🌱 Digital Transformation Grants</h3>
-                <p style={{ color: colors.text.secondary, marginBottom: '15px' }}>Many programs support website development, e-commerce, and digital marketing initiatives</p>
-                <h3 style={{ color: colors.primary, marginBottom: '15px' }}>🔒 Cybersecurity Funding</h3>
-                <p style={{ color: colors.text.secondary, marginBottom: '15px' }}>Special funding available for security audits, MFA implementation, and IT infrastructure</p>
-                <h3 style={{ color: colors.accent, marginBottom: '15px' }}>🤖 Innovation & AI Support</h3>
-                <p style={{ color: colors.text.secondary }}>Grants for businesses adopting AI and automation technologies to improve efficiency</p>
-              </div>
-              <a href="/contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '15px 30px' }}>
-                Help Me Find Grant Opportunities
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
 
-      {/* Footer CTA Section */}
-      <section className="footer-cta-section">
-        <div className="container">
-          <div className="footer-cta-content">
-            <h3>Still Not Sure? Get Your FREE Website Example</h3>
-            <p>No risk, no commitment - see your new website before making any decisions</p>
-            <a href="/free-example" className="btn btn-primary btn-large">Get My Free Website Example</a>
-            <div className="assurance-text">✓ Delivered in 48 hours ✓ Completely free ✓ No obligation</div>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <Footer />
