@@ -4,6 +4,7 @@ export const Navigation = () => {
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +26,12 @@ export const Navigation = () => {
   };
 
   const handleLinkClick = () => {
+    setDropdownOpen(null);
+    setMobileMenuOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
     setDropdownOpen(null);
   };
 
@@ -140,8 +147,25 @@ export const Navigation = () => {
         <a href="/about" className="nav-link">About</a>
         <a href="/contact" className="nav-link">Contact</a>
       </div>
+      
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+        <a href="/services" onClick={handleLinkClick}>Services</a>
+        <a href="/services/websites" onClick={handleLinkClick}>Website Design</a>
+        <a href="/services/automations" onClick={handleLinkClick}>AI Automations</a>
+        <a href="/services/it-services" onClick={handleLinkClick}>Cybersecurity & IT</a>
+        <a href="/locations/fredericton" onClick={handleLinkClick}>Fredericton</a>
+        <a href="/locations/moncton" onClick={handleLinkClick}>Moncton</a>
+        <a href="/locations/saint-john" onClick={handleLinkClick}>Saint John</a>
+        <a href="/about" onClick={handleLinkClick}>About</a>
+        <a href="/contact" onClick={handleLinkClick}>Contact</a>
+        <a href="/contact" className="btn btn-mobile-cta" onClick={handleLinkClick}>Let's Talk</a>
+      </div>
+      
       <a href="/contact" className="btn btn-nav-cta">Let's Talk</a>
-      <button className="mobile-menu-toggle">☰</button>
+      <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+        {mobileMenuOpen ? '✕' : '☰'}
+      </button>
     </nav>
   );
 };
@@ -435,6 +459,64 @@ const dropdownStyles = `
   transform: translateY(-2px) !important;
   color: white !important;
   background: transparent !important;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #1a1a1a;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px) saturate(180%);
+}
+
+.mobile-menu-open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu a {
+  display: block;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  background: rgba(29, 122, 175, 0.1);
+  color: #1d7aaf;
+  padding-left: 2.5rem;
+}
+
+.btn-mobile-cta {
+  background: linear-gradient(135deg, #1d7aaf, #1e40af) !important;
+  color: white !important;
+  padding: 1rem 2rem !important;
+  margin: 1rem 2rem !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+  border: none !important;
+}
+
+.btn-mobile-cta:hover {
+  background: linear-gradient(135deg, #1e40af, #1d7aaf) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4) !important;
 }
 
 /* Mobile responsive design */
