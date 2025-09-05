@@ -10,8 +10,55 @@ import { gsap } from 'gsap';
 
 export const ResponsiveLandingPage = () => {
   const heroRef = useRef(null);
+  const headerRef = useRef(null);
 
   useEffect(() => {
+    // Enhanced GSAP scroll animations for header
+    const header = headerRef.current;
+    let lastScrollY = 0;
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 100) {
+        // Add enhanced blur and shadow when scrolled
+        gsap.to(header, {
+          duration: 0.3,
+          css: {
+            backdropFilter: "blur(25px) saturate(200%)",
+            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(29, 122, 175, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
+          },
+          ease: "power2.out"
+        });
+      } else {
+        // Return to original state
+        gsap.to(header, {
+          duration: 0.3,
+          css: {
+            backdropFilter: "blur(20px) saturate(180%)",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(29, 122, 175, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
+          },
+          ease: "power2.out"
+        });
+      }
+      
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial header animation on load
+    gsap.fromTo(header, 
+      { y: -100, opacity: 0 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 1, 
+        ease: "power3.out",
+        delay: 0.2 
+      }
+    );
+
     // Background panning animation
     const style = document.createElement('style');
     style.textContent = `
@@ -82,16 +129,36 @@ export const ResponsiveLandingPage = () => {
         transform: translateY(-2px) !important;
         color: white !important;
       }
+      /* Enhanced Logo Hover Effects */
+      .logo img {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        filter: drop-shadow(0 0 0 transparent);
+      }
+      .logo:hover img {
+        transform: scale(1.05) rotate(1deg);
+        filter: drop-shadow(0 4px 12px rgba(29, 122, 175, 0.3)) saturate(120%);
+      }
+      .logo {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 8px;
+      }
+      .logo:hover {
+        transform: translateY(-1px);
+      }
     `;
     document.head.appendChild(style);
 
-    // CSS animation handles seamless card scrolling - no GSAP needed
+    // Cleanup function
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.head.removeChild(style);
+    };
   }, []);
   return (
     <div className="landing-page homepage">
       <Animations />
       {/* Sticky Header */}
-      <header className="sticky-header">
+      <header className="sticky-header" ref={headerRef}>
         <div className="header-content">
           <div className="logo">
             <Logo />
