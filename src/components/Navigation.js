@@ -463,24 +463,27 @@ const dropdownStyles = `
 
 /* Mobile Menu Styles */
 .mobile-menu {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 80px;
   left: 0;
-  width: 100%;
+  right: 0;
+  width: 100vw;
   background: #1a1a1a;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 0;
-  transform: translateY(-100%);
+  transform: translateX(100%);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px) saturate(180%);
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
 }
 
 .mobile-menu-open {
-  transform: translateY(0);
+  transform: translateX(0);
   opacity: 1;
   visibility: visible;
 }
