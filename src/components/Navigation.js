@@ -150,6 +150,7 @@ export const Navigation = () => {
       
       {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+        <button className="mobile-menu-close" onClick={toggleMobileMenu}>✕</button>
         <a href="/services" onClick={handleLinkClick}>Services</a>
         <a href="/services/websites" onClick={handleLinkClick}>Website Design</a>
         <a href="/services/automations" onClick={handleLinkClick}>AI Automations</a>
@@ -464,23 +465,23 @@ const dropdownStyles = `
 /* Mobile Menu Styles */
 .mobile-menu {
   position: fixed;
-  top: 0;
+  top: 80px;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 80px);
   background: #1a1a1a;
-  padding: 6rem 0 2rem 0;
-  transform: translateX(100%);
+  padding: 2rem 0;
+  transform: translateY(-100%);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 9999;
   overflow-y: auto;
   box-sizing: border-box;
 }
 
 .mobile-menu-open {
-  transform: translateX(0);
+  transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
@@ -520,6 +521,31 @@ const dropdownStyles = `
   background: linear-gradient(135deg, #1e40af, #1d7aaf) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4) !important;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.mobile-menu-close:hover {
+  border-color: #1d7aaf;
+  color: #1d7aaf;
+  transform: scale(1.1);
 }
 
 /* Mobile responsive design */
