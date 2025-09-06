@@ -273,46 +273,151 @@ export const AutomationsPage = () => {
           </div>
         </section>
 
-        {/* Advanced Automations */}
-        <section className="section">
+        {/* Advanced Workflow Automations */}
+        <section className="section" style={{ padding: '80px 0' }}>
           <div className="container">
-            <h2 className="section-title">Advanced Workflow Automations</h2>
-            
-            <div className="features-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
-              <div className="feature-item">
-                <h3>🔄 Lead Follow-Up Sequences</h3>
-                <p>Automatically nurture leads with personalized email and SMS sequences. Convert more prospects into customers with consistent follow-up.</p>
-              </div>
-              
-              <div className="feature-item">
-                <h3>💬 Customer Communication Hub</h3>
-                <p>Centralize all customer communications across email, SMS, and social media. Never miss an important message again.</p>
-              </div>
-              
-              <div className="feature-item">
-                <h3>📊 Invoice & Payment Automation</h3>
-                <p>Automatic invoice generation, payment reminders, and late payment follow-up. Get paid faster with less administrative work.</p>
-              </div>
-              
-              <div className="feature-item">
-                <h3>📋 Project Management Integration</h3>
-                <p>Connect your project management tools with customer communications, scheduling, and reporting systems.</p>
-              </div>
-              
-              <div className="feature-item">
-                <h3>🎯 Lead Qualification System</h3>
-                <p>Automatically score and route leads based on project size, location, and urgency. Focus your time on the best opportunities.</p>
-              </div>
-              
-              <div className="feature-item">
-                <h3>📈 Business Intelligence Dashboard</h3>
-                <p>Real-time reporting on leads, conversions, revenue, and customer satisfaction metrics. Make data-driven decisions.</p>
-              </div>
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', 
+                fontWeight: '700', 
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Advanced Workflow Automations
+              </h2>
+              <p style={{ 
+                fontSize: '1.2rem', 
+                color: '#6b7280', 
+                maxWidth: '600px', 
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Powerful automation workflows that integrate with your existing systems and processes
+              </p>
             </div>
             
-            <div style={{ textAlign: 'center', marginTop: '50px', padding: '30px', backgroundColor: 'rgba(26, 121, 175, 0.05)', borderRadius: '12px', border: '1px solid rgba(26, 121, 175, 0.1)' }}>
-              <p style={{ color: colors.text.secondary, fontSize: '1.1rem', marginBottom: '20px' }}>Ready to eliminate repetitive tasks in your business?</p>
-              <a href="/contact" className="btn btn-primary">Get Your Free Automation Assessment</a>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '30px',
+              marginBottom: '40px'
+            }}>
+              {[
+                {
+                  icon: '🔄',
+                  title: 'Lead Follow-Up Sequences',
+                  description: 'Automatically nurture leads with personalized email and SMS sequences. Convert more prospects into customers with consistent follow-up.'
+                },
+                {
+                  icon: '💬',
+                  title: 'Customer Communication Hub',
+                  description: 'Centralize all customer communications across email, SMS, and social media. Never miss an important message again.'
+                },
+                {
+                  icon: '📊',
+                  title: 'Invoice & Payment Automation',
+                  description: 'Automatic invoice generation, payment reminders, and late payment follow-up. Get paid faster with less administrative work.'
+                },
+                {
+                  icon: '📋',
+                  title: 'Project Management Integration',
+                  description: 'Connect your project management tools with customer communications, scheduling, and reporting systems.'
+                },
+                {
+                  icon: '🎯',
+                  title: 'Lead Qualification System',
+                  description: 'Automatically score and route leads based on project size, location, and urgency. Focus your time on the best opportunities.'
+                },
+                {
+                  icon: '📈',
+                  title: 'Business Intelligence Dashboard',
+                  description: 'Real-time reporting on leads, conversions, revenue, and customer satisfaction metrics. Make data-driven decisions.'
+                }
+              ].map((feature, index) => (
+                <div key={index} style={{ 
+                  background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
+                  borderRadius: '20px',
+                  padding: '40px 30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  border: '1px solid rgba(29, 122, 175, 0.1)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    top: '-50%',
+                    right: '-20%',
+                    width: '120px',
+                    height: '120px',
+                    background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                    borderRadius: '50%',
+                    zIndex: 0
+                  }}></div>
+                  <div style={{ position: 'relative', zIndex: 1 }}>
+                    <div style={{ 
+                      fontSize: '3rem', 
+                      marginBottom: '20px',
+                      background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                      borderRadius: '50%',
+                      width: '70px',
+                      height: '70px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '25px'
+                    }}>{feature.icon}</div>
+                    <h3 style={{ 
+                      fontSize: '1.5rem', 
+                      fontWeight: '600', 
+                      color: '#1f2937', 
+                      marginBottom: '15px',
+                      lineHeight: '1.3'
+                    }}>{feature.title}</h3>
+                    <p style={{ 
+                      color: '#6b7280', 
+                      lineHeight: '1.7',
+                      fontSize: '1rem'
+                    }}>
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Call-to-Action */}
+            <div style={{ textAlign: 'center', marginTop: '60px' }}>
+              <a 
+                href="/contact" 
+                style={{ 
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  padding: '18px 40px',
+                  borderRadius: '50px',
+                  textDecoration: 'none',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  border: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = 'translateY(-3px)';
+                  e.target.style.boxShadow = '0 12px 35px rgba(29, 122, 175, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.3)';
+                }}
+              >
+                Get Your Free Automation Assessment
+              </a>
             </div>
           </div>
         </section>
@@ -360,7 +465,7 @@ export const AutomationsPage = () => {
         <section className="section">
           <div className="container">
             <h2 className="section-title">Our Automation Implementation Process</h2>
-            <div className="services-grid" style={{ marginTop: '30px', paddingTop: '10px', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px' }}>
+            <div className="process-grid-automation" style={{ marginTop: '30px', paddingTop: '10px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px' }}>
               <div className="service-card" style={{ position: 'relative', padding: '50px 30px 30px 30px', marginTop: '25px', overflow: 'visible' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(26, 121, 175, 0.3)', zIndex: 10 }}>1</div>
                 <h3 style={{ color: colors.text.primary, marginBottom: '12px', marginTop: '15px' }}>Business Analysis</h3>
@@ -386,6 +491,14 @@ export const AutomationsPage = () => {
               </div>
             </div>
           </div>
+          
+          <style dangerouslySetInnerHTML={{__html: `
+            @media (max-width: 768px) {
+              .process-grid-automation {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `}} />
         </section>
 
         {/* Industry Applications */}
@@ -597,39 +710,94 @@ export const AutomationsPage = () => {
 
 
         {/* FAQ */}
-        <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
+        <section className="section" style={{ backgroundColor: '#f8f9fa', padding: '80px 0' }}>
           <div className="container">
-            <h2 className="section-title">Automation FAQ</h2>
-            <div className="faq-grid">
-              <div className="faq-item">
-                <h3>How long does setup take?</h3>
-                <p>Basic automations (reviews, social media) typically take 1-2 weeks. Complex workflow automations may take 3-4 weeks depending on integrations needed.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>What if something breaks?</h3>
-                <p>We provide ongoing monitoring and maintenance. Our team is alerted if any automation fails and we fix issues proactively.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>Can I modify automations later?</h3>
-                <p>Absolutely! We can adjust workflows as your business evolves. Many changes can be made without additional development time.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>Do you work with my existing tools?</h3>
-                <p>Yes! We integrate with most popular business tools including CRMs, scheduling software, accounting systems, and more.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>Is my data secure?</h3>
-                <p>Yes. We use enterprise-grade security with encrypted connections. Data can be hosted on your servers or our secure infrastructure.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>How do I get started?</h3>
-                <p>Contact us for a free consultation where we'll assess your current processes and recommend the best automation solutions for your business.</p>
-              </div>
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
+                fontWeight: '700', 
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Automation FAQ</h2>
+              <p style={{ 
+                fontSize: '1.1rem', 
+                color: colors.text.secondary, 
+                maxWidth: '600px', 
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Common questions about our automation implementation process
+              </p>
+            </div>
+            
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '25px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              {[
+                {
+                  question: 'How long does setup take?',
+                  answer: 'Basic automations (reviews, social media) typically take 1-2 weeks. Complex workflow automations may take 3-4 weeks depending on integrations needed.'
+                },
+                {
+                  question: 'What if something breaks?',
+                  answer: 'We provide ongoing monitoring and maintenance. Our team is alerted if any automation fails and we fix issues proactively.'
+                },
+                {
+                  question: 'Can I modify automations later?',
+                  answer: 'Absolutely! We can adjust workflows as your business evolves. Many changes can be made without additional development time.'
+                },
+                {
+                  question: 'Do you work with my existing tools?',
+                  answer: 'Yes! We integrate with most popular business tools including CRMs, scheduling software, accounting systems, and more.'
+                },
+                {
+                  question: 'Is my data secure?',
+                  answer: 'Yes. We use enterprise-grade security with encrypted connections. Data can be hosted on your servers or our secure infrastructure.'
+                },
+                {
+                  question: 'How do I get started?',
+                  answer: 'Contact us for a free consultation where we\'ll assess your current processes and recommend the best automation solutions for your business.'
+                }
+              ].map((faq, index) => (
+                <div key={index} style={{ 
+                  background: 'white',
+                  borderRadius: '16px',
+                  padding: '30px 25px',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                  border: `1px solid rgba(${colors.primary.replace('#', '').match(/.{2}/g).map(hex => parseInt(hex, 16)).join(', ')}, 0.1)`,
+                  transition: 'all 0.3s ease',
+                  position: 'relative'
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    top: '15px',
+                    right: '20px',
+                    color: colors.primary,
+                    fontSize: '1.5rem',
+                    fontWeight: 'bold',
+                    opacity: 0.3
+                  }}>?</div>
+                  <h3 style={{ 
+                    fontSize: '1.3rem', 
+                    fontWeight: '700', 
+                    color: colors.text.primary, 
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    paddingRight: '30px'
+                  }}>{faq.question}</h3>
+                  <p style={{ 
+                    color: colors.text.secondary, 
+                    lineHeight: '1.6',
+                    fontSize: '1rem',
+                    margin: 0
+                  }}>{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
