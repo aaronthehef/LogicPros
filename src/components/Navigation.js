@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 export const Navigation = () => {
   const [dropdownOpen, setDropdownOpen] = useState(null);
@@ -17,6 +18,16 @@ export const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // Cleanup body styles on unmount
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+    };
+  }, []);
+
   const handleMouseEnter = (dropdown) => {
     setDropdownOpen(dropdown);
   };
@@ -31,8 +42,24 @@ export const Navigation = () => {
   };
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
+    const newState = !mobileMenuOpen;
+    setMobileMenuOpen(newState);
     setDropdownOpen(null);
+    
+    // Prevent body scroll when mobile menu is open
+    if (newState) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${window.scrollY}px`;
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
   };
 
   return (
@@ -148,23 +175,113 @@ export const Navigation = () => {
         <a href="/contact" className="nav-link">Contact</a>
       </div>
       
-      {/* Mobile Menu */}
-      <div className={`mobile-menu ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-        <button className="mobile-menu-close" onClick={toggleMobileMenu}>✕</button>
-        <a href="/services" onClick={handleLinkClick}>Services</a>
-        <a href="/services/websites" onClick={handleLinkClick}>Website Design</a>
-        <a href="/services/automations" onClick={handleLinkClick}>AI Automations</a>
-        <a href="/services/it-services" onClick={handleLinkClick}>Cybersecurity & IT</a>
-        <a href="/locations/fredericton" onClick={handleLinkClick}>Fredericton</a>
-        <a href="/locations/moncton" onClick={handleLinkClick}>Moncton</a>
-        <a href="/locations/saint-john" onClick={handleLinkClick}>Saint John</a>
-        <a href="/about" onClick={handleLinkClick}>About</a>
-        <a href="/contact" onClick={handleLinkClick}>Contact</a>
-        <a href="/contact" className="btn btn-mobile-cta" onClick={handleLinkClick}>Let's Talk</a>
-      </div>
+      
+      {/* Mobile Menu - Portal to Body for Proper Positioning */}
+      {mobileMenuOpen && createPortal(
+        <div 
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.95)',
+            zIndex: 2147483647,
+            padding: '2rem 1rem',
+            overflowY: 'auto',
+            pointerEvents: 'auto',
+            border: 'none',
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            margin: 0,
+            boxSizing: 'border-box'
+          }}
+          onClick={(e) => {
+            // Only close if clicking the background, not the content
+            if (e.target === e.currentTarget) {
+              toggleMobileMenu();
+            }
+          }}
+        >
+          <div style={{
+            maxWidth: '400px',
+            width: '100%',
+            color: 'white',
+            fontSize: '1rem',
+            lineHeight: '1.5',
+            position: 'relative',
+            marginTop: '2rem'
+          }}>
+            <button 
+              onClick={toggleMobileMenu}
+              style={{
+                float: 'right',
+                background: 'rgba(255, 255, 255, 0.9)',
+                border: '2px solid #ffffff',
+                color: '#000000',
+                width: '50px',
+                height: '50px',
+                borderRadius: '50%',
+                cursor: 'pointer',
+                fontSize: '1.8rem',
+                marginBottom: '2rem',
+                fontWeight: 'bold',
+                boxShadow: '0 2px 10px rgba(0,0,0,0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >✕</button>
+            
+            <div style={{ clear: 'both', paddingTop: '2rem', zIndex: 1000, position: 'relative' }}>
+              <h3 style={{ color: '#ffffff', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: 'bold' }}>Services</h3>
+              <a href="/services" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>All Services</a>
+              <a href="/services/websites" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Website Design</a>
+              <a href="/services/automations" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>AI Automations</a>
+              <a href="/services/it-services" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Cybersecurity & IT</a>
+              
+              <h3 style={{ color: '#ffffff', marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: 'bold' }}>Contractors</h3>
+              <a href="/contractors/plumbing" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Plumbing</a>
+              <a href="/contractors/electrical" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Electrical</a>
+              <a href="/contractors/hvac" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>HVAC</a>
+              <a href="/contractors/roofing" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Roofing</a>
+              
+              <h3 style={{ color: '#ffffff', marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: 'bold' }}>Locations</h3>
+              <a href="/locations/fredericton" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Fredericton</a>
+              <a href="/locations/moncton" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Moncton</a>
+              <a href="/locations/saint-john" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Saint John</a>
+              
+              <div style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.3)' }}>
+                <a href="/about" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>About</a>
+                <a href="/contact" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Contact</a>
+                
+                <a href="/contact" onClick={handleLinkClick} style={{ 
+                  display: 'block', 
+                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)', 
+                  color: '#ffffff', 
+                  padding: '1rem', 
+                  marginTop: '2rem',
+                  borderRadius: '8px', 
+                  textAlign: 'center', 
+                  fontWeight: '600', 
+                  fontSize: '1.2rem', 
+                  textDecoration: 'none',
+                  border: '2px solid #ffffff',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+                }}>Let's Talk</a>
+              </div>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
       
       <a href="/contact" className="btn btn-nav-cta">Let's Talk</a>
-      <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+      <button 
+        className="mobile-menu-toggle" 
+        onClick={toggleMobileMenu}
+      >
         {mobileMenuOpen ? '✕' : '☰'}
       </button>
     </nav>
@@ -462,95 +579,7 @@ const dropdownStyles = `
   background: transparent !important;
 }
 
-/* Mobile Menu Styles */
-.mobile-menu {
-  position: fixed !important;
-  top: 80px !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  background: #1a1a1a !important;
-  padding: 2rem 0 !important;
-  transform: translateY(-100%) !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transition: all 0.3s ease !important;
-  z-index: 9999 !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
-  max-height: calc(100vh - 80px) !important;
-  overflow-y: auto !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
-}
-
-.mobile-menu-open {
-  transform: translateY(0) !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-.mobile-menu a {
-  display: block !important;
-  color: white !important;
-  padding: 1.25rem 2rem !important;
-  text-decoration: none !important;
-  font-size: 1.2rem !important;
-  font-weight: 500 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  transition: all 0.3s ease !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-}
-
-.mobile-menu a:hover {
-  background: rgba(29, 122, 175, 0.1);
-  color: #1d7aaf;
-  padding-left: 2.5rem;
-}
-
-.btn-mobile-cta {
-  background: linear-gradient(135deg, #1d7aaf, #1e40af) !important;
-  color: white !important;
-  padding: 1.25rem 2rem !important;
-  margin: 2rem 2rem 1rem 2rem !important;
-  border-radius: 8px !important;
-  text-align: center !important;
-  font-weight: 600 !important;
-  border: none !important;
-  font-size: 1.2rem !important;
-}
-
-.btn-mobile-cta:hover {
-  background: linear-gradient(135deg, #1e40af, #1d7aaf) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4) !important;
-}
-
-.mobile-menu-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  font-size: 1.5rem;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  z-index: 10000;
-}
-
-.mobile-menu-close:hover {
-  border-color: #1d7aaf;
-  color: #1d7aaf;
-  transform: scale(1.1);
-}
+/* Mobile Menu Styles removed - using inline styles for mobile menu */
 
 /* Mobile responsive design */
 @media (max-width: 768px) {
@@ -559,6 +588,7 @@ const dropdownStyles = `
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
+    overflow: visible !important;
   }
   
   .nav-links {
@@ -583,6 +613,8 @@ const dropdownStyles = `
     justify-content: center !important;
     width: auto !important;
     height: auto !important;
+    position: relative !important;
+    z-index: 10000 !important;
   }
   
   .mobile-menu-toggle:hover {
@@ -590,20 +622,27 @@ const dropdownStyles = `
     color: #1d7aaf !important;
   }
   
-  .mobile-menu {
-    display: block !important;
-    position: fixed !important;
-    top: 80px !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-  }
+  /* Mobile menu styles handled by inline styles */
 }
 `;
 
-// Inject dropdown styles
+// Inject dropdown styles and ensure viewport meta tag
 if (typeof document !== 'undefined') {
+  // Ensure viewport meta tag exists for proper mobile rendering
+  let viewportMeta = document.querySelector('meta[name="viewport"]');
+  if (!viewportMeta) {
+    viewportMeta = document.createElement('meta');
+    viewportMeta.name = 'viewport';
+    viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+    document.head.appendChild(viewportMeta);
+  } else {
+    // Update existing viewport meta to prevent zoom issues
+    viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+  }
+
   const styleSheet = document.createElement('style');
   styleSheet.textContent = dropdownStyles;
   document.head.appendChild(styleSheet);
+  
+  // Mobile menu body scroll prevention is handled in the React component
 }
