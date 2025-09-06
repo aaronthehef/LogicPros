@@ -60,37 +60,13 @@ export const Animations = () => {
 
 // Inject comprehensive professional animation styles
 const professionalAnimations = `
-/* ===== LOADING ANIMATIONS ===== */
-@keyframes fadeInUp {
+/* ===== MODERN STATIC LOADING ANIMATIONS ===== */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 
@@ -144,64 +120,105 @@ const professionalAnimations = `
   }
 }
 
-/* ===== SCROLL-TRIGGERED ANIMATIONS ===== */
+/* ===== MODERN STATIC REVEAL ANIMATIONS ===== */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .animate-on-scroll.animate-in {
   opacity: 1;
-  transform: translateY(0);
 }
 
-.animate-on-scroll:nth-child(even) {
-  transform: translateX(-50px);
-}
-
-.animate-on-scroll:nth-child(even).animate-in {
-  transform: translateX(0);
-}
-
-/* ===== PROFESSIONAL CARD ANIMATIONS ===== */
+/* ===== MODERN STATIC CARD EFFECTS ===== */
 .service-card, .platform-card, .automation-card, .it-service-card,
 .local-service-card, .story-card, .feature-item {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, #ffffff 0%, #fafbff 100%);
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Modern gradient overlay effect */
 .service-card::before, .platform-card::before, .automation-card::before,
 .it-service-card::before, .local-service-card::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-  transition: left 0.6s;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(102, 126, 234, 0.05) 0%, 
+    rgba(118, 75, 162, 0.05) 50%,
+    rgba(102, 126, 234, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
 }
 
 .service-card:hover::before, .platform-card:hover::before,
 .automation-card:hover::before, .it-service-card:hover::before,
 .local-service-card:hover::before {
-  left: 100%;
+  opacity: 1;
 }
 
+/* Enhanced hover effects with depth */
 .service-card:hover, .platform-card:hover, .automation-card:hover,
 .it-service-card:hover, .local-service-card:hover, .story-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 
+    0 8px 40px rgba(102, 126, 234, 0.15),
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-color: rgba(102, 126, 234, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
 }
 
+/* Modern icon effects */
 .service-card:hover .service-icon, .platform-card:hover .platform-icon,
 .automation-card:hover .automation-icon, .it-service-card:hover .service-icon,
 .local-service-card:hover .service-icon, .story-card:hover .story-icon {
-  transform: scale(1.2) rotate(5deg);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1.15);
+  filter: brightness(1.2) saturate(1.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add modern border glow effect */
+.service-card, .platform-card, .automation-card, .it-service-card,
+.local-service-card, .story-card, .feature-item {
+  position: relative;
+}
+
+.service-card::after, .platform-card::after, .automation-card::after,
+.it-service-card::after, .local-service-card::after, .story-card::after,
+.feature-item::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background-size: 400% 400%;
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.service-card:hover::after, .platform-card:hover::after, .automation-card:hover::after,
+.it-service-card:hover::after, .local-service-card:hover::after, .story-card:hover::after,
+.feature-item:hover::after {
+  opacity: 0.7;
 }
 
 /* ===== TYPEWRITER EFFECT ===== */
@@ -274,17 +291,17 @@ const professionalAnimations = `
 
 /* ===== HERO SECTION ANIMATIONS ===== */
 .hero-content {
-  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-content h1 {
-  animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+  animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
   max-width: 100%;
   word-wrap: break-word;
 }
 
 .hero-content p {
-  animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+  animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
 }
 
 .hero-content .btn {
@@ -321,34 +338,36 @@ const professionalAnimations = `
   width: 60px;
 }
 
-/* ===== ENHANCED GRID ANIMATIONS ===== */
+/* ===== MODERN STATIC GRID STYLING ===== */
 .services-grid > *, .features-grid > *, .platform-grid > *,
 .automation-grid > *, .it-services-grid > * {
-  animation-fill-mode: both;
+  opacity: 1;
+  position: relative;
 }
 
+/* Subtle staggered glow effect on load */
 .services-grid > *:nth-child(1), .features-grid > *:nth-child(1) {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
 }
 
 .services-grid > *:nth-child(2), .features-grid > *:nth-child(2) {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
 }
 
 .services-grid > *:nth-child(3), .features-grid > *:nth-child(3) {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
 }
 
 .services-grid > *:nth-child(4), .features-grid > *:nth-child(4) {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
 }
 
 .services-grid > *:nth-child(5), .features-grid > *:nth-child(5) {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
 }
 
 .services-grid > *:nth-child(6), .features-grid > *:nth-child(6) {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
 }
 
 /* ===== LOADING SPINNER ===== */
@@ -404,14 +423,17 @@ const professionalAnimations = `
 }
 
 @media (max-width: 768px) {
+  /* Keep static effects on mobile - no transforms */
   .service-card:hover, .platform-card:hover, .automation-card:hover,
   .it-service-card:hover, .local-service-card:hover, .story-card:hover {
-    transform: none;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 
+      0 8px 32px rgba(102, 126, 234, 0.12),
+      0 4px 16px rgba(0, 0, 0, 0.08);
+    border-color: rgba(102, 126, 234, 0.3);
   }
   
   .btn:hover {
-    transform: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
 }
 `;
