@@ -768,7 +768,7 @@ export const WebsitesPage = () => {
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <h2 className="section-title">Our 2-4 Week Website Process</h2>
-            <div className="services-grid" style={{ marginTop: '40px', paddingTop: '20px', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
+            <div className="process-grid" style={{ marginTop: '40px', paddingTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
               <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(26, 121, 175, 0.3)', zIndex: 10 }}>1</div>
                 <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Strategy Session</h3>
@@ -794,6 +794,14 @@ export const WebsitesPage = () => {
               </div>
             </div>
           </div>
+          
+          <style dangerouslySetInnerHTML={{__html: `
+            @media (max-width: 768px) {
+              .process-grid {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `}} />
         </section>
 
         {/* Industries We Serve */}
