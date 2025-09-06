@@ -185,41 +185,7 @@ const professionalAnimations = `
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Add modern border glow effect */
-.service-card, .platform-card, .automation-card, .it-service-card,
-.local-service-card, .story-card, .feature-item {
-  position: relative;
-}
-
-.service-card::after, .platform-card::after, .automation-card::after,
-.it-service-card::after, .local-service-card::after, .story-card::after,
-.feature-item::after {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  right: -1px;
-  bottom: -1px;
-  background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background-size: 400% 400%;
-  animation: gradientShift 6s ease infinite;
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.service-card:hover::after, .platform-card:hover::after, .automation-card:hover::after,
-.it-service-card:hover::after, .local-service-card:hover::after, .story-card:hover::after,
-.feature-item:hover::after {
-  opacity: 0.7;
-}
+/* Removed purple gradient border animation - keeping cards simple */
 
 /* ===== TYPEWRITER EFFECT ===== */
 .typewriter-text {

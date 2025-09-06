@@ -218,6 +218,7 @@ export const ResponsiveLandingPage = () => {
   return (
     <div className="landing-page homepage">
       <Animations />
+      
       {/* Sticky Header */}
       <header className="sticky-header" ref={headerRef}>
         <div className="header-content">

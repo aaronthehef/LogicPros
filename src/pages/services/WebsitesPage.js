@@ -234,7 +234,7 @@ export const WebsitesPage = () => {
               All options include mobile-responsive design, SEO optimization, and lead capture features.
             </p>
             
-            <div className="platform-grid animate-on-scroll">
+            <div className="platform-grid">
               <div className="platform-card">
                 <div className="platform-icon floating-icon">🌐</div>
                 <h3>WordPress Websites</h3>
@@ -272,7 +272,7 @@ export const WebsitesPage = () => {
           <div className="container">
             <h2 className="section-title">Everything You Need to Succeed Online</h2>
             
-            <div className="features-grid animate-on-scroll" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
+            <div className="features-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
               <div className="feature-item">
                 <h3>🤖 AI-Powered Copywriting</h3>
                 <p>Professional content written specifically for your industry and target customers. No generic templates or cookie-cutter copy.</p>
@@ -347,7 +347,7 @@ export const WebsitesPage = () => {
               that convert visitors into customers.
             </p>
             
-            <div className="industries-grid animate-on-scroll" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+            <div className="industries-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
               <a href="/contractors/plumbing" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="industry-item">
                   <div className="industry-icon">🚰</div>

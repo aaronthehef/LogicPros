@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mobile Menu Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.5rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .hamburger {
+            display: none;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-size: 1.5rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        /* MOBILE MENU - TESTING DIFFERENT APPROACHES */
+        .mobile-menu {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100vw;
+            height: calc(100vh - 80px);
+            background: #1a1a1a;
+            padding: 1rem 0;
+            transform: translateX(100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99999;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+            contain: layout style paint;
+            will-change: transform;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            color: white;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu a:hover {
+            background: rgba(29, 122, 175, 0.1);
+            color: #1d7aaf;
+            padding-left: 2rem;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        /* Main content */
+        .main-content {
+            margin-top: 80px;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+        
+        .debug-info {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 100000;
+        }
+        
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+        
+        /* RED BORDER FOR DEBUGGING */
+        .mobile-menu {
+            border: 3px solid red !important;
+        }
+        
+        /* ALTERNATIVE APPROACH 1 - SIMPLE OVERLAY */
+        .mobile-menu-v2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            padding-top: 80px;
+            transform: translateX(100%);
+            z-index: 99999;
+            transition: transform 0.3s ease;
+        }
+        
+        /* ALTERNATIVE APPROACH 2 - FROM LEFT SIDE */
+        .mobile-menu-v3 {
+            position: fixed;
+            top: 80px;
+            right: 0;
+            width: 80%;
+            max-width: 300px;
+            height: calc(100vh - 80px);
+            background: #1a1a1a;
+            transform: translateX(100%);
+            z-index: 99999;
+            transition: transform 0.3s ease;
+            border-left: 3px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Logic Pros</div>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </header>
+    
+    <!-- CURRENT MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" onclick="toggleMenu()">✕</button>
+        <a href="#">Services</a>
+        <a href="#">Website Design</a>
+        <a href="#">AI Automations</a>
+        <a href="#">Cybersecurity & IT</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+    
+    <main class="main-content">
+        <h1>Mobile Menu Test Page</h1>
+        <p>This page tests different mobile menu approaches.</p>
+        <p>Click the hamburger menu (☰) to test the mobile menu.</p>
+        <br>
+        <button onclick="showApproach('v1')" style="margin: 5px; padding: 10px;">Test V1 (Current)</button>
+        <button onclick="showApproach('v2')" style="margin: 5px; padding: 10px;">Test V2 (Full Overlay)</button>
+        <button onclick="showApproach('v3')" style="margin: 5px; padding: 10px;">Test V3 (Sidebar)</button>
+        
+        <div style="margin-top: 2rem;">
+            <h3>Debug Info:</h3>
+            <p>Viewport Width: <span id="vw">-</span></p>
+            <p>Document Width: <span id="dw">-</span></p>
+            <p>Menu Position: <span id="mp">-</span></p>
+        </div>
+    </main>
+    
+    <div class="debug-info" id="debugInfo">
+        Debug: Menu closed
+    </div>
+    
+    <script>
+        let isOpen = false;
+        let currentVersion = 'v1';
+        
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            isOpen = !isOpen;
+            
+            if (isOpen) {
+                menu.classList.add('open');
+                document.getElementById('debugInfo').textContent = 'Debug: Menu OPEN';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.remove('open');
+                document.getElementById('debugInfo').textContent = 'Debug: Menu CLOSED';
+                document.body.style.overflow = '';
+            }
+            
+            updateDebugInfo();
+        }
+        
+        function showApproach(version) {
+            const menu = document.getElementById('mobileMenu');
+            menu.className = 'mobile-menu';
+            
+            if (version === 'v2') {
+                menu.classList.add('mobile-menu-v2');
+            } else if (version === 'v3') {
+                menu.classList.add('mobile-menu-v3');
+            }
+            
+            currentVersion = version;
+            document.getElementById('debugInfo').textContent = `Debug: Using ${version}`;
+        }
+        
+        function updateDebugInfo() {
+            document.getElementById('vw').textContent = window.innerWidth + 'px';
+            document.getElementById('dw').textContent = document.body.scrollWidth + 'px';
+            
+            const menu = document.getElementById('mobileMenu');
+            const rect = menu.getBoundingClientRect();
+            document.getElementById('mp').textContent = `Left: ${rect.left}px, Width: ${rect.width}px`;
+        }
+        
+        // Update debug info on window resize
+        window.addEventListener('resize', updateDebugInfo);
+        updateDebugInfo();
+        
+        // Log menu positioning
+        setInterval(() => {
+            if (isOpen) {
+                const menu = document.getElementById('mobileMenu');
+                const rect = menu.getBoundingClientRect();
+                console.log('Menu position:', {
+                    left: rect.left,
+                    right: rect.right,
+                    width: rect.width,
+                    viewportWidth: window.innerWidth,
+                    isVisible: rect.left >= 0 && rect.right <= window.innerWidth
+                });
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
