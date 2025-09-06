@@ -9,7 +9,7 @@
   --background-white: #f5f8fc;
   --max-width: 1200px;
   --section-padding: 80px 20px;
-  --mobile-padding: 40px 20px;
+  --mobile-padding: 40px 5px;
 }
 
 /* Shimmer animation for hero text */
@@ -1323,7 +1323,7 @@ body {
   }
 
   .header-content {
-    padding: 0 20px;
+    padding: 0 5px;
   }
 
   .nav-links {
@@ -1341,7 +1341,7 @@ body {
   .services-grid {
     grid-template-columns: 1fr;
     gap: 25px;
-    padding: 0 5px;
+    padding: 0;
   }
 
   .features-grid {
@@ -1380,7 +1380,7 @@ body {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 20px;
+    padding: 0 5px;
   }
 
   /* Mobile hero section uses mobile padding variable */
@@ -1416,7 +1416,7 @@ body {
   }
 
   .hero-content {
-    padding: 0 15px;
+    padding: 0 5px;
   }
 
   .hero-content h1 {
