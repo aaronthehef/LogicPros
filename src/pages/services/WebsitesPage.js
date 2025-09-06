@@ -226,82 +226,540 @@ export const WebsitesPage = () => {
         </section>
 
         {/* Platform Options */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
           <div className="container">
-            <h2 className="section-title">Choose Your Perfect Platform</h2>
-            <p className="service-intro">
-              We recommend the best platform based on your needs, goals, and technical comfort level. 
-              All options include mobile-responsive design, SEO optimization, and lead capture features.
-            </p>
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
+                fontWeight: '700', 
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Choose Your Perfect Platform</h2>
+              <p style={{ 
+                fontSize: '1.1rem', 
+                color: colors.text.secondary, 
+                maxWidth: '700px', 
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                We recommend the best platform based on your needs, goals, and technical comfort level. 
+                All options include mobile-responsive design, SEO optimization, and lead capture features.
+              </p>
+            </div>
             
-            <div className="platform-grid">
-              <div className="platform-card">
-                <div className="platform-icon floating-icon">🌐</div>
-                <h3>WordPress Websites</h3>
-                <p className="platform-subtitle">Most Popular Choice</p>
-                <ul className="platform-features">
-                  <li>Easy content updates</li>
-                  <li>Thousands of plugins available</li>
-                  <li>Great for SEO</li>
-                  <li>Flexible hosting options</li>
-                  <li>Perfect for contractors</li>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{ 
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `2px solid ${colors.primary}`,
+                position: 'relative',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '15px'
+                  }}>🌐</div>
+                  <h3 style={{ 
+                    fontSize: '1.8rem', 
+                    fontWeight: '700', 
+                    color: colors.text.primary, 
+                    marginBottom: '8px'
+                  }}>WordPress Websites</h3>
+                  <p style={{ 
+                    color: colors.primary, 
+                    fontWeight: '600',
+                    fontSize: '1.1rem'
+                  }}>Most Popular Choice</p>
+                </div>
+                <ul style={{ 
+                  listStyle: 'none',
+                  padding: 0,
+                  marginBottom: '25px'
+                }}>
+                  {[
+                    'Easy content updates',
+                    'Thousands of plugins available',
+                    'Great for SEO',
+                    'Flexible hosting options',
+                    'Perfect for contractors'
+                  ].map((feature, index) => (
+                    <li key={index} style={{ 
+                      padding: '8px 0',
+                      fontSize: '1rem',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}>
+                      <span style={{ 
+                        color: colors.primary, 
+                        marginRight: '10px',
+                        fontWeight: 'bold'
+                      }}>✓</span>
+                      {feature}
+                    </li>
+                  ))}
                 </ul>
-                <p><strong>Best for:</strong> Contractors who want full control and easy updates</p>
+                <p style={{ 
+                  fontSize: '1rem',
+                  color: colors.text.primary,
+                  fontWeight: '600',
+                  textAlign: 'center',
+                  padding: '15px',
+                  backgroundColor: colors.backgrounds.light,
+                  borderRadius: '12px'
+                }}>
+                  <strong>Best for:</strong> Contractors who want full control and easy updates
+                </p>
               </div>
 
-
-              <div className="platform-card">
-                <div className="platform-icon floating-icon">⚡</div>
-                <h3>React Websites</h3>
-                <p className="platform-subtitle">Premium Performance</p>
-                <ul className="platform-features">
-                  <li>Lightning-fast loading</li>
-                  <li>Custom functionality</li>
-                  <li>Modern technology</li>
-                  <li>Superior mobile experience</li>
-                  <li>Advanced integrations</li>
+              <div style={{ 
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `2px solid ${colors.accent}`,
+                position: 'relative',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '15px'
+                  }}>⚡</div>
+                  <h3 style={{ 
+                    fontSize: '1.8rem', 
+                    fontWeight: '700', 
+                    color: colors.text.primary, 
+                    marginBottom: '8px'
+                  }}>React Websites</h3>
+                  <p style={{ 
+                    color: colors.accent, 
+                    fontWeight: '600',
+                    fontSize: '1.1rem'
+                  }}>Premium Performance</p>
+                </div>
+                <ul style={{ 
+                  listStyle: 'none',
+                  padding: 0,
+                  marginBottom: '25px'
+                }}>
+                  {[
+                    'Lightning-fast loading',
+                    'Custom functionality',
+                    'Modern technology',
+                    'Superior mobile experience',
+                    'Advanced integrations'
+                  ].map((feature, index) => (
+                    <li key={index} style={{ 
+                      padding: '8px 0',
+                      fontSize: '1rem',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}>
+                      <span style={{ 
+                        color: colors.accent, 
+                        marginRight: '10px',
+                        fontWeight: 'bold'
+                      }}>✓</span>
+                      {feature}
+                    </li>
+                  ))}
                 </ul>
-                <p><strong>Best for:</strong> Businesses wanting cutting-edge performance and features</p>
+                <p style={{ 
+                  fontSize: '1rem',
+                  color: colors.text.primary,
+                  fontWeight: '600',
+                  textAlign: 'center',
+                  padding: '15px',
+                  backgroundColor: colors.backgrounds.light,
+                  borderRadius: '12px'
+                }}>
+                  <strong>Best for:</strong> Businesses wanting cutting-edge performance and features
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* What's Included */}
-        <section className="section">
+        {/* What's Included - Modern Design */}
+        <section className="section" style={{ backgroundColor: 'linear-gradient(135deg, #f8faff 0%, #ffffff 100%)', padding: '80px 0' }}>
           <div className="container">
-            <h2 className="section-title">Everything You Need to Succeed Online</h2>
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', 
+                fontWeight: '700', 
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Everything You Need to Succeed Online
+              </h2>
+              <p style={{ 
+                fontSize: '1.2rem', 
+                color: '#6b7280', 
+                maxWidth: '600px', 
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Professional websites built for contractors who want to dominate their local market
+              </p>
+            </div>
             
-            <div className="features-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
-              <div className="feature-item">
-                <h3>🤖 AI-Powered Copywriting</h3>
-                <p>Professional content written specifically for your industry and target customers. No generic templates or cookie-cutter copy.</p>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
+              gap: '30px',
+              marginBottom: '40px'
+            }}>
+              {/* AI-Powered Copywriting */}
+              <div style={{ 
+                background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '20px',
+                    background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                    borderRadius: '50%',
+                    width: '70px',
+                    height: '70px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '25px'
+                  }}>🤖</div>
+                  <h3 style={{ 
+                    fontSize: '1.5rem', 
+                    fontWeight: '600', 
+                    color: '#1f2937', 
+                    marginBottom: '15px',
+                    lineHeight: '1.3'
+                  }}>AI-Powered Copywriting</h3>
+                  <p style={{ 
+                    color: '#6b7280', 
+                    lineHeight: '1.7',
+                    fontSize: '1rem'
+                  }}>
+                    Professional content written specifically for your industry and target customers. No generic templates or cookie-cutter copy.
+                  </p>
+                </div>
               </div>
-              
-              <div className="feature-item">
-                <h3>📱 Mobile-Responsive Design</h3>
-                <p>Your website looks perfect and loads fast on all devices - desktop, tablet, and smartphone. Essential for contractor searches.</p>
+
+              {/* Mobile-Responsive Design */}
+              <div style={{ 
+                background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '20px',
+                    background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                    borderRadius: '50%',
+                    width: '70px',
+                    height: '70px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '25px'
+                  }}>📱</div>
+                  <h3 style={{ 
+                    fontSize: '1.5rem', 
+                    fontWeight: '600', 
+                    color: '#1f2937', 
+                    marginBottom: '15px',
+                    lineHeight: '1.3'
+                  }}>Mobile-Responsive Design</h3>
+                  <p style={{ 
+                    color: '#6b7280', 
+                    lineHeight: '1.7',
+                    fontSize: '1rem'
+                  }}>
+                    Your website looks perfect and loads fast on all devices - desktop, tablet, and smartphone. Essential for contractor searches.
+                  </p>
+                </div>
               </div>
-              
-              <div className="feature-item">
-                <h3>🎯 Local SEO Optimization</h3>
-                <p>Optimized for "[your service] near me" searches. Includes Google My Business integration and local directory listings.</p>
+
+              {/* Local SEO Optimization */}
+              <div style={{ 
+                background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '20px',
+                    background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                    borderRadius: '50%',
+                    width: '70px',
+                    height: '70px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '25px'
+                  }}>🎯</div>
+                  <h3 style={{ 
+                    fontSize: '1.5rem', 
+                    fontWeight: '600', 
+                    color: '#1f2937', 
+                    marginBottom: '15px',
+                    lineHeight: '1.3'
+                  }}>Local SEO Optimization</h3>
+                  <p style={{ 
+                    color: '#6b7280', 
+                    lineHeight: '1.7',
+                    fontSize: '1rem'
+                  }}>
+                    Optimized for "[your service] near me" searches. Includes Google My Business integration and local directory listings.
+                  </p>
+                </div>
               </div>
-              
-              <div className="feature-item">
-                <h3>📋 Lead Capture Forms</h3>
-                <p>Custom contact and inquiry forms that gather the information you need to qualify prospects effectively.</p>
+
+              {/* Lead Capture Forms */}
+              <div style={{ 
+                background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '20px',
+                    background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                    borderRadius: '50%',
+                    width: '70px',
+                    height: '70px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '25px'
+                  }}>📋</div>
+                  <h3 style={{ 
+                    fontSize: '1.5rem', 
+                    fontWeight: '600', 
+                    color: '#1f2937', 
+                    marginBottom: '15px',
+                    lineHeight: '1.3'
+                  }}>Lead Capture Forms</h3>
+                  <p style={{ 
+                    color: '#6b7280', 
+                    lineHeight: '1.7',
+                    fontSize: '1rem'
+                  }}>
+                    Custom contact and inquiry forms that gather the information you need to qualify prospects effectively.
+                  </p>
+                </div>
               </div>
-              
-              <div className="feature-item">
-                <h3>🔒 SSL Security & Fast Hosting</h3>
-                <p>Secure, encrypted connection with fast hosting (or integration with your preferred hosting provider).</p>
+
+              {/* SSL Security & Fast Hosting */}
+              <div style={{ 
+                background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '20px',
+                    background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                    borderRadius: '50%',
+                    width: '70px',
+                    height: '70px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '25px'
+                  }}>🔒</div>
+                  <h3 style={{ 
+                    fontSize: '1.5rem', 
+                    fontWeight: '600', 
+                    color: '#1f2937', 
+                    marginBottom: '15px',
+                    lineHeight: '1.3'
+                  }}>SSL Security & Fast Hosting</h3>
+                  <p style={{ 
+                    color: '#6b7280', 
+                    lineHeight: '1.7',
+                    fontSize: '1rem'
+                  }}>
+                    Secure, encrypted connection with fast hosting (or integration with your preferred hosting provider).
+                  </p>
+                </div>
               </div>
-              
-              <div className="feature-item">
-                <h3>📊 Analytics Setup</h3>
-                <p>Google Analytics and Search Console integration to track visitors, leads, and performance.</p>
+
+              {/* Analytics Setup */}
+              <div style={{ 
+                background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '20px',
+                    background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                    borderRadius: '50%',
+                    width: '70px',
+                    height: '70px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '25px'
+                  }}>📊</div>
+                  <h3 style={{ 
+                    fontSize: '1.5rem', 
+                    fontWeight: '600', 
+                    color: '#1f2937', 
+                    marginBottom: '15px',
+                    lineHeight: '1.3'
+                  }}>Analytics Setup</h3>
+                  <p style={{ 
+                    color: '#6b7280', 
+                    lineHeight: '1.7',
+                    fontSize: '1rem'
+                  }}>
+                    Google Analytics and Search Console integration to track visitors, leads, and performance.
+                  </p>
+                </div>
               </div>
+            </div>
+
+            {/* Call-to-Action */}
+            <div style={{ textAlign: 'center', marginTop: '60px' }}>
+              <a 
+                href="/contact" 
+                style={{ 
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  padding: '18px 40px',
+                  borderRadius: '50px',
+                  textDecoration: 'none',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  border: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = 'translateY(-3px)';
+                  e.target.style.boxShadow = '0 12px 35px rgba(29, 122, 175, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.3)';
+                }}
+              >
+                Start Your Website Project Today
+              </a>
             </div>
           </div>
         </section>
@@ -339,116 +797,206 @@ export const WebsitesPage = () => {
         </section>
 
         {/* Industries We Serve */}
-        <section className="section">
+        <section className="section" style={{ padding: '80px 0' }}>
           <div className="container">
-            <h2 className="section-title">Specialized Websites by Industry</h2>
-            <p className="service-intro">
-              While we work with various industries, we specialize in contractor and service business websites 
-              that convert visitors into customers.
-            </p>
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
+                fontWeight: '700', 
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Specialized Websites by Industry</h2>
+              <p style={{ 
+                fontSize: '1.1rem', 
+                color: colors.text.secondary, 
+                maxWidth: '700px', 
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                While we work with various industries, we specialize in contractor and service business websites 
+                that convert visitors into customers.
+              </p>
+            </div>
             
-            <div className="industries-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
-              <a href="/contractors/plumbing" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="industry-item">
-                  <div className="industry-icon">🚰</div>
-                  <h4>Plumbing Contractors</h4>
-                  <p>Emergency repair focus, service area mapping, before/after galleries</p>
-                </div>
-              </a>
-              
-              <a href="/contractors/electrical" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="industry-item">
-                  <div className="industry-icon">⚡</div>
-                  <h4>Electrical Contractors</h4>
-                  <p>Safety credentials, residential/commercial services, smart home features</p>
-                </div>
-              </a>
-              
-              <a href="/contractors/hvac" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="industry-item">
-                  <div className="industry-icon">🌡️</div>
-                  <h4>HVAC Contractors</h4>
-                  <p>Seasonal campaigns, energy efficiency focus, emergency service capture</p>
-                </div>
-              </a>
-              
-              <a href="/contractors/roofing" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="industry-item">
-                  <div className="industry-icon">🏠</div>
-                  <h4>Roofing Contractors</h4>
-                  <p>Storm damage expertise, insurance claim support, material showcases</p>
-                </div>
-              </a>
-              
-              <a href="/contractors/landscaping" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="industry-item">
-                  <div className="industry-icon">🌿</div>
-                  <h4>Landscaping Companies</h4>
-                  <p>Visual portfolios, seasonal services, design consultation booking</p>
-                </div>
-              </a>
-              
-              <a href="/contractors/construction" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="industry-item">
-                  <div className="industry-icon">🏗️</div>
-                  <h4>General Contractors</h4>
-                  <p>Project portfolios, testimonial integration, multi-service positioning</p>
-                </div>
-              </a>
-              
-              <a href="/contractors/painting" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="industry-item">
-                  <div className="industry-icon">🎨</div>
-                  <h4>Painting Contractors</h4>
-                  <p>Residential and commercial painting with color consultation and finish options</p>
-                </div>
-              </a>
-              
-              <a href="/contractors/flooring" className="industry-link" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="industry-item">
-                  <div className="industry-icon">📐</div>
-                  <h4>Flooring Contractors</h4>
-                  <p>Hardwood, tile, carpet installation with material showcases and testimonials</p>
-                </div>
-              </a>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {[
+                { href: '/contractors/plumbing', icon: '🚰', title: 'Plumbing Contractors', desc: 'Emergency repair focus, service area mapping, before/after galleries' },
+                { href: '/contractors/electrical', icon: '⚡', title: 'Electrical Contractors', desc: 'Safety credentials, residential/commercial services, smart home features' },
+                { href: '/contractors/hvac', icon: '🌡️', title: 'HVAC Contractors', desc: 'Seasonal campaigns, energy efficiency focus, emergency service capture' },
+                { href: '/contractors/roofing', icon: '🏠', title: 'Roofing Contractors', desc: 'Storm damage expertise, insurance claim support, material showcases' },
+                { href: '/contractors/landscaping', icon: '🌿', title: 'Landscaping Companies', desc: 'Visual portfolios, seasonal services, design consultation booking' },
+                { href: '/contractors/construction', icon: '🏗️', title: 'General Contractors', desc: 'Project portfolios, testimonial integration, multi-service positioning' },
+                { href: '/contractors/painting', icon: '🎨', title: 'Painting Contractors', desc: 'Residential and commercial painting with color consultation and finish options' },
+                { href: '/contractors/flooring', icon: '📐', title: 'Flooring Contractors', desc: 'Hardwood, tile, carpet installation with material showcases and testimonials' }
+              ].map((industry, index) => (
+                <a 
+                  key={index}
+                  href={industry.href} 
+                  style={{ 
+                    textDecoration: 'none', 
+                    color: 'inherit',
+                    display: 'block',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-5px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <div style={{ 
+                    background: 'white',
+                    borderRadius: '16px',
+                    padding: '35px 25px',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                    border: `1px solid ${colors.backgrounds.light}`,
+                    textAlign: 'center',
+                    height: '100%',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    transition: 'all 0.3s ease'
+                  }}>
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: '4px',
+                      background: `linear-gradient(90deg, ${colors.primary}, ${colors.accent})`,
+                      opacity: 0,
+                      transition: 'all 0.3s ease'
+                    }} className="industry-border"></div>
+                    <div style={{ 
+                      fontSize: '3rem', 
+                      marginBottom: '20px',
+                      filter: 'grayscale(0.2)'
+                    }}>{industry.icon}</div>
+                    <h4 style={{ 
+                      fontSize: '1.3rem', 
+                      fontWeight: '700', 
+                      color: colors.text.primary, 
+                      marginBottom: '15px',
+                      lineHeight: '1.3'
+                    }}>{industry.title}</h4>
+                    <p style={{ 
+                      color: colors.text.secondary, 
+                      lineHeight: '1.6',
+                      fontSize: '0.95rem',
+                      margin: 0
+                    }}>{industry.desc}</p>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
+          
+          <style dangerouslySetInnerHTML={{__html: `
+            .industry-item:hover .industry-border {
+              opacity: 1 !important;
+            }
+            .industry-item:hover {
+              box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+            }
+          `}} />
         </section>
 
         {/* FAQ */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
           <div className="container">
-            <h2 className="section-title">Frequently Asked Questions</h2>
-            <div className="faq-grid">
-              <div className="faq-item">
-                <h3>Which platform should I choose?</h3>
-                <p>We recommend WordPress for most small businesses due to its flexibility and ease of use. React is best for businesses needing custom features or maximum performance.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>Do you provide hosting?</h3>
-                <p>We can provide hosting or work with your existing provider. For WordPress and React, we recommend reliable hosting partners.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>Can I update the website myself?</h3>
-                <p>Absolutely! We provide full training and documentation. WordPress requires basic learning, and React sites typically need developer updates.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>What if I need changes after launch?</h3>
-                <p>Minor updates are included for the first month. After that, we offer ongoing support or train your team to make updates independently.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>Do you work with businesses outside New Brunswick?</h3>
-                <p>Yes! While we're based in New Brunswick, we serve clients across Canada and the United States. All work is done remotely with regular video check-ins.</p>
-              </div>
-              
-              <div className="faq-item">
-                <h3>How do I get started?</h3>
-                <p>Contact us for a free consultation where we'll discuss your needs, goals, and the best approach for your business. We'll create a custom plan tailored to your specific situation.</p>
-              </div>
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
+                fontWeight: '700', 
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Frequently Asked Questions</h2>
+              <p style={{ 
+                fontSize: '1.1rem', 
+                color: colors.text.secondary, 
+                maxWidth: '600px', 
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Get answers to common questions about our website development process
+              </p>
+            </div>
+            
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
+              gap: '25px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              {[
+                {
+                  question: 'Which platform should I choose?',
+                  answer: 'We recommend WordPress for most small businesses due to its flexibility and ease of use. React is best for businesses needing custom features or maximum performance.'
+                },
+                {
+                  question: 'Do you provide hosting?',
+                  answer: 'We can provide hosting or work with your existing provider. For WordPress and React, we recommend reliable hosting partners.'
+                },
+                {
+                  question: 'Can I update the website myself?',
+                  answer: 'Absolutely! We provide full training and documentation. WordPress requires basic learning, and React sites typically need developer updates.'
+                },
+                {
+                  question: 'What if I need changes after launch?',
+                  answer: 'Minor updates are included for the first month. After that, we offer ongoing support or train your team to make updates independently.'
+                },
+                {
+                  question: 'Do you work with businesses outside New Brunswick?',
+                  answer: 'Yes! While we\'re based in New Brunswick, we serve clients across Canada and the United States. All work is done remotely with regular video check-ins.'
+                },
+                {
+                  question: 'How do I get started?',
+                  answer: 'Contact us for a free consultation where we\'ll discuss your needs, goals, and the best approach for your business. We\'ll create a custom plan tailored to your specific situation.'
+                }
+              ].map((faq, index) => (
+                <div key={index} style={{ 
+                  background: 'white',
+                  borderRadius: '16px',
+                  padding: '30px 25px',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                  border: `1px solid rgba(${colors.primary.replace('#', '').match(/.{2}/g).map(hex => parseInt(hex, 16)).join(', ')}, 0.1)`,
+                  transition: 'all 0.3s ease',
+                  position: 'relative'
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    top: '15px',
+                    right: '20px',
+                    color: colors.primary,
+                    fontSize: '1.5rem',
+                    fontWeight: 'bold',
+                    opacity: 0.3
+                  }}>?</div>
+                  <h3 style={{ 
+                    fontSize: '1.3rem', 
+                    fontWeight: '700', 
+                    color: colors.text.primary, 
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    paddingRight: '30px'
+                  }}>{faq.question}</h3>
+                  <p style={{ 
+                    color: colors.text.secondary, 
+                    lineHeight: '1.6',
+                    fontSize: '1rem',
+                    margin: 0
+                  }}>{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
