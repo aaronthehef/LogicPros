@@ -71,6 +71,80 @@ export const ContactPage = () => {
       .floating-particle:nth-child(4) { animation: float1 22s ease-in-out infinite reverse; }
       .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
       .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
+      .hero-button {
+        background: linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%) !important;
+        color: white !important;
+        padding: 18px 40px !important;
+        border-radius: 50px !important;
+        text-decoration: none !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border: none !important;
+        box-shadow: 0 6px 20px rgba(29, 122, 175, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: inline-block !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+        cursor: pointer !important;
+      }
+      .hero-button:hover {
+        box-shadow: 0 8px 30px rgba(29, 122, 175, 0.5) !important;
+        transform: translateY(-3px) !important;
+        color: white !important;
+      }
+      .secondary-button {
+        background: transparent !important;
+        color: #1a79af !important;
+        border: 2px solid #1a79af !important;
+        padding: 18px 40px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border-radius: 50px !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        cursor: pointer !important;
+      }
+      .secondary-button:hover {
+        box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4) !important;
+        transform: translateY(-3px) !important;
+        border-color: rgba(29, 122, 175, 0.8) !important;
+        color: #1a79af !important;
+      }
+      /* Ensure secondary button overrides any parent container styles */
+      div .secondary-button,
+      div div .secondary-button {
+        background: transparent !important;
+        color: #1a79af !important;
+        border: 2px solid #1a79af !important;
+      }
+      div .secondary-button:hover,
+      div div .secondary-button:hover {
+        color: #1a79af !important;
+        border-color: rgba(29, 122, 175, 0.8) !important;
+      }
+      /* White secondary button styling for dark backgrounds */
+      .secondary-button[style*="color: white"] {
+        color: white !important;
+        border-color: white !important;
+      }
+      .secondary-button[style*="color: white"]:hover {
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4) !important;
+        border-color: rgba(255, 255, 255, 0.8) !important;
+      }
+      /* Force blue styling for secondary buttons in orange containers */
+      div[style*="rgba(255, 107, 53"] .secondary-button,
+      div[style*="#ff6b35"] .secondary-button {
+        background: transparent !important;
+        color: #1a79af !important;
+        border: 2px solid #1a79af !important;
+      }
+      div[style*="rgba(255, 107, 53"] .secondary-button:hover,
+      div[style*="#ff6b35"] .secondary-button:hover {
+        color: #1a79af !important;
+        border-color: rgba(29, 122, 175, 0.8) !important;
+        box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4) !important;
+      }
     `;
     document.head.appendChild(style);
     
@@ -112,7 +186,7 @@ export const ContactPage = () => {
 
     try {
       // Submit form via serverless API route
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://logicpros-contact-final-52nuliuct-aaronthehefs-projects.vercel.app/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -455,8 +529,9 @@ export const ContactPage = () => {
 
                   <button 
                     type="submit" 
-                    className="btn btn-primary btn-large"
+                    className="hero-button"
                     disabled={isSubmitting}
+                    style={{ width: '100%', fontSize: '1.2rem', padding: '20px 40px', marginTop: '1.5rem', marginBottom: '1.5rem' }}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message to LogicPros'}
                   </button>
@@ -601,24 +676,9 @@ export const ContactPage = () => {
                     fontSize: '0.95rem',
                     lineHeight: '1.5'
                   }}>Call our office directly for rush projects and immediate consultations.</p>
-                  <a href="tel:+15064782949" style={{
-                    display: 'inline-block',
-                    backgroundColor: 'transparent',
-                    color: '#ff6b35',
-                    padding: '12px 24px',
-                    borderRadius: '8px',
-                    textDecoration: 'none',
-                    fontSize: '1rem',
-                    fontWeight: '600',
-                    border: '2px solid #ff6b35',
-                    transition: 'all 0.3s ease'
-                  }} onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = '#ff6b35';
-                    e.target.style.color = '#ffffff';
-                  }} onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = 'transparent';
-                    e.target.style.color = '#ff6b35';
-                  }}>Call Our Team</a>
+                  <a href="tel:+15064782949" className="hero-button">
+                    Call Our Team
+                  </a>
                 </div>
               </div>
             </div>
@@ -692,56 +752,14 @@ export const ContactPage = () => {
               }}>
                 <button 
                   onClick={scrollToForm}
-                  style={{
-                    backgroundColor: '#1d7aaf',
-                    color: 'white',
-                    padding: '1rem 2rem',
-                    borderRadius: '8px',
-                    textDecoration: 'none',
-                    fontSize: '1.1rem',
-                    fontWeight: '600',
-                    border: 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    boxShadow: '0 4px 12px rgba(29, 122, 175, 0.3)',
-                    minWidth: '200px'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = '#155e8a';
-                    e.target.style.transform = 'translateY(-2px)';
-                    e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = '#1d7aaf';
-                    e.target.style.transform = 'translateY(0)';
-                    e.target.style.boxShadow = '0 4px 12px rgba(29, 122, 175, 0.3)';
-                  }}
-                  className="btn btn-primary"
+                  className="hero-button"
+                  style={{ minWidth: '200px' }}
                 >
                   Get Free Consultation
                 </button>
-                <a href="tel:+15064782949" style={{
-                  backgroundColor: 'transparent',
-                  color: 'white',
-                  padding: '1rem 2rem',
-                  borderRadius: '8px',
-                  textDecoration: 'none',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  border: '2px solid rgba(255, 255, 255, 0.3)',
-                  transition: 'all 0.3s ease',
-                  display: 'inline-block',
-                  minWidth: '200px',
-                  textAlign: 'center'
-                }} onMouseEnter={(e) => {
-                  e.target.style.borderColor = '#1d7aaf';
-                  e.target.style.backgroundColor = 'rgba(29, 122, 175, 0.1)';
-                  e.target.style.transform = 'translateY(-2px)';
-                }} onMouseLeave={(e) => {
-                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-                  e.target.style.backgroundColor = 'transparent';
-                  e.target.style.transform = 'translateY(0)';
-                }} className="btn btn-outline">Call Now</a>
+                <a href="tel:+15064782949" className="secondary-button" style={{ color: 'white', borderColor: 'white', minWidth: '200px', textAlign: 'center' }}>
+                  Call Now
+                </a>
               </div>
             </div>
           </div>

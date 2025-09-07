@@ -56,6 +56,43 @@ export const AboutPage = () => {
       .floating-particle:nth-child(4) { animation: float1 22s ease-in-out infinite reverse; }
       .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
       .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
+      .hero-button {
+        background: linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%) !important;
+        color: white !important;
+        padding: 18px 40px !important;
+        border-radius: 50px !important;
+        text-decoration: none !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border: none !important;
+        box-shadow: 0 6px 20px rgba(29, 122, 175, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: inline-block !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+      }
+      .hero-button:hover {
+        box-shadow: 0 8px 30px rgba(29, 122, 175, 0.5) !important;
+        transform: translateY(-3px) !important;
+        color: white !important;
+      }
+      .secondary-button {
+        background: transparent !important;
+        color: #1a79af !important;
+        border: 2px solid #1a79af !important;
+        padding: 18px 40px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border-radius: 50px !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+      }
+      .secondary-button:hover {
+        box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4) !important;
+        transform: translateY(-3px) !important;
+        border-color: rgba(29, 122, 175, 0.8) !important;
+      }
     `;
     document.head.appendChild(style);
     
@@ -551,18 +588,11 @@ export const AboutPage = () => {
               }}>
                 Let's discuss your project and show you exactly what we can do for your business.
               </p>
-              <a href="/contact" className="btn btn-primary" style={{ 
+              <a href="/contact" className="hero-button" style={{ 
                 backgroundColor: 'white', 
                 color: '#1a1a2e',
                 fontSize: '1.3rem',
-                padding: '20px 45px',
-                borderRadius: '50px',
-                textDecoration: 'none',
-                fontWeight: '700',
-                display: 'inline-block',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 6px 20px rgba(255, 255, 255, 0.3)',
-                border: '2px solid transparent'
+                padding: '20px 45px'
               }}>
                 Free Consultation
               </a>
