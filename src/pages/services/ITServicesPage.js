@@ -284,17 +284,26 @@ export const ITServicesPage = () => {
                     </li>
                   ))}
                 </ul>
-                <p style={{ 
-                  fontSize: '1rem',
-                  color: colors.text.primary,
-                  fontWeight: '600',
-                  textAlign: 'center',
-                  padding: '15px',
-                  backgroundColor: colors.backgrounds.light,
-                  borderRadius: '12px'
-                }}>
-                  <strong>Starting at:</strong> $2,500 comprehensive audit
-                </p>
+                <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                  <a 
+                    href="/contact" 
+                    style={{ 
+                      display: 'inline-block',
+                      background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                      color: 'white',
+                      padding: '12px 24px',
+                      borderRadius: '50px',
+                      textDecoration: 'none',
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      boxShadow: '0 4px 15px rgba(29, 122, 175, 0.3)',
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      border: 'none'
+                    }}
+                  >
+                    Get Assessment Quote
+                  </a>
+                </div>
               </div>
 
               <div style={{ 
@@ -351,17 +360,26 @@ export const ITServicesPage = () => {
                     </li>
                   ))}
                 </ul>
-                <p style={{ 
-                  fontSize: '1rem',
-                  color: colors.text.primary,
-                  fontWeight: '600',
-                  textAlign: 'center',
-                  padding: '15px',
-                  backgroundColor: colors.backgrounds.light,
-                  borderRadius: '12px'
-                }}>
-                  <strong>Starting at:</strong> $150/month per endpoint
-                </p>
+                <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                  <a 
+                    href="/contact" 
+                    style={{ 
+                      display: 'inline-block',
+                      background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                      color: 'white',
+                      padding: '12px 24px',
+                      borderRadius: '50px',
+                      textDecoration: 'none',
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      boxShadow: '0 4px 15px rgba(29, 122, 175, 0.3)',
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      border: 'none'
+                    }}
+                  >
+                    Get IT Support Quote
+                  </a>
+                </div>
               </div>
 
               <div style={{ 
@@ -418,17 +436,26 @@ export const ITServicesPage = () => {
                     </li>
                   ))}
                 </ul>
-                <p style={{ 
-                  fontSize: '1rem',
-                  color: colors.text.primary,
-                  fontWeight: '600',
-                  textAlign: 'center',
-                  padding: '15px',
-                  backgroundColor: colors.backgrounds.light,
-                  borderRadius: '12px'
-                }}>
-                  <strong>Starting at:</strong> $75/user setup + monthly fees
-                </p>
+                <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                  <a 
+                    href="/contact" 
+                    style={{ 
+                      display: 'inline-block',
+                      background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                      color: 'white',
+                      padding: '12px 24px',
+                      borderRadius: '50px',
+                      textDecoration: 'none',
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      boxShadow: '0 4px 15px rgba(29, 122, 175, 0.3)',
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      border: 'none'
+                    }}
+                  >
+                    Get Security Quote
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -808,11 +835,64 @@ export const ITServicesPage = () => {
                 Don't wait for a security incident. Protect your business with enterprise-grade cybersecurity solutions.
               </p>
             </div>
-            <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+            <div style={{ 
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '15px',
+              flexWrap: 'wrap'
+            }}>
+              <a 
+                href="/contact" 
+                style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = 'translateY(-3px)';
+                  e.target.style.boxShadow = '0 12px 35px rgba(29, 122, 175, 0.5)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                }}
+              >
                 Schedule Security Assessment
               </a>
-              <a href="/contact" className="btn btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
+              <a 
+                href="/contact" 
+                style={{
+                  display: 'inline-block',
+                  background: 'transparent',
+                  color: 'white',
+                  border: '2px solid rgba(255, 255, 255, 0.8)',
+                  padding: '16px 38px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none',
+                  backdropFilter: 'blur(10px)'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = 'rgba(255, 255, 255, 0.1)';
+                  e.target.style.borderColor = 'white';
+                  e.target.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = 'transparent';
+                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.8)';
+                  e.target.style.transform = 'translateY(0)';
+                }}
+              >
                 Get IT Support Quote
               </a>
             </div>
