@@ -28,7 +28,19 @@ export const MonctonPage = () => {
                 and businesses in Moncton, Dieppe, Riverview, and throughout Greater Moncton. 
                 Serving the Hub City with cutting-edge digital solutions.
               </p>
-              <a href="/contact" className="btn btn-primary">Get Your Free Quote</a>
+              <a href="/contact" style={{
+  display: 'inline-block',
+  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+  color: 'white',
+  border: 'none',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}}>Get Your Free Quote</a>
             </div>
           </div>
         </section>
@@ -347,7 +359,18 @@ export const MonctonPage = () => {
                     See exactly what your professional website will look like before you commit. 
                     We'll create a custom sample page for your Greater Moncton business at no cost.
                   </p>
-                  <a href="/free-example" className="btn btn-secondary">Get Free Mockup</a>
+                  <a href="/free-example" style={{
+  display: 'inline-block',
+  background: 'transparent',
+  color: '#1a79af',
+  border: '2px solid #1a79af',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}}>Get Free Mockup</a>
                 </div>
                 
                 <div className="start-option">
@@ -356,7 +379,18 @@ export const MonctonPage = () => {
                     15-minute consultation to discuss your business goals and recommend the best 
                     digital marketing strategies for the competitive Moncton market.
                   </p>
-                  <a href="/contact" className="btn btn-secondary">Book Strategy Call</a>
+                  <a href="/contact" style={{
+  display: 'inline-block',
+  background: 'transparent',
+  color: '#1a79af',
+  border: '2px solid #1a79af',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}}>Book Strategy Call</a>
                 </div>
                 
                 <div className="start-option">
@@ -365,7 +399,19 @@ export const MonctonPage = () => {
                     Tell us about your project requirements and receive a detailed proposal 
                     for website design, automation, or IT services in Greater Moncton.
                   </p>
-                  <a href="/contact" className="btn btn-primary">Request Project Quote</a>
+                  <a href="/contact" style={{
+  display: 'inline-block',
+  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+  color: 'white',
+  border: 'none',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}}>Request Project Quote</a>
                 </div>
               </div>
             </div>
@@ -383,10 +429,33 @@ export const MonctonPage = () => {
               </p>
             </div>
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+              <a href="/contact" style={{
+  display: 'inline-block',
+  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+  color: 'white',
+  border: 'none',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}} style={{ backgroundColor: 'white', color: '#000' }}>
                 Start Your Project
               </a>
-              <a href="/free-example" className="btn btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
+              <a href="/free-example" style={{
+  display: 'inline-block',
+  background: 'transparent',
+  color: '#1a79af',
+  border: '2px solid #1a79af',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}} style={{ borderColor: 'white', color: 'white' }}>
                 See Free Example
               </a>
             </div>

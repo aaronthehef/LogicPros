@@ -28,7 +28,19 @@ export const FrederictonPage = () => {
                 and small businesses in Fredericton, Oromocto, Hanwell, and throughout the Capital Region. 
                 Local expertise with modern digital solutions.
               </p>
-              <a href="/contact" className="btn btn-primary">Get Your Free Quote</a>
+              <a href="/contact" style={{
+  display: 'inline-block',
+  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+  color: 'white',
+  border: 'none',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}}>Get Your Free Quote</a>
             </div>
           </div>
         </section>
@@ -306,7 +318,18 @@ export const FrederictonPage = () => {
                     See exactly what your website will look like before you commit. 
                     We'll create a custom sample page for your Fredericton business - completely free.
                   </p>
-                  <a href="/free-example" className="btn btn-secondary">Get Free Example</a>
+                  <a href="/free-example" style={{
+  display: 'inline-block',
+  background: 'transparent',
+  color: '#1a79af',
+  border: '2px solid #1a79af',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}}>Get Free Example</a>
                 </div>
                 
                 <div className="start-option">
@@ -315,7 +338,18 @@ export const FrederictonPage = () => {
                     15-minute call to discuss your business goals and recommend the best 
                     digital solutions for your Fredericton market.
                   </p>
-                  <a href="/contact" className="btn btn-secondary">Schedule Call</a>
+                  <a href="/contact" style={{
+  display: 'inline-block',
+  background: 'transparent',
+  color: '#1a79af',
+  border: '2px solid #1a79af',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}}>Schedule Call</a>
                 </div>
                 
                 <div className="start-option">
@@ -324,7 +358,19 @@ export const FrederictonPage = () => {
                     Tell us about your project and get a detailed quote for website design, 
                     automation, or IT services in Fredericton.
                   </p>
-                  <a href="/contact" className="btn btn-primary">Request Quote</a>
+                  <a href="/contact" style={{
+  display: 'inline-block',
+  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+  color: 'white',
+  border: 'none',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}}>Request Quote</a>
                 </div>
               </div>
             </div>
@@ -342,10 +388,33 @@ export const FrederictonPage = () => {
               </p>
             </div>
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+              <a href="/contact" style={{
+  display: 'inline-block',
+  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+  color: 'white',
+  border: 'none',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}} style={{ backgroundColor: 'white', color: '#000' }}>
                 Get Started Today
               </a>
-              <a href="/free-example" className="btn btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
+              <a href="/free-example" style={{
+  display: 'inline-block',
+  background: 'transparent',
+  color: '#1a79af',
+  border: '2px solid #1a79af',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}} style={{ borderColor: 'white', color: 'white' }}>
                 See Free Example
               </a>
             </div>

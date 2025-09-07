@@ -109,24 +109,23 @@ export const ResponsiveLandingPage = () => {
       .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
       .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
       .hero-button {
-        background: transparent !important;
+        background: linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%) !important;
         color: white !important;
-        padding: 1rem 2rem !important;
-        border-radius: 8px !important;
+        padding: 18px 40px !important;
+        border-radius: 50px !important;
         text-decoration: none !important;
         font-size: 1.1rem !important;
         font-weight: 600 !important;
-        border: 2px solid rgba(255, 255, 255, 0.3) !important;
-        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1) !important;
-        transition: all 0.3s ease !important;
+        border: none !important;
+        box-shadow: 0 6px 20px rgba(29, 122, 175, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
         display: inline-block !important;
         outline: none !important;
         box-sizing: border-box !important;
       }
       .hero-button:hover {
-        border-color: rgba(29, 122, 175, 0.8) !important;
-        box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4), 0 0 20px rgba(29, 122, 175, 0.3) !important;
-        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 30px rgba(29, 122, 175, 0.5) !important;
+        transform: translateY(-3px) !important;
         color: white !important;
       }
       /* Enhanced Logo Hover Effects */
@@ -698,18 +697,26 @@ export const ResponsiveLandingPage = () => {
             <div className="cta-section-inline">
               <h3>Want to see YOUR website before you buy it?</h3>
               <p>We'll create a custom example specifically for your business - delivered in 48 hours, completely free.</p>
-              <a href="/free-example" className="btn btn-primary btn-large" style={{
-                background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+              <a href="/free-example" style={{
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
                 color: 'white',
-                padding: '1rem 2rem',
-                borderRadius: '8px',
+                padding: '18px 40px',
+                borderRadius: '50px',
                 textDecoration: 'none',
                 fontSize: '1.1rem',
                 fontWeight: '600',
                 display: 'inline-block',
-                boxShadow: '0 4px 12px rgba(29, 122, 175, 0.3)',
-                transition: 'all 0.3s ease',
+                boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 border: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                e.target.style.transform = 'translateY(-3px)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                e.target.style.transform = 'translateY(0)';
               }}>Get My Free Website Example</a>
             </div>
           </div>
@@ -993,18 +1000,26 @@ export const ResponsiveLandingPage = () => {
 
             </div>
             <div className="cta-buttons" style={{ marginTop: '3rem', textAlign: 'center' }}>
-              <a href="/contact" className="btn btn-primary" style={{
-                background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+              <a href="/contact" style={{
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
                 color: 'white',
-                padding: '1rem 2rem',
-                borderRadius: '8px',
+                padding: '18px 40px',
+                borderRadius: '50px',
                 textDecoration: 'none',
                 fontSize: '1.1rem',
                 fontWeight: '600',
                 display: 'inline-block',
-                boxShadow: '0 4px 12px rgba(29, 122, 175, 0.3)',
-                transition: 'all 0.3s ease',
+                boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 border: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                e.target.style.transform = 'translateY(-3px)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                e.target.style.transform = 'translateY(0)';
               }}>Start the Conversation</a>
             </div>
           </div>
@@ -1169,18 +1184,26 @@ export const ResponsiveLandingPage = () => {
               }}>
                 Ready to explore funding opportunities for your technology projects?
               </p>
-              <a href="/contact" className="btn btn-primary" style={{
-                background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+              <a href="/contact" style={{
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
                 color: 'white',
-                padding: '1rem 2rem',
-                borderRadius: '8px',
+                padding: '18px 40px',
+                borderRadius: '50px',
                 textDecoration: 'none',
                 fontSize: '1.1rem',
                 fontWeight: '600',
                 display: 'inline-block',
-                boxShadow: '0 4px 12px rgba(29, 122, 175, 0.3)',
-                transition: 'all 0.3s ease',
+                boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 border: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                e.target.style.transform = 'translateY(-3px)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                e.target.style.transform = 'translateY(0)';
               }}>Help Me Find Grant Opportunities</a>
             </div>
           </div>
@@ -1232,30 +1255,48 @@ export const ResponsiveLandingPage = () => {
               </p>
             </div>
             <div className="cta-buttons" style={{ textAlign: 'center', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="/contact" className="btn btn-primary" style={{
-                background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+              <a href="/contact" style={{
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
                 color: 'white',
-                padding: '1rem 2rem',
-                borderRadius: '8px',
+                padding: '18px 40px',
+                borderRadius: '50px',
                 textDecoration: 'none',
                 fontSize: '1.1rem',
                 fontWeight: '600',
                 display: 'inline-block',
-                boxShadow: '0 4px 12px rgba(29, 122, 175, 0.3)',
-                transition: 'all 0.3s ease',
+                boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 border: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                e.target.style.transform = 'translateY(-3px)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                e.target.style.transform = 'translateY(0)';
               }}>Get Security Assessment</a>
-              <a href="/contact" className="btn btn-secondary" style={{
+              <a href="/contact" style={{
                 background: 'transparent',
                 color: '#1d7aaf',
-                padding: '1rem 2rem',
-                borderRadius: '8px',
+                padding: '18px 40px',
+                borderRadius: '50px',
                 textDecoration: 'none',
                 fontSize: '1.1rem',
                 fontWeight: '600',
                 display: 'inline-block',
                 border: '2px solid #1d7aaf',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
+                e.target.style.transform = 'translateY(-3px)';
+                e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.boxShadow = 'none';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.borderColor = '#1d7aaf';
               }}>Get Free Consultation</a>
             </div>
           </div>

@@ -196,19 +196,29 @@ export const WebsitesPage = () => {
                 gap: '15px',
                 flexWrap: 'wrap'
               }}>
-                <a href="/contact" className="btn btn-primary" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%)',
-                  color: '#1a1a2e',
-                  border: '2px solid rgba(255, 255, 255, 0.8)',
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
                   padding: '18px 40px',
                   fontSize: '1.1rem',
                   fontWeight: '600',
                   borderRadius: '50px',
-                  boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  backdropFilter: 'blur(10px)'
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                  e.target.style.transform = 'translateY(-3px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                  e.target.style.transform = 'translateY(0)';
                 }}>Schedule Free Consultation</a>
-                <a href="/free-example" className="btn btn-secondary" style={{
+                <a href="/free-example" style={{
+                  display: 'inline-block',
                   background: 'transparent',
                   color: 'white',
                   border: '2px solid rgba(255, 255, 255, 0.3)',
@@ -216,9 +226,19 @@ export const WebsitesPage = () => {
                   fontSize: '1.1rem',
                   fontWeight: '600',
                   borderRadius: '50px',
-                  boxShadow: '0 4px 12px rgba(255, 255, 255, 0.1)',
-                  transition: 'all 0.3s ease',
-                  backdropFilter: 'blur(10px)'
+                  backdropFilter: 'blur(10px)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
+                  e.target.style.transform = 'translateY(-3px)';
+                  e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.boxShadow = 'none';
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
                 }}>Get Free Website Example</a>
               </div>
             </div>
@@ -745,17 +765,17 @@ export const WebsitesPage = () => {
                   textDecoration: 'none',
                   fontSize: '1.1rem',
                   fontWeight: '600',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   border: 'none'
                 }}
                 onMouseEnter={(e) => {
+                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
                   e.target.style.transform = 'translateY(-3px)';
-                  e.target.style.boxShadow = '0 12px 35px rgba(29, 122, 175, 0.4)';
                 }}
                 onMouseLeave={(e) => {
+                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
                   e.target.style.transform = 'translateY(0)';
-                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.3)';
                 }}
               >
                 Start Your Website Project Today
@@ -1019,10 +1039,53 @@ export const WebsitesPage = () => {
               </p>
             </div>
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+              <a href="/contact" style={{
+                display: 'inline-block',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                color: 'white',
+                border: 'none',
+                padding: '18px 40px',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                borderRadius: '50px',
+                boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                textDecoration: 'none',
+                marginRight: '1rem'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                e.target.style.transform = 'translateY(-3px)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                e.target.style.transform = 'translateY(0)';
+              }}>
                 Schedule Free Consultation
               </a>
-              <a href="/free-example" className="btn btn-secondary" style={{ borderColor: 'white', color: '#000', backgroundColor: 'white' }}>
+              <a href="/free-example" style={{
+                display: 'inline-block',
+                background: 'transparent',
+                color: 'white',
+                border: '2px solid rgba(255, 255, 255, 0.3)',
+                padding: '18px 40px',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                borderRadius: '50px',
+                backdropFilter: 'blur(10px)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                textDecoration: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
+                e.target.style.transform = 'translateY(-3px)';
+                e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.boxShadow = 'none';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+              }}>
                 See a Free Example
               </a>
             </div>

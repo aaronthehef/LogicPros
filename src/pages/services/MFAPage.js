@@ -51,8 +51,32 @@ export const MFAPage = () => {
                 gap: '15px',
                 flexWrap: 'wrap'
               }}>
-                <a href="/contact" className="btn btn-primary">Get MFA Implementation Quote</a>
-                <a href="/contact" className="btn btn-secondary">Ask About Grant Eligibility</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none',
+                  marginRight: '1rem'
+                }}>Get MFA Implementation Quote</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'transparent',
+                  color: colors.primary,
+                  border: `2px solid ${colors.primary}`,
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Ask About Grant Eligibility</a>
               </div>
             </div>
           </div>
@@ -300,8 +324,32 @@ export const MFAPage = () => {
             </div>
             
             <div className="cta-buttons" style={{ marginTop: '50px' }}>
-              <a href="/contact" className="btn btn-primary">Get MFA Implementation</a>
-              <a href="/contact" className="btn btn-secondary">Ask About Grants</a>
+              <a href="/contact" style={{
+                display: 'inline-block',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                color: 'white',
+                border: 'none',
+                padding: '18px 40px',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                borderRadius: '50px',
+                boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                textDecoration: 'none',
+                marginRight: '1rem'
+              }}>Get MFA Implementation</a>
+              <a href="/contact" style={{
+                display: 'inline-block',
+                background: 'transparent',
+                color: colors.primary,
+                border: `2px solid ${colors.primary}`,
+                padding: '18px 40px',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                borderRadius: '50px',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                textDecoration: 'none'
+              }}>Ask About Grants</a>
             </div>
           </div>
         </section>
@@ -532,8 +580,32 @@ export const MFAPage = () => {
               </div>
               
               <div className="cta-buttons">
-                <a href="/contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '15px 35px', marginRight: '20px' }}>Get MFA Implementation Quote</a>
-                <a href="/contact" className="btn btn-secondary" style={{ fontSize: '1.1rem', padding: '15px 35px', background: colors.backgrounds.white, border: `2px solid ${colors.primary}`, color: colors.primary }}>Ask About Grant Funding</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none',
+                  marginRight: '1rem'
+                }}>Get MFA Implementation Quote</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'transparent',
+                  color: colors.primary,
+                  border: `2px solid ${colors.primary}`,
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Ask About Grant Funding</a>
               </div>
             </div>
           </div>

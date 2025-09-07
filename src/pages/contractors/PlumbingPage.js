@@ -1,4 +1,5 @@
 import React from 'react';
+import { colors } from '../../styles/colors';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
@@ -28,8 +29,31 @@ export const PlumbingPage = () => {
                   Get a FREE custom website example built for your plumbing business. 
                   See exactly how it will look - delivered in 48 hours, no commitment required.
                 </p>
-                <a href="/free-example" className="btn btn-primary">Get My Free Website Example</a>
-                <a href="/contact" className="btn btn-secondary" style={{ marginLeft: '1rem' }}>Ask Questions First</a>
+                <a href="/free-example" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Get My Free Website Example</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'transparent',
+                  color: colors.primary,
+                  border: `2px solid ${colors.primary}`,
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }} style={{ marginLeft: '1rem' }}>Ask Questions First</a>
               </div>
             </div>
           </div>
@@ -134,7 +158,19 @@ export const PlumbingPage = () => {
                   <div className="feature">✅ Service area pages</div>
                   <div className="feature">✅ Customer reviews display</div>
                 </div>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Get Started</a>
               </div>
               <div className="solution-card">
                 <h3>Lead Magnet Website</h3>
@@ -146,7 +182,19 @@ export const PlumbingPage = () => {
                   <div className="feature">✅ Online booking system</div>
                   <div className="feature">✅ Google Ads optimization</div>
                 </div>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Get Started</a>
               </div>
               <div className="solution-card">
                 <h3>Custom Plumbing Portal</h3>
@@ -158,7 +206,19 @@ export const PlumbingPage = () => {
                   <div className="feature">✅ Advanced analytics dashboard</div>
                   <div className="feature">✅ Monthly optimization & content</div>
                 </div>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Get Started</a>
               </div>
             </div>
           </div>
@@ -199,7 +259,19 @@ export const PlumbingPage = () => {
               </p>
             </div>
             <div className="cta-buttons">
-              <a href="/free-example" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+              <a href="/free-example" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }} style={{ backgroundColor: 'white', color: '#000' }}>
                 Get My Free Example
               </a>
               <a href="/contact" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>

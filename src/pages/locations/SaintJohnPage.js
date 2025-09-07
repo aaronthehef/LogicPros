@@ -28,7 +28,19 @@ export const SaintJohnPage = () => {
                 in Saint John, Rothesay, Quispamsis, and the Greater Saint John area. 
                 Canada's oldest incorporated city deserves modern digital solutions.
               </p>
-              <a href="/contact" className="btn btn-primary">Get Your Free Quote</a>
+              <a href="/contact" style={{
+  display: 'inline-block',
+  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+  color: 'white',
+  border: 'none',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}}>Get Your Free Quote</a>
             </div>
           </div>
         </section>
@@ -389,7 +401,18 @@ export const SaintJohnPage = () => {
                     See exactly how your professional website will look and function before making any commitment. 
                     We'll create a custom sample page showcasing your Saint John business.
                   </p>
-                  <a href="/free-example" className="btn btn-secondary">Get Free Preview</a>
+                  <a href="/free-example" style={{
+  display: 'inline-block',
+  background: 'transparent',
+  color: '#1a79af',
+  border: '2px solid #1a79af',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}}>Get Free Preview</a>
                 </div>
                 
                 <div className="start-option">
@@ -398,7 +421,18 @@ export const SaintJohnPage = () => {
                     Complimentary consultation to discuss your unique business challenges and opportunities 
                     in the Saint John market, with tailored digital solution recommendations.
                   </p>
-                  <a href="/contact" className="btn btn-secondary">Book Strategy Session</a>
+                  <a href="/contact" style={{
+  display: 'inline-block',
+  background: 'transparent',
+  color: '#1a79af',
+  border: '2px solid #1a79af',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}}>Book Strategy Session</a>
                 </div>
                 
                 <div className="start-option">
@@ -407,7 +441,19 @@ export const SaintJohnPage = () => {
                     Detailed proposal for your specific website, automation, or IT management needs. 
                     Pricing tailored to Saint John businesses and market conditions.
                   </p>
-                  <a href="/contact" className="btn btn-primary">Request Custom Quote</a>
+                  <a href="/contact" style={{
+  display: 'inline-block',
+  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+  color: 'white',
+  border: 'none',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}}>Request Custom Quote</a>
                 </div>
               </div>
             </div>
@@ -425,10 +471,33 @@ export const SaintJohnPage = () => {
               </p>
             </div>
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+              <a href="/contact" style={{
+  display: 'inline-block',
+  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+  color: 'white',
+  border: 'none',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}} style={{ backgroundColor: 'white', color: '#000' }}>
                 Start Your Project
               </a>
-              <a href="/free-example" className="btn btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
+              <a href="/free-example" style={{
+  display: 'inline-block',
+  background: 'transparent',
+  color: '#1a79af',
+  border: '2px solid #1a79af',
+  padding: '18px 40px',
+  fontSize: '1.1rem',
+  fontWeight: '600',
+  borderRadius: '50px',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  textDecoration: 'none'
+}} style={{ borderColor: 'white', color: 'white' }}>
                 See Free Preview
               </a>
             </div>

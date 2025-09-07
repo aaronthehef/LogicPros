@@ -195,17 +195,26 @@ export const AutomationsPage = () => {
                 gap: '15px',
                 flexWrap: 'wrap'
               }}>
-                <a href="/contact" className="btn btn-primary" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%)',
-                  color: '#1a1a2e',
-                  border: '2px solid rgba(255, 255, 255, 0.8)',
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
                   padding: '18px 40px',
                   fontSize: '1.1rem',
                   fontWeight: '600',
                   borderRadius: '50px',
-                  boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  backdropFilter: 'blur(10px)'
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                  e.target.style.transform = 'translateY(-3px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                  e.target.style.transform = 'translateY(0)';
                 }}>Schedule Free Consultation</a>
               </div>
             </div>
@@ -403,17 +412,17 @@ export const AutomationsPage = () => {
                   textDecoration: 'none',
                   fontSize: '1.1rem',
                   fontWeight: '600',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   border: 'none'
                 }}
                 onMouseEnter={(e) => {
+                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
                   e.target.style.transform = 'translateY(-3px)';
-                  e.target.style.boxShadow = '0 12px 35px rgba(29, 122, 175, 0.4)';
                 }}
                 onMouseLeave={(e) => {
+                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
                   e.target.style.transform = 'translateY(0)';
-                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.3)';
                 }}
               >
                 Get Your Free Automation Assessment
@@ -456,7 +465,28 @@ export const AutomationsPage = () => {
             
             <div style={{ textAlign: 'center', marginTop: '40px' }}>
               <p style={{ color: colors.text.secondary, fontSize: '1rem', marginBottom: '15px' }}>Want to see n8n automation in action for your business?</p>
-              <a href="/contact" className="btn btn-secondary">Request a Demo</a>
+              <a href="/contact" style={{
+                display: 'inline-block',
+                background: 'transparent',
+                color: colors.primary,
+                border: `2px solid ${colors.primary}`,
+                padding: '18px 40px',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                borderRadius: '50px',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                textDecoration: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
+                e.target.style.transform = 'translateY(-3px)';
+                e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.boxShadow = 'none';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.borderColor = colors.primary;
+              }}>Request a Demo</a>
             </div>
           </div>
         </section>
@@ -701,8 +731,50 @@ export const AutomationsPage = () => {
             <div style={{ textAlign: 'center', marginTop: '50px' }}>
               <p style={{ color: colors.text.secondary, fontSize: '1.1rem', marginBottom: '20px' }}>See how these automations could work for your specific business.</p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
-                <a href="/contact" className="btn btn-primary">Schedule Strategy Session</a>
-                <a href="/contact" className="btn btn-secondary">Ask About Your Industry</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none',
+                  marginRight: '1rem'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                  e.target.style.transform = 'translateY(-3px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                  e.target.style.transform = 'translateY(0)';
+                }}>Schedule Strategy Session</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'transparent',
+                  color: colors.primary,
+                  border: `2px solid ${colors.primary}`,
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
+                  e.target.style.transform = 'translateY(-3px)';
+                  e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.boxShadow = 'none';
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.borderColor = colors.primary;
+                }}>Ask About Your Industry</a>
               </div>
             </div>
           </div>
@@ -812,10 +884,53 @@ export const AutomationsPage = () => {
               </p>
             </div>
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+              <a href="/contact" style={{
+                display: 'inline-block',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                color: 'white',
+                border: 'none',
+                padding: '18px 40px',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                borderRadius: '50px',
+                boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                textDecoration: 'none',
+                marginRight: '1rem'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                e.target.style.transform = 'translateY(-3px)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                e.target.style.transform = 'translateY(0)';
+              }}>
                 Request Automation Consultation
               </a>
-              <a href="/contact" className="btn btn-secondary" style={{ borderColor: 'white', color: '#000', backgroundColor: 'white' }}>
+              <a href="/contact" style={{
+                display: 'inline-block',
+                background: 'transparent',
+                color: 'white',
+                border: '2px solid rgba(255, 255, 255, 0.3)',
+                padding: '18px 40px',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                borderRadius: '50px',
+                backdropFilter: 'blur(10px)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                textDecoration: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
+                e.target.style.transform = 'translateY(-3px)';
+                e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.boxShadow = 'none';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+              }}>
                 Schedule Discovery Call
               </a>
             </div>

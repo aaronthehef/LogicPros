@@ -1,4 +1,5 @@
 import React from 'react';
+import { colors } from '../../styles/colors';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
@@ -30,7 +31,19 @@ export const ElectricalPage = () => {
                 <p>
                   Show customers you're licensed, safe, and skilled. Get more emergency calls and bigger electrical projects.
                 </p>
-                <a href="/contact" className="btn btn-primary">Get My Website</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Get My Website</a>
               </div>
             </div>
           </div>
@@ -155,7 +168,19 @@ export const ElectricalPage = () => {
                   <div className="feature">✅ Service area pages</div>
                   <div className="feature">✅ Customer reviews</div>
                 </div>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Get Started</a>
               </div>
               <div className="solution-card">
                 <h3>Professional Electrical Website</h3>
@@ -167,7 +192,19 @@ export const ElectricalPage = () => {
                   <div className="feature">✅ Online estimates</div>
                   <div className="feature">✅ Google Ads ready</div>
                 </div>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Get Started</a>
               </div>
               <div className="solution-card">
                 <h3>Custom Electrical Portal</h3>
@@ -179,7 +216,19 @@ export const ElectricalPage = () => {
                   <div className="feature">✅ Advanced tracking</div>
                   <div className="feature">✅ Monthly updates</div>
                 </div>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Get Started</a>
               </div>
             </div>
           </div>
@@ -230,7 +279,19 @@ export const ElectricalPage = () => {
               </p>
             </div>
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+              <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }} style={{ backgroundColor: 'white', color: '#000' }}>
                 Get Started
               </a>
               <a href="/free-example" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>

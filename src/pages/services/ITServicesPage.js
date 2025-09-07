@@ -183,17 +183,26 @@ export const ITServicesPage = () => {
                 gap: '15px',
                 flexWrap: 'wrap'
               }}>
-                <a href="/contact" className="btn btn-primary" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%)',
-                  color: '#1a1a2e',
-                  border: '2px solid rgba(255, 255, 255, 0.8)',
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
                   padding: '18px 40px',
                   fontSize: '1.1rem',
                   fontWeight: '600',
                   borderRadius: '50px',
-                  boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  backdropFilter: 'blur(10px)'
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                  e.target.style.transform = 'translateY(-3px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                  e.target.style.transform = 'translateY(0)';
                 }}>Schedule Security Assessment</a>
               </div>
             </div>
@@ -291,14 +300,22 @@ export const ITServicesPage = () => {
                       display: 'inline-block',
                       background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
                       color: 'white',
-                      padding: '12px 24px',
+                      padding: '18px 40px',
                       borderRadius: '50px',
                       textDecoration: 'none',
-                      fontSize: '1rem',
+                      fontSize: '1.1rem',
                       fontWeight: '600',
-                      boxShadow: '0 4px 15px rgba(29, 122, 175, 0.3)',
-                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                      transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                       border: 'none'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                      e.target.style.transform = 'translateY(-3px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                      e.target.style.transform = 'translateY(0)';
                     }}
                   >
                     Get Assessment Quote
@@ -367,14 +384,22 @@ export const ITServicesPage = () => {
                       display: 'inline-block',
                       background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
                       color: 'white',
-                      padding: '12px 24px',
+                      padding: '18px 40px',
                       borderRadius: '50px',
                       textDecoration: 'none',
-                      fontSize: '1rem',
+                      fontSize: '1.1rem',
                       fontWeight: '600',
-                      boxShadow: '0 4px 15px rgba(29, 122, 175, 0.3)',
-                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                      transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                       border: 'none'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                      e.target.style.transform = 'translateY(-3px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                      e.target.style.transform = 'translateY(0)';
                     }}
                   >
                     Get IT Support Quote
@@ -443,14 +468,22 @@ export const ITServicesPage = () => {
                       display: 'inline-block',
                       background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
                       color: 'white',
-                      padding: '12px 24px',
+                      padding: '18px 40px',
                       borderRadius: '50px',
                       textDecoration: 'none',
-                      fontSize: '1rem',
+                      fontSize: '1.1rem',
                       fontWeight: '600',
-                      boxShadow: '0 4px 15px rgba(29, 122, 175, 0.3)',
-                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                      transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                       border: 'none'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                      e.target.style.transform = 'translateY(-3px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                      e.target.style.transform = 'translateY(0)';
                     }}
                   >
                     Get Security Quote
@@ -591,17 +624,17 @@ export const ITServicesPage = () => {
                   textDecoration: 'none',
                   fontSize: '1.1rem',
                   fontWeight: '600',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   border: 'none'
                 }}
                 onMouseEnter={(e) => {
+                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
                   e.target.style.transform = 'translateY(-3px)';
-                  e.target.style.boxShadow = '0 12px 35px rgba(29, 122, 175, 0.4)';
                 }}
                 onMouseLeave={(e) => {
+                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
                   e.target.style.transform = 'translateY(0)';
-                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.3)';
                 }}
               >
                 Get Your Security Assessment Today
@@ -857,12 +890,12 @@ export const ITServicesPage = () => {
                   textDecoration: 'none'
                 }}
                 onMouseEnter={(e) => {
+                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
                   e.target.style.transform = 'translateY(-3px)';
-                  e.target.style.boxShadow = '0 12px 35px rgba(29, 122, 175, 0.5)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.transform = 'translateY(0)';
                   e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                  e.target.style.transform = 'translateY(0)';
                 }}
               >
                 Schedule Security Assessment
@@ -873,8 +906,8 @@ export const ITServicesPage = () => {
                   display: 'inline-block',
                   background: 'transparent',
                   color: 'white',
-                  border: '2px solid rgba(255, 255, 255, 0.8)',
-                  padding: '16px 38px',
+                  border: '2px solid rgba(255, 255, 255, 0.3)',
+                  padding: '18px 40px',
                   fontSize: '1.1rem',
                   fontWeight: '600',
                   borderRadius: '50px',
@@ -883,14 +916,14 @@ export const ITServicesPage = () => {
                   backdropFilter: 'blur(10px)'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.background = 'rgba(255, 255, 255, 0.1)';
-                  e.target.style.borderColor = 'white';
-                  e.target.style.transform = 'translateY(-2px)';
+                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
+                  e.target.style.transform = 'translateY(-3px)';
+                  e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.background = 'transparent';
-                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.8)';
+                  e.target.style.boxShadow = 'none';
                   e.target.style.transform = 'translateY(0)';
+                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
                 }}
               >
                 Get IT Support Quote

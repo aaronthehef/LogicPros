@@ -1,4 +1,5 @@
 import React from 'react';
+import { colors } from '../../styles/colors';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
@@ -27,7 +28,19 @@ export const RemodelingPage = () => {
                 <p>
                   Get more kitchen and bathroom remodels. Show customers you're the contractor who creates beautiful transformations they'll love.
                 </p>
-                <a href="/contact" className="btn btn-primary">Get My Website</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Get My Website</a>
               </div>
             </div>
           </div>
@@ -132,7 +145,19 @@ export const RemodelingPage = () => {
                   <div className="feature">✅ Process explanation pages</div>
                   <div className="feature">✅ License and insurance display</div>
                 </div>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Get Started</a>
               </div>
               <div className="solution-card">
                 <h3>Professional Remodeling Website</h3>
@@ -144,7 +169,19 @@ export const RemodelingPage = () => {
                   <div className="feature">✅ Online estimate requests</div>
                   <div className="feature">✅ Google Ads optimization</div>
                 </div>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Get Started</a>
               </div>
               <div className="solution-card">
                 <h3>Custom Remodeling Portal</h3>
@@ -156,7 +193,19 @@ export const RemodelingPage = () => {
                   <div className="feature">✅ Advanced project tracking</div>
                   <div className="feature">✅ Monthly content updates</div>
                 </div>
-                <a href="/contact" className="btn btn-primary">Get Started</a>
+                <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}>Get Started</a>
               </div>
             </div>
           </div>
@@ -197,7 +246,19 @@ export const RemodelingPage = () => {
               </p>
             </div>
             <div className="cta-buttons">
-              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+              <a href="/contact" style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }} style={{ backgroundColor: 'white', color: '#000' }}>
                 Get Started
               </a>
               <a href="/free-example" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '2px solid white' }}>
