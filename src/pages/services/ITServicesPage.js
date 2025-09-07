@@ -105,7 +105,7 @@ export const ITServicesPage = () => {
               </linearGradient>
             </defs>
             
-            {/* Main Grid Lines */}
+            {/* Security Grid Lines */}
             <g className="grid-lines" filter="blur(0.5px)">
               <line x1="0" y1="100" x2="1200" y2="100" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.4" strokeDasharray="20,10" />
               <line x1="0" y1="200" x2="1200" y2="200" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
@@ -120,30 +120,20 @@ export const ITServicesPage = () => {
               <line x1="1000" y1="0" x2="1000" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,15" />
             </g>
 
-            {/* Circuit Board Patterns */}
+            {/* Security Patterns */}
             <g className="circuit-patterns" filter="blur(0.3px)">
               <path d="M100,150 L250,150 L270,170 L400,170 L420,150 L600,150" stroke="#1d7aaf" strokeWidth="1" opacity="0.4" fill="none" strokeDasharray="5,3" />
               <path d="M150,250 L300,250 L320,230 L500,230 L520,250 L750,250" stroke="#1e40af" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="8,4" />
               <path d="M80,350 L200,350 L220,330 L350,330 L370,350 L550,350" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.5" fill="none" strokeDasharray="6,2" />
-              
-              <path d="M300,50 L300,180 L280,200 L280,320 L300,340 L300,450" stroke="#1e40af" strokeWidth="1" opacity="0.2" fill="none" strokeDasharray="4,3" />
-              <path d="M500,80 L500,200 L520,220 L520,300 L500,320 L500,480" stroke="#1d7aaf" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="7,3" />
-              <path d="M700,60 L700,150 L680,170 L680,280 L700,300 L700,420" stroke="#1e40af" strokeWidth="1.5" opacity="0.4" fill="none" strokeDasharray="5,4" />
             </g>
 
-            {/* Tech Nodes/Connection Points */}
+            {/* Security Nodes */}
             <g className="tech-nodes">
               <circle cx="150" cy="120" r="4" fill="#1d7aaf" opacity="0.9" />
               <circle cx="270" cy="170" r="3" fill="#1e40af" opacity="0.8" />
               <circle cx="420" cy="150" r="5" fill="#1d7aaf" opacity="1.0" />
-              <circle cx="350" cy="180" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="520" cy="250" r="4" fill="#1d7aaf" opacity="0.8" />
               <circle cx="650" cy="110" r="6" fill="#1e40af" opacity="0.9" />
               <circle cx="850" cy="200" r="3" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="950" cy="140" r="4" fill="#1e40af" opacity="0.8" />
-              <circle cx="300" cy="340" r="5" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="500" cy="320" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="700" cy="300" r="4" fill="#1d7aaf" opacity="0.8" />
             </g>
 
             {/* Glowing Orbs */}
@@ -151,7 +141,6 @@ export const ITServicesPage = () => {
               <circle cx="100" cy="100" r="8" fill="url(#techGradientIT)" opacity="0.4" />
               <circle cx="900" cy="300" r="6" fill="url(#techGradientIT)" opacity="0.5" />
               <circle cx="1100" cy="150" r="10" fill="url(#techGradientIT)" opacity="0.3" />
-              <circle cx="200" cy="400" r="7" fill="url(#techGradientIT)" opacity="0.4" />
             </g>
           </svg>
 
@@ -173,7 +162,7 @@ export const ITServicesPage = () => {
                 color: 'white',
                 textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
                 letterSpacing: '-0.02em'
-              }}>Complete Digital Solutions for New Brunswick Businesses</h1>
+              }}>Enterprise Cybersecurity & Managed IT Services</h1>
               <p style={{ 
                 fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
                 marginBottom: '40px',
@@ -185,8 +174,8 @@ export const ITServicesPage = () => {
                 color: 'rgba(255, 255, 255, 0.95)',
                 textShadow: '0 2px 4px rgba(0, 0, 0, 0.4)'
               }}>
-                Professional website design, AI automation, and cybersecurity services. 
-                Everything you need to grow your business online and protect it from digital threats.
+                Protect your business from cyber threats with comprehensive security audits, managed IT support, 
+                and enterprise-grade security solutions. Keep your data safe and your operations running smoothly.
               </p>
               <div style={{ 
                 display: 'flex',
@@ -205,379 +194,627 @@ export const ITServicesPage = () => {
                   boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   backdropFilter: 'blur(10px)'
-                }}>Schedule Free Consultation</a>
+                }}>Schedule Security Assessment</a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Core Services */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
+        {/* Core Cybersecurity & IT Services */}
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
           <div className="container">
-            <h2 className="section-title" style={{ color: colors.text.primary }}>Our Complete Service Portfolio</h2>
-            <p style={{ fontSize: '1.2rem', color: colors.text.secondary, maxWidth: '800px', margin: '0 auto 50px', textAlign: 'center' }}>
-              From professional websites that convert visitors into customers, to AI automation that saves time, 
-              to cybersecurity that protects your business - we provide everything you need to succeed online.
-            </p>
-            
-            <div className="services-grid">
-              {/* Cybersecurity & Managed IT Services - MOVED TO TOP */}
-              <div className="service-card">
-                <div className="service-icon floating-icon">🔒</div>
-                <h3 style={{ color: colors.text.primary }}>Cybersecurity & IT Services</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6', marginBottom: '20px' }}>
-                  Professional cybersecurity services including security audits, MFA, and managed IT support to protect your business from cyber threats.
-                </p>
-                <ul style={{ color: colors.text.secondary, paddingLeft: '20px', marginBottom: '20px' }}>
-                  <li>Security audits & vulnerability assessments</li>
-                  <li>Multi-factor authentication (MFA)</li>
-                  <li>Password management systems</li>
-                  <li>Endpoint security & patch management</li>
-                  <li>24/7 system monitoring & IT support</li>
-                  <li>Compliance & risk assessment</li>
-                </ul>
-                <div className="cta-buttons">
-                  <a href="/services/security-audits" className="btn btn-primary">Learn More</a>
-                  <a href="/free-example" className="btn btn-secondary">Get Quote</a>
-                </div>
-              </div>
-
-              {/* Professional Website Design */}
-              <div className="service-card">
-                <div className="service-icon floating-icon">🌐</div>
-                <h3 style={{ color: colors.text.primary }}>Website Design & Development</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6', marginBottom: '20px' }}>
-                  Custom websites designed to convert visitors into customers. Mobile-optimized, fast-loading, and built with modern SEO practices.
-                </p>
-                <ul style={{ color: colors.text.secondary, paddingLeft: '20px', marginBottom: '20px' }}>
-                  <li>Responsive mobile-first design</li>
-                  <li>Search engine optimization (SEO)</li>
-                  <li>Fast loading speeds & performance</li>
-                  <li>Content management systems</li>
-                  <li>E-commerce integration</li>
-                  <li>Ongoing maintenance & updates</li>
-                </ul>
-                <div className="cta-buttons">
-                  <a href="/services/websites" className="btn btn-primary">Learn More</a>
-                  <a href="/free-example" className="btn btn-secondary">Get Quote</a>
-                </div>
-              </div>
-
-              {/* AI Automation Solutions */}
-              <div className="service-card">
-                <div className="service-icon floating-icon">🤖</div>
-                <h3 style={{ color: colors.text.primary }}>AI Automation Solutions</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6', marginBottom: '20px' }}>
-                  Intelligent chatbots and automation tools that handle customer inquiries, qualify leads, and streamline business operations.
-                </p>
-                <ul style={{ color: colors.text.secondary, paddingLeft: '20px', marginBottom: '20px' }}>
-                  <li>Custom AI chatbots for your website</li>
-                  <li>Lead qualification automation</li>
-                  <li>Customer support automation</li>
-                  <li>Appointment scheduling bots</li>
-                  <li>Email marketing automation</li>
-                  <li>Business process optimization</li>
-                </ul>
-                <div className="cta-buttons">
-                  <a href="/services/automations" className="btn btn-primary">Learn More</a>
-                  <a href="/contact" className="btn btn-secondary">Get Quote</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Service Specializations */}
-        <section className="section">
-          <div className="container">
-            <h2 className="section-title" style={{ color: 'colors.text.primary' }}>Industry-Specific Solutions</h2>
-            <p style={{ fontSize: '1.1rem', color: 'colors.text.secondary', maxWidth: '700px', margin: '0 auto 50px', textAlign: 'center' }}>
-              We understand that every industry has unique digital needs. Our solutions are tailored 
-              to help your specific business type succeed online and stay secure.
-            </p>
-            
-            <div className="features-grid">
-              <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🏗️</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '20px', fontSize: '1.3rem' }}>Contractors & Trades</h3>
-                <ul style={{ color: colors.text.secondary, textAlign: 'left', paddingLeft: '20px', fontSize: '1rem' }}>
-                  <li>Lead-generating contractor websites</li>
-                  <li>Job estimate automation with AI chatbots</li>
-                  <li>Project management system security</li>
-                  <li>Mobile-optimized quote forms</li>
-                  <li>Customer database protection</li>
-                </ul>
-              </div>
-              
-              <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>💼</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '20px', fontSize: '1.3rem' }}>Professional Services</h3>
-                <ul style={{ color: colors.text.secondary, textAlign: 'left', paddingLeft: '20px', fontSize: '1rem' }}>
-                  <li>Professional service websites with booking</li>
-                  <li>Client consultation automation</li>
-                  <li>Secure client data management</li>
-                  <li>Appointment scheduling chatbots</li>
-                  <li>Compliance and confidentiality protection</li>
-                </ul>
-              </div>
-              
-              <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🏪</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '20px', fontSize: '1.3rem' }}>Retail & E-commerce</h3>
-                <ul style={{ color: colors.text.secondary, textAlign: 'left', paddingLeft: '20px', fontSize: '1rem' }}>
-                  <li>High-converting e-commerce websites</li>
-                  <li>Product recommendation AI</li>
-                  <li>Payment processing security</li>
-                  <li>Inventory management automation</li>
-                  <li>Customer support chatbots</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose LogicPros */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-          <div className="container">
-            <h2 className="section-title" style={{ color: 'colors.text.primary' }}>Why Choose LogicPros for Your Digital Success</h2>
-            <p style={{ fontSize: '1.1rem', color: 'colors.text.secondary', maxWidth: '700px', margin: '0 auto 50px', textAlign: 'center' }}>
-              We're more than just a service provider - we're your digital growth partner, helping New Brunswick 
-              businesses thrive online while staying secure and efficient.
-            </p>
-            
-            <div className="features-grid">
-              <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🇨🇦</div>
-                <h3 style={{ color: 'colors.text.primary', marginBottom: '15px' }}>New Brunswick Local</h3>
-                <p style={{ color: 'colors.text.secondary' }}>Based right here in New Brunswick, we understand local business needs and provide personalized service you can't get from distant corporations.</p>
-              </div>
-              
-              <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🎯</div>
-                <h3 style={{ color: 'colors.text.primary', marginBottom: '15px' }}>Complete Digital Solution</h3>
-                <p style={{ color: 'colors.text.secondary' }}>Websites, AI automation, and cybersecurity all under one roof. No need to juggle multiple vendors for your digital needs.</p>
-              </div>
-              
-              <div className="feature-item" style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🚀</div>
-                <h3 style={{ color: 'colors.text.primary', marginBottom: '15px' }}>Growth-Focused Approach</h3>
-                <p style={{ color: 'colors.text.secondary' }}>Every solution is designed to help you get more customers, save time, and protect your business while you focus on growth.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Success Stories Preview */}
-        <section className="section" style={{ background: colors.backgrounds.gradientPrimary, color: colors.text.light }}>
-          <div className="container">
-            <h2 className="section-title" style={{ color: 'white', marginBottom: '40px' }}>Helping New Brunswick Businesses Succeed</h2>
-            
-            <div className="features-grid">
-              <div style={{ textAlign: 'center', padding: '30px', background: 'rgba(255,255,255,0.1)', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>📈</div>
-                <h3 style={{ color: 'white', marginBottom: '15px' }}>300% Lead Increase</h3>
-                <p style={{ color: 'white', opacity: '0.9' }}>Fredericton contractor saw 3x more leads after website redesign and AI chatbot implementation</p>
-              </div>
-              
-              <div style={{ textAlign: 'center', padding: '30px', background: 'rgba(255,255,255,0.1)', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>🛡️</div>
-                <h3 style={{ color: 'white', marginBottom: '15px' }}>Zero Security Incidents</h3>
-                <p style={{ color: 'white', opacity: '0.9' }}>Moncton professional services firm prevented cyber attacks with our comprehensive security audit</p>
-              </div>
-              
-              <div style={{ textAlign: 'center', padding: '30px', background: 'rgba(255,255,255,0.1)', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>⏱️</div>
-                <h3 style={{ color: 'white', marginBottom: '15px' }}>10 Hours Saved Weekly</h3>
-                <p style={{ color: 'white', opacity: '0.9' }}>Saint John retailer saves time with automated customer inquiries and appointment scheduling</p>
-              </div>
-            </div>
-            
-            <div style={{ textAlign: 'center', marginTop: '40px' }}>
-              <a href="/contact" className="btn btn-primary" style={{ background: colors.accent, color: colors.text.light, padding: '15px 30px', fontWeight: '600' }}>Get Your Success Story</a>
-            </div>
-          </div>
-        </section>
-
-        {/* Service Packages */}
-        <section className="section">
-          <div className="container">
-            <h2 className="section-title" style={{ color: 'colors.text.primary' }}>Complete Digital Growth Packages</h2>
-            <p style={{ fontSize: '1.1rem', color: 'colors.text.secondary', maxWidth: '700px', margin: '0 auto 50px', textAlign: 'center' }}>
-              Choose the perfect combination of website design, AI automation, and cybersecurity 
-              services to take your business to the next level.
-            </p>
-            
-            <div className="services-grid">
-              <div className="service-card" style={{ border: '2px solid #3498db' }}>
-                <div className="service-icon floating-icon" style={{ color: '#3498db' }}>🌱</div>
-                <h3 style={{ color: 'colors.text.primary' }}>Starter Growth Package</h3>
-                <p style={{ color: 'colors.text.secondary', marginBottom: '20px', fontWeight: '500' }}>Perfect for New Businesses</p>
-                <ul style={{ color: 'colors.text.secondary', paddingLeft: '20px', marginBottom: '25px' }}>
-                  <li>Professional 5-page website</li>
-                  <li>Basic AI chatbot for inquiries</li>
-                  <li>Essential security audit</li>
-                  <li>SSL certificate & basic protection</li>
-                  <li>Mobile optimization</li>
-                  <li>3 months support included</li>
-                </ul>
-                <div className="cta-buttons">
-                  <a href="/contact" className="btn btn-primary">Get Quote</a>
-                </div>
-              </div>
-
-              <div className="service-card" style={{ border: `3px solid ${colors.accent}`, position: 'relative' }}>
-                <div style={{ position: 'absolute', top: '-15px', left: '50%', transform: 'translateX(-50%)', background: colors.accent, color: 'white', padding: '8px 20px', borderRadius: '20px', fontSize: '0.9rem', fontWeight: '600' }}>Most Popular</div>
-                <div className="service-icon floating-icon" style={{ color: colors.accent }}>🚀</div>
-                <h3 style={{ color: 'colors.text.primary' }}>Complete Business Package</h3>
-                <p style={{ color: 'colors.text.secondary', marginBottom: '20px', fontWeight: '500' }}>Everything You Need to Succeed</p>
-                <ul style={{ color: 'colors.text.secondary', paddingLeft: '20px', marginBottom: '25px' }}>
-                  <li>Custom website with lead generation</li>
-                  <li>Advanced AI chatbot & automation</li>
-                  <li>Comprehensive security audit</li>
-                  <li>Multi-factor authentication setup</li>
-                  <li>Password management system</li>
-                  <li>6 months support & optimization</li>
-                </ul>
-                <div className="cta-buttons">
-                  <a href="/contact" className="btn btn-primary">Get Quote</a>
-                </div>
-              </div>
-
-              <div className="service-card" style={{ border: '2px solid #8e44ad' }}>
-                <div className="service-icon floating-icon" style={{ color: '#8e44ad' }}>🏆</div>
-                <h3 style={{ color: 'colors.text.primary' }}>Enterprise Solution</h3>
-                <p style={{ color: 'colors.text.secondary', marginBottom: '20px', fontWeight: '500' }}>Maximum Growth & Protection</p>
-                <ul style={{ color: 'colors.text.secondary', paddingLeft: '20px', marginBottom: '25px' }}>
-                  <li>Custom e-commerce or advanced website</li>
-                  <li>Full AI automation suite</li>
-                  <li>Complete cybersecurity implementation</li>
-                  <li>24/7 monitoring & managed IT</li>
-                  <li>Priority support & dedicated account manager</li>
-                  <li>12 months comprehensive service</li>
-                </ul>
-                <div className="cta-buttons">
-                  <a href="/contact" className="btn btn-primary">Get Quote</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Digital Growth Statistics */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-          <div className="container">
-            <h2 className="section-title" style={{ color: 'colors.text.primary' }}>The Digital Advantage for New Brunswick Businesses</h2>
-            <p style={{ fontSize: '1.1rem', color: 'colors.text.secondary', maxWidth: '800px', margin: '0 auto 40px', textAlign: 'center' }}>
-              Modern digital solutions aren't just nice to have - they're essential for business growth and protection in today's competitive landscape.
-            </p>
-            
-            <div className="features-grid" style={{ marginBottom: '50px' }}>
-              <div style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <h3 style={{ fontSize: '3rem', color: '#3498db', fontWeight: '700', margin: '0 0 15px 0' }}>75%</h3>
-                <h4 style={{ color: 'colors.text.primary', marginBottom: '15px' }}>More Leads with Professional Websites</h4>
-                <p style={{ color: 'colors.text.secondary', fontSize: '0.95rem' }}>Businesses with modern, mobile-optimized websites generate significantly more qualified leads</p>
-              </div>
-              
-              <div style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <h3 style={{ fontSize: '3rem', color: colors.accent, fontWeight: '700', margin: '0 0 15px 0' }}>60%</h3>
-                <h4 style={{ color: 'colors.text.primary', marginBottom: '15px' }}>Time Saved with AI Automation</h4>
-                <p style={{ color: 'colors.text.secondary', fontSize: '0.95rem' }}>Businesses using AI chatbots reduce customer service workload by over half</p>
-              </div>
-              
-              <div style={{ textAlign: 'center', padding: '30px', background: 'white', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <h3 style={{ fontSize: '3rem', color: '#8e44ad', fontWeight: '700', margin: '0 0 15px 0' }}>99.9%</h3>
-                <h4 style={{ color: 'colors.text.primary', marginBottom: '15px' }}>Attack Prevention with MFA</h4>
-                <p style={{ color: 'colors.text.secondary', fontSize: '0.95rem' }}>Multi-factor authentication blocks nearly all automated password attacks</p>
-              </div>
-            </div>
-            
-            <div style={{ background: 'white', borderRadius: '20px', padding: '40px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
-              <h3 style={{ textAlign: 'center', color: colors.text.primary, marginBottom: '30px', fontSize: '1.5rem' }}>The Complete Digital Growth Formula</h3>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '20px' }}>
-                <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', minHeight: '140px', justifyContent: 'space-between', width: '160px', flex: '0 0 160px' }}>
-                  <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🌐</div>
-                  <h4 style={{ color: colors.text.primary, marginBottom: '10px' }}>Professional Website</h4>
-                  <p style={{ color: colors.text.secondary, fontSize: '0.9rem' }}>Attracts and converts visitors into customers 24/7</p>
-                </div>
-                <div style={{ textAlign: 'center', fontSize: '1.5rem', color: colors.text.secondary, flex: '0 0 auto', padding: '0 10px' }}>+</div>
-                <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', minHeight: '140px', justifyContent: 'space-between', width: '160px', flex: '0 0 160px' }}>
-                  <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🤖</div>
-                  <h4 style={{ color: colors.text.primary, marginBottom: '10px' }}>AI Automation</h4>
-                  <p style={{ color: colors.text.secondary, fontSize: '0.9rem' }}>Handles inquiries and qualifies leads automatically</p>
-                </div>
-                <div style={{ textAlign: 'center', fontSize: '1.5rem', color: colors.text.secondary, flex: '0 0 auto', padding: '0 10px' }}>+</div>
-                <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', minHeight: '140px', justifyContent: 'space-between', width: '160px', flex: '0 0 160px' }}>
-                  <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🔒</div>
-                  <h4 style={{ color: colors.text.primary, marginBottom: '10px' }}>Cybersecurity</h4>
-                  <p style={{ color: colors.text.secondary, fontSize: '0.9rem' }}>Protects your business and customer data</p>
-                </div>
-                <div style={{ textAlign: 'center', fontSize: '1.5rem', color: colors.accent, flex: '0 0 auto', padding: '0 10px', fontWeight: 'bold' }}>=</div>
-                <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', minHeight: '140px', justifyContent: 'space-between', width: '160px', flex: '0 0 160px' }}>
-                  <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>📈</div>
-                  <h4 style={{ color: colors.text.primary, marginBottom: '10px' }}>Business Growth</h4>
-                  <p style={{ color: colors.text.secondary, fontSize: '0.9rem' }}>More customers, less work, complete protection</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Grant Information */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-          <div className="container">
-            <div style={{ textAlign: 'center' }}>
-              <h2 className="section-title" style={{ color: colors.text.primary, marginBottom: '20px' }}>Funding Opportunities Available</h2>
-              <p style={{ fontSize: '1.2rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto 30px' }}>
-                New Brunswick businesses may be eligible for various grants to help cover website development, 
-                AI automation, and cybersecurity implementation costs. We can help you research available programs.
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
+                fontWeight: '700', 
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Comprehensive Cybersecurity Solutions</h2>
+              <p style={{ 
+                fontSize: '1.1rem', 
+                color: colors.text.secondary, 
+                maxWidth: '700px', 
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Protect your business with enterprise-grade security solutions designed for small to medium businesses. 
+                From threat detection to compliance, we've got you covered.
               </p>
-              <div style={{ background: 'white', borderRadius: '15px', padding: '30px', marginBottom: '30px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                <h3 style={{ color: colors.primary, marginBottom: '15px' }}>🌱 Digital Transformation Grants</h3>
-                <p style={{ color: colors.text.secondary, marginBottom: '15px' }}>Many programs support website development, e-commerce, and digital marketing initiatives</p>
-                <h3 style={{ color: colors.primary, marginBottom: '15px' }}>🔒 Cybersecurity Funding</h3>
-                <p style={{ color: colors.text.secondary, marginBottom: '15px' }}>Special funding available for security audits, MFA implementation, and IT infrastructure</p>
-                <h3 style={{ color: colors.accent, marginBottom: '15px' }}>🤖 Innovation & AI Support</h3>
-                <p style={{ color: colors.text.secondary }}>Grants for businesses adopting AI and automation technologies to improve efficiency</p>
+            </div>
+            
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '30px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{ 
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `2px solid ${colors.primary}`,
+                position: 'relative',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '15px'
+                  }}>🔒</div>
+                  <h3 style={{ 
+                    fontSize: '1.8rem', 
+                    fontWeight: '700', 
+                    color: colors.text.primary, 
+                    marginBottom: '8px'
+                  }}>Security Audits</h3>
+                  <p style={{ 
+                    color: colors.primary, 
+                    fontWeight: '600',
+                    fontSize: '1.1rem'
+                  }}>Comprehensive Assessment</p>
+                </div>
+                <ul style={{ 
+                  listStyle: 'none',
+                  padding: 0,
+                  marginBottom: '25px'
+                }}>
+                  {[
+                    'Vulnerability scanning & assessment',
+                    'Network security evaluation',
+                    'Risk analysis & reporting',
+                    'Compliance gap analysis',
+                    'Remediation recommendations'
+                  ].map((feature, index) => (
+                    <li key={index} style={{ 
+                      padding: '8px 0',
+                      fontSize: '1rem',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}>
+                      <span style={{ 
+                        color: colors.primary, 
+                        marginRight: '10px',
+                        fontWeight: 'bold'
+                      }}>✓</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <p style={{ 
+                  fontSize: '1rem',
+                  color: colors.text.primary,
+                  fontWeight: '600',
+                  textAlign: 'center',
+                  padding: '15px',
+                  backgroundColor: colors.backgrounds.light,
+                  borderRadius: '12px'
+                }}>
+                  <strong>Starting at:</strong> $2,500 comprehensive audit
+                </p>
               </div>
-              <a href="/contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '15px 30px' }}>
-                Help Me Find Grant Opportunities
+
+              <div style={{ 
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `2px solid ${colors.accent}`,
+                position: 'relative',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '15px'
+                  }}>🛡️</div>
+                  <h3 style={{ 
+                    fontSize: '1.8rem', 
+                    fontWeight: '700', 
+                    color: colors.text.primary, 
+                    marginBottom: '8px'
+                  }}>Managed IT Support</h3>
+                  <p style={{ 
+                    color: colors.accent, 
+                    fontWeight: '600',
+                    fontSize: '1.1rem'
+                  }}>24/7 Monitoring</p>
+                </div>
+                <ul style={{ 
+                  listStyle: 'none',
+                  padding: 0,
+                  marginBottom: '25px'
+                }}>
+                  {[
+                    'Remote system monitoring',
+                    'Patch management & updates',
+                    'Endpoint security management',
+                    'Help desk support',
+                    'Proactive issue resolution'
+                  ].map((feature, index) => (
+                    <li key={index} style={{ 
+                      padding: '8px 0',
+                      fontSize: '1rem',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}>
+                      <span style={{ 
+                        color: colors.accent, 
+                        marginRight: '10px',
+                        fontWeight: 'bold'
+                      }}>✓</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <p style={{ 
+                  fontSize: '1rem',
+                  color: colors.text.primary,
+                  fontWeight: '600',
+                  textAlign: 'center',
+                  padding: '15px',
+                  backgroundColor: colors.backgrounds.light,
+                  borderRadius: '12px'
+                }}>
+                  <strong>Starting at:</strong> $150/month per endpoint
+                </p>
+              </div>
+
+              <div style={{ 
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `2px solid ${colors.secondary}`,
+                position: 'relative',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '15px'
+                  }}>🔐</div>
+                  <h3 style={{ 
+                    fontSize: '1.8rem', 
+                    fontWeight: '700', 
+                    color: colors.text.primary, 
+                    marginBottom: '8px'
+                  }}>Identity & Access</h3>
+                  <p style={{ 
+                    color: colors.secondary, 
+                    fontWeight: '600',
+                    fontSize: '1.1rem'
+                  }}>MFA & Password Security</p>
+                </div>
+                <ul style={{ 
+                  listStyle: 'none',
+                  padding: 0,
+                  marginBottom: '25px'
+                }}>
+                  {[
+                    'Multi-factor authentication setup',
+                    'Password management systems',
+                    'Single sign-on (SSO) solutions',
+                    'Access control policies',
+                    'User security training'
+                  ].map((feature, index) => (
+                    <li key={index} style={{ 
+                      padding: '8px 0',
+                      fontSize: '1rem',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'center'
+                    }}>
+                      <span style={{ 
+                        color: colors.secondary, 
+                        marginRight: '10px',
+                        fontWeight: 'bold'
+                      }}>✓</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <p style={{ 
+                  fontSize: '1rem',
+                  color: colors.text.primary,
+                  fontWeight: '600',
+                  textAlign: 'center',
+                  padding: '15px',
+                  backgroundColor: colors.backgrounds.light,
+                  borderRadius: '12px'
+                }}>
+                  <strong>Starting at:</strong> $75/user setup + monthly fees
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Advanced Security Services */}
+        <section className="section" style={{ padding: '80px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', 
+                fontWeight: '700', 
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Advanced Security & Compliance Services
+              </h2>
+              <p style={{ 
+                fontSize: '1.2rem', 
+                color: '#6b7280', 
+                maxWidth: '600px', 
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Enterprise-grade security solutions for businesses that need more than basic protection
+              </p>
+            </div>
+            
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '30px',
+              marginBottom: '40px'
+            }}>
+              {[
+                {
+                  icon: '🔥',
+                  title: 'Firewall Management',
+                  description: 'Next-generation firewall configuration, monitoring, and management. Protect your network perimeter from advanced threats.'
+                },
+                {
+                  icon: '☁️',
+                  title: 'Cloud Security',
+                  description: 'Secure your cloud infrastructure with proper configuration, access controls, and continuous monitoring across AWS, Azure, and Google Cloud.'
+                },
+                {
+                  icon: '💾',
+                  title: 'Backup & Recovery',
+                  description: 'Automated backup solutions with disaster recovery planning. Ensure business continuity with tested recovery procedures.'
+                },
+                {
+                  icon: '📋',
+                  title: 'Compliance Support',
+                  description: 'Meet industry compliance requirements including PIPEDA, PCI DSS, and sector-specific regulations with documented processes.'
+                },
+                {
+                  icon: '🎓',
+                  title: 'Security Training',
+                  description: 'Employee cybersecurity awareness training, phishing simulations, and security policy development for your team.'
+                },
+                {
+                  icon: '🚨',
+                  title: 'Incident Response',
+                  description: '24/7 security incident monitoring and response. Rapid containment and remediation of security threats and breaches.'
+                }
+              ].map((service, index) => (
+                <div key={index} style={{ 
+                  background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
+                  borderRadius: '20px',
+                  padding: '40px 30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  border: '1px solid rgba(29, 122, 175, 0.1)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    top: '-50%',
+                    right: '-20%',
+                    width: '120px',
+                    height: '120px',
+                    background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                    borderRadius: '50%',
+                    zIndex: 0
+                  }}></div>
+                  <div style={{ position: 'relative', zIndex: 1 }}>
+                    <div style={{ 
+                      fontSize: '3rem', 
+                      marginBottom: '20px',
+                      background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                      borderRadius: '50%',
+                      width: '70px',
+                      height: '70px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '25px'
+                    }}>{service.icon}</div>
+                    <h3 style={{ 
+                      fontSize: '1.5rem', 
+                      fontWeight: '600', 
+                      color: '#1f2937', 
+                      marginBottom: '15px',
+                      lineHeight: '1.3'
+                    }}>{service.title}</h3>
+                    <p style={{ 
+                      color: '#6b7280', 
+                      lineHeight: '1.7',
+                      fontSize: '1rem'
+                    }}>
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Call-to-Action */}
+            <div style={{ textAlign: 'center', marginTop: '60px' }}>
+              <a 
+                href="/contact" 
+                style={{ 
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  color: 'white',
+                  padding: '18px 40px',
+                  borderRadius: '50px',
+                  textDecoration: 'none',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  border: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = 'translateY(-3px)';
+                  e.target.style.boxShadow = '0 12px 35px rgba(29, 122, 175, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.3)';
+                }}
+              >
+                Get Your Security Assessment Today
               </a>
             </div>
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section className="section" style={{ background: colors.backgrounds.gradientPrimary, color: colors.text.light }}>
+        {/* Implementation Process */}
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <div style={{ textAlign: 'center' }}>
-              <h2 style={{ marginBottom: '25px', fontSize: '2.5rem', color: 'white' }}>Ready to Transform Your Business?</h2>
-              <p style={{ fontSize: '1.3rem', opacity: '0.9', maxWidth: '700px', margin: '0 auto 40px', lineHeight: '1.6' }}>
-                Join hundreds of New Brunswick businesses who've chosen LogicPros for their complete digital transformation. 
-                Get more customers, save time, and stay secure.
+            <h2 className="section-title">Our IT Security Implementation Process</h2>
+            <div className="process-grid-it" style={{ marginTop: '40px', paddingTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
+              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(26, 121, 175, 0.3)', zIndex: 10 }}>1</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Security Assessment</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Comprehensive evaluation of your current IT infrastructure, identifying vulnerabilities and security gaps across all systems.</p>
+              </div>
+              
+              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.accent, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)', zIndex: 10 }}>2</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Custom Security Plan</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Tailored cybersecurity strategy based on your business needs, compliance requirements, and risk tolerance.</p>
+              </div>
+              
+              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.secondary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(49, 66, 81, 0.3)', zIndex: 10 }}>3</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Implementation & Setup</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Professional deployment of security tools, policies, and procedures with minimal business disruption.</p>
+              </div>
+              
+              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primaryDark, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(21, 94, 138, 0.3)', zIndex: 10 }}>4</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Ongoing Support & Monitoring</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>24/7 security monitoring, regular updates, and continuous improvement of your security posture.</p>
+              </div>
+            </div>
+          </div>
+          
+          <style dangerouslySetInnerHTML={{__html: `
+            @media (max-width: 768px) {
+              .process-grid-it {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `}} />
+        </section>
+
+        {/* Industry Specializations */}
+        <section className="section" style={{ padding: '80px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
+                fontWeight: '700', 
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Industry-Specific Security Solutions</h2>
+              <p style={{ 
+                fontSize: '1.1rem', 
+                color: colors.text.secondary, 
+                maxWidth: '700px', 
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Specialized cybersecurity approaches tailored to the unique requirements of different industries
               </p>
-              
-              <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '15px', padding: '30px', marginBottom: '40px' }}>
-                <h3 style={{ marginBottom: '20px', fontSize: '1.3rem', color: 'white' }}>🎯 What Happens Next?</h3>
-                <div className="features-grid" style={{ textAlign: 'center' }}>
-                  <div>
-                    <div style={{ fontSize: '1.8rem', marginBottom: '10px' }}>📞</div>
-                    <p style={{ fontSize: '0.95rem', opacity: '0.9', color: 'white' }}>Free consultation to understand your needs</p>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '1.8rem', marginBottom: '10px' }}>📊</div>
-                    <p style={{ fontSize: '0.95rem', opacity: '0.9', color: 'white' }}>Custom proposal with transparent pricing</p>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '1.8rem', marginBottom: '10px' }}>🚀</div>
-                    <p style={{ fontSize: '0.95rem', opacity: '0.9', color: 'white' }}>Professional implementation & support</p>
-                  </div>
+            </div>
+            
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {[
+                { icon: '🏥', title: 'Healthcare & Medical', desc: 'PIPEDA compliance, patient data protection, and medical device security for healthcare providers.' },
+                { icon: '🏦', title: 'Financial Services', desc: 'PCI DSS compliance, transaction security, and fraud prevention for financial institutions.' },
+                { icon: '🏢', title: 'Professional Services', desc: 'Client data protection, confidentiality measures, and regulatory compliance for law firms and consultancies.' },
+                { icon: '🏪', title: 'Retail & E-commerce', desc: 'Point-of-sale security, customer data protection, and online transaction security.' },
+                { icon: '🏭', title: 'Manufacturing', desc: 'Industrial control system security, operational technology protection, and supply chain security.' },
+                { icon: '🏫', title: 'Education', desc: 'Student data protection, research security, and FERPA compliance for educational institutions.' }
+              ].map((industry, index) => (
+                <div key={index} style={{ 
+                  background: 'white',
+                  borderRadius: '16px',
+                  padding: '35px 25px',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                  border: `1px solid ${colors.backgrounds.light}`,
+                  textAlign: 'center',
+                  height: '100%',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease'
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: '4px',
+                    background: `linear-gradient(90deg, ${colors.primary}, ${colors.accent})`,
+                    opacity: 0,
+                    transition: 'all 0.3s ease'
+                  }} className="industry-border"></div>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '20px',
+                    filter: 'grayscale(0.2)'
+                  }}>{industry.icon}</div>
+                  <h4 style={{ 
+                    fontSize: '1.3rem', 
+                    fontWeight: '700', 
+                    color: colors.text.primary, 
+                    marginBottom: '15px',
+                    lineHeight: '1.3'
+                  }}>{industry.title}</h4>
+                  <p style={{ 
+                    color: colors.text.secondary, 
+                    lineHeight: '1.6',
+                    fontSize: '0.95rem',
+                    margin: 0
+                  }}>{industry.desc}</p>
                 </div>
-              </div>
-              
-              <div className="cta-buttons">
-                <a href="/contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '15px 35px', marginRight: '20px', background: colors.accent, color: colors.text.light }}>Get Started Today</a>
-                <a href="/free-example" className="btn btn-secondary" style={{ fontSize: '1.1rem', padding: '15px 35px', background: 'transparent', border: `2px solid ${colors.text.light}`, color: colors.text.light }}>See Free Example</a>
-              </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
+                fontWeight: '700', 
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Cybersecurity FAQ</h2>
+              <p style={{ 
+                fontSize: '1.1rem', 
+                color: colors.text.secondary, 
+                maxWidth: '600px', 
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Common questions about our cybersecurity and IT support services
+              </p>
+            </div>
+            
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+              gap: '25px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              {[
+                {
+                  question: 'How often should we do security audits?',
+                  answer: 'We recommend comprehensive security audits annually, with quarterly vulnerability scans and monthly security reviews for optimal protection.'
+                },
+                {
+                  question: 'What is included in managed IT support?',
+                  answer: '24/7 monitoring, patch management, help desk support, endpoint security, backup monitoring, and proactive issue resolution.'
+                },
+                {
+                  question: 'Do you help with compliance requirements?',
+                  answer: 'Yes! We help businesses meet PIPEDA, PCI DSS, and industry-specific compliance requirements with documentation and procedures.'
+                },
+                {
+                  question: 'How quickly do you respond to security incidents?',
+                  answer: 'Critical security incidents receive immediate response within 15 minutes, with full containment procedures initiated within 1 hour.'
+                },
+                {
+                  question: 'Can you work with our existing IT team?',
+                  answer: 'Absolutely! We complement your existing IT staff or can serve as your complete IT department, depending on your needs.'
+                },
+                {
+                  question: 'What happens if we get breached?',
+                  answer: 'Our incident response plan includes immediate containment, forensic analysis, system recovery, and compliance reporting as required.'
+                }
+              ].map((faq, index) => (
+                <div key={index} style={{ 
+                  background: 'white',
+                  borderRadius: '16px',
+                  padding: '30px 25px',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                  border: `1px solid rgba(${colors.primary.replace('#', '').match(/.{2}/g).map(hex => parseInt(hex, 16)).join(', ')}, 0.1)`,
+                  transition: 'all 0.3s ease',
+                  position: 'relative'
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    top: '15px',
+                    right: '20px',
+                    color: colors.primary,
+                    fontSize: '1.5rem',
+                    fontWeight: 'bold',
+                    opacity: 0.3
+                  }}>?</div>
+                  <h3 style={{ 
+                    fontSize: '1.3rem', 
+                    fontWeight: '700', 
+                    color: colors.text.primary, 
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    paddingRight: '30px'
+                  }}>{faq.question}</h3>
+                  <p style={{ 
+                    color: colors.text.secondary, 
+                    lineHeight: '1.6',
+                    fontSize: '1rem',
+                    margin: 0
+                  }}>{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="section" style={{ backgroundColor: '#000', color: 'white', marginBottom: '0', paddingBottom: '60px' }}>
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title" style={{ color: 'white' }}>Ready to Secure Your Business?</h2>
+              <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
+                Don't wait for a security incident. Protect your business with enterprise-grade cybersecurity solutions.
+              </p>
+            </div>
+            <div className="cta-buttons">
+              <a href="/contact" className="btn btn-primary" style={{ backgroundColor: 'white', color: '#000' }}>
+                Schedule Security Assessment
+              </a>
+              <a href="/contact" className="btn btn-secondary" style={{ borderColor: 'white', color: 'white' }}>
+                Get IT Support Quote
+              </a>
             </div>
           </div>
         </section>
@@ -587,5 +824,3 @@ export const ITServicesPage = () => {
     </div>
   );
 };
-
-// This page now uses standard CSS classes from responsive-style.css
