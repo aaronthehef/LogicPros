@@ -186,7 +186,7 @@ export const ContactPage = () => {
 
     try {
       // Submit form via serverless API route
-      const response = await fetch('https://logicpros-contact-final-52nuliuct-aaronthehefs-projects.vercel.app/api/contact', {
+      const response = await fetch('https://logicpros-contact-final-lf2njts8c-aaronthehefs-projects.vercel.app/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

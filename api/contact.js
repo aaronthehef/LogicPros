@@ -38,6 +38,25 @@ module.exports = async function handler(req, res) {
     console.log('Message:', formData.message || 'No message provided');
     console.log('Sending emails directly via Zoho SMTP...');
 
+    // Function to convert projectType to friendly description
+    const getFriendlyServiceName = (projectType) => {
+      const serviceMap = {
+        'cybersecurity-audit': 'a cybersecurity audit',
+        'password-management': 'password management solutions',
+        'mfa-setup': 'multi-factor authentication setup',
+        'it-support': 'managed IT services',
+        'ai-automation': 'AI automation solutions',
+        'new-website': 'a new website',
+        'website-redesign': 'website redesign services',
+        'ecommerce': 'e-commerce development',
+        'seo': 'SEO & digital marketing services',
+        'consultation': 'a consultation',
+        'not-sure': 'our services (we\'ll help you decide what\'s best)',
+        'free-example-website': 'a free website example (we\'ll create a custom sample for your business within 48 hours)'
+      };
+      return serviceMap[projectType] || 'our services';
+    };
+
     // Send emails directly using nodemailer
     const nodemailer = require('nodemailer');
     
@@ -131,12 +150,12 @@ module.exports = async function handler(req, res) {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1a1a2e;">Thank You, ${formData.name}!</h2>
           
-          <p>We received your inquiry about ${formData.projectType || 'our services'} and will respond within 24 hours.</p>
+          <p>We received your inquiry about ${getFriendlyServiceName(formData.projectType)} and will respond within 24 hours.</p>
           
           <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3>What happens next?</h3>
             <ul>
-              <li>Aaron will personally review your inquiry</li>
+              <li>We will personally review your inquiry</li>
               <li>We'll respond with initial questions and next steps</li>
               <li>If it's a good fit, we'll schedule a consultation call</li>
               <li>We'll discuss solutions tailored to your business needs</li>

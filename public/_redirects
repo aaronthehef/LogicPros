@@ -1,0 +1,7 @@
+# Handle client-side routing for Netlify/Vercel
+/*    /index.html   200
+
+# Specific route handling for development
+/locations/*  /index.html  200
+/services/*   /index.html  200
+/contractors/* /index.html  200

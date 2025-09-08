@@ -1,19 +1,19 @@
 import React, { useEffect, useRef } from 'react';
-import '../../responsive-style.css';
-import { Logo } from '../../components/Logo';
-import { Navigation } from '../../components/Navigation';
-import { Animations } from '../../components/Animations';
-import { Footer } from '../../components/Footer';
-import { colors } from '../../styles/colors';
+import '../../../responsive-style.css';
+import { Logo } from '../../../components/Logo';
+import { Navigation } from '../../../components/Navigation';
+import { Animations } from '../../../components/Animations';
+import { Footer } from '../../../components/Footer';
+import { colors } from '../../../styles/colors';
 import { gsap } from 'gsap';
 
-export const FrederictonPage = () => {
+export const FrederictonWebDesignPage = () => {
   const heroRef = useRef(null);
   const headerRef = useRef(null);
 
   useEffect(() => {
     // Set up SEO meta tags
-    document.title = 'Website Designer Fredericton | Professional Web Design Company NB | LogicPros';
+    document.title = 'Web Design Fredericton | Professional Website Designer NB | LogicPros';
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -404,73 +404,6 @@ export const FrederictonPage = () => {
                 </ul>
               </div>
 
-              <div className="service-card professional-card" style={{
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-              }}>
-                <div className="service-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s ease'
-                }}>🤖</div>
-                <h3>Business Process Automation</h3>
-                <p>
-                  Save time with automated Google review requests, social media posting, and customer 
-                  follow-up systems. Perfect for busy Fredericton contractors and service providers.
-                </p>
-                <ul className="service-benefits">
-                  <li>Google review automation</li>
-                  <li>Social media management</li>
-                  <li>Customer follow-up sequences</li>
-                  <li>Calendar and scheduling integration</li>
-                </ul>
-              </div>
-
-              <div className="service-card professional-card" style={{
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-              }}>
-                <div className="service-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s ease'
-                }}>💻</div>
-                <h3>Managed IT Support</h3>
-                <p>
-                  Complete IT management for Fredericton businesses. Security, backups, updates, and 
-                  technical support so you can focus on serving your customers.
-                </p>
-                <ul className="service-benefits">
-                  <li>24/7 system monitoring</li>
-                  <li>Cybersecurity protection</li>
-                  <li>Automated backups</li>
-                  <li>Remote technical support</li>
-                </ul>
-              </div>
 
               {/* SEO & Digital Marketing */}
               <div className="service-card professional-card" style={{
@@ -509,42 +442,6 @@ export const FrederictonPage = () => {
                 </ul>
               </div>
 
-              {/* Cybersecurity Services */}
-              <div className="service-card professional-card" style={{
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-              }}>
-                <div className="service-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s ease',
-                  color: 'white'
-                }}>🛡️</div>
-                <h3><a href="/services/cybersecurity" style={{color: colors.text.primary, textDecoration: 'none'}}>Cybersecurity Services</a></h3>
-                <p>
-                  Comprehensive cybersecurity solutions for Fredericton businesses. Protect your company data, 
-                  customer information, and digital assets with enterprise-grade security measures.
-                </p>
-                <ul className="service-benefits">
-                  <li>Security audits and vulnerability assessments</li>
-                  <li>Multi-factor authentication setup</li>
-                  <li>Employee security training programs</li>
-                  <li>Network security and firewall management</li>
-                  <li>Incident response planning</li>
-                </ul>
-              </div>
 
               {/* Website Maintenance */}
               <div className="service-card professional-card" style={{
@@ -767,7 +664,7 @@ export const FrederictonPage = () => {
                 <p>
                   As New Brunswick's capital city, Fredericton has a strong government and professional services sector. 
                   We help lawyers, accountants, consultants, and government contractors establish strong online presences 
-                  and streamline their operations with automation.
+                  and grow their businesses with professional websites.
                 </p>
                 
                 <h3>Construction & Home Services</h3>
@@ -780,7 +677,7 @@ export const FrederictonPage = () => {
                 <h3>Technology & Innovation</h3>
                 <p>
                   Fredericton's growing tech sector includes many small businesses and startups. We provide scalable 
-                  web solutions and IT management that grows with innovative companies.
+                  web solutions and professional websites that grow with innovative companies.
                 </p>
                 
                 <h3>Healthcare & Wellness</h3>

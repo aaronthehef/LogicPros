@@ -25,21 +25,33 @@ import { MFAPage } from './pages/services/MFAPage';
 import { FrederictonPage } from './pages/locations/FrederictonPage';
 import { MonctonPage } from './pages/locations/MonctonPage';
 import { SaintJohnPage } from './pages/locations/SaintJohnPage';
+import { FrederictonWebDesignPage } from './pages/locations/fredericton/WebDesignPage';
+import { SaintJohnWebDesignPage } from './pages/locations/saint-john/WebDesignPage';
+import { MonctonWebDesignPage } from './pages/locations/moncton/WebDesignPage';
 
 export const Router = () => {
-  const [currentPath, setCurrentPath] = React.useState(
-    window.location.hash.slice(1) || '/'
-  );
+  const [currentPath, setCurrentPath] = React.useState(() => {
+    // Support both hash routing (development) and clean URLs (production)
+    const hashPath = window.location.hash.slice(1);
+    const pathname = window.location.pathname;
+    return hashPath || pathname || '/';
+  });
 
   React.useEffect(() => {
-    const handleHashChange = () => {
-      setCurrentPath(window.location.hash.slice(1) || '/');
+    const handleRouteChange = () => {
+      const hashPath = window.location.hash.slice(1);
+      const pathname = window.location.pathname;
+      setCurrentPath(hashPath || pathname || '/');
       // Scroll to top when route changes
       window.scrollTo(0, 0);
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('hashchange', handleRouteChange);
+    window.addEventListener('popstate', handleRouteChange);
+    return () => {
+      window.removeEventListener('hashchange', handleRouteChange);
+      window.removeEventListener('popstate', handleRouteChange);
+    };
   }, []);
 
   // Also scroll to top when component mounts
@@ -94,6 +106,12 @@ export const Router = () => {
         return <MFAPage />;
       case '/locations/fredericton':
         return <FrederictonPage />;
+      case '/locations/fredericton/web-design':
+        return <FrederictonWebDesignPage />;
+      case '/locations/saint-john/web-design':
+        return <SaintJohnWebDesignPage />;
+      case '/locations/moncton/web-design':
+        return <MonctonWebDesignPage />;
       case '/locations/moncton':
         return <MonctonPage />;
       case '/locations/saint-john':

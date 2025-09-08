@@ -92,6 +92,46 @@ export const FreeExamplePage = () => {
       .floating-particle:nth-child(4) { animation: float1 22s ease-in-out infinite reverse; }
       .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
       .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
+      .hero-button {
+        background: linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%) !important;
+        color: white !important;
+        padding: 18px 40px !important;
+        border-radius: 50px !important;
+        text-decoration: none !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border: none !important;
+        box-shadow: 0 6px 20px rgba(29, 122, 175, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: inline-block !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+        cursor: pointer !important;
+      }
+      .hero-button:hover {
+        box-shadow: 0 8px 30px rgba(29, 122, 175, 0.5) !important;
+        transform: translateY(-3px) !important;
+        color: white !important;
+      }
+      .secondary-button {
+        background: transparent !important;
+        color: #1a79af !important;
+        border: 2px solid #1a79af !important;
+        padding: 18px 40px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border-radius: 50px !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        cursor: pointer !important;
+      }
+      .secondary-button:hover {
+        box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4) !important;
+        transform: translateY(-3px) !important;
+        border-color: rgba(29, 122, 175, 0.8) !important;
+        color: #1a79af !important;
+      }
       
       /* Responsive grid for how-it-works section */
       @media (max-width: 768px) {
@@ -138,22 +178,36 @@ export const FreeExamplePage = () => {
     console.log('Starting free example form submission...');
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          company: formData.company,
-          trade: formData.trade,
-          projectType: 'Free Example Website Request',
-          timeline: formData.timeline,
-          budget: 'Free Example - No Budget',
-          hearAbout: 'Free Example Request',
-          message: `🆓 FREE EXAMPLE WEBSITE REQUEST - 48 HOUR DEADLINE
+      console.log('Submitting form data:', formData);
+      
+      // Try the dedicated free-example API first, fallback to contact API if it fails
+      let response;
+      try {
+        response = await fetch('https://logicpros-contact-final-lf2njts8c-aaronthehefs-projects.vercel.app/api/free-example', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        });
+      } catch (apiError) {
+        console.warn('Free-example API failed, falling back to contact API:', apiError);
+        // Fallback to contact API with formatted data
+        response = await fetch('https://logicpros-contact-final-lf2njts8c-aaronthehefs-projects.vercel.app/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            company: formData.company,
+            trade: formData.trade,
+            projectType: 'free-example-website',
+            timeline: formData.timeline,
+            hearAbout: 'Free Example Request Form',
+            message: `🆓 FREE EXAMPLE WEBSITE REQUEST - 48 HOUR DEADLINE
 
 📍 SERVICE AREA: ${formData.targetArea || 'Not specified'}
 
@@ -173,10 +227,16 @@ ${formData.competitors || 'Not provided'}
 =====================================
 ✅ NEXT STEPS: Create custom homepage mockup within 48 hours using above business details.
 =====================================`
-        })
-      });
+          })
+        });
+      }
+      
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
       
       if (response.ok) {
+        const result = await response.json();
+        console.log('Success result:', result);
         setSubmitStatus('success');
         setFormData({
           name: '', email: '', phone: '', company: '', trade: '', website: '',
@@ -195,10 +255,14 @@ ${formData.competitors || 'Not provided'}
           }
         }, 100);
       } else {
+        const errorResult = await response.text();
+        console.error('Server error response:', errorResult);
         setSubmitStatus('error');
       }
     } catch (error) {
       console.error('Form submission error:', error);
+      console.error('Error type:', error.name);
+      console.error('Error message:', error.message);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -1078,8 +1142,9 @@ ${formData.competitors || 'Not provided'}
 
                 <button 
                   type="submit" 
-                  className="btn btn-primary btn-large"
+                  className="hero-button"
                   disabled={isSubmitting}
+                  style={{ width: '100%', fontSize: '1.2rem', padding: '20px 40px', marginTop: '1.5rem' }}
                 >
                   {isSubmitting ? 'Sending Request...' : 'Get My Free Example Website'}
                 </button>
@@ -1295,17 +1360,13 @@ ${formData.competitors || 'Not provided'}
             <div className="cta-buttons">
               <button 
                 onClick={scrollToForm}
-                className="btn btn-primary" 
+                className="hero-button" 
                 style={{ 
                   backgroundColor: 'white', 
                   color: '#000',
-                  border: 'none',
                   cursor: 'pointer',
                   padding: '1rem 2rem',
-                  borderRadius: '8px',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  transition: 'all 0.3s ease'
+                  fontSize: '1.1rem'
                 }}
               >
                 Get Your Free Example Now

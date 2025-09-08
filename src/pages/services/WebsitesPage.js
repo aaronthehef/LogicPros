@@ -187,8 +187,8 @@ export const WebsitesPage = () => {
                 textShadow: '0 2px 4px rgba(0, 0, 0, 0.4)'
               }}>
                 WordPress or React websites built for SEO and lead generation. 
-                AI-powered copywriting, mobile-responsive design, and 2-4 week turnaround. 
-                Perfect for trades and service businesses across New Brunswick, Canada, and the U.S.
+                Professional copywriting, mobile-responsive design, and 2-4 week turnaround. 
+                Perfect for trades and service businesses across New Brunswick and the Maritimes.
               </p>
               <div style={{ 
                 display: 'flex',
@@ -485,7 +485,7 @@ export const WebsitesPage = () => {
                     color: '#1f2937', 
                     marginBottom: '15px',
                     lineHeight: '1.3'
-                  }}>AI-Powered Copywriting</h3>
+                  }}>Professional Copywriting</h3>
                   <p style={{ 
                     color: '#6b7280', 
                     lineHeight: '1.7',
@@ -798,7 +798,7 @@ export const WebsitesPage = () => {
               <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.accent, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)', zIndex: 10 }}>2</div>
                 <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Content Creation</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>AI-powered copywriting tailored to your industry. We create all text content while you focus on running your business.</p>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Professional copywriting tailored to your industry. We create all text content while you focus on running your business.</p>
               </div>
               
               <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>

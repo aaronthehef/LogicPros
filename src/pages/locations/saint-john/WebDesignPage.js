@@ -1,28 +1,28 @@
 import React, { useEffect, useRef } from 'react';
-import '../../responsive-style.css';
-import { Logo } from '../../components/Logo';
-import { Navigation } from '../../components/Navigation';
-import { Animations } from '../../components/Animations';
-import { Footer } from '../../components/Footer';
-import { colors } from '../../styles/colors';
+import '../../../responsive-style.css';
+import { Logo } from '../../../components/Logo';
+import { Navigation } from '../../../components/Navigation';
+import { Animations } from '../../../components/Animations';
+import { Footer } from '../../../components/Footer';
+import { colors } from '../../../styles/colors';
 import { gsap } from 'gsap';
 
-export const FrederictonPage = () => {
+export const SaintJohnWebDesignPage = () => {
   const heroRef = useRef(null);
   const headerRef = useRef(null);
 
   useEffect(() => {
     // Set up SEO meta tags
-    document.title = 'Website Designer Fredericton | Professional Web Design Company NB | LogicPros';
+    document.title = 'Web Design Saint John | Professional Website Designer NB | LogicPros';
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Need a professional website for your Fredericton business? Affordable web design for contractors, tradespeople & small businesses. Custom WordPress websites, local SEO services & mobile-responsive design that gets you more customers. Free quotes available.');
+      metaDescription.setAttribute('content', 'Need a professional website for your Saint John business? Affordable web design for contractors, tradespeople & small businesses. Custom WordPress websites, local SEO services & mobile-responsive design that gets you more customers. Free quotes available.');
     } else {
       const newMetaDescription = document.createElement('meta');
       newMetaDescription.name = 'description';
-      newMetaDescription.content = 'Need a professional website for your Fredericton business? Affordable web design for contractors, tradespeople & small businesses. Custom WordPress websites, local SEO services & mobile-responsive design that gets you more customers. Free quotes available.';
+      newMetaDescription.content = 'Need a professional website for your Saint John business? Affordable web design for contractors, tradespeople & small businesses. Custom WordPress websites, local SEO services & mobile-responsive design that gets you more customers. Free quotes available.';
       document.head.appendChild(newMetaDescription);
     }
     
@@ -30,16 +30,16 @@ export const FrederictonPage = () => {
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "LogicPros - Web Design Fredericton",
-      "description": "Professional website designer and web development company serving Fredericton, NB",
-      "url": "https://logicpros.ca/locations/fredericton",
+      "name": "LogicPros - Web Design Saint John",
+      "description": "Professional website designer and web development company serving Saint John, NB",
+      "url": "https://logicpros.ca/locations/saint john",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Fredericton",
+        "addressLocality": "Saint John",
         "addressRegion": "NB",
         "addressCountry": "CA"
       },
-      "serviceArea": "Fredericton, New Brunswick",
+      "serviceArea": "Saint John, New Brunswick",
       "services": [
         "Website Design",
         "Web Development",
@@ -321,7 +321,7 @@ export const FrederictonPage = () => {
                 marginBottom: '1rem',
                 color: 'white'
               }}>
-                Need a Website? Fredericton's Top Web Designer for Contractors & Small Business
+                Need a Website? Saint John's Top Web Designer for Contractors & Small Business
               </h1>
               <p style={{ 
                 fontSize: 'clamp(1rem, 2vw, 1.3rem)', 
@@ -331,9 +331,9 @@ export const FrederictonPage = () => {
                 maxWidth: '700px',
                 margin: '0 auto 40px auto'
               }}>
-                Professional websites that get you more customers. Affordable web design Fredericton contractors 
+                Professional websites that get you more customers. Affordable web design that contractors 
                 and small businesses trust. Custom WordPress websites, local SEO services, and mobile-responsive 
-                design that works 24/7 to grow your business in Fredericton and surrounding areas.
+                design that works 24/7 to grow your business.
               </p>
               
               <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -353,11 +353,11 @@ export const FrederictonPage = () => {
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Get More Customers with Professional Web Design Fredericton</h2>
+              <h2 className="section-title">Get More Customers with Professional Web Design</h2>
               <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
-                Your business needs a website that works as hard as you do. Our web design Fredericton services 
+                Your business needs a website that works as hard as you do. Our professional web design services 
                 help contractors, tradespeople, and small businesses get found online and convert visitors into 
-                paying customers. Professional websites that actually drive business growth.
+                paying customers. We serve the greater Saint John area including Rothesay, Quispamsis, and Grand Bay-Westfield.
               </p>
             </div>
             
@@ -391,14 +391,14 @@ export const FrederictonPage = () => {
                 }}>🌐</div>
                 <h3>Websites That Get You More Jobs</h3>
                 <p>
-                  Stop losing customers to competitors with better websites. Our affordable web design Fredericton 
+                  Stop losing customers to competitors with better websites. Our affordable web design 
                   services create professional WordPress websites that showcase your work, build trust with customers, 
                   and generate leads 24/7. Perfect for contractors, tradespeople, and service businesses.
                 </p>
                 <ul className="service-benefits">
-                  <li><a href="/services/seo" style={{color: colors.primary}}>SEO services Fredericton</a> - Local search optimization</li>
+                  <li><a href="/services/seo" style={{color: colors.primary}}>Local SEO services</a> - Get found in search results</li>
                   <li>Mobile-responsive website design</li>
-                  <li>WordPress website Fredericton development</li>
+                  <li>Custom WordPress development</li>
                   <li>Professional copywriting and content</li>
                   <li>2-4 week website development timeline</li>
                 </ul>
@@ -423,54 +423,23 @@ export const FrederictonPage = () => {
                   background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s ease'
-                }}>🤖</div>
-                <h3>Business Process Automation</h3>
+                  transition: 'all 0.3s ease',
+                  color: 'white'
+                }}>🔧</div>
+                <h3>Website Maintenance</h3>
                 <p>
-                  Save time with automated Google review requests, social media posting, and customer 
-                  follow-up systems. Perfect for busy Fredericton contractors and service providers.
+                  Keep your website running smoothly with our comprehensive maintenance services. 
+                  Regular updates, security monitoring, and technical support for your business website.
                 </p>
                 <ul className="service-benefits">
-                  <li>Google review automation</li>
-                  <li>Social media management</li>
-                  <li>Customer follow-up sequences</li>
-                  <li>Calendar and scheduling integration</li>
+                  <li>Regular WordPress updates and backups</li>
+                  <li>Security monitoring and malware protection</li>
+                  <li>Performance optimization and speed testing</li>
+                  <li>Content updates and minor changes</li>
+                  <li>Technical support and troubleshooting</li>
                 </ul>
               </div>
 
-              <div className="service-card professional-card" style={{
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-              }}>
-                <div className="service-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s ease'
-                }}>💻</div>
-                <h3>Managed IT Support</h3>
-                <p>
-                  Complete IT management for Fredericton businesses. Security, backups, updates, and 
-                  technical support so you can focus on serving your customers.
-                </p>
-                <ul className="service-benefits">
-                  <li>24/7 system monitoring</li>
-                  <li>Cybersecurity protection</li>
-                  <li>Automated backups</li>
-                  <li>Remote technical support</li>
-                </ul>
-              </div>
 
               {/* SEO & Digital Marketing */}
               <div className="service-card professional-card" style={{
@@ -495,13 +464,13 @@ export const FrederictonPage = () => {
                   transition: 'all 0.3s ease',
                   color: 'white'
                 }}>🎯</div>
-                <h3><a href="/services/seo" style={{color: colors.text.primary, textDecoration: 'none'}}>SEO Services Fredericton</a></h3>
+                <h3><a href="/services/seo" style={{color: colors.text.primary, textDecoration: 'none'}}>Local SEO Services</a></h3>
                 <p>
-                  Professional SEO services and digital marketing Fredericton businesses trust. Local web designer 
-                  expertise combined with proven online marketing strategies to boost your search rankings.
+                  Professional SEO services and digital marketing that local businesses trust. Our web design 
+                  expertise combined with proven online marketing strategies help boost your search rankings.
                 </p>
                 <ul className="service-benefits">
-                  <li>Local SEO optimization for "Fredericton" searches</li>
+                  <li>Local SEO optimization for area searches</li>
                   <li>Google My Business management</li>
                   <li>Content marketing and blogging</li>
                   <li>Social media integration</li>
@@ -509,79 +478,6 @@ export const FrederictonPage = () => {
                 </ul>
               </div>
 
-              {/* Cybersecurity Services */}
-              <div className="service-card professional-card" style={{
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-              }}>
-                <div className="service-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s ease',
-                  color: 'white'
-                }}>🛡️</div>
-                <h3><a href="/services/cybersecurity" style={{color: colors.text.primary, textDecoration: 'none'}}>Cybersecurity Services</a></h3>
-                <p>
-                  Comprehensive cybersecurity solutions for Fredericton businesses. Protect your company data, 
-                  customer information, and digital assets with enterprise-grade security measures.
-                </p>
-                <ul className="service-benefits">
-                  <li>Security audits and vulnerability assessments</li>
-                  <li>Multi-factor authentication setup</li>
-                  <li>Employee security training programs</li>
-                  <li>Network security and firewall management</li>
-                  <li>Incident response planning</li>
-                </ul>
-              </div>
-
-              {/* Website Maintenance */}
-              <div className="service-card professional-card" style={{
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-              }}>
-                <div className="service-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s ease',
-                  color: 'white'
-                }}>🔧</div>
-                <h3>Website Maintenance Fredericton</h3>
-                <p>
-                  Ongoing website maintenance services to keep your Fredericton business website secure, 
-                  updated, and performing optimally. Regular backups, security updates, and content management.
-                </p>
-                <ul className="service-benefits">
-                  <li>Regular WordPress and plugin updates</li>
-                  <li>Security monitoring and malware protection</li>
-                  <li>Performance optimization and speed testing</li>
-                  <li>Content updates and modifications</li>
-                  <li>Monthly website health reports</li>
-                </ul>
-              </div>
             </div>
           </div>
         </section>
@@ -590,9 +486,9 @@ export const FrederictonPage = () => {
         <section className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Why Fredericton Contractors Choose Us for Web Design</h2>
+              <h2 className="section-title">Why Local Contractors Choose Us for Web Design</h2>
               <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '800px', margin: '0 auto' }}>
-                We understand your business. As the leading web design company Fredericton contractors trust, 
+                We understand your business. As the leading web design company that local contractors trust, 
                 we know what works for trades and service businesses. No generic templates - just websites 
                 that get you more customers and grow your business.
               </p>
@@ -615,8 +511,8 @@ export const FrederictonPage = () => {
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🏆</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Built for Your Industry</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
-                  We specialize in websites for contractors and service businesses. Our website designer 
-                  Fredericton team knows what your customers want to see - licenses, insurance, testimonials, 
+                  We specialize in websites for contractors and service businesses. Our website design 
+                  team knows what your customers want to see - licenses, insurance, testimonials, 
                   and clear contact information that builds trust.
                 </p>
               </div>
@@ -632,8 +528,8 @@ export const FrederictonPage = () => {
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>💰</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Affordable for Small Business</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
-                  Professional websites shouldn't cost a fortune. Our affordable web design Fredericton 
-                  packages are designed for contractors and small businesses. Quality custom web design 
+                  Professional websites shouldn't cost a fortune. Our affordable packages 
+                  are designed for local contractors and small businesses. Quality custom web design 
                   with transparent pricing and no hidden fees.
                 </p>
               </div>
@@ -660,7 +556,7 @@ export const FrederictonPage = () => {
         {/* Areas We Serve */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <h2 className="section-title">Web Design Services Throughout Greater Fredericton</h2>
+            <h2 className="section-title">Professional Web Design for Local Communities</h2>
             
             <div className="services-grid" style={{
               display: 'grid',
@@ -676,10 +572,10 @@ export const FrederictonPage = () => {
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
                 transition: 'transform 0.3s ease'
               }}>
-                <h4>📍 Downtown Fredericton</h4>
+                <h4>📍 Saint John</h4>
                 <p>
-                  Professional services, retail businesses, and restaurants in the historic downtown core. 
-                  King Street, Queen Street, Regent Street, and surrounding business districts.
+                  Professional website design for local businesses in Uptown's Trinity Royal Heritage district, East Side shopping centers, and West Side commercial areas. 
+                  Custom web development helping local contractors, retailers, and service providers attract more customers online.
                 </p>
               </div>
               
@@ -690,10 +586,10 @@ export const FrederictonPage = () => {
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
                 transition: 'transform 0.3s ease'
               }}>
-                <h4>📍 North Side Fredericton</h4>
+                <h4>📍 Rothesay</h4>
                 <p>
-                  Contractors and service providers in Nashwaaksis, Marysville, and Douglas areas. 
-                  Specialized in trades and home service businesses.
+                  Affordable web design Rothesay for established businesses serving this affluent community. 
+                  Professional websites for home services, contractors, and retail businesses targeting Rothesay's growing residential market.
                 </p>
               </div>
               
@@ -704,10 +600,10 @@ export const FrederictonPage = () => {
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
                 transition: 'transform 0.3s ease'
               }}>
-                <h4>📍 Oromocto & Area</h4>
+                <h4>📍 Quispamsis</h4>
                 <p>
-                  Supporting businesses in Oromocto, Geary, Burton, and surrounding York County communities. 
-                  Strong focus on contractor and military family-owned businesses.
+                  Local web designer Quispamsis specializing in small business websites for this rapidly growing town. 
+                  SEO-optimized websites helping contractors, family services, and retail businesses reach Quispamsis residents.
                 </p>
               </div>
               
@@ -718,10 +614,10 @@ export const FrederictonPage = () => {
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
                 transition: 'transform 0.3s ease'
               }}>
-                <h4>📍 Hanwell & Lincoln</h4>
+                <h4>📍 Grand Bay-Westfield</h4>
                 <p>
-                  Growing residential areas with contractors, home services, and retail businesses. 
-                  Optimized for suburban service area coverage.
+                  Website development Grand Bay-Westfield for businesses serving this scenic lakeside community. 
+                  Mobile-responsive websites perfect for tourism, home services, and contractors targeting waterfront property owners.
                 </p>
               </div>
               
@@ -732,10 +628,10 @@ export const FrederictonPage = () => {
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
                 transition: 'transform 0.3s ease'
               }}>
-                <h4>📍 Harvey Station & Zealand</h4>
+                <h4>📍 Hampton & Sussex</h4>
                 <p>
-                  Rural contractors and service providers throughout York County. 
-                  Specialized in agricultural and rural business digital solutions.
+                  Rural contractors and service providers throughout Kings County. 
+                  Specialized in agricultural and small town business websites serving the greater regional area.
                 </p>
               </div>
               
@@ -746,62 +642,62 @@ export const FrederictonPage = () => {
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
                 transition: 'transform 0.3s ease'
               }}>
-                <h4>📍 New Maryland & Charters Settlement</h4>
+                <h4>📍 St. Martins & Kingston Peninsula</h4>
                 <p>
-                  Suburban contractors, professionals, and service businesses. 
-                  Focus on quality residential service providers.
+                  Coastal and rural contractors, tourism businesses, and service providers. 
+                  Focus on Bay of Fundy tourism and rural residential services.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Fredericton Business Focus */}
+        {/* Saint John Business Focus */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <h2 className="section-title">Industries We Serve in Fredericton</h2>
+            <h2 className="section-title">Industries We Serve</h2>
             
             <div className="industries-content">
               <div className="industries-text">
                 <h3>Government & Professional Services</h3>
                 <p>
-                  As New Brunswick's capital city, Fredericton has a strong government and professional services sector. 
-                  We help lawyers, accountants, consultants, and government contractors establish strong online presences 
-                  and streamline their operations with automation.
+                  As a major New Brunswick city, we serve a strong business and professional services sector. 
+                  We help lawyers, accountants, consultants, and local contractors establish strong online presences 
+                  and grow their businesses online.
                 </p>
                 
                 <h3>Construction & Home Services</h3>
                 <p>
-                  The Fredericton area's steady growth creates consistent demand for contractors. We specialize in 
-                  websites for plumbers, electricians, HVAC technicians, roofers, and general contractors serving 
-                  the Capital Region.
+                  As a major port city, there's consistent demand for contractors and service businesses. We specialize in 
+                  website design for plumbers, electricians, HVAC technicians, roofers, and general contractors serving 
+                  the Greater Saint John region including Rothesay and Quispamsis.
                 </p>
                 
-                <h3>Technology & Innovation</h3>
+                <h3>Industrial & Port Services</h3>
                 <p>
-                  Fredericton's growing tech sector includes many small businesses and startups. We provide scalable 
-                  web solutions and IT management that grows with innovative companies.
+                  As an important Atlantic port city, there are opportunities for industrial services, logistics companies, and marine contractors. 
+                  Professional web design helps port-related businesses showcase capabilities and attract B2B clients.
                 </p>
                 
-                <h3>Healthcare & Wellness</h3>
+                <h3>Tourism & Hospitality</h3>
                 <p>
-                  Private healthcare practices, dental offices, wellness centers, and medical professionals throughout 
-                  Fredericton benefit from our HIPAA-compliant IT solutions and professional website designs.
+                  From Bay of Fundy tourism to Grand Bay-Westfield lakefront businesses, local area hospitality companies need mobile-responsive 
+                  websites for online bookings and local SEO services to attract visitors throughout the Maritime provinces.
                 </p>
               </div>
               
               <div className="industries-stats">
                 <div className="stat-item">
-                  <h4>58,000+</h4>
-                  <p>Fredericton residents</p>
+                  <h4>70,000+</h4>
+                  <p>Saint John residents</p>
                 </div>
                 <div className="stat-item">
-                  <h4>85,000+</h4>
-                  <p>Greater Fredericton area population</p>
+                  <h4>130,000+</h4>
+                  <p>Greater Saint John area population</p>
                 </div>
                 <div className="stat-item">
-                  <h4>Provincial Capital</h4>
-                  <p>Government & business hub</p>
+                  <h4>Port City</h4>
+                  <p>Industrial & shipping hub</p>
                 </div>
                 <div className="stat-item">
                   <h4>2 Universities</h4>
@@ -818,8 +714,8 @@ export const FrederictonPage = () => {
             <div className="section-header">
               <h2 className="section-title">How We Build Your Business Website</h2>
               <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
-                No surprises, no delays. Our website development Fredericton process is designed for busy 
-                contractors and business owners. You'll know exactly what's happening at every step, 
+                No surprises, no delays. Our website development process is designed for busy 
+                local contractors and business owners. You'll know exactly what's happening at every step, 
                 and we handle all the technical details.
               </p>
             </div>
@@ -860,7 +756,7 @@ export const FrederictonPage = () => {
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Understanding Your Business</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
                   We start by learning about your services, target customers, and what makes your 
-                  Fredericton business unique. Then we plan a website that showcases your strengths 
+                  your business unique. Then we plan a website that showcases your strengths 
                   and attracts the right customers.
                 </p>
               </div>
@@ -940,7 +836,7 @@ export const FrederictonPage = () => {
         {/* Local SEO Benefits */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <h2 className="section-title">Get Found by Customers Searching in Fredericton</h2>
+            <h2 className="section-title">Get Found by Local Customers</h2>
             
             <div className="services-grid" style={{
               display: 'grid',
@@ -958,9 +854,9 @@ export const FrederictonPage = () => {
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📱</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Show Up When Customers Search</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  When Fredericton residents search for "plumber near me" or "roofing contractor Fredericton," 
-                  you want to be found first. Our SEO services Fredericton help your business appear at the top 
-                  of search results when customers need your services.
+                  When local residents search for "plumber near me" or "roofing contractor," 
+                  you want to be found first. Our SEO services help your business appear at the top 
+                  of local search results when customers need your services.
                 </p>
               </div>
               
@@ -974,9 +870,9 @@ export const FrederictonPage = () => {
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🎯</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Online Marketing That Works</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Beyond just web design, we help promote your business online. Our digital marketing Fredericton 
+                  Beyond just web design, we help promote your business online. Our digital marketing 
                   services include Google My Business optimization, social media setup, and review management 
-                  to build your reputation and attract more customers.
+                  to build your local reputation and attract more customers.
                 </p>
               </div>
               
@@ -990,8 +886,9 @@ export const FrederictonPage = () => {
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🏆</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Competitive Advantage</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Many Fredericton small businesses lack professional web presence. Our custom web design 
-                  and SEO services give you a significant advantage over competitors still relying on word-of-mouth.
+                  Many local contractors and small businesses still rely on word-of-mouth referrals. With Rothesay and Quispamsis 
+                  residents increasingly searching online for local services, our custom web design and SEO services 
+                  give your business a significant competitive advantage in the growing Greater Saint John market.
                 </p>
               </div>
               
@@ -1005,7 +902,7 @@ export const FrederictonPage = () => {
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📊</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Analytics & Reporting</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Track exactly how many Fredericton customers find your business online through detailed 
+                  Track exactly how many customers find your business online through detailed 
                   analytics and reporting. Measure ROI from your website investment with transparent metrics.
                 </p>
               </div>
@@ -1035,7 +932,7 @@ export const FrederictonPage = () => {
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🛡️</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Security & Maintenance</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Comprehensive website maintenance Fredericton services including security monitoring, 
+                  Comprehensive website maintenance services including security monitoring, 
                   regular backups, and software updates. Protect your business investment with proactive care.
                 </p>
               </div>
@@ -1048,9 +945,9 @@ export const FrederictonPage = () => {
         <section className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">What Your Fredericton Business Website Includes</h2>
+              <h2 className="section-title">What Your Business Website Includes</h2>
               <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
-                Every custom web design Fredericton project includes essential features that help contractors 
+                Every custom web design project includes essential features that help contractors 
                 and small businesses get found online and convert visitors into customers.
               </p>
             </div>
@@ -1071,7 +968,7 @@ export const FrederictonPage = () => {
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📱</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Mobile Website Optimization</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Your mobile website Fredericton customers will love. Every site is fully responsive and 
+                  Your mobile website that customers will love. Every site is fully responsive and 
                   loads fast on smartphones - critical since 70% of local searches happen on mobile devices.
                 </p>
                 <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
@@ -1092,7 +989,7 @@ export const FrederictonPage = () => {
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🌟</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>WordPress Website Development</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Professional WordPress website Fredericton businesses trust. Easy to update, secure, 
+                  Professional WordPress websites that businesses trust. Easy to update, secure, 
                   and built with the world's most popular website platform that powers 40% of the internet.
                 </p>
                 <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
@@ -1113,13 +1010,13 @@ export const FrederictonPage = () => {
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🎯</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Local SEO Optimization</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Every website includes comprehensive SEO services Fredericton businesses need to get 
+                  Every website includes comprehensive SEO services that businesses need to get 
                   found by local customers. We optimize for location-based searches that drive real business.
                 </p>
                 <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
                   <li>Google My Business integration</li>
                   <li>Local keyword optimization</li>
-                  <li>Fredericton location pages</li>
+                  <li>Local area location pages</li>
                   <li>Review system integration</li>
                 </ul>
               </div>
@@ -1195,9 +1092,9 @@ export const FrederictonPage = () => {
         <section className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Website Maintenance Fredericton - Keep Your Site Running Perfectly</h2>
+              <h2 className="section-title">Website Maintenance - Keep Your Site Running Perfectly</h2>
               <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
-                Your business depends on your website working 24/7. Our website maintenance Fredericton 
+                Your business depends on your website working 24/7. Our website maintenance 
                 services ensure your site stays secure, fast, and up-to-date so you never lose potential customers.
               </p>
             </div>
@@ -1252,7 +1149,7 @@ export const FrederictonPage = () => {
                 }}>
                   <strong style={{color: colors.primary}}>Competitive Monthly Plans</strong>
                   <br />
-                  <small style={{color: colors.text.secondary}}>Affordable website maintenance for Fredericton businesses</small>
+                  <small style={{color: colors.text.secondary}}>Affordable website maintenance for local businesses</small>
                 </div>
               </div>
             </div>
@@ -1262,7 +1159,7 @@ export const FrederictonPage = () => {
         {/* Getting Started */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <h2 className="section-title">Get Started With Professional Web Design Fredericton</h2>
+            <h2 className="section-title">Get Started With Professional Web Design</h2>
             
             <div className="getting-started-content">
               <div className="steps-content">
@@ -1272,7 +1169,7 @@ export const FrederictonPage = () => {
                   <h4>Free Custom Web Design Example</h4>
                   <p>
                     See exactly how your professional website will look before you invest. Our web design company 
-                    creates a custom sample page showcasing your Fredericton business - completely free with no obligation.
+                    creates a custom sample page showcasing your business - completely free with no obligation.
                   </p>
                   <a href="/free-example" className="hero-button">Get Free Website Example</a>
                 </div>
@@ -1280,7 +1177,7 @@ export const FrederictonPage = () => {
                 <div className="start-option">
                   <h4>Web Design Consultation</h4>
                   <p>
-                    Free strategy session with our experienced website designer Fredericton team. Discuss your 
+                    Free strategy session with our experienced website design team. Discuss your 
                     business goals and get expert recommendations for affordable web design solutions.
                   </p>
                   <a href="/contact" className="hero-button">Schedule Free Consultation</a>
@@ -1303,10 +1200,10 @@ export const FrederictonPage = () => {
         <section className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Common Questions About Web Design Fredericton Services</h2>
+              <h2 className="section-title">Common Questions About Our Web Design Services</h2>
               <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
                 Get answers to the most common questions contractors and small business owners ask 
-                about professional web design, SEO services, and website development in Fredericton.
+                about professional web design, SEO services, and website development.
               </p>
             </div>
             
@@ -1323,9 +1220,9 @@ export const FrederictonPage = () => {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid rgba(29, 122, 175, 0.1)'
               }}>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>How much does web design cost in Fredericton?</h3>
+                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>How much does web design cost?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Our affordable web design Fredericton services offer competitive pricing for a professional small business 
+                  Our affordable services offer competitive pricing for a professional small business 
                   website. This includes custom design, mobile optimization, SEO setup, and training. We offer 
                   transparent pricing with no hidden fees - perfect for contractors and local businesses.
                 </p>
@@ -1338,9 +1235,9 @@ export const FrederictonPage = () => {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid rgba(29, 122, 175, 0.1)'
               }}>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Do I need SEO services for my Fredericton business?</h3>
+                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Do I need SEO services for my local business?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Absolutely! Local SEO services help your business show up when Fredericton customers search 
+                  Absolutely! Local SEO services help your business show up when local customers search 
                   for your services online. 97% of people search online before hiring contractors. Without proper 
                   SEO, you're invisible to potential customers searching for your services.
                 </p>
@@ -1355,7 +1252,7 @@ export const FrederictonPage = () => {
               }}>
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>How long does website development take?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Most professional web design Fredericton projects take 2-4 weeks from start to launch. 
+                  Most professional web design projects take 2-4 weeks from start to launch. 
                   This includes planning, design, development, content creation, and testing. We keep you 
                   updated throughout the process and handle all the technical details.
                 </p>
@@ -1386,7 +1283,7 @@ export const FrederictonPage = () => {
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Why choose WordPress for my business website?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
                   WordPress powers 40% of all websites and is perfect for small businesses. Our WordPress website 
-                  Fredericton development gives you an easy-to-update site that's secure, SEO-friendly, and 
+                  WordPress development gives you an easy-to-update site that's secure, SEO-friendly, and 
                   grows with your business. You'll be able to add photos and update content yourself.
                 </p>
               </div>
@@ -1400,7 +1297,7 @@ export const FrederictonPage = () => {
               }}>
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Do you provide website maintenance after launch?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Yes! Our website maintenance Fredericton services include security updates, backups, 
+                  Yes! Our website maintenance services include security updates, backups, 
                   performance monitoring, and content updates. Our competitive monthly plans are an affordable 
                   way to keep your website secure and performing well for your customers.
                 </p>
@@ -1428,9 +1325,9 @@ export const FrederictonPage = () => {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid rgba(29, 122, 175, 0.1)'
               }}>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>How do I choose a web design company in Fredericton?</h3>
+                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>How do I choose a web design company?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Look for a local web designer Fredericton with experience in your industry, transparent 
+                  Look for a local web designer with experience in your industry, transparent 
                   pricing, and a portfolio of successful projects. We specialize in contractor and small 
                   business websites with proven results getting our clients more customers.
                 </p>
@@ -1445,9 +1342,9 @@ export const FrederictonPage = () => {
               }}>
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Can you help with digital marketing beyond web design?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Absolutely! Our digital marketing Fredericton services include Google My Business optimization, 
+                  Absolutely! Our digital marketing services include Google My Business optimization, 
                   online review management, social media setup, and local SEO. We help you get found online 
-                  and build a strong reputation in the Fredericton market.
+                  and build a strong reputation in the local market.
                 </p>
               </div>
             </div>
@@ -1458,11 +1355,11 @@ export const FrederictonPage = () => {
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Professional Web Design Company Fredericton - Full Service Solutions</h2>
+              <h2 className="section-title">Full Service Web Design Solutions</h2>
               <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '800px', margin: '0 auto' }}>
-                From custom web design to comprehensive digital marketing Fredericton businesses rely on us 
+                From custom web design to comprehensive digital marketing, local businesses rely on us 
                 for complete online solutions. Our web development company serves contractors, professionals, 
-                and small businesses throughout the greater Fredericton area.
+                and small businesses throughout the greater Saint John area.
               </p>
             </div>
             
@@ -1474,15 +1371,15 @@ export const FrederictonPage = () => {
               alignItems: 'start'
             }}>
               <div>
-                <h3 style={{color: colors.primary, marginBottom: '1.5rem', fontSize: '1.5rem'}}>Our Web Design Fredericton Specializations:</h3>
+                <h3 style={{color: colors.primary, marginBottom: '1.5rem', fontSize: '1.5rem'}}>Our Web Design Specializations:</h3>
                 <div style={{marginBottom: '2rem'}}>
-                  <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>🏢 Small Business Website Fredericton</h4>
-                  <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem'}}>Professional websites designed specifically for Fredericton small businesses. Our local web designer team understands what works in the Maritime market.</p>
+                  <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>🏢 Small Business Websites</h4>
+                  <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem'}}>Professional websites designed specifically for local small businesses. Our web design team understands what works in the Maritime market.</p>
                   
                   <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>🔧 Contractor Web Development</h4>
-                  <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem'}}>Custom web design for plumbers, electricians, HVAC technicians, roofers, and construction companies throughout Fredericton and surrounding areas.</p>
+                  <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem'}}>Custom web design for plumbers, electricians, HVAC technicians, roofers, and construction companies throughout the local area.</p>
                   
-                  <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>🌟 WordPress Website Fredericton Development</h4>
+                  <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>🌟 WordPress Website Development</h4>
                   <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem'}}>Professional WordPress development with easy content management, security features, and SEO optimization built-in from day one.</p>
                   
                   <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>📱 Mobile Website Optimization</h4>
@@ -1493,17 +1390,17 @@ export const FrederictonPage = () => {
               <div>
                 <h3 style={{color: colors.primary, marginBottom: '1.5rem', fontSize: '1.5rem'}}>Complete Online Marketing Services:</h3>
                 <div style={{marginBottom: '2rem'}}>
-                  <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>🎯 SEO Services Fredericton</h4>
-                  <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem'}}>Local search engine optimization to help your business appear first when Fredericton customers search for your services online.</p>
+                  <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>🎯 Local SEO Services</h4>
+                  <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem'}}>Local search engine optimization to help your business appear first when customers search for your services online.</p>
                   
-                  <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>📊 Digital Marketing Fredericton</h4>
+                  <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>📊 Digital Marketing</h4>
                   <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem'}}>Comprehensive online marketing including Google My Business optimization, review management, and social media integration.</p>
                   
-                  <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>🛠️ Website Maintenance Fredericton</h4>
+                  <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>🛠️ Website Maintenance</h4>
                   <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem'}}>Ongoing website maintenance to keep your site secure, updated, and performing optimally for your customers.</p>
                   
                   <h4 style={{color: colors.text.primary, marginBottom: '0.8rem', fontSize: '1.2rem'}}>🎨 Custom Web Design Solutions</h4>
-                  <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>No templates or cookie-cutter designs. Every custom web design project is tailored specifically for your Fredericton business and industry.</p>
+                  <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>No templates or cookie-cutter designs. Every custom web design project is tailored specifically for your business and industry.</p>
                 </div>
               </div>
             </div>
@@ -1521,7 +1418,7 @@ export const FrederictonPage = () => {
                 width: '100%'
               }}>
                 <h4 style={{color: colors.primary, marginBottom: '1rem'}}>Ready to Get Started?</h4>
-                <p style={{color: colors.text.secondary, marginBottom: '1.5rem', lineHeight: '1.6'}}>Contact our local web designer Fredericton team for a free consultation and custom quote.</p>
+                <p style={{color: colors.text.secondary, marginBottom: '1.5rem', lineHeight: '1.6'}}>Contact our local web design team for a free consultation and custom quote.</p>
                 <div style={{display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap'}}>
                   <a href="/contact" className="hero-button" style={{fontSize: '1rem', padding: '12px 24px'}}>Get Free Quote</a>
                   <a href="/free-example" className="secondary-button" style={{fontSize: '1rem', padding: '12px 24px'}}>See Example</a>
@@ -1531,7 +1428,7 @@ export const FrederictonPage = () => {
             
             {/* Service Coverage Areas */}
             <div style={{marginTop: '3rem'}}>
-              <h3 style={{color: colors.primary, marginBottom: '1.5rem', textAlign: 'center', fontSize: '1.5rem'}}>Web Development Company Serving Greater Fredericton</h3>
+              <h3 style={{color: colors.primary, marginBottom: '1.5rem', textAlign: 'center', fontSize: '1.5rem'}}>Serving the Greater Saint John Area</h3>
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
@@ -1539,18 +1436,18 @@ export const FrederictonPage = () => {
                 textAlign: 'center'
               }}>
                 {[
-                  'Downtown Fredericton',
-                  'Nashwaaksis',
-                  'Marysville', 
-                  'Oromocto',
-                  'Hanwell',
-                  'Lincoln',
-                  'New Maryland',
-                  'Harvey Station',
-                  'Zealand',
-                  'Burton',
-                  'Geary',
-                  'Douglas'
+                  'Saint John',
+                  'Rothesay',
+                  'Quispamsis', 
+                  'Grand Bay-Westfield',
+                  'Hampton',
+                  'Sussex',
+                  'St. Martins',
+                  'Kingston Peninsula',
+                  'Uptown',
+                  'East Side',
+                  'West Side',
+                  'Millidgeville'
                 ].map((area, index) => (
                   <div key={index} style={{
                     background: 'white',
@@ -1568,7 +1465,7 @@ export const FrederictonPage = () => {
                 marginTop: '1.5rem',
                 color: colors.text.secondary,
                 fontStyle: 'italic'
-              }}>Professional web design Fredericton services for businesses throughout York County and the greater capital region.</p>
+              }}>Professional web design services for businesses throughout the region.</p>
             </div>
           </div>
         </section>
@@ -1577,10 +1474,10 @@ export const FrederictonPage = () => {
         <section className="section" style={{ backgroundColor: '#000', color: 'white' }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title" style={{ color: 'white' }}>Leading Web Design Company Fredericton</h2>
+              <h2 className="section-title" style={{ color: 'white' }}>Leading Web Design Company</h2>
               <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
                 Professional website development, affordable web design, and comprehensive digital marketing 
-                services for small businesses throughout Fredericton and the Maritimes.
+                services for small businesses throughout the Maritimes.
               </p>
             </div>
             <div className="cta-buttons">

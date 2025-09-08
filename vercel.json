@@ -2,5 +2,22 @@
   "name": "logicproswebsite",
   "buildCommand": "npm run build",
   "outputDirectory": "build",
-  "framework": "create-react-app"
+  "framework": "create-react-app",
+  "rewrites": [
+    { "source": "/locations/fredericton/web-design", "destination": "/index.html" },
+    { "source": "/locations/fredericton/cybersecurity", "destination": "/index.html" },
+    { "source": "/locations/fredericton/managed-it", "destination": "/index.html" },
+    { "source": "/locations/moncton/web-design", "destination": "/index.html" },
+    { "source": "/locations/moncton/cybersecurity", "destination": "/index.html" },
+    { "source": "/locations/moncton/managed-it", "destination": "/index.html" },
+    { "source": "/locations/saint-john/web-design", "destination": "/index.html" },
+    { "source": "/locations/saint-john/cybersecurity", "destination": "/index.html" },
+    { "source": "/locations/saint-john/managed-it", "destination": "/index.html" },
+    { "source": "/locations/(.*)", "destination": "/index.html" },
+    { "source": "/services/(.*)", "destination": "/index.html" },
+    { "source": "/contractors/(.*)", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" },
+    { "source": "/free-example", "destination": "/index.html" }
+  ]
 }
