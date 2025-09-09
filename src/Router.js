@@ -19,15 +19,20 @@ import { RemodelingPage } from './pages/contractors/RemodelingPage';
 import { WebsitesPage } from './pages/services/WebsitesPage';
 import { AutomationsPage } from './pages/services/AutomationsPage';
 import { ITServicesPage } from './pages/services/ITServicesPage';
+import { CybersecurityPage } from './pages/services/CybersecurityPage';
 import { SecurityAuditPage } from './pages/services/SecurityAuditPage';
 import { PasswordManagementPage } from './pages/services/PasswordManagementPage';
 import { MFAPage } from './pages/services/MFAPage';
+import { ManagedITServicesPage } from './pages/services/ManagedITServicesPage';
 import { FrederictonPage } from './pages/locations/FrederictonPage';
 import { MonctonPage } from './pages/locations/MonctonPage';
 import { SaintJohnPage } from './pages/locations/SaintJohnPage';
 import { FrederictonWebDesignPage } from './pages/locations/fredericton/WebDesignPage';
+import { FrederictonCybersecurityPage } from './pages/locations/fredericton/CybersecurityPage';
 import { SaintJohnWebDesignPage } from './pages/locations/saint-john/WebDesignPage';
+import { SaintJohnCybersecurityPage } from './pages/locations/saint-john/CybersecurityPage';
 import { MonctonWebDesignPage } from './pages/locations/moncton/WebDesignPage';
+import { MonctonCybersecurityPage } from './pages/locations/moncton/CybersecurityPage';
 
 export const Router = () => {
   const [currentPath, setCurrentPath] = React.useState(() => {
@@ -98,20 +103,30 @@ export const Router = () => {
         return <AutomationsPage />;
       case '/services/it-services':
         return <ITServicesPage />;
+      case '/services/cybersecurity':
+        return <CybersecurityPage />;
       case '/services/security-audits':
         return <SecurityAuditPage />;
       case '/services/password-management':
         return <PasswordManagementPage />;
       case '/services/multi-factor-authentication':
         return <MFAPage />;
+      case '/services/managed-it':
+        return <ManagedITServicesPage />;
       case '/locations/fredericton':
         return <FrederictonPage />;
       case '/locations/fredericton/web-design':
         return <FrederictonWebDesignPage />;
+      case '/locations/fredericton/cybersecurity':
+        return <FrederictonCybersecurityPage />;
       case '/locations/saint-john/web-design':
         return <SaintJohnWebDesignPage />;
+      case '/locations/saint-john/cybersecurity':
+        return <SaintJohnCybersecurityPage />;
       case '/locations/moncton/web-design':
         return <MonctonWebDesignPage />;
+      case '/locations/moncton/cybersecurity':
+        return <MonctonCybersecurityPage />;
       case '/locations/moncton':
         return <MonctonPage />;
       case '/locations/saint-john':

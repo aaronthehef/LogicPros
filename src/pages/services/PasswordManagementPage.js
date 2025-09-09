@@ -185,24 +185,24 @@ export const PasswordManagementPage = () => {
               }}>
                 <a href="/contact" style={{
                   display: 'inline-block',
-                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                  background: 'linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%)',
                   color: 'white',
                   border: 'none',
                   padding: '18px 40px',
                   fontSize: '1.1rem',
                   fontWeight: '600',
                   borderRadius: '50px',
-                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  boxShadow: '0 10px 30px rgba(29, 78, 216, 0.4)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   textDecoration: 'none'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
-                  e.target.style.transform = 'translateY(-3px)';
+                  e.target.style.boxShadow = '0 15px 40px rgba(29, 78, 216, 0.5)';
+                  e.target.style.transform = 'translateY(-3px) scale(1.02)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
-                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = '0 10px 30px rgba(29, 78, 216, 0.4)';
+                  e.target.style.transform = 'translateY(0) scale(1)';
                 }}>Get Password Management</a>
                 <a href="/contact" style={{
                   display: 'inline-block',
@@ -218,14 +218,16 @@ export const PasswordManagementPage = () => {
                   backdropFilter: 'blur(10px)'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
-                  e.target.style.transform = 'translateY(-3px)';
-                  e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+                  e.target.style.boxShadow = '0 10px 30px rgba(29, 78, 216, 0.4)';
+                  e.target.style.transform = 'translateY(-3px) scale(1.02)';
+                  e.target.style.borderColor = 'rgba(29, 78, 216, 0.8)';
+                  e.target.style.background = 'rgba(29, 78, 216, 0.1)';
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.boxShadow = 'none';
-                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.transform = 'translateY(0) scale(1)';
                   e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                  e.target.style.background = 'transparent';
                 }}>Ask About Grant Eligibility</a>
               </div>
             </div>
@@ -891,24 +893,24 @@ export const PasswordManagementPage = () => {
             }}>
               <a href="/contact" style={{
                 display: 'inline-block',
-                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                background: 'linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%)',
                 color: 'white',
                 border: 'none',
                 padding: '18px 40px',
                 fontSize: '1.1rem',
                 fontWeight: '600',
                 borderRadius: '50px',
-                boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                boxShadow: '0 10px 30px rgba(29, 78, 216, 0.4)',
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 textDecoration: 'none'
               }}
               onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
-                e.target.style.transform = 'translateY(-3px)';
+                e.target.style.boxShadow = '0 15px 40px rgba(29, 78, 216, 0.5)';
+                e.target.style.transform = 'translateY(-3px) scale(1.02)';
               }}
               onMouseLeave={(e) => {
-                e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
-                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = '0 10px 30px rgba(29, 78, 216, 0.4)';
+                e.target.style.transform = 'translateY(0) scale(1)';
               }}>Get Password Management</a>
               <a href="/contact" style={{
                 display: 'inline-block',
@@ -924,14 +926,16 @@ export const PasswordManagementPage = () => {
                 backdropFilter: 'blur(10px)'
               }}
               onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
-                e.target.style.transform = 'translateY(-3px)';
-                e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+                e.target.style.boxShadow = '0 10px 30px rgba(29, 78, 216, 0.4)';
+                e.target.style.transform = 'translateY(-3px) scale(1.02)';
+                e.target.style.borderColor = 'rgba(29, 78, 216, 0.8)';
+                e.target.style.background = 'rgba(29, 78, 216, 0.1)';
               }}
               onMouseLeave={(e) => {
                 e.target.style.boxShadow = 'none';
-                e.target.style.transform = 'translateY(0)';
+                e.target.style.transform = 'translateY(0) scale(1)';
                 e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                e.target.style.background = 'transparent';
               }}>Ask About Grant Funding</a>
             </div>
           </div>

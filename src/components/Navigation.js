@@ -81,7 +81,7 @@ export const Navigation = () => {
               onMouseEnter={() => handleMouseEnter('cybersecurity')}
               onMouseLeave={() => handleMouseEnter('services')}
             >
-              <a href="/services/it-services" className="dropdown-item-with-submenu">
+              <a href="/services/cybersecurity" className="dropdown-item-with-submenu">
                 Cybersecurity Services
                 <span className="submenu-arrow">▶</span>
               </a>

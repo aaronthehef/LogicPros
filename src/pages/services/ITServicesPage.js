@@ -7,6 +7,9 @@ import { colors } from '../../styles/colors';
 
 export const ITServicesPage = () => {
   useEffect(() => {
+    // Set page title
+    document.title = "IT & Digital Solutions New Brunswick | LogicPros | Enterprise Services Maritime";
+    
     // Hero background animation styles
     const style = document.createElement('style');
     style.textContent = `
@@ -162,11 +165,11 @@ export const ITServicesPage = () => {
                 color: 'white',
                 textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
                 letterSpacing: '-0.02em'
-              }}>Enterprise Cybersecurity & Managed IT Services</h1>
+              }}>Enterprise IT & Digital Solutions for New Brunswick & the Maritimes</h1>
               <p style={{ 
                 fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
                 marginBottom: '40px',
-                maxWidth: '700px',
+                maxWidth: '800px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 lineHeight: '1.7',
@@ -174,8 +177,7 @@ export const ITServicesPage = () => {
                 color: 'rgba(255, 255, 255, 0.95)',
                 textShadow: '0 2px 4px rgba(0, 0, 0, 0.4)'
               }}>
-                Protect your business from cyber threats with comprehensive security audits, managed IT support, 
-                and enterprise-grade security solutions. Keep your data safe and your operations running smoothly.
+                As a trusted partner to businesses across New Brunswick and the Maritime provinces, we deliver a comprehensive suite of IT and digital solutions designed to streamline operations, enhance security, and drive growth. Our tailored services empower small and medium businesses with modern technologies and expert support to meet today's competitive landscape.
               </p>
               <div style={{ 
                 display: 'flex',
@@ -203,99 +205,123 @@ export const ITServicesPage = () => {
                 onMouseLeave={(e) => {
                   e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
                   e.target.style.transform = 'translateY(0)';
-                }}>Schedule Security Assessment</a>
+                }}>Get Started Today</a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Core Cybersecurity & IT Services */}
+        {/* Main Services Overview */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: '60px' }}>
               <h2 style={{ 
-                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', 
                 fontWeight: '700', 
                 color: colors.text.primary,
                 marginBottom: '20px',
                 lineHeight: '1.2'
-              }}>Comprehensive Cybersecurity Solutions</h2>
+              }}>
+                Comprehensive Business IT Solutions Trusted Across New Brunswick and the Maritimes
+              </h2>
               <p style={{ 
-                fontSize: '1.1rem', 
+                fontSize: '1.2rem', 
                 color: colors.text.secondary, 
-                maxWidth: '700px', 
+                maxWidth: '800px', 
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Protect your business with enterprise-grade security solutions designed for small to medium businesses. 
-                From threat detection to compliance, we've got you covered.
+                From managed IT support to enterprise-grade cybersecurity solutions, we deliver integrated technology services that help grow and protect businesses throughout New Brunswick and the Maritime provinces.
               </p>
             </div>
-            
-            <div style={{ 
+
+            <div className="services-grid-2x2" style={{ 
               display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-              gap: '30px',
-              maxWidth: '1000px',
+              gridTemplateColumns: 'repeat(2, 1fr)', 
+              gap: '40px',
+              maxWidth: '1200px',
               margin: '0 auto'
             }}>
+              {/* Web Design & Development - First */}
               <div style={{ 
                 background: 'white',
                 borderRadius: '20px',
                 padding: '40px 35px',
                 boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: `2px solid ${colors.primary}`,
+                border: `2px solid ${colors.secondary}`,
                 position: 'relative',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                height: 'auto'
               }}>
                 <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                   <div style={{ 
                     fontSize: '3rem', 
                     marginBottom: '15px'
-                  }}>🔒</div>
+                  }}>🎨</div>
                   <h3 style={{ 
                     fontSize: '1.8rem', 
                     fontWeight: '700', 
                     color: colors.text.primary, 
                     marginBottom: '8px'
-                  }}>Security Audits</h3>
+                  }}>Web Design & Development</h3>
                   <p style={{ 
-                    color: colors.primary, 
+                    color: colors.secondary, 
                     fontWeight: '600',
-                    fontSize: '1.1rem'
-                  }}>Comprehensive Assessment</p>
+                    fontSize: '1rem'
+                  }}>Professional Digital Presence Across New Brunswick & the Maritimes</p>
                 </div>
-                <ul style={{ 
-                  listStyle: 'none',
-                  padding: 0,
-                  marginBottom: '25px'
+                <div style={{ 
+                  marginBottom: '25px',
+                  flexGrow: 1
                 }}>
-                  {[
-                    'Vulnerability scanning & assessment',
-                    'Network security evaluation',
-                    'Risk analysis & reporting',
-                    'Compliance gap analysis',
-                    'Remediation recommendations'
-                  ].map((feature, index) => (
-                    <li key={index} style={{ 
-                      padding: '8px 0',
-                      fontSize: '1rem',
-                      color: colors.text.secondary,
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}>
-                      <span style={{ 
-                        color: colors.primary, 
-                        marginRight: '10px',
-                        fontWeight: 'bold'
-                      }}>✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                  <p style={{ 
+                    color: colors.text.secondary, 
+                    lineHeight: '1.6',
+                    marginBottom: '20px'
+                  }}>
+                    Build a modern, mobile-responsive website optimized for search engines that attracts and converts your target customers throughout New Brunswick and the Maritimes. Our WordPress web design services deliver customized solutions that reflect your brand's identity and meet your business goals. Our WordPress web design services help businesses establish a credible digital presence that builds customer trust and drives measurable results. Mobile-first design ensures seamless performance on all devices, while our local SEO expertise helps businesses rank higher and convert more website visitors.
+                  </p>
+                  <h4 style={{ 
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    color: colors.text.primary,
+                    marginBottom: '15px'
+                  }}>Key Features:</h4>
+                  <ul style={{ 
+                    listStyle: 'none',
+                    padding: 0,
+                    margin: 0
+                  }}>
+                    {[
+                      'Custom WordPress Development',
+                      'Mobile-Responsive Design',
+                      'SEO Optimization & Local Search Targeting',
+                      'E-commerce Platform Integration',
+                      'Content Management Systems (CMS)',
+                      'Website Hosting & Maintenance'
+                    ].map((feature, index) => (
+                      <li key={index} style={{ 
+                        padding: '6px 0',
+                        fontSize: '0.95rem',
+                        color: colors.text.secondary,
+                        display: 'flex',
+                        alignItems: 'center'
+                      }}>
+                        <span style={{ 
+                          color: colors.secondary, 
+                          marginRight: '10px',
+                          fontWeight: 'bold'
+                        }}>✓</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div style={{ textAlign: 'center', marginTop: 'auto' }}>
                   <a 
-                    href="/contact" 
+                    href="/services/websites" 
                     style={{ 
                       display: 'inline-block',
                       background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
@@ -318,11 +344,119 @@ export const ITServicesPage = () => {
                       e.target.style.transform = 'translateY(0)';
                     }}
                   >
-                    Get Assessment Quote
+                    Explore Web Design Services
                   </a>
                 </div>
               </div>
 
+              {/* Managed IT Services - Second */}
+              <div style={{ 
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `2px solid ${colors.primary}`,
+                position: 'relative',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                height: 'auto'
+              }}>
+                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                  <div style={{ 
+                    fontSize: '3rem', 
+                    marginBottom: '15px'
+                  }}>🖥️</div>
+                  <h3 style={{ 
+                    fontSize: '1.8rem', 
+                    fontWeight: '700', 
+                    color: colors.text.primary, 
+                    marginBottom: '8px'
+                  }}>Managed IT Services New Brunswick</h3>
+                  <p style={{ 
+                    color: colors.primary, 
+                    fontWeight: '600',
+                    fontSize: '1rem'
+                  }}>Comprehensive IT Infrastructure Management & Support</p>
+                </div>
+                <div style={{ 
+                  marginBottom: '25px',
+                  flexGrow: 1
+                }}>
+                  <p style={{ 
+                    color: colors.text.secondary, 
+                    lineHeight: '1.6',
+                    marginBottom: '20px'
+                  }}>
+                    Our managed IT support for New Brunswick businesses provides proactive monitoring and strategic IT planning to keep operations secure and efficient. From 24/7 network management to cloud migration services, we ensure your IT infrastructure performs reliably across the Maritimes. Our complete IT solutions are designed to minimize downtime and maximize productivity, backed by local expertise.
+                  </p>
+                  <h4 style={{ 
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    color: colors.text.primary,
+                    marginBottom: '15px'
+                  }}>Key Offerings:</h4>
+                  <ul style={{ 
+                    listStyle: 'none',
+                    padding: 0,
+                    margin: 0
+                  }}>
+                    {[
+                      '24/7 Network Monitoring & Incident Resolution',
+                      'Proactive IT Support & Personalized Assistance',
+                      'Server & Cloud Infrastructure Management',
+                      'Data Backup & Disaster Recovery Solutions',
+                      'Strategic IT Consulting',
+                      'Hardware & Software Asset Management'
+                    ].map((feature, index) => (
+                      <li key={index} style={{ 
+                        padding: '6px 0',
+                        fontSize: '0.95rem',
+                        color: colors.text.secondary,
+                        display: 'flex',
+                        alignItems: 'center'
+                      }}>
+                        <span style={{ 
+                          color: colors.primary, 
+                          marginRight: '10px',
+                          fontWeight: 'bold'
+                        }}>✓</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div style={{ textAlign: 'center', marginTop: 'auto' }}>
+                  <a 
+                    href="/services/managed-it" 
+                    style={{ 
+                      display: 'inline-block',
+                      background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                      color: 'white',
+                      padding: '18px 40px',
+                      borderRadius: '50px',
+                      textDecoration: 'none',
+                      fontSize: '1.1rem',
+                      fontWeight: '600',
+                      boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                      transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                      border: 'none'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                      e.target.style.transform = 'translateY(-3px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                      e.target.style.transform = 'translateY(0)';
+                    }}
+                  >
+                    Explore Managed IT Services
+                  </a>
+                </div>
+              </div>
+
+              {/* Cybersecurity Solutions - Third */}
               <div style={{ 
                 background: 'white',
                 borderRadius: '20px',
@@ -330,7 +464,10 @@ export const ITServicesPage = () => {
                 boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
                 border: `2px solid ${colors.accent}`,
                 position: 'relative',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                height: 'auto'
               }}>
                 <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                   <div style={{ 
@@ -342,44 +479,63 @@ export const ITServicesPage = () => {
                     fontWeight: '700', 
                     color: colors.text.primary, 
                     marginBottom: '8px'
-                  }}>Managed IT Support</h3>
+                  }}>Cybersecurity Solutions Maritime</h3>
                   <p style={{ 
                     color: colors.accent, 
                     fontWeight: '600',
-                    fontSize: '1.1rem'
-                  }}>24/7 Monitoring</p>
+                    fontSize: '1rem'
+                  }}>Enterprise-Grade Protection Tailored for New Brunswick Businesses</p>
                 </div>
-                <ul style={{ 
-                  listStyle: 'none',
-                  padding: 0,
-                  marginBottom: '25px'
+                <div style={{ 
+                  marginBottom: '25px',
+                  flexGrow: 1
                 }}>
-                  {[
-                    'Remote system monitoring',
-                    'Patch management & updates',
-                    'Endpoint security management',
-                    'Help desk support',
-                    'Proactive issue resolution'
-                  ].map((feature, index) => (
-                    <li key={index} style={{ 
-                      padding: '8px 0',
-                      fontSize: '1rem',
-                      color: colors.text.secondary,
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}>
-                      <span style={{ 
-                        color: colors.accent, 
-                        marginRight: '10px',
-                        fontWeight: 'bold'
-                      }}>✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                  <p style={{ 
+                    color: colors.text.secondary, 
+                    lineHeight: '1.6',
+                    marginBottom: '20px'
+                  }}>
+                    Protect your digital assets with comprehensive cybersecurity solutions tailored for New Brunswick businesses, addressing evolving cyber threats and regulatory compliance. Our services include security audits, firewall management, multi-factor authentication, incident response, and staff training to reduce risk and maintain business continuity. Advanced security compliance solutions protect Maritime businesses from sophisticated cyber threats while maintaining operational efficiency through specialized New Brunswick cybersecurity expertise.
+                  </p>
+                  <h4 style={{ 
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    color: colors.text.primary,
+                    marginBottom: '15px'
+                  }}>Security Highlights:</h4>
+                  <ul style={{ 
+                    listStyle: 'none',
+                    padding: 0,
+                    margin: 0
+                  }}>
+                    {[
+                      'Security Audits & Vulnerability Assessments',
+                      'Firewall Management & Network Security',
+                      'Multi-Factor Authentication (MFA)',
+                      'Security Awareness Training for Staff',
+                      'Incident Response & Recovery Planning',
+                      'Compliance Support for Industry Standards'
+                    ].map((feature, index) => (
+                      <li key={index} style={{ 
+                        padding: '6px 0',
+                        fontSize: '0.95rem',
+                        color: colors.text.secondary,
+                        display: 'flex',
+                        alignItems: 'center'
+                      }}>
+                        <span style={{ 
+                          color: colors.accent, 
+                          marginRight: '10px',
+                          fontWeight: 'bold'
+                        }}>✓</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div style={{ textAlign: 'center', marginTop: 'auto' }}>
                   <a 
-                    href="/contact" 
+                    href="/services/cybersecurity" 
                     style={{ 
                       display: 'inline-block',
                       background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
@@ -402,68 +558,91 @@ export const ITServicesPage = () => {
                       e.target.style.transform = 'translateY(0)';
                     }}
                   >
-                    Get IT Support Quote
+                    View Cybersecurity Services
                   </a>
                 </div>
               </div>
 
+              {/* AI Automation Solutions - Fourth */}
               <div style={{ 
                 background: 'white',
                 borderRadius: '20px',
                 padding: '40px 35px',
                 boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: `2px solid ${colors.secondary}`,
+                border: `2px solid ${colors.primaryDark}`,
                 position: 'relative',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                height: 'auto'
               }}>
                 <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                   <div style={{ 
                     fontSize: '3rem', 
                     marginBottom: '15px'
-                  }}>🔐</div>
+                  }}>🤖</div>
                   <h3 style={{ 
                     fontSize: '1.8rem', 
                     fontWeight: '700', 
                     color: colors.text.primary, 
                     marginBottom: '8px'
-                  }}>Identity & Access</h3>
+                  }}>AI Automation Solutions New Brunswick</h3>
                   <p style={{ 
-                    color: colors.secondary, 
+                    color: colors.primaryDark, 
                     fontWeight: '600',
-                    fontSize: '1.1rem'
-                  }}>MFA & Password Security</p>
+                    fontSize: '1rem'
+                  }}>Intelligent Business Process Automation & Insights</p>
                 </div>
-                <ul style={{ 
-                  listStyle: 'none',
-                  padding: 0,
-                  marginBottom: '25px'
+                <div style={{ 
+                  marginBottom: '25px',
+                  flexGrow: 1
                 }}>
-                  {[
-                    'Multi-factor authentication setup',
-                    'Password management systems',
-                    'Single sign-on (SSO) solutions',
-                    'Access control policies',
-                    'User security training'
-                  ].map((feature, index) => (
-                    <li key={index} style={{ 
-                      padding: '8px 0',
-                      fontSize: '1rem',
-                      color: colors.text.secondary,
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}>
-                      <span style={{ 
-                        color: colors.secondary, 
-                        marginRight: '10px',
-                        fontWeight: 'bold'
-                      }}>✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                  <p style={{ 
+                    color: colors.text.secondary, 
+                    lineHeight: '1.6',
+                    marginBottom: '20px'
+                  }}>
+                    Use AI automation to reduce manual tasks, enhance accuracy, and gain real-time insights across New Brunswick and the Maritime region. Our AI solutions include smart chatbots, intelligent document processing, and tailored workflows designed to meet diverse industry needs. Transform your operations with innovative automation that delivers measurable efficiency and competitive advantages.
+                  </p>
+                  <h4 style={{ 
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    color: colors.text.primary,
+                    marginBottom: '15px'
+                  }}>AI Capabilities:</h4>
+                  <ul style={{ 
+                    listStyle: 'none',
+                    padding: 0,
+                    margin: 0
+                  }}>
+                    {[
+                      'Business Process Automation',
+                      'Intelligent Document Processing',
+                      'Customer Service Chatbots',
+                      'Data Analysis & Reporting',
+                      'Workflow Integration Systems',
+                      'Custom AI Solution Development'
+                    ].map((feature, index) => (
+                      <li key={index} style={{ 
+                        padding: '6px 0',
+                        fontSize: '0.95rem',
+                        color: colors.text.secondary,
+                        display: 'flex',
+                        alignItems: 'center'
+                      }}>
+                        <span style={{ 
+                          color: colors.primaryDark, 
+                          marginRight: '10px',
+                          fontWeight: 'bold'
+                        }}>✓</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div style={{ textAlign: 'center', marginTop: 'auto' }}>
                   <a 
-                    href="/contact" 
+                    href="/services/automations" 
                     style={{ 
                       display: 'inline-block',
                       background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
@@ -486,305 +665,283 @@ export const ITServicesPage = () => {
                       e.target.style.transform = 'translateY(0)';
                     }}
                   >
-                    Get Security Quote
+                    Discover AI Automation
                   </a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Advanced Security Services */}
-        <section className="section" style={{ padding: '80px 0' }}>
-          <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-              <h2 style={{ 
-                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', 
-                fontWeight: '700', 
-                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                marginBottom: '20px',
-                lineHeight: '1.2'
-              }}>
-                Advanced Security & Compliance Services
-              </h2>
-              <p style={{ 
-                fontSize: '1.2rem', 
-                color: '#6b7280', 
-                maxWidth: '600px', 
-                margin: '0 auto',
-                lineHeight: '1.6'
-              }}>
-                Enterprise-grade security solutions for businesses that need more than basic protection
-              </p>
-            </div>
-            
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-              gap: '30px',
-              marginBottom: '40px'
-            }}>
-              {[
-                {
-                  icon: '🔥',
-                  title: 'Firewall Management',
-                  description: 'Next-generation firewall configuration, monitoring, and management. Protect your network perimeter from advanced threats.'
-                },
-                {
-                  icon: '☁️',
-                  title: 'Cloud Security',
-                  description: 'Secure your cloud infrastructure with proper configuration, access controls, and continuous monitoring across AWS, Azure, and Google Cloud.'
-                },
-                {
-                  icon: '💾',
-                  title: 'Backup & Recovery',
-                  description: 'Automated backup solutions with disaster recovery planning. Ensure business continuity with tested recovery procedures.'
-                },
-                {
-                  icon: '📋',
-                  title: 'Compliance Support',
-                  description: 'Meet industry compliance requirements including PIPEDA, PCI DSS, and sector-specific regulations with documented processes.'
-                },
-                {
-                  icon: '🎓',
-                  title: 'Security Training',
-                  description: 'Employee cybersecurity awareness training, phishing simulations, and security policy development for your team.'
-                },
-                {
-                  icon: '🚨',
-                  title: 'Incident Response',
-                  description: '24/7 security incident monitoring and response. Rapid containment and remediation of security threats and breaches.'
-                }
-              ].map((service, index) => (
-                <div key={index} style={{ 
-                  background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
-                  borderRadius: '20px',
-                  padding: '40px 30px',
-                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                  border: '1px solid rgba(29, 122, 175, 0.1)',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
-                }}>
-                  <div style={{
-                    position: 'absolute',
-                    top: '-50%',
-                    right: '-20%',
-                    width: '120px',
-                    height: '120px',
-                    background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
-                    borderRadius: '50%',
-                    zIndex: 0
-                  }}></div>
-                  <div style={{ position: 'relative', zIndex: 1 }}>
-                    <div style={{ 
-                      fontSize: '3rem', 
-                      marginBottom: '20px',
-                      background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                      borderRadius: '50%',
-                      width: '70px',
-                      height: '70px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginBottom: '25px'
-                    }}>{service.icon}</div>
-                    <h3 style={{ 
-                      fontSize: '1.5rem', 
-                      fontWeight: '600', 
-                      color: '#1f2937', 
-                      marginBottom: '15px',
-                      lineHeight: '1.3'
-                    }}>{service.title}</h3>
-                    <p style={{ 
-                      color: '#6b7280', 
-                      lineHeight: '1.7',
-                      fontSize: '1rem'
-                    }}>
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Call-to-Action */}
-            <div style={{ textAlign: 'center', marginTop: '60px' }}>
-              <a 
-                href="/contact" 
-                style={{ 
-                  display: 'inline-block',
-                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                  color: 'white',
-                  padding: '18px 40px',
-                  borderRadius: '50px',
-                  textDecoration: 'none',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  border: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
-                  e.target.style.transform = 'translateY(-3px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
-                  e.target.style.transform = 'translateY(0)';
-                }}
-              >
-                Get Your Security Assessment Today
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Implementation Process */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-          <div className="container">
-            <h2 className="section-title">Our IT Security Implementation Process</h2>
-            <div className="process-grid-it" style={{ marginTop: '40px', paddingTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
-              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(26, 121, 175, 0.3)', zIndex: 10 }}>1</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Security Assessment</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Comprehensive evaluation of your current IT infrastructure, identifying vulnerabilities and security gaps across all systems.</p>
-              </div>
-              
-              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.accent, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)', zIndex: 10 }}>2</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Custom Security Plan</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Tailored cybersecurity strategy based on your business needs, compliance requirements, and risk tolerance.</p>
-              </div>
-              
-              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.secondary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(49, 66, 81, 0.3)', zIndex: 10 }}>3</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Implementation & Setup</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Professional deployment of security tools, policies, and procedures with minimal business disruption.</p>
-              </div>
-              
-              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primaryDark, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(21, 94, 138, 0.3)', zIndex: 10 }}>4</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Ongoing Support & Monitoring</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>24/7 security monitoring, regular updates, and continuous improvement of your security posture.</p>
               </div>
             </div>
           </div>
           
           <style dangerouslySetInnerHTML={{__html: `
             @media (max-width: 768px) {
-              .process-grid-it {
+              .services-grid-2x2 {
                 grid-template-columns: 1fr !important;
+                gap: 30px !important;
               }
             }
           `}} />
         </section>
 
-        {/* Industry Specializations */}
-        <section className="section" style={{ padding: '80px 0' }}>
+        {/* Cloud IT Services Section */}
+        <section style={{ padding: '80px 20px', backgroundColor: 'white' }}>
           <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
               <h2 style={{ 
-                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
+                fontSize: 'clamp(2rem, 4vw, 3rem)', 
                 fontWeight: '700', 
                 color: colors.text.primary,
-                marginBottom: '20px',
-                lineHeight: '1.2'
-              }}>Industry-Specific Security Solutions</h2>
+                marginBottom: '20px'
+              }}>Cloud IT Services New Brunswick & the Maritimes</h2>
               <p style={{ 
-                fontSize: '1.1rem', 
+                fontSize: '1.2rem', 
                 color: colors.text.secondary, 
                 maxWidth: '700px', 
-                margin: '0 auto',
-                lineHeight: '1.6'
+                margin: '0 auto'
               }}>
-                Specialized cybersecurity approaches tailored to the unique requirements of different industries
+                Scale your business with secure and reliable cloud IT services designed for enterprises and SMBs throughout New Brunswick and the Maritimes.
+              </p>
+            </div>
+            
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+              gap: '30px',
+              marginBottom: '50px'
+            }}>
+              {[
+                {
+                  icon: '☁️',
+                  title: 'Seamless Cloud Migration & Setup',
+                  description: 'Minimize downtime with our expert cloud migration services that transition your business operations securely and efficiently to modern cloud platforms.'
+                },
+                {
+                  icon: '🔄',
+                  title: 'Automated Cloud Backup & Disaster Recovery',
+                  description: 'Ensure data protection with comprehensive backup solutions and disaster recovery planning that keeps your critical business information secure and accessible.'
+                },
+                {
+                  icon: '⚡',
+                  title: 'Scalable Infrastructure',
+                  description: 'Control costs while enabling growth with flexible cloud infrastructure that adapts to your business needs and optimizes performance automatically.'
+                }
+              ].map((service, index) => (
+                <div key={index} style={{ 
+                  background: 'linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%)',
+                  borderRadius: '15px',
+                  padding: '35px 25px',
+                  boxShadow: '0 5px 25px rgba(0, 0, 0, 0.08)',
+                  border: `1px solid ${colors.backgrounds.light}`,
+                  textAlign: 'center',
+                  transition: 'all 0.3s ease'
+                }}>
+                  <div style={{ 
+                    fontSize: '2.5rem', 
+                    marginBottom: '20px'
+                  }}>{service.icon}</div>
+                  <h3 style={{ 
+                    fontSize: '1.3rem', 
+                    fontWeight: '700', 
+                    color: colors.text.primary, 
+                    marginBottom: '15px'
+                  }}>{service.title}</h3>
+                  <p style={{ 
+                    color: colors.text.secondary, 
+                    lineHeight: '1.6',
+                    fontSize: '1rem',
+                    margin: 0
+                  }}>{service.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ textAlign: 'center', display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <a 
+                href="/contact" 
+                style={{
+                  display: 'inline-block',
+                  background: colors.backgrounds.gradientPrimary,
+                  color: 'white',
+                  padding: '18px 40px',
+                  borderRadius: '50px',
+                  textDecoration: 'none',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.3)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  border: 'none',
+                  minWidth: '200px'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.4)';
+                  e.target.style.transform = 'translateY(-3px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.3)';
+                  e.target.style.transform = 'translateY(0)';
+                }}
+              >
+                Get Cloud IT Consultation
+              </a>
+              <a 
+                href="/services/managed-it" 
+                style={{
+                  display: 'inline-block',
+                  background: 'transparent',
+                  color: colors.primary,
+                  border: `2px solid ${colors.primary}`,
+                  padding: '16px 38px',
+                  borderRadius: '50px',
+                  textDecoration: 'none',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  minWidth: '200px'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = colors.primary;
+                  e.target.style.color = 'white';
+                  e.target.style.transform = 'translateY(-3px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = 'transparent';
+                  e.target.style.color = colors.primary;
+                  e.target.style.transform = 'translateY(0)';
+                }}
+              >
+                Explore Cloud Services
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(2rem, 4vw, 3rem)', 
+                fontWeight: '700', 
+                color: colors.text.primary,
+                marginBottom: '20px'
+              }}>Why New Brunswick Businesses Choose LogicPros</h2>
+              <p style={{ 
+                fontSize: '1.2rem', 
+                color: colors.text.secondary, 
+                maxWidth: '700px', 
+                margin: '0 auto'
+              }}>
+                Local expertise, enterprise-grade solutions, and personalized service for businesses across the Maritime provinces.
               </p>
             </div>
             
             <div style={{ 
               display: 'grid', 
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-              gap: '30px',
-              maxWidth: '1200px',
+              gap: '40px',
+              maxWidth: '1000px',
               margin: '0 auto'
             }}>
-              {[
-                { icon: '🏥', title: 'Healthcare & Medical', desc: 'PIPEDA compliance, patient data protection, and medical device security for healthcare providers.' },
-                { icon: '🏦', title: 'Financial Services', desc: 'PCI DSS compliance, transaction security, and fraud prevention for financial institutions.' },
-                { icon: '🏢', title: 'Professional Services', desc: 'Client data protection, confidentiality measures, and regulatory compliance for law firms and consultancies.' },
-                { icon: '🏪', title: 'Retail & E-commerce', desc: 'Point-of-sale security, customer data protection, and online transaction security.' },
-                { icon: '🏭', title: 'Manufacturing', desc: 'Industrial control system security, operational technology protection, and supply chain security.' },
-                { icon: '🏫', title: 'Education', desc: 'Student data protection, research security, and FERPA compliance for educational institutions.' }
-              ].map((industry, index) => (
-                <div key={index} style={{ 
-                  background: 'white',
-                  borderRadius: '16px',
-                  padding: '35px 25px',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                  border: `1px solid ${colors.backgrounds.light}`,
-                  textAlign: 'center',
-                  height: '100%',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  transition: 'all 0.3s ease'
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '20px',
+                  background: colors.backgrounds.gradientPrimary,
+                  borderRadius: '50%',
+                  width: '80px',
+                  height: '80px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>🏆</div>
+                <h3 style={{ 
+                  fontSize: '1.5rem', 
+                  fontWeight: '700', 
+                  color: colors.text.primary, 
+                  marginBottom: '15px'
+                }}>Maritime Expertise</h3>
+                <p style={{ 
+                  color: colors.text.secondary, 
+                  lineHeight: '1.6'
                 }}>
-                  <div style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: '4px',
-                    background: `linear-gradient(90deg, ${colors.primary}, ${colors.accent})`,
-                    opacity: 0,
-                    transition: 'all 0.3s ease'
-                  }} className="industry-border"></div>
-                  <div style={{ 
-                    fontSize: '3rem', 
-                    marginBottom: '20px',
-                    filter: 'grayscale(0.2)'
-                  }}>{industry.icon}</div>
-                  <h4 style={{ 
-                    fontSize: '1.3rem', 
-                    fontWeight: '700', 
-                    color: colors.text.primary, 
-                    marginBottom: '15px',
-                    lineHeight: '1.3'
-                  }}>{industry.title}</h4>
-                  <p style={{ 
-                    color: colors.text.secondary, 
-                    lineHeight: '1.6',
-                    fontSize: '0.95rem',
-                    margin: 0
-                  }}>{industry.desc}</p>
-                </div>
-              ))}
+                  Local expertise in New Brunswick and the Maritimes with deep understanding of regional business needs and proven experience serving SMB and enterprise clients.
+                </p>
+              </div>
+
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '20px',
+                  background: colors.backgrounds.gradientPrimary,
+                  borderRadius: '50%',
+                  width: '80px',
+                  height: '80px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>🔧</div>
+                <h3 style={{ 
+                  fontSize: '1.5rem', 
+                  fontWeight: '700', 
+                  color: colors.text.primary, 
+                  marginBottom: '15px'
+                }}>Integrated Solutions</h3>
+                <p style={{ 
+                  color: colors.text.secondary, 
+                  lineHeight: '1.6'
+                }}>
+                  Integrated technology solutions that work seamlessly together, from IT consulting to AI automation, creating a complete ecosystem for your business.
+                </p>
+              </div>
+
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ 
+                  fontSize: '3rem', 
+                  marginBottom: '20px',
+                  background: colors.backgrounds.gradientPrimary,
+                  borderRadius: '50%',
+                  width: '80px',
+                  height: '80px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>📞</div>
+                <h3 style={{ 
+                  fontSize: '1.5rem', 
+                  fontWeight: '700', 
+                  color: colors.text.primary, 
+                  marginBottom: '15px'
+                }}>Personal Support</h3>
+                <p style={{ 
+                  color: colors.text.secondary, 
+                  lineHeight: '1.6'
+                }}>
+                  Personalized, responsive support that goes beyond typical IT services with direct access to our team and dedicated account management.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
+        {/* FAQ Section */}
+        <section style={{ padding: '80px 20px', backgroundColor: 'white' }}>
           <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
               <h2 style={{ 
-                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
+                fontSize: 'clamp(2rem, 4vw, 3rem)', 
                 fontWeight: '700', 
                 color: colors.text.primary,
-                marginBottom: '20px',
-                lineHeight: '1.2'
-              }}>Cybersecurity FAQ</h2>
+                marginBottom: '20px'
+              }}>Frequently Asked Questions</h2>
               <p style={{ 
-                fontSize: '1.1rem', 
+                fontSize: '1.2rem', 
                 color: colors.text.secondary, 
                 maxWidth: '600px', 
-                margin: '0 auto',
-                lineHeight: '1.6'
+                margin: '0 auto'
               }}>
-                Common questions about our cybersecurity and IT support services
+                Common questions about our business IT solutions New Brunswick services
               </p>
             </div>
             
@@ -797,61 +954,58 @@ export const ITServicesPage = () => {
             }}>
               {[
                 {
-                  question: 'How often should we do security audits?',
-                  answer: 'We recommend comprehensive security audits annually, with quarterly vulnerability scans and monthly security reviews for optimal protection.'
+                  question: 'What managed IT services do you provide in New Brunswick and the Maritimes?',
+                  answer: 'We offer comprehensive managed IT support including 24/7 network monitoring, proactive support, cloud IT services, data backup and disaster recovery, and strategic IT consulting tailored for Maritime businesses.'
                 },
                 {
-                  question: 'What is included in managed IT support?',
-                  answer: '24/7 monitoring, patch management, help desk support, endpoint security, backup monitoring, and proactive issue resolution.'
+                  question: 'How do cybersecurity solutions for New Brunswick businesses work?',
+                  answer: 'Our cybersecurity services include security audits, firewall management, multi-factor authentication, compliance support, and incident response planning designed for New Brunswick regulatory requirements and business needs.'
                 },
                 {
-                  question: 'Do you help with compliance requirements?',
-                  answer: 'Yes! We help businesses meet PIPEDA, PCI DSS, and industry-specific compliance requirements with documentation and procedures.'
+                  question: 'Do you provide WordPress web design services across New Brunswick?',
+                  answer: 'Yes, our WordPress web design services cover all Maritime provinces. We create mobile-responsive, SEO-optimized websites with ongoing support designed for local search visibility and customer conversion.'
                 },
                 {
-                  question: 'How quickly do you respond to security incidents?',
-                  answer: 'Critical security incidents receive immediate response within 15 minutes, with full containment procedures initiated within 1 hour.'
+                  question: 'What businesses benefit from AI automation solutions Maritime?',
+                  answer: 'Our AI automation solutions serve businesses across industries including manufacturing, professional services, retail, and healthcare. We customize workflows to reduce manual tasks and improve efficiency with measurable ROI.'
                 },
                 {
-                  question: 'Can you work with our existing IT team?',
-                  answer: 'Absolutely! We complement your existing IT staff or can serve as your complete IT department, depending on your needs.'
+                  question: 'How quickly do you respond to IT support requests?',
+                  answer: 'Our IT support New Brunswick and Maritime provinces includes 24/7 monitoring with immediate alerts. We provide rapid response times with most issues resolved proactively before impacting operations.'
                 },
                 {
-                  question: 'What happens if we get breached?',
-                  answer: 'Our incident response plan includes immediate containment, forensic analysis, system recovery, and compliance reporting as required.'
+                  question: 'What are the benefits of cloud IT services for my business?',
+                  answer: 'Cloud IT services reduce costs, improve scalability, and enhance business continuity. We handle complete migration planning and ongoing management with minimal downtime for Maritime businesses.'
+                },
+                {
+                  question: 'How do AI automation solutions deliver ROI for Maritime businesses?',
+                  answer: 'AI automation delivers measurable ROI through reduced operational costs, improved accuracy, and faster processing. Our solutions integrate seamlessly with existing systems across New Brunswick with rapid implementation.'
+                },
+                {
+                  question: 'Do you provide ongoing support after implementation?',
+                  answer: 'Yes, all our solutions include comprehensive ongoing support, maintenance, and proactive monitoring. We ensure optimal performance with dedicated Maritime-based support teams and rapid response.'
                 }
               ].map((faq, index) => (
                 <div key={index} style={{ 
-                  background: 'white',
-                  borderRadius: '16px',
+                  background: 'linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%)',
+                  borderRadius: '15px',
                   padding: '30px 25px',
                   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                  border: `1px solid rgba(${colors.primary.replace('#', '').match(/.{2}/g).map(hex => parseInt(hex, 16)).join(', ')}, 0.1)`,
-                  transition: 'all 0.3s ease',
-                  position: 'relative'
+                  border: `1px solid ${colors.backgrounds.light}`,
+                  textAlign: 'left'
                 }}>
-                  <div style={{
-                    position: 'absolute',
-                    top: '15px',
-                    right: '20px',
-                    color: colors.primary,
-                    fontSize: '1.5rem',
-                    fontWeight: 'bold',
-                    opacity: 0.3
-                  }}>?</div>
                   <h3 style={{ 
-                    fontSize: '1.3rem', 
-                    fontWeight: '700', 
                     color: colors.text.primary, 
                     marginBottom: '15px',
-                    lineHeight: '1.3',
-                    paddingRight: '30px'
+                    fontSize: '1.2rem',
+                    fontWeight: '600',
+                    lineHeight: '1.4'
                   }}>{faq.question}</h3>
                   <p style={{ 
                     color: colors.text.secondary, 
-                    lineHeight: '1.6',
-                    fontSize: '1rem',
-                    margin: 0
+                    lineHeight: '1.7',
+                    margin: 0,
+                    fontSize: '1rem'
                   }}>{faq.answer}</p>
                 </div>
               ))}
@@ -859,20 +1013,49 @@ export const ITServicesPage = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="section" style={{ backgroundColor: '#000', color: 'white', marginBottom: '0', paddingBottom: '60px' }}>
+        {/* Final CTA Section */}
+        <section style={{ 
+          background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', 
+          color: 'white', 
+          padding: '100px 20px',
+          textAlign: 'center',
+          position: 'relative'
+        }}>
           <div className="container">
-            <div className="section-header">
-              <h2 className="section-title" style={{ color: 'white' }}>Ready to Secure Your Business?</h2>
-              <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
-                Don't wait for a security incident. Protect your business with enterprise-grade cybersecurity solutions.
-              </p>
-            </div>
+            <h2 style={{ 
+              fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', 
+              fontWeight: '800', 
+              marginBottom: '25px',
+              lineHeight: '1.1'
+            }}>Partner with New Brunswick's Leading IT Experts</h2>
+            <p style={{ 
+              fontSize: '1.4rem', 
+              marginBottom: '20px', 
+              maxWidth: '800px', 
+              margin: '0 auto 20px auto',
+              opacity: 0.95,
+              lineHeight: '1.5'
+            }}>
+              From managed IT services New Brunswick to cutting-edge AI automation solutions NB, we deliver integrated technology services that drive real business results across the Maritime provinces.
+            </p>
+            <p style={{ 
+              fontSize: '1.1rem', 
+              marginBottom: '50px', 
+              maxWidth: '600px', 
+              margin: '0 auto 50px auto',
+              opacity: 0.85,
+              lineHeight: '1.6'
+            }}>
+              <strong>Local expertise.</strong> Enterprise-grade solutions. <strong>Personalized service.</strong><br/>
+              Experience the LogicPros difference today.
+            </p>
+            
             <div style={{ 
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '15px',
-              flexWrap: 'wrap'
+              display: 'flex', 
+              justifyContent: 'center', 
+              gap: '20px', 
+              flexWrap: 'wrap',
+              marginBottom: '40px'
             }}>
               <a 
                 href="/contact" 
@@ -881,53 +1064,79 @@ export const ITServicesPage = () => {
                   background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
                   color: 'white',
                   border: 'none',
-                  padding: '18px 40px',
-                  fontSize: '1.1rem',
+                  padding: '20px 45px',
+                  fontSize: '1.2rem',
                   fontWeight: '600',
                   borderRadius: '50px',
-                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  boxShadow: '0 8px 30px rgba(29, 122, 175, 0.4)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  textDecoration: 'none'
+                  textDecoration: 'none',
+                  minWidth: '220px'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
-                  e.target.style.transform = 'translateY(-3px)';
+                  e.target.style.boxShadow = '0 12px 40px rgba(29, 122, 175, 0.6)';
+                  e.target.style.transform = 'translateY(-4px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.4)';
                   e.target.style.transform = 'translateY(0)';
                 }}
               >
-                Schedule Security Assessment
+                Get Your Free IT Consultation
               </a>
+              
               <a 
-                href="/contact" 
+                href="tel:+15061234567" 
                 style={{
                   display: 'inline-block',
                   background: 'transparent',
                   color: 'white',
                   border: '2px solid rgba(255, 255, 255, 0.3)',
-                  padding: '18px 40px',
-                  fontSize: '1.1rem',
+                  padding: '18px 43px',
+                  fontSize: '1.2rem',
                   fontWeight: '600',
                   borderRadius: '50px',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   textDecoration: 'none',
+                  minWidth: '220px',
                   backdropFilter: 'blur(10px)'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
-                  e.target.style.transform = 'translateY(-3px)';
-                  e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+                  e.target.style.background = 'rgba(255, 255, 255, 0.1)';
+                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.6)';
+                  e.target.style.transform = 'translateY(-4px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.boxShadow = 'none';
-                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.background = 'transparent';
                   e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                  e.target.style.transform = 'translateY(0)';
                 }}
               >
-                Get IT Support Quote
+                📞 Call Now
               </a>
+            </div>
+
+            <div style={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              alignItems: 'center',
+              gap: '40px',
+              flexWrap: 'wrap',
+              opacity: 0.8,
+              fontSize: '0.95rem'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ fontSize: '1.2rem' }}>✓</span>
+                <span>24/7 IT Support New Brunswick</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ fontSize: '1.2rem' }}>✓</span>
+                <span>Maritime Business Expertise</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ fontSize: '1.2rem' }}>✓</span>
+                <span>Integrated Technology Solutions</span>
+              </div>
             </div>
           </div>
         </section>
