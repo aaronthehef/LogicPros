@@ -29,10 +29,13 @@ import { MonctonPage } from './pages/locations/MonctonPage';
 import { SaintJohnPage } from './pages/locations/SaintJohnPage';
 import { FrederictonWebDesignPage } from './pages/locations/fredericton/WebDesignPage';
 import { FrederictonCybersecurityPage } from './pages/locations/fredericton/CybersecurityPage';
+import { ManagedITServicesPage as FrederictonManagedITPage } from './pages/locations/fredericton/ManagedITPage';
 import { SaintJohnWebDesignPage } from './pages/locations/saint-john/WebDesignPage';
 import { SaintJohnCybersecurityPage } from './pages/locations/saint-john/CybersecurityPage';
+import { ManagedITServicesPage as SaintJohnManagedITPage } from './pages/locations/saint-john/ManagedITPage';
 import { MonctonWebDesignPage } from './pages/locations/moncton/WebDesignPage';
 import { MonctonCybersecurityPage } from './pages/locations/moncton/CybersecurityPage';
+import { ManagedITServicesPage as MonctonManagedITPage } from './pages/locations/moncton/ManagedITPage';
 
 export const Router = () => {
   const [currentPath, setCurrentPath] = React.useState(() => {
@@ -119,14 +122,20 @@ export const Router = () => {
         return <FrederictonWebDesignPage />;
       case '/locations/fredericton/cybersecurity':
         return <FrederictonCybersecurityPage />;
+      case '/locations/fredericton/managed-it':
+        return <FrederictonManagedITPage />;
       case '/locations/saint-john/web-design':
         return <SaintJohnWebDesignPage />;
       case '/locations/saint-john/cybersecurity':
         return <SaintJohnCybersecurityPage />;
+      case '/locations/saint-john/managed-it':
+        return <SaintJohnManagedITPage />;
       case '/locations/moncton/web-design':
         return <MonctonWebDesignPage />;
       case '/locations/moncton/cybersecurity':
         return <MonctonCybersecurityPage />;
+      case '/locations/moncton/managed-it':
+        return <MonctonManagedITPage />;
       case '/locations/moncton':
         return <MonctonPage />;
       case '/locations/saint-john':
