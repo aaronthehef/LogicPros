@@ -55,10 +55,10 @@ body {
   left: 0;
   right: 0;
   height: 80px;
-  background: linear-gradient(135deg, 
-    rgba(26, 26, 46, 0.95) 0%, 
-    rgba(22, 33, 62, 0.95) 50%, 
-    rgba(15, 52, 96, 0.9) 100%
+  background: linear-gradient(135deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(10, 15, 25, 0.90) 50%,
+    rgba(5, 20, 40, 0.85) 100%
   );
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -85,6 +85,9 @@ body {
   font-size: 24px;
   font-weight: 600;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-img {
@@ -92,6 +95,7 @@ body {
   width: auto;
   max-width: 350px;
   object-fit: contain;
+  display: block;
 }
 
 .logo-img-small {
@@ -1737,6 +1741,7 @@ body {
 
 /* Mobile Responsive Additions */
 @media (max-width: 768px) {
+
   .logo-img {
     height: 45px;
     max-width: 180px;

@@ -10,7 +10,17 @@ export const Footer = () => {
           <div className="footer-grid">
             {/* Company Info */}
             <div className="footer-column footer-brand">
-              <h4>LogicPros</h4>
+              <div className="footer-logo">
+                <img
+                  src="/logicpros-new-logo.png"
+                  alt="LogicPros"
+                  style={{
+                    height: '60px',
+                    width: 'auto',
+                    marginBottom: '1rem'
+                  }}
+                />
+              </div>
               <p className="footer-tagline">Cybersecurity, AI Solutions & Professional Web Development</p>
               <p className="footer-description">
                 Protecting and modernizing New Brunswick businesses with expert cybersecurity, 

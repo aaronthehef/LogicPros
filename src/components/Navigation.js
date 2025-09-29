@@ -358,6 +358,7 @@ export const Navigation = () => {
         document.body
       )}
       
+      {/* Updated button text to match goal design */}
       <a href="/contact" className="btn btn-nav-cta">Let's Talk</a>
       <button 
         className="mobile-menu-toggle" 
@@ -637,15 +638,15 @@ const dropdownStyles = `
 }
 
 .btn-nav-cta {
-  background: transparent !important;
+  background: linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%) !important;
   color: white !important;
   padding: 0.75rem 1.5rem !important;
   border-radius: 8px !important;
   text-decoration: none !important;
   font-size: 1rem !important;
   font-weight: 600 !important;
-  border: 2px solid rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1) !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(29, 122, 175, 0.3) !important;
   transition: all 0.3s ease !important;
   display: inline-block !important;
   outline: none !important;
@@ -653,11 +654,10 @@ const dropdownStyles = `
 }
 
 .btn-nav-cta:hover {
-  border-color: rgba(29, 122, 175, 0.8) !important;
-  box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4), 0 0 20px rgba(29, 122, 175, 0.3) !important;
+  box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4) !important;
   transform: translateY(-2px) !important;
   color: white !important;
-  background: transparent !important;
+  background: linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%) !important;
 }
 
 /* Mobile Menu Styles removed - using inline styles for mobile menu */

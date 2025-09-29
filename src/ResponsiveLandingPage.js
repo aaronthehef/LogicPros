@@ -205,6 +205,32 @@ export const ResponsiveLandingPage = () => {
           grid-template-rows: auto !important;
         }
       }
+
+      /* Hero Service Card Animations */
+      @keyframes pulseGlow {
+        0%, 100% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.15), 0 0 20px rgba(29, 122, 175, 0.3);
+        }
+        50% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.25), 0 0 30px rgba(29, 122, 175, 0.5);
+        }
+      }
+
+      .hero-service-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        box-shadow: 0 20px 60px rgba(29, 122, 175, 0.3), 0 0 40px rgba(29, 122, 175, 0.6) !important;
+        border-color: rgba(29, 122, 175, 0.8) !important;
+      }
+
+      .hero-service-card:hover h3 {
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(29, 122, 175, 0.8) !important;
+      }
+
+      .hero-service-card:hover svg {
+        transform: scale(1.1) !important;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) !important;
+      }
     `;
     document.head.appendChild(style);
 
@@ -328,9 +354,9 @@ export const ResponsiveLandingPage = () => {
                   marginBottom: '1rem',
                   color: '#1d7aaf'
                 }}>
-                  BUILD<br />
-                  AUTOMATE<br />
-                  SECURE
+                  MARITIME<br />
+                  CYBERSECURITY<br />
+                  SPECIALISTS
                 </h1>
                 <p style={{ 
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)', 
@@ -347,103 +373,131 @@ export const ResponsiveLandingPage = () => {
                     Start Security Assessment
                   </a>
                   
-                  <a href="/free-example" className="hero-button">
-                    Free Example Website
+                  <a href="/contact" className="hero-button">
+                    Let's Talk
                   </a>
                 </div>
               </div>
 
-              <div className="hero-service-cards" style={{ 
+              <div className="hero-service-cards" style={{
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '1rem',
-                height: '500px',
+                height: 'auto',
                 justifyContent: 'center'
               }}>
-                <div style={{
-                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
-                  border: '1px solid rgba(0, 0, 0, 0.3)',
+                {/* Build Card */}
+                <a href="/services/websites" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
-                  padding: '1rem',
+                  padding: '1.5rem',
                   backdropFilter: 'blur(10px)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '1rem'
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite'
                 }}>
-                  <div>
-                    <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: '0 0 0.3rem 0' }}>Security Audits & Vulnerability Assessments</h3>
-                    <p style={{ color: '#e2e8f0', fontSize: '0.85rem', margin: '0' }}>Comprehensive security testing and threat analysis</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1d7aaf', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Build</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Websites, SEO & Online Marketing</p>
+                    <span style={{
+                      color: '#1d7aaf',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
                   </div>
-                </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                      <rect x="8" y="16" width="8" height="2" fill="white"/>
+                      <rect x="9" y="18" width="6" height="1" fill="white"/>
+                    </svg>
+                  </div>
+                </a>
 
-                <div style={{
-                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
-                  border: '1px solid rgba(0, 0, 0, 0.3)',
+                {/* Automate Card */}
+                <a href="/services/automations" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
-                  padding: '1rem',
+                  padding: '1.5rem',
                   backdropFilter: 'blur(10px)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '1rem'
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 1s'
                 }}>
-                  <div>
-                    <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: '0 0 0.3rem 0' }}>Multi-Factor Authentication (MFA)</h3>
-                    <p style={{ color: '#e2e8f0', fontSize: '0.85rem', margin: '0' }}>Enhanced login security and access control</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1d7aaf', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Automate</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>AI Powered Marketing & Business Automation</p>
+                    <span style={{
+                      color: '#1d7aaf',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
                   </div>
-                </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
+                      <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="12" cy="5" r="1" fill="white"/>
+                      <circle cx="12" cy="19" r="1" fill="white"/>
+                      <circle cx="19" cy="12" r="1" fill="white"/>
+                      <circle cx="5" cy="12" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                </a>
 
-                <div style={{
-                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
-                  border: '1px solid rgba(0, 0, 0, 0.3)',
+                {/* Secure Card */}
+                <a href="/services/cybersecurity" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
-                  padding: '1rem',
+                  padding: '1.5rem',
                   backdropFilter: 'blur(10px)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '1rem'
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 2s'
                 }}>
-                  <div>
-                    <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: '0 0 0.3rem 0' }}>Hands Free Marketing Automation</h3>
-                    <p style={{ color: '#e2e8f0', fontSize: '0.85rem', margin: '0' }}>SEO, email sequences, and lead nurturing on autopilot</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1d7aaf', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Secure</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Managed IT, Cyber Protection & Security Audits</p>
+                    <span style={{
+                      color: '#1d7aaf',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
                   </div>
-                </div>
-
-                <div style={{
-                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
-                  border: '1px solid rgba(0, 0, 0, 0.3)',
-                  borderRadius: '12px',
-                  padding: '1rem',
-                  backdropFilter: 'blur(10px)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '1rem'
-                }}>
-                  <div>
-                    <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: '0 0 0.3rem 0' }}>Responsive Mobile-First Design</h3>
-                    <p style={{ color: '#e2e8f0', fontSize: '0.85rem', margin: '0' }}>Modern websites optimized for all devices</p>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                   </div>
-                </div>
-
-                <div style={{
-                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
-                  border: '1px solid rgba(0, 0, 0, 0.3)',
-                  borderRadius: '12px',
-                  padding: '1rem',
-                  backdropFilter: 'blur(10px)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '1rem'
-                }}>
-                  <div>
-                    <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: '600', margin: '0 0 0.3rem 0' }}>24/7 System Monitoring & IT Support</h3>
-                    <p style={{ color: '#e2e8f0', fontSize: '0.85rem', margin: '0' }}>Round-the-clock infrastructure monitoring</p>
-                  </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
