@@ -211,7 +211,7 @@ export const AboutPage = () => {
                 textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
                 letterSpacing: '-0.02em'
               }}>About LogicPros: Complete Digital Solutions</h1>
-              <p style={{ 
+              <p style={{
                 fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
                 marginBottom: '40px',
                 maxWidth: '700px',
@@ -222,8 +222,8 @@ export const AboutPage = () => {
                 color: 'rgba(255, 255, 255, 0.95)',
                 textShadow: '0 2px 4px rgba(0, 0, 0, 0.4)'
               }}>
-                Based in New Brunswick, Canada, we provide websites, AI business automations, 
-                and managed IT services to contractors and small businesses across Canada and the U.S.
+                Maritime-based technology company providing professional website design, hosting, IT services,
+                cybersecurity, and AI automation to businesses throughout Atlantic Canada.
               </p>
             </div>
           </div>
@@ -429,56 +429,84 @@ export const AboutPage = () => {
             <h2 className="section-title">Why Businesses Choose LogicPros</h2>
             <div className="expertise-grid">
               <div className="expertise-item">
-                <div className="expertise-icon">🏗️</div>
-                <h3>Industry Specialists</h3>
+                <div className="expertise-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 26">
+                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="#1d7aaf" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="#1d7aaf" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Cybersecurity Experts</h3>
                 <p>
-                  We exclusively serve contractors and construction businesses. This focus means we understand 
-                  your unique challenges, seasonal patterns, and what your customers are looking for.
+                  Protect your business with comprehensive security audits, managed IT services, and proactive
+                  threat protection. We keep your data and systems secure so you can focus on running your business.
                 </p>
               </div>
 
               <div className="expertise-item">
-                <div className="expertise-icon">📱</div>
-                <h3>Mobile-First Approach</h3>
+                <div className="expertise-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1d7aaf" viewBox="0 0 16 16">
+                    <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135"/>
+                    <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2zM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5"/>
+                  </svg>
+                </div>
+                <h3>AI Automation Specialists</h3>
                 <p>
-                  Over 70% of contractor searches happen on mobile devices. Every website we build is designed 
-                  for mobile first, ensuring your customers can easily contact you from any device.
+                  Streamline your operations with intelligent chatbots, automated workflows, and AI-powered
+                  solutions that save time and reduce manual tasks, letting you focus on growth.
                 </p>
               </div>
 
               <div className="expertise-item">
-                <div className="expertise-icon">🎯</div>
-                <h3>Lead Generation Focus</h3>
+                <div className="expertise-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1d7aaf" viewBox="0 0 16 16">
+                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="#1d7aaf" strokeWidth="1.5" fill="none" transform="scale(0.67) translate(-2, -1)"/>
+                    <rect x="8" y="16" width="8" height="2" fill="#1d7aaf" transform="scale(0.67) translate(-2, -1)"/>
+                    <rect x="9" y="18" width="6" height="1" fill="#1d7aaf" transform="scale(0.67) translate(-2, -1)"/>
+                  </svg>
+                </div>
+                <h3>Professional Web Design</h3>
                 <p>
-                  Pretty websites don't pay the bills - leads do. Every design decision we make is focused 
-                  on converting visitors into qualified prospects for your business.
+                  Modern, mobile-responsive websites designed to convert visitors into customers. We create
+                  professional online presences that build trust and drive business growth.
                 </p>
               </div>
 
               <div className="expertise-item">
-                <div className="expertise-icon">⚡</div>
+                <div className="expertise-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1d7aaf" viewBox="0 0 16 16">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#1d7aaf" strokeWidth="1.5" fill="none" strokeLinejoin="round" transform="scale(0.67) translate(0, 0)"/>
+                  </svg>
+                </div>
                 <h3>Fast Implementation</h3>
                 <p>
-                  We know contractors need results quickly. Our streamlined process gets your website launched 
-                  in 2-3 weeks, not months, so you can start generating leads immediately.
+                  Get results quickly with our streamlined processes. Website examples in 48 hours, security
+                  audits within a week, and rapid deployment of AI solutions to accelerate your business.
                 </p>
               </div>
 
               <div className="expertise-item">
-                <div className="expertise-icon">🛠️</div>
-                <h3>Ongoing Support</h3>
+                <div className="expertise-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24">
+                    <path d="M3 9V21H9V15H15V21H21V9L12 2L3 9Z" stroke="#1d7aaf" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Local Maritime Expertise</h3>
                 <p>
-                  Your success is our success. We provide ongoing maintenance, updates, and optimization to 
-                  ensure your website continues generating leads and growing your business.
+                  Based in New Brunswick with deep understanding of Maritime business needs. We're your local
+                  technology partner, providing personalized service and support throughout Atlantic Canada.
                 </p>
               </div>
 
               <div className="expertise-item">
-                <div className="expertise-icon">📊</div>
+                <div className="expertise-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1d7aaf" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+                </div>
                 <h3>Measurable Results</h3>
                 <p>
-                  We track and report on what matters: leads, conversions, and ROI. You'll know exactly how 
-                  your website investment is paying off with detailed analytics and reporting.
+                  Track what matters with detailed analytics and reporting. We measure security improvements,
+                  automation efficiency, website performance, and ROI so you can see the value we deliver.
                 </p>
               </div>
             </div>

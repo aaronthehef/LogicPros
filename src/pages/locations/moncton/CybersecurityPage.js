@@ -55,26 +55,89 @@ export const MonctonCybersecurityPage = () => {
     structuredDataScript.textContent = JSON.stringify(structuredData);
     document.head.appendChild(structuredDataScript);
     
-    // Add necessary styles for buttons and animations
+    // Enhanced GSAP scroll animations for header
+    const header = headerRef.current;
+    let lastScrollY = 0;
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 100) {
+        // Add enhanced blur and shadow when scrolled
+        gsap.to(header, {
+          duration: 0.3,
+          css: {
+            backdropFilter: "blur(25px) saturate(200%)",
+            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(29, 122, 175, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
+          },
+          ease: "power2.out"
+        });
+      } else {
+        // Return to original state
+        gsap.to(header, {
+          duration: 0.3,
+          css: {
+            backdropFilter: "blur(20px) saturate(180%)",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(29, 122, 175, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
+          },
+          ease: "power2.out"
+        });
+      }
+      
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial header animation on load
+    gsap.fromTo(header, 
+      { y: -100, opacity: 0 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 1, 
+        ease: "power3.out",
+        delay: 0.2 
+      }
+    );
+
+    // Background panning animation
     const style = document.createElement('style');
     style.textContent = `
-      @keyframes float1 {
-        0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-        33% { transform: translateY(-20px) translateX(10px) rotate(120deg); }
-        66% { transform: translateY(10px) translateX(-10px) rotate(240deg); }
-      }
-      @keyframes float2 {
-        0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-        50% { transform: translateY(-15px) translateX(15px) rotate(180deg); }
-      }
-      @keyframes float3 {
-        0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-        25% { transform: translateY(15px) translateX(-5px) rotate(90deg); }
-        75% { transform: translateY(-10px) translateX(5px) rotate(270deg); }
+      @keyframes panLeft {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-200px); }
       }
       @keyframes pulse {
-        0% { opacity: 0.7; }
-        100% { opacity: 1; }
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 0.9; }
+      }
+      @keyframes glow {
+        0%, 100% { filter: brightness(1); }
+        50% { filter: brightness(1.4); }
+      }
+      @keyframes float1 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.3; }
+        33% { transform: translate(30px, -50px) rotate(120deg); opacity: 0.6; }
+        66% { transform: translate(-20px, -80px) rotate(240deg); opacity: 0.4; }
+      }
+      @keyframes float2 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.4; }
+        50% { transform: translate(-40px, -60px) rotate(180deg); opacity: 0.2; }
+      }
+      @keyframes float3 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.2; }
+        25% { transform: translate(50px, -30px) rotate(90deg); opacity: 0.5; }
+        75% { transform: translate(-30px, -70px) rotate(270deg); opacity: 0.3; }
+      }
+      .hero-background-svg {
+        animation: panLeft 30s linear infinite, pulse 4s ease-in-out infinite;
+      }
+      .tech-nodes circle {
+        animation: glow 3s ease-in-out infinite alternate;
+      }
+      .glowing-orbs circle {
+        animation: pulse 2s ease-in-out infinite alternate;
       }
       .floating-particle {
         position: absolute;
@@ -124,6 +187,7 @@ export const MonctonCybersecurityPage = () => {
         transform: translateY(-3px) !important;
         border-color: rgba(29, 122, 175, 0.8) !important;
       }
+      /* White secondary button styling for dark backgrounds */
       .secondary-button[style*="color: white"] {
         color: white !important;
         border-color: white !important;
@@ -132,99 +196,21 @@ export const MonctonCybersecurityPage = () => {
         box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4) !important;
         border-color: rgba(255, 255, 255, 0.8) !important;
       }
-      .cta-buttons {
-        text-align: center;
-        margin-top: 2rem;
-      }
-      .cta-buttons a {
-        margin: 0 0.5rem;
-      }
     `;
     document.head.appendChild(style);
 
-    // Enhanced GSAP scroll animations for header
-    const header = headerRef.current;
-    let lastScrollY = 0;
-    
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > 100) {
-        // Add enhanced blur and shadow when scrolled
-        gsap.to(header, {
-          duration: 0.3,
-          css: {
-            backdropFilter: "blur(25px) saturate(200%)",
-            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(29, 122, 175, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
-          },
-          ease: "power2.out"
-        });
-      } else {
-        // Return to original state
-        gsap.to(header, {
-          duration: 0.3,
-          css: {
-            backdropFilter: "blur(20px) saturate(180%)",
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(29, 122, 175, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
-          },
-          ease: "power2.out"
-        });
-      }
-      
-      lastScrollY = currentScrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Initial header animation on load
-    gsap.fromTo(header, 
-      { y: -100, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 1, 
-        ease: "power3.out",
-        delay: 0.2 
-      }
-    );
-
-    // Hero section animations
-    gsap.fromTo('.hero-content', 
-      { y: 50, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 1.2, 
-        ease: "power3.out",
-        delay: 0.5 
-      }
-    );
-
-    // Service cards staggered animation
-    gsap.fromTo('.service-card', 
-      { y: 30, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 0.8, 
-        ease: "power2.out",
-        stagger: 0.1,
-        delay: 0.8,
-        scrollTrigger: {
-          trigger: '.services-grid',
-          start: 'top 80%'
-        }
-      }
-    );
-
-    // Cleanup scroll listener
+    // Cleanup function
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.head.removeChild(style);
-      document.head.removeChild(structuredDataScript);
+      
+      // Remove structured data script
+      const existingStructuredData = document.querySelector('script[type="application/ld+json"]');
+      if (existingStructuredData) {
+        document.head.removeChild(existingStructuredData);
+      }
     };
   }, []);
-
   return (
     <div className="landing-page homepage">
       <Animations />
@@ -363,484 +349,490 @@ export const MonctonCybersecurityPage = () => {
           </div>
         </section>
 
-      {/* Core Cybersecurity Services */}
-      <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Enterprise Cybersecurity Services Trusted by Moncton Government & Business Sectors</h2>
-            <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '800px', margin: '0 auto' }}>
-              Protect your Moncton organization from evolving cyber threats with comprehensive cybersecurity solutions. 
-              Our certified IT security specialists deliver managed security services, regulatory compliance support, and 24/7 
-              Security Operations Center monitoring. Mission-critical protection engineered specifically for New Brunswick's 
-              Hub City ensures your business remains secure and resilient.
-            </p>
+        {/* Core Cybersecurity Services */}
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Enterprise Cybersecurity Services Trusted by Moncton Government & Business Sectors</h2>
+              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '800px', margin: '0 auto' }}>
+                Protect your Fredericton organization from evolving cyber threats with comprehensive cybersecurity solutions. 
+                Our certified IT security specialists deliver managed security services, regulatory compliance support, and 24/7 
+                Security Operations Center monitoring. Mission-critical protection engineered specifically for New Brunswick's 
+                capital region ensures your business remains secure and resilient.
+              </p>
+            </div>
+            
+            <div className="services-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+              gap: '2rem',
+              maxWidth: '1400px',
+              margin: '0 auto'
+            }}>
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>🔒</div>
+                <h3>Security Audits & Risk Assessment</h3>
+                <p>
+                  Identify vulnerabilities before attackers do with our thorough security audits and risk assessments. Using 
+                  industry-leading tools and expert analysis, we evaluate your IT infrastructure, applications, and policies to 
+                  pinpoint weaknesses and recommend actionable plans. Our services help Fredericton businesses strengthen 
+                  defenses, meet regulatory requirements like PIPEDA, and reduce risk proactively.
+                </p>
+                <ul className="service-benefits">
+                  <li>Vulnerability scanning and penetration testing</li>
+                  <li>Network architecture evaluation</li>
+                  <li>Compliance gap analysis and remediation roadmaps</li>
+                  <li>Risk prioritization aligned with business impact</li>
+                </ul>
+              </div>
+
+
+              {/* SEO & Digital Marketing */}
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white'
+                }}>🔐</div>
+                <h3><a href="/services/multi-factor-authentication" style={{color: colors.text.primary, textDecoration: 'none'}}>Identity & Access Management</a></h3>
+                <p>
+                  Secure your critical business assets with advanced identity and access controls. We implement multi-factor 
+                  authentication, role-based access policies, and secure single sign-on, designed to prevent unauthorized 
+                  breaches and safeguard sensitive data. Our solutions are tailored to Fredericton businesses needing robust 
+                  protection while maintaining user productivity.
+                </p>
+                <ul className="service-benefits">
+                  <li>Adaptive multi-factor authentication setups</li>
+                  <li>Privileged access management</li>
+                  <li>Identity federation and streamlined access</li>
+                  <li>Continuous monitoring for insider threats</li>
+                </ul>
+              </div>
+
+
+              {/* Website Maintenance */}
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white'
+                }}>🛡️</div>
+                <h3>Managed Security Operations Center (SOC) Services</h3>
+                <p>
+                  Our 24/7 SOC provides continuous monitoring and rapid incident response to detect, analyze, and remediate 
+                  threats before they impact your business. Leveraging artificial intelligence and expert threat hunting, we 
+                  deliver real-time defense and ongoing security improvements. Trusted by New Brunswick's critical infrastructure, 
+                  our SOC helps Fredericton organizations maintain uninterrupted operations.
+                </p>
+                <ul className="service-benefits">
+                  <li>AI-driven threat detection and anomaly analysis</li>
+                  <li>Rapid incident containment and forensic investigation</li>
+                  <li>Endpoint detection and response (EDR)</li>
+                  <li>Security automation and strategic consulting</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          
-          <div className="services-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '2rem',
-            maxWidth: '1400px',
-            margin: '0 auto'
-          }}>
-            <div className="service-card professional-card" style={{
+        </section>
+
+        {/* Grant Funding Information */}
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Cybersecurity Grant Funding Available</h2>
+            </div>
+            
+            <div className="service-card" style={{
               background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
               border: '2px solid rgba(29, 122, 175, 0.1)',
               borderRadius: '16px',
-              padding: '2rem',
+              padding: '2.5rem',
               boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              maxWidth: '800px',
+              margin: '0 auto',
+              textAlign: 'center',
+              position: 'relative',
+              overflow: 'hidden'
             }}>
-              <div className="service-icon" style={{
-                fontSize: '3rem',
-                marginBottom: '1rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '80px',
-                height: '80px',
-                background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                borderRadius: '20px',
-                boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                transition: 'all 0.3s ease'
-              }}>🔒</div>
-              <h3>Security Audits & Risk Assessment</h3>
-              <p>
-                Identify vulnerabilities before attackers do with our thorough security audits and risk assessments. Using 
-                industry-leading tools and expert analysis, we evaluate your IT infrastructure, applications, and policies to 
-                pinpoint weaknesses and recommend actionable plans. Our services help Moncton businesses strengthen 
-                defenses, meet regulatory requirements like PIPEDA, and reduce risk proactively.
-              </p>
-              <ul className="service-benefits">
-                <li>Vulnerability scanning and penetration testing</li>
-                <li>Network architecture evaluation</li>
-                <li>Compliance gap analysis and remediation roadmaps</li>
-                <li>Risk prioritization aligned with business impact</li>
-              </ul>
-            </div>
-
-
-            {/* SEO & Digital Marketing */}
-            <div className="service-card professional-card" style={{
-              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-              border: '2px solid rgba(29, 122, 175, 0.1)',
-              borderRadius: '16px',
-              padding: '2rem',
-              boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-            }}>
-              <div className="service-icon" style={{
-                fontSize: '3rem',
-                marginBottom: '1rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '80px',
-                height: '80px',
-                background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                borderRadius: '20px',
-                boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                transition: 'all 0.3s ease',
-                color: 'white'
-              }}>🔐</div>
-              <h3><a href="/services/multi-factor-authentication" style={{color: colors.text.primary, textDecoration: 'none'}}>Identity & Access Management</a></h3>
-              <p>
-                Secure your critical business assets with advanced identity and access controls. We implement multi-factor 
-                authentication, role-based access policies, and secure single sign-on, designed to prevent unauthorized 
-                breaches and safeguard sensitive data. Our solutions are tailored to Moncton businesses needing robust 
-                protection while maintaining user productivity.
-              </p>
-              <ul className="service-benefits">
-                <li>Adaptive multi-factor authentication setups</li>
-                <li>Privileged access management</li>
-                <li>Identity federation and streamlined access</li>
-                <li>Continuous monitoring for insider threats</li>
-              </ul>
-            </div>
-
-
-            {/* Website Maintenance */}
-            <div className="service-card professional-card" style={{
-              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-              border: '2px solid rgba(29, 122, 175, 0.1)',
-              borderRadius: '16px',
-              padding: '2rem',
-              boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-            }}>
-              <div className="service-icon" style={{
-                fontSize: '3rem',
-                marginBottom: '1rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '80px',
-                height: '80px',
-                background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                borderRadius: '20px',
-                boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                transition: 'all 0.3s ease',
-                color: 'white'
-              }}>🛡️</div>
-              <h3>Managed Security Operations Center (SOC) Services</h3>
-              <p>
-                Our 24/7 SOC provides continuous monitoring and rapid incident response to detect, analyze, and remediate 
-                threats before they impact your business. Leveraging artificial intelligence and expert threat hunting, we 
-                deliver real-time defense and ongoing security improvements. Trusted by New Brunswick's critical infrastructure, 
-                our SOC helps Moncton organizations maintain uninterrupted operations.
-              </p>
-              <ul className="service-benefits">
-                <li>AI-driven threat detection and anomaly analysis</li>
-                <li>Rapid incident containment and forensic investigation</li>
-                <li>Endpoint detection and response (EDR)</li>
-                <li>Security automation and strategic consulting</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Grant Funding Information */}
-      <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Cybersecurity Grant Funding Available</h2>
-          </div>
-          
-          <div className="service-card" style={{
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-            border: '2px solid rgba(29, 122, 175, 0.1)',
-            borderRadius: '16px',
-            padding: '2.5rem',
-            boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-            maxWidth: '800px',
-            margin: '0 auto',
-            textAlign: 'center',
-            position: 'relative',
-            overflow: 'hidden'
-          }}>
-            
-            <div style={{ position: 'relative', zIndex: 2 }}>
-              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem' }}>
-                Many New Brunswick small and medium-sized businesses can access <strong style={{color: colors.primary}}>up to $3,000 in fully reimbursed funding</strong> for 
-                cybersecurity and AI projects through the provincial <strong style={{color: colors.primary}}>Cybersecure NB program</strong>.
-              </p>
               
-              <p style={{ fontSize: '1rem', color: colors.text.secondary, lineHeight: '1.6', marginBottom: '2rem' }}>
-                For full eligibility details, application instructions, and program guidelines, please visit the official 
-                Cybersecure New Brunswick program page.
-              </p>
-              
-              <a 
-                href="https://www.cbdc.ca/en/programs/cybersecure-new-brunswick" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hero-button"
-                style={{ display: 'inline-block', textDecoration: 'none' }}
-              >
-                View Cybersecure NB Program Details
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Our Web Design Company */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Why Moncton's Most Critical Organizations Trust Our Cybersecurity Leadership</h2>
-            <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '900px', margin: '0 auto' }}>
-              Government-grade expertise meets mission-critical cybersecurity excellence. Our IT security consulting Moncton 
-              specialists deliver battle-tested solutions forged in the highest-stakes environments. From transportation hubs 
-              to financial institutions and logistics networks, we architect uncompromising security frameworks 
-              that have never been successfully breached. When failure is not an option, Moncton chooses proven cybersecurity leadership.
-            </p>
-          </div>
-          
-          <div className="services-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '2rem',
-            marginTop: '3rem'
-          }}>
-            <div className="service-card" style={{
-              background: 'white',
-              padding: '2rem',
-              borderRadius: '12px',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-              border: '1px solid rgba(29, 122, 175, 0.1)',
-              transition: 'transform 0.3s ease'
-            }}>
-              <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🏆</div>
-              <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Local Cybersecurity Expertise</h3>
-              <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
-                Deep understanding of New Brunswick's business landscape and regulatory environment. Our cybersecurity 
-                services Moncton team knows local compliance requirements, regional threat patterns, and industry 
-                challenges. We provide personalized security consulting with rapid on-site response when you need it most.
-              </p>
-            </div>
-            
-            <div className="service-card" style={{
-              background: 'white',
-              padding: '2rem',
-              borderRadius: '12px',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-              border: '1px solid rgba(29, 122, 175, 0.1)',
-              transition: 'transform 0.3s ease'
-            }}>
-              <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>💰</div>
-              <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Scalable Security Solutions</h3>
-              <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
-                From startups to established enterprises, our cybersecurity solutions scale with your business. 
-                Affordable managed security services New Brunswick small businesses can afford, with the flexibility 
-                to expand protection as you grow. Transparent pricing, no long-term contracts, measurable results.
-              </p>
-            </div>
-            
-            <div className="service-card" style={{
-              background: 'white',
-              padding: '2rem',
-              borderRadius: '12px',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-              border: '1px solid rgba(29, 122, 175, 0.1)',
-              transition: 'transform 0.3s ease'
-            }}>
-              <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🔄</div>
-              <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Proven Incident Response</h3>
-              <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
-                When security incidents occur, response time is critical. Our cybersecurity team provides 
-                15-minute incident response, complete forensics, and business continuity support. Proven track 
-                record helping Moncton businesses recover quickly and strengthen defenses after attacks.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Areas We Serve */}
-      <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-        <div className="container">
-          <h2 className="section-title">Cybersecurity Services Throughout Greater Moncton</h2>
-          
-          <div className="services-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '2rem',
-            maxWidth: '1400px',
-            margin: '2rem auto 0'
-          }}>
-            <div className="service-card" style={{
-              background: 'white',
-              padding: '2rem',
-              borderRadius: '12px',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-              transition: 'transform 0.3s ease'
-            }}>
-              <h4>📍 Downtown Moncton</h4>
-              <p>
-                Transportation hub, logistics companies, and financial institutions requiring high-security standards. 
-                Specialized cybersecurity services Moncton downtown businesses trust, including Main Street financial 
-                services, logistics operations, and professional offices serving Atlantic Canada.
-              </p>
-            </div>
-            
-            <div className="service-card" style={{
-              background: 'white',
-              padding: '2rem',
-              borderRadius: '12px',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-              transition: 'transform 0.3s ease'
-            }}>
-              <h4>📍 Dieppe & Riverview</h4>
-              <p>
-                Growing suburban communities with technology companies, healthcare facilities, and service businesses. 
-                Comprehensive IT security consulting Moncton region businesses need to protect operations 
-                and customer data from cyber threats targeting the Greater Moncton Area.
-              </p>
-            </div>
-            
-            <div className="service-card" style={{
-              background: 'white',
-              padding: '2rem',
-              borderRadius: '12px',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-              transition: 'transform 0.3s ease'
-            }}>
-              <h4>📍 Westmorland County Industrial</h4>
-              <p>
-                Manufacturing, energy, and transportation businesses throughout Petitcodiac, Salisbury, 
-                and Sackville. Managed security services New Brunswick industrial sector businesses require, including 
-                supply chain protection and operational technology cybersecurity for critical infrastructure.
-              </p>
-            </div>
-            
-            <div className="service-card" style={{
-              background: 'white',
-              padding: '2rem',
-              borderRadius: '12px',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-              transition: 'transform 0.3s ease'
-            }}>
-              <h4>📍 Shediac & Coastal Communities</h4>
-              <p>
-                Tourism, hospitality, and seasonal businesses requiring flexible cybersecurity protection. 
-                Small business managed security services protecting customer payment data, booking systems, 
-                and seasonal operational continuity against targeted attacks on tourism infrastructure.
-              </p>
-            </div>
-            
-            <div className="service-card" style={{
-              background: 'white',
-              padding: '2rem',
-              borderRadius: '12px',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-              transition: 'transform 0.3s ease'
-            }}>
-              <h4>📍 Albert County & Sussex Area</h4>
-              <p>
-                Agricultural businesses, rural contractors, and service providers requiring remote cybersecurity 
-                monitoring. Specialized in protecting agricultural operations, forestry companies, and rural 
-                infrastructure against ransomware and supply chain attacks.
-              </p>
-            </div>
-            
-            <div className="service-card" style={{
-              background: 'white',
-              padding: '2rem',
-              borderRadius: '12px',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-              transition: 'transform 0.3s ease'
-            }}>
-              <h4>📍 Kent County & Richibucto</h4>
-              <p>
-                Rural professionals, contractors, and service businesses requiring secure remote work capabilities. 
-                Comprehensive cybersecurity solutions protecting home-based professionals, small contractors, and 
-                coastal service providers with cloud security, VPN management, and endpoint protection.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Moncton Business Focus */}
-      <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-        <div className="container">
-          <h2 className="section-title">Mission-Critical Cybersecurity Solutions for Moncton's High-Stakes Industries</h2>
-          
-          <div className="industries-content">
-            <div className="industries-text">
-              <h3>🚛 Transportation & Logistics Cybersecurity Hub</h3>
-              <p>
-                Securing Atlantic Canada's transportation gateway with specialized logistics cybersecurity solutions. Our certified 
-                security architects protect trucking companies, rail operations, distribution centers, and supply chain management 
-                systems. Advanced cargo tracking security, fleet management protection, cross-border data compliance, and 
-                just-in-time delivery system hardening. Zero-downtime security for operations where delays cost millions.
-              </p>
-              
-              <h3>⚖️ Financial Services & Professional Protection</h3>
-              <p>
-                Banking confidentiality and financial data demand bulletproof security. Our financial technology 
-                specialists architect security frameworks for Moncton's credit unions, investment firms, insurance 
-                companies, and accounting practices. Specialized in payment card security, anti-fraud systems, 
-                PCI DSS compliance, and regulatory compliance across multiple jurisdictions including PIPEDA and FINTRAC requirements.
-              </p>
-              
-              <h3>🏭 Energy & Industrial Control Systems</h3>
-              <p>
-                Moncton's energy infrastructure, manufacturing plants, and industrial facilities represent high-value targets 
-                for cyberattacks. Our industrial cybersecurity specialists deploy SCADA security, industrial control system 
-                hardening, and operational technology (OT) network segregation. Advanced persistent threat (APT) detection, 
-                zero-trust architecture, and incident response specifically designed for critical infrastructure resilience.
-              </p>
-              
-              <h3>🎓 Education & Healthcare Technology Security</h3>
-              <p>
-                Université de Moncton, Crandall University, and regional healthcare facilities require specialized protection 
-                for sensitive research and patient data. Our education and healthcare cybersecurity specialists secure 
-                student information systems, research databases, medical records, and collaborative platforms. Specialized 
-                in protecting international partnerships, research IP, and maintaining regulatory compliance while preventing data breaches.
-              </p>
-            </div>
-            
-            <div className="industries-stats">
-              <div className="stat-item">
-                <h4>71,000+</h4>
-                <p>Moncton residents</p>
-              </div>
-              <div className="stat-item">
-                <h4>150,000+</h4>
-                <p>Greater Moncton area population</p>
-              </div>
-              <div className="stat-item">
-                <h4>Hub City</h4>
-                <p>Atlantic Canada transportation center</p>
-              </div>
-              <div className="stat-item">
-                <h4>3 Universities</h4>
-                <p>UdeM, Crandall & NBCC driving innovation</p>
+              <div style={{ position: 'relative', zIndex: 2 }}>
+                <p style={{ fontSize: '1.1rem', color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem' }}>
+                  Many New Brunswick small and medium-sized businesses can access <strong style={{color: colors.primary}}>up to $3,000 in fully reimbursed funding</strong> for 
+                  cybersecurity and AI projects through the provincial <strong style={{color: colors.primary}}>Cybersecure NB program</strong>.
+                </p>
+                
+                <p style={{ fontSize: '1rem', color: colors.text.secondary, lineHeight: '1.6', marginBottom: '2rem' }}>
+                  For full eligibility details, application instructions, and program guidelines, please visit the official 
+                  Cybersecure New Brunswick program page.
+                </p>
+                
+                <a 
+                  href="https://www.cbdc.ca/en/programs/cybersecure-new-brunswick" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hero-button"
+                  style={{ display: 'inline-block', textDecoration: 'none' }}
+                >
+                  View Cybersecure NB Program Details
+                </a>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Why Choose Our Web Design Company */}
+        <section className="section">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Why Fredericton's Most Critical Organizations Trust Our Cybersecurity Leadership</h2>
+              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '900px', margin: '0 auto' }}>
+                Government-grade expertise meets mission-critical cybersecurity excellence. Our IT security consulting Fredericton 
+                specialists deliver battle-tested solutions forged in the highest-stakes environments. From provincial government 
+                infrastructure to financial institutions and healthcare networks, we architect uncompromising security frameworks 
+                that have never been successfully breached. When failure is not an option, Fredericton chooses proven cybersecurity leadership.
+              </p>
+            </div>
+            
+            <div className="services-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
+              marginTop: '3rem'
+            }}>
+              <div className="service-card" style={{
+                background: 'white',
+                padding: '2rem',
+                borderRadius: '12px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                transition: 'transform 0.3s ease'
+              }}>
+                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🏆</div>
+                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Local Cybersecurity Expertise</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Deep understanding of New Brunswick's business landscape and regulatory environment. Our cybersecurity 
+                  services Fredericton team knows local compliance requirements, regional threat patterns, and industry 
+                  challenges. We provide personalized security consulting with rapid on-site response when you need it most.
+                </p>
+              </div>
+              
+              <div className="service-card" style={{
+                background: 'white',
+                padding: '2rem',
+                borderRadius: '12px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                transition: 'transform 0.3s ease'
+              }}>
+                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>💰</div>
+                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Scalable Security Solutions</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  From startups to established enterprises, our cybersecurity solutions scale with your business. 
+                  Affordable managed security services New Brunswick small businesses can afford, with the flexibility 
+                  to expand protection as you grow. Transparent pricing, no long-term contracts, measurable results.
+                </p>
+              </div>
+              
+              <div className="service-card" style={{
+                background: 'white',
+                padding: '2rem',
+                borderRadius: '12px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                transition: 'transform 0.3s ease'
+              }}>
+                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🔄</div>
+                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Proven Incident Response</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  When security incidents occur, response time is critical. Our cybersecurity team provides 
+                  15-minute incident response, complete forensics, and business continuity support. Proven track 
+                  record helping Fredericton businesses recover quickly and strengthen defenses after attacks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Areas We Serve */}
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
+          <div className="container">
+            <h2 className="section-title">Cybersecurity Services Throughout Greater Fredericton</h2>
+            
+            <div className="services-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
+              maxWidth: '1400px',
+              margin: '2rem auto 0'
+            }}>
+              <div className="service-card" style={{
+                background: 'white',
+                padding: '2rem',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                transition: 'transform 0.3s ease'
+              }}>
+                <h4>📍 Downtown Fredericton</h4>
+                <p>
+                  Government agencies, professional services, and financial institutions requiring high-security standards. 
+                  Specialized cybersecurity services Fredericton downtown businesses trust, including King Street law firms, 
+                  Queen Street financial advisors, and Regent Street professional offices.
+                </p>
+              </div>
+              
+              <div className="service-card" style={{
+                background: 'white',
+                padding: '2rem',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                transition: 'transform 0.3s ease'
+              }}>
+                <h4>📍 North Side Fredericton</h4>
+                <p>
+                  Manufacturing, healthcare, and service businesses in Nashwaaksis, Marysville, and Douglas. 
+                  Comprehensive IT security consulting Fredericton north side businesses need to protect operations 
+                  and customer data from cyber threats.
+                </p>
+              </div>
+              
+              <div className="service-card" style={{
+                background: 'white',
+                padding: '2rem',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                transition: 'transform 0.3s ease'
+              }}>
+                <h4>📍 Oromocto & York County</h4>
+                <p>
+                  Defense contractors, government suppliers, and military-connected businesses in Oromocto, Geary, 
+                  and Burton. Managed security services New Brunswick defense sector businesses require, including 
+                  ITAR compliance and classified data protection.
+                </p>
+              </div>
+              
+              <div className="service-card" style={{
+                background: 'white',
+                padding: '2rem',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                transition: 'transform 0.3s ease'
+              }}>
+                <h4>📍 Hanwell & Lincoln</h4>
+                <p>
+                  Growing residential areas with contractors, home services, and retail businesses requiring 
+                  comprehensive cybersecurity protection. Small business managed security services protecting 
+                  customer data, payment systems, and operational continuity against evolving cyber threats.
+                </p>
+              </div>
+              
+              <div className="service-card" style={{
+                background: 'white',
+                padding: '2rem',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                transition: 'transform 0.3s ease'
+              }}>
+                <h4>📍 Harvey Station & Zealand</h4>
+                <p>
+                  Rural contractors, agricultural businesses, and service providers throughout York County requiring 
+                  remote cybersecurity monitoring. Specialized in protecting agricultural operations, forestry companies, 
+                  and rural infrastructure against ransomware and industrial control system attacks.
+                </p>
+              </div>
+              
+              <div className="service-card" style={{
+                background: 'white',
+                padding: '2rem',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                transition: 'transform 0.3s ease'
+              }}>
+                <h4>📍 New Maryland & Charters Settlement</h4>
+                <p>
+                  Suburban contractors, professionals, and service businesses requiring secure remote work capabilities. 
+                  Comprehensive cybersecurity solutions protecting home-based professionals, small contractors, and 
+                  residential service providers with cloud security, VPN management, and endpoint protection.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Fredericton Business Focus */}
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
+          <div className="container">
+            <h2 className="section-title">Mission-Critical Cybersecurity Solutions for Fredericton's High-Stakes Industries</h2>
+            
+            <div className="industries-content">
+              <div className="industries-text">
+                <h3>🏛️ Government & Defense Sector Cybersecurity Excellence</h3>
+                <p>
+                  Protecting New Brunswick's seat of government with classified-rated security infrastructure. Our certified 
+                  security architects engineer bulletproof defenses for provincial ministries, federal agencies, military 
+                  contractors, and defense suppliers. Advanced threat intelligence, Security Clearance (SC) compliant 
+                  personnel, ITAR-compliant data protection, and Security of Information Act adherence. Zero-tolerance 
+                  security posture for organizations where compromise threatens national interests.
+                </p>
+                
+                <h3>⚖️ Legal & Financial Services Fortress Protection</h3>
+                <p>
+                  Attorney-client privilege and financial confidentiality demand unbreachable security. Our legal technology 
+                  specialists architect security frameworks for Fredericton's law firms, accounting practices, investment 
+                  advisors, and banking institutions. Specialized in legal cloud security, encrypted communication systems, 
+                  PCI DSS compliance, anti-money laundering system protection, and regulatory compliance across multiple 
+                  jurisdictions including PIPEDA, FINTRAC, and Law Society requirements.
+                </p>
+                
+                <h3>🏭 Critical Infrastructure & Energy Security</h3>
+                <p>
+                  Fredericton's power grid, water systems, telecommunications networks, and transportation infrastructure 
+                  represent high-value targets for nation-state attackers. Our industrial cybersecurity specialists deploy 
+                  SCADA security, industrial control system hardening, and operational technology (OT) network segregation. 
+                  Advanced persistent threat (APT) detection, zero-trust architecture, and incident response specifically 
+                  designed for critical infrastructure resilience.
+                </p>
+                
+                <h3>🎓 Education & Research Institution Protection</h3>
+                <p>
+                  University of New Brunswick and St. Thomas University represent intellectual property goldmines requiring 
+                  enterprise-grade protection. Our education cybersecurity specialists secure research data, student 
+                  information systems, campus networks, and collaborative research platforms. Specialized in protecting 
+                  research databases, securing international partnerships, and maintaining academic freedom while 
+                  preventing IP theft and student data breaches.
+                </p>
+              </div>
+              
+              <div className="industries-stats">
+                <div className="stat-item">
+                  <h4>58,000+</h4>
+                  <p>Fredericton residents</p>
+                </div>
+                <div className="stat-item">
+                  <h4>85,000+</h4>
+                  <p>Greater Fredericton area population</p>
+                </div>
+                <div className="stat-item">
+                  <h4>Provincial Capital</h4>
+                  <p>Government & business hub</p>
+                </div>
+                <div className="stat-item">
+                  <h4>2 Universities</h4>
+                  <p>UNB & STU driving innovation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
 
         
-      {/* Service Areas & Specializations */}
-      <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-        <div className="container">
-          {/* Service Coverage Areas */}
-          <div style={{marginTop: '3rem'}}>
-            <h3 style={{color: colors.primary, marginBottom: '1.5rem', textAlign: 'center', fontSize: '1.5rem'}}>Cybersecurity Company Serving Greater Moncton</h3>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '1rem',
-              textAlign: 'center'
-            }}>
-              {[
-                'Downtown Moncton',
-                'Dieppe',
-                'Riverview', 
-                'Shediac',
-                'Petitcodiac',
-                'Salisbury',
-                'Sussex',
-                'Sackville',
-                'Hillsborough',
-                'Alma',
-                'Richibucto',
-                'Bouctouche'
-              ].map((area, index) => (
-                <div key={index} style={{
-                  background: 'white',
-                  padding: '1rem',
-                  borderRadius: '8px',
-                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
-                  border: '1px solid rgba(29, 122, 175, 0.1)'
-                }}>
-                  <span style={{color: colors.text.primary, fontSize: '0.95rem', fontWeight: '500'}}>{area}</span>
-                </div>
-              ))}
+        {/* Service Areas & Specializations */}
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
+          <div className="container">
+            {/* Service Coverage Areas */}
+            <div style={{marginTop: '3rem'}}>
+              <h3 style={{color: colors.primary, marginBottom: '1.5rem', textAlign: 'center', fontSize: '1.5rem'}}>Cybersecurity Company Serving Greater Fredericton</h3>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                gap: '1rem',
+                textAlign: 'center'
+              }}>
+                {[
+                  'Downtown Fredericton',
+                  'Nashwaaksis',
+                  'Marysville', 
+                  'Oromocto',
+                  'Hanwell',
+                  'Lincoln',
+                  'New Maryland',
+                  'Harvey Station',
+                  'Zealand',
+                  'Burton',
+                  'Geary',
+                  'Douglas'
+                ].map((area, index) => (
+                  <div key={index} style={{
+                    background: 'white',
+                    padding: '1rem',
+                    borderRadius: '8px',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
+                    border: '1px solid rgba(29, 122, 175, 0.1)'
+                  }}>
+                    <span style={{color: colors.text.primary, fontSize: '0.95rem', fontWeight: '500'}}>{area}</span>
+                  </div>
+                ))}
+              </div>
+              <p style={{
+                textAlign: 'center',
+                marginTop: '1.5rem',
+                color: colors.text.secondary,
+                fontStyle: 'italic'
+              }}>Professional cybersecurity services Fredericton businesses trust throughout York County and the greater capital region.</p>
             </div>
-            <p style={{
-              textAlign: 'center',
-              marginTop: '1.5rem',
-              color: colors.text.secondary,
-              fontStyle: 'italic'
-            }}>Professional cybersecurity services Moncton businesses trust throughout Westmorland, Albert, and Kent Counties and the greater Hub City region.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* CTA Section */}
         <section className="section" style={{ backgroundColor: '#000', color: 'white' }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title" style={{ color: 'white' }}>Leading Cybersecurity Provider Moncton</h2>
+              <h2 className="section-title" style={{ color: 'white' }}>Leading Cybersecurity Provider Fredericton</h2>
               <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
                 Professional cybersecurity services, comprehensive security audits, and enterprise-grade 
-                IT security solutions for businesses throughout Moncton and New Brunswick.
+                IT security solutions for businesses throughout Fredericton and New Brunswick.
               </p>
             </div>
             <div className="cta-buttons">
@@ -858,3 +850,280 @@ export const MonctonCybersecurityPage = () => {
     </div>
   );
 };
+
+// Additional styles for location pages
+const locationStyles = `
+.local-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.local-service-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.local-service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.local-service-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.local-service-card p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.service-benefits {
+  list-style: none;
+  padding: 0;
+}
+
+.service-benefits li {
+  padding: 5px 0;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.95rem;
+}
+
+.service-benefits li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.service-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.service-area-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.service-area-card:hover {
+  transform: translateY(-3px);
+}
+
+.service-area-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.service-area-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.industries-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.industries-text h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  margin-top: 30px;
+  font-size: 1.3rem;
+}
+
+.industries-text h3:first-child {
+  margin-top: 0;
+}
+
+.industries-text p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.industries-stats {
+  display: grid;
+  gap: 20px;
+}
+
+.stat-item {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stat-item h4 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.stat-item p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.seo-benefits {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.seo-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  margin-top: 30px;
+  font-size: 1.3rem;
+}
+
+.seo-content h3:first-child {
+  margin-top: 0;
+}
+
+.seo-content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.success-stories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.story-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.story-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.story-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.story-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.story-results {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.story-results span {
+  background: #f8f9fa;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.getting-started-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.steps-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.start-option {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.start-option h4 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.start-option p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .local-services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-areas-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .industries-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .success-stories {
+    grid-template-columns: 1fr;
+  }
+  
+  .story-results {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+`;
+
+// Inject additional styles
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement('style');
+  styleSheet.textContent = locationStyles;
+  document.head.appendChild(styleSheet);
+}

@@ -11,60 +11,49 @@ import { gsap } from 'gsap';
 export const ResponsiveLandingPage = () => {
   const heroRef = useRef(null);
   const headerRef = useRef(null);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    // Enhanced GSAP scroll animations for header
+    // Enhanced GSAP scroll animations for header with hide on scroll down
     const header = headerRef.current;
-    let lastScrollY = 0;
-    
+    if (!header) return;
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > 100) {
-        // Add enhanced blur and shadow when scrolled
-        gsap.to(header, {
-          duration: 0.3,
-          css: {
-            backdropFilter: "blur(25px) saturate(200%)",
-            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(29, 122, 175, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
-          },
-          ease: "power2.out"
-        });
-      } else {
-        // Return to original state
-        gsap.to(header, {
-          duration: 0.3,
-          css: {
-            backdropFilter: "blur(20px) saturate(180%)",
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(29, 122, 175, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
-          },
-          ease: "power2.out"
-        });
+
+      // Determine scroll direction
+      const scrollingDown = currentScrollY > lastScrollY.current && currentScrollY > 100;
+      const scrollingUp = currentScrollY < lastScrollY.current || currentScrollY <= 100;
+
+      // Hide header when scrolling down, show when scrolling up
+      if (scrollingDown) {
+        header.style.transform = 'translateY(-120px)';
+        header.style.transition = 'transform 0.3s ease';
+      } else if (scrollingUp) {
+        header.style.transform = 'translateY(0)';
+        header.style.transition = 'transform 0.3s ease';
       }
-      
-      lastScrollY = currentScrollY;
+
+      // Enhanced blur and shadow when scrolled
+      if (currentScrollY > 100) {
+        header.style.backdropFilter = "blur(25px) saturate(200%)";
+        header.style.boxShadow = "0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(29, 122, 175, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)";
+      } else {
+        header.style.backdropFilter = "blur(20px) saturate(180%)";
+        header.style.boxShadow = "0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(29, 122, 175, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)";
+      }
+
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Initial header animation on load
-    gsap.fromTo(header, 
-      { y: -100, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 1, 
-        ease: "power3.out",
-        delay: 0.2 
-      }
-    );
 
     // Background panning animation
     const style = document.createElement('style');
     style.textContent = `
       @keyframes panLeft {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-200px); }
+        0% { transform: translateX(0px); }
+        100% { transform: translateX(-400px); }
       }
       @keyframes pulse {
         0%, 100% { opacity: 0.7; }
@@ -258,91 +247,111 @@ export const ResponsiveLandingPage = () => {
       <main className="main-content">
         {/* Hero Section */}
         <section ref={heroRef} className="hero-section homepage-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', overflow: 'hidden' }}>
-          <svg 
-            className="hero-background-svg"
-            style={{ 
-              position: 'absolute', 
-              top: '-10%', 
-              left: '-10%', 
-              width: '120%', 
-              height: '120%', 
+          {/* Circuit Board Background */}
+          <svg
+            className="circuit-background"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
               zIndex: 1,
-              opacity: 0.7
-            }} 
-            viewBox="0 0 1200 800" 
-            xmlns="http://www.w3.org/2000/svg"
+              opacity: 0.4
+            }}
+            viewBox="0 0 1200 800"
+            preserveAspectRatio="xMidYMid slice"
           >
             <defs>
-              <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#1d7aaf" />
-                <stop offset="100%" stopColor="#1e40af" />
-              </linearGradient>
-              <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1d7aaf" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#1e40af" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#1d7aaf" stopOpacity="0.8" />
-              </linearGradient>
+              {/* Subtle glow filter */}
+              <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
             </defs>
-            
-            {/* Main Grid Lines */}
-            <g className="grid-lines" filter="blur(0.5px)">
-              <line x1="0" y1="100" x2="1200" y2="100" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.4" strokeDasharray="20,10" />
-              <line x1="0" y1="200" x2="1200" y2="200" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="0" y1="300" x2="1200" y2="300" stroke="#1d7aaf" strokeWidth="2" opacity="0.5" strokeDasharray="25,5" />
-              <line x1="0" y1="400" x2="1200" y2="400" stroke="#1e40af" strokeWidth="1" opacity="0.2" strokeDasharray="30,10" />
-              <line x1="0" y1="500" x2="1200" y2="500" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.3" strokeDasharray="20,15" />
-              
-              <line x1="200" y1="0" x2="200" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,10" />
-              <line x1="400" y1="0" x2="400" y2="800" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="600" y1="0" x2="600" y2="800" stroke="#1d7aaf" strokeWidth="2" opacity="0.4" strokeDasharray="25,5" />
-              <line x1="800" y1="0" x2="800" y2="800" stroke="#1e40af" strokeWidth="1" opacity="0.1" strokeDasharray="30,10" />
-              <line x1="1000" y1="0" x2="1000" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,15" />
-            </g>
 
-            {/* Circuit Board Patterns */}
-            <g className="circuit-patterns" filter="blur(0.3px)">
-              {/* Horizontal circuit paths */}
-              <path d="M100,150 L250,150 L270,170 L400,170 L420,150 L600,150" stroke="#1d7aaf" strokeWidth="1" opacity="0.4" fill="none" strokeDasharray="5,3" />
-              <path d="M150,250 L300,250 L320,230 L500,230 L520,250 L750,250" stroke="#1e40af" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="8,4" />
-              <path d="M80,350 L200,350 L220,330 L350,330 L370,350 L550,350" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.5" fill="none" strokeDasharray="6,2" />
-              
-              {/* Vertical circuit paths */}
-              <path d="M300,50 L300,180 L280,200 L280,320 L300,340 L300,450" stroke="#1e40af" strokeWidth="1" opacity="0.2" fill="none" strokeDasharray="4,3" />
-              <path d="M500,80 L500,200 L520,220 L520,300 L500,320 L500,480" stroke="#1d7aaf" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="7,3" />
-              <path d="M700,60 L700,150 L680,170 L680,280 L700,300 L700,420" stroke="#1e40af" strokeWidth="1.5" opacity="0.4" fill="none" strokeDasharray="5,4" />
-            </g>
+            {/* Professional circuit background with slow panning */}
+            <g transform="translate(0,0)">
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0; -500,0; -500,-350; 0,-350; 0,0"
+                dur="150s"
+                repeatCount="indefinite"
+              />
 
-            {/* Tech Nodes/Connection Points */}
-            <g className="tech-nodes">
-              <circle cx="150" cy="120" r="4" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="270" cy="170" r="3" fill="#1e40af" opacity="0.8" />
-              <circle cx="420" cy="150" r="5" fill="#1d7aaf" opacity="1.0" />
-              <circle cx="350" cy="180" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="520" cy="250" r="4" fill="#1d7aaf" opacity="0.8" />
-              <circle cx="650" cy="110" r="6" fill="#1e40af" opacity="0.9" />
-              <circle cx="850" cy="200" r="3" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="950" cy="140" r="4" fill="#1e40af" opacity="0.8" />
-              <circle cx="300" cy="340" r="5" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="500" cy="320" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="700" cy="300" r="4" fill="#1d7aaf" opacity="0.8" />
-            </g>
+              {/* Clean circuit grid layout */}
+              {[0, 1, 2, 3, 4, 5].map(layerX => (
+                [...Array(4)].map((_, layerY) => (
+                  <g key={`layer-${layerX}-${layerY}`} transform={`translate(${layerX * 400}, ${layerY * 250})`}>
 
-            {/* Glowing Orbs */}
-            <g className="glowing-orbs">
-              <circle cx="100" cy="100" r="8" fill="url(#techGradient)" opacity="0.4" />
-              <circle cx="900" cy="300" r="6" fill="url(#techGradient)" opacity="0.5" />
-              <circle cx="1100" cy="150" r="10" fill="url(#techGradient)" opacity="0.3" />
-              <circle cx="200" cy="400" r="7" fill="url(#techGradient)" opacity="0.4" />
+                    {/* Single clean horizontal trace */}
+                    <g stroke="#1d7aaf" strokeWidth="1.5" fill="none">
+                      <path d="M50 120 L350 120" strokeDasharray="20,12" opacity="0.5">
+                        <animate attributeName="stroke-dashoffset" values="0;-32" dur="3s" repeatCount="indefinite"/>
+                      </path>
+                    </g>
+
+                    {/* Single clean vertical trace */}
+                    {(layerX + layerY) % 2 === 0 && (
+                      <g stroke="#22c55e" strokeWidth="1.5" fill="none">
+                        <path d="M200 30 L200 220" strokeDasharray="18,10" opacity="0.4">
+                          <animate attributeName="stroke-dashoffset" values="0;-28" dur="2.8s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Occasional L-shaped route */}
+                    {(layerX + layerY) % 3 === 0 && (
+                      <g stroke="#f59e0b" strokeWidth="1" fill="none">
+                        <path d="M100 80 L100 160 L300 160" strokeDasharray="15,8" opacity="0.35">
+                          <animate attributeName="stroke-dashoffset" values="0;-23" dur="3.5s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Subtle floating dots */}
+                    <g>
+                      {[...Array(3)].map((_, dotIndex) => {
+                        const x = 80 + (dotIndex * 120);
+                        const y = 60 + (dotIndex * 40);
+                        const delay = dotIndex * 1.5;
+                        return (
+                          <circle
+                            key={`dot-${dotIndex}`}
+                            cx={x}
+                            cy={y}
+                            r="1.5"
+                            fill="#1d7aaf"
+                            opacity="0.6"
+                          >
+                            <animateTransform
+                              attributeName="transform"
+                              type="translate"
+                              values="0,0; 8,-12; -5,10; 0,0"
+                              dur="6s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                            <animate
+                              attributeName="opacity"
+                              values="0.3;0.6;0.3"
+                              dur="4s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                          </circle>
+                        );
+                      })}
+                    </g>
+                  </g>
+                ))
+              ))}
             </g>
           </svg>
-
-          {/* Floating Particles */}
-          <div className="floating-particle" style={{ top: '15%', left: '10%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '25%', right: '15%', width: '6px', height: '6px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '45%', left: '20%', width: '3px', height: '3px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '35%', right: '25%', width: '5px', height: '5px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '60%', left: '15%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '70%', right: '20%', width: '3px', height: '3px', background: '#1e40af', borderRadius: '50%' }}></div>
 
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '4rem', alignItems: 'center' }}>
@@ -492,7 +501,7 @@ export const ResponsiveLandingPage = () => {
                     }}>Learn More</span>
                   </div>
                   <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="40" height="40" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
                       <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
@@ -541,11 +550,16 @@ export const ResponsiveLandingPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  background: 'linear-gradient(135deg, #1e293b, #334155)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
                   transition: 'all 0.3s ease'
-                }}>🔒</div>
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
                 <h3>Cybersecurity & IT Services</h3>
                 <p>
                   Professional cybersecurity services including security audits, MFA, and managed IT support to protect your business from cyber threats.
@@ -573,11 +587,17 @@ export const ResponsiveLandingPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  background: 'linear-gradient(135deg, #1e293b, #334155)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
                   transition: 'all 0.3s ease'
-                }}>🌐</div>
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="8" y="16" width="8" height="2" fill="white"/>
+                    <rect x="9" y="18" width="6" height="1" fill="white"/>
+                  </svg>
+                </div>
                 <h3>Website Design & Development</h3>
                 <p>
                   Custom websites designed to convert visitors into customers. Mobile-optimized, fast-loading, and built with modern SEO practices.
@@ -605,11 +625,20 @@ export const ResponsiveLandingPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  background: 'linear-gradient(135deg, #1e293b, #334155)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
                   transition: 'all 0.3s ease'
-                }}>🤖</div>
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="12" cy="5" r="1" fill="white"/>
+                    <circle cx="12" cy="19" r="1" fill="white"/>
+                    <circle cx="19" cy="12" r="1" fill="white"/>
+                    <circle cx="5" cy="12" r="1" fill="white"/>
+                  </svg>
+                </div>
                 <h3>AI Automation Solutions</h3>
                 <p>
                   Intelligent chatbots and automation tools that handle customer inquiries, qualify leads, and streamline business operations.
@@ -629,19 +658,23 @@ export const ResponsiveLandingPage = () => {
                 position: 'relative',
                 overflow: 'hidden'
               }}>
-                <div className="service-icon floating-icon" style={{ 
-                  fontSize: '3rem', 
+                <div className="service-icon floating-icon" style={{
+                  fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #e11d48, #be123c)',
+                  background: 'linear-gradient(135deg, #1e293b, #334155)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(225, 29, 72, 0.3)',
                   transition: 'all 0.3s ease'
-                }}>📈</div>
+                }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+                </div>
                 <h3>SEO & Hands Free Marketing</h3>
                 <p>
                   Get found on Google and convert visitors with automated email sequences, lead nurturing, and customer retention - completely hands free.
@@ -734,7 +767,15 @@ export const ResponsiveLandingPage = () => {
                       </div>
                       <div className="trust-indicators">
                         <div className="trust-item">⭐⭐⭐⭐⭐ 127 Reviews</div>
-                        <div className="trust-item">🏆 Licensed & Insured</div>
+                        <div className="trust-item">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '6px', verticalAlign: 'middle'}}>
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M6 9h12v6a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V9z" stroke="currentColor" strokeWidth="2" fill="none"/>
+                            <path d="M10 22h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            <path d="M12 18v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                          </svg>
+                          Licensed & Insured
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -807,22 +848,26 @@ export const ResponsiveLandingPage = () => {
                 opacity: 1,
                 visibility: 'visible'
               }}>
-                <div className="service-icon" style={{ 
-                  fontSize: '3rem', 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                  background: 'linear-gradient(135deg, #1e293b, #334155)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(34, 197, 94, 0.3)',
                   transition: 'all 0.3s ease'
-                }}>💰</div>
-                <h3 style={{ 
-                  color: colors.text.primary, 
-                  fontSize: '1.4rem', 
+                }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" viewBox="0 0 16 16">
+                    <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  color: colors.text.primary,
+                  fontSize: '1.4rem',
                   fontWeight: '700',
                   marginBottom: '1rem',
                   lineHeight: '1.3'
@@ -858,11 +903,15 @@ export const ResponsiveLandingPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+                  background: 'linear-gradient(135deg, #1e293b, #334155)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(245, 158, 11, 0.3)',
                   transition: 'all 0.3s ease'
-                }}>🏠</div>
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9V21H9V15H15V21H21V9L12 2L3 9Z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
                 <h3 style={{ 
                   color: colors.text.primary, 
                   fontSize: '1.4rem', 
@@ -893,22 +942,27 @@ export const ResponsiveLandingPage = () => {
                 opacity: 1,
                 visibility: 'visible'
               }}>
-                <div className="service-icon" style={{ 
-                  fontSize: '3rem', 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  background: 'linear-gradient(135deg, #1e293b, #334155)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
                   transition: 'all 0.3s ease'
-                }}>🔐</div>
-                <h3 style={{ 
-                  color: colors.text.primary, 
-                  fontSize: '1.4rem', 
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  color: colors.text.primary,
+                  fontSize: '1.4rem',
                   fontWeight: '700',
                   marginBottom: '1rem',
                   lineHeight: '1.3'
@@ -944,14 +998,18 @@ export const ResponsiveLandingPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #7c3aed, #5b21b6)',
+                  background: 'linear-gradient(135deg, #1e293b, #334155)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(124, 58, 237, 0.3)',
                   transition: 'all 0.3s ease'
-                }}>🏆</div>
-                <h3 style={{ 
-                  color: colors.text.primary, 
-                  fontSize: '1.4rem', 
+                }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" viewBox="0 0 16 16">
+                    <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  color: colors.text.primary,
+                  fontSize: '1.4rem',
                   fontWeight: '700',
                   marginBottom: '1rem',
                   lineHeight: '1.3'
@@ -987,11 +1045,15 @@ export const ResponsiveLandingPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #ec4899, #be185d)',
+                  background: 'linear-gradient(135deg, #1e293b, #334155)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(236, 72, 153, 0.3)',
                   transition: 'all 0.3s ease'
-                }}>⚡</div>
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                  </svg>
+                </div>
                 <h3 style={{ 
                   color: colors.text.primary, 
                   fontSize: '1.4rem', 
@@ -1022,22 +1084,27 @@ export const ResponsiveLandingPage = () => {
                 opacity: 1,
                 visibility: 'visible'
               }}>
-                <div className="service-icon" style={{ 
-                  fontSize: '3rem', 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #e11d48, #be123c)',
+                  background: 'linear-gradient(135deg, #1e293b, #334155)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(225, 29, 72, 0.3)',
                   transition: 'all 0.3s ease'
-                }}>📈</div>
-                <h3 style={{ 
-                  color: colors.text.primary, 
-                  fontSize: '1.4rem', 
+                }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" viewBox="0 0 16 16">
+                    <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135"/>
+                    <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2zM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  color: colors.text.primary,
+                  fontSize: '1.4rem',
                   fontWeight: '700',
                   marginBottom: '1rem',
                   lineHeight: '1.3'
@@ -1111,15 +1178,21 @@ export const ResponsiveLandingPage = () => {
                 opacity: 1,
                 visibility: 'visible'
               }}>
-                <div style={{ 
-                  fontSize: '2rem', 
+                <div style={{
+                  fontSize: '2rem',
                   marginBottom: '1rem'
-                }}>🌐</div>
-                <h4 style={{ 
-                  color: colors.primary, 
-                  fontSize: '1.2rem', 
-                  fontWeight: '700', 
-                  marginBottom: '0.8rem' 
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="#1d7aaf" strokeWidth="2" fill="none"/>
+                    <rect x="8" y="16" width="8" height="2" fill="#1d7aaf"/>
+                    <rect x="9" y="18" width="6" height="1" fill="#1d7aaf"/>
+                  </svg>
+                </div>
+                <h4 style={{
+                  color: colors.primary,
+                  fontSize: '1.2rem',
+                  fontWeight: '700',
+                  marginBottom: '0.8rem'
                 }}>Digital Transformation</h4>
                 <p style={{ 
                   color: colors.text.secondary, 
@@ -1141,15 +1214,20 @@ export const ResponsiveLandingPage = () => {
                 opacity: 1,
                 visibility: 'visible'
               }}>
-                <div style={{ 
-                  fontSize: '2rem', 
+                <div style={{
+                  fontSize: '2rem',
                   marginBottom: '1rem'
-                }}>🔒</div>
-                <h4 style={{ 
-                  color: colors.primary, 
-                  fontSize: '1.2rem', 
-                  fontWeight: '700', 
-                  marginBottom: '0.8rem' 
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="#1d7aaf" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="#1d7aaf" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h4 style={{
+                  color: colors.primary,
+                  fontSize: '1.2rem',
+                  fontWeight: '700',
+                  marginBottom: '0.8rem'
                 }}>Cybersecurity Funding</h4>
                 <p style={{ 
                   color: colors.text.secondary, 
@@ -1171,15 +1249,24 @@ export const ResponsiveLandingPage = () => {
                 opacity: 1,
                 visibility: 'visible'
               }}>
-                <div style={{ 
-                  fontSize: '2rem', 
+                <div style={{
+                  fontSize: '2rem',
                   marginBottom: '1rem'
-                }}>🤖</div>
-                <h4 style={{ 
-                  color: colors.primary, 
-                  fontSize: '1.2rem', 
-                  fontWeight: '700', 
-                  marginBottom: '0.8rem' 
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="8" stroke="#1d7aaf" strokeWidth="2" fill="none"/>
+                    <path d="M12 6v6l4 2" stroke="#1d7aaf" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="12" cy="5" r="1" fill="#1d7aaf"/>
+                    <circle cx="12" cy="19" r="1" fill="#1d7aaf"/>
+                    <circle cx="19" cy="12" r="1" fill="#1d7aaf"/>
+                    <circle cx="5" cy="12" r="1" fill="#1d7aaf"/>
+                  </svg>
+                </div>
+                <h4 style={{
+                  color: colors.primary,
+                  fontSize: '1.2rem',
+                  fontWeight: '700',
+                  marginBottom: '0.8rem'
                 }}>Innovation & AI Support</h4>
                 <p style={{ 
                   color: colors.text.secondary, 
@@ -1201,15 +1288,19 @@ export const ResponsiveLandingPage = () => {
                 opacity: 1,
                 visibility: 'visible'
               }}>
-                <div style={{ 
-                  fontSize: '2rem', 
+                <div style={{
+                  fontSize: '2rem',
                   marginBottom: '1rem'
-                }}>📈</div>
-                <h4 style={{ 
-                  color: colors.primary, 
-                  fontSize: '1.2rem', 
-                  fontWeight: '700', 
-                  marginBottom: '0.8rem' 
+                }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1d7aaf" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+                </div>
+                <h4 style={{
+                  color: colors.primary,
+                  fontSize: '1.2rem',
+                  fontWeight: '700',
+                  marginBottom: '0.8rem'
                 }}>Marketing Automation</h4>
                 <p style={{ 
                   color: colors.text.secondary, 
@@ -1275,21 +1366,39 @@ export const ResponsiveLandingPage = () => {
             </div>
             <div className="services-grid animate-on-scroll">
               <div className="service-card" style={{ textAlign: 'center' }}>
-                <h3>🏢 Fredericton</h3>
+                <h3>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '8px', verticalAlign: 'middle'}}>
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  </svg>
+                  Fredericton
+                </h3>
                 <p>
                   Cybersecurity audits, AI chatbots, hands free marketing, managed IT services, and professional websites 
                   for Fredericton businesses. Expert technology solutions.
                 </p>
               </div>
               <div className="service-card" style={{ textAlign: 'center' }}>
-                <h3>🏭 Moncton</h3>
+                <h3>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '8px', verticalAlign: 'middle'}}>
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  </svg>
+                  Moncton
+                </h3>
                 <p>
                   Security assessments, automated marketing, endpoint protection, and web development 
                   for Moncton area SMEs. Comprehensive technology support.
                 </p>
               </div>
               <div className="service-card" style={{ textAlign: 'center' }}>
-                <h3>⚓ Saint John</h3>
+                <h3>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '8px', verticalAlign: 'middle'}}>
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  </svg>
+                  Saint John
+                </h3>
                 <p>
                   MFA implementation, SEO optimization, patch management, and digital solutions 
                   for Saint John businesses. Professional implementation support.

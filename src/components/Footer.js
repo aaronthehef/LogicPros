@@ -10,13 +10,17 @@ export const Footer = () => {
           <div className="footer-grid">
             {/* Company Info */}
             <div className="footer-column footer-brand">
-              <div className="footer-logo">
+              <div className="footer-logo" style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}>
                 <img
                   src="/logicpros-new-logo.png"
                   alt="LogicPros"
                   style={{
-                    height: '60px',
-                    width: 'auto',
+                    width: '100%',
+                    height: 'auto',
                     marginBottom: '1rem'
                   }}
                 />

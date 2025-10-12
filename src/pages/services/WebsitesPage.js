@@ -174,7 +174,7 @@ export const WebsitesPage = () => {
                 color: 'white',
                 textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
                 letterSpacing: '-0.02em'
-              }}>Professional Websites for Contractors & Small Businesses</h1>
+              }}>Professional Website Design & Hosting</h1>
               <p style={{ 
                 fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
                 marginBottom: '40px',
@@ -311,7 +311,7 @@ export const WebsitesPage = () => {
                     'Thousands of plugins available',
                     'Great for SEO',
                     'Flexible hosting options',
-                    'Perfect for contractors'
+                    'Perfect for businesses'
                   ].map((feature, index) => (
                     <li key={index} style={{ 
                       padding: '8px 0',
@@ -338,7 +338,7 @@ export const WebsitesPage = () => {
                   backgroundColor: colors.backgrounds.light,
                   borderRadius: '12px'
                 }}>
-                  <strong>Best for:</strong> Contractors who want full control and easy updates
+                  <strong>Best for:</strong> Businesses who want full control and easy updates
                 </p>
               </div>
 
@@ -435,7 +435,7 @@ export const WebsitesPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Professional websites built for contractors who want to dominate their local market
+                Professional websites built to help Maritime businesses grow and dominate their local market
               </p>
             </div>
             
@@ -542,7 +542,7 @@ export const WebsitesPage = () => {
                     lineHeight: '1.7',
                     fontSize: '1rem'
                   }}>
-                    Your website looks perfect and loads fast on all devices - desktop, tablet, and smartphone. Essential for contractor searches.
+                    Your website looks perfect and loads fast on all devices - desktop, tablet, and smartphone. Essential for reaching today's mobile customers.
                   </p>
                 </div>
               </div>
@@ -834,7 +834,7 @@ export const WebsitesPage = () => {
                 color: colors.text.primary,
                 marginBottom: '20px',
                 lineHeight: '1.2'
-              }}>Specialized Websites by Industry</h2>
+              }}>Serving Businesses Across All Industries</h2>
               <p style={{ 
                 fontSize: '1.1rem', 
                 color: colors.text.secondary, 
@@ -842,8 +842,8 @@ export const WebsitesPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                While we work with various industries, we specialize in contractor and service business websites 
-                that convert visitors into customers.
+                We work with businesses across all industries throughout the Maritimes, creating professional
+                websites that convert visitors into customers.
               </p>
             </div>
             
@@ -855,14 +855,54 @@ export const WebsitesPage = () => {
               margin: '0 auto'
             }}>
               {[
-                { href: '/contractors/plumbing', icon: '🚰', title: 'Plumbing Contractors', desc: 'Emergency repair focus, service area mapping, before/after galleries' },
-                { href: '/contractors/electrical', icon: '⚡', title: 'Electrical Contractors', desc: 'Safety credentials, residential/commercial services, smart home features' },
-                { href: '/contractors/hvac', icon: '🌡️', title: 'HVAC Contractors', desc: 'Seasonal campaigns, energy efficiency focus, emergency service capture' },
-                { href: '/contractors/roofing', icon: '🏠', title: 'Roofing Contractors', desc: 'Storm damage expertise, insurance claim support, material showcases' },
-                { href: '/contractors/landscaping', icon: '🌿', title: 'Landscaping Companies', desc: 'Visual portfolios, seasonal services, design consultation booking' },
-                { href: '/contractors/construction', icon: '🏗️', title: 'General Contractors', desc: 'Project portfolios, testimonial integration, multi-service positioning' },
-                { href: '/contractors/painting', icon: '🎨', title: 'Painting Contractors', desc: 'Residential and commercial painting with color consultation and finish options' },
-                { href: '/contractors/flooring', icon: '📐', title: 'Flooring Contractors', desc: 'Hardwood, tile, carpet installation with material showcases and testimonials' }
+                {
+                  href: '/contact',
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16"><path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/></svg>,
+                  title: 'Retail & E-commerce',
+                  desc: 'Online stores, product catalogs, inventory management, and secure payment processing'
+                },
+                {
+                  href: '/contact',
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16"><path d="M8.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1h1ZM13.25 9a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Zm.25 1.75a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5Zm-11-4a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 9.75v-.5A.25.25 0 0 0 2.75 9h-.5Zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Z"/><path d="M5 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 1 1v4h3a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3V3a1 1 0 0 1 1-1V1Zm2 14h2v-3H7v3Zm3 0h1V3H5v12h1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3Zm0-14H6v1h4V1Zm2 7v7h3V8h-3Zm-8 7V8H1v7h3Z"/></svg>,
+                  title: 'Healthcare & Wellness',
+                  desc: 'Patient portals, appointment booking, secure forms, and HIPAA-compliant solutions'
+                },
+                {
+                  href: '/contact',
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16"><path fillRule="evenodd" d="M8.646.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a2 2 0 0 1-2 2H2.5a2 2 0 0 1-2-2v-7a.5.5 0 0 1 .146-.354l6-6zM5 15v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3h1.5a1 1 0 0 0 1-1V6.707L8 1.207l-5.5 5.5V14a1 1 0 0 0 1 1H5zm5 0v-3H6v3h4z"/></svg>,
+                  title: 'Construction & Trades',
+                  desc: 'Project portfolios, service area mapping, quote requests, and customer testimonials'
+                },
+                {
+                  href: '/contact',
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16"><path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/></svg>,
+                  title: 'Professional Services',
+                  desc: 'Service showcases, client portals, scheduling systems, and lead capture forms'
+                },
+                {
+                  href: '/contact',
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16"><path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/></svg>,
+                  title: 'Restaurants & Hospitality',
+                  desc: 'Online menus, reservation systems, photo galleries, and review integration'
+                },
+                {
+                  href: '/contact',
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16"><path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>,
+                  title: 'Education & Training',
+                  desc: 'Course catalogs, enrollment systems, student portals, and learning management'
+                },
+                {
+                  href: '/contact',
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/></svg>,
+                  title: 'Real Estate',
+                  desc: 'Property listings, virtual tours, search filters, and lead generation systems'
+                },
+                {
+                  href: '/contact',
+                  icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/></svg>,
+                  title: 'Automotive Services',
+                  desc: 'Service booking, inventory displays, customer reviews, and maintenance tracking'
+                }
               ].map((industry, index) => (
                 <a 
                   key={index}
@@ -902,10 +942,12 @@ export const WebsitesPage = () => {
                       opacity: 0,
                       transition: 'all 0.3s ease'
                     }} className="industry-border"></div>
-                    <div style={{ 
-                      fontSize: '3rem', 
+                    <div style={{
                       marginBottom: '20px',
-                      filter: 'grayscale(0.2)'
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      color: colors.primary
                     }}>{industry.icon}</div>
                     <h4 style={{ 
                       fontSize: '1.3rem', 

@@ -3,20 +3,7 @@ import { createPortal } from 'react-dom';
 
 export const Navigation = () => {
   const [dropdownOpen, setDropdownOpen] = useState(null);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsVisible(currentScrollY < lastScrollY || currentScrollY < 100);
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
 
   // Cleanup body styles on unmount
   useEffect(() => {
@@ -63,7 +50,7 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className={`nav-menu ${isVisible ? 'nav-visible' : 'nav-hidden'}`}>
+    <nav className="nav-menu">
       <div className="nav-links">
         <div 
           className="nav-dropdown"
