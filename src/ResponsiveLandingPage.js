@@ -98,8 +98,8 @@ export const ResponsiveLandingPage = () => {
       .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
       .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
       .hero-button {
-        background: linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%) !important;
-        color: white !important;
+        background: linear-gradient(135deg, #FFC600 0%, #FFB800 100%) !important;
+        color: #1a1a2e !important;
         padding: 18px 40px !important;
         border-radius: 50px !important;
         text-decoration: none !important;
@@ -113,9 +113,9 @@ export const ResponsiveLandingPage = () => {
         box-sizing: border-box !important;
       }
       .hero-button:hover {
-        box-shadow: 0 8px 30px rgba(29, 122, 175, 0.5) !important;
+        box-shadow: 0 8px 30px rgba(255, 198, 0, 0.6) !important;
         transform: translateY(-3px) !important;
-        color: white !important;
+        color: #1a1a2e !important;
       }
       /* Enhanced Logo Hover Effects */
       .logo img {
@@ -289,7 +289,7 @@ export const ResponsiveLandingPage = () => {
                   <g key={`layer-${layerX}-${layerY}`} transform={`translate(${layerX * 400}, ${layerY * 250})`}>
 
                     {/* Single clean horizontal trace */}
-                    <g stroke="#1d7aaf" strokeWidth="1.5" fill="none">
+                    <g stroke="#1F7CFF" strokeWidth="1.5" fill="none">
                       <path d="M50 120 L350 120" strokeDasharray="20,12" opacity="0.5">
                         <animate attributeName="stroke-dashoffset" values="0;-32" dur="3s" repeatCount="indefinite"/>
                       </path>
@@ -325,7 +325,7 @@ export const ResponsiveLandingPage = () => {
                             cx={x}
                             cy={y}
                             r="1.5"
-                            fill="#1d7aaf"
+                            fill="#1F7CFF"
                             opacity="0.6"
                           >
                             <animateTransform
@@ -356,25 +356,24 @@ export const ResponsiveLandingPage = () => {
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '4rem', alignItems: 'center' }}>
               <div style={{ textAlign: 'left', color: 'white' }}>
-                <h1 style={{ 
-                  fontSize: 'clamp(2.5rem, 6vw, 5rem)', 
-                  fontWeight: '900', 
-                  lineHeight: '0.9', 
+                <h1 style={{
+                  fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                  fontWeight: '900',
+                  lineHeight: '0.9',
                   marginBottom: '1rem',
-                  color: '#1d7aaf'
+                  color: '#1F7CFF',
+                  textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  MARITIME<br />
-                  CYBERSECURITY<br />
-                  SPECIALISTS
+                  Websites, IT Solutions & Cybersecurity for Maritime Businesses
                 </h1>
-                <p style={{ 
-                  fontSize: 'clamp(1rem, 2vw, 1.3rem)', 
-                  color: '#e2e8f0', 
+                <p style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+                  color: '#e2e8f0',
                   marginBottom: '2.5rem',
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Professional cybersecurity, AI automation, and web development for New Brunswick businesses
+                  Growing your business with collaborative IT solutions—better websites, stronger security, reliable support.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -413,10 +412,10 @@ export const ResponsiveLandingPage = () => {
                   animation: 'pulseGlow 3s ease-in-out infinite'
                 }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
-                    <h3 style={{ color: '#1d7aaf', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Build</h3>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Build</h3>
                     <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Websites, SEO & Online Marketing</p>
                     <span style={{
-                      color: '#1d7aaf',
+                      color: '#1F7CFF',
                       fontSize: '0.8rem',
                       textDecoration: 'none',
                       fontWeight: '500',
@@ -450,10 +449,10 @@ export const ResponsiveLandingPage = () => {
                   animation: 'pulseGlow 3s ease-in-out infinite 1s'
                 }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
-                    <h3 style={{ color: '#1d7aaf', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Automate</h3>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Automate</h3>
                     <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>AI Powered Marketing & Business Automation</p>
                     <span style={{
-                      color: '#1d7aaf',
+                      color: '#1F7CFF',
                       fontSize: '0.8rem',
                       textDecoration: 'none',
                       fontWeight: '500',
@@ -490,10 +489,10 @@ export const ResponsiveLandingPage = () => {
                   animation: 'pulseGlow 3s ease-in-out infinite 2s'
                 }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
-                    <h3 style={{ color: '#1d7aaf', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Secure</h3>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Secure</h3>
                     <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Managed IT, Cyber Protection & Security Audits</p>
                     <span style={{
-                      color: '#1d7aaf',
+                      color: '#1F7CFF',
                       fontSize: '0.8rem',
                       textDecoration: 'none',
                       fontWeight: '500',
@@ -793,8 +792,8 @@ export const ResponsiveLandingPage = () => {
               <h3>Want to see YOUR website before you buy it?</h3>
               <p>We'll create a custom example specifically for your business - delivered in 48 hours, completely free.</p>
               <a href="/free-example" style={{
-                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                color: 'white',
+                background: 'linear-gradient(135deg, #FFC600 0%, #FFB800 100%)',
+                color: '#1a1a2e',
                 padding: '18px 40px',
                 borderRadius: '50px',
                 textDecoration: 'none',
@@ -1122,8 +1121,8 @@ export const ResponsiveLandingPage = () => {
             </div>
             <div className="cta-buttons" style={{ marginTop: '3rem', textAlign: 'center' }}>
               <a href="/contact" style={{
-                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                color: 'white',
+                background: 'linear-gradient(135deg, #FFC600 0%, #FFB800 100%)',
+                color: '#1a1a2e',
                 padding: '18px 40px',
                 borderRadius: '50px',
                 textDecoration: 'none',
@@ -1135,7 +1134,7 @@ export const ResponsiveLandingPage = () => {
                 border: 'none'
               }}
               onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                e.target.style.boxShadow = '0 8px 30px rgba(255, 198, 0, 0.6)';
                 e.target.style.transform = 'translateY(-3px)';
               }}
               onMouseLeave={(e) => {
@@ -1183,9 +1182,9 @@ export const ResponsiveLandingPage = () => {
                   marginBottom: '1rem'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="#1d7aaf" strokeWidth="2" fill="none"/>
-                    <rect x="8" y="16" width="8" height="2" fill="#1d7aaf"/>
-                    <rect x="9" y="18" width="6" height="1" fill="#1d7aaf"/>
+                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="#1F7CFF" strokeWidth="2" fill="none"/>
+                    <rect x="8" y="16" width="8" height="2" fill="#1F7CFF"/>
+                    <rect x="9" y="18" width="6" height="1" fill="#1F7CFF"/>
                   </svg>
                 </div>
                 <h4 style={{
@@ -1219,8 +1218,8 @@ export const ResponsiveLandingPage = () => {
                   marginBottom: '1rem'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="#1d7aaf" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                    <path d="M9 12l2 2 4-4" stroke="#1d7aaf" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="#1F7CFF" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <h4 style={{
@@ -1254,12 +1253,12 @@ export const ResponsiveLandingPage = () => {
                   marginBottom: '1rem'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="8" stroke="#1d7aaf" strokeWidth="2" fill="none"/>
-                    <path d="M12 6v6l4 2" stroke="#1d7aaf" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="12" cy="5" r="1" fill="#1d7aaf"/>
-                    <circle cx="12" cy="19" r="1" fill="#1d7aaf"/>
-                    <circle cx="19" cy="12" r="1" fill="#1d7aaf"/>
-                    <circle cx="5" cy="12" r="1" fill="#1d7aaf"/>
+                    <circle cx="12" cy="12" r="8" stroke="#1F7CFF" strokeWidth="2" fill="none"/>
+                    <path d="M12 6v6l4 2" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="12" cy="5" r="1" fill="#1F7CFF"/>
+                    <circle cx="12" cy="19" r="1" fill="#1F7CFF"/>
+                    <circle cx="19" cy="12" r="1" fill="#1F7CFF"/>
+                    <circle cx="5" cy="12" r="1" fill="#1F7CFF"/>
                   </svg>
                 </div>
                 <h4 style={{
@@ -1292,7 +1291,7 @@ export const ResponsiveLandingPage = () => {
                   fontSize: '2rem',
                   marginBottom: '1rem'
                 }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1d7aaf" viewBox="0 0 16 16">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1F7CFF" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
                   </svg>
                 </div>
@@ -1330,8 +1329,8 @@ export const ResponsiveLandingPage = () => {
                 Ready to explore funding opportunities for your technology projects?
               </p>
               <a href="/contact" style={{
-                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                color: 'white',
+                background: 'linear-gradient(135deg, #FFC600 0%, #FFB800 100%)',
+                color: '#1a1a2e',
                 padding: '18px 40px',
                 borderRadius: '50px',
                 textDecoration: 'none',
@@ -1343,7 +1342,7 @@ export const ResponsiveLandingPage = () => {
                 border: 'none'
               }}
               onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                e.target.style.boxShadow = '0 8px 30px rgba(255, 198, 0, 0.6)';
                 e.target.style.transform = 'translateY(-3px)';
               }}
               onMouseLeave={(e) => {
@@ -1419,8 +1418,8 @@ export const ResponsiveLandingPage = () => {
             </div>
             <div className="cta-buttons" style={{ textAlign: 'center', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="/contact" style={{
-                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                color: 'white',
+                background: 'linear-gradient(135deg, #FFC600 0%, #FFB800 100%)',
+                color: '#1a1a2e',
                 padding: '18px 40px',
                 borderRadius: '50px',
                 textDecoration: 'none',
@@ -1432,7 +1431,7 @@ export const ResponsiveLandingPage = () => {
                 border: 'none'
               }}
               onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                e.target.style.boxShadow = '0 8px 30px rgba(255, 198, 0, 0.6)';
                 e.target.style.transform = 'translateY(-3px)';
               }}
               onMouseLeave={(e) => {
@@ -1440,26 +1439,25 @@ export const ResponsiveLandingPage = () => {
                 e.target.style.transform = 'translateY(0)';
               }}>Get Security Assessment</a>
               <a href="/contact" style={{
-                background: 'transparent',
-                color: '#1d7aaf',
+                background: 'linear-gradient(135deg, #FFC600 0%, #FFB800 100%)',
+                color: '#1a1a2e',
                 padding: '18px 40px',
                 borderRadius: '50px',
                 textDecoration: 'none',
                 fontSize: '1.1rem',
                 fontWeight: '600',
                 display: 'inline-block',
-                border: '2px solid #1d7aaf',
+                border: 'none',
+                boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
               }}
               onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
+                e.target.style.boxShadow = '0 8px 30px rgba(255, 198, 0, 0.6)';
                 e.target.style.transform = 'translateY(-3px)';
-                e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
               }}
               onMouseLeave={(e) => {
-                e.target.style.boxShadow = 'none';
+                e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
                 e.target.style.transform = 'translateY(0)';
-                e.target.style.borderColor = '#1d7aaf';
               }}>Get Free Consultation</a>
             </div>
           </div>

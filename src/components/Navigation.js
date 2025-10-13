@@ -324,19 +324,19 @@ export const Navigation = () => {
                 <a href="/about" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>About</a>
                 <a href="/contact" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Contact</a>
                 
-                <a href="/contact" onClick={handleLinkClick} style={{ 
-                  display: 'block', 
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)', 
-                  color: '#ffffff', 
-                  padding: '1rem', 
+                <a href="/contact" onClick={handleLinkClick} style={{
+                  display: 'block',
+                  background: 'linear-gradient(135deg, #FFC600, #FFB800)',
+                  color: '#1a1a2e',
+                  padding: '1rem',
                   marginTop: '2rem',
-                  borderRadius: '8px', 
-                  textAlign: 'center', 
-                  fontWeight: '600', 
-                  fontSize: '1.2rem', 
+                  borderRadius: '50px',
+                  textAlign: 'center',
+                  fontWeight: '600',
+                  fontSize: '1.2rem',
                   textDecoration: 'none',
-                  border: '2px solid #ffffff',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+                  border: 'none',
+                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)'
                 }}>Let's Talk</a>
               </div>
             </div>
@@ -625,26 +625,26 @@ const dropdownStyles = `
 }
 
 .btn-nav-cta {
-  background: linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%) !important;
-  color: white !important;
+  background: linear-gradient(135deg, #FFC600 0%, #FFB800 100%) !important;
+  color: #1a1a2e !important;
   padding: 0.75rem 1.5rem !important;
-  border-radius: 8px !important;
+  border-radius: 50px !important;
   text-decoration: none !important;
   font-size: 1rem !important;
   font-weight: 600 !important;
   border: none !important;
-  box-shadow: 0 4px 12px rgba(29, 122, 175, 0.3) !important;
-  transition: all 0.3s ease !important;
+  box-shadow: 0 6px 20px rgba(29, 122, 175, 0.4) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
   display: inline-block !important;
   outline: none !important;
   box-sizing: border-box !important;
 }
 
 .btn-nav-cta:hover {
-  box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4) !important;
-  transform: translateY(-2px) !important;
-  color: white !important;
-  background: linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%) !important;
+  box-shadow: 0 8px 30px rgba(255, 198, 0, 0.6) !important;
+  transform: translateY(-3px) !important;
+  color: #1a1a2e !important;
+  background: linear-gradient(135deg, #FFC600 0%, #FFB800 100%) !important;
 }
 
 /* Mobile Menu Styles removed - using inline styles for mobile menu */
