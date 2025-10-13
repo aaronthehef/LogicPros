@@ -68,7 +68,7 @@ export const SaintJohnWebDesignPage = () => {
           duration: 0.3,
           css: {
             backdropFilter: "blur(25px) saturate(200%)",
-            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(29, 122, 175, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
+            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(31, 124, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
           },
           ease: "power2.out"
         });
@@ -78,7 +78,7 @@ export const SaintJohnWebDesignPage = () => {
           duration: 0.3,
           css: {
             backdropFilter: "blur(20px) saturate(180%)",
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(29, 122, 175, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(31, 124, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
           },
           ease: "power2.out"
         });
@@ -151,29 +151,29 @@ export const SaintJohnWebDesignPage = () => {
       .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
       .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
       .hero-button {
-        background: linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%) !important;
-        color: white !important;
+        background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
+        color: #000 !important;
         padding: 18px 40px !important;
         border-radius: 50px !important;
         text-decoration: none !important;
         font-size: 1.1rem !important;
         font-weight: 600 !important;
         border: none !important;
-        box-shadow: 0 6px 20px rgba(29, 122, 175, 0.4) !important;
+        box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4) !important;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
         display: inline-block !important;
         outline: none !important;
         box-sizing: border-box !important;
       }
       .hero-button:hover {
-        box-shadow: 0 8px 30px rgba(29, 122, 175, 0.5) !important;
+        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5) !important;
         transform: translateY(-3px) !important;
-        color: white !important;
+        color: #000 !important;
       }
       .secondary-button {
         background: transparent !important;
-        color: #1a79af !important;
-        border: 2px solid #1a79af !important;
+        color: #1F7CFF !important;
+        border: 2px solid #1F7CFF !important;
         padding: 18px 40px !important;
         font-size: 1.1rem !important;
         font-weight: 600 !important;
@@ -183,9 +183,9 @@ export const SaintJohnWebDesignPage = () => {
         display: inline-block !important;
       }
       .secondary-button:hover {
-        box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4) !important;
+        box-shadow: 0 8px 25px rgba(31, 124, 255, 0.4) !important;
         transform: translateY(-3px) !important;
-        border-color: rgba(29, 122, 175, 0.8) !important;
+        border-color: rgba(31, 124, 255, 0.8) !important;
       }
       /* White secondary button styling for dark backgrounds */
       .secondary-button[style*="color: white"] {
@@ -195,6 +195,83 @@ export const SaintJohnWebDesignPage = () => {
       .secondary-button[style*="color: white"]:hover {
         box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4) !important;
         border-color: rgba(255, 255, 255, 0.8) !important;
+      }
+      
+      /* Hero Service Card Animations */
+      @keyframes pulseGlow {
+        0%, 100% {
+          box-shadow: 0 8px 32px rgba(31, 124, 255, 0.15), 0 0 20px rgba(31, 124, 255, 0.3);
+        }
+        50% {
+          box-shadow: 0 8px 32px rgba(31, 124, 255, 0.25), 0 0 30px rgba(31, 124, 255, 0.5);
+        }
+      }
+
+      .hero-service-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        box-shadow: 0 20px 60px rgba(31, 124, 255, 0.3), 0 0 40px rgba(31, 124, 255, 0.6) !important;
+        border-color: rgba(31, 124, 255, 0.8) !important;
+      }
+
+      .hero-service-card:hover h3 {
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(31, 124, 255, 0.8) !important;
+      }
+
+      .hero-service-card:hover svg {
+        transform: scale(1.1) !important;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) !important;
+      }
+      
+      /* Professional Service Cards Hover Effects */
+      .professional-card:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 20px 60px rgba(31, 124, 255, 0.15), 0 8px 32px rgba(31, 124, 255, 0.2) !important;
+        border-color: rgba(31, 124, 255, 0.3) !important;
+      }
+      
+      .professional-card:hover .service-icon {
+        transform: scale(1.1) rotate(5deg) !important;
+        box-shadow: 0 12px 35px rgba(31, 124, 255, 0.4) !important;
+      }
+      
+      .professional-card:hover .feature-highlight {
+        background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+        transform: scale(1.05) !important;
+      }
+      
+      /* Override existing service card styles for professional cards */
+      .professional-card .service-icon {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 1rem !important;
+        background-color: transparent !important;
+        border-radius: 20px !important;
+      }
+      
+      .professional-card h3 {
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.3 !important;
+      }
+      
+      .professional-card p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 0 !important;
+      }
+      
+      .feature-highlight {
+        background: linear-gradient(135deg, #1F7CFF, #1e40af);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        display: inline-block;
+        transition: all 0.3s ease;
       }
     `;
     document.head.appendChild(style);
@@ -228,121 +305,264 @@ export const SaintJohnWebDesignPage = () => {
       <main className="main-content">
         {/* Hero Section */}
         <section ref={heroRef} className="hero-section homepage-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', overflow: 'hidden' }}>
-          <svg 
-            className="hero-background-svg"
-            style={{ 
-              position: 'absolute', 
-              top: '-10%', 
-              left: '-10%', 
-              width: '120%', 
-              height: '120%', 
+          {/* Circuit Board Background - matching front page */}
+          <svg
+            className="circuit-background"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
               zIndex: 1,
-              opacity: 0.7
-            }} 
-            viewBox="0 0 1200 800" 
-            xmlns="http://www.w3.org/2000/svg"
+              opacity: 0.4
+            }}
+            viewBox="0 0 1200 800"
+            preserveAspectRatio="xMidYMid slice"
           >
             <defs>
-              <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#1d7aaf" />
-                <stop offset="100%" stopColor="#1e40af" />
-              </linearGradient>
-              <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1d7aaf" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#1e40af" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#1d7aaf" stopOpacity="0.8" />
-              </linearGradient>
+              {/* Subtle glow filter */}
+              <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
             </defs>
-            
-            {/* Main Grid Lines */}
-            <g className="grid-lines" filter="blur(0.5px)">
-              <line x1="0" y1="100" x2="1200" y2="100" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.4" strokeDasharray="20,10" />
-              <line x1="0" y1="200" x2="1200" y2="200" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="0" y1="300" x2="1200" y2="300" stroke="#1d7aaf" strokeWidth="2" opacity="0.5" strokeDasharray="25,5" />
-              <line x1="0" y1="400" x2="1200" y2="400" stroke="#1e40af" strokeWidth="1" opacity="0.2" strokeDasharray="30,10" />
-              <line x1="0" y1="500" x2="1200" y2="500" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.3" strokeDasharray="20,15" />
-              
-              <line x1="200" y1="0" x2="200" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,10" />
-              <line x1="400" y1="0" x2="400" y2="800" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="600" y1="0" x2="600" y2="800" stroke="#1d7aaf" strokeWidth="2" opacity="0.4" strokeDasharray="25,5" />
-              <line x1="800" y1="0" x2="800" y2="800" stroke="#1e40af" strokeWidth="1" opacity="0.1" strokeDasharray="30,10" />
-              <line x1="1000" y1="0" x2="1000" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,15" />
-            </g>
 
-            {/* Circuit Board Patterns */}
-            <g className="circuit-patterns" filter="blur(0.3px)">
-              <path d="M100,150 L250,150 L270,170 L400,170 L420,150 L600,150" stroke="#1d7aaf" strokeWidth="1" opacity="0.4" fill="none" strokeDasharray="5,3" />
-              <path d="M150,250 L300,250 L320,230 L500,230 L520,250 L750,250" stroke="#1e40af" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="8,4" />
-              <path d="M80,350 L200,350 L220,330 L350,330 L370,350 L550,350" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.5" fill="none" strokeDasharray="6,2" />
-              
-              <path d="M300,50 L300,180 L280,200 L280,320 L300,340 L300,450" stroke="#1e40af" strokeWidth="1" opacity="0.2" fill="none" strokeDasharray="4,3" />
-              <path d="M500,80 L500,200 L520,220 L520,300 L500,320 L500,480" stroke="#1d7aaf" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="7,3" />
-              <path d="M700,60 L700,150 L680,170 L680,280 L700,300 L700,420" stroke="#1e40af" strokeWidth="1.5" opacity="0.4" fill="none" strokeDasharray="5,4" />
-            </g>
+            {/* Professional circuit background with slow panning */}
+            <g transform="translate(0,0)">
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0; -500,0; -500,-350; 0,-350; 0,0"
+                dur="150s"
+                repeatCount="indefinite"
+              />
 
-            {/* Tech Nodes/Connection Points */}
-            <g className="tech-nodes">
-              <circle cx="150" cy="120" r="4" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="270" cy="170" r="3" fill="#1e40af" opacity="0.8" />
-              <circle cx="420" cy="150" r="5" fill="#1d7aaf" opacity="1.0" />
-              <circle cx="350" cy="180" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="520" cy="250" r="4" fill="#1d7aaf" opacity="0.8" />
-              <circle cx="650" cy="110" r="6" fill="#1e40af" opacity="0.9" />
-              <circle cx="850" cy="200" r="3" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="950" cy="140" r="4" fill="#1e40af" opacity="0.8" />
-              <circle cx="300" cy="340" r="5" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="500" cy="320" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="700" cy="300" r="4" fill="#1d7aaf" opacity="0.8" />
-            </g>
+              {/* Clean circuit grid layout */}
+              {[0, 1, 2, 3, 4, 5].map(layerX => (
+                [...Array(4)].map((_, layerY) => (
+                  <g key={`layer-${layerX}-${layerY}`} transform={`translate(${layerX * 400}, ${layerY * 250})`}>
 
-            {/* Glowing Orbs */}
-            <g className="glowing-orbs">
-              <circle cx="100" cy="100" r="8" fill="url(#techGradient)" opacity="0.4" />
-              <circle cx="900" cy="300" r="6" fill="url(#techGradient)" opacity="0.5" />
-              <circle cx="1100" cy="150" r="10" fill="url(#techGradient)" opacity="0.3" />
-              <circle cx="200" cy="400" r="7" fill="url(#techGradient)" opacity="0.4" />
+                    {/* Single clean horizontal trace */}
+                    <g stroke="#1F7CFF" strokeWidth="1.5" fill="none">
+                      <path d="M50 120 L350 120" strokeDasharray="20,12" opacity="0.5">
+                        <animate attributeName="stroke-dashoffset" values="0;-32" dur="3s" repeatCount="indefinite"/>
+                      </path>
+                    </g>
+
+                    {/* Single clean vertical trace */}
+                    {(layerX + layerY) % 2 === 0 && (
+                      <g stroke="#22c55e" strokeWidth="1.5" fill="none">
+                        <path d="M200 30 L200 220" strokeDasharray="18,10" opacity="0.4">
+                          <animate attributeName="stroke-dashoffset" values="0;-28" dur="2.8s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Occasional L-shaped route */}
+                    {(layerX + layerY) % 3 === 0 && (
+                      <g stroke="#f59e0b" strokeWidth="1" fill="none">
+                        <path d="M100 80 L100 160 L300 160" strokeDasharray="15,8" opacity="0.35">
+                          <animate attributeName="stroke-dashoffset" values="0;-23" dur="3.5s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Subtle floating dots */}
+                    <g>
+                      {[...Array(3)].map((_, dotIndex) => {
+                        const x = 80 + (dotIndex * 120);
+                        const y = 60 + (dotIndex * 40);
+                        const delay = dotIndex * 1.5;
+                        return (
+                          <circle
+                            key={`dot-${dotIndex}`}
+                            cx={x}
+                            cy={y}
+                            r="1.5"
+                            fill="#1F7CFF"
+                            opacity="0.6"
+                          >
+                            <animateTransform
+                              attributeName="transform"
+                              type="translate"
+                              values="0,0; 8,-12; -5,10; 0,0"
+                              dur="6s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                            <animate
+                              attributeName="opacity"
+                              values="0.3;0.6;0.3"
+                              dur="4s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                          </circle>
+                        );
+                      })}
+                    </g>
+                  </g>
+                ))
+              ))}
             </g>
           </svg>
 
-          {/* Floating Particles */}
-          <div className="floating-particle" style={{ top: '15%', left: '10%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '25%', right: '15%', width: '6px', height: '6px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '45%', left: '20%', width: '3px', height: '3px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '35%', right: '25%', width: '5px', height: '5px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '60%', left: '15%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '70%', right: '20%', width: '3px', height: '3px', background: '#1e40af', borderRadius: '50%' }}></div>
-
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-            <div className="hero-content" style={{ textAlign: 'center', color: 'white' }}>
-              <h1 style={{ 
-                fontSize: 'clamp(2.5rem, 6vw, 4rem)', 
-                fontWeight: '900', 
-                lineHeight: '1.1', 
-                marginBottom: '1rem',
-                color: 'white'
-              }}>
-                Need a Website? Saint John's Top Web Designer for Contractors & Small Business
-              </h1>
-              <p style={{ 
-                fontSize: 'clamp(1rem, 2vw, 1.3rem)', 
-                color: '#e2e8f0', 
-                marginBottom: '40px',
-                fontWeight: '300',
-                maxWidth: '700px',
-                margin: '0 auto 40px auto'
-              }}>
-                Professional websites that get you more customers. Affordable web design that contractors 
-                and small businesses trust. Custom WordPress websites, local SEO services, and mobile-responsive 
-                design that works 24/7 to grow your business.
-              </p>
-              
-              <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <a href="/free-example" className="hero-button">
-                  Get Your FREE Website Example
-                </a>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '4rem', alignItems: 'center' }}>
+              <div style={{ textAlign: 'left', color: 'white' }}>
+                <h1 style={{
+                  fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                  fontWeight: '900',
+                  lineHeight: '0.9',
+                  marginBottom: '1rem',
+                  color: '#1F7CFF',
+                  textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
+                }}>
+                  Professional Web Design for Saint John Businesses
+                </h1>
+                <p style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+                  color: '#e2e8f0',
+                  marginBottom: '2.5rem',
+                  fontWeight: '300',
+                  maxWidth: '500px'
+                }}>
+                  Custom websites that get you more customers. Serving Saint John businesses including contractors,
+                  professionals, and service providers with mobile-responsive design and local SEO.
+                </p>
                 
-                <a href="/contact" className="secondary-button" style={{ borderColor: 'white', color: 'white' }}>
-                  Get Free Quote
+                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                  <a href="/free-example" className="hero-button">
+                    Get Your FREE Website Example
+                  </a>
+                  
+                  <a href="/contact" className="hero-button">
+                    Get Free Quote
+                  </a>
+                </div>
+              </div>
+
+              <div className="hero-service-cards" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                height: 'auto',
+                justifyContent: 'center'
+              }}>
+                {/* Web Design Card */}
+                <a href="/services/websites" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(31, 124, 255, 0.15), rgba(31, 124, 255, 0.08))',
+                  border: '2px solid rgba(31, 124, 255, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(31, 124, 255, 0.15), 0 0 0 rgba(31, 124, 255, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Design</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Custom Websites & User Experience</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                      <rect x="8" y="16" width="8" height="2" fill="white"/>
+                      <rect x="9" y="18" width="6" height="1" fill="white"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* SEO Card */}
+                <a href="/services/seo" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(31, 124, 255, 0.15), rgba(31, 124, 255, 0.08))',
+                  border: '2px solid rgba(31, 124, 255, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(31, 124, 255, 0.15), 0 0 0 rgba(31, 124, 255, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 1s'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Optimize</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Local SEO & Google Ranking</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
+                      <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="12" cy="5" r="1" fill="white"/>
+                      <circle cx="12" cy="19" r="1" fill="white"/>
+                      <circle cx="19" cy="12" r="1" fill="white"/>
+                      <circle cx="5" cy="12" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* Marketing Card */}
+                <a href="/services/marketing" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(31, 124, 255, 0.15), rgba(31, 124, 255, 0.08))',
+                  border: '2px solid rgba(31, 124, 255, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(31, 124, 255, 0.15), 0 0 0 rgba(31, 124, 255, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 2s'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Grow</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Digital Marketing & Lead Generation</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                  </div>
                 </a>
               </div>
             </div>
@@ -370,11 +590,13 @@ export const SaintJohnWebDesignPage = () => {
             }}>
               <div className="service-card professional-card" style={{
                 background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
                 borderRadius: '16px',
                 padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
                 <div className="service-icon" style={{
                   fontSize: '3rem',
@@ -384,33 +606,71 @@ export const SaintJohnWebDesignPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease'
-                }}>🌐</div>
-                <h3>Websites That Get You More Jobs</h3>
-                <p>
-                  Stop losing customers to competitors with better websites. Our affordable web design 
-                  services create professional WordPress websites that showcase your work, build trust with customers, 
-                  and generate leads 24/7. Perfect for contractors, tradespeople, and service businesses.
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem'}}>Websites That Grow Your Business</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem'}}>
+                  Stop losing customers to competitors with better websites. Our affordable web design
+                  services create professional websites that showcase your work, build trust with customers,
+                  and generate leads 24/7. Perfect for businesses of all sizes in Saint John.
                 </p>
-                <ul className="service-benefits">
-                  <li><a href="/services/seo" style={{color: colors.primary}}>Local SEO services</a> - Get found in search results</li>
-                  <li>Mobile-responsive website design</li>
-                  <li>Custom WordPress development</li>
-                  <li>Professional copywriting and content</li>
-                  <li>2-4 week website development timeline</li>
+                <div style={{background: 'rgba(31, 124, 255, 0.05)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1F7CFF', fontWeight: '600', marginBottom: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Free example in 48 hours
+                  </div>
+                  <div style={{fontSize: '0.9rem', color: colors.text.secondary}}>
+                    See your custom website design before committing
+                  </div>
+                </div>
+                <ul className="service-benefits" style={{color: colors.text.secondary, listStyle: 'none', padding: 0}}>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Local SEO to get found in search results
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Mobile-responsive design
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Custom WordPress development
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Expert copywriting and content
+                  </li>
                 </ul>
               </div>
 
               <div className="service-card professional-card" style={{
                 background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
                 borderRadius: '16px',
                 padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
                 <div className="service-icon" style={{
                   fontSize: '3rem',
@@ -420,23 +680,59 @@ export const SaintJohnWebDesignPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease',
                   color: 'white'
-                }}>🔧</div>
-                <h3>Website Maintenance</h3>
-                <p>
-                  Keep your website running smoothly with our comprehensive maintenance services. 
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 22V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M22 7L12 12L2 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem'}}>Website Maintenance</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem'}}>
+                  Keep your website running smoothly with our comprehensive maintenance services.
                   Regular updates, security monitoring, and technical support for your business website.
                 </p>
-                <ul className="service-benefits">
-                  <li>Regular WordPress updates and backups</li>
-                  <li>Security monitoring and malware protection</li>
-                  <li>Performance optimization and speed testing</li>
-                  <li>Content updates and minor changes</li>
-                  <li>Technical support and troubleshooting</li>
+                <div style={{background: 'rgba(31, 124, 255, 0.05)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1F7CFF', fontWeight: '600', marginBottom: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Peace of mind included
+                  </div>
+                  <div style={{fontSize: '0.9rem', color: colors.text.secondary}}>
+                    Focus on your business while we handle the tech
+                  </div>
+                </div>
+                <ul className="service-benefits" style={{color: colors.text.secondary, listStyle: 'none', padding: 0}}>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    WordPress and plugin updates
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Security monitoring and protection
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Performance optimization
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Monthly health reports
+                  </li>
                 </ul>
               </div>
 
@@ -444,11 +740,13 @@ export const SaintJohnWebDesignPage = () => {
               {/* SEO & Digital Marketing */}
               <div className="service-card professional-card" style={{
                 background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
                 borderRadius: '16px',
                 padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
                 <div className="service-icon" style={{
                   fontSize: '3rem',
@@ -458,23 +756,59 @@ export const SaintJohnWebDesignPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease',
                   color: 'white'
-                }}>🎯</div>
-                <h3><a href="/services/seo" style={{color: colors.text.primary, textDecoration: 'none'}}>Local SEO Services</a></h3>
-                <p>
-                  Professional SEO services and digital marketing that local businesses trust. Our web design 
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <path d="M12 6V12L16 14" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem'}}><a href="/services/seo" style={{color: 'inherit', textDecoration: 'none'}}>Local SEO Services</a></h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem'}}>
+                  Professional SEO services and digital marketing that local businesses trust. Our web design
                   expertise combined with proven online marketing strategies help boost your search rankings.
                 </p>
-                <ul className="service-benefits">
-                  <li>Local SEO optimization for area searches</li>
-                  <li>Google My Business management</li>
-                  <li>Content marketing and blogging</li>
-                  <li>Social media integration</li>
-                  <li>Analytics and performance tracking</li>
+                <div style={{background: 'rgba(31, 124, 255, 0.05)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1F7CFF', fontWeight: '600', marginBottom: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 7L8 12L13 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16 17H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Local search experts
+                  </div>
+                  <div style={{fontSize: '0.9rem', color: colors.text.secondary}}>
+                    Get found by customers searching in Saint John
+                  </div>
+                </div>
+                <ul className="service-benefits" style={{color: colors.text.secondary, listStyle: 'none', padding: 0}}>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Google My Business optimization
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Content marketing and blogging
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Social media integration
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Analytics and performance tracking
+                  </li>
                 </ul>
               </div>
 
@@ -486,10 +820,10 @@ export const SaintJohnWebDesignPage = () => {
         <section className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Why Local Contractors Choose Us for Web Design</h2>
+              <h2 className="section-title">Why Saint John Businesses Choose Us for Web Design</h2>
               <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '800px', margin: '0 auto' }}>
-                We understand your business. As the leading web design company that local contractors trust, 
-                we know what works for trades and service businesses. No generic templates - just websites 
+                We understand your business. As the leading web design company that Saint John businesses trust,
+                we know what works for local companies of all sizes. No generic templates - just websites
                 that get you more customers and grow your business.
               </p>
             </div>
@@ -500,52 +834,117 @@ export const SaintJohnWebDesignPage = () => {
               gap: '2rem',
               marginTop: '3rem'
             }}>
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)',
-                transition: 'transform 0.3s ease'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🏆</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Built for Your Industry</h3>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L16 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 15V21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 15L8 11" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Built for Your Industry</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
-                  We specialize in websites for contractors and service businesses. Our website design 
-                  team knows what your customers want to see - licenses, insurance, testimonials, 
-                  and clear contact information that builds trust.
+                  We specialize in websites for businesses of all types. Our website design
+                  team knows what your customers in Saint John want to see - professional design,
+                  clear information, and features that build trust and convert visitors.
                 </p>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)',
-                transition: 'transform 0.3s ease'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>💰</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Affordable for Small Business</h3>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2"/>
+                    <path d="M17 5H9.5A3.5 3.5 0 0 0 6 8.5V17.5A3.5 3.5 0 0 0 9.5 21H17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M14 9L17 12L14 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Affordable for Your Business</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
-                  Professional websites shouldn't cost a fortune. Our affordable packages 
-                  are designed for local contractors and small businesses. Quality custom web design 
+                  Professional websites shouldn't cost a fortune. Our affordable packages
+                  are designed for businesses of all sizes in Saint John. Quality custom web design
                   with transparent pricing and no hidden fees.
                 </p>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)',
-                transition: 'transform 0.3s ease'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📱</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Mobile-First Web Development</h3>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Mobile-First Web Development</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
-                  Every mobile website we create is fully responsive and optimized for all devices. 
+                  Every website we create is fully responsive and optimized for all devices.
                   Professional web development that ensures perfect performance on smartphones, tablets, and desktops.
                 </p>
               </div>
@@ -734,7 +1133,7 @@ export const SaintJohnWebDesignPage = () => {
                 background: 'white',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{
                   position: 'absolute',
@@ -750,7 +1149,7 @@ export const SaintJohnWebDesignPage = () => {
                   justifyContent: 'center',
                   fontSize: '1.5rem',
                   fontWeight: 'bold',
-                  boxShadow: '0 4px 12px rgba(26, 121, 175, 0.3)',
+                  boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)',
                   zIndex: 10
                 }}>1</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Understanding Your Business</h3>
@@ -769,7 +1168,7 @@ export const SaintJohnWebDesignPage = () => {
                 background: 'white',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{
                   position: 'absolute',
@@ -804,7 +1203,7 @@ export const SaintJohnWebDesignPage = () => {
                 background: 'white',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{
                   position: 'absolute',
@@ -849,7 +1248,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📱</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Show Up When Customers Search</h3>
@@ -865,7 +1264,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🎯</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Online Marketing That Works</h3>
@@ -881,7 +1280,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🏆</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Competitive Advantage</h3>
@@ -897,7 +1296,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📊</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Analytics & Reporting</h3>
@@ -912,7 +1311,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>⚡</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Fast, Responsive Websites</h3>
@@ -963,7 +1362,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📱</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Mobile Website Optimization</h3>
@@ -984,7 +1383,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🌟</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>WordPress Website Development</h3>
@@ -1005,7 +1404,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🎯</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Local SEO Optimization</h3>
@@ -1026,7 +1425,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>💬</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Lead Generation Tools</h3>
@@ -1047,7 +1446,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🛡️</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Security & Reliability</h3>
@@ -1068,7 +1467,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📊</div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Performance Tracking</h3>
@@ -1129,7 +1528,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <h3 style={{color: colors.primary, marginBottom: '1.5rem', textAlign: 'center'}}>Why Website Maintenance Matters</h3>
                 <ul style={{color: colors.text.secondary, lineHeight: '1.8', paddingLeft: '1.5rem'}}>
@@ -1218,7 +1617,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>How much does web design cost?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
@@ -1233,7 +1632,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Do I need SEO services for my local business?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
@@ -1248,7 +1647,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>How long does website development take?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
@@ -1263,7 +1662,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Will my website work on mobile phones?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
@@ -1278,7 +1677,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Why choose WordPress for my business website?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
@@ -1308,7 +1707,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>What makes a good website for contractors?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
@@ -1323,7 +1722,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>How do I choose a web design company?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
@@ -1338,7 +1737,7 @@ export const SaintJohnWebDesignPage = () => {
                 padding: '2rem',
                 borderRadius: '12px',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
                 <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Can you help with digital marketing beyond web design?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
@@ -1454,7 +1853,7 @@ export const SaintJohnWebDesignPage = () => {
                     padding: '1rem',
                     borderRadius: '8px',
                     boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
-                    border: '1px solid rgba(29, 122, 175, 0.1)'
+                    border: '1px solid rgba(31, 124, 255, 0.1)'
                   }}>
                     <span style={{color: colors.text.primary, fontSize: '0.95rem', fontWeight: '500'}}>{area}</span>
                   </div>
