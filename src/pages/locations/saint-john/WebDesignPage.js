@@ -860,9 +860,13 @@ export const SaintJohnWebDesignPage = () => {
                   margin: '0 auto 1rem auto'
                 }}>
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 9L12 15L16 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 15V21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 15L8 11" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <rect x="3" y="11" width="18" height="10" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                    <path d="M7 11V7" stroke="white" strokeWidth="2"/>
+                    <path d="M12 11V5" stroke="white" strokeWidth="2"/>
+                    <path d="M17 11V8" stroke="white" strokeWidth="2"/>
+                    <rect x="5" y="14" width="4" height="7" rx="1" fill="white"/>
+                    <rect x="10" y="14" width="4" height="7" rx="1" fill="white"/>
+                    <rect x="15" y="14" width="4" height="7" rx="1" fill="white"/>
                   </svg>
                 </div>
                 <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Built for Your Industry</h3>
@@ -899,9 +903,8 @@ export const SaintJohnWebDesignPage = () => {
                   margin: '0 auto 1rem auto'
                 }}>
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2"/>
-                    <path d="M17 5H9.5A3.5 3.5 0 0 0 6 8.5V17.5A3.5 3.5 0 0 0 9.5 21H17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M14 9L17 12L14 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="12" y1="2" x2="12" y2="22" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Affordable for Your Business</h3>
@@ -1119,112 +1122,133 @@ export const SaintJohnWebDesignPage = () => {
               </p>
             </div>
             
-            <div className="process-grid" style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-              gap: '2rem', 
+            <div className="process-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
               marginTop: '3rem'
             }}>
-              <div className="service-card" style={{
+              <div className="service-card professional-card" style={{
                 position: 'relative',
                 padding: '60px 40px 40px 40px',
                 marginTop: '35px',
                 overflow: 'visible',
-                background: 'white',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
               }}>
                 <div style={{
                   position: 'absolute',
                   top: '-25px',
-                  left: '30px',
-                  background: colors.primary,
-                  color: 'white',
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '50%',
+                  left: '0px',
+                  right: '0px',
                   display: 'flex',
-                  alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.5rem',
-                  fontWeight: 'bold',
-                  boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)',
-                  zIndex: 10
-                }}>1</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Understanding Your Business</h3>
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>1</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Understanding Your Business</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  We start by learning about your services, target customers, and what makes your 
-                  your business unique. Then we plan a website that showcases your strengths 
+                  We start by learning about your services, target customers, and what makes your
+                  Saint John business unique. Then we plan a website that showcases your strengths
                   and attracts the right customers.
                 </p>
               </div>
               
-              <div className="service-card" style={{
+              <div className="service-card professional-card" style={{
                 position: 'relative',
                 padding: '60px 40px 40px 40px',
                 marginTop: '35px',
                 overflow: 'visible',
-                background: 'white',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
               }}>
                 <div style={{
                   position: 'absolute',
                   top: '-25px',
-                  left: '30px',
-                  background: colors.accent,
-                  color: 'white',
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '50%',
+                  left: '0px',
+                  right: '0px',
                   display: 'flex',
-                  alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.5rem',
-                  fontWeight: 'bold',
-                  boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)',
-                  zIndex: 10
-                }}>2</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Building Your Professional Website</h3>
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>2</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Building Your Professional Website</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  We create your custom WordPress website with professional photos, compelling content, 
-                  and mobile-responsive design. Every website includes contact forms, service pages, 
+                  We create your custom WordPress website with professional photos, compelling content,
+                  and mobile-responsive design. Every website includes contact forms, service pages,
                   and SEO optimization to help customers find you.
                 </p>
               </div>
               
-              <div className="service-card" style={{
+              <div className="service-card professional-card" style={{
                 position: 'relative',
                 padding: '60px 40px 40px 40px',
                 marginTop: '35px',
                 overflow: 'visible',
-                background: 'white',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
               }}>
                 <div style={{
                   position: 'absolute',
                   top: '-25px',
-                  left: '30px',
-                  background: colors.secondary,
-                  color: 'white',
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '50%',
+                  left: '0px',
+                  right: '0px',
                   display: 'flex',
-                  alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.5rem',
-                  fontWeight: 'bold',
-                  boxShadow: '0 4px 12px rgba(49, 66, 81, 0.3)',
-                  zIndex: 10
-                }}>3</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Testing & Launch</h3>
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>3</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Testing & Launch</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Thorough testing across all devices and browsers, SEO optimization, and smooth website launch. 
+                  Thorough testing across all devices and browsers, SEO optimization, and smooth website launch.
                   Comprehensive training and ongoing website maintenance support.
                 </p>
               </div>
@@ -1243,95 +1267,228 @@ export const SaintJohnWebDesignPage = () => {
               gap: '2rem',
               marginTop: '2rem'
             }}>
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📱</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Show Up When Customers Search</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  When local residents search for "plumber near me" or "roofing contractor," 
-                  you want to be found first. Our SEO services help your business appear at the top 
-                  of local search results when customers need your services.
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="8" stroke="white" strokeWidth="2"/>
+                    <path d="M21 21L16.65 16.65" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Show Up When Customers Search</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  When Saint John residents search for "plumber near me" or "roofing contractor Saint John,"
+                  you want to be found first. Our SEO services help your business appear at the top
+                  of search results when customers need your services.
                 </p>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🎯</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Online Marketing That Works</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Beyond just web design, we help promote your business online. Our digital marketing 
-                  services include Google My Business optimization, social media setup, and review management 
-                  to build your local reputation and attract more customers.
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L3 7V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V7L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12L11 14L15 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Online Marketing That Works</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Beyond just web design, we help promote your business online. Our digital marketing
+                  services include Google My Business optimization, social media setup, and review management
+                  to build your reputation and attract more customers.
                 </p>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🏆</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Competitive Advantage</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Many local contractors and small businesses still rely on word-of-mouth referrals. With Rothesay and Quispamsis 
-                  residents increasingly searching online for local services, our custom web design and SEO services 
-                  give your business a significant competitive advantage in the growing Greater Saint John market.
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9H4V20H20V9H18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M6 9H18V14H6V9Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="12" y1="14" x2="12" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Competitive Advantage</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Many Saint John small businesses lack professional web presence. Our custom web design
+                  and SEO services give you a significant advantage over competitors still relying on word-of-mouth.
                 </p>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📊</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Analytics & Reporting</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Track exactly how many customers find your business online through detailed 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="18" y1="20" x2="18" y2="10" stroke="white" strokeWidth="2"/>
+                    <line x1="12" y1="20" x2="12" y2="4" stroke="white" strokeWidth="2"/>
+                    <line x1="6" y1="20" x2="6" y2="14" stroke="white" strokeWidth="2"/>
+                    <line x1="3" y1="20" x2="21" y2="20" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Analytics & Reporting</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Track exactly how many Saint John customers find your business online through detailed
                   analytics and reporting. Measure ROI from your website investment with transparent metrics.
                 </p>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>⚡</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Fast, Responsive Websites</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Every mobile website we develop loads quickly and performs perfectly on all devices. 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Fast, Responsive Websites</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Every mobile website we develop loads quickly and performs perfectly on all devices.
                   Professional website development with focus on speed and user experience optimization.
                 </p>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🛡️</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Security & Maintenance</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Comprehensive website maintenance services including security monitoring, 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12L11 14L15 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Security & Maintenance</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Comprehensive website maintenance services including security monitoring,
                   regular backups, and software updates. Protect your business investment with proactive care.
                 </p>
               </div>
@@ -1357,17 +1514,44 @@ export const SaintJohnWebDesignPage = () => {
               gap: '2rem',
               marginTop: '2rem'
             }}>
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📱</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Mobile Website Optimization</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Your mobile website that customers will love. Every site is fully responsive and 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18" stroke="white" strokeWidth="2"/>
+                    <path d="M12 8L10 10L12 12L14 10L12 8Z" fill="white"/>
+                    <line x1="12" y1="8" x2="12" y2="6" stroke="white" strokeWidth="1"/>
+                    <line x1="12" y1="12" x2="12" y2="14" stroke="white" strokeWidth="1"/>
+                    <line x1="10" y1="10" x2="8" y2="10" stroke="white" strokeWidth="1"/>
+                    <line x1="14" y1="10" x2="16" y2="10" stroke="white" strokeWidth="1"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Mobile Website Optimization</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Your mobile website Saint John customers will love. Every site is fully responsive and
                   loads fast on smartphones - critical since 70% of local searches happen on mobile devices.
                 </p>
                 <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
@@ -1378,17 +1562,39 @@ export const SaintJohnWebDesignPage = () => {
                 </ul>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🌟</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>WordPress Website Development</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Professional WordPress websites that businesses trust. Easy to update, secure, 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <text x="12" y="17" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">W</text>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>WordPress Website Development</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Professional WordPress website Saint John businesses trust. Easy to update, secure,
                   and built with the world's most popular website platform that powers 40% of the internet.
                 </p>
                 <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
@@ -1399,38 +1605,82 @@ export const SaintJohnWebDesignPage = () => {
                 </ul>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🎯</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Local SEO Optimization</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Every website includes comprehensive SEO services that businesses need to get 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="white" strokeWidth="2" fill="none"/>
+                    <circle cx="12" cy="10" r="3" stroke="white" strokeWidth="2" fill="none"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Local SEO Optimization</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Every website includes comprehensive SEO services Saint John businesses need to get
                   found by local customers. We optimize for location-based searches that drive real business.
                 </p>
                 <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
                   <li>Google My Business integration</li>
                   <li>Local keyword optimization</li>
-                  <li>Local area location pages</li>
+                  <li>Saint John location pages</li>
                   <li>Review system integration</li>
                 </ul>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>💬</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Lead Generation Tools</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Built-in tools to capture more leads from your website visitors. Contact forms, quote 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L8 8H2L6 14L2 22L12 17L22 22L18 14L22 8H16L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                    <circle cx="12" cy="12" r="2" fill="white"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Lead Generation Tools</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Built-in tools to capture more leads from your website visitors. Contact forms, quote
                   request systems, and call-to-action buttons that convert browsers into customers.
                 </p>
                 <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
@@ -1441,17 +1691,40 @@ export const SaintJohnWebDesignPage = () => {
                 </ul>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🛡️</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Security & Reliability</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Your business website stays secure and online 24/7. Professional hosting, SSL certificates, 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <rect x="10" y="10" width="4" height="5" rx="1" stroke="white" strokeWidth="2"/>
+                    <path d="M10 10V8C10 6.9 10.9 6 12 6C13.1 6 14 6.9 14 8V10" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Security & Reliability</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Your business website stays secure and online 24/7. Professional hosting, SSL certificates,
                   regular backups, and security monitoring included with every project.
                 </p>
                 <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
@@ -1462,17 +1735,44 @@ export const SaintJohnWebDesignPage = () => {
                 </ul>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(31, 124, 255, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📊</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Performance Tracking</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  See exactly how your website investment is paying off. Google Analytics setup, 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 20V4" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M3 20H21" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M7 16L11 10L15 13L19 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="7" cy="16" r="1.5" fill="white"/>
+                    <circle cx="11" cy="10" r="1.5" fill="white"/>
+                    <circle cx="15" cy="13" r="1.5" fill="white"/>
+                    <circle cx="19" cy="7" r="1.5" fill="white"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Performance Tracking</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  See exactly how your website investment is paying off. Google Analytics setup,
                   monthly reports, and performance monitoring to track leads and customer inquiries.
                 </p>
                 <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
@@ -1619,7 +1919,7 @@ export const SaintJohnWebDesignPage = () => {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>How much does web design cost?</h3>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem'}}>How much does web design cost?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
                   Our affordable services offer competitive pricing for a professional small business 
                   website. This includes custom design, mobile optimization, SEO setup, and training. We offer 
@@ -1634,7 +1934,7 @@ export const SaintJohnWebDesignPage = () => {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Do I need SEO services for my local business?</h3>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem'}}>Do I need SEO services for my local business?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
                   Absolutely! Local SEO services help your business show up when local customers search 
                   for your services online. 97% of people search online before hiring contractors. Without proper 
@@ -1649,7 +1949,7 @@ export const SaintJohnWebDesignPage = () => {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>How long does website development take?</h3>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem'}}>How long does website development take?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
                   Most professional web design projects take 2-4 weeks from start to launch. 
                   This includes planning, design, development, content creation, and testing. We keep you 
@@ -1664,7 +1964,7 @@ export const SaintJohnWebDesignPage = () => {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Will my website work on mobile phones?</h3>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem'}}>Will my website work on mobile phones?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
                   Every mobile website we create is fully responsive and optimized for smartphones and tablets. 
                   This is crucial since 70% of local searches happen on mobile devices. Your website will 
@@ -1679,7 +1979,7 @@ export const SaintJohnWebDesignPage = () => {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Why choose WordPress for my business website?</h3>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem'}}>Why choose WordPress for my business website?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
                   WordPress powers 40% of all websites and is perfect for small businesses. Our WordPress website 
                   WordPress development gives you an easy-to-update site that's secure, SEO-friendly, and 
@@ -1694,7 +1994,7 @@ export const SaintJohnWebDesignPage = () => {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid rgba(29, 122, 175, 0.1)'
               }}>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Do you provide website maintenance after launch?</h3>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem'}}>Do you provide website maintenance after launch?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
                   Yes! Our website maintenance services include security updates, backups, 
                   performance monitoring, and content updates. Our competitive monthly plans are an affordable 
@@ -1709,7 +2009,7 @@ export const SaintJohnWebDesignPage = () => {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>What makes a good website for contractors?</h3>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem'}}>What makes a good website for contractors?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
                   A professional contractor website needs clear contact information, service area details, 
                   photo galleries of your work, customer testimonials, and easy quote request forms. 
@@ -1724,7 +2024,7 @@ export const SaintJohnWebDesignPage = () => {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>How do I choose a web design company?</h3>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem'}}>How do I choose a web design company?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
                   Look for a local web designer with experience in your industry, transparent 
                   pricing, and a portfolio of successful projects. We specialize in contractor and small 
@@ -1739,7 +2039,7 @@ export const SaintJohnWebDesignPage = () => {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid rgba(31, 124, 255, 0.1)'
               }}>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Can you help with digital marketing beyond web design?</h3>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem'}}>Can you help with digital marketing beyond web design?</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
                   Absolutely! Our digital marketing services include Google My Business optimization, 
                   online review management, social media setup, and local SEO. We help you get found online 
@@ -1806,7 +2106,7 @@ export const SaintJohnWebDesignPage = () => {
             
             {/* Centered Ready to Get Started */}
             <div style={{marginTop: '3rem', display: 'flex', justifyContent: 'center'}}>
-              <div className="service-card" style={{
+              <div className="service-card no-hover-card" style={{
                 background: 'white',
                 padding: '2rem',
                 borderRadius: '12px',
@@ -1819,8 +2119,47 @@ export const SaintJohnWebDesignPage = () => {
                 <h4 style={{color: colors.primary, marginBottom: '1rem'}}>Ready to Get Started?</h4>
                 <p style={{color: colors.text.secondary, marginBottom: '1.5rem', lineHeight: '1.6'}}>Contact our local web design team for a free consultation and custom quote.</p>
                 <div style={{display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap'}}>
-                  <a href="/contact" className="hero-button" style={{fontSize: '1rem', padding: '12px 24px'}}>Get Free Quote</a>
-                  <a href="/free-example" className="secondary-button" style={{fontSize: '1rem', padding: '12px 24px'}}>See Example</a>
+                  <a href="/contact" className="hero-button" style={{
+                    background: 'linear-gradient(135deg, #FFC600 0%, #FFB800 100%)',
+                    color: '#1a1a2e',
+                    padding: '12px 24px',
+                    borderRadius: '50px',
+                    textDecoration: 'none',
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    display: 'inline-block',
+                    boxShadow: '0 6px 20px rgba(31, 124, 255, 0.4)',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                    border: 'none'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.boxShadow = '0 8px 30px rgba(255, 198, 0, 0.6)';
+                    e.target.style.transform = 'translateY(-3px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.boxShadow = '0 6px 20px rgba(31, 124, 255, 0.4)';
+                    e.target.style.transform = 'translateY(0)';
+                  }}>Get Free Quote</a>
+                  <a href="/free-example" className="secondary-button" style={{
+                    background: 'white',
+                    color: colors.primary,
+                    padding: '12px 24px',
+                    borderRadius: '50px',
+                    textDecoration: 'none',
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    display: 'inline-block',
+                    border: '2px solid ' + colors.primary,
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = colors.primary;
+                    e.target.style.color = 'white';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = 'white';
+                    e.target.style.color = colors.primary;
+                  }}>See Example</a>
                 </div>
               </div>
             </div>
@@ -2168,6 +2507,20 @@ const locationStyles = `
 // Inject additional styles
 if (typeof document !== 'undefined') {
   const styleSheet = document.createElement('style');
-  styleSheet.textContent = locationStyles;
+  styleSheet.textContent = locationStyles + `
+    .no-hover-card:hover {
+      transform: none !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    }
+    .no-hover-card .hero-button:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 8px 30px rgba(255, 198, 0, 0.6) !important;
+    }
+    .no-hover-card .secondary-button:hover {
+      transform: translateY(-3px) !important;
+      background: #1a79af !important;
+      color: white !important;
+    }
+  `;
   document.head.appendChild(styleSheet);
 }
