@@ -18,11 +18,11 @@ export const MonctonWebDesignPage = () => {
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Need a professional website for your Moncton business? Affordable web design for contractors, tradespeople & small businesses. Custom WordPress websites, local SEO services & mobile-responsive design that gets you more customers. Free quotes available.');
+      metaDescription.setAttribute('content', 'Professional websites for Moncton businesses. Affordable web design services including custom WordPress development, local SEO optimization, and mobile-responsive design that gets you more customers. Free quotes available.');
     } else {
       const newMetaDescription = document.createElement('meta');
       newMetaDescription.name = 'description';
-      newMetaDescription.content = 'Need a professional website for your Moncton business? Affordable web design for contractors, tradespeople & small businesses. Custom WordPress websites, local SEO services & mobile-responsive design that gets you more customers. Free quotes available.';
+      newMetaDescription.content = 'Professional websites for Moncton businesses. Affordable web design services including custom WordPress development, local SEO optimization, and mobile-responsive design that gets you more customers. Free quotes available.';
       document.head.appendChild(newMetaDescription);
     }
     
