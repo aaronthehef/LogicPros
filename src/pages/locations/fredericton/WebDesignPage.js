@@ -273,6 +273,11 @@ export const FrederictonWebDesignPage = () => {
         display: inline-block;
         transition: all 0.3s ease;
       }
+      
+      /* Fix for multiple checkmarks in lists */
+      .professional-card .service-benefits li::before {
+        content: none !important;
+      }
     `;
     document.head.appendChild(style);
 
@@ -454,7 +459,7 @@ export const FrederictonWebDesignPage = () => {
                 justifyContent: 'center'
               }}>
                 {/* Web Design Card */}
-                <a href="/services/websites" className="hero-service-card" style={{
+                <div className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(31, 124, 255, 0.15), rgba(31, 124, 255, 0.08))',
                   border: '2px solid rgba(31, 124, 255, 0.3)',
                   borderRadius: '12px',
@@ -465,8 +470,7 @@ export const FrederictonWebDesignPage = () => {
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   minHeight: '80px',
-                  textDecoration: 'none',
-                  cursor: 'pointer',
+                  cursor: 'default',
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   animation: 'pulseGlow 3s ease-in-out infinite'
                 }}>
@@ -488,10 +492,10 @@ export const FrederictonWebDesignPage = () => {
                       <rect x="9" y="18" width="6" height="1" fill="white"/>
                     </svg>
                   </div>
-                </a>
+                </div>
 
                 {/* SEO Card */}
-                <a href="/services/seo" className="hero-service-card" style={{
+                <div className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(31, 124, 255, 0.15), rgba(31, 124, 255, 0.08))',
                   border: '2px solid rgba(31, 124, 255, 0.3)',
                   borderRadius: '12px',
@@ -502,8 +506,7 @@ export const FrederictonWebDesignPage = () => {
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   minHeight: '80px',
-                  textDecoration: 'none',
-                  cursor: 'pointer',
+                  cursor: 'default',
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   animation: 'pulseGlow 3s ease-in-out infinite 1s'
                 }}>
@@ -528,10 +531,10 @@ export const FrederictonWebDesignPage = () => {
                       <circle cx="5" cy="12" r="1" fill="white"/>
                     </svg>
                   </div>
-                </a>
+                </div>
 
                 {/* Marketing Card */}
-                <a href="/services/marketing" className="hero-service-card" style={{
+                <div className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(31, 124, 255, 0.15), rgba(31, 124, 255, 0.08))',
                   border: '2px solid rgba(31, 124, 255, 0.3)',
                   borderRadius: '12px',
@@ -542,8 +545,7 @@ export const FrederictonWebDesignPage = () => {
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   minHeight: '80px',
-                  textDecoration: 'none',
-                  cursor: 'pointer',
+                  cursor: 'default',
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   animation: 'pulseGlow 3s ease-in-out infinite 2s'
                 }}>
@@ -563,7 +565,7 @@ export const FrederictonWebDesignPage = () => {
                       <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
                     </svg>
                   </div>
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -598,7 +600,7 @@ export const FrederictonWebDesignPage = () => {
                 position: 'relative',
                 overflow: 'hidden'
               }}>
-                <div className="service-icon floating-icon" style={{
+                <div className="service-icon" style={{
                   fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
@@ -606,23 +608,62 @@ export const FrederictonWebDesignPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
-                  transition: 'all 0.3s ease'
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
                 }}>
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
-                    <rect x="8" y="16" width="8" height="2" fill="white"/>
-                    <rect x="9" y="18" width="6" height="1" fill="white"/>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h3>Professional Website Design</h3>
-                <p>
-                  Custom websites that showcase your business and convert visitors into customers. Our Fredericton
-                  web design services create professional WordPress websites that build trust and generate leads 24/7.
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Websites That Grow Your Business</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem', textAlign: 'center'}}>
+                  Stop losing customers to competitors with better websites. Our affordable web design
+                  services create professional websites that showcase your work, build trust with customers,
+                  and generate leads 24/7. Perfect for businesses of all sizes in Fredericton.
                 </p>
-                <div className="feature-highlight">Free example in 48 hours</div>
+                <div style={{background: 'rgba(31, 124, 255, 0.05)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1F7CFF', fontWeight: '600', marginBottom: '0.5rem', justifyContent: 'center'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Free example in 48 hours
+                  </div>
+                  <div style={{fontSize: '0.9rem', color: colors.text.secondary, textAlign: 'center'}}>
+                    See your custom website design before committing
+                  </div>
+                </div>
+                <ul className="service-benefits" style={{color: colors.text.secondary, listStyle: 'none', padding: 0, textAlign: 'left'}}>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Local SEO to get found in search results
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Mobile-responsive design
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Custom WordPress development
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Expert copywriting and content
+                  </li>
+                </ul>
               </div>
 
               {/* SEO & Digital Marketing */}
@@ -636,7 +677,7 @@ export const FrederictonWebDesignPage = () => {
                 position: 'relative',
                 overflow: 'hidden'
               }}>
-                <div className="service-icon floating-icon" style={{
+                <div className="service-icon" style={{
                   fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
@@ -644,26 +685,61 @@ export const FrederictonWebDesignPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
-                  transition: 'all 0.3s ease'
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
                 }}>
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
-                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="12" cy="5" r="1" fill="white"/>
-                    <circle cx="12" cy="19" r="1" fill="white"/>
-                    <circle cx="19" cy="12" r="1" fill="white"/>
-                    <circle cx="5" cy="12" r="1" fill="white"/>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <path d="M12 6V12L16 14" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
                 </div>
-                <h3>Local SEO & Optimization</h3>
-                <p>
-                  Professional SEO services to help Fredericton businesses get found online. Local search optimization
-                  combined with proven digital marketing strategies to boost your rankings.
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}><a href="/services/seo" style={{color: 'inherit', textDecoration: 'none'}}>Local SEO Services</a></h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem', textAlign: 'center'}}>
+                  Professional SEO services and digital marketing that local businesses trust. Our web design
+                  expertise combined with proven online marketing strategies help boost your search rankings.
                 </p>
-                <div className="feature-highlight">Local search experts</div>
+                <div style={{background: 'rgba(31, 124, 255, 0.05)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1F7CFF', fontWeight: '600', marginBottom: '0.5rem', justifyContent: 'center'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 7L8 12L13 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16 17H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Local search experts
+                  </div>
+                  <div style={{fontSize: '0.9rem', color: colors.text.secondary, textAlign: 'center'}}>
+                    Get found by customers searching in Fredericton
+                  </div>
+                </div>
+                <ul className="service-benefits" style={{color: colors.text.secondary, listStyle: 'none', padding: 0, textAlign: 'left'}}>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Google My Business optimization
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Content marketing and blogging
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Social media integration
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Analytics and performance tracking
+                  </li>
+                </ul>
               </div>
 
               {/* Website Maintenance */}
@@ -677,7 +753,7 @@ export const FrederictonWebDesignPage = () => {
                 position: 'relative',
                 overflow: 'hidden'
               }}>
-                <div className="service-icon floating-icon" style={{
+                <div className="service-icon" style={{
                   fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
@@ -685,22 +761,61 @@ export const FrederictonWebDesignPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
                   boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
-                  transition: 'all 0.3s ease'
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
                 }}>
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 22V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M22 7L12 12L2 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h3>Website Maintenance & Support</h3>
-                <p>
-                  Ongoing website maintenance to keep your Fredericton business website secure,
-                  updated, and performing optimally. Regular backups, security updates, and content management.
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Website Maintenance</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', marginBottom: '1.5rem', textAlign: 'center'}}>
+                  Keep your website running smoothly with our comprehensive maintenance services.
+                  Regular updates, security monitoring, and technical support for your business website.
                 </p>
-                <div className="feature-highlight">Peace of mind support</div>
+                <div style={{background: 'rgba(31, 124, 255, 0.05)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1F7CFF', fontWeight: '600', marginBottom: '0.5rem', justifyContent: 'center'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Peace of mind included
+                  </div>
+                  <div style={{fontSize: '0.9rem', color: colors.text.secondary, textAlign: 'center'}}>
+                    Focus on your business while we handle the tech
+                  </div>
+                </div>
+                <ul className="service-benefits" style={{color: colors.text.secondary, listStyle: 'none', padding: 0, textAlign: 'left'}}>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    WordPress and plugin updates
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Security monitoring and protection
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Performance optimization
+                  </li>
+                  <li style={{padding: '0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Monthly health reports
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -732,7 +847,31 @@ export const FrederictonWebDesignPage = () => {
                 border: '1px solid rgba(29, 122, 175, 0.1)',
                 transition: 'transform 0.3s ease'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🏆</div>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="11" width="18" height="10" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                    <path d="M7 11V7" stroke="white" strokeWidth="2"/>
+                    <path d="M12 11V5" stroke="white" strokeWidth="2"/>
+                    <path d="M17 11V8" stroke="white" strokeWidth="2"/>
+                    <rect x="5" y="14" width="4" height="7" rx="1" fill="white"/>
+                    <rect x="10" y="14" width="4" height="7" rx="1" fill="white"/>
+                    <rect x="15" y="14" width="4" height="7" rx="1" fill="white"/>
+                  </svg>
+                </div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Built for Your Industry</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
                   We specialize in websites for businesses of all types. Our website designer
@@ -749,7 +888,26 @@ export const FrederictonWebDesignPage = () => {
                 border: '1px solid rgba(29, 122, 175, 0.1)',
                 transition: 'transform 0.3s ease'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>💰</div>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="2" x2="12" y2="22" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Affordable for Small Business</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
                   Professional websites shouldn't cost a fortune. Our affordable web design Fredericton
@@ -766,7 +924,26 @@ export const FrederictonWebDesignPage = () => {
                 border: '1px solid rgba(29, 122, 175, 0.1)',
                 transition: 'transform 0.3s ease'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📱</div>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
                 <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Mobile-First Web Development</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
                   Every mobile website we create is fully responsive and optimized for all devices. 
@@ -780,97 +957,148 @@ export const FrederictonWebDesignPage = () => {
         {/* Areas We Serve */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <h2 className="section-title">Web Design Services Throughout Greater Fredericton</h2>
+            <h2 className="section-title">Professional Web Design for Local Communities</h2>
             
-            <div className="services-grid" style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem',
-              maxWidth: '1400px',
+            <div className="areas-list" style={{
+              maxWidth: '1200px',
               margin: '2rem auto 0'
             }}>
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transition: 'transform 0.3s ease'
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '1.5rem',
+                gap: '1rem'
               }}>
-                <h4>📍 Downtown Fredericton</h4>
-                <p>
-                  Professional services, retail businesses, and restaurants in the historic downtown core. 
-                  King Street, Queen Street, Regent Street, and surrounding business districts.
-                </p>
+                <div style={{
+                  color: '#1F7CFF',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  minWidth: '30px'
+                }}>
+                  →
+                </div>
+                <div>
+                  <h3 style={{color: '#1F7CFF', marginBottom: '0.5rem', margin: 0}}>Downtown Fredericton</h3>
+                  <p style={{color: colors.text.secondary, lineHeight: '1.6', margin: 0}}>
+                    Professional services, retail businesses, and restaurants in the historic downtown core.
+                    King Street, Queen Street, Regent Street, and surrounding business districts.
+                  </p>
+                </div>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transition: 'transform 0.3s ease'
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '1.5rem',
+                gap: '1rem'
               }}>
-                <h4>📍 North Side Fredericton</h4>
-                <p>
-                  Contractors and service providers in Nashwaaksis, Marysville, and Douglas areas. 
-                  Specialized in trades and home service businesses.
-                </p>
+                <div style={{
+                  color: '#1F7CFF',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  minWidth: '30px'
+                }}>
+                  →
+                </div>
+                <div>
+                  <h3 style={{color: '#1F7CFF', marginBottom: '0.5rem', margin: 0}}>North Side Fredericton</h3>
+                  <p style={{color: colors.text.secondary, lineHeight: '1.6', margin: 0}}>
+                    Contractors and service providers in Nashwaaksis, Marysville, and Douglas areas.
+                    Specialized in trades and home service businesses.
+                  </p>
+                </div>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transition: 'transform 0.3s ease'
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '1.5rem',
+                gap: '1rem'
               }}>
-                <h4>📍 Oromocto & Area</h4>
-                <p>
-                  Supporting businesses in Oromocto, Geary, Burton, and surrounding York County communities. 
-                  Strong focus on contractor and military family-owned businesses.
-                </p>
+                <div style={{
+                  color: '#1F7CFF',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  minWidth: '30px'
+                }}>
+                  →
+                </div>
+                <div>
+                  <h3 style={{color: '#1F7CFF', marginBottom: '0.5rem', margin: 0}}>Oromocto & Area</h3>
+                  <p style={{color: colors.text.secondary, lineHeight: '1.6', margin: 0}}>
+                    Supporting businesses in Oromocto, Geary, Burton, and surrounding York County communities.
+                    Strong focus on contractor and military family-owned businesses.
+                  </p>
+                </div>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transition: 'transform 0.3s ease'
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '1.5rem',
+                gap: '1rem'
               }}>
-                <h4>📍 Hanwell & Lincoln</h4>
-                <p>
-                  Growing residential areas with contractors, home services, and retail businesses. 
-                  Optimized for suburban service area coverage.
-                </p>
+                <div style={{
+                  color: '#1F7CFF',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  minWidth: '30px'
+                }}>
+                  →
+                </div>
+                <div>
+                  <h3 style={{color: '#1F7CFF', marginBottom: '0.5rem', margin: 0}}>Hanwell & Lincoln</h3>
+                  <p style={{color: colors.text.secondary, lineHeight: '1.6', margin: 0}}>
+                    Growing residential areas with contractors, home services, and retail businesses.
+                    Optimized for suburban service area coverage.
+                  </p>
+                </div>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transition: 'transform 0.3s ease'
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '1.5rem',
+                gap: '1rem'
               }}>
-                <h4>📍 Harvey Station & Zealand</h4>
-                <p>
-                  Rural contractors and service providers throughout York County. 
-                  Specialized in agricultural and rural business digital solutions.
-                </p>
+                <div style={{
+                  color: '#1F7CFF',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  minWidth: '30px'
+                }}>
+                  →
+                </div>
+                <div>
+                  <h3 style={{color: '#1F7CFF', marginBottom: '0.5rem', margin: 0}}>Harvey Station & Zealand</h3>
+                  <p style={{color: colors.text.secondary, lineHeight: '1.6', margin: 0}}>
+                    Rural contractors and service providers throughout York County.
+                    Specialized in agricultural and rural business digital solutions.
+                  </p>
+                </div>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transition: 'transform 0.3s ease'
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '1.5rem',
+                gap: '1rem'
               }}>
-                <h4>📍 New Maryland & Charters Settlement</h4>
-                <p>
-                  Suburban contractors, professionals, and service businesses. 
-                  Focus on quality residential service providers.
-                </p>
+                <div style={{
+                  color: '#1F7CFF',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  minWidth: '30px'
+                }}>
+                  →
+                </div>
+                <div>
+                  <h3 style={{color: '#1F7CFF', marginBottom: '0.5rem', margin: 0}}>New Maryland & Charters Settlement</h3>
+                  <p style={{color: colors.text.secondary, lineHeight: '1.6', margin: 0}}>
+                    Suburban contractors, professionals, and service businesses.
+                    Focus on quality residential service providers.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -944,112 +1172,133 @@ export const FrederictonWebDesignPage = () => {
               </p>
             </div>
             
-            <div className="process-grid" style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-              gap: '2rem', 
+            <div className="process-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
               marginTop: '3rem'
             }}>
-              <div className="service-card" style={{
+              <div className="service-card professional-card" style={{
                 position: 'relative',
                 padding: '60px 40px 40px 40px',
                 marginTop: '35px',
                 overflow: 'visible',
-                background: 'white',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
               }}>
                 <div style={{
                   position: 'absolute',
                   top: '-25px',
-                  left: '30px',
-                  background: colors.primary,
-                  color: 'white',
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '50%',
+                  left: '0px',
+                  right: '0px',
                   display: 'flex',
-                  alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.5rem',
-                  fontWeight: 'bold',
-                  boxShadow: '0 4px 12px rgba(26, 121, 175, 0.3)',
-                  zIndex: 10
-                }}>1</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Understanding Your Business</h3>
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>1</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Understanding Your Business</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  We start by learning about your services, target customers, and what makes your 
-                  Fredericton business unique. Then we plan a website that showcases your strengths 
+                  We start by learning about your services, target customers, and what makes your
+                  Fredericton business unique. Then we plan a website that showcases your strengths
                   and attracts the right customers.
                 </p>
               </div>
               
-              <div className="service-card" style={{
+              <div className="service-card professional-card" style={{
                 position: 'relative',
                 padding: '60px 40px 40px 40px',
                 marginTop: '35px',
                 overflow: 'visible',
-                background: 'white',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
               }}>
                 <div style={{
                   position: 'absolute',
                   top: '-25px',
-                  left: '30px',
-                  background: colors.accent,
-                  color: 'white',
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '50%',
+                  left: '0px',
+                  right: '0px',
                   display: 'flex',
-                  alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.5rem',
-                  fontWeight: 'bold',
-                  boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)',
-                  zIndex: 10
-                }}>2</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Building Your Professional Website</h3>
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>2</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Building Your Professional Website</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  We create your custom WordPress website with professional photos, compelling content, 
-                  and mobile-responsive design. Every website includes contact forms, service pages, 
+                  We create your custom WordPress website with professional photos, compelling content,
+                  and mobile-responsive design. Every website includes contact forms, service pages,
                   and SEO optimization to help customers find you.
                 </p>
               </div>
               
-              <div className="service-card" style={{
+              <div className="service-card professional-card" style={{
                 position: 'relative',
                 padding: '60px 40px 40px 40px',
                 marginTop: '35px',
                 overflow: 'visible',
-                background: 'white',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
               }}>
                 <div style={{
                   position: 'absolute',
                   top: '-25px',
-                  left: '30px',
-                  background: colors.secondary,
-                  color: 'white',
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '50%',
+                  left: '0px',
+                  right: '0px',
                   display: 'flex',
-                  alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.5rem',
-                  fontWeight: 'bold',
-                  boxShadow: '0 4px 12px rgba(49, 66, 81, 0.3)',
-                  zIndex: 10
-                }}>3</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem'}}>Testing & Launch</h3>
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>3</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Testing & Launch</h3>
                 <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Thorough testing across all devices and browsers, SEO optimization, and smooth website launch. 
+                  Thorough testing across all devices and browsers, SEO optimization, and smooth website launch.
                   Comprehensive training and ongoing website maintenance support.
                 </p>
               </div>
@@ -1068,94 +1317,228 @@ export const FrederictonWebDesignPage = () => {
               gap: '2rem',
               marginTop: '2rem'
             }}>
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📱</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Show Up When Customers Search</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  When Fredericton residents search for "plumber near me" or "roofing contractor Fredericton," 
-                  you want to be found first. Our SEO services Fredericton help your business appear at the top 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="8" stroke="white" strokeWidth="2"/>
+                    <path d="M21 21L16.65 16.65" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Show Up When Customers Search</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  When Fredericton residents search for "plumber near me" or "roofing contractor Fredericton,"
+                  you want to be found first. Our SEO services Fredericton help your business appear at the top
                   of search results when customers need your services.
                 </p>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🎯</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Online Marketing That Works</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Beyond just web design, we help promote your business online. Our digital marketing Fredericton 
-                  services include Google My Business optimization, social media setup, and review management 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L3 7V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V7L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12L11 14L15 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Online Marketing That Works</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Beyond just web design, we help promote your business online. Our digital marketing Fredericton
+                  services include Google My Business optimization, social media setup, and review management
                   to build your reputation and attract more customers.
                 </p>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🏆</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Competitive Advantage</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Many Fredericton small businesses lack professional web presence. Our custom web design 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9H4V20H20V9H18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M6 9H18V14H6V9Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="12" y1="14" x2="12" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Competitive Advantage</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Many Fredericton small businesses lack professional web presence. Our custom web design
                   and SEO services give you a significant advantage over competitors still relying on word-of-mouth.
                 </p>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📊</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Analytics & Reporting</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Track exactly how many Fredericton customers find your business online through detailed 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="18" y1="20" x2="18" y2="10" stroke="white" strokeWidth="2"/>
+                    <line x1="12" y1="20" x2="12" y2="4" stroke="white" strokeWidth="2"/>
+                    <line x1="6" y1="20" x2="6" y2="14" stroke="white" strokeWidth="2"/>
+                    <line x1="3" y1="20" x2="21" y2="20" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Analytics & Reporting</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Track exactly how many Fredericton customers find your business online through detailed
                   analytics and reporting. Measure ROI from your website investment with transparent metrics.
                 </p>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>⚡</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Fast, Responsive Websites</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Every mobile website we develop loads quickly and performs perfectly on all devices. 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Fast, Responsive Websites</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Every mobile website we develop loads quickly and performs perfectly on all devices.
                   Professional website development with focus on speed and user experience optimization.
                 </p>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🛡️</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Security & Maintenance</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Comprehensive website maintenance Fredericton services including security monitoring, 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12L11 14L15 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Security & Maintenance</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Comprehensive website maintenance Fredericton services including security monitoring,
                   regular backups, and software updates. Protect your business investment with proactive care.
                 </p>
               </div>
@@ -1170,7 +1553,7 @@ export const FrederictonWebDesignPage = () => {
             <div className="section-header">
               <h2 className="section-title">What Your Fredericton Business Website Includes</h2>
               <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
-                Every custom web design Fredericton project includes essential features that help contractors 
+                Every custom web design Fredericton project includes essential features that help contractors
                 and small businesses get found online and convert visitors into customers.
               </p>
             </div>
@@ -1181,20 +1564,47 @@ export const FrederictonWebDesignPage = () => {
               gap: '2rem',
               marginTop: '2rem'
             }}>
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📱</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Mobile Website Optimization</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Your mobile website Fredericton customers will love. Every site is fully responsive and 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18" stroke="white" strokeWidth="2"/>
+                    <path d="M12 8L10 10L12 12L14 10L12 8Z" fill="white"/>
+                    <line x1="12" y1="8" x2="12" y2="6" stroke="white" strokeWidth="1"/>
+                    <line x1="12" y1="12" x2="12" y2="14" stroke="white" strokeWidth="1"/>
+                    <line x1="10" y1="10" x2="8" y2="10" stroke="white" strokeWidth="1"/>
+                    <line x1="14" y1="10" x2="16" y2="10" stroke="white" strokeWidth="1"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Mobile Website Optimization</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Your mobile website Fredericton customers will love. Every site is fully responsive and
                   loads fast on smartphones - critical since 70% of local searches happen on mobile devices.
                 </p>
-                <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
+                <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem', textAlign: 'left'}}>
                   <li>Fast loading on all mobile devices</li>
                   <li>Easy-to-tap phone and email buttons</li>
                   <li>Mobile-friendly contact forms</li>
@@ -1202,20 +1612,42 @@ export const FrederictonWebDesignPage = () => {
                 </ul>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🌟</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>WordPress Website Development</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Professional WordPress website Fredericton businesses trust. Easy to update, secure, 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <text x="12" y="17" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">W</text>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>WordPress Website Development</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Professional WordPress website Fredericton businesses trust. Easy to update, secure,
                   and built with the world's most popular website platform that powers 40% of the internet.
                 </p>
-                <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
+                <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem', textAlign: 'left'}}>
                   <li>Easy content management system</li>
                   <li>Regular security updates included</li>
                   <li>Professional themes and plugins</li>
@@ -1223,20 +1655,42 @@ export const FrederictonWebDesignPage = () => {
                 </ul>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🎯</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Local SEO Optimization</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Every website includes comprehensive SEO services Fredericton businesses need to get 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="white" strokeWidth="2" fill="none"/>
+                    <circle cx="12" cy="10" r="3" stroke="white" strokeWidth="2" fill="none"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Local SEO Optimization</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Every website includes comprehensive SEO services Fredericton businesses need to get
                   found by local customers. We optimize for location-based searches that drive real business.
                 </p>
-                <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
+                <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem', textAlign: 'left'}}>
                   <li>Google My Business integration</li>
                   <li>Local keyword optimization</li>
                   <li>Fredericton location pages</li>
@@ -1244,20 +1698,42 @@ export const FrederictonWebDesignPage = () => {
                 </ul>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>💬</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Lead Generation Tools</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Built-in tools to capture more leads from your website visitors. Contact forms, quote 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L8 8H2L6 14L2 22L12 17L22 22L18 14L22 8H16L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                    <circle cx="12" cy="12" r="2" fill="white"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Lead Generation Tools</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Built-in tools to capture more leads from your website visitors. Contact forms, quote
                   request systems, and call-to-action buttons that convert browsers into customers.
                 </p>
-                <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
+                <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem', textAlign: 'left'}}>
                   <li>Custom contact and quote forms</li>
                   <li>Prominent phone number display</li>
                   <li>Service area optimization</li>
@@ -1265,20 +1741,43 @@ export const FrederictonWebDesignPage = () => {
                 </ul>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>🛡️</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Security & Reliability</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  Your business website stays secure and online 24/7. Professional hosting, SSL certificates, 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <rect x="10" y="10" width="4" height="5" rx="1" stroke="white" strokeWidth="2"/>
+                    <path d="M10 10V8C10 6.9 10.9 6 12 6C13.1 6 14 6.9 14 8V10" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Security & Reliability</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  Your business website stays secure and online 24/7. Professional hosting, SSL certificates,
                   regular backups, and security monitoring included with every project.
                 </p>
-                <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
+                <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem', textAlign: 'left'}}>
                   <li>SSL security certificates</li>
                   <li>Regular automated backups</li>
                   <li>99.9% uptime guarantee</li>
@@ -1286,20 +1785,47 @@ export const FrederictonWebDesignPage = () => {
                 </ul>
               </div>
               
-              <div className="service-card" style={{
-                background: 'white',
+              <div className="service-card professional-card" style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
                 padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <div style={{fontSize: '3rem', marginBottom: '1rem', textAlign: 'center'}}>📊</div>
-                <h3 style={{color: colors.primary, marginBottom: '1rem', textAlign: 'center'}}>Performance Tracking</h3>
-                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
-                  See exactly how your website investment is paying off. Google Analytics setup, 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  color: 'white',
+                  margin: '0 auto 1rem auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 20V4" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M3 20H21" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M7 16L11 10L15 13L19 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="7" cy="16" r="1.5" fill="white"/>
+                    <circle cx="11" cy="10" r="1.5" fill="white"/>
+                    <circle cx="15" cy="13" r="1.5" fill="white"/>
+                    <circle cx="19" cy="7" r="1.5" fill="white"/>
+                  </svg>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Performance Tracking</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6', textAlign: 'center'}}>
+                  See exactly how your website investment is paying off. Google Analytics setup,
                   monthly reports, and performance monitoring to track leads and customer inquiries.
                 </p>
-                <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem'}}>
+                <ul style={{color: colors.text.secondary, marginTop: '1rem', paddingLeft: '1rem', textAlign: 'left'}}>
                   <li>Google Analytics integration</li>
                   <li>Monthly performance reports</li>
                   <li>Lead tracking and analysis</li>
@@ -1678,45 +2204,47 @@ export const FrederictonWebDesignPage = () => {
             
             {/* Centered Ready to Get Started */}
             <div style={{marginTop: '3rem', display: 'flex', justifyContent: 'center'}}>
-              <div className="service-card" style={{
+              <div style={{
                 background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '2px solid ' + colors.primary,
+                padding: '2.5rem',
+                borderRadius: '16px',
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.15), 0 2px 8px rgba(0, 0, 0, 0.05)',
                 textAlign: 'center',
-                maxWidth: '500px',
-                width: '100%'
+                maxWidth: '600px',
+                width: '100%',
+                border: '2px solid rgba(31, 124, 255, 0.2)'
               }}>
-                <h4 style={{color: colors.primary, marginBottom: '1rem'}}>Ready to Get Started?</h4>
-                <p style={{color: colors.text.secondary, marginBottom: '1.5rem', lineHeight: '1.6'}}>Contact our local web designer Fredericton team for a free consultation and custom quote.</p>
-                <div style={{display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap'}}>
-                  <a href="/contact" className="hero-button" style={{
+                <h3 style={{color: '#1F7CFF', marginBottom: '1.5rem', fontSize: '1.8rem'}}>Ready to Get Started?</h3>
+                <p style={{color: colors.text.secondary, marginBottom: '2rem', lineHeight: '1.6', fontSize: '1.1rem'}}>
+                  Contact our local web designer Fredericton team for a free consultation and custom quote.
+                </p>
+                <button
+                  onClick={() => window.location.href = '#/contact'}
+                  style={{
                     background: 'linear-gradient(135deg, #FFC600 0%, #FFB800 100%)',
                     color: '#1a1a2e',
-                    padding: '12px 24px',
+                    padding: '16px 40px',
                     borderRadius: '50px',
                     textDecoration: 'none',
-                    fontSize: '1rem',
+                    fontSize: '1.1rem',
                     fontWeight: '600',
-                    display: 'inline-block',
+                    border: 'none',
+                    cursor: 'pointer',
                     boxShadow: '0 6px 20px rgba(31, 124, 255, 0.4)',
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                    border: 'none'
-                  }}>Get Free Quote</a>
-                  <a href="/free-example" className="secondary-button" style={{
-                    background: 'transparent',
-                    color: '#1F7CFF',
-                    border: '2px solid #1F7CFF',
-                    padding: '12px 24px',
-                    fontSize: '1rem',
-                    fontWeight: '600',
-                    borderRadius: '50px',
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                    textDecoration: 'none',
+                    transition: 'all 0.3s ease',
                     display: 'inline-block'
-                  }}>See Example</a>
-                </div>
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.transform = 'translateY(-3px)';
+                    e.target.style.boxShadow = '0 8px 30px rgba(255, 198, 0, 0.6)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 6px 20px rgba(31, 124, 255, 0.4)';
+                  }}
+                >
+                  Get Free Quote
+                </button>
               </div>
             </div>
             
@@ -2086,6 +2614,15 @@ const locationStyles = `
 // Inject additional styles
 if (typeof document !== 'undefined') {
   const styleSheet = document.createElement('style');
-  styleSheet.textContent = locationStyles;
+  styleSheet.textContent = locationStyles + `
+    .no-hover-card:hover {
+      transform: none !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    }
+    .no-hover-card .hero-button:hover,
+    .no-hover-card .secondary-button:hover {
+      transform: translateY(-3px) !important;
+    }
+  `;
   document.head.appendChild(styleSheet);
 }

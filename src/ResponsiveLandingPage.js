@@ -541,17 +541,17 @@ export const ResponsiveLandingPage = () => {
                 position: 'relative',
                 overflow: 'hidden'
               }}>
-                <div className="service-icon floating-icon" style={{ 
-                  fontSize: '3rem', 
+                <div className="service-icon floating-icon" style={{
+                  fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -578,17 +578,17 @@ export const ResponsiveLandingPage = () => {
                 position: 'relative',
                 overflow: 'hidden'
               }}>
-                <div className="service-icon floating-icon" style={{ 
-                  fontSize: '3rem', 
+                <div className="service-icon floating-icon" style={{
+                  fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -616,17 +616,17 @@ export const ResponsiveLandingPage = () => {
                 position: 'relative',
                 overflow: 'hidden'
               }}>
-                <div className="service-icon floating-icon" style={{ 
-                  fontSize: '3rem', 
+                <div className="service-icon floating-icon" style={{
+                  fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -665,9 +665,9 @@ export const ResponsiveLandingPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(225, 29, 72, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease'
                 }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" viewBox="0 0 16 16">
@@ -855,9 +855,9 @@ export const ResponsiveLandingPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(34, 197, 94, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease'
                 }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" viewBox="0 0 16 16">
@@ -894,17 +894,17 @@ export const ResponsiveLandingPage = () => {
                 opacity: 1,
                 visibility: 'visible'
               }}>
-                <div className="service-icon" style={{ 
-                  fontSize: '3rem', 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(245, 158, 11, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -949,9 +949,9 @@ export const ResponsiveLandingPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -989,17 +989,17 @@ export const ResponsiveLandingPage = () => {
                 opacity: 1,
                 visibility: 'visible'
               }}>
-                <div className="service-icon" style={{ 
-                  fontSize: '3rem', 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(124, 58, 237, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease'
                 }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" viewBox="0 0 16 16">
@@ -1036,17 +1036,17 @@ export const ResponsiveLandingPage = () => {
                 opacity: 1,
                 visibility: 'visible'
               }}>
-                <div className="service-icon" style={{ 
-                  fontSize: '3rem', 
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
                   marginBottom: '1rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(236, 72, 153, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1091,9 +1091,9 @@ export const ResponsiveLandingPage = () => {
                   justifyContent: 'center',
                   width: '80px',
                   height: '80px',
-                  background: 'linear-gradient(135deg, #1e293b, #334155)',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                   borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(225, 29, 72, 0.3)',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease'
                 }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" viewBox="0 0 16 16">
@@ -1179,12 +1179,22 @@ export const ResponsiveLandingPage = () => {
               }}>
                 <div style={{
                   fontSize: '2rem',
-                  marginBottom: '1rem'
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1rem auto'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="#1F7CFF" strokeWidth="2" fill="none"/>
-                    <rect x="8" y="16" width="8" height="2" fill="#1F7CFF"/>
-                    <rect x="9" y="18" width="6" height="1" fill="#1F7CFF"/>
+                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="8" y="16" width="8" height="2" fill="white"/>
+                    <rect x="9" y="18" width="6" height="1" fill="white"/>
                   </svg>
                 </div>
                 <h4 style={{
@@ -1215,11 +1225,21 @@ export const ResponsiveLandingPage = () => {
               }}>
                 <div style={{
                   fontSize: '2rem',
-                  marginBottom: '1rem'
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1rem auto'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="#1F7CFF" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                    <path d="M9 12l2 2 4-4" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <h4 style={{
@@ -1250,15 +1270,25 @@ export const ResponsiveLandingPage = () => {
               }}>
                 <div style={{
                   fontSize: '2rem',
-                  marginBottom: '1rem'
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1rem auto'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="8" stroke="#1F7CFF" strokeWidth="2" fill="none"/>
-                    <path d="M12 6v6l4 2" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="12" cy="5" r="1" fill="#1F7CFF"/>
-                    <circle cx="12" cy="19" r="1" fill="#1F7CFF"/>
-                    <circle cx="19" cy="12" r="1" fill="#1F7CFF"/>
-                    <circle cx="5" cy="12" r="1" fill="#1F7CFF"/>
+                    <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="12" cy="5" r="1" fill="white"/>
+                    <circle cx="12" cy="19" r="1" fill="white"/>
+                    <circle cx="19" cy="12" r="1" fill="white"/>
+                    <circle cx="5" cy="12" r="1" fill="white"/>
                   </svg>
                 </div>
                 <h4 style={{
@@ -1289,9 +1319,19 @@ export const ResponsiveLandingPage = () => {
               }}>
                 <div style={{
                   fontSize: '2rem',
-                  marginBottom: '1rem'
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1rem auto'
                 }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1F7CFF" viewBox="0 0 16 16">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
                   </svg>
                 </div>

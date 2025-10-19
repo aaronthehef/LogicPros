@@ -454,7 +454,7 @@ export const SaintJohnWebDesignPage = () => {
                 justifyContent: 'center'
               }}>
                 {/* Web Design Card */}
-                <a href="/services/websites" className="hero-service-card" style={{
+                <div className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(31, 124, 255, 0.15), rgba(31, 124, 255, 0.08))',
                   border: '2px solid rgba(31, 124, 255, 0.3)',
                   borderRadius: '12px',
@@ -465,8 +465,7 @@ export const SaintJohnWebDesignPage = () => {
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   minHeight: '80px',
-                  textDecoration: 'none',
-                  cursor: 'pointer',
+                  cursor: 'default',
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   animation: 'pulseGlow 3s ease-in-out infinite'
                 }}>
@@ -478,7 +477,8 @@ export const SaintJohnWebDesignPage = () => {
                       fontSize: '0.8rem',
                       textDecoration: 'none',
                       fontWeight: '500',
-                      marginTop: '0.25rem'
+                      marginTop: '0.25rem',
+                      cursor: 'default'
                     }}>Learn More</span>
                   </div>
                   <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
@@ -488,10 +488,10 @@ export const SaintJohnWebDesignPage = () => {
                       <rect x="9" y="18" width="6" height="1" fill="white"/>
                     </svg>
                   </div>
-                </a>
+                </div>
 
                 {/* SEO Card */}
-                <a href="/services/seo" className="hero-service-card" style={{
+                <div className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(31, 124, 255, 0.15), rgba(31, 124, 255, 0.08))',
                   border: '2px solid rgba(31, 124, 255, 0.3)',
                   borderRadius: '12px',
@@ -502,8 +502,7 @@ export const SaintJohnWebDesignPage = () => {
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   minHeight: '80px',
-                  textDecoration: 'none',
-                  cursor: 'pointer',
+                  cursor: 'default',
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   animation: 'pulseGlow 3s ease-in-out infinite 1s'
                 }}>
@@ -515,7 +514,8 @@ export const SaintJohnWebDesignPage = () => {
                       fontSize: '0.8rem',
                       textDecoration: 'none',
                       fontWeight: '500',
-                      marginTop: '0.25rem'
+                      marginTop: '0.25rem',
+                      cursor: 'default'
                     }}>Learn More</span>
                   </div>
                   <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
@@ -528,10 +528,10 @@ export const SaintJohnWebDesignPage = () => {
                       <circle cx="5" cy="12" r="1" fill="white"/>
                     </svg>
                   </div>
-                </a>
+                </div>
 
                 {/* Marketing Card */}
-                <a href="/services/marketing" className="hero-service-card" style={{
+                <div className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(31, 124, 255, 0.15), rgba(31, 124, 255, 0.08))',
                   border: '2px solid rgba(31, 124, 255, 0.3)',
                   borderRadius: '12px',
@@ -542,8 +542,7 @@ export const SaintJohnWebDesignPage = () => {
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   minHeight: '80px',
-                  textDecoration: 'none',
-                  cursor: 'pointer',
+                  cursor: 'default',
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   animation: 'pulseGlow 3s ease-in-out infinite 2s'
                 }}>
@@ -555,7 +554,8 @@ export const SaintJohnWebDesignPage = () => {
                       fontSize: '0.8rem',
                       textDecoration: 'none',
                       fontWeight: '500',
-                      marginTop: '0.25rem'
+                      marginTop: '0.25rem',
+                      cursor: 'default'
                     }}>Learn More</span>
                   </div>
                   <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
@@ -563,7 +563,7 @@ export const SaintJohnWebDesignPage = () => {
                       <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
                     </svg>
                   </div>
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -2106,61 +2106,47 @@ export const SaintJohnWebDesignPage = () => {
             
             {/* Centered Ready to Get Started */}
             <div style={{marginTop: '3rem', display: 'flex', justifyContent: 'center'}}>
-              <div className="service-card no-hover-card" style={{
+              <div style={{
                 background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                border: '2px solid ' + colors.primary,
+                padding: '2.5rem',
+                borderRadius: '16px',
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.15), 0 2px 8px rgba(0, 0, 0, 0.05)',
                 textAlign: 'center',
-                maxWidth: '500px',
-                width: '100%'
+                maxWidth: '600px',
+                width: '100%',
+                border: '2px solid rgba(31, 124, 255, 0.2)'
               }}>
-                <h4 style={{color: colors.primary, marginBottom: '1rem'}}>Ready to Get Started?</h4>
-                <p style={{color: colors.text.secondary, marginBottom: '1.5rem', lineHeight: '1.6'}}>Contact our local web design team for a free consultation and custom quote.</p>
-                <div style={{display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap'}}>
-                  <a href="/contact" className="hero-button" style={{
-                    background: 'linear-gradient(135deg, #FFC600 0%, #FFB800 100%)',
-                    color: '#1a1a2e',
-                    padding: '12px 24px',
+                <h3 style={{color: '#1F7CFF', marginBottom: '1.5rem', fontSize: '1.8rem'}}>Ready to Get Started?</h3>
+                <p style={{color: colors.text.secondary, marginBottom: '2rem', lineHeight: '1.6', fontSize: '1.1rem'}}>
+                  Contact our local web design Saint John team for a free consultation and custom quote.
+                </p>
+                <button
+                  onClick={() => window.location.href = '#/contact'}
+                  style={{
+                    background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                    color: '#000',
+                    padding: '16px 40px',
                     borderRadius: '50px',
                     textDecoration: 'none',
-                    fontSize: '1rem',
+                    fontSize: '1.1rem',
                     fontWeight: '600',
-                    display: 'inline-block',
+                    border: 'none',
+                    cursor: 'pointer',
                     boxShadow: '0 6px 20px rgba(31, 124, 255, 0.4)',
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                    border: 'none'
+                    transition: 'all 0.3s ease',
+                    display: 'inline-block'
                   }}
-                  onMouseEnter={(e) => {
-                    e.target.style.boxShadow = '0 8px 30px rgba(255, 198, 0, 0.6)';
+                  onMouseOver={(e) => {
                     e.target.style.transform = 'translateY(-3px)';
+                    e.target.style.boxShadow = '0 8px 30px rgba(255, 215, 0, 0.5)';
                   }}
-                  onMouseLeave={(e) => {
-                    e.target.style.boxShadow = '0 6px 20px rgba(31, 124, 255, 0.4)';
+                  onMouseOut={(e) => {
                     e.target.style.transform = 'translateY(0)';
-                  }}>Get Free Quote</a>
-                  <a href="/free-example" className="secondary-button" style={{
-                    background: 'white',
-                    color: colors.primary,
-                    padding: '12px 24px',
-                    borderRadius: '50px',
-                    textDecoration: 'none',
-                    fontSize: '1rem',
-                    fontWeight: '600',
-                    display: 'inline-block',
-                    border: '2px solid ' + colors.primary,
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                    e.target.style.boxShadow = '0 6px 20px rgba(31, 124, 255, 0.4)';
                   }}
-                  onMouseEnter={(e) => {
-                    e.target.style.background = colors.primary;
-                    e.target.style.color = 'white';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.background = 'white';
-                    e.target.style.color = colors.primary;
-                  }}>See Example</a>
-                </div>
+                >
+                  Get Free Quote
+                </button>
               </div>
             </div>
             
