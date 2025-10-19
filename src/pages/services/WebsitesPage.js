@@ -8,6 +8,17 @@ import { colors } from '../../styles/colors';
 
 export const WebsitesPage = () => {
   useEffect(() => {
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Professional website design and development services. Custom WordPress and React websites with SEO optimization, responsive design, and fast turnaround. Transform your online presence with our expert web design team.');
+    }
+    
+    // Update page title
+    const pageTitle = document.querySelector('title');
+    if (pageTitle) {
+      pageTitle.textContent = 'Professional Website Design & Development Services | LogicPros';
+    }
     // Hero background animation styles
     const style = document.createElement('style');
     style.textContent = `
@@ -57,6 +68,129 @@ export const WebsitesPage = () => {
       .floating-particle:nth-child(4) { animation: float1 22s ease-in-out infinite reverse; }
       .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
       .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
+      .hero-button {
+        background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
+        color: #000 !important;
+        padding: 18px 40px !important;
+        border-radius: 50px !important;
+        text-decoration: none !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border: none !important;
+        box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: inline-block !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+      }
+      .hero-button:hover {
+        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5) !important;
+        transform: translateY(-3px) !important;
+        color: #000 !important;
+      }
+      .secondary-button {
+        background: transparent !important;
+        color: #1F7CFF !important;
+        border: 2px solid #1F7CFF !important;
+        padding: 18px 40px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border-radius: 50px !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+      }
+      .secondary-button:hover {
+        box-shadow: 0 8px 25px rgba(31, 124, 255, 0.4) !important;
+        transform: translateY(-3px) !important;
+        border-color: rgba(31, 124, 255, 0.8) !important;
+      }
+      /* White secondary button styling for dark backgrounds */
+      .secondary-button[style*="color: white"] {
+        color: white !important;
+        border-color: white !important;
+      }
+      .secondary-button[style*="color: white"]:hover {
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4) !important;
+        border-color: rgba(255, 255, 255, 0.8) !important;
+      }
+      
+      /* Hero Service Card Animations */
+      @keyframes pulseGlow {
+        0%, 100% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.15), 0 0 20px rgba(29, 122, 175, 0.3);
+        }
+        50% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.25), 0 0 30px rgba(29, 122, 175, 0.5);
+        }
+      }
+
+      .hero-service-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        box-shadow: 0 20px 60px rgba(29, 122, 175, 0.3), 0 0 40px rgba(29, 122, 175, 0.6) !important;
+        border-color: rgba(29, 122, 175, 0.8) !important;
+      }
+
+      .hero-service-card:hover h3 {
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(29, 122, 175, 0.8) !important;
+      }
+
+      .hero-service-card:hover svg {
+        transform: scale(1.1) !important;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) !important;
+      }
+      
+      /* Professional Service Cards Hover Effects */
+      .professional-card:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 20px 60px rgba(31, 124, 255, 0.15), 0 8px 32px rgba(31, 124, 255, 0.2) !important;
+        border-color: rgba(31, 124, 255, 0.3) !important;
+      }
+      
+      .professional-card:hover .service-icon {
+        transform: scale(1.1) rotate(5deg) !important;
+        box-shadow: 0 12px 35px rgba(31, 124, 255, 0.4) !important;
+      }
+      
+      .professional-card:hover .feature-highlight {
+        background: linear-gradient(135deg, #1F7CFF, #1e40af) !important;
+        transform: scale(1.05) !important;
+      }
+      
+      /* Override existing service card styles for professional cards */
+      .professional-card .service-icon {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 1rem !important;
+        background-color: transparent !important;
+        border-radius: 20px !important;
+      }
+      
+      .professional-card h3 {
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.3 !important;
+      }
+      
+      .professional-card p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 0 !important;
+      }
+      
+      .feature-highlight {
+        background: linear-gradient(135deg, #1F7CFF, #1e40af);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
     `;
     document.head.appendChild(style);
     
@@ -80,166 +214,266 @@ export const WebsitesPage = () => {
         <Animations />
         {/* Hero Section */}
         <section className="hero-section homepage-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', overflow: 'hidden' }}>
-          <svg 
-            className="hero-background-svg"
-            style={{ 
-              position: 'absolute', 
-              top: '-10%', 
-              left: '-10%', 
-              width: '120%', 
-              height: '120%', 
+          {/* Circuit Board Background - matching front page */}
+          <svg
+            className="circuit-background"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
               zIndex: 1,
-              opacity: 0.7
-            }} 
-            viewBox="0 0 1200 800" 
-            xmlns="http://www.w3.org/2000/svg"
+              opacity: 0.4
+            }}
+            viewBox="0 0 1200 800"
+            preserveAspectRatio="xMidYMid slice"
           >
             <defs>
-              <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#1d7aaf" />
-                <stop offset="100%" stopColor="#1e40af" />
-              </linearGradient>
-              <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1d7aaf" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#1e40af" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#1d7aaf" stopOpacity="0.8" />
-              </linearGradient>
+              {/* Subtle glow filter */}
+              <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
             </defs>
-            
-            {/* Main Grid Lines */}
-            <g className="grid-lines" filter="blur(0.5px)">
-              <line x1="0" y1="100" x2="1200" y2="100" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.4" strokeDasharray="20,10" />
-              <line x1="0" y1="200" x2="1200" y2="200" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="0" y1="300" x2="1200" y2="300" stroke="#1d7aaf" strokeWidth="2" opacity="0.5" strokeDasharray="25,5" />
-              <line x1="0" y1="400" x2="1200" y2="400" stroke="#1e40af" strokeWidth="1" opacity="0.2" strokeDasharray="30,10" />
-              <line x1="0" y1="500" x2="1200" y2="500" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.3" strokeDasharray="20,15" />
-              
-              <line x1="200" y1="0" x2="200" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,10" />
-              <line x1="400" y1="0" x2="400" y2="800" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="600" y1="0" x2="600" y2="800" stroke="#1d7aaf" strokeWidth="2" opacity="0.4" strokeDasharray="25,5" />
-              <line x1="800" y1="0" x2="800" y2="800" stroke="#1e40af" strokeWidth="1" opacity="0.1" strokeDasharray="30,10" />
-              <line x1="1000" y1="0" x2="1000" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,15" />
-            </g>
 
-            {/* Circuit Board Patterns */}
-            <g className="circuit-patterns" filter="blur(0.3px)">
-              <path d="M100,150 L250,150 L270,170 L400,170 L420,150 L600,150" stroke="#1d7aaf" strokeWidth="1" opacity="0.4" fill="none" strokeDasharray="5,3" />
-              <path d="M150,250 L300,250 L320,230 L500,230 L520,250 L750,250" stroke="#1e40af" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="8,4" />
-              <path d="M80,350 L200,350 L220,330 L350,330 L370,350 L550,350" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.5" fill="none" strokeDasharray="6,2" />
-              
-              <path d="M300,50 L300,180 L280,200 L280,320 L300,340 L300,450" stroke="#1e40af" strokeWidth="1" opacity="0.2" fill="none" strokeDasharray="4,3" />
-              <path d="M500,80 L500,200 L520,220 L520,300 L500,320 L500,480" stroke="#1d7aaf" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="7,3" />
-              <path d="M700,60 L700,150 L680,170 L680,280 L700,300 L700,420" stroke="#1e40af" strokeWidth="1.5" opacity="0.4" fill="none" strokeDasharray="5,4" />
-            </g>
+            {/* Professional circuit background with slow panning */}
+            <g transform="translate(0,0)">
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0; -500,0; -500,-350; 0,-350; 0,0"
+                dur="150s"
+                repeatCount="indefinite"
+              />
 
-            {/* Tech Nodes/Connection Points */}
-            <g className="tech-nodes">
-              <circle cx="150" cy="120" r="4" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="270" cy="170" r="3" fill="#1e40af" opacity="0.8" />
-              <circle cx="420" cy="150" r="5" fill="#1d7aaf" opacity="1.0" />
-              <circle cx="350" cy="180" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="520" cy="250" r="4" fill="#1d7aaf" opacity="0.8" />
-              <circle cx="650" cy="110" r="6" fill="#1e40af" opacity="0.9" />
-              <circle cx="850" cy="200" r="3" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="950" cy="140" r="4" fill="#1e40af" opacity="0.8" />
-              <circle cx="300" cy="340" r="5" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="500" cy="320" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="700" cy="300" r="4" fill="#1d7aaf" opacity="0.8" />
-            </g>
+              {/* Clean circuit grid layout */}
+              {[0, 1, 2, 3, 4, 5].map(layerX => (
+                [...Array(4)].map((_, layerY) => (
+                  <g key={`layer-${layerX}-${layerY}`} transform={`translate(${layerX * 400}, ${layerY * 250})`}>
 
-            {/* Glowing Orbs */}
-            <g className="glowing-orbs">
-              <circle cx="100" cy="100" r="8" fill="url(#techGradient)" opacity="0.4" />
-              <circle cx="900" cy="300" r="6" fill="url(#techGradient)" opacity="0.5" />
-              <circle cx="1100" cy="150" r="10" fill="url(#techGradient)" opacity="0.3" />
-              <circle cx="200" cy="400" r="7" fill="url(#techGradient)" opacity="0.4" />
+                    {/* Single clean horizontal trace */}
+                    <g stroke="#1F7CFF" strokeWidth="1.5" fill="none">
+                      <path d="M50 120 L350 120" strokeDasharray="20,12" opacity="0.5">
+                        <animate attributeName="stroke-dashoffset" values="0;-32" dur="3s" repeatCount="indefinite"/>
+                      </path>
+                    </g>
+
+                    {/* Single clean vertical trace */}
+                    {(layerX + layerY) % 2 === 0 && (
+                      <g stroke="#22c55e" strokeWidth="1.5" fill="none">
+                        <path d="M200 30 L200 220" strokeDasharray="18,10" opacity="0.4">
+                          <animate attributeName="stroke-dashoffset" values="0;-28" dur="2.8s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Occasional L-shaped route */}
+                    {(layerX + layerY) % 3 === 0 && (
+                      <g stroke="#f59e0b" strokeWidth="1" fill="none">
+                        <path d="M100 80 L100 160 L300 160" strokeDasharray="15,8" opacity="0.35">
+                          <animate attributeName="stroke-dashoffset" values="0;-23" dur="3.5s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Subtle floating dots */}
+                    <g>
+                      {[...Array(3)].map((_, dotIndex) => {
+                        const x = 80 + (dotIndex * 120);
+                        const y = 60 + (dotIndex * 40);
+                        const delay = dotIndex * 1.5;
+                        return (
+                          <circle
+                            key={`dot-${dotIndex}`}
+                            cx={x}
+                            cy={y}
+                            r="1.5"
+                            fill="#1F7CFF"
+                            opacity="0.6"
+                          >
+                            <animateTransform
+                              attributeName="transform"
+                              type="translate"
+                              values="0,0; 8,-12; -5,10; 0,0"
+                              dur="6s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                            <animate
+                              attributeName="opacity"
+                              values="0.3;0.6;0.3"
+                              dur="4s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                          </circle>
+                        );
+                      })}
+                    </g>
+                  </g>
+                ))
+              ))}
             </g>
           </svg>
 
-          {/* Floating Particles */}
-          <div className="floating-particle" style={{ top: '15%', left: '10%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '25%', right: '15%', width: '6px', height: '6px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '45%', left: '20%', width: '3px', height: '3px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '35%', right: '25%', width: '5px', height: '5px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '60%', left: '15%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '70%', right: '20%', width: '3px', height: '3px', background: '#1e40af', borderRadius: '50%' }}></div>
-
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-            <div className="hero-content" style={{ color: 'white', textAlign: 'center' }}>
-              <h1 style={{ 
-                fontSize: 'clamp(2.5rem, 6vw, 5rem)', 
-                fontWeight: '900', 
-                lineHeight: '0.9', 
-                marginBottom: '1rem',
-                color: 'white',
-                textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-                letterSpacing: '-0.02em'
-              }}>Professional Website Design & Hosting</h1>
-              <p style={{ 
-                fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
-                marginBottom: '40px',
-                maxWidth: '700px',
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                lineHeight: '1.7',
-                fontWeight: '300',
-                color: 'rgba(255, 255, 255, 0.95)',
-                textShadow: '0 2px 4px rgba(0, 0, 0, 0.4)'
-              }}>
-                WordPress or React websites built for SEO and lead generation. 
-                Professional copywriting, mobile-responsive design, and 2-4 week turnaround. 
-                Perfect for trades and service businesses across New Brunswick and the Maritimes.
-              </p>
-              <div style={{ 
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '4rem', alignItems: 'center' }}>
+              <div style={{ textAlign: 'left', color: 'white' }}>
+                <h1 style={{
+                  fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                  fontWeight: '900',
+                  lineHeight: '0.9',
+                  marginBottom: '1rem',
+                  color: '#1F7CFF',
+                  textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
+                }}>
+                  Professional Website Design & Hosting
+                </h1>
+                <p style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+                  color: '#e2e8f0',
+                  marginBottom: '2.5rem',
+                  fontWeight: '300',
+                  maxWidth: '500px'
+                }}>
+                  Custom WordPress and React websites built to elevate your brand and drive results.
+                  Professional design, SEO optimization, and responsive layouts with fast 2-4 week delivery.
+                  Helping businesses across New Brunswick and the Maritimes establish a powerful online presence.
+                </p>
+                
+                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                  <a href="/free-example" className="hero-button">
+                    Get Your FREE Website Example
+                  </a>
+                  
+                  <a href="/contact" className="hero-button">
+                    Get Free Quote
+                  </a>
+                </div>
+              </div>
+
+              <div className="hero-service-cards" style={{
                 display: 'flex',
-                justifyContent: 'center',
-                gap: '15px',
-                flexWrap: 'wrap'
+                flexDirection: 'column',
+                gap: '1rem',
+                height: 'auto',
+                justifyContent: 'center'
               }}>
-                <a href="/contact" style={{
-                  display: 'inline-block',
-                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                  color: 'white',
-                  border: 'none',
-                  padding: '18px 40px',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  borderRadius: '50px',
-                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  textDecoration: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
-                  e.target.style.transform = 'translateY(-3px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
-                  e.target.style.transform = 'translateY(0)';
-                }}>Schedule Free Consultation</a>
-                <a href="/free-example" style={{
-                  display: 'inline-block',
-                  background: 'transparent',
-                  color: 'white',
-                  border: '2px solid rgba(255, 255, 255, 0.3)',
-                  padding: '18px 40px',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  borderRadius: '50px',
+                {/* Web Design Card */}
+                <a href="/services/websites" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
                   backdropFilter: 'blur(10px)',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  textDecoration: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
-                  e.target.style.transform = 'translateY(-3px)';
-                  e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.boxShadow = 'none';
-                  e.target.style.transform = 'translateY(0)';
-                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-                }}>Get Free Website Example</a>
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Design</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Custom Websites & User Experience</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                      <rect x="8" y="16" width="8" height="2" fill="white"/>
+                      <rect x="9" y="18" width="6" height="1" fill="white"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* SEO Card */}
+                <a href="/services/seo" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 1s'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Optimize</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Local SEO & Google Ranking</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
+                      <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="12" cy="5" r="1" fill="white"/>
+                      <circle cx="12" cy="19" r="1" fill="white"/>
+                      <circle cx="19" cy="12" r="1" fill="white"/>
+                      <circle cx="5" cy="12" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* Marketing Card */}
+                <a href="/services/marketing" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 2s'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Grow</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Digital Marketing & Lead Generation</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -249,59 +483,77 @@ export const WebsitesPage = () => {
         <section className="section" style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-              <h2 style={{ 
-                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
-                fontWeight: '700', 
-                color: colors.text.primary,
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
                 marginBottom: '20px',
                 lineHeight: '1.2'
               }}>Choose Your Perfect Platform</h2>
-              <p style={{ 
-                fontSize: '1.1rem', 
-                color: colors.text.secondary, 
-                maxWidth: '700px', 
+              <p style={{
+                fontSize: '1.1rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                We recommend the best platform based on your needs, goals, and technical comfort level. 
+                We recommend the best platform based on your needs, goals, and technical comfort level.
                 All options include mobile-responsive design, SEO optimization, and lead capture features.
               </p>
             </div>
             
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
               gap: '30px',
               maxWidth: '1000px',
               margin: '0 auto'
             }}>
-              <div style={{ 
-                background: 'white',
-                borderRadius: '20px',
+              <div className="service-card professional-card" style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
                 padding: '40px 35px',
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: `2px solid ${colors.primary}`,
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative',
-                transition: 'all 0.3s ease'
+                overflow: 'hidden'
               }}>
-                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                  <div style={{ 
-                    fontSize: '3rem', 
-                    marginBottom: '15px'
-                  }}>🌐</div>
-                  <h3 style={{ 
-                    fontSize: '1.8rem', 
-                    fontWeight: '700', 
-                    color: colors.text.primary, 
-                    marginBottom: '8px'
-                  }}>WordPress Websites</h3>
-                  <p style={{ 
-                    color: colors.primary, 
-                    fontWeight: '600',
-                    fontSize: '1.1rem'
-                  }}>Most Popular Choice</p>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <text x="12" y="17" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">W</text>
+                  </svg>
                 </div>
-                <ul style={{ 
+                <h3 style={{
+                  fontSize: '1.8rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '8px',
+                  textAlign: 'center'
+                }}>WordPress Websites</h3>
+                <p style={{
+                  color: '#1F7CFF',
+                  fontWeight: '600',
+                  fontSize: '1.1rem',
+                  textAlign: 'center',
+                  marginBottom: '1.5rem'
+                }}>Most Popular Choice</p>
+                <ul style={{
                   listStyle: 'none',
                   padding: 0,
                   marginBottom: '25px'
@@ -313,62 +565,71 @@ export const WebsitesPage = () => {
                     'Flexible hosting options',
                     'Perfect for businesses'
                   ].map((feature, index) => (
-                    <li key={index} style={{ 
+                    <li key={index} style={{
                       padding: '8px 0',
                       fontSize: '1rem',
                       color: colors.text.secondary,
                       display: 'flex',
                       alignItems: 'center'
                     }}>
-                      <span style={{ 
-                        color: colors.primary, 
-                        marginRight: '10px',
-                        fontWeight: 'bold'
-                      }}>✓</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: '10px' }}>
+                        <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <p style={{ 
-                  fontSize: '1rem',
-                  color: colors.text.primary,
-                  fontWeight: '600',
-                  textAlign: 'center',
-                  padding: '15px',
-                  backgroundColor: colors.backgrounds.light,
-                  borderRadius: '12px'
+                <div className="feature-highlight" style={{
+                  textAlign: 'center'
                 }}>
                   <strong>Best for:</strong> Businesses who want full control and easy updates
-                </p>
+                </div>
               </div>
 
-              <div style={{ 
-                background: 'white',
-                borderRadius: '20px',
+              <div className="service-card professional-card" style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
                 padding: '40px 35px',
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: `2px solid ${colors.accent}`,
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative',
-                transition: 'all 0.3s ease'
+                overflow: 'hidden'
               }}>
-                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                  <div style={{ 
-                    fontSize: '3rem', 
-                    marginBottom: '15px'
-                  }}>⚡</div>
-                  <h3 style={{ 
-                    fontSize: '1.8rem', 
-                    fontWeight: '700', 
-                    color: colors.text.primary, 
-                    marginBottom: '8px'
-                  }}>React Websites</h3>
-                  <p style={{ 
-                    color: colors.accent, 
-                    fontWeight: '600',
-                    fontSize: '1.1rem'
-                  }}>Premium Performance</p>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
-                <ul style={{ 
+                <h3 style={{
+                  fontSize: '1.8rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '8px',
+                  textAlign: 'center'
+                }}>React Websites</h3>
+                <p style={{
+                  color: '#1F7CFF',
+                  fontWeight: '600',
+                  fontSize: '1.1rem',
+                  textAlign: 'center',
+                  marginBottom: '1.5rem'
+                }}>Premium Performance</p>
+                <ul style={{
                   listStyle: 'none',
                   padding: 0,
                   marginBottom: '25px'
@@ -380,33 +641,25 @@ export const WebsitesPage = () => {
                     'Superior mobile experience',
                     'Advanced integrations'
                   ].map((feature, index) => (
-                    <li key={index} style={{ 
+                    <li key={index} style={{
                       padding: '8px 0',
                       fontSize: '1rem',
                       color: colors.text.secondary,
                       display: 'flex',
                       alignItems: 'center'
                     }}>
-                      <span style={{ 
-                        color: colors.accent, 
-                        marginRight: '10px',
-                        fontWeight: 'bold'
-                      }}>✓</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: '10px' }}>
+                        <path d="M20 6L9 17L4 12" stroke="#1F7CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <p style={{ 
-                  fontSize: '1rem',
-                  color: colors.text.primary,
-                  fontWeight: '600',
-                  textAlign: 'center',
-                  padding: '15px',
-                  backgroundColor: colors.backgrounds.light,
-                  borderRadius: '12px'
+                <div className="feature-highlight" style={{
+                  textAlign: 'center'
                 }}>
                   <strong>Best for:</strong> Businesses wanting cutting-edge performance and features
-                </p>
+                </div>
               </div>
             </div>
           </div>
@@ -416,9 +669,9 @@ export const WebsitesPage = () => {
         <section className="section" style={{ backgroundColor: 'linear-gradient(135deg, #f8faff 0%, #ffffff 100%)', padding: '80px 0' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-              <h2 style={{ 
-                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', 
-                fontWeight: '700', 
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
                 background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
@@ -428,10 +681,10 @@ export const WebsitesPage = () => {
               }}>
                 Everything You Need to Succeed Online
               </h2>
-              <p style={{ 
-                fontSize: '1.2rem', 
-                color: '#6b7280', 
-                maxWidth: '600px', 
+              <p style={{
+                fontSize: '1.2rem',
+                color: '#6b7280',
+                maxWidth: '600px',
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
@@ -439,344 +692,317 @@ export const WebsitesPage = () => {
               </p>
             </div>
             
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
               gap: '30px',
               marginBottom: '40px'
             }}>
-              {/* AI-Powered Copywriting */}
-              <div style={{ 
-                background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
-                borderRadius: '20px',
+              {/* Professional Copywriting */}
+              <div className="service-card professional-card" style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
                 padding: '40px 30px',
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                overflow: 'hidden'
               }}>
-                <div style={{
-                  position: 'absolute',
-                  top: '-50%',
-                  right: '-20%',
-                  width: '120px',
-                  height: '120px',
-                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
-                  borderRadius: '50%',
-                  zIndex: 0
-                }}></div>
-                <div style={{ position: 'relative', zIndex: 1 }}>
-                  <div style={{ 
-                    fontSize: '3rem', 
-                    marginBottom: '20px',
-                    background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                    borderRadius: '50%',
-                    width: '70px',
-                    height: '70px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '25px'
-                  }}>🤖</div>
-                  <h3 style={{ 
-                    fontSize: '1.5rem', 
-                    fontWeight: '600', 
-                    color: '#1f2937', 
-                    marginBottom: '15px',
-                    lineHeight: '1.3'
-                  }}>Professional Copywriting</h3>
-                  <p style={{ 
-                    color: '#6b7280', 
-                    lineHeight: '1.7',
-                    fontSize: '1rem'
-                  }}>
-                    Professional content written specifically for your industry and target customers. No generic templates or cookie-cutter copy.
-                  </p>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="14 2 14 8 20 8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="10 9 9 9 8 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>Professional Copywriting</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Professional content written specifically for your industry and target customers. No generic templates or cookie-cutter copy.
+                </p>
               </div>
 
               {/* Mobile-Responsive Design */}
-              <div style={{ 
-                background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
-                borderRadius: '20px',
+              <div className="service-card professional-card" style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
                 padding: '40px 30px',
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                overflow: 'hidden'
               }}>
-                <div style={{
-                  position: 'absolute',
-                  top: '-50%',
-                  right: '-20%',
-                  width: '120px',
-                  height: '120px',
-                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
-                  borderRadius: '50%',
-                  zIndex: 0
-                }}></div>
-                <div style={{ position: 'relative', zIndex: 1 }}>
-                  <div style={{ 
-                    fontSize: '3rem', 
-                    marginBottom: '20px',
-                    background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                    borderRadius: '50%',
-                    width: '70px',
-                    height: '70px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '25px'
-                  }}>📱</div>
-                  <h3 style={{ 
-                    fontSize: '1.5rem', 
-                    fontWeight: '600', 
-                    color: '#1f2937', 
-                    marginBottom: '15px',
-                    lineHeight: '1.3'
-                  }}>Mobile-Responsive Design</h3>
-                  <p style={{ 
-                    color: '#6b7280', 
-                    lineHeight: '1.7',
-                    fontSize: '1rem'
-                  }}>
-                    Your website looks perfect and loads fast on all devices - desktop, tablet, and smartphone. Essential for reaching today's mobile customers.
-                  </p>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18" stroke="white" strokeWidth="2"/>
+                  </svg>
                 </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>Mobile-Responsive Design</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Your website looks perfect and loads fast on all devices - desktop, tablet, and smartphone. Essential for reaching today's mobile customers.
+                </p>
               </div>
 
               {/* Local SEO Optimization */}
-              <div style={{ 
-                background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
-                borderRadius: '20px',
+              <div className="service-card professional-card" style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
                 padding: '40px 30px',
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                overflow: 'hidden'
               }}>
-                <div style={{
-                  position: 'absolute',
-                  top: '-50%',
-                  right: '-20%',
-                  width: '120px',
-                  height: '120px',
-                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
-                  borderRadius: '50%',
-                  zIndex: 0
-                }}></div>
-                <div style={{ position: 'relative', zIndex: 1 }}>
-                  <div style={{ 
-                    fontSize: '3rem', 
-                    marginBottom: '20px',
-                    background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                    borderRadius: '50%',
-                    width: '70px',
-                    height: '70px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '25px'
-                  }}>🎯</div>
-                  <h3 style={{ 
-                    fontSize: '1.5rem', 
-                    fontWeight: '600', 
-                    color: '#1f2937', 
-                    marginBottom: '15px',
-                    lineHeight: '1.3'
-                  }}>Local SEO Optimization</h3>
-                  <p style={{ 
-                    color: '#6b7280', 
-                    lineHeight: '1.7',
-                    fontSize: '1rem'
-                  }}>
-                    Optimized for "[your service] near me" searches. Includes Google My Business integration and local directory listings.
-                  </p>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="8" stroke="white" strokeWidth="2"/>
+                    <path d="M21 21L16.65 16.65" stroke="white" strokeWidth="2"/>
+                  </svg>
                 </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>Local SEO Optimization</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Optimized for "[your service] near me" searches. Includes Google My Business integration and local directory listings.
+                </p>
               </div>
 
               {/* Lead Capture Forms */}
-              <div style={{ 
-                background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
-                borderRadius: '20px',
+              <div className="service-card professional-card" style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
                 padding: '40px 30px',
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                overflow: 'hidden'
               }}>
-                <div style={{
-                  position: 'absolute',
-                  top: '-50%',
-                  right: '-20%',
-                  width: '120px',
-                  height: '120px',
-                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
-                  borderRadius: '50%',
-                  zIndex: 0
-                }}></div>
-                <div style={{ position: 'relative', zIndex: 1 }}>
-                  <div style={{ 
-                    fontSize: '3rem', 
-                    marginBottom: '20px',
-                    background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                    borderRadius: '50%',
-                    width: '70px',
-                    height: '70px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '25px'
-                  }}>📋</div>
-                  <h3 style={{ 
-                    fontSize: '1.5rem', 
-                    fontWeight: '600', 
-                    color: '#1f2937', 
-                    marginBottom: '15px',
-                    lineHeight: '1.3'
-                  }}>Lead Capture Forms</h3>
-                  <p style={{ 
-                    color: '#6b7280', 
-                    lineHeight: '1.7',
-                    fontSize: '1rem'
-                  }}>
-                    Custom contact and inquiry forms that gather the information you need to qualify prospects effectively.
-                  </p>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" strokeWidth="2"/>
+                    <polyline points="22,6 12,13 2,6" stroke="white" strokeWidth="2"/>
+                  </svg>
                 </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>Lead Capture Forms</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Custom contact and inquiry forms that gather the information you need to qualify prospects effectively.
+                </p>
               </div>
 
               {/* SSL Security & Fast Hosting */}
-              <div style={{ 
-                background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
-                borderRadius: '20px',
+              <div className="service-card professional-card" style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
                 padding: '40px 30px',
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                overflow: 'hidden'
               }}>
-                <div style={{
-                  position: 'absolute',
-                  top: '-50%',
-                  right: '-20%',
-                  width: '120px',
-                  height: '120px',
-                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
-                  borderRadius: '50%',
-                  zIndex: 0
-                }}></div>
-                <div style={{ position: 'relative', zIndex: 1 }}>
-                  <div style={{ 
-                    fontSize: '3rem', 
-                    marginBottom: '20px',
-                    background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                    borderRadius: '50%',
-                    width: '70px',
-                    height: '70px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '25px'
-                  }}>🔒</div>
-                  <h3 style={{ 
-                    fontSize: '1.5rem', 
-                    fontWeight: '600', 
-                    color: '#1f2937', 
-                    marginBottom: '15px',
-                    lineHeight: '1.3'
-                  }}>SSL Security & Fast Hosting</h3>
-                  <p style={{ 
-                    color: '#6b7280', 
-                    lineHeight: '1.7',
-                    fontSize: '1rem'
-                  }}>
-                    Secure, encrypted connection with fast hosting (or integration with your preferred hosting provider).
-                  </p>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 11L9 14L15 8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>SSL Security & Fast Hosting</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Secure, encrypted connection with fast hosting (or integration with your preferred hosting provider).
+                </p>
               </div>
 
               {/* Analytics Setup */}
-              <div style={{ 
-                background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
-                borderRadius: '20px',
+              <div className="service-card professional-card" style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
                 padding: '40px 30px',
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                overflow: 'hidden'
               }}>
-                <div style={{
-                  position: 'absolute',
-                  top: '-50%',
-                  right: '-20%',
-                  width: '120px',
-                  height: '120px',
-                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
-                  borderRadius: '50%',
-                  zIndex: 0
-                }}></div>
-                <div style={{ position: 'relative', zIndex: 1 }}>
-                  <div style={{ 
-                    fontSize: '3rem', 
-                    marginBottom: '20px',
-                    background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                    borderRadius: '50%',
-                    width: '70px',
-                    height: '70px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '25px'
-                  }}>📊</div>
-                  <h3 style={{ 
-                    fontSize: '1.5rem', 
-                    fontWeight: '600', 
-                    color: '#1f2937', 
-                    marginBottom: '15px',
-                    lineHeight: '1.3'
-                  }}>Analytics Setup</h3>
-                  <p style={{ 
-                    color: '#6b7280', 
-                    lineHeight: '1.7',
-                    fontSize: '1rem'
-                  }}>
-                    Google Analytics and Search Console integration to track visitors, leads, and performance.
-                  </p>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="18" y1="20" x2="18" y2="10" stroke="white" strokeWidth="2"/>
+                    <line x1="12" y1="20" x2="12" y2="4" stroke="white" strokeWidth="2"/>
+                    <line x1="6" y1="20" x2="6" y2="14" stroke="white" strokeWidth="2"/>
+                    <line x1="3" y1="20" x2="21" y2="20" stroke="white" strokeWidth="2"/>
+                  </svg>
                 </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>Analytics Setup</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Google Analytics and Search Console integration to track visitors, leads, and performance.
+                </p>
               </div>
             </div>
 
             {/* Call-to-Action */}
             <div style={{ textAlign: 'center', marginTop: '60px' }}>
-              <a 
-                href="/contact" 
-                style={{ 
-                  display: 'inline-block',
-                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                  color: 'white',
-                  padding: '18px 40px',
-                  borderRadius: '50px',
-                  textDecoration: 'none',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  border: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
-                  e.target.style.transform = 'translateY(-3px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
-                  e.target.style.transform = 'translateY(0)';
-                }}
+              <a
+                href="/contact"
+                className="hero-button"
               >
                 Start Your Website Project Today
               </a>
@@ -788,40 +1014,173 @@ export const WebsitesPage = () => {
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <h2 className="section-title">Our 2-4 Week Website Process</h2>
-            <div className="process-grid" style={{ marginTop: '40px', paddingTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
-              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(26, 121, 175, 0.3)', zIndex: 10 }}>1</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Strategy Session</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We discuss your business, target customers, competitors, and goals. Choose your platform and plan the site structure.</p>
+            <div className="process-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '2rem',
+              marginTop: '3rem'
+            }}>
+              <div className="service-card professional-card" style={{
+                position: 'relative',
+                padding: '60px 40px 40px 40px',
+                marginTop: '35px',
+                overflow: 'visible',
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-25px',
+                  left: '0px',
+                  right: '0px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>1</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Strategy Session</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
+                  We discuss your business, target customers, competitors, and goals. Choose your platform and plan the site structure.
+                </p>
               </div>
               
-              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.accent, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)', zIndex: 10 }}>2</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Content Creation</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Professional copywriting tailored to your industry. We create all text content while you focus on running your business.</p>
+              <div className="service-card professional-card" style={{
+                position: 'relative',
+                padding: '60px 40px 40px 40px',
+                marginTop: '35px',
+                overflow: 'visible',
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-25px',
+                  left: '0px',
+                  right: '0px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>2</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Content Creation</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
+                  Professional copywriting tailored to your industry. We create all text content while you focus on running your business.
+                </p>
               </div>
               
-              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.secondary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(49, 66, 81, 0.3)', zIndex: 10 }}>3</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Design & Build</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Professional design and development with regular updates. You'll see progress throughout the build process.</p>
+              <div className="service-card professional-card" style={{
+                position: 'relative',
+                padding: '60px 40px 40px 40px',
+                marginTop: '35px',
+                overflow: 'visible',
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-25px',
+                  left: '0px',
+                  right: '0px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>3</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Design & Build</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
+                  Professional design and development with regular updates. You'll see progress throughout the build process.
+                </p>
               </div>
               
-              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primaryDark, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(21, 94, 138, 0.3)', zIndex: 10 }}>4</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Launch & Training</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Go live with full training on how to update content, add photos, and track your website's performance.</p>
+              <div className="service-card professional-card" style={{
+                position: 'relative',
+                padding: '60px 40px 40px 40px',
+                marginTop: '35px',
+                overflow: 'visible',
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-25px',
+                  left: '0px',
+                  right: '0px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>4</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Launch & Training</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
+                  Go live with full training on how to update content, add photos, and track your website's performance.
+                </p>
               </div>
             </div>
           </div>
-          
-          <style dangerouslySetInnerHTML={{__html: `
-            @media (max-width: 768px) {
-              .process-grid {
-                grid-template-columns: 1fr !important;
-              }
-            }
-          `}} />
         </section>
 
         {/* Industries We Serve */}
@@ -920,12 +1279,12 @@ export const WebsitesPage = () => {
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  <div style={{ 
-                    background: 'white',
-                    borderRadius: '16px',
+                  <div style={{
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    borderRadius: '12px',
                     padding: '35px 25px',
                     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                    border: `1px solid ${colors.backgrounds.light}`,
+                    border: '1px solid rgba(0, 0, 0, 0.1)',
                     textAlign: 'center',
                     height: '100%',
                     position: 'relative',
@@ -938,7 +1297,7 @@ export const WebsitesPage = () => {
                       left: 0,
                       right: 0,
                       height: '4px',
-                      background: `linear-gradient(90deg, ${colors.primary}, ${colors.accent})`,
+                      background: 'linear-gradient(90deg, #1F7CFF, #1e40af)',
                       opacity: 0,
                       transition: 'all 0.3s ease'
                     }} className="industry-border"></div>
@@ -947,12 +1306,12 @@ export const WebsitesPage = () => {
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'center',
-                      color: colors.primary
+                      color: '#1F7CFF'
                     }}>{industry.icon}</div>
-                    <h4 style={{ 
-                      fontSize: '1.3rem', 
-                      fontWeight: '700', 
-                      color: colors.text.primary, 
+                    <h4 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '700',
+                      color: '#1F7CFF',
                       marginBottom: '15px',
                       lineHeight: '1.3'
                     }}>{industry.title}</h4>
@@ -1033,12 +1392,12 @@ export const WebsitesPage = () => {
                   answer: 'Contact us for a free consultation where we\'ll discuss your needs, goals, and the best approach for your business. We\'ll create a custom plan tailored to your specific situation.'
                 }
               ].map((faq, index) => (
-                <div key={index} style={{ 
-                  background: 'white',
-                  borderRadius: '16px',
+                <div key={index} style={{
+                  background: 'rgba(255, 255, 255, 0.95)',
+                  borderRadius: '12px',
                   padding: '30px 25px',
                   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
-                  border: `1px solid rgba(${colors.primary.replace('#', '').match(/.{2}/g).map(hex => parseInt(hex, 16)).join(', ')}, 0.1)`,
+                  border: '1px solid rgba(0, 0, 0, 0.1)',
                   transition: 'all 0.3s ease',
                   position: 'relative'
                 }}>
@@ -1046,7 +1405,7 @@ export const WebsitesPage = () => {
                     position: 'absolute',
                     top: '15px',
                     right: '20px',
-                    color: colors.primary,
+                    color: '#1F7CFF',
                     fontSize: '1.5rem',
                     fontWeight: 'bold',
                     opacity: 0.3
@@ -1054,7 +1413,7 @@ export const WebsitesPage = () => {
                   <h3 style={{ 
                     fontSize: '1.3rem', 
                     fontWeight: '700', 
-                    color: colors.text.primary, 
+                    color: '#1F7CFF',
                     marginBottom: '15px',
                     lineHeight: '1.3',
                     paddingRight: '30px'
@@ -1083,24 +1442,24 @@ export const WebsitesPage = () => {
             <div className="cta-buttons">
               <a href="/contact" style={{
                 display: 'inline-block',
-                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                color: 'white',
+                background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                color: '#000',
                 border: 'none',
                 padding: '18px 40px',
                 fontSize: '1.1rem',
                 fontWeight: '600',
                 borderRadius: '50px',
-                boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                boxShadow: '0 6px 20px rgba(255, 215, 0, 0.4)',
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 textDecoration: 'none',
                 marginRight: '1rem'
               }}
               onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                e.target.style.boxShadow = '0 8px 30px rgba(255, 215, 0, 0.5)';
                 e.target.style.transform = 'translateY(-3px)';
               }}
               onMouseLeave={(e) => {
-                e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                e.target.style.boxShadow = '0 6px 20px rgba(255, 215, 0, 0.4)';
                 e.target.style.transform = 'translateY(0)';
               }}>
                 Schedule Free Consultation
@@ -1119,9 +1478,9 @@ export const WebsitesPage = () => {
                 textDecoration: 'none'
               }}
               onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
+                e.target.style.boxShadow = '0 8px 25px rgba(31, 124, 255, 0.4)';
                 e.target.style.transform = 'translateY(-3px)';
-                e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+                e.target.style.borderColor = 'rgba(31, 124, 255, 0.8)';
               }}
               onMouseLeave={(e) => {
                 e.target.style.boxShadow = 'none';
@@ -1277,6 +1636,10 @@ const websiteStyles = `
   .industries-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+  
+  .process-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 

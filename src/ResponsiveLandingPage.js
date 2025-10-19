@@ -4,6 +4,7 @@ import { Logo } from './components/Logo';
 import { Navigation } from './components/Navigation';
 import { Animations } from './components/Animations';
 import { Footer } from './components/Footer';
+import { InteractiveServicesShowcase } from './components/InteractiveServicesShowcase';
 import { colors } from './styles/colors';
 import heroImage from './assets/hero-growtika.jpg';
 import { gsap } from 'gsap';
@@ -684,137 +685,8 @@ export const ResponsiveLandingPage = () => {
           </div>
         </section>
 
-        {/* Free Example Visual Section */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">See The Difference a Professional Website Makes</h2>
-              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '600px', margin: '0 auto' }}>
-                Here's how your business website transforms from basic to professional - 
-                and why customers choose businesses with better websites.
-              </p>
-            </div>
-            <div className="before-after-comparison">
-              <div className="comparison-item">
-                <div className="before-section">
-                  <h3>❌ Most Business Websites</h3>
-                  <div className="website-screenshot before">
-                    <div className="screenshot-header">
-                      <div className="browser-dots">
-                        <span></span><span></span><span></span>
-                      </div>
-                      <div className="address-bar">oldwebsite.com</div>
-                    </div>
-                    <div className="screenshot-content">
-                      <div className="old-header">
-                        <div className="old-logo">COMPANY NAME</div>
-                        <div className="old-nav">
-                          <span>Home</span><span>Services</span><span>Contact</span>
-                        </div>
-                      </div>
-                      <div className="old-hero">
-                        <div className="old-title">Welcome to Our Business</div>
-                        <div className="old-text">We provide quality services</div>
-                        <div className="old-button">Contact Us</div>
-                      </div>
-                      <div className="old-services">
-                        <div className="old-service">• Service 1</div>
-                        <div className="old-service">• Service 2</div>
-                        <div className="old-service">• Service 3</div>
-                      </div>
-                    </div>
-                  </div>
-                  <ul className="comparison-bullets">
-                    <li>📱 Breaks on mobile devices</li>
-                    <li>🔍 Hard to find on Google</li>
-                    <li>😴 Generic, boring content</li>
-                    <li>❓ Unclear what to do next</li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="comparison-arrow">
-                <div className="arrow-circle">→</div>
-                <span className="transform-text">48-Hour FREE Example</span>
-              </div>
-              
-              <div className="comparison-item">
-                <div className="after-section">
-                  <h3>✅ Your LogicPros Website</h3>
-                  <div className="website-screenshot after">
-                    <div className="screenshot-header">
-                      <div className="browser-dots">
-                        <span></span><span></span><span></span>
-                      </div>
-                      <div className="address-bar">yourbusiness.com</div>
-                    </div>
-                    <div className="screenshot-content">
-                      <div className="new-header">
-                        <div className="new-logo">YOUR BUSINESS</div>
-                        <div className="new-nav">
-                          <span>Services</span><span>Portfolio</span>
-                          <div className="nav-cta">Get Quote</div>
-                        </div>
-                      </div>
-                      <div className="new-hero">
-                        <div className="new-title">Get Professional Results</div>
-                        <div className="new-subtitle">Licensed • Insured • 5-Star Reviews</div>
-                        <div className="new-buttons">
-                          <div className="new-button primary">Get Free Quote</div>
-                          <div className="new-button secondary">📞 Call Now</div>
-                        </div>
-                      </div>
-                      <div className="trust-indicators">
-                        <div className="trust-item">⭐⭐⭐⭐⭐ 127 Reviews</div>
-                        <div className="trust-item">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '6px', verticalAlign: 'middle'}}>
-                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M6 9h12v6a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V9z" stroke="currentColor" strokeWidth="2" fill="none"/>
-                            <path d="M10 22h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                            <path d="M12 18v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                          </svg>
-                          Licensed & Insured
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <ul className="comparison-bullets">
-                    <li>📱 Perfect on all devices</li>
-                    <li>🔍 Built for better Google visibility</li>
-                    <li>💼 Professional, trustworthy</li>
-                    <li>📞 Clear path to contact you</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            
-            <div className="cta-section-inline">
-              <h3>Want to see YOUR website before you buy it?</h3>
-              <p>We'll create a custom example specifically for your business - delivered in 48 hours, completely free.</p>
-              <a href="/free-example" style={{
-                background: 'linear-gradient(135deg, #FFC600 0%, #FFB800 100%)',
-                color: '#1a1a2e',
-                padding: '18px 40px',
-                borderRadius: '50px',
-                textDecoration: 'none',
-                fontSize: '1.1rem',
-                fontWeight: '600',
-                display: 'inline-block',
-                boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                border: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
-                e.target.style.transform = 'translateY(-3px)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
-                e.target.style.transform = 'translateY(0)';
-              }}>Get My Free Website Example</a>
-            </div>
-          </div>
-        </section>
+        {/* Interactive Services Showcase Section */}
+        <InteractiveServicesShowcase />
 
         {/* Why Choose Us Section */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>

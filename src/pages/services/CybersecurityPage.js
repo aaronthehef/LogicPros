@@ -56,6 +56,143 @@ export const CybersecurityPage = () => {
       .floating-particle:nth-child(4) { animation: float1 22s ease-in-out infinite reverse; }
       .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
       .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
+      
+      .hero-button {
+        background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;
+        color: #000 !important;
+        padding: 18px 40px !important;
+        border-radius: 50px !important;
+        text-decoration: none !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border: none !important;
+        box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: inline-block !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+      }
+      .hero-button:hover {
+        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5) !important;
+        transform: translateY(-3px) !important;
+        color: #000 !important;
+      }
+      
+      .secondary-button {
+        background: transparent !important;
+        color: #1F7CFF !important;
+        border: 2px solid #1F7CFF !important;
+        padding: 18px 40px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border-radius: 50px !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+      }
+      .secondary-button:hover {
+        box-shadow: 0 8px 25px rgba(31, 124, 255, 0.4) !important;
+        transform: translateY(-3px) !important;
+        border-color: rgba(31, 124, 255, 0.8) !important;
+      }
+      
+      .service-icon {
+        transition: all 0.3s ease !important;
+      }
+      .service-icon:hover {
+        transform: scale(1.1) rotate(5deg) !important;
+        box-shadow: 0 12px 35px rgba(31, 124, 255, 0.4) !important;
+      }
+      
+      /* Professional Service Cards Hover Effects */
+      .professional-card:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 20px 60px rgba(29, 122, 175, 0.15), 0 8px 32px rgba(29, 122, 175, 0.2) !important;
+        border-color: rgba(29, 122, 175, 0.3) !important;
+      }
+      
+      .professional-card:hover .service-icon {
+        transform: scale(1.1) rotate(5deg) !important;
+        box-shadow: 0 12px 35px rgba(29, 122, 175, 0.4) !important;
+      }
+      
+      .professional-card:hover .feature-highlight {
+        background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+        transform: scale(1.05) !important;
+      }
+      
+      /* Override existing service card styles for professional cards */
+      .professional-card .service-icon {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 1rem !important;
+        background-color: transparent !important;
+        border-radius: 20px !important;
+      }
+      
+      .professional-card h3 {
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.3 !important;
+      }
+      
+      .professional-card p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 0 !important;
+      }
+      
+      /* Ensure cards are visible */
+      .services-grid {
+        display: grid !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      
+      .professional-card {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+      }
+      
+      /* Responsive 2x2 grid */
+      @media (max-width: 768px) {
+        .services-grid {
+          grid-template-columns: 1fr !important;
+          grid-template-rows: auto !important;
+        }
+        .process-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+
+      /* Hero Service Card Animations */
+      @keyframes pulseGlow {
+        0%, 100% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.15), 0 0 20px rgba(29, 122, 175, 0.3);
+        }
+        50% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.25), 0 0 30px rgba(29, 122, 175, 0.5);
+        }
+      }
+
+      .hero-service-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        box-shadow: 0 20px 60px rgba(29, 122, 175, 0.3), 0 0 40px rgba(29, 122, 175, 0.6) !important;
+        border-color: rgba(29, 122, 175, 0.8) !important;
+      }
+
+      .hero-service-card:hover h3 {
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(29, 122, 175, 0.8) !important;
+      }
+
+      .hero-service-card:hover svg {
+        transform: scale(1.1) !important;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) !important;
+      }
     `;
     document.head.appendChild(style);
     
@@ -79,132 +216,262 @@ export const CybersecurityPage = () => {
       <main className="main-content">
         {/* Hero Section */}
         <section className="hero-section homepage-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', overflow: 'hidden' }}>
-          <svg 
-            className="hero-background-svg"
-            style={{ 
-              position: 'absolute', 
-              top: '-10%', 
-              left: '-10%', 
-              width: '120%', 
-              height: '120%', 
+          {/* Circuit Board Background */}
+          <svg
+            className="circuit-background"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
               zIndex: 1,
-              opacity: 0.7
-            }} 
-            viewBox="0 0 1200 800" 
-            xmlns="http://www.w3.org/2000/svg"
+              opacity: 0.4
+            }}
+            viewBox="0 0 1200 800"
+            preserveAspectRatio="xMidYMid slice"
           >
             <defs>
-              <linearGradient id="techGradientIT" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#1d7aaf" />
-                <stop offset="100%" stopColor="#1e40af" />
-              </linearGradient>
-              <linearGradient id="pulseGradientIT" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1d7aaf" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#1e40af" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#1d7aaf" stopOpacity="0.8" />
-              </linearGradient>
+              {/* Subtle glow filter */}
+              <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
             </defs>
-            
-            {/* Security Grid Lines */}
-            <g className="grid-lines" filter="blur(0.5px)">
-              <line x1="0" y1="100" x2="1200" y2="100" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.4" strokeDasharray="20,10" />
-              <line x1="0" y1="200" x2="1200" y2="200" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="0" y1="300" x2="1200" y2="300" stroke="#1d7aaf" strokeWidth="2" opacity="0.5" strokeDasharray="25,5" />
-              <line x1="0" y1="400" x2="1200" y2="400" stroke="#1e40af" strokeWidth="1" opacity="0.2" strokeDasharray="30,10" />
-              <line x1="0" y1="500" x2="1200" y2="500" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.3" strokeDasharray="20,15" />
-              
-              <line x1="200" y1="0" x2="200" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,10" />
-              <line x1="400" y1="0" x2="400" y2="800" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="600" y1="0" x2="600" y2="800" stroke="#1d7aaf" strokeWidth="2" opacity="0.4" strokeDasharray="25,5" />
-              <line x1="800" y1="0" x2="800" y2="800" stroke="#1e40af" strokeWidth="1" opacity="0.1" strokeDasharray="30,10" />
-              <line x1="1000" y1="0" x2="1000" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,15" />
-            </g>
 
-            {/* Security Patterns */}
-            <g className="circuit-patterns" filter="blur(0.3px)">
-              <path d="M100,150 L250,150 L270,170 L400,170 L420,150 L600,150" stroke="#1d7aaf" strokeWidth="1" opacity="0.4" fill="none" strokeDasharray="5,3" />
-              <path d="M150,250 L300,250 L320,230 L500,230 L520,250 L750,250" stroke="#1e40af" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="8,4" />
-              <path d="M80,350 L200,350 L220,330 L350,330 L370,350 L550,350" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.5" fill="none" strokeDasharray="6,2" />
-            </g>
+            {/* Professional circuit background with slow panning */}
+            <g transform="translate(0,0)">
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0; -500,0; -500,-350; 0,-350; 0,0"
+                dur="150s"
+                repeatCount="indefinite"
+              />
 
-            {/* Security Nodes */}
-            <g className="tech-nodes">
-              <circle cx="150" cy="120" r="4" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="270" cy="170" r="3" fill="#1e40af" opacity="0.8" />
-              <circle cx="420" cy="150" r="5" fill="#1d7aaf" opacity="1.0" />
-              <circle cx="650" cy="110" r="6" fill="#1e40af" opacity="0.9" />
-              <circle cx="850" cy="200" r="3" fill="#1d7aaf" opacity="0.9" />
-            </g>
+              {/* Clean circuit grid layout */}
+              {[0, 1, 2, 3, 4, 5].map(layerX => (
+                [...Array(4)].map((_, layerY) => (
+                  <g key={`layer-${layerX}-${layerY}`} transform={`translate(${layerX * 400}, ${layerY * 250})`}>
 
-            {/* Glowing Orbs */}
-            <g className="glowing-orbs">
-              <circle cx="100" cy="100" r="8" fill="url(#techGradientIT)" opacity="0.4" />
-              <circle cx="900" cy="300" r="6" fill="url(#techGradientIT)" opacity="0.5" />
-              <circle cx="1100" cy="150" r="10" fill="url(#techGradientIT)" opacity="0.3" />
+                    {/* Single clean horizontal trace */}
+                    <g stroke="#1F7CFF" strokeWidth="1.5" fill="none">
+                      <path d="M50 120 L350 120" strokeDasharray="20,12" opacity="0.5">
+                        <animate attributeName="stroke-dashoffset" values="0;-32" dur="3s" repeatCount="indefinite"/>
+                      </path>
+                    </g>
+
+                    {/* Single clean vertical trace */}
+                    {(layerX + layerY) % 2 === 0 && (
+                      <g stroke="#22c55e" strokeWidth="1.5" fill="none">
+                        <path d="M200 30 L200 220" strokeDasharray="18,10" opacity="0.4">
+                          <animate attributeName="stroke-dashoffset" values="0;-28" dur="2.8s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Occasional L-shaped route */}
+                    {(layerX + layerY) % 3 === 0 && (
+                      <g stroke="#f59e0b" strokeWidth="1" fill="none">
+                        <path d="M100 80 L100 160 L300 160" strokeDasharray="15,8" opacity="0.35">
+                          <animate attributeName="stroke-dashoffset" values="0;-23" dur="3.5s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Subtle floating dots */}
+                    <g>
+                      {[...Array(3)].map((_, dotIndex) => {
+                        const x = 80 + (dotIndex * 120);
+                        const y = 60 + (dotIndex * 40);
+                        const delay = dotIndex * 1.5;
+                        return (
+                          <circle
+                            key={`dot-${dotIndex}`}
+                            cx={x}
+                            cy={y}
+                            r="1.5"
+                            fill="#1F7CFF"
+                            opacity="0.6"
+                          >
+                            <animateTransform
+                              attributeName="transform"
+                              type="translate"
+                              values="0,0; 8,-12; -5,10; 0,0"
+                              dur="6s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                            <animate
+                              attributeName="opacity"
+                              values="0.3;0.6;0.3"
+                              dur="4s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                          </circle>
+                        );
+                      })}
+                    </g>
+                  </g>
+                ))
+              ))}
             </g>
           </svg>
 
-          {/* Floating Particles */}
-          <div className="floating-particle" style={{ top: '15%', left: '10%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '25%', right: '15%', width: '6px', height: '6px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '45%', left: '20%', width: '3px', height: '3px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '35%', right: '25%', width: '5px', height: '5px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '60%', left: '15%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '70%', right: '20%', width: '3px', height: '3px', background: '#1e40af', borderRadius: '50%' }}></div>
-
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-            <div className="hero-content" style={{ color: 'white', textAlign: 'center' }}>
-              <h1 style={{ 
-                fontSize: 'clamp(2.5rem, 6vw, 5rem)', 
-                fontWeight: '900', 
-                lineHeight: '0.9', 
-                marginBottom: '1rem',
-                color: 'white',
-                textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-                letterSpacing: '-0.02em'
-              }}>Enterprise Cybersecurity New Brunswick & Maritime Solutions</h1>
-              <p style={{ 
-                fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
-                marginBottom: '40px',
-                maxWidth: '700px',
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                lineHeight: '1.7',
-                fontWeight: '300',
-                color: 'rgba(255, 255, 255, 0.95)',
-                textShadow: '0 2px 4px rgba(0, 0, 0, 0.4)'
-              }}>
-                Protect your New Brunswick business from evolving cyber threats with comprehensive cybersecurity services NB 
-                businesses trust. From security audits Maritimes to cybersecurity compliance New Brunswick, we deliver 
-                enterprise-grade Maritime cybersecurity solutions tailored for your industry.
-              </p>
-              <div style={{ 
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '4rem', alignItems: 'center' }}>
+              <div style={{ textAlign: 'left', color: 'white' }}>
+                <h1 style={{
+                  fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                  fontWeight: '900',
+                  lineHeight: '0.9',
+                  marginBottom: '1rem',
+                  color: '#1F7CFF',
+                  textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
+                }}>
+                  Enterprise Cybersecurity Solutions
+                </h1>
+                <p style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+                  color: '#e2e8f0',
+                  marginBottom: '2.5rem',
+                  fontWeight: '300',
+                  maxWidth: '500px'
+                }}>
+                  Protect your business from evolving cyber threats with comprehensive security services,
+                  audits, and compliance solutions tailored for New Brunswick and Maritime businesses.
+                </p>
+                
+                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                  <a href="/contact" className="hero-button">
+                    Request Security Assessment
+                  </a>
+                  
+                  <a href="/contact" className="secondary-button">
+                    Get Cybersecurity Quote
+                  </a>
+                </div>
+              </div>
+
+              <div className="hero-service-cards" style={{
                 display: 'flex',
-                justifyContent: 'center',
-                gap: '15px',
-                flexWrap: 'wrap'
+                flexDirection: 'column',
+                gap: '1rem',
+                height: 'auto',
+                justifyContent: 'center'
               }}>
-                <a href="/contact" style={{
-                  display: 'inline-block',
-                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                  color: 'white',
-                  border: 'none',
-                  padding: '18px 40px',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  borderRadius: '50px',
-                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  textDecoration: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
-                  e.target.style.transform = 'translateY(-3px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
-                  e.target.style.transform = 'translateY(0)';
-                }}>Request Security Assessment</a>
+                {/* Security Audit Card */}
+                <a href="/contact" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Secure</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Security Audits & Compliance</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* MFA Card */}
+                <a href="/contact" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 1s'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Protect</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>MFA & Access Control</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* Incident Response Card */}
+                <a href="/contact" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 2s'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Respond</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>24/7 Monitoring & Response</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="12" y1="9" x2="12" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="12" y1="17" x2="12.01" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -253,10 +520,26 @@ export const CybersecurityPage = () => {
                 flexDirection: 'column'
               }}>
                 <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                  <div style={{ 
-                    fontSize: '3rem', 
-                    marginBottom: '15px'
-                  }}>🔒</div>
+                  <div className="service-icon" style={{
+                    fontSize: '3rem',
+                    marginBottom: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 1.5rem auto',
+                    color: 'white'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                   <h3 style={{ 
                     fontSize: '1.8rem', 
                     fontWeight: '700', 
@@ -300,27 +583,28 @@ export const CybersecurityPage = () => {
                   ))}
                 </ul>
                 <div style={{ textAlign: 'center', marginTop: 'auto', paddingTop: '20px' }}>
-                  <a 
-                    href="/contact" 
-                    style={{ 
+                  <a
+                    href="/contact"
+                    className="hero-button"
+                    style={{
                       display: 'inline-block',
-                      background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                      color: 'white',
+                      background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                      color: '#000',
                       padding: '18px 40px',
                       borderRadius: '50px',
                       textDecoration: 'none',
                       fontSize: '1.1rem',
                       fontWeight: '600',
-                      boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                      boxShadow: '0 6px 20px rgba(255, 215, 0, 0.4)',
                       transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                       border: 'none'
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                      e.target.style.boxShadow = '0 8px 30px rgba(255, 215, 0, 0.5)';
                       e.target.style.transform = 'translateY(-3px)';
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                      e.target.style.boxShadow = '0 6px 20px rgba(255, 215, 0, 0.4)';
                       e.target.style.transform = 'translateY(0)';
                     }}
                   >
@@ -342,10 +626,26 @@ export const CybersecurityPage = () => {
                 flexDirection: 'column'
               }}>
                 <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                  <div style={{ 
-                    fontSize: '3rem', 
-                    marginBottom: '15px'
-                  }}>🔐</div>
+                  <div className="service-icon" style={{
+                    fontSize: '3rem',
+                    marginBottom: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 1.5rem auto',
+                    color: 'white'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                   <h3 style={{ 
                     fontSize: '1.8rem', 
                     fontWeight: '700', 
@@ -387,27 +687,28 @@ export const CybersecurityPage = () => {
                   ))}
                 </ul>
                 <div style={{ textAlign: 'center', marginTop: 'auto', paddingTop: '20px' }}>
-                  <a 
-                    href="/contact" 
-                    style={{ 
+                  <a
+                    href="/contact"
+                    className="hero-button"
+                    style={{
                       display: 'inline-block',
-                      background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                      color: 'white',
+                      background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                      color: '#000',
                       padding: '18px 40px',
                       borderRadius: '50px',
                       textDecoration: 'none',
                       fontSize: '1.1rem',
                       fontWeight: '600',
-                      boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                      boxShadow: '0 6px 20px rgba(255, 215, 0, 0.4)',
                       transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                       border: 'none'
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                      e.target.style.boxShadow = '0 8px 30px rgba(255, 215, 0, 0.5)';
                       e.target.style.transform = 'translateY(-3px)';
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                      e.target.style.boxShadow = '0 6px 20px rgba(255, 215, 0, 0.4)';
                       e.target.style.transform = 'translateY(0)';
                     }}
                   >
@@ -506,18 +807,68 @@ export const CybersecurityPage = () => {
                     zIndex: 0
                   }}></div>
                   <div style={{ position: 'relative', zIndex: 1 }}>
-                    <div style={{ 
-                      fontSize: '3rem', 
+                    <div className="service-icon" style={{
+                      fontSize: '3rem',
                       marginBottom: '20px',
-                      background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                      borderRadius: '50%',
-                      width: '70px',
-                      height: '70px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      marginBottom: '25px'
-                    }}>{service.icon}</div>
+                      width: '70px',
+                      height: '70px',
+                      background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                      borderRadius: '20px',
+                      boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                      transition: 'all 0.3s ease',
+                      margin: '0 auto 1.5rem auto',
+                      color: 'white'
+                    }}>
+                      {service.icon === '🔥' && (
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="3" y="14" width="4" height="7" stroke="white" strokeWidth="2" fill="none"/>
+                          <rect x="8" y="12" width="4" height="9" stroke="white" strokeWidth="2" fill="none"/>
+                          <rect x="13" y="10" width="4" height="11" stroke="white" strokeWidth="2" fill="none"/>
+                          <rect x="18" y="8" width="4" height="13" stroke="white" strokeWidth="2" fill="none"/>
+                          <rect x="3" y="14" width="19" height="2" stroke="white" strokeWidth="2" fill="none"/>
+                          <rect x="3" y="11" width="19" height="2" stroke="white" strokeWidth="2" fill="none"/>
+                          <rect x="3" y="8" width="19" height="2" stroke="white" strokeWidth="2" fill="none"/>
+                          <rect x="3" y="5" width="19" height="2" stroke="white" strokeWidth="2" fill="none"/>
+                        </svg>
+                      )}
+                      {service.icon === '☁️' && (
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {service.icon === '💾' && (
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <polyline points="7,10 12,15 17,10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <line x1="12" y1="15" x2="12" y2="3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {service.icon === '📋' && (
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <polyline points="14,2 14,8 20,8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <polyline points="10,9 9,9 8,9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {service.icon === '🎓' && (
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {service.icon === '🚨' && (
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <line x1="12" y1="9" x2="12" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <line x1="12" y1="17" x2="12.01" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                    </div>
                     <h3 style={{ 
                       fontSize: '1.5rem', 
                       fontWeight: '600', 
@@ -539,27 +890,28 @@ export const CybersecurityPage = () => {
 
             {/* Call-to-Action */}
             <div style={{ textAlign: 'center', marginTop: '60px' }}>
-              <a 
-                href="/contact" 
-                style={{ 
+              <a
+                href="/contact"
+                className="hero-button"
+                style={{
                   display: 'inline-block',
-                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                  color: 'white',
+                  background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                  color: '#000',
                   padding: '18px 40px',
                   borderRadius: '50px',
                   textDecoration: 'none',
                   fontSize: '1.1rem',
                   fontWeight: '600',
-                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  boxShadow: '0 6px 20px rgba(255, 215, 0, 0.4)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   border: 'none'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                  e.target.style.boxShadow = '0 8px 30px rgba(255, 215, 0, 0.5)';
                   e.target.style.transform = 'translateY(-3px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                  e.target.style.boxShadow = '0 6px 20px rgba(255, 215, 0, 0.4)';
                   e.target.style.transform = 'translateY(0)';
                 }}
               >
@@ -661,18 +1013,59 @@ export const CybersecurityPage = () => {
                     zIndex: 0
                   }}></div>
                   <div style={{ position: 'relative', zIndex: 1 }}>
-                    <div style={{ 
-                      fontSize: '2.5rem', 
+                    <div className="service-icon" style={{
+                      fontSize: '2.5rem',
                       marginBottom: '15px',
-                      background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                      borderRadius: '50%',
-                      width: '60px',
-                      height: '60px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      marginBottom: '20px'
-                    }}>{industry.icon}</div>
+                      width: '60px',
+                      height: '60px',
+                      background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                      borderRadius: '20px',
+                      boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                      transition: 'all 0.3s ease',
+                      margin: '0 auto 1.5rem auto',
+                      color: 'white'
+                    }}>
+                      {industry.icon === '🏥' && (
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <polyline points="9,22 9,12 15,12 15,22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {industry.icon === '💰' && (
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {industry.icon === '🏪' && (
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <line x1="3" y1="6" x2="21" y2="6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M16 10a4 4 0 0 1-8 0" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {industry.icon === '🎓' && (
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {industry.icon === '🏭' && (
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3 21h18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M5 21V7l8-4v18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M19 21V11l-6-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {industry.icon === '⚖️' && (
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3 3h18v18H3zM12 8v8m-4-4h8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                    </div>
                     <h3 style={{ 
                       fontSize: '1.4rem', 
                       fontWeight: '600', 
@@ -708,18 +1101,19 @@ export const CybersecurityPage = () => {
             </div>
             
             <div style={{ textAlign: 'center', marginTop: '50px' }}>
-              <a 
-                href="/contact" 
-                style={{ 
+              <a
+                href="/contact"
+                className="hero-button"
+                style={{
                   display: 'inline-block',
-                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                  color: 'white',
+                  background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                  color: '#000',
                   padding: '18px 40px',
                   borderRadius: '50px',
                   textDecoration: 'none',
                   fontSize: '1.1rem',
                   fontWeight: '600',
-                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  boxShadow: '0 6px 20px rgba(255, 215, 0, 0.4)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   border: 'none'
                 }}
@@ -733,41 +1127,189 @@ export const CybersecurityPage = () => {
         {/* Implementation Process */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <h2 className="section-title">Our Cybersecurity Implementation Process</h2>
-            <div className="process-grid-it" style={{ marginTop: '40px', paddingTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
-              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(26, 121, 175, 0.3)', zIndex: 10 }}>1</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Security Assessment</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Comprehensive evaluation of your current IT infrastructure, identifying vulnerabilities and security gaps across all systems.</p>
+            <div className="section-header">
+              <h2 className="section-title">Our Cybersecurity Implementation Process</h2>
+              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
+                No surprises, no delays. Our cybersecurity implementation process is designed for busy
+                business owners. You'll know exactly what's happening at every step,
+                and we handle all the technical details.
+              </p>
+            </div>
+            
+            <div className="process-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '2rem',
+              marginTop: '3rem'
+            }}>
+              <div className="service-card professional-card" style={{
+                position: 'relative',
+                padding: '60px 40px 40px 40px',
+                marginTop: '35px',
+                overflow: 'visible',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-25px',
+                  left: '0px',
+                  right: '0px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>1</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Security Assessment</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
+                  We start by evaluating your current IT infrastructure, identifying vulnerabilities
+                  and security gaps across all systems. Then we plan a comprehensive security strategy
+                  tailored to your business needs.
+                </p>
               </div>
               
-              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.accent, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)', zIndex: 10 }}>2</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Custom Security Plan</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Tailored cybersecurity strategy based on your business needs, compliance requirements, and risk tolerance.</p>
+              <div className="service-card professional-card" style={{
+                position: 'relative',
+                padding: '60px 40px 40px 40px',
+                marginTop: '35px',
+                overflow: 'visible',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-25px',
+                  left: '0px',
+                  right: '0px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>2</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Custom Security Plan</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
+                  We create a tailored cybersecurity strategy based on your business needs,
+                  compliance requirements, and risk tolerance. Every plan includes specific
+                  security tools, policies, and procedures.
+                </p>
               </div>
               
-              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.secondary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(49, 66, 81, 0.3)', zIndex: 10 }}>3</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Implementation & Setup</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Professional deployment of security tools, policies, and procedures with minimal business disruption.</p>
+              <div className="service-card professional-card" style={{
+                position: 'relative',
+                padding: '60px 40px 40px 40px',
+                marginTop: '35px',
+                overflow: 'visible',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-25px',
+                  left: '0px',
+                  right: '0px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>3</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Implementation & Setup</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
+                  Professional deployment of security tools, policies, and procedures with
+                  minimal business disruption. We handle all technical details and ensure
+                  everything works seamlessly.
+                </p>
               </div>
               
-              <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primaryDark, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(21, 94, 138, 0.3)', zIndex: 10 }}>4</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Ongoing Support & Monitoring</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>24/7 security monitoring, regular updates, and continuous improvement of your security posture.</p>
+              <div className="service-card professional-card" style={{
+                position: 'relative',
+                padding: '60px 40px 40px 40px',
+                marginTop: '35px',
+                overflow: 'visible',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(31, 124, 255, 0.1)',
+                borderRadius: '16px',
+                boxShadow: '0 8px 32px rgba(31, 124, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-25px',
+                  left: '0px',
+                  right: '0px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  zIndex: 1
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(335deg, #1F7CFF, #1e40af)',
+                    color: 'white',
+                    width: '3em',
+                    height: '3em',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5em',
+                    fontWeight: 'bolder',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>4</div>
+                </div>
+                <h3 style={{color: '#1F7CFF', marginBottom: '1rem', textAlign: 'center'}}>Ongoing Support & Monitoring</h3>
+                <p style={{color: colors.text.secondary, lineHeight: '1.6'}}>
+                  24/7 security monitoring, regular updates, and continuous improvement
+                  of your security posture. We keep your business protected against evolving threats.
+                </p>
               </div>
             </div>
           </div>
-          
-          <style dangerouslySetInnerHTML={{__html: `
-            @media (max-width: 768px) {
-              .process-grid-it {
-                grid-template-columns: 1fr !important;
-              }
-            }
-          `}} />
         </section>
 
 
@@ -879,39 +1421,41 @@ export const CybersecurityPage = () => {
               gap: '15px',
               flexWrap: 'wrap'
             }}>
-              <a 
-                href="/contact" 
+              <a
+                href="/contact"
+                className="hero-button"
                 style={{
                   display: 'inline-block',
-                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                  color: 'white',
+                  background: 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
+                  color: '#000',
                   border: 'none',
                   padding: '18px 40px',
                   fontSize: '1.1rem',
                   fontWeight: '600',
                   borderRadius: '50px',
-                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                  boxShadow: '0 6px 20px rgba(255, 215, 0, 0.4)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   textDecoration: 'none'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
+                  e.target.style.boxShadow = '0 8px 30px rgba(255, 215, 0, 0.5)';
                   e.target.style.transform = 'translateY(-3px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
+                  e.target.style.boxShadow = '0 6px 20px rgba(255, 215, 0, 0.4)';
                   e.target.style.transform = 'translateY(0)';
                 }}
               >
                 Request Security Assessment
               </a>
-              <a 
-                href="/contact" 
+              <a
+                href="/contact"
+                className="secondary-button"
                 style={{
                   display: 'inline-block',
                   background: 'transparent',
-                  color: 'white',
-                  border: '2px solid rgba(255, 255, 255, 0.3)',
+                  color: '#1F7CFF',
+                  border: '2px solid #1F7CFF',
                   padding: '18px 40px',
                   fontSize: '1.1rem',
                   fontWeight: '600',
@@ -921,14 +1465,14 @@ export const CybersecurityPage = () => {
                   backdropFilter: 'blur(10px)'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 25px rgba(29, 122, 175, 0.4)';
+                  e.target.style.boxShadow = '0 8px 25px rgba(31, 124, 255, 0.4)';
                   e.target.style.transform = 'translateY(-3px)';
-                  e.target.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+                  e.target.style.borderColor = 'rgba(31, 124, 255, 0.8)';
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.boxShadow = 'none';
                   e.target.style.transform = 'translateY(0)';
-                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                  e.target.style.borderColor = '#1F7CFF';
                 }}
               >
                 Get Cybersecurity Quote
