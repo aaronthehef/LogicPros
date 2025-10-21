@@ -38,17 +38,17 @@ import { ManagedITServicesPage as MonctonManagedITPage } from './pages/locations
 
 export const Router = () => {
   const [currentPath, setCurrentPath] = React.useState(() => {
-    // Support both hash routing (development) and clean URLs (production)
-    const hashPath = window.location.hash.slice(1);
+    // Use clean URLs (pathname) - hash routing only as fallback
     const pathname = window.location.pathname;
-    return hashPath || pathname || '/';
+    const hashPath = window.location.hash.slice(1);
+    return pathname !== '/' ? pathname : (hashPath || '/');
   });
 
   React.useEffect(() => {
     const handleRouteChange = () => {
-      const hashPath = window.location.hash.slice(1);
       const pathname = window.location.pathname;
-      setCurrentPath(hashPath || pathname || '/');
+      const hashPath = window.location.hash.slice(1);
+      setCurrentPath(pathname !== '/' ? pathname : (hashPath || '/'));
       // Scroll to top when route changes
       window.scrollTo(0, 0);
     };
@@ -154,18 +154,20 @@ export const Router = () => {
   );
 };
 
-// Update links to use hash routing
+// Handle link clicks for SPA navigation with clean URLs
 if (typeof window !== 'undefined') {
-  // Override link clicks to use hash routing
   document.addEventListener('click', (e) => {
-    // Find the closest anchor tag (in case we clicked on a child element)
     const anchor = e.target.closest('a');
-    if (anchor && anchor.href.includes('/')) {
+    if (anchor && anchor.href) {
       const href = anchor.getAttribute('href');
+      // Only handle internal links (starting with /)
       if (href && href.startsWith('/') && !href.startsWith('//') && !href.includes('mailto:') && !href.includes('tel:')) {
         e.preventDefault();
-        console.log('Navigating to:', href); // Debug log
-        window.location.hash = href;
+        console.log('Navigating to:', href);
+        // Use pushState for clean URLs
+        window.history.pushState({}, '', href);
+        // Trigger popstate to update the router
+        window.dispatchEvent(new PopStateEvent('popstate'));
       }
     }
   });
