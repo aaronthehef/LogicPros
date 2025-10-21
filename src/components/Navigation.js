@@ -304,23 +304,12 @@ export const Navigation = () => {
             
             <div style={{ clear: 'both', paddingTop: '2rem', zIndex: 1000, position: 'relative' }}>
               <h3 style={{ color: '#ffffff', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: 'bold' }}>Services</h3>
-              <a href="/services" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>All Services</a>
               <a href="/services/websites" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Website Design</a>
               <a href="/services/automations" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>AI Automations</a>
-              <a href="/services/it-services" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Cybersecurity & IT</a>
+              <a href="/services/cybersecurity" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Cybersecurity</a>
+              <a href="/services/managed-it" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: 'none', fontWeight: '500' }}>Managed IT Services</a>
               
-              <h3 style={{ color: '#ffffff', marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: 'bold' }}>Contractors</h3>
-              <a href="/contractors/plumbing" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Plumbing</a>
-              <a href="/contractors/electrical" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Electrical</a>
-              <a href="/contractors/hvac" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>HVAC</a>
-              <a href="/contractors/roofing" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Roofing</a>
-              
-              <h3 style={{ color: '#ffffff', marginTop: '2rem', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: 'bold' }}>Locations</h3>
-              <a href="/locations/fredericton" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Fredericton</a>
-              <a href="/locations/moncton" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Moncton</a>
-              <a href="/locations/saint-john" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Saint John</a>
-              
-              <div style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.3)' }}>
+              <div style={{ marginTop: '0.5rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.3)' }}>
                 <a href="/about" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>About</a>
                 <a href="/contact" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Contact</a>
                 

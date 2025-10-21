@@ -1,7 +1,6 @@
 import React from 'react';
 import { ResponsiveLandingPage } from './ResponsiveLandingPage';
 import { PageTransition } from './components/PageTransition';
-import { ServicesPage } from './pages/ServicesPage';
 import { PortfolioPage } from './pages/PortfolioPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
@@ -71,7 +70,9 @@ export const Router = () => {
     console.log('Current path:', currentPath); // Debug log
     switch (currentPath) {
       case '/services':
-        return <ITServicesPage />;
+        // Redirect to home page services section
+        window.location.hash = '/#services';
+        return <ResponsiveLandingPage />;
       case '/portfolio':
         return <PortfolioPage />;
       case '/about':

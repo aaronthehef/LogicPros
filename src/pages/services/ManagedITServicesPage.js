@@ -8,6 +8,7 @@ import { gsap } from 'gsap';
 
 export const ManagedITServicesPage = () => {
   const headerRef = useRef(null);
+  const heroRef = useRef(null);
 
   useEffect(() => {
     // Set page title
@@ -59,6 +60,63 @@ export const ManagedITServicesPage = () => {
     // Hero background animation styles
     const style = document.createElement('style');
     style.textContent = `
+      /* Ensure hero service cards are visible on mobile */
+      @media (max-width: 768px) {
+        .hero-service-cards {
+          display: flex !important;
+        }
+        .hero-section .container {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+        }
+      }
+      
+      /* Hero Service Card Animations */
+      @keyframes pulseGlow {
+        0%, 100% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.15), 0 0 20px rgba(29, 122, 175, 0.3);
+        }
+        50% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.25), 0 0 30px rgba(29, 122, 175, 0.5);
+        }
+      }
+
+      .hero-service-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        box-shadow: 0 20px 60px rgba(29, 122, 175, 0.3), 0 0 40px rgba(29, 122, 175, 0.6) !important;
+        border-color: rgba(29, 122, 175, 0.8) !important;
+      }
+
+      .hero-service-card:hover h3 {
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(29, 122, 175, 0.8) !important;
+      }
+
+      .hero-service-card:hover svg {
+        transform: scale(1.1) !important;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) !important;
+      }
+      
+      .hero-button {
+        background: linear-gradient(135deg, #FFC600 0%, #FFB800 100%) !important;
+        color: #1a1a2e !important;
+        padding: 18px 40px !important;
+        border-radius: 50px !important;
+        text-decoration: none !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border: none !important;
+        box-shadow: 0 6px 20px rgba(29, 122, 175, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: inline-block !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+      }
+      .hero-button:hover {
+        box-shadow: 0 8px 30px rgba(255, 198, 0, 0.6) !important;
+        transform: translateY(-3px) !important;
+        color: #1a1a2e !important;
+      }
       @keyframes panLeft {
         0% { transform: translateX(0); }
         100% { transform: translateX(-200px); }
@@ -129,144 +187,262 @@ export const ManagedITServicesPage = () => {
       </header>
 
       <main className="main-content">
-        {/* Hero Section */}
-        <section className="hero-section" style={{ 
-          position: 'relative', 
-          minHeight: '100vh', 
-          display: 'flex', 
-          alignItems: 'center', 
-          background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', 
-          overflow: 'hidden' 
-        }}>
-          <svg 
-            className="hero-background-svg"
-            style={{ 
-              position: 'absolute', 
-              top: '-10%', 
-              left: '-10%', 
-              width: '120%', 
-              height: '120%', 
+        {/* Hero Section - Matching Homepage Style */}
+        <section ref={heroRef} className="hero-section homepage-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', overflow: 'hidden' }}>
+          {/* Circuit Board Background - Same as Homepage */}
+          <svg
+            className="circuit-background"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
               zIndex: 1,
-              opacity: 0.7
-            }} 
-            viewBox="0 0 1200 800" 
-            xmlns="http://www.w3.org/2000/svg"
+              opacity: 0.4
+            }}
+            viewBox="0 0 1200 800"
+            preserveAspectRatio="xMidYMid slice"
           >
             <defs>
-              <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#1d7aaf" />
-                <stop offset="100%" stopColor="#1e40af" />
-              </linearGradient>
-              <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1d7aaf" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#1e40af" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#1d7aaf" stopOpacity="0.8" />
-              </linearGradient>
+              {/* Subtle glow filter */}
+              <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
             </defs>
-            
-            {/* Main Grid Lines */}
-            <g className="grid-lines" filter="blur(0.5px)">
-              <line x1="0" y1="100" x2="1200" y2="100" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.4" strokeDasharray="20,10" />
-              <line x1="0" y1="200" x2="1200" y2="200" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="0" y1="300" x2="1200" y2="300" stroke="#1d7aaf" strokeWidth="2" opacity="0.5" strokeDasharray="25,5" />
-              <line x1="0" y1="400" x2="1200" y2="400" stroke="#1e40af" strokeWidth="1" opacity="0.2" strokeDasharray="30,10" />
-              <line x1="0" y1="500" x2="1200" y2="500" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.3" strokeDasharray="20,15" />
-              
-              <line x1="200" y1="0" x2="200" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,10" />
-              <line x1="400" y1="0" x2="400" y2="800" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="600" y1="0" x2="600" y2="800" stroke="#1d7aaf" strokeWidth="2" opacity="0.4" strokeDasharray="25,5" />
-              <line x1="800" y1="0" x2="800" y2="800" stroke="#1e40af" strokeWidth="1" opacity="0.1" strokeDasharray="30,10" />
-              <line x1="1000" y1="0" x2="1000" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,15" />
-            </g>
 
-            {/* Circuit Board Patterns */}
-            <g className="circuit-patterns" filter="blur(0.3px)">
-              {/* Horizontal circuit paths */}
-              <path d="M100,150 L250,150 L270,170 L400,170 L420,150 L600,150" stroke="#1d7aaf" strokeWidth="1" opacity="0.4" fill="none" strokeDasharray="5,3" />
-              <path d="M150,250 L300,250 L320,230 L500,230 L520,250 L750,250" stroke="#1e40af" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="8,4" />
-              <path d="M80,350 L200,350 L220,330 L350,330 L370,350 L550,350" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.5" fill="none" strokeDasharray="6,2" />
-              
-              {/* Vertical circuit paths */}
-              <path d="M300,50 L300,180 L280,200 L280,320 L300,340 L300,450" stroke="#1e40af" strokeWidth="1" opacity="0.2" fill="none" strokeDasharray="4,3" />
-              <path d="M500,80 L500,200 L520,220 L520,300 L500,320 L500,480" stroke="#1d7aaf" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="7,3" />
-              <path d="M700,60 L700,150 L680,170 L680,280 L700,300 L700,420" stroke="#1e40af" strokeWidth="1.5" opacity="0.4" fill="none" strokeDasharray="5,4" />
-            </g>
+            {/* Professional circuit background with slow panning */}
+            <g transform="translate(0,0)">
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0; -500,0; -500,-350; 0,-350; 0,0"
+                dur="150s"
+                repeatCount="indefinite"
+              />
 
-            {/* Tech Nodes/Connection Points */}
-            <g className="tech-nodes">
-              <circle cx="150" cy="120" r="4" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="270" cy="170" r="3" fill="#1e40af" opacity="0.8" />
-              <circle cx="420" cy="150" r="5" fill="#1d7aaf" opacity="1.0" />
-              <circle cx="350" cy="180" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="520" cy="250" r="4" fill="#1d7aaf" opacity="0.8" />
-              <circle cx="650" cy="110" r="6" fill="#1e40af" opacity="0.9" />
-              <circle cx="850" cy="200" r="3" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="950" cy="140" r="4" fill="#1e40af" opacity="0.8" />
-              <circle cx="300" cy="340" r="5" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="500" cy="320" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="700" cy="300" r="4" fill="#1d7aaf" opacity="0.8" />
-            </g>
+              {/* Clean circuit grid layout */}
+              {[0, 1, 2, 3, 4, 5].map(layerX => (
+                [...Array(4)].map((_, layerY) => (
+                  <g key={`layer-${layerX}-${layerY}`} transform={`translate(${layerX * 400}, ${layerY * 250})`}>
 
-            {/* Glowing Orbs */}
-            <g className="glowing-orbs">
-              <circle cx="100" cy="100" r="8" fill="url(#techGradient)" opacity="0.4" />
-              <circle cx="900" cy="300" r="6" fill="url(#techGradient)" opacity="0.5" />
-              <circle cx="1100" cy="150" r="10" fill="url(#techGradient)" opacity="0.3" />
-              <circle cx="200" cy="400" r="7" fill="url(#techGradient)" opacity="0.4" />
+                    {/* Single clean horizontal trace */}
+                    <g stroke="#1F7CFF" strokeWidth="1.5" fill="none">
+                      <path d="M50 120 L350 120" strokeDasharray="20,12" opacity="0.5">
+                        <animate attributeName="stroke-dashoffset" values="0;-32" dur="3s" repeatCount="indefinite"/>
+                      </path>
+                    </g>
+
+                    {/* Single clean vertical trace */}
+                    {(layerX + layerY) % 2 === 0 && (
+                      <g stroke="#22c55e" strokeWidth="1.5" fill="none">
+                        <path d="M200 30 L200 220" strokeDasharray="18,10" opacity="0.4">
+                          <animate attributeName="stroke-dashoffset" values="0;-28" dur="2.8s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Occasional L-shaped route */}
+                    {(layerX + layerY) % 3 === 0 && (
+                      <g stroke="#f59e0b" strokeWidth="1" fill="none">
+                        <path d="M100 80 L100 160 L300 160" strokeDasharray="15,8" opacity="0.35">
+                          <animate attributeName="stroke-dashoffset" values="0;-23" dur="3.5s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Subtle floating dots */}
+                    <g>
+                      {[...Array(3)].map((_, dotIndex) => {
+                        const x = 80 + (dotIndex * 120);
+                        const y = 60 + (dotIndex * 40);
+                        const delay = dotIndex * 1.5;
+                        return (
+                          <circle
+                            key={`dot-${dotIndex}`}
+                            cx={x}
+                            cy={y}
+                            r="1.5"
+                            fill="#1F7CFF"
+                            opacity="0.6"
+                          >
+                            <animateTransform
+                              attributeName="transform"
+                              type="translate"
+                              values="0,0; 8,-12; -5,10; 0,0"
+                              dur="6s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                            <animate
+                              attributeName="opacity"
+                              values="0.3;0.6;0.3"
+                              dur="4s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                          </circle>
+                        );
+                      })}
+                    </g>
+                  </g>
+                ))
+              ))}
             </g>
           </svg>
 
-          {/* Floating Particles */}
-          <div className="floating-particle" style={{ top: '15%', left: '10%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '25%', right: '15%', width: '6px', height: '6px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '45%', left: '20%', width: '3px', height: '3px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '35%', right: '25%', width: '5px', height: '5px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '60%', left: '15%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '70%', right: '20%', width: '3px', height: '3px', background: '#1e40af', borderRadius: '50%' }}></div>
+          <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '4rem', alignItems: 'center' }}>
+              <div style={{ textAlign: 'left', color: 'white' }}>
+                <h1 style={{
+                  fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                  fontWeight: '900',
+                  lineHeight: '0.9',
+                  marginBottom: '1rem',
+                  color: '#1F7CFF',
+                  textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
+                }}>
+                  Enterprise Managed IT Services for Maritime Businesses
+                </h1>
+                <p style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+                  color: '#e2e8f0',
+                  marginBottom: '2.5rem',
+                  fontWeight: '300',
+                  maxWidth: '500px'
+                }}>
+                  Keep your New Brunswick business technology running smoothly and securely with our comprehensive
+                  managed IT services. From network monitoring to personalized phone assistance, we provide end-to-end
+                  IT management solutions tailored for Maritime businesses and SMBs.
+                </p>
+                
+                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                  <a href="/contact" className="hero-button">
+                    Free Consultation
+                  </a>
+                </div>
+              </div>
 
-          <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center', color: 'white' }}>
-            <h1 style={{ 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
-              fontWeight: '700', 
-              marginBottom: '30px',
-              lineHeight: '1.2',
-              textShadow: '0 4px 20px rgba(0, 0, 0, 0.5)'
-            }}>Enterprise Managed IT Services New Brunswick & Maritime Solutions</h1>
-            <p style={{ 
-              fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', 
-              marginBottom: '50px', 
-              maxWidth: '800px', 
-              margin: '0 auto 50px auto',
-              lineHeight: '1.6',
-              opacity: 0.9,
-              textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)'
-            }}>
-              Keep your New Brunswick business technology running smoothly and securely with our comprehensive 
-              managed IT services. From network monitoring to personalized phone assistance, we provide end-to-end 
-              IT management solutions tailored for Maritime businesses and SMBs.
-            </p>
-            <div style={{ textAlign: 'center' }}>
-              <a href="/contact" style={{
-                display: 'inline-block',
-                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                color: 'white',
-                border: 'none',
-                padding: '18px 40px',
-                fontSize: '1.1rem',
-                fontWeight: '600',
-                borderRadius: '50px',
-                boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                textDecoration: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
-                e.target.style.transform = 'translateY(-3px)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
-                e.target.style.transform = 'translateY(0)';
-              }}>Request IT Service Consultation</a>
+              <div className="hero-service-cards" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                height: 'auto',
+                justifyContent: 'center'
+              }}>
+                {/* Monitor Card */}
+                <a href="/contact" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Monitor</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Network & System Management</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="3" width="20" height="14" rx="2" stroke="white" strokeWidth="2" fill="none"/>
+                      <rect x="6" y="17" width="4" height="2" fill="white"/>
+                      <rect x="14" y="17" width="4" height="2" fill="white"/>
+                      <circle cx="12" cy="10" r="2" stroke="white" strokeWidth="2" fill="none"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* Defend Card */}
+                <a href="/contact" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 1s'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Defend</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Cyber Protection & Threat Response</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* Support Card */}
+                <a href="/contact" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 2s'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Support</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Help Desk & End-User Assistance</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -313,18 +489,35 @@ export const ManagedITServicesPage = () => {
               flexDirection: 'column'
             }}>
               <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                <div style={{ 
-                  fontSize: '3rem', 
-                  marginBottom: '15px'
-                }}>🖥️</div>
-                <h3 style={{ 
-                  fontSize: '1.8rem', 
-                  fontWeight: '700', 
-                  color: colors.text.primary, 
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="3" width="20" height="14" rx="2" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="6" y="17" width="4" height="2" fill="white"/>
+                    <rect x="14" y="17" width="4" height="2" fill="white"/>
+                    <circle cx="12" cy="10" r="2" stroke="white" strokeWidth="2" fill="none"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.8rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
                   marginBottom: '8px'
                 }}>24/7 Network Monitoring</h3>
-                <p style={{ 
-                  color: colors.primary, 
+                <p style={{
+                  color: colors.primary,
                   fontWeight: '600',
                   fontSize: '1.1rem'
                 }}>Proactive Infrastructure Management</p>
@@ -401,18 +594,32 @@ export const ManagedITServicesPage = () => {
               flexDirection: 'column'
             }}>
               <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                <div style={{ 
-                  fontSize: '3rem', 
-                  marginBottom: '15px'
-                }}>📞</div>
-                <h3 style={{ 
-                  fontSize: '1.8rem', 
-                  fontWeight: '700', 
-                  color: colors.text.primary, 
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.8rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
                   marginBottom: '8px'
                 }}>Personalized Phone Support</h3>
-                <p style={{ 
-                  color: colors.primary, 
+                <p style={{
+                  color: colors.primary,
                   fontWeight: '600',
                   fontSize: '1.1rem'
                 }}>Direct Client Assistance</p>
@@ -498,10 +705,27 @@ export const ManagedITServicesPage = () => {
               textAlign: 'center',
               transition: 'all 0.3s ease'
             }}>
-              <div style={{ 
-                fontSize: '3rem', 
-                marginBottom: '20px'
-              }}>🔍</div>
+              <div style={{
+                fontSize: '3rem',
+                marginBottom: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '80px',
+                height: '80px',
+                background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                borderRadius: '20px',
+                boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                transition: 'all 0.3s ease',
+                margin: '0 auto 20px auto'
+              }}>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="3" width="20" height="14" rx="2" stroke="white" strokeWidth="2" fill="none"/>
+                  <rect x="6" y="17" width="4" height="2" fill="white"/>
+                  <rect x="14" y="17" width="4" height="2" fill="white"/>
+                  <circle cx="12" cy="10" r="2" stroke="white" strokeWidth="2" fill="none"/>
+                </svg>
+              </div>
               <h3 style={{ 
                 fontSize: '1.4rem', 
                 fontWeight: '700', 
@@ -528,10 +752,24 @@ export const ManagedITServicesPage = () => {
               textAlign: 'center',
               transition: 'all 0.3s ease'
             }}>
-              <div style={{ 
-                fontSize: '3rem', 
-                marginBottom: '20px'
-              }}>📞</div>
+              <div style={{
+                fontSize: '3rem',
+                marginBottom: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '80px',
+                height: '80px',
+                background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                borderRadius: '20px',
+                boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                transition: 'all 0.3s ease',
+                margin: '0 auto 20px auto'
+              }}>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
               <h3 style={{ 
                 fontSize: '1.4rem', 
                 fontWeight: '700', 
@@ -558,10 +796,29 @@ export const ManagedITServicesPage = () => {
               textAlign: 'center',
               transition: 'all 0.3s ease'
             }}>
-              <div style={{ 
-                fontSize: '3rem', 
-                marginBottom: '20px'
-              }}>🔄</div>
+              <div style={{
+                fontSize: '3rem',
+                marginBottom: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '80px',
+                height: '80px',
+                background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                borderRadius: '20px',
+                boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                transition: 'all 0.3s ease',
+                margin: '0 auto 20px auto'
+              }}>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
+                  <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="12" cy="5" r="1" fill="white"/>
+                  <circle cx="12" cy="19" r="1" fill="white"/>
+                  <circle cx="19" cy="12" r="1" fill="white"/>
+                  <circle cx="5" cy="12" r="1" fill="white"/>
+                </svg>
+              </div>
               <h3 style={{ 
                 fontSize: '1.4rem', 
                 fontWeight: '700', 
@@ -587,10 +844,26 @@ export const ManagedITServicesPage = () => {
               textAlign: 'center',
               transition: 'all 0.3s ease'
             }}>
-              <div style={{ 
-                fontSize: '3rem', 
-                marginBottom: '20px'
-              }}>📊</div>
+              <div style={{
+                fontSize: '3rem',
+                marginBottom: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '80px',
+                height: '80px',
+                background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                borderRadius: '20px',
+                boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                transition: 'all 0.3s ease',
+                margin: '0 auto 20px auto'
+              }}>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="white" strokeWidth="2" fill="none"/>
+                  <path d="M3 9h18" stroke="white" strokeWidth="2"/>
+                  <path d="M9 21V9" stroke="white" strokeWidth="2"/>
+                </svg>
+              </div>
               <h3 style={{ 
                 fontSize: '1.4rem', 
                 fontWeight: '700', 
@@ -616,10 +889,26 @@ export const ManagedITServicesPage = () => {
               textAlign: 'center',
               transition: 'all 0.3s ease'
             }}>
-              <div style={{ 
-                fontSize: '3rem', 
-                marginBottom: '20px'
-              }}>💾</div>
+              <div style={{
+                fontSize: '3rem',
+                marginBottom: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '80px',
+                height: '80px',
+                background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                borderRadius: '20px',
+                boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                transition: 'all 0.3s ease',
+                margin: '0 auto 20px auto'
+              }}>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <polyline points="7,10 12,15 17,10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <line x1="12" y1="15" x2="12" y2="3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
               <h3 style={{ 
                 fontSize: '1.4rem', 
                 fontWeight: '700', 
@@ -645,10 +934,28 @@ export const ManagedITServicesPage = () => {
               textAlign: 'center',
               transition: 'all 0.3s ease'
             }}>
-              <div style={{ 
-                fontSize: '3rem', 
-                marginBottom: '20px'
-              }}>📋</div>
+              <div style={{
+                fontSize: '3rem',
+                marginBottom: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '80px',
+                height: '80px',
+                background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                borderRadius: '20px',
+                boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                transition: 'all 0.3s ease',
+                margin: '0 auto 20px auto'
+              }}>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <polyline points="14,2 14,8 20,8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2"/>
+                  <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2"/>
+                  <polyline points="10,9 9,9 8,9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
               <h3 style={{ 
                 fontSize: '1.4rem', 
                 fontWeight: '700', 
@@ -731,10 +1038,10 @@ export const ManagedITServicesPage = () => {
                 features: ['Data confidentiality', 'Document management', 'Secure communications', 'Compliance']
               },
               {
-                icon: '🚢',
-                title: 'Fisheries & Shipping',
-                description: 'Specialized IT solutions supporting maritime logistics and compliance across New Brunswick.',
-                features: ['Maritime logistics', 'Compliance systems', 'Fleet management', 'Port operations']
+                icon: '🏨',
+                title: 'Hospitality & Tourism',
+                description: 'Comprehensive IT solutions for hotels, resorts, and tourism businesses across New Brunswick.',
+                features: ['Booking systems', 'Guest Wi-Fi management', 'POS integration', 'Property management']
               }
             ].map((industry, index) => (
               <div key={index} style={{ 
@@ -758,18 +1065,87 @@ export const ManagedITServicesPage = () => {
                   zIndex: 0
                 }}></div>
                 <div style={{ position: 'relative', zIndex: 1 }}>
-                  <div style={{ 
-                    fontSize: '2.5rem', 
+                  <div style={{
+                    fontSize: '2.5rem',
                     marginBottom: '15px',
-                    background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                    borderRadius: '50%',
-                    width: '60px',
-                    height: '60px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginBottom: '20px'
-                  }}>{industry.icon}</div>
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 20px auto'
+                  }}>
+                    {industry.icon === '🏦' && (
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 10h18" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                        <path d="M6 10v9" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                        <path d="M10 10v9" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                        <path d="M14 10v9" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                        <path d="M18 10v9" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                        <path d="M2 19h20" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                        <path d="M12 3L2 8l10 2 10-2z" stroke="white" strokeWidth="2" strokeLinejoin="round" fill="none"/>
+                        <circle cx="12" cy="6" r="1" fill="white"/>
+                      </svg>
+                    )}
+                    {industry.icon === '🏪' && (
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <line x1="3" y1="6" x2="21" y2="6" stroke="white" strokeWidth="2"/>
+                        <path d="M16 10a4 4 0 0 1-8 0" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    )}
+                    {industry.icon === '🎓' && (
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    )}
+                    {industry.icon === '🏭' && (
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 21h18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M5 21V7l8-4v18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M19 21V11l-6-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M9 9h1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M9 13h1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    )}
+                    {industry.icon === '⚖️' && (
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3v18" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                        <path d="M9 21h6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                        <path d="M12 3h5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                        <path d="M7 8l-3 6h6z" stroke="white" strokeWidth="2" strokeLinejoin="round" fill="none"/>
+                        <path d="M17 8l-3 6h6z" stroke="white" strokeWidth="2" strokeLinejoin="round" fill="none"/>
+                        <circle cx="7" cy="8" r="1" fill="white"/>
+                        <circle cx="17" cy="8" r="1" fill="white"/>
+                      </svg>
+                    )}
+                    {industry.icon === '🏨' && (
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        {/* Pineapple - Classic symbol of hospitality */}
+                        {/* Pineapple body */}
+                        <path d="M12 8c-2.5 0-4 1.5-4 4v4c0 2.5 1.5 4 4 4s4-1.5 4-4v-4c0-2.5-1.5-4-4-4z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.2"/>
+
+                        {/* Diamond pattern on body */}
+                        <path d="M10 10l2 2 2-2" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M10 13l2 2 2-2" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M10 16l2 2 2-2" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+
+                        {/* Leaves on top */}
+                        <path d="M12 8V3" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                        <path d="M10 7l-1-3" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                        <path d="M14 7l1-3" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                        <path d="M11 6l-1.5-2.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                        <path d="M13 6l1.5-2.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                        <path d="M9.5 8l-1.5-2" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                        <path d="M14.5 8l1.5-2" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      </svg>
+                    )}
+                  </div>
                   <h3 style={{ 
                     fontSize: '1.4rem', 
                     fontWeight: '600', 
@@ -839,27 +1215,27 @@ export const ManagedITServicesPage = () => {
       <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
         <div className="container">
           <h2 className="section-title">Our Managed IT Service Process</h2>
-          <div className="process-grid-it" style={{ marginTop: '40px', paddingTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
-            <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-              <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: `0 4px 12px ${colors.primary}4D`, zIndex: 10 }}>1</div>
+          <div style={{ marginTop: '40px', paddingTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
+            <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
+              <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>1</div>
               <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>IT Infrastructure Assessment</h3>
               <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Comprehensive audit identifying gaps, inefficiencies, and security risks in your current IT environment.</p>
             </div>
             
-            <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-              <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.accent, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems:'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: `0 4px 12px ${colors.accent}4D`, zIndex: 10 }}>2</div>
+            <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
+              <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems:'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>2</div>
               <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Custom IT Management Plan</h3>
               <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Strategic plan tailored to your business needs, budget, and growth objectives with clear timelines.</p>
             </div>
             
-            <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-              <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.secondary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: `0 4px 12px ${colors.secondary}4D`, zIndex: 10 }}>3</div>
+            <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
+              <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>3</div>
               <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Implementation & Onboarding</h3>
               <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Smooth transition with minimal disruption, including setup of monitoring and support systems.</p>
             </div>
             
-            <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible' }}>
-              <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primaryDark, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: `0 4px 12px ${colors.primaryDark}4D`, zIndex: 10 }}>4</div>
+            <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
+              <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>4</div>
               <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Ongoing Monitoring & Support</h3>
               <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>24/7 proactive management, regular reporting, and continuous improvements to optimize performance.</p>
             </div>
@@ -868,7 +1244,7 @@ export const ManagedITServicesPage = () => {
         
         <style dangerouslySetInnerHTML={{__html: `
           @media (max-width: 768px) {
-            .process-grid-it {
+            div[style*="gridTemplateColumns: repeat(2, 1fr)"] {
               grid-template-columns: 1fr !important;
             }
           }

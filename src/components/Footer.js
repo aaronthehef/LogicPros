@@ -85,7 +85,7 @@ export const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <div className="footer-legal">
-              <p>&copy; 2025 LogicPros. All rights reserved.</p>
+              <p>&copy; 2025 LPS LogicPros Solutions Inc. All rights reserved.</p>
               <div className="footer-links">
                 <a href="/privacy">Privacy Policy</a>
                 <a href="/terms">Terms of Service</a>

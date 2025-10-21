@@ -72,8 +72,8 @@ export const ContactPage = () => {
       .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
       .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
       .hero-button {
-        background: linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%) !important;
-        color: white !important;
+        background: linear-gradient(135deg, #FFC600 0%, #FFB800 100%) !important;
+        color: #1a1a2e !important;
         padding: 18px 40px !important;
         border-radius: 50px !important;
         text-decoration: none !important;
@@ -88,9 +88,9 @@ export const ContactPage = () => {
         cursor: pointer !important;
       }
       .hero-button:hover {
-        box-shadow: 0 8px 30px rgba(29, 122, 175, 0.5) !important;
+        box-shadow: 0 8px 30px rgba(255, 198, 0, 0.6) !important;
         transform: translateY(-3px) !important;
-        color: white !important;
+        color: #1a1a2e !important;
       }
       .secondary-button {
         background: transparent !important;
@@ -144,6 +144,32 @@ export const ContactPage = () => {
         color: #1a79af !important;
         border-color: rgba(29, 122, 175, 0.8) !important;
         box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4) !important;
+      }
+      
+      /* Hero Service Card Animations */
+      @keyframes pulseGlow {
+        0%, 100% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.15), 0 0 20px rgba(29, 122, 175, 0.3);
+        }
+        50% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.25), 0 0 30px rgba(29, 122, 175, 0.5);
+        }
+      }
+
+      .hero-service-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        box-shadow: 0 20px 60px rgba(29, 122, 175, 0.3), 0 0 40px rgba(29, 122, 175, 0.6) !important;
+        border-color: rgba(29, 122, 175, 0.8) !important;
+      }
+
+      .hero-service-card:hover h3 {
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(29, 122, 175, 0.8) !important;
+      }
+
+      .hero-service-card:hover svg {
+        transform: scale(1.1) !important;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) !important;
       }
     `;
     document.head.appendChild(style);
@@ -227,115 +253,275 @@ export const ContactPage = () => {
       <main className="main-content">
         {/* Hero Section */}
         <section className="hero-section homepage-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', overflow: 'hidden' }}>
-          <svg 
-            className="hero-background-svg"
-            style={{ 
-              position: 'absolute', 
-              top: '-10%', 
-              left: '-10%', 
-              width: '120%', 
-              height: '120%', 
+          {/* Circuit Board Background */}
+          <svg
+            className="circuit-background"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
               zIndex: 1,
-              opacity: 0.7
-            }} 
-            viewBox="0 0 1200 800" 
-            xmlns="http://www.w3.org/2000/svg"
+              opacity: 0.4
+            }}
+            viewBox="0 0 1200 800"
+            preserveAspectRatio="xMidYMid slice"
           >
             <defs>
-              <linearGradient id="techGradientContact" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#1d7aaf" />
-                <stop offset="100%" stopColor="#1e40af" />
-              </linearGradient>
-              <linearGradient id="pulseGradientContact" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1d7aaf" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#1e40af" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#1d7aaf" stopOpacity="0.8" />
-              </linearGradient>
+              {/* Subtle glow filter */}
+              <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
             </defs>
-            
-            {/* Main Grid Lines */}
-            <g className="grid-lines" filter="blur(0.5px)">
-              <line x1="0" y1="100" x2="1200" y2="100" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.4" strokeDasharray="20,10" />
-              <line x1="0" y1="200" x2="1200" y2="200" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="0" y1="300" x2="1200" y2="300" stroke="#1d7aaf" strokeWidth="2" opacity="0.5" strokeDasharray="25,5" />
-              <line x1="0" y1="400" x2="1200" y2="400" stroke="#1e40af" strokeWidth="1" opacity="0.2" strokeDasharray="30,10" />
-              <line x1="0" y1="500" x2="1200" y2="500" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.3" strokeDasharray="20,15" />
-              
-              <line x1="200" y1="0" x2="200" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,10" />
-              <line x1="400" y1="0" x2="400" y2="800" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="600" y1="0" x2="600" y2="800" stroke="#1d7aaf" strokeWidth="2" opacity="0.4" strokeDasharray="25,5" />
-              <line x1="800" y1="0" x2="800" y2="800" stroke="#1e40af" strokeWidth="1" opacity="0.1" strokeDasharray="30,10" />
-              <line x1="1000" y1="0" x2="1000" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,15" />
-            </g>
 
-            {/* Circuit Board Patterns */}
-            <g className="circuit-patterns" filter="blur(0.3px)">
-              <path d="M100,150 L250,150 L270,170 L400,170 L420,150 L600,150" stroke="#1d7aaf" strokeWidth="1" opacity="0.4" fill="none" strokeDasharray="5,3" />
-              <path d="M150,250 L300,250 L320,230 L500,230 L520,250 L750,250" stroke="#1e40af" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="8,4" />
-              <path d="M80,350 L200,350 L220,330 L350,330 L370,350 L550,350" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.5" fill="none" strokeDasharray="6,2" />
-              
-              <path d="M300,50 L300,180 L280,200 L280,320 L300,340 L300,450" stroke="#1e40af" strokeWidth="1" opacity="0.2" fill="none" strokeDasharray="4,3" />
-              <path d="M500,80 L500,200 L520,220 L520,300 L500,320 L500,480" stroke="#1d7aaf" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="7,3" />
-              <path d="M700,60 L700,150 L680,170 L680,280 L700,300 L700,420" stroke="#1e40af" strokeWidth="1.5" opacity="0.4" fill="none" strokeDasharray="5,4" />
-            </g>
+            {/* Professional circuit background with slow panning */}
+            <g transform="translate(0,0)">
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0; -500,0; -500,-350; 0,-350; 0,0"
+                dur="150s"
+                repeatCount="indefinite"
+              />
 
-            {/* Tech Nodes/Connection Points */}
-            <g className="tech-nodes">
-              <circle cx="150" cy="120" r="4" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="270" cy="170" r="3" fill="#1e40af" opacity="0.8" />
-              <circle cx="420" cy="150" r="5" fill="#1d7aaf" opacity="1.0" />
-              <circle cx="350" cy="180" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="520" cy="250" r="4" fill="#1d7aaf" opacity="0.8" />
-              <circle cx="650" cy="110" r="6" fill="#1e40af" opacity="0.9" />
-              <circle cx="850" cy="200" r="3" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="950" cy="140" r="4" fill="#1e40af" opacity="0.8" />
-              <circle cx="300" cy="340" r="5" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="500" cy="320" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="700" cy="300" r="4" fill="#1d7aaf" opacity="0.8" />
-            </g>
+              {/* Clean circuit grid layout */}
+              {[0, 1, 2, 3, 4, 5].map(layerX => (
+                [...Array(4)].map((_, layerY) => (
+                  <g key={`layer-${layerX}-${layerY}`} transform={`translate(${layerX * 400}, ${layerY * 250})`}>
 
-            {/* Glowing Orbs */}
-            <g className="glowing-orbs">
-              <circle cx="100" cy="100" r="8" fill="url(#techGradientContact)" opacity="0.4" />
-              <circle cx="900" cy="300" r="6" fill="url(#techGradientContact)" opacity="0.5" />
-              <circle cx="1100" cy="150" r="10" fill="url(#techGradientContact)" opacity="0.3" />
-              <circle cx="200" cy="400" r="7" fill="url(#techGradientContact)" opacity="0.4" />
+                    {/* Single clean horizontal trace */}
+                    <g stroke="#1F7CFF" strokeWidth="1.5" fill="none">
+                      <path d="M50 120 L350 120" strokeDasharray="20,12" opacity="0.5">
+                        <animate attributeName="stroke-dashoffset" values="0;-32" dur="3s" repeatCount="indefinite"/>
+                      </path>
+                    </g>
+
+                    {/* Single clean vertical trace */}
+                    {(layerX + layerY) % 2 === 0 && (
+                      <g stroke="#22c55e" strokeWidth="1.5" fill="none">
+                        <path d="M200 30 L200 220" strokeDasharray="18,10" opacity="0.4">
+                          <animate attributeName="stroke-dashoffset" values="0;-28" dur="2.8s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Occasional L-shaped route */}
+                    {(layerX + layerY) % 3 === 0 && (
+                      <g stroke="#f59e0b" strokeWidth="1" fill="none">
+                        <path d="M100 80 L100 160 L300 160" strokeDasharray="15,8" opacity="0.35">
+                          <animate attributeName="stroke-dashoffset" values="0;-23" dur="3.5s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Subtle floating dots */}
+                    <g>
+                      {[...Array(3)].map((_, dotIndex) => {
+                        const x = 80 + (dotIndex * 120);
+                        const y = 60 + (dotIndex * 40);
+                        const delay = dotIndex * 1.5;
+                        return (
+                          <circle
+                            key={`dot-${dotIndex}`}
+                            cx={x}
+                            cy={y}
+                            r="1.5"
+                            fill="#1F7CFF"
+                            opacity="0.6"
+                          >
+                            <animateTransform
+                              attributeName="transform"
+                              type="translate"
+                              values="0,0; 8,-12; -5,10; 0,0"
+                              dur="6s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                            <animate
+                              attributeName="opacity"
+                              values="0.3;0.6;0.3"
+                              dur="4s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                          </circle>
+                        );
+                      })}
+                    </g>
+                  </g>
+                ))
+              ))}
             </g>
           </svg>
 
-          {/* Floating Particles */}
-          <div className="floating-particle" style={{ top: '15%', left: '10%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '25%', right: '15%', width: '6px', height: '6px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '45%', left: '20%', width: '3px', height: '3px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '35%', right: '25%', width: '5px', height: '5px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '60%', left: '15%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '70%', right: '20%', width: '3px', height: '3px', background: '#1e40af', borderRadius: '50%' }}></div>
-
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-            <div className="hero-content" style={{ color: 'white', textAlign: 'center' }}>
-              <h1 style={{ 
-                fontSize: 'clamp(2.5rem, 6vw, 5rem)', 
-                fontWeight: '900', 
-                lineHeight: '0.9', 
-                marginBottom: '1rem',
-                color: 'white',
-                textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-                letterSpacing: '-0.02em'
-              }}>Let's Grow Your Business Together</h1>
-              <p style={{ 
-                fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
-                marginBottom: '40px',
-                maxWidth: '700px',
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                lineHeight: '1.7',
-                fontWeight: '300',
-                color: 'rgba(255, 255, 255, 0.95)',
-                textShadow: '0 2px 4px rgba(0, 0, 0, 0.4)'
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '4rem', alignItems: 'center' }}>
+              <div style={{ textAlign: 'left', color: 'white' }}>
+                <h1 style={{
+                  fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                  fontWeight: '900',
+                  lineHeight: '0.9',
+                  marginBottom: '1rem',
+                  color: '#1F7CFF',
+                  textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
+                }}>
+                  Let's Grow Your Business Together
+                </h1>
+                <p style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+                  color: '#e2e8f0',
+                  marginBottom: '2.5rem',
+                  fontWeight: '300',
+                  maxWidth: '500px'
+                }}>
+                  Ready to enhance your cybersecurity, streamline operations, or attract more customers?
+                  Get your free consultation today.
+                </p>
+                
+                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                  <button
+                    onClick={scrollToForm}
+                    className="hero-button"
+                    style={{ minWidth: '200px' }}
+                  >
+                    Get Free Consultation
+                  </button>
+                </div>
+              </div>
+
+              <div className="hero-service-cards" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                height: 'auto',
+                justifyContent: 'center'
               }}>
-                Ready to enhance your cybersecurity, streamline operations, or attract more customers? 
-                Get your free consultation today.
-              </p>
+                {/* Build Card */}
+                <a href="#contact-form-section" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Build</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Professional Web Design</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                      <rect x="8" y="16" width="8" height="2" fill="white"/>
+                      <rect x="9" y="18" width="6" height="1" fill="white"/>
+                    </svg>
+                  </div>
+                </a>
+  
+                {/* Automate Card */}
+                <a href="#contact-form-section" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 1s'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Automate</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>AI-Powered Business Solutions</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* AI Robot Icon */}
+                      <rect x="6" y="8" width="12" height="10" rx="2" stroke="white" strokeWidth="2" fill="none"/>
+                      <path d="M12 8V5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <circle cx="12" cy="4" r="1.5" fill="white"/>
+                      <circle cx="9.5" cy="12" r="1.5" fill="white"/>
+                      <circle cx="14.5" cy="12" r="1.5" fill="white"/>
+                      <path d="M9 15h6" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M7 10h2" stroke="white" strokeWidth="1" strokeLinecap="round"/>
+                      <path d="M15 10h2" stroke="white" strokeWidth="1" strokeLinecap="round"/>
+                      <path d="M12 18v2" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <path d="M6 13H4" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <path d="M18 13h2" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <circle cx="3" cy="13" r="1" fill="white"/>
+                      <circle cx="21" cy="13" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                </a>
+  
+                {/* Secure Card */}
+                <a href="#contact-form-section" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 2s'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Secure</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Cybersecurity & IT Solutions</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -565,7 +751,7 @@ export const ContactPage = () => {
                     padding: '20px',
                     border: '1px solid rgba(29, 122, 175, 0.15)'
                   }}>
-                    <h4 style={{ 
+                    <h4 style={{
                       color: '#1d7aaf',
                       fontSize: '1.1rem',
                       fontWeight: '600',
@@ -574,9 +760,25 @@ export const ContactPage = () => {
                       alignItems: 'center',
                       gap: '10px'
                     }}>
-                      📧 Business Email
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '30px',
+                        height: '30px',
+                        background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                        borderRadius: '10px',
+                        boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)',
+                        flexShrink: 0
+                      }}>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <polyline points="22,6 12,13 2,6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                      Business Email
                     </h4>
-                    <p style={{ 
+                    <p style={{
                       margin: '0',
                       fontSize: '1rem'
                     }}>
@@ -594,7 +796,7 @@ export const ContactPage = () => {
                     padding: '20px',
                     border: '1px solid rgba(29, 122, 175, 0.15)'
                   }}>
-                    <h4 style={{ 
+                    <h4 style={{
                       color: '#1d7aaf',
                       fontSize: '1.1rem',
                       fontWeight: '600',
@@ -603,9 +805,24 @@ export const ContactPage = () => {
                       alignItems: 'center',
                       gap: '10px'
                     }}>
-                      📱 Office Phone
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '30px',
+                        height: '30px',
+                        background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                        borderRadius: '10px',
+                        boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)',
+                        flexShrink: 0
+                      }}>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                      Office Phone
                     </h4>
-                    <p style={{ 
+                    <p style={{
                       margin: '0 0 8px 0',
                       fontSize: '1rem'
                     }}>
@@ -615,7 +832,7 @@ export const ContactPage = () => {
                         fontWeight: '500'
                       }}>(506) 478-2949</a>
                     </p>
-                    <small style={{ 
+                    <small style={{
                       color: '#6c757d',
                       fontSize: '0.9rem'
                     }}>Monday - Friday, 8am - 5pm EST</small>
@@ -627,7 +844,7 @@ export const ContactPage = () => {
                     padding: '20px',
                     border: '1px solid rgba(29, 122, 175, 0.15)'
                   }}>
-                    <h4 style={{ 
+                    <h4 style={{
                       color: '#1d7aaf',
                       fontSize: '1.1rem',
                       fontWeight: '600',
@@ -636,14 +853,29 @@ export const ContactPage = () => {
                       alignItems: 'center',
                       gap: '10px'
                     }}>
-                      ⚡ Response Time
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '30px',
+                        height: '30px',
+                        background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                        borderRadius: '10px',
+                        boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)',
+                        flexShrink: 0
+                      }}>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                      Response Time
                     </h4>
-                    <p style={{ 
+                    <p style={{
                       margin: '0 0 8px 0',
                       fontSize: '1rem',
                       color: '#2c3e50'
                     }}>2-4 hours during business hours</p>
-                    <small style={{ 
+                    <small style={{
                       color: '#6c757d',
                       fontSize: '0.9rem'
                     }}>Same-day for urgent projects</small>
@@ -658,7 +890,7 @@ export const ContactPage = () => {
                   borderRadius: '12px',
                   border: '1px solid rgba(255, 107, 53, 0.15)'
                 }}>
-                  <h4 style={{ 
+                  <h4 style={{
                     color: '#ff6b35',
                     fontSize: '1.2rem',
                     fontWeight: '600',
@@ -668,7 +900,23 @@ export const ContactPage = () => {
                     justifyContent: 'center',
                     gap: '10px'
                   }}>
-                    🎯 Need It Done Fast?
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '30px',
+                      height: '30px',
+                      background: 'linear-gradient(135deg, #ff6b35, #ff5722)',
+                      borderRadius: '10px',
+                      boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)',
+                      flexShrink: 0
+                    }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" fill="none"/>
+                        <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    Need It Done Fast?
                   </h4>
                   <p style={{ 
                     color: '#2c3e50',

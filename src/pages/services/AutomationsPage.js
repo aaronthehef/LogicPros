@@ -1,15 +1,122 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
 import { Footer } from '../../components/Footer';
 import { colors } from '../../styles/colors';
+import { gsap } from 'gsap';
 
 export const AutomationsPage = () => {
+  const headerRef = useRef(null);
+  const heroRef = useRef(null);
+
   useEffect(() => {
+    // Set page title
+    document.title = "AI Automation Solutions New Brunswick | LogicPros | Business Automation Maritime";
+    
+    // Enhanced GSAP scroll animations for header
+    const header = headerRef.current;
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 100) {
+        // Add enhanced blur and shadow when scrolled
+        gsap.to(header, {
+          duration: 0.3,
+          css: {
+            backdropFilter: "blur(25px) saturate(200%)",
+            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(29, 122, 175, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
+          },
+          ease: "power2.out"
+        });
+      } else {
+        // Return to original state
+        gsap.to(header, {
+          duration: 0.3,
+          css: {
+            backdropFilter: "blur(20px) saturate(180%)",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(29, 122, 175, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
+          },
+          ease: "power2.out"
+        });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial header animation on load
+    gsap.fromTo(header,
+      { y: -100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.2
+      }
+    );
+
     // Hero background animation styles
     const style = document.createElement('style');
     style.textContent = `
+      /* Ensure hero service cards are visible on mobile */
+      @media (max-width: 768px) {
+        .hero-service-cards {
+          display: flex !important;
+        }
+        .hero-section .container {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+        }
+      }
+      
+      /* Hero Service Card Animations */
+      @keyframes pulseGlow {
+        0%, 100% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.15), 0 0 20px rgba(29, 122, 175, 0.3);
+        }
+        50% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.25), 0 0 30px rgba(29, 122, 175, 0.5);
+        }
+      }
+
+      .hero-service-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        box-shadow: 0 20px 60px rgba(29, 122, 175, 0.3), 0 0 40px rgba(29, 122, 175, 0.6) !important;
+        border-color: rgba(29, 122, 175, 0.8) !important;
+      }
+
+      .hero-service-card:hover h3 {
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(29, 122, 175, 0.8) !important;
+      }
+
+      .hero-service-card:hover svg {
+        transform: scale(1.1) !important;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) !important;
+      }
+      
+      .hero-button {
+        background: linear-gradient(135deg, #FFC600 0%, #FFB800 100%) !important;
+        color: #1a1a2e !important;
+        padding: 18px 40px !important;
+        border-radius: 50px !important;
+        text-decoration: none !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        border: none !important;
+        box-shadow: 0 6px 20px rgba(29, 122, 175, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: inline-block !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+      }
+      .hero-button:hover {
+        box-shadow: 0 8px 30px rgba(255, 198, 0, 0.6) !important;
+        transform: translateY(-3px) !important;
+        color: #1a1a2e !important;
+      }
       @keyframes panLeft {
         0% { transform: translateX(0); }
         100% { transform: translateX(-200px); }
@@ -55,19 +162,22 @@ export const AutomationsPage = () => {
       .floating-particle:nth-child(3) { animation: float3 20s ease-in-out infinite; }
       .floating-particle:nth-child(4) { animation: float1 22s ease-in-out infinite reverse; }
       .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
-      .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
+      .floating-particle:nth-child(8) { animation: float3 25s ease-in-out infinite reverse; }
     `;
     document.head.appendChild(style);
     
     return () => {
-      document.head.removeChild(style);
+      window.removeEventListener('scroll', handleScroll);
+      if (document.head.contains(style)) {
+        document.head.removeChild(style);
+      }
     };
   }, []);
 
   return (
     <div className="landing-page">
       {/* Header */}
-      <header className="sticky-header">
+      <header className="sticky-header" ref={headerRef}>
         <div className="header-content">
           <div className="logo">
             <Logo />
@@ -77,145 +187,264 @@ export const AutomationsPage = () => {
       </header>
 
       <main className="main-content">
-        {/* Hero Section */}
-        <section className="hero-section homepage-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', overflow: 'hidden' }}>
-          <svg 
-            className="hero-background-svg"
-            style={{ 
-              position: 'absolute', 
-              top: '-10%', 
-              left: '-10%', 
-              width: '120%', 
-              height: '120%', 
+        {/* Hero Section - Matching Homepage Style */}
+        <section ref={heroRef} className="hero-section homepage-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', overflow: 'hidden' }}>
+          {/* Circuit Board Background - Same as Homepage */}
+          <svg
+            className="circuit-background"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
               zIndex: 1,
-              opacity: 0.7
-            }} 
-            viewBox="0 0 1200 800" 
-            xmlns="http://www.w3.org/2000/svg"
+              opacity: 0.4
+            }}
+            viewBox="0 0 1200 800"
+            preserveAspectRatio="xMidYMid slice"
           >
             <defs>
-              <linearGradient id="techGradientAuto" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#1d7aaf" />
-                <stop offset="100%" stopColor="#1e40af" />
-              </linearGradient>
-              <linearGradient id="pulseGradientAuto" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1d7aaf" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#1e40af" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#1d7aaf" stopOpacity="0.8" />
-              </linearGradient>
+              {/* Subtle glow filter */}
+              <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
             </defs>
-            
-            {/* Main Grid Lines */}
-            <g className="grid-lines" filter="blur(0.5px)">
-              <line x1="0" y1="100" x2="1200" y2="100" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.4" strokeDasharray="20,10" />
-              <line x1="0" y1="200" x2="1200" y2="200" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="0" y1="300" x2="1200" y2="300" stroke="#1d7aaf" strokeWidth="2" opacity="0.5" strokeDasharray="25,5" />
-              <line x1="0" y1="400" x2="1200" y2="400" stroke="#1e40af" strokeWidth="1" opacity="0.2" strokeDasharray="30,10" />
-              <line x1="0" y1="500" x2="1200" y2="500" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.3" strokeDasharray="20,15" />
-              
-              <line x1="200" y1="0" x2="200" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,10" />
-              <line x1="400" y1="0" x2="400" y2="800" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="600" y1="0" x2="600" y2="800" stroke="#1d7aaf" strokeWidth="2" opacity="0.4" strokeDasharray="25,5" />
-              <line x1="800" y1="0" x2="800" y2="800" stroke="#1e40af" strokeWidth="1" opacity="0.1" strokeDasharray="30,10" />
-              <line x1="1000" y1="0" x2="1000" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,15" />
-            </g>
 
-            {/* Circuit Board Patterns */}
-            <g className="circuit-patterns" filter="blur(0.3px)">
-              <path d="M100,150 L250,150 L270,170 L400,170 L420,150 L600,150" stroke="#1d7aaf" strokeWidth="1" opacity="0.4" fill="none" strokeDasharray="5,3" />
-              <path d="M150,250 L300,250 L320,230 L500,230 L520,250 L750,250" stroke="#1e40af" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="8,4" />
-              <path d="M80,350 L200,350 L220,330 L350,330 L370,350 L550,350" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.5" fill="none" strokeDasharray="6,2" />
-              
-              <path d="M300,50 L300,180 L280,200 L280,320 L300,340 L300,450" stroke="#1e40af" strokeWidth="1" opacity="0.2" fill="none" strokeDasharray="4,3" />
-              <path d="M500,80 L500,200 L520,220 L520,300 L500,320 L500,480" stroke="#1d7aaf" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="7,3" />
-              <path d="M700,60 L700,150 L680,170 L680,280 L700,300 L700,420" stroke="#1e40af" strokeWidth="1.5" opacity="0.4" fill="none" strokeDasharray="5,4" />
-            </g>
+            {/* Professional circuit background with slow panning */}
+            <g transform="translate(0,0)">
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0; -500,0; -500,-350; 0,-350; 0,0"
+                dur="150s"
+                repeatCount="indefinite"
+              />
 
-            {/* Tech Nodes/Connection Points */}
-            <g className="tech-nodes">
-              <circle cx="150" cy="120" r="4" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="270" cy="170" r="3" fill="#1e40af" opacity="0.8" />
-              <circle cx="420" cy="150" r="5" fill="#1d7aaf" opacity="1.0" />
-              <circle cx="350" cy="180" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="520" cy="250" r="4" fill="#1d7aaf" opacity="0.8" />
-              <circle cx="650" cy="110" r="6" fill="#1e40af" opacity="0.9" />
-              <circle cx="850" cy="200" r="3" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="950" cy="140" r="4" fill="#1e40af" opacity="0.8" />
-              <circle cx="300" cy="340" r="5" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="500" cy="320" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="700" cy="300" r="4" fill="#1d7aaf" opacity="0.8" />
-            </g>
+              {/* Clean circuit grid layout */}
+              {[0, 1, 2, 3, 4, 5].map(layerX => (
+                [...Array(4)].map((_, layerY) => (
+                  <g key={`layer-${layerX}-${layerY}`} transform={`translate(${layerX * 400}, ${layerY * 250})`}>
 
-            {/* Glowing Orbs */}
-            <g className="glowing-orbs">
-              <circle cx="100" cy="100" r="8" fill="url(#techGradientAuto)" opacity="0.4" />
-              <circle cx="900" cy="300" r="6" fill="url(#techGradientAuto)" opacity="0.5" />
-              <circle cx="1100" cy="150" r="10" fill="url(#techGradientAuto)" opacity="0.3" />
-              <circle cx="200" cy="400" r="7" fill="url(#techGradientAuto)" opacity="0.4" />
+                    {/* Single clean horizontal trace */}
+                    <g stroke="#1F7CFF" strokeWidth="1.5" fill="none">
+                      <path d="M50 120 L350 120" strokeDasharray="20,12" opacity="0.5">
+                        <animate attributeName="stroke-dashoffset" values="0;-32" dur="3s" repeatCount="indefinite"/>
+                      </path>
+                    </g>
+
+                    {/* Single clean vertical trace */}
+                    {(layerX + layerY) % 2 === 0 && (
+                      <g stroke="#22c55e" strokeWidth="1.5" fill="none">
+                        <path d="M200 30 L200 220" strokeDasharray="18,10" opacity="0.4">
+                          <animate attributeName="stroke-dashoffset" values="0;-28" dur="2.8s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Occasional L-shaped route */}
+                    {(layerX + layerY) % 3 === 0 && (
+                      <g stroke="#f59e0b" strokeWidth="1" fill="none">
+                        <path d="M100 80 L100 160 L300 160" strokeDasharray="15,8" opacity="0.35">
+                          <animate attributeName="stroke-dashoffset" values="0;-23" dur="3.5s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Subtle floating dots */}
+                    <g>
+                      {[...Array(3)].map((_, dotIndex) => {
+                        const x = 80 + (dotIndex * 120);
+                        const y = 60 + (dotIndex * 40);
+                        const delay = dotIndex * 1.5;
+                        return (
+                          <circle
+                            key={`dot-${dotIndex}`}
+                            cx={x}
+                            cy={y}
+                            r="1.5"
+                            fill="#1F7CFF"
+                            opacity="0.6"
+                          >
+                            <animateTransform
+                              attributeName="transform"
+                              type="translate"
+                              values="0,0; 8,-12; -5,10; 0,0"
+                              dur="6s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                            <animate
+                              attributeName="opacity"
+                              values="0.3;0.6;0.3"
+                              dur="4s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                          </circle>
+                        );
+                      })}
+                    </g>
+                  </g>
+                ))
+              ))}
             </g>
           </svg>
 
-          {/* Floating Particles */}
-          <div className="floating-particle" style={{ top: '15%', left: '10%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '25%', right: '15%', width: '6px', height: '6px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '45%', left: '20%', width: '3px', height: '3px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '35%', right: '25%', width: '5px', height: '5px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '60%', left: '15%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '70%', right: '20%', width: '3px', height: '3px', background: '#1e40af', borderRadius: '50%' }}></div>
-
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-            <div className="hero-content" style={{ color: 'white', textAlign: 'center' }}>
-              <h1 style={{ 
-                fontSize: 'clamp(2.5rem, 6vw, 5rem)', 
-                fontWeight: '900', 
-                lineHeight: '0.9', 
-                marginBottom: '1rem',
-                color: 'white',
-                textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-                letterSpacing: '-0.02em'
-              }}>AI Business Automations That Work While You Sleep</h1>
-              <p style={{ 
-                fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
-                marginBottom: '40px',
-                maxWidth: '700px',
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                lineHeight: '1.7',
-                fontWeight: '300',
-                color: 'rgba(255, 255, 255, 0.95)',
-                textShadow: '0 2px 4px rgba(0, 0, 0, 0.4)'
-              }}>
-                Google review request systems, social media auto-posting, calendar integrations, and more. 
-                Full backend setup with ongoing monitoring using the powerful n8n automation platform. 
-                Save hours each week with intelligent business automation.
-              </p>
-              <div style={{ 
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '4rem', alignItems: 'center' }}>
+              <div style={{ textAlign: 'left', color: 'white' }}>
+                <h1 style={{
+                  fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                  fontWeight: '900',
+                  lineHeight: '0.9',
+                  marginBottom: '1rem',
+                  color: '#1F7CFF',
+                  textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
+                }}>
+                  AI Business Automations That Work While You Sleep
+                </h1>
+                <p style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+                  color: '#e2e8f0',
+                  marginBottom: '2.5rem',
+                  fontWeight: '300',
+                  maxWidth: '500px'
+                }}>
+                  Google review request systems, social media auto-posting, calendar integrations, and more.
+                  Full backend setup with ongoing monitoring using the powerful n8n automation platform.
+                  Save hours each week with intelligent business automation.
+                </p>
+                
+                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                  <a href="/contact" className="hero-button">
+                    Free Consultation
+                  </a>
+                </div>
+              </div>
+
+              <div className="hero-service-cards" style={{
                 display: 'flex',
-                justifyContent: 'center',
-                gap: '15px',
-                flexWrap: 'wrap'
+                flexDirection: 'column',
+                gap: '1rem',
+                height: 'auto',
+                justifyContent: 'center'
               }}>
-                <a href="/contact" style={{
-                  display: 'inline-block',
-                  background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
-                  color: 'white',
-                  border: 'none',
-                  padding: '18px 40px',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  borderRadius: '50px',
-                  boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  textDecoration: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.boxShadow = '0 8px 30px rgba(29, 122, 175, 0.5)';
-                  e.target.style.transform = 'translateY(-3px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
-                  e.target.style.transform = 'translateY(0)';
-                }}>Schedule Free Consultation</a>
+                {/* Automate Card */}
+                <a href="/contact" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Automate</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Business Processes & Workflows</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
+                      <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="12" cy="5" r="1" fill="white"/>
+                      <circle cx="12" cy="19" r="1" fill="white"/>
+                      <circle cx="19" cy="12" r="1" fill="white"/>
+                      <circle cx="5" cy="12" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* Optimize Card */}
+                <a href="/contact" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 1s'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Optimize</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Efficiency & Productivity</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                      <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* Grow Card */}
+                <a href="/contact" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 2s'
+                }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Grow</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Revenue & Customer Relationships</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 20h9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -232,7 +461,24 @@ export const AutomationsPage = () => {
             
             <div className="automation-grid">
               <div className="automation-card">
-                <div className="automation-icon">⭐</div>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
                 <h3>Google Review Automation</h3>
                 <p className="automation-subtitle">Build Your Online Reputation</p>
                 <ul className="automation-features">
@@ -248,7 +494,24 @@ export const AutomationsPage = () => {
               </div>
 
               <div className="automation-card">
-                <div className="automation-icon">📱</div>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
                 <h3>Social Media Auto-Posting</h3>
                 <p className="automation-subtitle">Consistent Online Presence</p>
                 <ul className="automation-features">
@@ -264,7 +527,27 @@ export const AutomationsPage = () => {
               </div>
 
               <div className="automation-card">
-                <div className="automation-icon">📅</div>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="white" strokeWidth="2" fill="none"/>
+                    <line x1="16" y1="2" x2="16" y2="6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="8" y1="2" x2="8" y2="6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="3" y1="10" x2="21" y2="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
                 <h3>Calendar & Scheduling Integration</h3>
                 <p className="automation-subtitle">Streamline Appointments</p>
                 <ul className="automation-features">
@@ -368,18 +651,63 @@ export const AutomationsPage = () => {
                     zIndex: 0
                   }}></div>
                   <div style={{ position: 'relative', zIndex: 1 }}>
-                    <div style={{ 
-                      fontSize: '3rem', 
+                    <div style={{
+                      fontSize: '3rem',
                       marginBottom: '20px',
-                      background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                      borderRadius: '50%',
-                      width: '70px',
-                      height: '70px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      marginBottom: '25px'
-                    }}>{feature.icon}</div>
+                      width: '80px',
+                      height: '80px',
+                      background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                      borderRadius: '20px',
+                      boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                      transition: 'all 0.3s ease',
+                      margin: '0 auto 25px auto'
+                    }}>
+                      {feature.icon === '🔄' && (
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M23 4v6h-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M1 20v-6h6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {feature.icon === '💬' && (
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {feature.icon === '📊' && (
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <line x1="18" y1="20" x2="18" y2="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <line x1="12" y1="20" x2="12" y2="4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <line x1="6" y1="20" x2="6" y2="14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {feature.icon === '📋' && (
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <polyline points="14,2 14,8 20,8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2"/>
+                          <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2"/>
+                          <polyline points="10,9 9,9 8,9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                      {feature.icon === '🎯' && (
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" fill="none"/>
+                          <circle cx="12" cy="12" r="6" stroke="white" strokeWidth="2" fill="none"/>
+                          <circle cx="12" cy="12" r="2" stroke="white" strokeWidth="2" fill="none"/>
+                        </svg>
+                      )}
+                      {feature.icon === '📈' && (
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18 20V10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M12 20V4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M6 20v-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                    </div>
                     <h3 style={{ 
                       fontSize: '1.5rem', 
                       fontWeight: '600', 
@@ -438,20 +766,110 @@ export const AutomationsPage = () => {
             
             <div className="platform-benefits">
               <div className="benefit-content">
-                <h3>🔧 No Vendor Lock-In</h3>
-                <p>Unlike Zapier or other proprietary platforms, n8n is open-source and self-hosted. You own your automations completely.</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '10px', marginTop: '25px' }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    flexShrink: 0
+                  }}>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ margin: 0, color: colors.primary }}>No Vendor Lock-In</h3>
+                </div>
+                <p style={{ marginLeft: '65px' }}>Unlike Zapier or other proprietary platforms, n8n is open-source and self-hosted. You own your automations completely.</p>
                 
-                <h3>💰 Value-Driven</h3>
-                <p>No per-automation fees or usage limits. Once set up, your automations run reliably without ongoing subscription fees.</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '10px', marginTop: '25px' }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    flexShrink: 0
+                  }}>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ margin: 0, color: colors.primary }}>Value-Driven</h3>
+                </div>
+                <p style={{ marginLeft: '65px' }}>No per-automation fees or usage limits. Once set up, your automations run reliably without ongoing subscription fees.</p>
                 
-                <h3>🔒 Data Security</h3>
-                <p>All data stays on your servers or our secure infrastructure. No third-party services handling your sensitive business data.</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '10px', marginTop: '25px' }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    flexShrink: 0
+                  }}>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                      <circle cx="12" cy="16" r="1" fill="white"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ margin: 0, color: colors.primary }}>Data Security</h3>
+                </div>
+                <p style={{ marginLeft: '65px' }}>All data stays on your servers or our secure infrastructure. No third-party services handling your sensitive business data.</p>
                 
-                <h3>🚀 Unlimited Scalability</h3>
-                <p>Add as many automations as you need without worrying about hitting limits or restrictions.</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '10px', marginTop: '25px' }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    flexShrink: 0
+                  }}>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.5 16.5c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2zM17.5 16.5c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M3 13h18M3 9h18M3 5h18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ margin: 0, color: colors.primary }}>Unlimited Scalability</h3>
+                </div>
+                <p style={{ marginLeft: '65px' }}>Add as many automations as you need without worrying about hitting limits or restrictions.</p>
                 
-                <h3>🔗 Powerful Integrations</h3>
-                <p>Connect to virtually any service or application, including custom integrations specific to your business needs.</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '10px', marginTop: '25px' }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    flexShrink: 0
+                  }}>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ margin: 0, color: colors.primary }}>Powerful Integrations</h3>
+                </div>
+                <p style={{ marginLeft: '65px' }}>Connect to virtually any service or application, including custom integrations specific to your business needs.</p>
               </div>
               
               <div className="benefit-image n8n-workflow-container">
@@ -492,31 +910,31 @@ export const AutomationsPage = () => {
         </section>
 
         {/* Implementation Process */}
-        <section className="section">
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <h2 className="section-title">Our Automation Implementation Process</h2>
-            <div className="process-grid-automation" style={{ marginTop: '30px', paddingTop: '10px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px' }}>
-              <div className="service-card" style={{ position: 'relative', padding: '50px 30px 30px 30px', marginTop: '25px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(26, 121, 175, 0.3)', zIndex: 10 }}>1</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '12px', marginTop: '15px' }}>Business Analysis</h3>
+            <div style={{ marginTop: '40px', paddingTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
+              <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>1</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Business Analysis</h3>
                 <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We analyze your current workflows, identify repetitive tasks, and determine the highest-impact automation opportunities.</p>
               </div>
               
-              <div className="service-card" style={{ position: 'relative', padding: '50px 30px 30px 30px', marginTop: '25px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.accent, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)', zIndex: 10 }}>2</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '12px', marginTop: '15px' }}>Custom Design</h3>
+              <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>2</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Custom Design</h3>
                 <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Create automated workflows tailored to your specific business processes and existing tools and systems.</p>
               </div>
               
-              <div className="service-card" style={{ position: 'relative', padding: '50px 30px 30px 30px', marginTop: '25px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.secondary, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(49, 66, 81, 0.3)', zIndex: 10 }}>3</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '12px', marginTop: '15px' }}>Backend Setup</h3>
+              <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>3</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Backend Setup</h3>
                 <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Full technical implementation including server setup, integrations, testing, and security configuration.</p>
               </div>
               
-              <div className="service-card" style={{ position: 'relative', padding: '50px 30px 30px 30px', marginTop: '25px', overflow: 'visible' }}>
-                <div style={{ position: 'absolute', top: '-25px', left: '30px', background: colors.primaryDark, color: 'white', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(21, 94, 138, 0.3)', zIndex: 10 }}>4</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '12px', marginTop: '15px' }}>Monitoring & Support</h3>
+              <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
+                <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>4</div>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Monitoring & Support</h3>
                 <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Ongoing monitoring to ensure automations run smoothly, with proactive maintenance and optimization.</p>
               </div>
             </div>
@@ -524,7 +942,7 @@ export const AutomationsPage = () => {
           
           <style dangerouslySetInnerHTML={{__html: `
             @media (max-width: 768px) {
-              .process-grid-automation {
+              div[style*="gridTemplateColumns: repeat(2, 1fr)"] {
                 grid-template-columns: 1fr !important;
               }
             }
@@ -534,133 +952,137 @@ export const AutomationsPage = () => {
         {/* Industry Applications */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <h2 className="section-title">Real-World Automation Solutions by Industry</h2>
+            <h2 className="section-title">Automation Solutions for Every Industry</h2>
             <p className="service-intro">
-              See how specific automations solve common pain points in different trades and professional services. 
-              These workflows are designed to reduce overhead, improve customer satisfaction, and increase revenue.
+              We work with businesses across all industries throughout the Maritimes, creating automation solutions
+              that save time, reduce errors, and improve customer satisfaction.
             </p>
             
             <div className="industry-detailed-grid">
-              {/* Plumbing */}
+              {/* Retail & E-commerce */}
               <div className="industry-detailed-card">
                 <div className="industry-header">
-                  <div className="industry-icon-large">🚰</div>
+                  <div className="industry-icon-large" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 11l3 3L22 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                   <div>
-                    <h3>Plumbing Contractors</h3>
-                    <p className="industry-subtitle">Reduce missed calls, no-shows and admin overhead so your crew spends more time fixing pipes and less time chasing paperwork.</p>
+                    <h3>Retail & E-commerce</h3>
+                    <p className="industry-subtitle">Automate inventory management, order processing, and customer follow-up to increase sales and reduce manual work.</p>
+                  </div>
+                </div>
+                
+                <div className="automation-solutions">
+                  <div className="solution-item">
+                    <h4>Order Processing Automation</h4>
+                    <p>Automatically confirm orders, update inventory, send tracking information, and follow up for reviews.</p>
+                    <div className="benefit-tag">30% faster order fulfillment and higher customer satisfaction</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Inventory Reorder Alerts</h4>
+                    <p>Monitor stock levels and automatically create purchase orders when items reach minimum thresholds.</p>
+                    <div className="benefit-tag">Eliminate stockouts and optimize inventory investment</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Customer Review Automation</h4>
+                    <p>Send automated review requests after delivery with follow-up sequences for non-responders.</p>
+                    <div className="benefit-tag">200% increase in product reviews and social proof</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Healthcare & Wellness */}
+              <div className="industry-detailed-card">
+                <div className="industry-header">
+                  <div className="industry-icon-large" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3>Healthcare & Wellness</h3>
+                    <p className="industry-subtitle">Streamline patient appointments, follow-ups, and compliance while maintaining HIPAA standards.</p>
+                  </div>
+                </div>
+                
+                <div className="automation-solutions">
+                  <div className="solution-item">
+                    <h4>Appointment Reminders & Follow-ups</h4>
+                    <p>Automated SMS/email reminders with rescheduling options and post-appointment follow-up sequences.</p>
+                    <div className="benefit-tag">40% reduction in no-shows and improved patient outcomes</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Patient Intake & Onboarding</h4>
+                    <p>Automated patient registration forms, insurance verification, and new patient welcome sequences.</p>
+                    <div className="benefit-tag">60% faster patient onboarding and reduced admin workload</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Compliance & Documentation</h4>
+                    <p>Automated compliance reminders, document expiration alerts, and secure record management.</p>
+                    <div className="benefit-tag">Improved regulatory compliance and reduced risk</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Construction & Trades */}
+              <div className="industry-detailed-card">
+                <div className="industry-header">
+                  <div className="industry-icon-large" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <polyline points="9,22 9,12 15,12 15,22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3>Construction & Trades</h3>
+                    <p className="industry-subtitle">Automate scheduling, dispatch, quoting, and project management to increase efficiency and profitability.</p>
                   </div>
                 </div>
                 
                 <div className="automation-solutions">
                   <div className="solution-item">
                     <h4>Smart Scheduling & Dispatch</h4>
-                    <p>Automate intake (phone, web form or SMS), check technician availability, calculate travel time, and push appointments to crew calendars with ETA links.</p>
-                    <div className="benefit-tag">Fewer missed jobs, better ETA accuracy, less dispatcher burnout</div>
+                    <p>Automate job scheduling, technician dispatch, and customer communication with real-time updates.</p>
+                    <div className="benefit-tag">25% more jobs per day and improved customer satisfaction</div>
                   </div>
                   
                   <div className="solution-item">
-                    <h4>Post-Job Billing & Payment Flow</h4>
-                    <p>When a job is completed, automatically generate an invoice (QuickBooks/Xero), send a secure payment link (Stripe/Moneris), and follow up on overdue invoices with staged reminders.</p>
-                    <div className="benefit-tag">Faster cash collection, fewer late payments</div>
+                    <h4>Quote to Job Workflow</h4>
+                    <p>Automated quote generation, customer approval, job creation, and material ordering processes.</p>
+                    <div className="benefit-tag">50% faster quote-to-job conversion and reduced admin work</div>
                   </div>
                   
                   <div className="solution-item">
-                    <h4>No-Show & Late Arrival Escalation</h4>
-                    <p>If a tech updates status as delayed, automatically notify customers with revised ETA + reschedule options and inform the office via Slack/SMS. Optionally issue a small discount code for service recovery.</p>
-                    <div className="benefit-tag">Reduced cancellations and improved customer satisfaction</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Electrical */}
-              <div className="industry-detailed-card">
-                <div className="industry-header">
-                  <div className="industry-icon-large">⚡</div>
-                  <div>
-                    <h3>Electrical Contractors</h3>
-                    <p className="industry-subtitle">Streamline permits, recurring safety checks, and estimate-to-contract workflows so projects move smoothly from quote to completion.</p>
-                  </div>
-                </div>
-                
-                <div className="automation-solutions">
-                  <div className="solution-item">
-                    <h4>Permit & Inspection Tracker</h4>
-                    <p>Automate permit creation, upload required documents, and schedule reminders for inspection windows—notify clients and inspectors automatically.</p>
-                    <div className="benefit-tag">Fewer inspection delays and missed filings</div>
-                  </div>
-                  
-                  <div className="solution-item">
-                    <h4>Quote → Contract → Job Creation</h4>
-                    <p>Approved estimate triggers a contract signature request (DocuSign/HelloSign). Once signed, the system creates the job in your PM tool and books the first visit.</p>
-                    <div className="benefit-tag">Faster onboarding of projects, fewer manual entries</div>
-                  </div>
-                  
-                  <div className="solution-item">
-                    <h4>Recurring Maintenance Automation</h4>
-                    <p>Set up recurring safety inspection schedules for commercial clients with auto-generated work orders and automatic invoicing.</p>
-                    <div className="benefit-tag">Stable recurring revenue and improved client retention</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Roofing */}
-              <div className="industry-detailed-card">
-                <div className="industry-header">
-                  <div className="industry-icon-large">🏠</div>
-                  <div>
-                    <h3>Roofing Contractors</h3>
-                    <p className="industry-subtitle">Get clients through storm season faster—automate damage intake, claim packets, and warranty/inspection reminders.</p>
-                  </div>
-                </div>
-                
-                <div className="automation-solutions">
-                  <div className="solution-item">
-                    <h4>Storm-Damage Intake & Claim Kit</h4>
-                    <p>Client uploads photos (EXIF/GPS verified), the system builds a claim packet (photos, estimate, property info) and shares it with client and insurer.</p>
-                    <div className="benefit-tag">Faster claims, clearer documentation, better trust</div>
-                  </div>
-                  
-                  <div className="solution-item">
-                    <h4>Insurance Liaison Workflow</h4>
-                    <p>Automate timeline creation, adjuster follow-ups, and templated client updates. Track all touchpoints in a single record.</p>
-                    <div className="benefit-tag">Less back-and-forth and improved claim approval rates</div>
-                  </div>
-                  
-                  <div className="solution-item">
-                    <h4>Warranty & Annual Inspection Reminders</h4>
-                    <p>Automatically notify homeowners when warranties or yearly roof checks are due and offer one-click booking.</p>
-                    <div className="benefit-tag">Repeat business and fewer warranty disputes</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Landscaping */}
-              <div className="industry-detailed-card">
-                <div className="industry-header">
-                  <div className="industry-icon-large">🌿</div>
-                  <div>
-                    <h3>Landscaping Companies</h3>
-                    <p className="industry-subtitle">Cut fuel costs, improve crew productivity, and lock in seasonal work with automation that handles routes, renewals and change orders.</p>
-                  </div>
-                </div>
-                
-                <div className="automation-solutions">
-                  <div className="solution-item">
-                    <h4>Route Optimization & Crew Assignment</h4>
-                    <p>Group same-day jobs into efficient routes and push turn-by-turn directions to technicians' phones.</p>
-                    <div className="benefit-tag">Lower fuel and labour costs, more jobs per day</div>
-                  </div>
-                  
-                  <div className="solution-item">
-                    <h4>Seasonal Plan Automation</h4>
-                    <p>Automatically transition customers between seasonal packages (spring/summer/fall/winter), send renewal offers and collect approvals.</p>
-                    <div className="benefit-tag">Lower churn and predictable seasonal revenue</div>
-                  </div>
-                  
-                  <div className="solution-item">
-                    <h4>Field Change-Order Approvals</h4>
-                    <p>Field techs submit on-site changes via mobile form → client receives digital quote for approval → once accepted the job and invoice update automatically.</p>
-                    <div className="benefit-tag">Faster approvals and fewer disputes</div>
+                    <h4>Post-Job Follow-up & Billing</h4>
+                    <p>Automated thank you messages, review requests, invoice generation, and payment reminders.</p>
+                    <div className="benefit-tag">35% faster payment collection and increased reviews</div>
                   </div>
                 </div>
               </div>
@@ -668,61 +1090,146 @@ export const AutomationsPage = () => {
               {/* Professional Services */}
               <div className="industry-detailed-card">
                 <div className="industry-header">
-                  <div className="industry-icon-large">💼</div>
+                  <div className="industry-icon-large" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <polyline points="14,2 14,8 20,8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2"/>
+                      <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2"/>
+                      <polyline points="10,9 9,9 8,9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                   <div>
                     <h3>Professional Services</h3>
-                    <p className="industry-subtitle">Remove onboarding friction, tighten compliance calendars, and automate billing so professionals focus on client work, not paperwork.</p>
+                    <p className="industry-subtitle">Automate client onboarding, billing, compliance tracking, and reporting to focus on billable work.</p>
                   </div>
                 </div>
                 
                 <div className="automation-solutions">
                   <div className="solution-item">
-                    <h4>Automated Client Onboarding</h4>
-                    <p>Send secure intake forms, collect ID/docs, create client folders, and assign internal checklists automatically.</p>
-                    <div className="benefit-tag">Faster client ramp-up, fewer missing documents</div>
+                    <h4>Client Onboarding & Intake</h4>
+                    <p>Automated client intake forms, document collection, welcome sequences, and internal task creation.</p>
+                    <div className="benefit-tag">70% faster client onboarding and improved first impressions</div>
                   </div>
                   
                   <div className="solution-item">
-                    <h4>Deadline & Compliance Engine</h4>
-                    <p>Map client-specific compliance dates (tax deadlines, renewals) to a calendar that triggers client reminders and internal escalation if items are late.</p>
-                    <div className="benefit-tag">Fewer missed deadlines and reduced liability</div>
+                    <h4>Time Tracking & Invoicing</h4>
+                    <p>Automated time capture reminders, invoice generation, payment processing, and overdue follow-ups.</p>
+                    <div className="benefit-tag">40% faster invoicing and improved cash flow</div>
                   </div>
                   
                   <div className="solution-item">
-                    <h4>Time Tracking → Invoicing Pipeline</h4>
-                    <p>Automate time capture reminders, convert approved time entries to invoices in QuickBooks/Xero, and handle retainer draws automatically.</p>
-                    <div className="benefit-tag">Faster invoicing and predictability in cashflow</div>
+                    <h4>Compliance & Deadline Management</h4>
+                    <p>Automated deadline tracking, compliance reminders, document expiration alerts, and reporting.</p>
+                    <div className="benefit-tag">Eliminate missed deadlines and reduce compliance risk</div>
                   </div>
                 </div>
               </div>
 
-              {/* General Contractors */}
+              {/* Restaurants & Hospitality */}
               <div className="industry-detailed-card">
                 <div className="industry-header">
-                  <div className="industry-icon-large">🏗️</div>
+                  <div className="industry-icon-large" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Pineapple - Classic symbol of hospitality */}
+                      {/* Pineapple body */}
+                      <path d="M12 8c-2.5 0-4 1.5-4 4v4c0 2.5 1.5 4 4 4s4-1.5 4-4v-4c0-2.5-1.5-4-4-4z" stroke="white" strokeWidth="2" fill="white" fillOpacity="0.2"/>
+
+                      {/* Diamond pattern on body */}
+                      <path d="M10 10l2 2 2-2" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M10 13l2 2 2-2" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M10 16l2 2 2-2" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+
+                      {/* Leaves on top */}
+                      <path d="M12 8V3" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M10 7l-1-3" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M14 7l1-3" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M11 6l-1.5-2.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M13 6l1.5-2.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M9.5 8l-1.5-2" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M14.5 8l1.5-2" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </div>
                   <div>
-                    <h3>General Contractors</h3>
-                    <p className="industry-subtitle">Keep projects on schedule by automating sub coordination, material re-orders and milestone acceptance.</p>
+                    <h3>Restaurants & Hospitality</h3>
+                    <p className="industry-subtitle">Automate reservations, customer follow-up, staff scheduling, and inventory management to enhance guest experience.</p>
                   </div>
                 </div>
                 
                 <div className="automation-solutions">
                   <div className="solution-item">
-                    <h4>Subcontractor Coordination Hub</h4>
-                    <p>When a milestone is met, auto-notify subs with scope docs and request confirmations/ETAs; escalate if no response.</p>
-                    <div className="benefit-tag">Fewer coordination bottlenecks and faster turnaround</div>
+                    <h4>Reservation Management</h4>
+                    <p>Automated reservation confirmations, reminders, cancellations, and waitlist management.</p>
+                    <div className="benefit-tag">30% reduction in no-shows and optimized table turnover</div>
                   </div>
                   
                   <div className="solution-item">
-                    <h4>Material & Inventory Auto-Reorder</h4>
-                    <p>Trigger POs when material thresholds are met and email suppliers with current lead-time estimates.</p>
-                    <div className="benefit-tag">Fewer project stoppages due to missing materials</div>
+                    <h4>Guest Feedback & Reviews</h4>
+                    <p>Automated post-visit feedback requests, review monitoring, and reputation management responses.</p>
+                    <div className="benefit-tag">200% increase in customer reviews and improved ratings</div>
                   </div>
                   
                   <div className="solution-item">
-                    <h4>Milestone Sign-Off & Billing</h4>
-                    <p>Client receives digital milestone acceptance; when signed the system issues invoices, updates cashflow dashboards, and notifies accounting.</p>
-                    <div className="benefit-tag">Faster payment cycles and clearer project finances</div>
+                    <h4>Staff Scheduling & Communication</h4>
+                    <p>Automated schedule creation, shift reminders, staff communication, and time tracking.</p>
+                    <div className="benefit-tag">50% reduction in scheduling conflicts and improved staff satisfaction</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Education & Training */}
+              <div className="industry-detailed-card">
+                <div className="industry-header">
+                  <div className="industry-icon-large" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3>Education & Training</h3>
+                    <p className="industry-subtitle">Automate student enrollment, course delivery, progress tracking, and certificate generation.</p>
+                  </div>
+                </div>
+                
+                <div className="automation-solutions">
+                  <div className="solution-item">
+                    <h4>Student Enrollment & Onboarding</h4>
+                    <p>Automated application processing, document collection, welcome sequences, and account creation.</p>
+                    <div className="benefit-tag">60% faster enrollment and improved student experience</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Course Progress & Communication</h4>
+                    <p>Automated progress tracking, assignment reminders, parent updates, and intervention alerts.</p>
+                    <div className="benefit-tag">40% improvement in course completion rates</div>
+                  </div>
+                  
+                  <div className="solution-item">
+                    <h4>Certificate & Report Generation</h4>
+                    <p>Automated certificate creation, transcript generation, and delivery to students upon completion.</p>
+                    <div className="benefit-tag">Eliminate manual certificate processing and reduce errors</div>
                   </div>
                 </div>
               </div>
