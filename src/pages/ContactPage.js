@@ -527,13 +527,59 @@ export const ContactPage = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact-form-section" className="section" style={{ 
+        <section id="contact-form-section" className="section" style={{
           backgroundColor: '#f5f8fc'
         }}>
           <div className="container">
+            {/* Calendar Booking Section - Full Width Above Form */}
+            <div style={{
+              backgroundColor: '#ffffff',
+              borderRadius: '16px',
+              padding: '40px',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+              border: '1px solid rgba(29, 122, 175, 0.1)',
+              marginBottom: '40px'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                <h2 style={{
+                  color: '#1a1a2e',
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  marginBottom: '15px'
+                }}>Book Your Free Consultation</h2>
+                <p style={{
+                  fontSize: '1.1rem',
+                  color: '#2c3e50',
+                  maxWidth: '700px',
+                  margin: '0 auto',
+                  lineHeight: '1.6'
+                }}>
+                  Schedule a time that works for you - we'll send you a calendar invitation with meeting details and answer all your questions about cybersecurity, IT services, or web development.
+                </p>
+              </div>
+
+              {/* Google Calendar Appointment Scheduling */}
+              <div style={{
+                maxWidth: '900px',
+                margin: '0 auto',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                border: '2px solid rgba(29, 122, 175, 0.15)',
+                boxShadow: '0 4px 20px rgba(29, 122, 175, 0.1)'
+              }}>
+                <iframe
+                  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Bg4PkNExnSkRTXv5QMDe5HjRWrbuMaf3gVvbHlf3T0aaqtq7cNkpIUZD5uqNR7Tx0owowJNgX?gv=true"
+                  style={{ border: 0, display: 'block' }}
+                  width="100%"
+                  height="600"
+                  title="Book a Consultation with LogicPros"
+                />
+              </div>
+            </div>
+
             <div className="contact-layout">
               {/* Contact Form */}
-              <div className="contact-form-container" style={{ 
+              <div className="contact-form-container" style={{
                 color: '#2c3e50',
                 transition: 'all 0.3s ease',
                 boxShadow: highlightForm ? '0 0 30px rgba(255, 193, 7, 0.6), 0 0 60px rgba(255, 193, 7, 0.3)' : '0 8px 32px rgba(0, 0, 0, 0.08)',
@@ -543,7 +589,7 @@ export const ContactPage = () => {
                 padding: '40px',
                 border: highlightForm ? '2px solid rgba(255, 193, 7, 0.4)' : '1px solid rgba(0, 0, 0, 0.1)'
               }}>
-                <h2 style={{ color: '#1a1a2e' }}>Get Your Free Consultation</h2>
+                <h2 style={{ color: '#1a1a2e' }}>Or Send Us a Message</h2>
                 <p className="form-subtitle">
                   Tell us about your business and goals. Whether you need cybersecurity, AI automation, website development, or IT support - our team will provide a customized solution.
                 </p>
@@ -728,70 +774,27 @@ export const ContactPage = () => {
                 </form>
               </div>
 
-              {/* Calendar Booking Sidebar */}
+              {/* Contact Info Sidebar */}
               <div style={{
                 backgroundColor: '#ffffff',
                 borderRadius: '16px',
                 padding: '40px',
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)',
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%'
+                border: '1px solid rgba(29, 122, 175, 0.1)'
               }}>
                 <h3 style={{
                   color: '#1a1a2e',
                   fontSize: '1.8rem',
                   fontWeight: '700',
-                  marginBottom: '20px',
+                  marginBottom: '30px',
                   textAlign: 'center'
-                }}>Book a Consultation</h3>
-                
-                <div style={{
-                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
-                  borderRadius: '12px',
-                  padding: '15px',
-                  border: '1px solid rgba(29, 122, 175, 0.15)',
-                  marginBottom: '20px',
-                  textAlign: 'center'
-                }}>
-                  <p style={{
-                    margin: '0',
-                    fontSize: '0.95rem',
-                    color: '#2c3e50',
-                    lineHeight: '1.5'
-                  }}>Pick a time that works for you and we'll send you a calendar invitation with all the details.</p>
-                </div>
+                }}>Contact Our Team</h3>
 
-                {/* Google Calendar Appointment Scheduling */}
-                <div style={{
-                  flex: 1,
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  border: '1px solid rgba(29, 122, 175, 0.15)',
-                  marginBottom: '20px'
-                }}>
-                  <iframe
-                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Bg4PkNExnSkRTXv5QMDe5HjRWrbuMaf3gVvbHlf3T0aaqtq7cNkpIUZD5uqNR7Tx0owowJNgX?gv=true"
-                    style={{ border: 0 }}
-                    width="100%"
-                    height="600"
-                    title="Book a Consultation with LogicPros"
-                  />
-                </div>
-                
                 <div style={{
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '15px'
+                  gap: '25px'
                 }}>
-                  <h3 style={{
-                    color: '#1a1a2e',
-                    fontSize: '1.5rem',
-                    fontWeight: '700',
-                    marginBottom: '10px',
-                    textAlign: 'center'
-                  }}>Contact Our Team</h3>
                   
                   <div style={{
                     backgroundColor: 'rgba(29, 122, 175, 0.05)',
