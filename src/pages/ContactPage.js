@@ -22,9 +22,37 @@ export const ContactPage = () => {
   const [highlightForm, setHighlightForm] = useState(false);
 
   useEffect(() => {
-    // Hero background animation styles
+    // Hero background animation and mobile responsive styles
     const style = document.createElement('style');
     style.textContent = `
+      /* Mobile responsive adjustments for contact page */
+      @media (max-width: 768px) {
+        #contact-form-section .container {
+          padding: 0 5px !important;
+          max-width: 100% !important;
+        }
+
+        #contact-form-section .container > div {
+          border-radius: 8px !important;
+          padding: 15px !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+
+        #contact-form-section h2 {
+          font-size: 1.8rem !important;
+        }
+
+        #contact-form-section .contact-layout {
+          grid-template-columns: 1fr !important;
+        }
+
+        .contact-form-container,
+        .contact-info-sidebar {
+          padding: 20px !important;
+        }
+      }
+
       @keyframes panLeft {
         0% { transform: translateX(0); }
         100% { transform: translateX(-200px); }
@@ -530,12 +558,15 @@ export const ContactPage = () => {
         <section id="contact-form-section" className="section" style={{
           backgroundColor: '#f5f8fc'
         }}>
-          <div className="container">
+          <div className="container" style={{
+            maxWidth: '100%',
+            padding: '0 10px'
+          }}>
             {/* Calendar Booking Section - Full Width Above Form */}
             <div style={{
               backgroundColor: '#ffffff',
               borderRadius: '16px',
-              padding: '40px',
+              padding: '20px',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
               border: '1px solid rgba(29, 122, 175, 0.1)',
               marginBottom: '40px'
