@@ -591,8 +591,8 @@ export const ContactPage = () => {
 
               {/* Google Calendar Appointment Scheduling */}
               <div style={{
-                maxWidth: '900px',
-                margin: '0 auto',
+                width: '100%',
+                margin: '0',
                 borderRadius: '12px',
                 overflow: 'hidden',
                 border: '2px solid rgba(29, 122, 175, 0.15)',
