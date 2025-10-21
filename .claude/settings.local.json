@@ -68,7 +68,8 @@
       "WebFetch(domain:logicpros-contact-final-8s7fchnqv-aaronthehefs-projects.vercel.app)",
       "WebFetch(domain:logicpros-contact-final-65s8nft7w-aaronthehefs-projects.vercel.app)",
       "WebFetch(domain:www.alignedwebdesign.com)",
-      "WebFetch(domain:yellaseo.com)"
+      "WebFetch(domain:yellaseo.com)",
+      "Bash(git fetch:*)"
     ],
     "deny": []
   }
