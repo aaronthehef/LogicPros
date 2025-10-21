@@ -728,177 +728,138 @@ export const ContactPage = () => {
                 </form>
               </div>
 
-              {/* Contact Info Sidebar */}
+              {/* Calendar Booking Sidebar */}
               <div style={{
                 backgroundColor: '#ffffff',
                 borderRadius: '16px',
                 padding: '40px',
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
-                border: '1px solid rgba(29, 122, 175, 0.1)'
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%'
               }}>
-                <h3 style={{ 
+                <h3 style={{
                   color: '#1a1a2e',
                   fontSize: '1.8rem',
                   fontWeight: '700',
-                  marginBottom: '30px',
+                  marginBottom: '20px',
                   textAlign: 'center'
-                }}>Contact Our Team</h3>
+                }}>Book a Consultation</h3>
                 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
-                  <div style={{
-                    backgroundColor: 'rgba(29, 122, 175, 0.05)',
-                    borderRadius: '12px',
-                    padding: '20px',
-                    border: '1px solid rgba(29, 122, 175, 0.15)'
-                  }}>
-                    <h4 style={{
-                      color: '#1d7aaf',
-                      fontSize: '1.1rem',
-                      fontWeight: '600',
-                      marginBottom: '8px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px'
-                    }}>
-                      <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '30px',
-                        height: '30px',
-                        background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                        borderRadius: '10px',
-                        boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)',
-                        flexShrink: 0
-                      }}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <polyline points="22,6 12,13 2,6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </div>
-                      Business Email
-                    </h4>
-                    <p style={{
-                      margin: '0',
-                      fontSize: '1rem'
-                    }}>
-                      <a href="mailto:aaron@logicpros.ca" style={{
-                        color: '#2c3e50',
-                        textDecoration: 'none',
-                        fontWeight: '500'
-                      }}>aaron@logicpros.ca</a>
-                    </p>
-                  </div>
-                  
-                  <div style={{
-                    backgroundColor: 'rgba(29, 122, 175, 0.05)',
-                    borderRadius: '12px',
-                    padding: '20px',
-                    border: '1px solid rgba(29, 122, 175, 0.15)'
-                  }}>
-                    <h4 style={{
-                      color: '#1d7aaf',
-                      fontSize: '1.1rem',
-                      fontWeight: '600',
-                      marginBottom: '8px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px'
-                    }}>
-                      <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '30px',
-                        height: '30px',
-                        background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                        borderRadius: '10px',
-                        boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)',
-                        flexShrink: 0
-                      }}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </div>
-                      Office Phone
-                    </h4>
-                    <p style={{
-                      margin: '0 0 8px 0',
-                      fontSize: '1rem'
-                    }}>
-                      <a href="tel:+15064782949" style={{
-                        color: '#2c3e50',
-                        textDecoration: 'none',
-                        fontWeight: '500'
-                      }}>(506) 478-2949</a>
-                    </p>
-                    <small style={{
-                      color: '#6c757d',
-                      fontSize: '0.9rem'
-                    }}>Monday - Friday, 8am - 5pm EST</small>
-                  </div>
-                  
-                  <div style={{
-                    backgroundColor: 'rgba(29, 122, 175, 0.05)',
-                    borderRadius: '12px',
-                    padding: '20px',
-                    border: '1px solid rgba(29, 122, 175, 0.15)'
-                  }}>
-                    <h4 style={{
-                      color: '#1d7aaf',
-                      fontSize: '1.1rem',
-                      fontWeight: '600',
-                      marginBottom: '8px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px'
-                    }}>
-                      <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '30px',
-                        height: '30px',
-                        background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                        borderRadius: '10px',
-                        boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)',
-                        flexShrink: 0
-                      }}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </div>
-                      Response Time
-                    </h4>
-                    <p style={{
-                      margin: '0 0 8px 0',
-                      fontSize: '1rem',
-                      color: '#2c3e50'
-                    }}>2-4 hours during business hours</p>
-                    <small style={{
-                      color: '#6c757d',
-                      fontSize: '0.9rem'
-                    }}>Same-day for urgent projects</small>
-                  </div>
-                </div>
-
                 <div style={{
-                  marginTop: '30px',
-                  textAlign: 'center',
-                  padding: '25px',
-                  backgroundColor: 'rgba(255, 107, 53, 0.05)',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
                   borderRadius: '12px',
-                  border: '1px solid rgba(255, 107, 53, 0.15)'
+                  padding: '20px',
+                  border: '1px solid rgba(29, 122, 175, 0.15)',
+                  marginBottom: '25px',
+                  textAlign: 'center'
                 }}>
-                  <h4 style={{
-                    color: '#ff6b35',
-                    fontSize: '1.2rem',
-                    fontWeight: '600',
-                    marginBottom: '10px',
+                  <div style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: '10px'
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)',
+                    margin: '0 auto 15px auto'
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="4" width="18" height="18" rx="2" stroke="white" strokeWidth="2" fill="none"/>
+                      <line x1="16" y1="2" x2="16" y2="6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <line x1="8" y1="2" x2="8" y2="6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <line x1="3" y1="10" x2="21" y2="10" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                  <h4 style={{
+                    color: '#1d7aaf',
+                    fontSize: '1.2rem',
+                    fontWeight: '600',
+                    marginBottom: '10px'
+                  }}>Schedule Your Meeting</h4>
+                  <p style={{
+                    margin: '0',
+                    fontSize: '1rem',
+                    color: '#2c3e50',
+                    lineHeight: '1.5'
+                  }}>Pick a time that works for you and we'll send you a calendar invitation with all the details.</p>
+                </div>
+                
+                <div style={{
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  marginBottom: '30px'
+                }}>
+                  <a
+                    href="https://calendar.app.google/zAzLjHc75PzBEK2c8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      background: 'linear-gradient(135deg, #4285F4, #1a73e8)',
+                      color: 'white',
+                      padding: '15px 30px',
+                      borderRadius: '50px',
+                      textDecoration: 'none',
+                      fontWeight: '600',
+                      fontSize: '1.1rem',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      boxShadow: '0 4px 15px rgba(66, 133, 244, 0.3)',
+                      transition: 'all 0.3s ease',
+                      marginBottom: '20px'
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.boxShadow = '0 6px 20px rgba(66, 133, 244, 0.4)';
+                      e.target.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.boxShadow = '0 4px 15px rgba(66, 133, 244, 0.3)';
+                      e.target.style.transform = 'translateY(0)';
+                    }}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" fill="white"/>
+                    </svg>
+                    Book in Google Calendar
+                  </a>
+                  
+                  <p style={{
+                    fontSize: '0.9rem',
+                    color: '#6c757d',
+                    textAlign: 'center',
+                    margin: '0'
+                  }}>
+                    You'll receive an email confirmation with the meeting details
+                  </p>
+                </div>
+                
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '15px'
+                }}>
+                  <h3 style={{
+                    color: '#1a1a2e',
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    marginBottom: '10px',
+                    textAlign: 'center'
+                  }}>Contact Our Team</h3>
+                  
+                  <div style={{
+                    backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                    borderRadius: '12px',
+                    padding: '15px',
+                    border: '1px solid rgba(29, 122, 175, 0.15)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '15px'
                   }}>
                     <div style={{
                       display: 'flex',
@@ -906,27 +867,83 @@ export const ContactPage = () => {
                       justifyContent: 'center',
                       width: '30px',
                       height: '30px',
-                      background: 'linear-gradient(135deg, #ff6b35, #ff5722)',
+                      background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                       borderRadius: '10px',
-                      boxShadow: '0 4px 12px rgba(255, 107, 53, 0.3)',
+                      boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)',
                       flexShrink: 0
                     }}>
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" fill="none"/>
-                        <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <polyline points="22,6 12,13 2,6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </div>
-                    Need It Done Fast?
-                  </h4>
-                  <p style={{ 
-                    color: '#2c3e50',
-                    marginBottom: '20px',
-                    fontSize: '0.95rem',
-                    lineHeight: '1.5'
-                  }}>Call our office directly for rush projects and immediate consultations.</p>
-                  <a href="tel:+15064782949" className="hero-button">
-                    Call Our Team
-                  </a>
+                    <div>
+                      <h4 style={{
+                        color: '#1d7aaf',
+                        fontSize: '1rem',
+                        fontWeight: '600',
+                        margin: '0 0 5px 0'
+                      }}>Business Email</h4>
+                      <p style={{
+                        margin: '0',
+                        fontSize: '0.9rem'
+                      }}>
+                        <a href="mailto:aaron@logicpros.ca" style={{
+                          color: '#2c3e50',
+                          textDecoration: 'none',
+                          fontWeight: '500'
+                        }}>aaron@logicpros.ca</a>
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div style={{
+                    backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                    borderRadius: '12px',
+                    padding: '15px',
+                    border: '1px solid rgba(29, 122, 175, 0.15)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '15px'
+                  }}>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '30px',
+                      height: '30px',
+                      background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                      borderRadius: '10px',
+                      boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)',
+                      flexShrink: 0
+                    }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 style={{
+                        color: '#1d7aaf',
+                        fontSize: '1rem',
+                        fontWeight: '600',
+                        margin: '0 0 5px 0'
+                      }}>Office Phone</h4>
+                      <p style={{
+                        margin: '0',
+                        fontSize: '0.9rem'
+                      }}>
+                        <a href="tel:+15064782949" style={{
+                          color: '#2c3e50',
+                          textDecoration: 'none',
+                          fontWeight: '500'
+                        }}>(506) 478-2949</a>
+                      </p>
+                      <small style={{
+                        color: '#6c757d',
+                        fontSize: '0.8rem'
+                      }}>Mon-Fri, 8am-5pm EST</small>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
