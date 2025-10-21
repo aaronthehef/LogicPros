@@ -180,7 +180,7 @@ export const InteractiveServicesShowcase = () => {
                   
                   <a href={currentService.ctaLink} className="cta-button" style={{
                     background: `linear-gradient(135deg, ${currentService.ctaColor} 0%, ${currentService.ctaColor}dd 100%)`,
-                    color: currentService.ctaColor === '#FFC600' ? '#1a1a2e' : 'white',
+                    color: '#1a1a2e',
                     padding: '14px 28px',
                     borderRadius: '50px',
                     textDecoration: 'none',
@@ -291,7 +291,7 @@ export const InteractiveServicesShowcase = () => {
                     
                     <a href={currentService.ctaLink} className="cta-button" style={{
                       background: `linear-gradient(135deg, ${currentService.ctaColor} 0%, ${currentService.ctaColor}dd 100%)`,
-                      color: 'white',
+                      color: '#1a1a2e',
                       padding: '16px 32px',
                       borderRadius: '50px',
                       textDecoration: 'none',
@@ -419,7 +419,7 @@ export const InteractiveServicesShowcase = () => {
                     
                     <a href={currentService.ctaLink} className="cta-button" style={{
                       background: `linear-gradient(135deg, ${currentService.ctaColor} 0%, ${currentService.ctaColor}dd 100%)`,
-                      color: 'white',
+                      color: '#1a1a2e',
                       padding: '16px 32px',
                       borderRadius: '50px',
                       textDecoration: 'none',
@@ -551,7 +551,7 @@ export const InteractiveServicesShowcase = () => {
                   
                   <a href={currentService.ctaLink} className="cta-button" style={{
                     background: `linear-gradient(135deg, ${currentService.ctaColor} 0%, ${currentService.ctaColor}dd 100%)`,
-                    color: currentService.ctaColor === '#FFC600' ? '#1a1a2e' : 'white',
+                    color: '#1a1a2e',
                     padding: '16px 32px',
                     borderRadius: '50px',
                     textDecoration: 'none',

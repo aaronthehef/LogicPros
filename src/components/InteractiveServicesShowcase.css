@@ -11,8 +11,8 @@
 }
 
 .service-card-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transform: none !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
 }
 
 .service-tabs {
@@ -49,12 +49,18 @@
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .service-content-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   
   .service-tabs {
@@ -64,6 +70,479 @@
   .service-tab {
     padding: 12px 8px;
     font-size: 0.8rem;
+    min-height: 50px;
+  }
+  
+  .service-tab span:first-child {
+    font-size: 1rem;
+    margin-right: 6px;
+  }
+  
+  /* Fix overflow issues in mobile view */
+  .service-card-container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .service-content {
+    padding: 1rem 0.5rem;
+  }
+  
+  .service-content-panel {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Fix security metrics and IT dashboard overflow */
+  .security-metrics, .it-dashboard {
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .progress-bar {
+    width: 100%;
+  }
+  
+  /* Fix automation workflow overflow */
+  .automation-visualization {
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .automation-workflow {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-tab {
+    padding: 10px 6px;
+    font-size: 0.75rem;
+    min-height: 45px;
+  }
+  
+  .service-tab span:first-child {
+    font-size: 0.9rem;
+    margin-right: 5px;
+  }
+  
+  /* Additional mobile fixes for very small screens */
+  .service-content {
+    padding: 0.75rem 0.25rem;
+  }
+  
+  .service-content-panel {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .security-metrics, .it-dashboard {
+    padding: 0.75rem;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .automation-visualization {
+    padding: 0.75rem;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .website-screenshot {
+    overflow: visible !important;
+    max-width: 100%;
+    width: 100% !important;
+  }
+  
+  .screenshot-content {
+    overflow: visible !important;
+    max-width: 100%;
+    width: 100% !important;
+  }
+}
+
+/* Force mobile styles for security metrics */
+@media (max-width: 768px) {
+  .service-card-container .security-metrics,
+  .service-card-container .it-dashboard {
+    padding: 1rem !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  
+  /* Fix grid layout in mobile */
+  .service-content-panel > div[style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .service-content-panel .visual-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card-container .security-metrics,
+  .service-card-container .it-dashboard {
+    padding: 0.75rem !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  
+  /* Fix grid layout in very small screens */
+  .service-content-panel > div[style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .service-content-panel .visual-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Fix SVG overflow issues in mobile */
+@media (max-width: 768px) {
+  .hero-section svg {
+    overflow: hidden !important;
+    clip-path: inset(0 0 0 0) !important;
+  }
+  
+  .hero-section svg g {
+    overflow: hidden !important;
+  }
+  
+  .hero-section svg path,
+  .hero-section svg circle {
+    overflow: hidden !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section svg {
+    overflow: hidden !important;
+    clip-path: inset(0 0 0 0) !important;
+  }
+  
+  .hero-section svg g {
+    overflow: hidden !important;
+  }
+  
+  .hero-section svg path,
+  .hero-section svg circle {
+    overflow: hidden !important;
+  }
+}
+
+/* Force SVG elements to stay within viewport on mobile */
+@media (max-width: 768px) {
+  .hero-section svg g,
+  .hero-section svg path,
+  .hero-section svg circle {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    transform-origin: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section svg g,
+  .hero-section svg path,
+  .hero-section svg circle {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    transform-origin: center !important;
+  }
+}
+
+/* Hide overflowing SVG elements on mobile */
+@media (max-width: 768px) {
+  .hero-section svg g[transform*="matrix"],
+  .hero-section svg path[transform*="matrix"],
+  .hero-section svg circle[transform*="matrix"] {
+    visibility: hidden !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section svg g[transform*="matrix"],
+  .hero-section svg path[transform*="matrix"],
+  .hero-section svg circle[transform*="matrix"] {
+    visibility: hidden !important;
+  }
+}
+
+/* Hide the entire SVG background on mobile to prevent overflow */
+@media (max-width: 768px) {
+  .hero-section svg {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section svg {
+    display: none !important;
+  }
+}
+
+/* Fix text overflow issues in mobile */
+@media (max-width: 768px) {
+  .service-content-panel * {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  .service-content-panel h3,
+  .service-content-panel h4,
+  .service-content-panel p,
+  .service-content-panel li {
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  .website-screenshot,
+  .screenshot-content {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-content-panel * {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  .service-content-panel h3,
+  .service-content-panel h4,
+  .service-content-panel p,
+  .service-content-panel li {
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  .website-screenshot,
+  .screenshot-content {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+}
+
+/* Fix website showcase display issues in mobile */
+@media (max-width: 768px) {
+  .website-showcase {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    margin: 0 auto !important;
+  }
+  
+  .website-showcase h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.75rem !important;
+    text-align: center !important;
+  }
+  
+  .website-screenshot {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    margin: 0 auto !important;
+  }
+  
+  .screenshot-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    padding: 0.5rem !important;
+  }
+  
+  .new-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .new-nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .new-nav span {
+    font-size: 0.7rem !important;
+    padding: 0.125rem 0.25rem !important;
+  }
+  
+  .nav-cta {
+    font-size: 0.7rem !important;
+    padding: 0.125rem 0.25rem !important;
+  }
+  
+  .new-title {
+    font-size: 1rem !important;
+    text-align: center !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .new-subtitle {
+    font-size: 0.8rem !important;
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .new-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+  
+  .new-button {
+    width: 100% !important;
+    max-width: 200px !important;
+    text-align: center !important;
+  }
+  
+  .trust-indicators {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    margin-top: 0.5rem !important;
+  }
+  
+  .trust-item {
+    font-size: 0.7rem !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .website-showcase {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    margin: 0 auto !important;
+  }
+  
+  .website-showcase h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
+  }
+  
+  .website-screenshot {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    margin: 0 auto !important;
+  }
+  
+  .screenshot-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    padding: 0.25rem !important;
+  }
+  
+  .new-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .new-nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.125rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .new-nav span {
+    font-size: 0.65rem !important;
+    padding: 0.125rem 0.25rem !important;
+  }
+  
+  .nav-cta {
+    font-size: 0.65rem !important;
+    padding: 0.125rem 0.25rem !important;
+  }
+  
+  .new-title {
+    font-size: 0.9rem !important;
+    text-align: center !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .new-subtitle {
+    font-size: 0.75rem !important;
+    text-align: center !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .new-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+  }
+  
+  .new-button {
+    width: 100% !important;
+    max-width: 180px !important;
+    text-align: center !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .trust-indicators {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    margin-top: 0.25rem !important;
+  }
+  
+  .trust-item {
+    font-size: 0.65rem !important;
+    text-align: center !important;
   }
 }
 
@@ -78,6 +557,10 @@
 .cta-button {
   position: relative;
   overflow: hidden;
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 .cta-button::before {
@@ -126,11 +609,13 @@
   
   .website-screenshot {
     margin-bottom: 0.5rem;
+    overflow: hidden;
   }
   
   .screenshot-content {
     min-height: 150px;
     padding: 0.5rem;
+    overflow: hidden;
   }
   
   .old-title, .new-title {
@@ -143,6 +628,21 @@
   
   .comparison-bullets li {
     font-size: 0.8rem;
+  }
+  
+  /* Fix tab content overflow */
+  .service-content {
+    padding: 1.5rem 1rem;
+    overflow-x: hidden;
+  }
+  
+  /* Fix specific card layouts */
+  .before-after-comparison {
+    overflow-x: hidden;
+  }
+  
+  .comparison-item {
+    overflow-x: hidden;
   }
 }
 
@@ -393,6 +893,10 @@
   padding: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .security-metrics:hover, .it-dashboard:hover {
@@ -428,6 +932,10 @@
 /* Animation for service tab transitions */
 .service-content-panel {
   animation: fadeIn 0.5s ease-in-out;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 @keyframes fadeIn {

@@ -379,11 +379,7 @@ export const ResponsiveLandingPage = () => {
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                   <a href="/contact" className="hero-button">
-                    Start Security Assessment
-                  </a>
-                  
-                  <a href="/contact" className="hero-button">
-                    Let's Talk
+                    Free Consultation
                   </a>
                 </div>
               </div>
@@ -529,8 +525,8 @@ export const ResponsiveLandingPage = () => {
               maxWidth: '1200px',
               margin: '0 auto'
             }}>
-              <a href="/services" className="service-card professional-card" style={{ 
-                textDecoration: 'none', 
+              <a href="/services/cybersecurity" className="service-card professional-card" style={{
+                textDecoration: 'none',
                 color: 'inherit',
                 background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
                 border: '2px solid rgba(29, 122, 175, 0.1)',
@@ -560,7 +556,7 @@ export const ResponsiveLandingPage = () => {
                     <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h3>Cybersecurity & IT Services</h3>
+                <h3>Cybersecurity</h3>
                 <p>
                   Professional cybersecurity services including security audits, MFA, and managed IT support to protect your business from cyber threats.
                 </p>
@@ -645,8 +641,8 @@ export const ResponsiveLandingPage = () => {
                 </p>
                 <div className="feature-highlight">Streamline Operations</div>
               </a>
-              <a href="/services/marketing" className="service-card professional-card" style={{ 
-                textDecoration: 'none', 
+              <a href="/services/managed-it" className="service-card professional-card" style={{
+                textDecoration: 'none',
                 color: 'inherit',
                 background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
                 border: '2px solid rgba(29, 122, 175, 0.1)',
@@ -671,15 +667,18 @@ export const ResponsiveLandingPage = () => {
                   boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
                   transition: 'all 0.3s ease'
                 }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="3" width="20" height="14" rx="2" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="6" y="17" width="4" height="2" fill="white"/>
+                    <rect x="14" y="17" width="4" height="2" fill="white"/>
+                    <circle cx="12" cy="10" r="2" stroke="white" strokeWidth="2" fill="none"/>
                   </svg>
                 </div>
-                <h3>SEO & Hands Free Marketing</h3>
+                <h3>Managed IT Services</h3>
                 <p>
-                  Get found on Google and convert visitors with automated email sequences, lead nurturing, and customer retention - completely hands free.
+                  Comprehensive IT support and management services including network monitoring, maintenance, and technical support to keep your business running smoothly.
                 </p>
-                <div className="feature-highlight">Set It & Forget It Marketing</div>
+                <div className="feature-highlight">Reliable IT Support</div>
               </a>
             </div>
           </div>
