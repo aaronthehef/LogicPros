@@ -750,93 +750,34 @@ export const ContactPage = () => {
                 <div style={{
                   backgroundColor: 'rgba(29, 122, 175, 0.05)',
                   borderRadius: '12px',
-                  padding: '20px',
+                  padding: '15px',
                   border: '1px solid rgba(29, 122, 175, 0.15)',
-                  marginBottom: '25px',
+                  marginBottom: '20px',
                   textAlign: 'center'
                 }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '50px',
-                    height: '50px',
-                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                    borderRadius: '50%',
-                    boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)',
-                    margin: '0 auto 15px auto'
-                  }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="3" y="4" width="18" height="18" rx="2" stroke="white" strokeWidth="2" fill="none"/>
-                      <line x1="16" y1="2" x2="16" y2="6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                      <line x1="8" y1="2" x2="8" y2="6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                      <line x1="3" y1="10" x2="21" y2="10" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                  </div>
-                  <h4 style={{
-                    color: '#1d7aaf',
-                    fontSize: '1.2rem',
-                    fontWeight: '600',
-                    marginBottom: '10px'
-                  }}>Schedule Your Meeting</h4>
                   <p style={{
                     margin: '0',
-                    fontSize: '1rem',
+                    fontSize: '0.95rem',
                     color: '#2c3e50',
                     lineHeight: '1.5'
                   }}>Pick a time that works for you and we'll send you a calendar invitation with all the details.</p>
                 </div>
-                
+
+                {/* Google Calendar Appointment Scheduling */}
                 <div style={{
                   flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginBottom: '30px'
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  border: '1px solid rgba(29, 122, 175, 0.15)',
+                  marginBottom: '20px'
                 }}>
-                  <a
-                    href="https://calendar.app.google/zAzLjHc75PzBEK2c8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      background: 'linear-gradient(135deg, #4285F4, #1a73e8)',
-                      color: 'white',
-                      padding: '15px 30px',
-                      borderRadius: '50px',
-                      textDecoration: 'none',
-                      fontWeight: '600',
-                      fontSize: '1.1rem',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '10px',
-                      boxShadow: '0 4px 15px rgba(66, 133, 244, 0.3)',
-                      transition: 'all 0.3s ease',
-                      marginBottom: '20px'
-                    }}
-                    onMouseOver={(e) => {
-                      e.target.style.boxShadow = '0 6px 20px rgba(66, 133, 244, 0.4)';
-                      e.target.style.transform = 'translateY(-2px)';
-                    }}
-                    onMouseOut={(e) => {
-                      e.target.style.boxShadow = '0 4px 15px rgba(66, 133, 244, 0.3)';
-                      e.target.style.transform = 'translateY(0)';
-                    }}
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" fill="white"/>
-                    </svg>
-                    Book in Google Calendar
-                  </a>
-                  
-                  <p style={{
-                    fontSize: '0.9rem',
-                    color: '#6c757d',
-                    textAlign: 'center',
-                    margin: '0'
-                  }}>
-                    You'll receive an email confirmation with the meeting details
-                  </p>
+                  <iframe
+                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Bg4PkNExnSkRTXv5QMDe5HjRWrbuMaf3gVvbHlf3T0aaqtq7cNkpIUZD5uqNR7Tx0owowJNgX?gv=true"
+                    style={{ border: 0 }}
+                    width="100%"
+                    height="600"
+                    title="Book a Consultation with LogicPros"
+                  />
                 </div>
                 
                 <div style={{
