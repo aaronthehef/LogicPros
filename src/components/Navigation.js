@@ -63,178 +63,18 @@ export const Navigation = () => {
           </a>
           <div className={`dropdown-content ${dropdownOpen === 'services' ? 'show' : ''}`}>
             <div className="dropdown-arrow-up"></div>
-            <div 
-              className="nav-subdropdown"
-              onMouseEnter={() => handleMouseEnter('cybersecurity')}
-              onMouseLeave={() => handleMouseEnter('services')}
-            >
-              <a href="/services/cybersecurity" className="dropdown-item-with-submenu">
-                Cybersecurity Services
-                <span className="submenu-arrow">▶</span>
-              </a>
-              <div className={`submenu-content ${dropdownOpen === 'cybersecurity' ? 'show' : ''}`}>
-                <a href="/locations/fredericton/cybersecurity" onClick={handleLinkClick}>
-                  Fredericton Cybersecurity
-                </a>
-                <a href="/locations/moncton/cybersecurity" onClick={handleLinkClick}>
-                  Moncton Cybersecurity
-                </a>
-                <a href="/locations/saint-john/cybersecurity" onClick={handleLinkClick}>
-                  Saint John Cybersecurity
-                </a>
-                <hr style={{margin: '8px 12px', border: 'none', borderTop: '1px solid rgba(255,255,255,0.1)'}} />
-                <a href="/services/security-audits" onClick={handleLinkClick}>
-                  Security Audits
-                </a>
-                <a href="/services/password-management" onClick={handleLinkClick}>
-                  Password Management
-                </a>
-                <a href="/services/multi-factor-authentication" onClick={handleLinkClick}>
-                  Multi-Factor Authentication
-                </a>
-              </div>
-            </div>
-            
-            <div 
-              className="nav-subdropdown"
-              onMouseEnter={() => handleMouseEnter('managed-it')}
-              onMouseLeave={() => handleMouseEnter('services')}
-            >
-              <a href="/services/managed-it" className="dropdown-item-with-submenu">
-                Managed IT Services
-                <span className="submenu-arrow">▶</span>
-              </a>
-              <div className={`submenu-content ${dropdownOpen === 'managed-it' ? 'show' : ''}`}>
-                <a href="/locations/fredericton/managed-it" onClick={handleLinkClick}>
-                  Fredericton IT Support
-                </a>
-                <a href="/locations/moncton/managed-it" onClick={handleLinkClick}>
-                  Moncton IT Support
-                </a>
-                <a href="/locations/saint-john/managed-it" onClick={handleLinkClick}>
-                  Saint John IT Support
-                </a>
-              </div>
-            </div>
-            
-            <div 
-              className="nav-subdropdown"
-              onMouseEnter={() => handleMouseEnter('websites')}
-              onMouseLeave={() => handleMouseEnter('services')}
-            >
-              <a href="/services/websites" className="dropdown-item-with-submenu">
-                Website Design
-                <span className="submenu-arrow">▶</span>
-              </a>
-              <div className={`submenu-content ${dropdownOpen === 'websites' ? 'show' : ''}`}>
-                <a href="/locations/fredericton/web-design" onClick={handleLinkClick}>
-                  Fredericton Web Design
-                </a>
-                <a href="/locations/moncton/web-design" onClick={handleLinkClick}>
-                  Moncton Web Design
-                </a>
-                <a href="/locations/saint-john/web-design" onClick={handleLinkClick}>
-                  Saint John Web Design
-                </a>
-                <hr style={{margin: '8px 12px', border: 'none', borderTop: '1px solid rgba(255,255,255,0.1)'}} />
-                <a href="/contractors/plumbing" onClick={handleLinkClick}>
-                  Plumbing Contractors
-                </a>
-                <a href="/contractors/electrical" onClick={handleLinkClick}>
-                  Electrical Contractors
-                </a>
-                <a href="/contractors/hvac" onClick={handleLinkClick}>
-                  HVAC Contractors
-                </a>
-                <a href="/contractors/roofing" onClick={handleLinkClick}>
-                  Roofing Contractors
-                </a>
-              </div>
-            </div>
-            
+            <a href="/services/websites" onClick={handleLinkClick}>
+              Website Design
+            </a>
             <a href="/services/automations" onClick={handleLinkClick}>
               AI Automations
             </a>
-          </div>
-          <div className="dropdown-hover-bridge"></div>
-        </div>
-
-        <div 
-          className="nav-dropdown"
-          onMouseEnter={() => handleMouseEnter('locations')}
-          onMouseLeave={handleMouseLeave}
-        >
-          <a href="#" className="nav-link">
-            Locations
-            <span className="dropdown-arrow">▼</span>
-          </a>
-          <div className={`dropdown-content ${dropdownOpen === 'locations' ? 'show' : ''}`}>
-            <div className="dropdown-arrow-up"></div>
-            <div 
-              className="nav-subdropdown"
-              onMouseEnter={() => handleMouseEnter('fredericton')}
-              onMouseLeave={() => handleMouseEnter('locations')}
-            >
-              <a href="/locations/fredericton" className="dropdown-item-with-submenu">
-                Fredericton
-                <span className="submenu-arrow">▶</span>
-              </a>
-              <div className={`submenu-content ${dropdownOpen === 'fredericton' ? 'show' : ''}`}>
-                <a href="/locations/fredericton/web-design" onClick={handleLinkClick}>
-                  Website Design
-                </a>
-                <a href="/locations/fredericton/cybersecurity" onClick={handleLinkClick}>
-                  Cybersecurity
-                </a>
-                <a href="/locations/fredericton/managed-it" onClick={handleLinkClick}>
-                  IT Support
-                </a>
-              </div>
-            </div>
-            
-            <div 
-              className="nav-subdropdown"
-              onMouseEnter={() => handleMouseEnter('moncton')}
-              onMouseLeave={() => handleMouseEnter('locations')}
-            >
-              <a href="/locations/moncton" className="dropdown-item-with-submenu">
-                Moncton
-                <span className="submenu-arrow">▶</span>
-              </a>
-              <div className={`submenu-content ${dropdownOpen === 'moncton' ? 'show' : ''}`}>
-                <a href="/locations/moncton/web-design" onClick={handleLinkClick}>
-                  Website Design
-                </a>
-                <a href="/locations/moncton/cybersecurity" onClick={handleLinkClick}>
-                  Cybersecurity
-                </a>
-                <a href="/locations/moncton/managed-it" onClick={handleLinkClick}>
-                  IT Support
-                </a>
-              </div>
-            </div>
-            
-            <div 
-              className="nav-subdropdown"
-              onMouseEnter={() => handleMouseEnter('saint-john')}
-              onMouseLeave={() => handleMouseEnter('locations')}
-            >
-              <a href="/locations/saint-john" className="dropdown-item-with-submenu">
-                Saint John
-                <span className="submenu-arrow">▶</span>
-              </a>
-              <div className={`submenu-content ${dropdownOpen === 'saint-john' ? 'show' : ''}`}>
-                <a href="/locations/saint-john/web-design" onClick={handleLinkClick}>
-                  Website Design
-                </a>
-                <a href="/locations/saint-john/cybersecurity" onClick={handleLinkClick}>
-                  Cybersecurity
-                </a>
-                <a href="/locations/saint-john/managed-it" onClick={handleLinkClick}>
-                  IT Support
-                </a>
-              </div>
-            </div>
+            <a href="/services/cybersecurity" onClick={handleLinkClick}>
+              Cybersecurity
+            </a>
+            <a href="/services/managed-it" onClick={handleLinkClick}>
+              Managed IT Services
+            </a>
           </div>
           <div className="dropdown-hover-bridge"></div>
         </div>

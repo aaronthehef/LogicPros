@@ -163,6 +163,19 @@ export const ManagedITServicesPage = () => {
       .floating-particle:nth-child(4) { animation: float1 22s ease-in-out infinite reverse; }
       .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
       .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
+      
+      /* Managed IT Services Section Responsive */
+      @media (max-width: 1200px) {
+        div[style*="gridTemplateColumns: repeat(4, 1fr)"] {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        div[style*="gridTemplateColumns: repeat(4, 1fr)"] {
+          grid-template-columns: 1fr !important;
+        }
+      }
     `;
     document.head.appendChild(style);
     
@@ -443,6 +456,225 @@ export const ManagedITServicesPage = () => {
                   </div>
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Managed IT Services Section */}
+        <section className="section" style={{ backgroundColor: '#f8faff', padding: '80px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Our Managed IT Services</h2>
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#6b7280',
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Comprehensive IT support and infrastructure management to keep your business running smoothly
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: '30px',
+              marginBottom: '40px'
+            }}>
+              {/* IT Support & Helpdesk Card */}
+              <a href="/services/managed-it/helpdesk" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    IT Support & Helpdesk
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Fast response times and expert technicians to resolve IT issues and keep your business running smoothly
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
+
+              {/* Network Management Card */}
+              <a href="/services/managed-it/network-management" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="3" width="20" height="14" rx="2" stroke="white" strokeWidth="2" fill="none"/>
+                      <rect x="6" y="17" width="4" height="2" fill="white"/>
+                      <rect x="14" y="17" width="4" height="2" fill="white"/>
+                      <circle cx="12" cy="10" r="2" stroke="white" strokeWidth="2" fill="none"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    Network Management
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Reliable, secure network infrastructure with proactive monitoring, maintenance, and support for your systems
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
+
+              {/* Cloud Services Card */}
+              <a href="/services/managed-it/cloud-services" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    Cloud Services
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Secure cloud solutions that provide flexibility, scalability, and reliable access to your business data from anywhere
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
+
+              {/* IT Consulting Card */}
+              <a href="/services/managed-it/consulting" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
+                      <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="12" cy="5" r="1" fill="white"/>
+                      <circle cx="12" cy="19" r="1" fill="white"/>
+                      <circle cx="19" cy="12" r="1" fill="white"/>
+                      <circle cx="5" cy="12" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    IT Consulting
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Strategic technology guidance to help your business make informed decisions, plan for growth, and optimize your IT infrastructure
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
             </div>
           </div>
         </section>

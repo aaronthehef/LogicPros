@@ -167,6 +167,19 @@ export const CybersecurityPage = () => {
           grid-template-columns: 1fr !important;
         }
       }
+      
+      /* Cybersecurity Services Section Responsive */
+      @media (max-width: 1024px) {
+        div[style*="gridTemplateColumns: repeat(3, 1fr)"] {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        div[style*="gridTemplateColumns: repeat(3, 1fr)"] {
+          grid-template-columns: 1fr !important;
+        }
+      }
 
       /* Hero Service Card Animations */
       @keyframes pulseGlow {
@@ -473,6 +486,177 @@ export const CybersecurityPage = () => {
                   </div>
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Cybersecurity Services Section */}
+        <section className="section" style={{ backgroundColor: '#f8faff', padding: '80px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Our Cybersecurity Services</h2>
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#6b7280',
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Comprehensive security solutions to protect your business from cyber threats
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              marginBottom: '40px'
+            }}>
+              {/* Security Audits Card */}
+              <a href="/services/security-audits" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    Security Audits
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Comprehensive evaluation of your security posture to identify vulnerabilities before cybercriminals do
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
+
+              {/* Password Management Card */}
+              <a href="/services/password-management" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="12" cy="16" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    Password Management
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Secure password generation, encrypted storage, and team password sharing to eliminate weak password risks
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
+
+              {/* Multi-Factor Authentication Card */}
+              <a href="/services/multi-factor-authentication" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="12" cy="12" r="3" stroke="white" strokeWidth="2" fill="none"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    Multi-Factor Authentication
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Add an extra layer of security that blocks 99.9% of automated attacks and protects against compromised passwords
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
             </div>
           </div>
         </section>

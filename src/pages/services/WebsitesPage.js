@@ -479,6 +479,224 @@ export const WebsitesPage = () => {
           </div>
         </section>
 
+        {/* Website Design Services Section */}
+        <section className="section" style={{ backgroundColor: '#f8faff', padding: '80px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Our Website Design Services</h2>
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#6b7280',
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                From custom development to SEO optimization, we offer comprehensive website solutions
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: '30px',
+              marginBottom: '40px'
+            }}>
+              {/* Custom Websites Card */}
+              <a href="/services/websites/custom" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 18L22 12L16 6M8 6L2 12L8 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    Custom Websites
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Tailored websites built from scratch to match your unique business needs and brand identity
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
+
+              {/* E-Commerce Sites Card */}
+              <a href="/services/websites/ecommerce" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 2L6 9H18L15 2H9Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M6 9H18V20C18 21 17 22 16 22H8C7 22 6 21 6 20V9Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 22V16H15V22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    E-Commerce Sites
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Professional online stores with secure payment processing and inventory management
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
+
+              {/* Website Redesign Card */}
+              <a href="/services/websites/redesign" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 4V10H7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M23 20V14H17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10M23 14L18.36 18.36A9 9 0 0 1 3.51 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    Website Redesign
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Modernize your existing website with updated design, improved performance, and better user experience
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
+
+              {/* SEO & Marketing Card */}
+              <a href="/services/websites/seo" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <line x1="18" y1="20" x2="18" y2="10" stroke="white" strokeWidth="2"/>
+                      <line x1="12" y1="20" x2="12" y2="4" stroke="white" strokeWidth="2"/>
+                      <line x1="6" y1="20" x2="6" y2="14" stroke="white" strokeWidth="2"/>
+                      <line x1="3" y1="20" x2="21" y2="20" stroke="white" strokeWidth="2"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    SEO & Marketing
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Improve search rankings and drive more qualified traffic with professional SEO optimization
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Platform Options */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
           <div className="container">
@@ -1641,11 +1859,23 @@ const websiteStyles = `
   .process-grid {
     grid-template-columns: 1fr !important;
   }
+  
+  /* Website Design Services Grid - Responsive */
+  .section:nth-of-type(2) .container > div:last-child {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 25px !important;
+  }
 }
 
 @media (max-width: 480px) {
   .industries-grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* Website Design Services Grid - Mobile */
+  .section:nth-of-type(2) .container > div:last-child {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
   }
 }
 `;

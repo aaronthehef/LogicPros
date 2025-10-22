@@ -16,6 +16,17 @@ import { FlooringPage } from './pages/contractors/FlooringPage';
 import { ConcretePage } from './pages/contractors/ConcretePage';
 import { RemodelingPage } from './pages/contractors/RemodelingPage';
 import { WebsitesPage } from './pages/services/WebsitesPage';
+import { CustomWebsitesPage } from './pages/services/CustomWebsitesPage';
+import { EcommerceWebsitesPage } from './pages/EcommerceWebsitesPage';
+import { WebsiteRedesignPage } from './pages/services/WebsiteRedesignPage';
+import { SEOMarketingPage } from './pages/services/SEOMarketingPage';
+import { BusinessAutomationPage } from './pages/services/BusinessAutomationPage';
+import { AIChatbotsPage } from './pages/services/AIChatbotsPage';
+import { WorkflowAutomationPage } from './pages/services/WorkflowAutomationPage';
+import { ITHelpdeskPage } from './pages/services/ITHelpdeskPage';
+import { NetworkManagementPage } from './pages/services/NetworkManagementPage';
+import { CloudServicesPage } from './pages/services/CloudServicesPage';
+import { ITConsultingPage } from './pages/services/ITConsultingPage';
 import { AutomationsPage } from './pages/services/AutomationsPage';
 import { ITServicesPage } from './pages/services/ITServicesPage';
 import { CybersecurityPage } from './pages/services/CybersecurityPage';
@@ -23,6 +34,8 @@ import { SecurityAuditPage } from './pages/services/SecurityAuditPage';
 import { PasswordManagementPage } from './pages/services/PasswordManagementPage';
 import { MFAPage } from './pages/services/MFAPage';
 import { ManagedITServicesPage } from './pages/services/ManagedITServicesPage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { FrederictonPage } from './pages/locations/FrederictonPage';
 import { MonctonPage } from './pages/locations/MonctonPage';
 import { SaintJohnPage } from './pages/locations/SaintJohnPage';
@@ -81,6 +94,10 @@ export const Router = () => {
         return <ContactPage />;
       case '/free-example':
         return <FreeExamplePage />;
+      case '/privacy':
+        return <PrivacyPolicyPage />;
+      case '/terms':
+        return <TermsOfServicePage />;
       case '/contractors/plumbing':
         return <PlumbingPage />;
       case '/contractors/electrical':
@@ -103,6 +120,28 @@ export const Router = () => {
         return <RemodelingPage />;
       case '/services/websites':
         return <WebsitesPage />;
+      case '/services/websites/custom':
+        return <CustomWebsitesPage />;
+      case '/services/websites/ecommerce':
+        return <EcommerceWebsitesPage />;
+      case '/services/websites/redesign':
+        return <WebsiteRedesignPage />;
+      case '/services/websites/seo':
+        return <SEOMarketingPage />;
+      case '/services/automations/business':
+        return <BusinessAutomationPage />;
+      case '/services/automations/chatbots':
+        return <AIChatbotsPage />;
+      case '/services/automations/workflow':
+        return <WorkflowAutomationPage />;
+      case '/services/managed-it/helpdesk':
+        return <ITHelpdeskPage />;
+      case '/services/managed-it/network-management':
+        return <NetworkManagementPage />;
+      case '/services/managed-it/cloud-services':
+        return <CloudServicesPage />;
+      case '/services/managed-it/consulting':
+        return <ITConsultingPage />;
       case '/services/automations':
         return <AutomationsPage />;
       case '/services/it-services':

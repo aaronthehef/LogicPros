@@ -450,6 +450,178 @@ export const AutomationsPage = () => {
           </div>
         </section>
 
+        {/* AI Automation Services Section */}
+        <section className="section" style={{ backgroundColor: '#f8faff', padding: '80px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Our AI Automation Services</h2>
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#6b7280',
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                From business process automation to intelligent chatbots, we help streamline your operations
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              marginBottom: '40px'
+            }}>
+              {/* Business Automation Card */}
+              <a href="/services/automations/business" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="3" stroke="white" strokeWidth="2"/>
+                      <path d="M12 1v3m0 16v3M4.22 4.22l2.12 2.12m11.31 11.31l2.12 2.12M1 12h3m16 0h3M4.22 19.78l2.12-2.12m11.31-11.31l2.12-2.12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    Business Automation
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Streamline operations and reduce manual work with custom automation solutions for your business processes
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
+
+              {/* AI Chatbots Card */}
+              <a href="/services/automations/chatbots" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M8 10h.01M12 10h.01M16 10h.01" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    AI Chatbots
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Provide instant customer support and engagement with intelligent chatbots that answer questions and qualify leads
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
+
+              {/* Workflow Automation Card */}
+              <a href="/services/automations/workflow" style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  borderRadius: '20px',
+                  padding: '30px',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  height: '100%'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="5" cy="12" r="2" fill="white"/>
+                      <circle cx="12" cy="5" r="2" fill="white"/>
+                      <circle cx="19" cy="12" r="2" fill="white"/>
+                      <circle cx="12" cy="19" r="2" fill="white"/>
+                      <path d="M7 12h5M12 7v5M12 12l5.5 0M12 12v5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
+                    Workflow Automation
+                  </h3>
+                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
+                    Connect your business tools and automate repetitive workflows to eliminate manual tasks and improve productivity
+                  </p>
+                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
+                    Learn More →
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Core Automations */}
         <section className="section" style={{ backgroundColor: '#f8f9fa' }}>
           <div className="container">
@@ -1807,6 +1979,19 @@ const automationStyles = `
     }
     100% {
       transform: scale(1) translate(0, 0);
+    }
+  }
+  
+  /* AI Automation Services Section Responsive */
+  @media (max-width: 1024px) {
+    div[style*="gridTemplateColumns: repeat(3, 1fr)"] {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    div[style*="gridTemplateColumns: repeat(3, 1fr)"] {
+      grid-template-columns: 1fr !important;
     }
   }
 }
