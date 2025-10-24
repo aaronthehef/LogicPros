@@ -331,7 +331,7 @@ export const WebsitesPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Professional Website Design & Hosting
+                  Is Your Website Costing You Customers?
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -340,9 +340,9 @@ export const WebsitesPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Custom WordPress and React websites built to elevate your brand and drive results.
-                  Professional design, SEO optimization, and responsive layouts with fast 2-4 week delivery.
-                  Helping businesses across New Brunswick and the Maritimes establish a powerful online presence.
+                  3 seconds. That's how long visitors give you before clicking away to a competitor.
+                  If your website is slow, outdated, or doesn't work on mobile — you're losing business every single day.
+                  We build fast, conversion-focused websites that turn visitors into paying customers.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -479,6 +479,185 @@ export const WebsitesPage = () => {
           </div>
         </section>
 
+        {/* Why Your Website Matters Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
+          padding: '80px 0',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
+                color: 'white',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Why Your Website Can't Wait</h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Card 1: Credibility */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="8" y="16" width="8" height="2" fill="white"/>
+                    <rect x="9" y="18" width="6" height="1" fill="white"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '3rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1'
+                }}>75%</div>
+                <p style={{
+                  color: 'white',
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  of consumers judge your business credibility based on your website design.
+                </p>
+              </div>
+
+              {/* Card 2: Load Time */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '3rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1'
+                }}>3 Seconds</div>
+                <p style={{
+                  color: 'white',
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  That's how long you have before visitors abandon a slow-loading site and choose your competitor.
+                </p>
+              </div>
+
+              {/* Card 3: Mobile */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '3rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1'
+                }}>60%+</div>
+                <p style={{
+                  color: 'white',
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  of web traffic comes from mobile devices. If your site isn't mobile-optimized, you're losing half your potential customers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Website Design Services Section */}
         <section className="section" style={{ backgroundColor: '#f8faff', padding: '80px 0' }}>
           <div className="container">
@@ -497,7 +676,7 @@ export const WebsitesPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                From custom development to SEO optimization, we offer comprehensive website solutions
+                Whether you need a brand-new site or want to fix what's not working, we've got you covered
               </p>
             </div>
             
@@ -544,7 +723,7 @@ export const WebsitesPage = () => {
                     Custom Websites
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Tailored websites built from scratch to match your unique business needs and brand identity
+                    Stand out from cookie-cutter competitors. Get a website that actually represents your brand — not a template that looks like everyone else's.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -591,7 +770,7 @@ export const WebsitesPage = () => {
                     E-Commerce Sites
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Professional online stores with secure payment processing and inventory management
+                    Turn browsers into buyers. Sell 24/7 with a store that's easy to manage, secure for customers, and optimized to maximize every sale.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -638,7 +817,7 @@ export const WebsitesPage = () => {
                     Website Redesign
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Modernize your existing website with updated design, improved performance, and better user experience
+                    Embarrassed by your outdated website? We'll transform it into something you're proud to share — faster load times, modern design, and better results.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -686,7 +865,7 @@ export const WebsitesPage = () => {
                     SEO & Marketing
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Improve search rankings and drive more qualified traffic with professional SEO optimization
+                    Tired of being invisible on Google? Get found by customers actively searching for what you offer — not just random traffic that bounces.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -715,8 +894,8 @@ export const WebsitesPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                We recommend the best platform based on your needs, goals, and technical comfort level.
-                All options include mobile-responsive design, SEO optimization, and lead capture features.
+                Not sure what platform is right for you? We'll recommend the best fit based on your goals and budget.
+                Every option includes mobile-responsive design, SEO optimization, and lead capture — so you can focus on running your business, not managing tech.
               </p>
             </div>
             
@@ -1228,6 +1407,176 @@ export const WebsitesPage = () => {
           </div>
         </section>
 
+        {/* Why Maritime Businesses Choose Us Section */}
+        <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Why Maritime Businesses Trust Us With Their Websites</h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Pillar 1: Fast Turnaround */}
+              <div className="service-card professional-card" style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                padding: '40px 30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>Fast Turnaround, No Surprises</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  We deliver most websites in 2-4 weeks — not months. Fixed pricing, clear timelines, and no hidden fees. You'll know exactly what you're getting and when you're getting it.
+                </p>
+              </div>
+
+              {/* Pillar 2: Built for Results */}
+              <div className="service-card professional-card" style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                padding: '40px 30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="3" stroke="white" strokeWidth="2"/>
+                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>Built for Results, Not Just Looks</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Pretty websites don't pay the bills — conversions do. Every site we build is designed to turn visitors into leads and customers, with built-in SEO, fast load times, and clear calls-to-action.
+                </p>
+              </div>
+
+              {/* Pillar 3: You're Never Stuck */}
+              <div className="service-card professional-card" style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                padding: '40px 30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div className="service-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12L11 14L15 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>You're Never Stuck</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  We build sites you can update yourself (if you want to), or we'll handle updates for you. No proprietary systems, no getting locked into expensive maintenance contracts. You're always in control.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Process */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
@@ -1652,9 +2001,10 @@ export const WebsitesPage = () => {
         <section className="section" style={{ backgroundColor: '#000', color: 'white', marginBottom: '0', paddingBottom: '60px' }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title" style={{ color: 'white' }}>Ready to Get Started?</h2>
+              <h2 className="section-title" style={{ color: 'white' }}>Ready to Stop Losing Customers to Bad First Impressions?</h2>
               <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
-                Let's discuss your business goals and recommend the perfect website solution for you.
+                Book a free consultation. We'll talk about what's not working with your current site (or why you need one),
+                show you examples of what we can build, and give you an honest assessment — even if you don't work with us.
               </p>
             </div>
             <div className="cta-buttons">

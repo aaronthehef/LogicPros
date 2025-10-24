@@ -317,7 +317,7 @@ export const BusinessAutomationPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Business Automation
+                  Stop Doing the Same Tasks Over and Over
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -326,12 +326,12 @@ export const BusinessAutomationPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Streamline your operations and reduce manual work with custom automation solutions that save time and increase efficiency.
+                  Every week you're copy-pasting data between systems, sending the same emails, creating the same reports, doing the same manual tasks. What if all that just... happened automatically? That's business automation. Get your time back.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                   <a href="/contact" className="hero-button">
-                    Get Started
+                    See What You Can Automate
                   </a>
                 </div>
               </div>
@@ -452,6 +452,159 @@ export const BusinessAutomationPage = () => {
           </div>
         </section>
 
+        {/* The Cost of Manual Work Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
+          padding: '80px 20px',
+          color: 'white'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#ffffff',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What Manual Processes Are Actually Costing You
+              </h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <polyline points="12,6 12,12 16,14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  15+ Hours
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Average time per week business owners spend on repetitive tasks that could be automated. That's 780 hours per year.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  32%
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  of small business owners say administrative tasks prevent them from focusing on growth and serving customers.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <line x1="15" y1="9" x2="9" y2="15" stroke="white" strokeWidth="2"/>
+                    <line x1="9" y1="9" x2="15" y2="15" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Human Error
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Manual data entry has a 1% error rate. Sounds small until you're processing thousands of transactions and losing customers over mistakes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Why Automate Your Business Processes Section */}
         <section style={{ backgroundColor: 'linear-gradient(135deg, #f8faff 0%, #ffffff 100%)', padding: '80px 20px' }}>
           <div className="container">
@@ -475,13 +628,13 @@ export const BusinessAutomationPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Transform repetitive tasks into efficient workflows
+                Stop wasting your most expensive resource (your time) on tasks a computer can do better, faster, and without complaining.
               </p>
             </div>
             
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
+              gridTemplateColumns: 'repeat(3, 1fr)',
               gap: '40px',
               maxWidth: '1000px',
               margin: '0 auto'
@@ -533,14 +686,14 @@ export const BusinessAutomationPage = () => {
                     marginBottom: '15px',
                     lineHeight: '1.3',
                     textAlign: 'center'
-                  }}>Time Savings</h3>
+                  }}>Get Your Time Back</h3>
                   <p style={{
                     color: '#6b7280',
                     lineHeight: '1.7',
                     fontSize: '1rem',
                     textAlign: 'center'
                   }}>
-                    Business automation handles repetitive, rule-based tasks that would otherwise consume valuable employee time. Most businesses can save 10-15 hours per week by automating routine processes, allowing your team to focus on high-value activities that drive growth.
+                    Stop spending 10+ hours per week on data entry, copy-pasting between systems, and manual admin work. Automate it once, reclaim those hours forever. Focus on what actually makes you money.
                   </p>
                 </div>
               </div>
@@ -592,14 +745,252 @@ export const BusinessAutomationPage = () => {
                     marginBottom: '15px',
                     lineHeight: '1.3',
                     textAlign: 'center'
-                  }}>Consistency & Accuracy</h3>
+                  }}>Eliminate Human Error</h3>
                   <p style={{
                     color: '#6b7280',
                     lineHeight: '1.7',
                     fontSize: '1rem',
                     textAlign: 'center'
                   }}>
-                    Automated processes follow the same rules every time, reducing human error and ensuring consistent results. This reliability improves quality control and customer satisfaction while minimizing costly mistakes that can occur with manual data entry or processing.
+                    Tired of finding mistakes in your data days later? Automated processes don't forget steps, mistype numbers, or skip tasks because they're tired. Zero errors, every time.
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                position: 'relative',
+                overflow: 'hidden',
+                height: '100%'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="8.5" cy="7" r="4" stroke="white" strokeWidth="2"/>
+                      <path d="M20 8v6M23 11h-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '600',
+                    color: '#1f2937',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>Scale Without Hiring</h3>
+                  <p style={{
+                    color: '#6b7280',
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center'
+                  }}>
+                    Your business is growing but you can't afford to hire more admin staff yet. Automation handles increased volume without additional headcount. Process 10x more work with the same team.
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                position: 'relative',
+                overflow: 'hidden',
+                height: '100%'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <polyline points="22,4 12,14.01 9,11.01" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '600',
+                    color: '#1f2937',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>Never Miss a Follow-Up</h3>
+                  <p style={{
+                    color: '#6b7280',
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center'
+                  }}>
+                    Lost sales because you forgot to follow up with a lead? Automation sends follow-ups on schedule, every time. No more 'I meant to reach out to them' regrets.
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                position: 'relative',
+                overflow: 'hidden',
+                height: '100%'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="9" cy="7" r="4" stroke="white" strokeWidth="2"/>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '600',
+                    color: '#1f2937',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>Consistent Customer Experience</h3>
+                  <p style={{
+                    color: '#6b7280',
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center'
+                  }}>
+                    Sometimes customers get quick responses, sometimes they wait days (depending on who's busy). Automated responses and workflows mean every customer gets the same great experience.
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                position: 'relative',
+                overflow: 'hidden',
+                height: '100%'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '600',
+                    color: '#1f2937',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>Work Runs While You Sleep</h3>
+                  <p style={{
+                    color: '#6b7280',
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center'
+                  }}>
+                    Your competitors are only working when they're awake. Your automated systems work 24/7. Reports generated, emails sent, data synced — all happening while you sleep.
                   </p>
                 </div>
               </div>
@@ -607,8 +998,8 @@ export const BusinessAutomationPage = () => {
           </div>
         </section>
 
-        {/* What We Can Automate Section */}
-        <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 20px' }}>
+        {/* What Can Actually Be Automated Section */}
+        <section style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: '60px' }}>
               <h2 style={{
@@ -621,7 +1012,7 @@ export const BusinessAutomationPage = () => {
                 marginBottom: '20px',
                 lineHeight: '1.2'
               }}>
-                What We Can Automate
+                Common Tasks We Automate
               </h2>
               <p style={{
                 fontSize: '1.2rem',
@@ -630,145 +1021,438 @@ export const BusinessAutomationPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Common business processes that benefit from automation
+                If you find yourself thinking 'I do this same thing every week,' it can probably be automated:
               </p>
             </div>
             
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(3, 1fr)',
               gap: '30px',
-              marginBottom: '40px'
+              maxWidth: '1200px',
+              margin: '0 auto'
             }}>
-              {[
-                {
-                  icon: 'data',
-                  title: 'Data Entry & Processing',
-                  description: 'Automating repetitive data entry tasks, form processing, and information transfer between systems to reduce manual work and errors.'
-                },
-                {
-                  icon: 'email',
-                  title: 'Email & Communication',
-                  description: 'Setting up automated email responses, follow-ups, and notifications to ensure timely communication without manual intervention.'
-                },
-                {
-                  icon: 'onboarding',
-                  title: 'Customer Onboarding',
-                  description: 'Streamlining the new customer setup process with automated account creation, welcome emails, and initial resource delivery.'
-                },
-                {
-                  icon: 'analytics',
-                  title: 'Reporting & Analytics',
-                  description: 'Automatically generating regular reports, dashboards, and data summaries to track business performance without manual compilation.'
-                },
-                {
-                  icon: 'invoicing',
-                  title: 'Invoicing & Billing',
-                  description: 'Creating and sending invoices, payment reminders, and receipt generation based on predefined triggers and schedules.'
-                },
-                {
-                  icon: 'tasks',
-                  title: 'Task Management',
-                  description: 'Automating task assignments, progress tracking, and notifications to keep projects moving without constant manual oversight.'
-                }
-              ].map((automation, index) => (
-                <div key={index} style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #fafbff 100%)',
-                  borderRadius: '20px',
-                  padding: '40px 30px',
-                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                  border: '1px solid rgba(29, 122, 175, 0.1)',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
                 }}>
-                  <div style={{
-                    position: 'absolute',
-                    top: '-50%',
-                    right: '-20%',
-                    width: '120px',
-                    height: '120px',
-                    background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
-                    borderRadius: '50%',
-                    zIndex: 0
-                  }}></div>
-                  <div style={{ position: 'relative', zIndex: 1 }}>
-                    <div style={{
-                      fontSize: '3rem',
-                      marginBottom: '20px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: '80px',
-                      height: '80px',
-                      background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                      borderRadius: '20px',
-                      boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
-                      transition: 'all 0.3s ease',
-                      margin: '0 auto 25px auto'
-                    }}>
-                      {automation.icon === 'data' && (
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <ellipse cx="12" cy="5" rx="9" ry="3" stroke="white" strokeWidth="2"/>
-                          <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      )}
-                      {automation.icon === 'email' && (
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" strokeWidth="2" fill="none"/>
-                          <polyline points="22,6 12,13 2,6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      )}
-                      {automation.icon === 'onboarding' && (
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <circle cx="9" cy="7" r="4" stroke="white" strokeWidth="2"/>
-                          <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      )}
-                      {automation.icon === 'analytics' && (
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M21 21H4.6C4.03995 21 3.75992 21 3.54601 20.891C3.35785 20.7951 3.20487 20.6422 3.10899 20.454C3 20.2401 3 19.9601 3 19.4V3M7 10.5V17.5M11.5 5.5V17.5M16 10.5V17.5M20.5 5.5V17.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      )}
-                      {automation.icon === 'invoicing' && (
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <polyline points="14,2 14,8 20,8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <line x1="10" y1="9" x2="8" y2="9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      )}
-                      {automation.icon === 'tasks' && (
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M9 11l3 3L22 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      )}
-                    </div>
-                    <h3 style={{
-                      fontSize: '1.5rem',
-                      fontWeight: '600',
-                      color: '#1f2937',
-                      marginBottom: '15px',
-                      lineHeight: '1.3'
-                    }}>{automation.title}</h3>
-                    <p style={{
-                      color: '#6b7280',
-                      lineHeight: '1.7',
-                      fontSize: '1rem'
-                    }}>
-                      {automation.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                  Data Entry & Syncing
+                </h3>
+                <ul style={{
+                  color: '#6b7280',
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  paddingLeft: '20px',
+                  margin: 0
+                }}>
+                  <li>Copy data from emails to your CRM automatically</li>
+                  <li>Sync customer info between multiple systems</li>
+                  <li>Update spreadsheets from form submissions</li>
+                  <li>Import transactions into accounting software</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Customer Communication
+                </h3>
+                <ul style={{
+                  color: '#6b7280',
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  paddingLeft: '20px',
+                  margin: 0
+                }}>
+                  <li>Send review requests after service completion</li>
+                  <li>Automated appointment reminders</li>
+                  <li>Follow-up emails after quotes/proposals</li>
+                  <li>Welcome sequences for new customers</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Reporting & Analytics
+                </h3>
+                <ul style={{
+                  color: '#6b7280',
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  paddingLeft: '20px',
+                  margin: 0
+                }}>
+                  <li>Weekly/monthly reports generated automatically</li>
+                  <li>Dashboard updates without manual data entry</li>
+                  <li>Performance metrics compiled and emailed</li>
+                  <li>Alert notifications when metrics hit targets</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Document Generation
+                </h3>
+                <ul style={{
+                  color: '#6b7280',
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  paddingLeft: '20px',
+                  margin: 0
+                }}>
+                  <li>Contracts filled from template with customer data</li>
+                  <li>Invoices created automatically after work completion</li>
+                  <li>Proposals generated from saved product/service info</li>
+                  <li>Reports formatted and distributed on schedule</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Team Coordination
+                </h3>
+                <ul style={{
+                  color: '#6b7280',
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  paddingLeft: '20px',
+                  margin: 0
+                }}>
+                  <li>Task assignments based on triggers</li>
+                  <li>Notification routing to right team members</li>
+                  <li>Status updates posted automatically</li>
+                  <li>Calendar scheduling without back-and-forth emails</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Social Media & Marketing
+                </h3>
+                <ul style={{
+                  color: '#6b7280',
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  paddingLeft: '20px',
+                  margin: 0
+                }}>
+                  <li>Scheduled posts across multiple platforms</li>
+                  <li>Blog posts distributed to social channels</li>
+                  <li>Email campaigns triggered by customer actions</li>
+                  <li>Lead scoring and routing</li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
+
+        {/* Automation vs. Hiring Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                The Math: Automation vs. Hiring Someone
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Let's be honest about the numbers:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1f2937',
+                  marginBottom: '20px',
+                  lineHeight: '1.3'
+                }}>
+                  Hiring Part-Time Admin ($15/hour, 20 hours/week)
+                </h3>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1F7CFF' }}>Cost:</strong> $15,600 per year
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1F7CFF' }}>Availability:</strong> Only during working hours
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1F7CFF' }}>Sick days/vacation:</strong> Yes, you still pay
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1F7CFF' }}>Training time:</strong> 2-4 weeks to get up to speed
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1F7CFF' }}>Turnover risk:</strong> Have to retrain when they leave
+                </div>
+                <div>
+                  <strong style={{ color: '#1F7CFF' }}>Error rate:</strong> ~1% on data entry tasks
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1f2937',
+                  marginBottom: '20px',
+                  lineHeight: '1.3'
+                }}>
+                  Business Automation (One-Time Setup)
+                </h3>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1F7CFF' }}>Cost:</strong> $2,000-$8,000 one-time (depending on complexity)
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1F7CFF' }}>Availability:</strong> 24/7/365, never takes breaks
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1F7CFF' }}>Sick days/vacation:</strong> Never
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1F7CFF' }}>Training time:</strong> None, works immediately
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1F7CFF' }}>Turnover risk:</strong> Zero
+                </div>
+                <div>
+                  <strong style={{ color: '#1F7CFF' }}>Error rate:</strong> Effectively 0%
+                </div>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+              color: 'white',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0
+              }}>
+                Break-even is usually 3-8 months. After that, you're saving thousands per year — and the automation keeps working.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Is Automation Right for You Section */}
+        <section style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Do You Even Need Automation?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Automation isn't for everyone. Here's when it makes sense:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#22c55e',
+                  marginBottom: '20px',
+                  lineHeight: '1.3'
+                }}>
+                  Automation Makes Sense If:
+                </h3>
+                <ul style={{
+                  color: '#6b7280',
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  paddingLeft: '20px',
+                  margin: 0
+                }}>
+                  <li>You're doing the same tasks weekly or daily</li>
+                  <li>You spend 5+ hours per week on repetitive admin work</li>
+                  <li>You're copy-pasting data between systems</li>
+                  <li>You forget to do important follow-ups</li>
+                  <li>You're growing and can't afford to hire yet</li>
+                  <li>Errors in manual processes are costing you money</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#ef4444',
+                  marginBottom: '20px',
+                  lineHeight: '1.3'
+                }}>
+                  Don't Bother With Automation If:
+                </h3>
+                <ul style={{
+                  color: '#6b7280',
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  paddingLeft: '20px',
+                  margin: 0
+                }}>
+                  <li>Your processes change constantly (nothing's repeatable)</li>
+                  <li>You only do the task once per quarter</li>
+                  <li>The task takes 5 minutes per month total</li>
+                  <li>You actually enjoy doing it manually (some people do!)</li>
+                  <li>Your systems literally cannot connect (very rare, but happens)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
         {/* Our Automation Process Section */}
         <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 20px' }}>
@@ -924,7 +1608,7 @@ export const BusinessAutomationPage = () => {
               fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: '700',
               marginBottom: '30px'
-            }}>Ready to automate your business processes?</h2>
+            }}>Ready to Stop Doing Robot Work?</h2>
             <p style={{
               fontSize: '1.3rem',
               marginBottom: '40px',
@@ -932,7 +1616,7 @@ export const BusinessAutomationPage = () => {
               margin: '0 auto 40px auto',
               opacity: 0.9
             }}>
-              Let's identify opportunities to streamline your operations and implement automation solutions that save time and increase efficiency.
+              Book a free automation consultation. We'll walk through your daily tasks, identify what's eating your time, and show you exactly what can be automated. Even if you don't work with us, you'll leave with a clear picture of what's possible. No pressure, just honest assessment.
             </p>
             <div style={{
               display: 'flex',
@@ -966,7 +1650,7 @@ export const BusinessAutomationPage = () => {
                   e.target.style.transform = 'translateY(0)';
                 }}
               >
-                Schedule a Consultation
+                Book Free Consultation
               </a>
             </div>
           </div>

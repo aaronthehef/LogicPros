@@ -317,7 +317,7 @@ export const WorkflowAutomationPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Workflow Automation
+                  Every Time You Think 'I Do This Same Thing Every Week'...
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -326,12 +326,12 @@ export const WorkflowAutomationPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Connect your business tools and automate repetitive workflows to eliminate manual tasks and improve team productivity.
+                  ...that's a workflow we can automate. Stop copy-pasting between systems, sending the same follow-up emails, and doing 12-step processes that should take 1 click. Workflow automation connects your tools and eliminates the repetitive busywork.
                 </p>
-                
+                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                   <a href="/contact" className="hero-button">
-                    Get Started
+                    Show Me What You Can Automate
                   </a>
                 </div>
               </div>
@@ -447,6 +447,156 @@ export const WorkflowAutomationPage = () => {
                     </svg>
                   </div>
                 </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* The Workflow Tax Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
+          padding: '80px 20px',
+          color: 'white'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#ffffff',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                The Hidden Cost of Manual Workflows
+              </h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <polyline points="12,6 12,12 16,14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  2+ Hours
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Average daily time wasted on repetitive multi-step tasks that could run automatically in seconds.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  5-10 Tools
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  The average business uses this many separate tools that don't talk to each other. You're the manual connector.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Copy-Paste Errors
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Every manual data transfer is a chance to paste in the wrong field, miss a step, or forget to do it entirely.
+                </p>
               </div>
             </div>
           </div>
@@ -630,7 +780,7 @@ export const WorkflowAutomationPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Frequent processes that benefit from automation
+                If you recognize yourself in any of these scenarios, we can automate it:
               </p>
             </div>
             
@@ -643,33 +793,33 @@ export const WorkflowAutomationPage = () => {
               {[
                 {
                   icon: 'crm',
-                  title: 'CRM & Sales Automation',
-                  description: 'Automatically update customer records, create follow-up tasks, and trigger sales notifications based on customer interactions and deal stages.'
+                  title: 'New Customer Onboarding',
+                  description: 'The Manual Way: Someone fills out a form. You get an email. Copy their info to your CRM. Send them a welcome email. Add them to your mailing list. Create a folder for their files. Set a reminder to follow up. (7 manual steps, 15+ minutes)\n\nAutomated: Form submission triggers everything automatically. Customer in CRM, welcome email sent, added to mailing list, folder created, follow-up scheduled. (0 manual steps, instant)'
                 },
                 {
                   icon: 'email',
-                  title: 'Email Marketing Integration',
-                  description: 'Sync customer data between your CRM and email platform, trigger campaigns based on customer behavior, and update lead statuses.'
+                  title: 'Invoice & Payment Processing',
+                  description: 'The Manual Way: Complete a job. Create invoice in accounting software. Email it to customer. Wait for payment. Manually mark as paid. Update project status. Send thank you email. (Multiple days, multiple manual steps)\n\nAutomated: Job marked complete triggers invoice creation and emailing. Payment received automatically marks invoice paid, updates status, sends thank you. (Done while you sleep)'
                 },
                 {
                   icon: 'documents',
-                  title: 'Document & File Management',
-                  description: 'Automatically organize files, create backups, generate documents from templates, and distribute files to team members or clients.'
+                  title: 'Lead Qualification & Assignment',
+                  description: 'The Manual Way: Lead fills out contact form. You get an email notification. Manually assess if they\'re qualified. Forward to the right team member. Hope they follow up. (Delays, missed leads)\n\nAutomated: Form answers automatically score the lead. Qualified leads assigned to sales team with all context. Unqualified leads get helpful resources via email. (Instant routing, nothing falls through cracks)'
                 },
                 {
                   icon: 'notifications',
-                  title: 'Team Notifications',
-                  description: 'Send automated alerts to team members through Slack, email, or SMS when specific events occur or action items are created.'
+                  title: 'Social Media Posting',
+                  description: 'The Manual Way: Write a post. Log into Facebook. Post it. Log into Instagram. Post it again. Log into LinkedIn. Post there too. Repeat 3x per week. (Tedious, easy to skip)\n\nAutomated: Write once, schedule to all platforms automatically. Posts go out on time even when you\'re busy or forget. (3-minute setup, runs forever)'
                 },
                 {
                   icon: 'sync',
-                  title: 'Data Syncing',
-                  description: 'Keep information consistent across platforms by automatically syncing data between databases, spreadsheets, and business applications.'
+                  title: 'Report Generation',
+                  description: 'The Manual Way: Export data from multiple systems. Copy into spreadsheet. Format it. Calculate totals. Create charts. Email to team. Every. Single. Week. (2+ hours)\n\nAutomated: Data pulled automatically, report generated and formatted, emailed to team every Monday at 8 AM. (You wake up to completed reports)'
                 },
                 {
                   icon: 'leads',
-                  title: 'Lead Distribution',
-                  description: 'Automatically assign new leads to sales representatives based on territory, availability, or other custom business rules.'
+                  title: 'Appointment Reminders',
+                  description: 'The Manual Way: Check tomorrow\'s calendar. Send reminder emails manually. Call no-shows. Reschedule. Update calendar. (Time-consuming, people still forget)\n\nAutomated: Automatic reminders 24 hours before, 1 hour before. Allows self-service rescheduling. Dramatically reduces no-shows. (Set it and forget it)'
                 }
               ].map((workflow, index) => (
                 <div key={index} style={{
@@ -771,6 +921,484 @@ export const WorkflowAutomationPage = () => {
           </div>
         </section>
 
+        {/* Workflow vs. Task Automation Section */}
+        <section style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What's the Difference Between Workflow & Task Automation?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                They're related but not the same:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Task Automation (Single Step)
+                </h3>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>What it is:</strong> Automating one repetitive task
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Example:</strong> Auto-send review requests after service
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Example:</strong> Automatically save email attachments to cloud storage
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Example:</strong> Post blog updates to social media
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>When to use:</strong> You do the same single action repeatedly
+                </div>
+                <div>
+                  <strong style={{ color: '#1f2937' }}>Complexity:</strong> Simple, quick to set up
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Workflow Automation (Multi-Step Process)
+                </h3>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>What it is:</strong> Automating entire multi-step processes across multiple tools
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Example:</strong> New customer triggers CRM entry + welcome email + task creation + calendar invite + Slack notification to team
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Example:</strong> Invoice paid triggers thank you email + update spreadsheet + notify bookkeeper + generate tax report
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>When to use:</strong> You follow the same multi-step process regularly
+                </div>
+                <div>
+                  <strong style={{ color: '#1f2937' }}>Complexity:</strong> More involved setup, bigger time savings
+                </div>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+              color: 'white',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0
+              }}>
+                Most businesses need both. We start with high-impact workflows (save the most time) then automate smaller tasks as we go.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Tools We Connect Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What Tools Can You Connect?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Almost anything with an API or integration capability. Common examples:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  CRMs & Sales Tools
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Salesforce, HubSpot, Pipedrive</li>
+                  <li>Custom databases</li>
+                  <li>Spreadsheets (Google Sheets, Excel)</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Email & Communication
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Gmail, Outlook, Mailchimp</li>
+                  <li>Slack, Microsoft Teams</li>
+                  <li>SMS/texting platforms</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Payment & Accounting
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>QuickBooks, Xero, FreshBooks</li>
+                  <li>Stripe, Square, PayPal</li>
+                  <li>Invoicing systems</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Project Management
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Asana, Trello, Monday.com</li>
+                  <li>ClickUp, Basecamp</li>
+                  <li>Custom task trackers</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Forms & Data Collection
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Google Forms, Typeform, Jotform</li>
+                  <li>Website contact forms</li>
+                  <li>Survey tools</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Marketing & Social Media
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Facebook, Instagram, LinkedIn</li>
+                  <li>WordPress, website CMSs</li>
+                  <li>Email marketing platforms</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'rgba(31, 124, 255, 0.1)',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0,
+                color: colors.text.secondary
+              }}>
+                <strong style={{ color: '#1F7CFF' }}>Don't see your tool?</strong> If it has an API or webhook capability, we can probably connect it. If not, we'll find a workaround.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Workflow ROI Calculator Section */}
+        <section style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Does Automation Actually Save Money?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Let's do the math on a common workflow:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1f2937',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Manual Invoice Workflow (Current State)
+                </h3>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Time per invoice:</strong> 15 minutes (create, email, track, follow up)
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Invoices per month:</strong> 20
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Monthly time cost:</strong> 5 hours
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Your hourly rate:</strong> $50 (conservative)
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Monthly cost of manual process:</strong> $250
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1f2937',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Automated Invoice Workflow
+                </h3>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>One-time setup:</strong> $800
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Monthly monitoring:</strong> $0 (runs itself)
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Time saved per month:</strong> 5 hours
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Break-even:</strong> 3.2 months
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Year 1 savings:</strong> $2,200
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Year 2+ savings:</strong> $3,000/year
+                </div>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'rgba(31, 124, 255, 0.1)',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0,
+                color: colors.text.secondary
+              }}>
+                <strong style={{ color: '#1F7CFF' }}>This is just ONE workflow.</strong> Most businesses have 5-10 automatable workflows. Multiply the savings.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Our Workflow Automation Process Section */}
         <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 20px' }}>
           <div className="container">
@@ -837,6 +1465,126 @@ export const WorkflowAutomationPage = () => {
                 fontStyle: 'italic'
               }}>
                 <strong>Important:</strong> Workflow automation requires planning and iteration. Some processes are too complex to automate fully, and workflows may need updates when tools or APIs change.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Is Workflow Automation Right for You? Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Do You Actually Need Workflow Automation?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Be honest about your situation:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#22c55e',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  You SHOULD Automate Workflows If:
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>You use 3+ different tools daily (CRM, email, accounting, etc.)</li>
+                  <li>You're constantly copy-pasting data between systems</li>
+                  <li>You follow the same multi-step process weekly or more</li>
+                  <li>Team members forget steps in processes</li>
+                  <li>You think "I wish this just happened automatically"</li>
+                  <li>Manual processes are creating bottlenecks</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#ef4444',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  SKIP Workflow Automation If:
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Your processes change constantly (nothing's repeatable)</li>
+                  <li>You only use 1-2 tools total</li>
+                  <li>Your workflows happen once per quarter</li>
+                  <li>You have no repetitive multi-step processes</li>
+                  <li>You actually enjoy manual data entry (rare, but some people do!)</li>
+                  <li>Your tools literally cannot integrate (very rare)</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'rgba(31, 124, 255, 0.1)',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0,
+                color: colors.text.secondary
+              }}>
+                <strong style={{ color: '#1F7CFF' }}>Not sure?</strong> We'll audit your current processes and tell you honestly if automation would help or if you're fine as-is.
               </p>
             </div>
           </div>
@@ -915,6 +1663,207 @@ export const WorkflowAutomationPage = () => {
           </div>
         </section>
 
+        {/* How We Build Workflows Section */}
+        <section style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Our Workflow Automation Process
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                We don't just set it up and disappear. Here's how we work:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Step 1: Process Mapping
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Document your current manual workflow step-by-step</li>
+                  <li>Identify pain points, bottlenecks, and error-prone steps</li>
+                  <li>Prioritize which workflows save the most time</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Step 2: Tool Assessment
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Review what tools you're currently using</li>
+                  <li>Check integration capabilities</li>
+                  <li>Identify any gaps or workarounds needed</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Step 3: Design & Approval
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Show you exactly how the automated workflow will work</li>
+                  <li>Walk through every trigger, action, and condition</li>
+                  <li>Get your sign-off before building anything</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Step 4: Build & Test
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Set up automation using n8n (open-source platform you own)</li>
+                  <li>Test with real data in a safe environment</li>
+                  <li>Make adjustments based on testing results</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Step 5: Deploy & Monitor
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Run automation alongside manual process initially (safety net)</li>
+                  <li>Monitor for any edge cases or issues</li>
+                  <li>Fully deploy once you're confident it works perfectly</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'rgba(31, 124, 255, 0.1)',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0,
+                color: colors.text.secondary
+              }}>
+                <strong style={{ color: '#1F7CFF' }}>Most workflows take 1-3 weeks from start to finish</strong>, depending on complexity. You're involved at every step — no black box surprises.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Location Section */}
         <section style={{ backgroundColor: colors.backgrounds.light, padding: '40px 20px' }}>
           <div className="container">
@@ -944,7 +1893,7 @@ export const WorkflowAutomationPage = () => {
               fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: '700',
               marginBottom: '30px'
-            }}>Ready to automate your workflows?</h2>
+            }}>Ready to Stop Being the Glue Between Your Tools?</h2>
             <p style={{
               fontSize: '1.3rem',
               marginBottom: '40px',
@@ -952,7 +1901,7 @@ export const WorkflowAutomationPage = () => {
               margin: '0 auto 40px auto',
               opacity: 0.9
             }}>
-              Let's identify opportunities to connect your tools and create automated workflows that save time and improve productivity.
+              Book a free workflow audit. We'll map out 2-3 of your most time-consuming repetitive processes and show you exactly how automation would work. No obligation, no pressure — just honest assessment of whether workflow automation makes sense for your business.
             </p>
             <div style={{
               display: 'flex',

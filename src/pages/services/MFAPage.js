@@ -13,7 +13,7 @@ export const MFAPage = () => {
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional multi-factor authentication services in New Brunswick. Implement MFA to protect against 99.9% of password attacks and secure your business.');
+      metaDescription.setAttribute('content', 'Passwords alone can\'t protect your business. MFA blocks 99.9% of credential attacks even when passwords are stolen. Professional multi-factor authentication setup for Maritime businesses.');
     }
     
     // Hero background animation styles
@@ -251,7 +251,7 @@ export const MFAPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Multi-Factor Authentication
+                  Your Password Got Stolen. Again.
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -260,8 +260,7 @@ export const MFAPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Add critical layers of security beyond passwords with professional MFA implementation.
-                  Protect your business systems in Fredericton, Moncton, Saint John, and across New Brunswick.
+                  Passwords alone can't protect your business anymore. Data breaches expose millions of credentials daily—and yours might already be for sale on the dark web. Multi-factor authentication blocks 99.9% of automated attacks, even when passwords are compromised.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -520,16 +519,15 @@ export const MFAPage = () => {
                 color: 'transparent',
                 marginBottom: '20px',
                 lineHeight: '1.2'
-              }}>Why Multi-Factor Authentication is Critical</h2>
-              <p style={{ 
-                fontSize: '1.2rem', 
-                color: '#6b7280', 
-                maxWidth: '600px', 
+              }}>The Hidden Cost of Password-Only Security</h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: '#6b7280',
+                maxWidth: '600px',
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                The cybersecurity landscape is evolving rapidly. Traditional password security is no longer sufficient 
-                against modern attack methods targeting New Brunswick businesses.
+                Passwords used to be enough. Not anymore. Modern cyberattacks don't need to guess your password—they buy it from massive data breaches, use credential-stuffing tools, or simply trick your employees into handing it over. Without MFA, you're relying on a single layer of defense that fails daily.
               </p>
             </div>
             <div style={{ 
@@ -542,7 +540,7 @@ export const MFAPage = () => {
               {[
                 {
                   stat: '99.9%',
-                  desc: 'of password attacks can be blocked by MFA',
+                  desc: 'of automated account takeover attacks are blocked by MFA—even when the attacker has your actual password',
                   icon: 'shield',
                   color: '#1d7aaf',
                   bgColor: 'rgba(29, 122, 175, 0.08)',
@@ -550,7 +548,7 @@ export const MFAPage = () => {
                 },
                 {
                   stat: '81%',
-                  desc: 'of company data breaches are due to poor passwords',
+                  desc: 'of company data breaches start with compromised passwords. MFA stops the attack even after the password is stolen',
                   icon: 'lock',
                   color: '#1e40af',
                   bgColor: 'rgba(30, 64, 175, 0.08)',
@@ -558,7 +556,7 @@ export const MFAPage = () => {
                 },
                 {
                   stat: '300%',
-                  desc: 'increase in cyber attacks on Canadian SMBs',
+                  desc: 'increase in credential-based attacks on Canadian businesses. Attackers know passwords are the weak link',
                   icon: 'trend',
                   color: '#155e8a',
                   bgColor: 'rgba(21, 94, 138, 0.08)',
@@ -678,28 +676,183 @@ export const MFAPage = () => {
           </div>
         </section>
 
+        {/* Why Passwords Alone Fail */}
+        <section style={{
+          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
+          padding: '80px 20px',
+          color: 'white'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#ffffff',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Why Passwords Alone Fail
+              </h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>
+                  Your Employees Use the Same Password Everywhere
+                </h3>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  It's human nature. Creating unique passwords for every system is exhausting, so people reuse the same few passwords everywhere. When one website gets breached (and they do constantly), attackers try those stolen passwords on every business system they can find. That's why 65% of people admit to reusing passwords—and why credential-stuffing attacks work so well.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="14" cy="12" rx="7" ry="4" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M7 12L2 9M7 12L2 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M21 12l2-2M21 12l2 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="17" cy="11" r="1" fill="white"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>
+                  Phishing Is Getting Impossible to Spot
+                </h3>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Even your most careful employees can fall for modern phishing attacks. Fake login pages look identical to real ones. Email impersonation is sophisticated. A single distracted moment—checking email before coffee, rushing between meetings—and suddenly someone's entered their real password into a fake site. MFA makes that stolen password worthless because the attacker can't access the second factor.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="5" width="20" height="14" rx="2" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M2 10h20" stroke="white" strokeWidth="2"/>
+                    <circle cx="7" cy="15" r="1" fill="white"/>
+                    <circle cx="11" cy="15" r="1" fill="white"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>
+                  Your Credentials Are Already for Sale
+                </h3>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Billions of username and password combinations from past breaches are traded on the dark web. If your employees use personal email addresses that have ever been involved in any breach (LinkedIn, Adobe, Yahoo—the list is endless), attackers already have credentials to try against your business systems. MFA is the only defense that works even after your password is compromised.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* What is MFA */}
         <section className="section" style={{ padding: '80px 0' }}>
           <div className="container">
             <div className="section-header" style={{ marginBottom: '60px' }}>
-              <h2 style={{ 
-                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
-                fontWeight: '700', 
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
                 color: colors.text.primary,
                 marginBottom: '20px',
                 lineHeight: '1.2',
                 textAlign: 'center'
               }}>Understanding Multi-Factor Authentication</h2>
-              <p style={{ 
-                fontSize: '1.2rem', 
-                color: colors.text.secondary, 
-                maxWidth: '800px', 
-                margin: '0 auto', 
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '800px',
+                margin: '0 auto',
                 lineHeight: '1.6',
                 textAlign: 'center'
               }}>
-                MFA requires multiple forms of verification before accessing systems, combining something you know 
-                (password) with something you have (phone) or something you are (biometrics) for maximum security.
+                Multi-factor authentication adds a second proof of identity that an attacker can't easily steal or fake. Even if they have your password, they still need that second factor—your phone, a hardware key, or your fingerprint. Think of it like your debit card: you need both the physical card (something you have) and the PIN (something you know). Stealing one isn't enough.
               </p>
             </div>
 
@@ -744,14 +897,13 @@ export const MFAPage = () => {
                   fontWeight: '700',
                   textAlign: 'center'
                 }}>Mobile Authenticator Apps</h3>
-                <p style={{ 
-                  color: colors.text.secondary, 
+                <p style={{
+                  color: colors.text.secondary,
                   marginBottom: '20px',
                   lineHeight: '1.7',
                   textAlign: 'center'
                 }}>
-                  Time-based one-time passwords (TOTP) generated by apps like Microsoft Authenticator, 
-                  Google Authenticator, or Authy. Works offline and provides excellent security.
+                  Your phone generates a temporary 6-digit code that changes every 30 seconds. When you log in, you enter your password plus the current code from your phone. Even if an attacker steals your password, they can't log in without physically having your phone in their hands. Works with Office 365, Google Workspace, banking apps, and most business systems.
                 </p>
                 <ul style={{ 
                   color: colors.text.secondary, 
@@ -797,14 +949,13 @@ export const MFAPage = () => {
                   fontWeight: '700',
                   textAlign: 'center'
                 }}>Hardware Security Keys</h3>
-                <p style={{ 
-                  color: colors.text.secondary, 
+                <p style={{
+                  color: colors.text.secondary,
                   marginBottom: '20px',
                   lineHeight: '1.7',
                   textAlign: 'center'
                 }}>
-                  Physical devices like YubiKey or Google Titan that provide the highest level of security 
-                  using FIDO2/WebAuthn standards. Immune to phishing attacks.
+                  A physical USB device (like a YubiKey) that you tap or plug in when logging in. The most secure option—it's cryptographically impossible to phish because the key verifies it's actually talking to the real website. Recommended for administrator accounts, financial systems, and anyone who's a high-value target. About the size of a thumb drive, lasts for years.
                 </p>
                 <ul style={{ 
                   color: colors.text.secondary, 
@@ -852,14 +1003,13 @@ export const MFAPage = () => {
                   fontWeight: '700',
                   textAlign: 'center'
                 }}>Biometric Authentication</h3>
-                <p style={{ 
-                  color: colors.text.secondary, 
+                <p style={{
+                  color: colors.text.secondary,
                   marginBottom: '20px',
                   lineHeight: '1.7',
                   textAlign: 'center'
                 }}>
-                  Fingerprint scanning, facial recognition, iris scanning, or voice authentication. 
-                  Convenient and secure for device-based access control.
+                  Your fingerprint or face becomes the second factor. Most convenient for employees because modern laptops and phones have fingerprint readers and facial recognition built-in. Combines strong security (you can't forget your fingerprint) with ease of use (just touch the reader). Works great for physical device access and can be combined with other methods for remote access.
                 </p>
                 <ul style={{ 
                   color: colors.text.secondary, 
@@ -873,6 +1023,846 @@ export const MFAPage = () => {
                 </ul>
               </div>
             </div>
+
+            {/* MFA vs Passwords Security Difference */}
+            <div style={{
+              margin: '60px 20px 0',
+              background: '#f8f9fa',
+              borderRadius: '20px',
+              padding: '40px',
+              border: '1px solid rgba(29, 122, 175, 0.1)'
+            }}>
+              <h3 style={{
+                fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+                fontWeight: '700',
+                color: colors.text.primary,
+                marginBottom: '30px',
+                textAlign: 'center'
+              }}>MFA vs. Passwords: The Real Security Difference</h3>
+              
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '40px'
+              }}>
+                {/* Passwords Only */}
+                <div style={{
+                  background: 'white',
+                  borderRadius: '16px',
+                  padding: '30px',
+                  border: '1px solid rgba(220, 38, 38, 0.2)',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                    <div style={{
+                      width: '50px',
+                      height: '50px',
+                      background: 'linear-gradient(135deg, #ef4444, #dc2626)',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginRight: '15px'
+                    }}>
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="white" strokeWidth="2" fill="none"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <h4 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '700',
+                      color: '#ef4444',
+                      margin: '0'
+                    }}>What You're Risking With Passwords Alone</h4>
+                  </div>
+                  
+                  <ul style={{
+                    listStyle: 'none',
+                    padding: '0',
+                    margin: '0'
+                  }}>
+                    <li style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      marginBottom: '12px',
+                      fontSize: '1rem',
+                      color: '#666'
+                    }}>
+                      <span style={{ color: '#ef4444', marginRight: '10px', fontSize: '1.2rem' }}>✗</span>
+                      Stolen in data breaches you don't control
+                    </li>
+                    <li style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      marginBottom: '12px',
+                      fontSize: '1rem',
+                      color: '#666'
+                    }}>
+                      <span style={{ color: '#ef4444', marginRight: '10px', fontSize: '1.2rem' }}>✗</span>
+                      Employees write them down or reuse them
+                    </li>
+                    <li style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      marginBottom: '12px',
+                      fontSize: '1rem',
+                      color: '#666'
+                    }}>
+                      <span style={{ color: '#ef4444', marginRight: '10px', fontSize: '1.2rem' }}>✗</span>
+                      Phishing attacks steal them in seconds
+                    </li>
+                    <li style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      marginBottom: '12px',
+                      fontSize: '1rem',
+                      color: '#666'
+                    }}>
+                      <span style={{ color: '#ef4444', marginRight: '10px', fontSize: '1.2rem' }}>✗</span>
+                      Credential-stuffing attacks succeed constantly
+                    </li>
+                    <li style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      marginBottom: '12px',
+                      fontSize: '1rem',
+                      color: '#666'
+                    }}>
+                      <span style={{ color: '#ef4444', marginRight: '10px', fontSize: '1.2rem' }}>✗</span>
+                      One compromised password = full system access
+                    </li>
+                    <li style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      fontSize: '1rem',
+                      color: '#666'
+                    }}>
+                      <span style={{ color: '#ef4444', marginRight: '10px', fontSize: '1.2rem' }}>✗</span>
+                      No way to know when credentials are stolen
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Passwords + MFA */}
+                <div style={{
+                  background: 'white',
+                  borderRadius: '16px',
+                  padding: '30px',
+                  border: '1px solid rgba(34, 197, 94, 0.2)',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+                  position: 'relative'
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    top: '-15px',
+                    right: '20px',
+                    background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                    color: 'white',
+                    padding: '6px 15px',
+                    borderRadius: '20px',
+                    fontSize: '0.8rem',
+                    fontWeight: '600'
+                  }}>
+                    99.9% Protection
+                  </div>
+                  
+                  <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                    <div style={{
+                      width: '50px',
+                      height: '50px',
+                      background: 'linear-gradient(135deg, #22c55e, #16a34a)',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginRight: '15px'
+                    }}>
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="white" strokeWidth="2" fill="none"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <h4 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '700',
+                      color: '#22c55e',
+                      margin: '0'
+                    }}>What Changes With MFA Protection</h4>
+                  </div>
+                  
+                  <ul style={{
+                    listStyle: 'none',
+                    padding: '0',
+                    margin: '0'
+                  }}>
+                    <li style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      marginBottom: '12px',
+                      fontSize: '1rem',
+                      color: '#666'
+                    }}>
+                      <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                      Stolen passwords become worthless without second factor
+                    </li>
+                    <li style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      marginBottom: '12px',
+                      fontSize: '1rem',
+                      color: '#666'
+                    }}>
+                      <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                      Phishing attacks fail at the authentication step
+                    </li>
+                    <li style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      marginBottom: '12px',
+                      fontSize: '1rem',
+                      color: '#666'
+                    }}>
+                      <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                      Automated attacks blocked even with correct password
+                    </li>
+                    <li style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      marginBottom: '12px',
+                      fontSize: '1rem',
+                      color: '#666'
+                    }}>
+                      <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                      Login attempts from new locations require approval
+                    </li>
+                    <li style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      marginBottom: '12px',
+                      fontSize: '1rem',
+                      color: '#666'
+                    }}>
+                      <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                      You get notified when someone tries to access your account
+                    </li>
+                    <li style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      fontSize: '1rem',
+                      color: '#666'
+                    }}>
+                      <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                      99.9% reduction in successful account compromises
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Common Objections */}
+            <section style={{
+              background: 'white',
+              padding: '80px 20px'
+            }}>
+              <div className="container">
+                <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+                  <h2 style={{
+                    fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '20px',
+                    lineHeight: '1.2'
+                  }}>
+                    Why Don't More Businesses Use MFA?
+                  </h2>
+                  <p style={{
+                    fontSize: '1.2rem',
+                    color: '#666',
+                    maxWidth: '700px',
+                    margin: '0 auto',
+                    lineHeight: '1.6'
+                  }}>
+                    If MFA blocks 99.9% of attacks, why doesn't everyone use it? Honestly, it comes down to misconceptions about convenience and cost. Let's address the real concerns:
+                  </p>
+                </div>
+                
+                <div style={{
+                  maxWidth: '900px',
+                  margin: '0 auto'
+                }}>
+                  {/* Objection 1 */}
+                  <div style={{
+                    background: '#f8f9fa',
+                    borderRadius: '16px',
+                    padding: '30px',
+                    marginBottom: '20px',
+                    border: '1px solid rgba(31, 124, 255, 0.1)'
+                  }}>
+                    <h3 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '600',
+                      color: '#1F7CFF',
+                      marginBottom: '15px'
+                    }}>
+                      "Won't employees hate the extra step?"
+                    </h3>
+                    <p style={{
+                      fontSize: '1rem',
+                      lineHeight: '1.6',
+                      color: '#666'
+                    }}>
+                      Initially, there's always some adjustment. But modern MFA is pretty seamless—most apps remember your device for 30-90 days, so employees only authenticate once per month on their work computer. For remote access or sensitive systems, that extra 5 seconds is a small price compared to dealing with a breach. We set up MFA to balance security with usability, not to make everyone's life miserable.
+                    </p>
+                  </div>
+                  
+                  {/* Objection 2 */}
+                  <div style={{
+                    background: '#f8f9fa',
+                    borderRadius: '16px',
+                    padding: '30px',
+                    marginBottom: '20px',
+                    border: '1px solid rgba(31, 124, 255, 0.1)'
+                  }}>
+                    <h3 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '600',
+                      color: '#1F7CFF',
+                      marginBottom: '15px'
+                    }}>
+                      "What if someone loses their phone?"
+                    </h3>
+                    <p style={{
+                      fontSize: '1rem',
+                      lineHeight: '1.6',
+                      color: '#666'
+                    }}>
+                      This is the most common concern, and it's handled with backup methods. We set up backup codes employees can print and keep secure, backup phone numbers, or hardware keys for critical staff. If someone loses their phone, we can temporarily disable MFA for their account while they get their backup method working. It's a solvable problem, not a showstopper.
+                    </p>
+                  </div>
+                  
+                  {/* Objection 3 */}
+                  <div style={{
+                    background: '#f8f9fa',
+                    borderRadius: '16px',
+                    padding: '30px',
+                    marginBottom: '20px',
+                    border: '1px solid rgba(31, 124, 255, 0.1)'
+                  }}>
+                    <h3 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '600',
+                      color: '#1F7CFF',
+                      marginBottom: '15px'
+                    }}>
+                      "Isn't this expensive to implement?"
+                    </h3>
+                    <p style={{
+                      fontSize: '1rem',
+                      lineHeight: '1.6',
+                      color: '#666'
+                    }}>
+                      Microsoft 365 and Google Workspace include MFA for free in their business plans. Most business systems have built-in MFA at no extra cost. The implementation cost is typically 1-3 hours of setup time to configure systems and train your team. Compare that to the average cost of a data breach ($4.45 million according to IBM) and MFA is the cheapest insurance you'll ever buy.
+                    </p>
+                  </div>
+                  
+                  {/* Objection 4 */}
+                  <div style={{
+                    background: '#f8f9fa',
+                    borderRadius: '16px',
+                    padding: '30px',
+                    marginBottom: '20px',
+                    border: '1px solid rgba(31, 124, 255, 0.1)'
+                  }}>
+                    <h3 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '600',
+                      color: '#1F7CFF',
+                      marginBottom: '15px'
+                    }}>
+                      "Can't hackers bypass MFA too?"
+                    </h3>
+                    <p style={{
+                      fontSize: '1rem',
+                      lineHeight: '1.6',
+                      color: '#666'
+                    }}>
+                      Sophisticated attackers with significant resources can sometimes bypass MFA through advanced techniques like MFA-fatigue attacks or SIM-swapping. But these require targeting a specific person with time and effort. MFA eliminates automated, spray-and-pray attacks that account for 99.9% of breach attempts. It raises the bar so high that attackers move on to easier targets (businesses without MFA).
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Implementation */}
+            <section style={{
+              background: '#f8f9fa',
+              padding: '80px 20px'
+            }}>
+              <div className="container">
+                <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+                  <h2 style={{
+                    fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '20px',
+                    lineHeight: '1.2'
+                  }}>
+                    What's Involved in Setting Up MFA
+                  </h2>
+                  <p style={{
+                    fontSize: '1.2rem',
+                    color: '#666',
+                    maxWidth: '700px',
+                    margin: '0 auto',
+                    lineHeight: '1.6'
+                  }}>
+                    We handle the technical configuration. Your employees download an app and scan a QR code. That's it.
+                  </p>
+                </div>
+                
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(4, 1fr)',
+                  gap: '30px',
+                  maxWidth: '1200px',
+                  margin: '0 auto'
+                }}>
+                  {/* Step 1 */}
+                  <div style={{
+                    background: 'white',
+                    borderRadius: '16px',
+                    padding: '30px',
+                    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                    border: '1px solid rgba(31, 124, 175, 0.1)',
+                    height: '100%',
+                    position: 'relative'
+                  }}>
+                    <div style={{
+                      position: 'absolute',
+                      top: '-25px',
+                      left: '30px',
+                      background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                      color: 'white',
+                      width: '50px',
+                      height: '50px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1.5rem',
+                      fontWeight: 'bold',
+                      boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                      zIndex: 10
+                    }}>1</div>
+                    
+                    <h3 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '700',
+                      color: '#1F7CFF',
+                      marginBottom: '15px',
+                      marginTop: '20px'
+                    }}>
+                      Assessment (30 minutes)
+                    </h3>
+                    <p style={{
+                      fontSize: '1rem',
+                      lineHeight: '1.6',
+                      color: '#666',
+                      marginBottom: '15px'
+                    }}>
+                      We review which systems you're currently using (Office 365, Google Workspace, accounting software, CRM, etc.)
+                    </p>
+                    <ul style={{
+                      color: '#666',
+                      paddingLeft: '20px',
+                      lineHeight: '1.7',
+                      fontSize: '0.9rem'
+                    }}>
+                      <li>Identify which accounts need MFA first</li>
+                      <li>Discuss which MFA method makes sense</li>
+                      <li>Create implementation timeline</li>
+                    </ul>
+                  </div>
+                  
+                  {/* Step 2 */}
+                  <div style={{
+                    background: 'white',
+                    borderRadius: '16px',
+                    padding: '30px',
+                    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                    border: '1px solid rgba(31, 124, 175, 0.1)',
+                    height: '100%',
+                    position: 'relative'
+                  }}>
+                    <div style={{
+                      position: 'absolute',
+                      top: '-25px',
+                      left: '30px',
+                      background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                      color: 'white',
+                      width: '50px',
+                      height: '50px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1.5rem',
+                      fontWeight: 'bold',
+                      boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                      zIndex: 10
+                    }}>2</div>
+                    
+                    <h3 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '700',
+                      color: '#1F7CFF',
+                      marginBottom: '15px',
+                      marginTop: '20px'
+                    }}>
+                      System Configuration (1-2 hours)
+                    </h3>
+                    <p style={{
+                      fontSize: '1rem',
+                      lineHeight: '1.6',
+                      color: '#666',
+                      marginBottom: '15px'
+                    }}>
+                      We enable and configure MFA in your business systems and set up backup authentication methods.
+                    </p>
+                    <ul style={{
+                      color: '#666',
+                      paddingLeft: '20px',
+                      lineHeight: '1.7',
+                      fontSize: '0.9rem'
+                    }}>
+                      <li>Configure device trust policies</li>
+                      <li>Set up backup codes and recovery options</li>
+                      <li>Test everything before rollout</li>
+                    </ul>
+                  </div>
+                  
+                  {/* Step 3 */}
+                  <div style={{
+                    background: 'white',
+                    borderRadius: '16px',
+                    padding: '30px',
+                    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                    border: '1px solid rgba(31, 124, 175, 0.1)',
+                    height: '100%',
+                    position: 'relative'
+                  }}>
+                    <div style={{
+                      position: 'absolute',
+                      top: '-25px',
+                      left: '30px',
+                      background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                      color: 'white',
+                      width: '50px',
+                      height: '50px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1.5rem',
+                      fontWeight: 'bold',
+                      boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                      zIndex: 10
+                    }}>3</div>
+                    
+                    <h3 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '700',
+                      color: '#1F7CFF',
+                      marginBottom: '15px',
+                      marginTop: '20px'
+                    }}>
+                      Employee Onboarding (15 minutes per person)
+                    </h3>
+                    <p style={{
+                      fontSize: '1rem',
+                      lineHeight: '1.6',
+                      color: '#666',
+                      marginBottom: '15px'
+                    }}>
+                      We walk each employee through installing the authenticator app and connecting their account.
+                    </p>
+                    <ul style={{
+                      color: '#666',
+                      paddingLeft: '20px',
+                      lineHeight: '1.7',
+                      fontSize: '0.9rem'
+                    }}>
+                      <li>Test first MFA login with each employee</li>
+                      <li>Provide simple printed instructions</li>
+                      <li>Address individual questions</li>
+                    </ul>
+                  </div>
+                  
+                  {/* Step 4 */}
+                  <div style={{
+                    background: 'white',
+                    borderRadius: '16px',
+                    padding: '30px',
+                    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                    border: '1px solid rgba(31, 124, 175, 0.1)',
+                    height: '100%',
+                    position: 'relative'
+                  }}>
+                    <div style={{
+                      position: 'absolute',
+                      top: '-25px',
+                      left: '30px',
+                      background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                      color: 'white',
+                      width: '50px',
+                      height: '50px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1.5rem',
+                      fontWeight: 'bold',
+                      boxShadow: '0 6px 20px rgba(29, 122, 175, 0.4)',
+                      zIndex: 10
+                    }}>4</div>
+                    
+                    <h3 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '700',
+                      color: '#1F7CFF',
+                      marginBottom: '15px',
+                      marginTop: '20px'
+                    }}>
+                      Backup & Recovery Setup (30 minutes)
+                    </h3>
+                    <p style={{
+                      fontSize: '1rem',
+                      lineHeight: '1.6',
+                      color: '#666',
+                      marginBottom: '15px'
+                    }}>
+                      We generate backup codes and train key staff on handling lost device scenarios.
+                    </p>
+                    <ul style={{
+                      color: '#666',
+                      paddingLeft: '20px',
+                      lineHeight: '1.7',
+                      fontSize: '0.9rem'
+                    }}>
+                      <li>Document recovery processes</li>
+                      <li>Train multiple people on procedures</li>
+                      <li>Establish ongoing support contacts</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div style={{
+                  textAlign: 'center',
+                  marginTop: '40px',
+                  background: 'rgba(31, 124, 255, 0.05)',
+                  padding: '20px',
+                  borderRadius: '12px'
+                }}>
+                  <p style={{
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    color: '#1F7CFF',
+                    margin: '0'
+                  }}>
+                    Timeline: Most small businesses (5-15 people) are fully set up within a week. Larger organizations take 2-4 weeks.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Who Needs MFA */}
+            <section style={{
+              background: 'white',
+              padding: '80px 20px'
+            }}>
+              <div className="container">
+                <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+                  <h2 style={{
+                    fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '20px',
+                    lineHeight: '1.2'
+                  }}>
+                    Is MFA Overkill for Your Business?
+                  </h2>
+                  <p style={{
+                    fontSize: '1.2rem',
+                    color: '#666',
+                    maxWidth: '700px',
+                    margin: '0 auto',
+                    lineHeight: '1.6'
+                  }}>
+                    Here's the honest answer: if you have anything worth protecting—customer data, financial records, proprietary information—you need MFA. But it's especially critical if:
+                  </p>
+                </div>
+                
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: '40px',
+                  maxWidth: '1200px',
+                  margin: '0 auto'
+                }}>
+                  <div style={{
+                    background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                    borderRadius: '20px',
+                    padding: '40px',
+                    border: '2px solid rgba(31, 124, 175, 0.2)'
+                  }}>
+                    <h3 style={{
+                      fontSize: '1.5rem',
+                      fontWeight: '700',
+                      color: '#1F7CFF',
+                      marginBottom: '25px',
+                      textAlign: 'center'
+                    }}>
+                      You Absolutely Need MFA If:
+                    </h3>
+                    <ul style={{
+                      listStyle: 'none',
+                      padding: '0',
+                      margin: '0'
+                    }}>
+                      <li style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        marginBottom: '15px',
+                        fontSize: '1.1rem',
+                        color: '#666'
+                      }}>
+                        <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                        You store customer information (names, emails, payment details, addresses)
+                      </li>
+                      <li style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        marginBottom: '15px',
+                        fontSize: '1.1rem',
+                        color: '#666'
+                      }}>
+                        <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                        Employees access systems remotely or from personal devices
+                      </li>
+                      <li style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        marginBottom: '15px',
+                        fontSize: '1.1rem',
+                        color: '#666'
+                      }}>
+                        <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                        You use cloud services like Office 365, Google Workspace, or QuickBooks Online
+                      </li>
+                      <li style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        marginBottom: '15px',
+                        fontSize: '1.1rem',
+                        color: '#666'
+                      }}>
+                        <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                        Your business handles payments or financial transactions
+                      </li>
+                      <li style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        marginBottom: '15px',
+                        fontSize: '1.1rem',
+                        color: '#666'
+                      }}>
+                        <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                        You're subject to compliance requirements (PCI-DSS, PIPEDA, industry regulations)
+                      </li>
+                      <li style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        fontSize: '1.1rem',
+                        color: '#666'
+                      }}>
+                        <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                        Admin accounts have access to delete data or change critical settings
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div style={{
+                    background: 'linear-gradient(135deg, rgba(255, 198, 0, 0.1), rgba(255, 198, 0, 0.05))',
+                    borderRadius: '20px',
+                    padding: '40px',
+                    border: '2px solid rgba(255, 198, 0, 0.2)'
+                  }}>
+                    <h3 style={{
+                      fontSize: '1.5rem',
+                      fontWeight: '700',
+                      color: '#FFC600',
+                      marginBottom: '25px',
+                      textAlign: 'center'
+                    }}>
+                      You Can Probably Wait If:
+                    </h3>
+                    <ul style={{
+                      listStyle: 'none',
+                      padding: '0',
+                      margin: '0'
+                    }}>
+                      <li style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        marginBottom: '15px',
+                        fontSize: '1.1rem',
+                        color: '#666'
+                      }}>
+                        <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>✗</span>
+                        You have no internet-connected systems (exceedingly rare these days)
+                      </li>
+                      <li style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        fontSize: '1.1rem',
+                        color: '#666'
+                      }}>
+                        <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>✗</span>
+                        All access is physically on-site with no remote options
+                      </li>
+                    </ul>
+                    
+                    <div style={{
+                      marginTop: '20px',
+                      padding: '15px',
+                      background: 'rgba(31, 124, 175, 0.1)',
+                      borderRadius: '10px',
+                      borderLeft: '4px solid #1F7CFF'
+                    }}>
+                      <p style={{
+                        fontSize: '1rem',
+                        fontWeight: '600',
+                        color: '#1F7CFF',
+                        margin: '0',
+                        marginBottom: '5px'
+                      }}>
+                        Bottom line:
+                      </p>
+                      <p style={{
+                        fontSize: '1rem',
+                        color: '#666',
+                        margin: '0',
+                        lineHeight: '1.5'
+                      }}>
+                        If you're reading this page, you probably need MFA. The question isn't whether you need it, but how quickly you can get it implemented before you need it.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
 
             {/* CTA Section */}
             <div style={{ 
@@ -900,17 +1890,16 @@ export const MFAPage = () => {
                   marginBottom: '20px',
                   color: 'white',
                   fontWeight: '700'
-                }}>Ready to Secure Your Business?</h3>
-                <p style={{ 
-                  marginBottom: '30px', 
+                }}>Stop Relying On Passwords Alone</h3>
+                <p style={{
+                  marginBottom: '30px',
                   fontSize: '1.2rem',
                   maxWidth: '600px',
                   margin: '0 auto 30px auto',
                   color: 'rgba(255, 255, 255, 0.9)',
                   lineHeight: '1.6'
                 }}>
-                  Don't wait for a security incident. Protect your New Brunswick business with professional 
-                  multi-factor authentication that your employees will actually use.
+                  Every day without MFA is another day your business is vulnerable to credential-based attacks. We'll set up multi-factor authentication that actually works—secure enough to block 99.9% of attacks, convenient enough that your employees won't hate it.
                 </p>
                 <div style={{ 
                   display: 'flex',

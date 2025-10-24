@@ -319,7 +319,7 @@ export const ManagedITServicesPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Enterprise Managed IT Services for Maritime Businesses
+                  Tired of Being Your Own IT Department?
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -328,9 +328,7 @@ export const ManagedITServicesPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Keep your New Brunswick business technology running smoothly and securely with our comprehensive
-                  managed IT services. From network monitoring to personalized phone assistance, we provide end-to-end
-                  IT management solutions tailored for Maritime businesses and SMBs.
+                  You didn't start a business to troubleshoot printers and reset passwords all day. Stop playing IT hero and get back to what you're actually good at. We'll handle your technology so it just works — no more surprise downtime, no more 'Can you look at this?' interruptions.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -460,6 +458,149 @@ export const ManagedITServicesPage = () => {
           </div>
         </section>
 
+        {/* The Cost of DIY IT Section */}
+        <section style={{ backgroundColor: '#16213e', padding: '80px 0', color: 'white' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
+                color: 'white',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>What DIY IT Is Really Costing You</h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              {/* Card 1 */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)'
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '10px'
+                }}>10+ Hours</div>
+                <p style={{
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  lineHeight: '1.6'
+                }}>Every week the average business owner spends dealing with IT issues instead of running their business.</p>
+              </div>
+
+              {/* Card 2 */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)'
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '10px'
+                }}>3x More</div>
+                <p style={{
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  lineHeight: '1.6'
+                }}>Businesses with proactive IT support spend 3x less on IT problems than those who wait for things to break.</p>
+              </div>
+
+              {/* Card 3 */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)'
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="12" y1="9" x2="12" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <circle cx="12" cy="17" r="1" fill="white"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '10px'
+                }}>43%</div>
+                <p style={{
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  lineHeight: '1.6'
+                }}>of data breaches target small businesses who think 'we're too small to be a target' and neglect IT security.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Responsive styles for new section */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @media (max-width: 768px) {
+              div[style*="gridTemplateColumns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `
+        }} />
+
         {/* Managed IT Services Section */}
         <section className="section" style={{ backgroundColor: '#f8faff', padding: '80px 0' }}>
           <div className="container">
@@ -478,7 +619,7 @@ export const ManagedITServicesPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Comprehensive IT support and infrastructure management to keep your business running smoothly
+                From 'someone answer the phone' support to proactive monitoring, we handle everything so your tech actually works
               </p>
             </div>
             
@@ -525,7 +666,7 @@ export const ManagedITServicesPage = () => {
                     IT Support & Helpdesk
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Fast response times and expert technicians to resolve IT issues and keep your business running smoothly
+                    Real people answer the phone (not a ticket system). We fix problems fast, explain what happened in plain English, and make sure it doesn't happen again.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -573,7 +714,7 @@ export const ManagedITServicesPage = () => {
                     Network Management
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Reliable, secure network infrastructure with proactive monitoring, maintenance, and support for your systems
+                    No more 'the internet is down and nobody can work.' We monitor your network 24/7 and fix problems before you notice — or 10 minutes after if something breaks.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -618,7 +759,7 @@ export const ManagedITServicesPage = () => {
                     Cloud Services
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Secure cloud solutions that provide flexibility, scalability, and reliable access to your business data from anywhere
+                    Work from anywhere without 'can you VPN in?' headaches. Access your files, email, and systems securely from home, the office, or a coffee shop — it just works.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -668,7 +809,7 @@ export const ManagedITServicesPage = () => {
                     IT Consulting
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Strategic technology guidance to help your business make informed decisions, plan for growth, and optimize your IT infrastructure
+                    Stop guessing what tech you actually need. We'll tell you what's worth spending money on, what's not, and how to plan for growth without wasting thousands on the wrong solution.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -678,6 +819,163 @@ export const ManagedITServicesPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Why Maritime Businesses Trust Us Section */}
+        <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Why Maritime Businesses Trust Us With Their IT
+              </h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Pillar 1 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px'
+                }}>We Actually Answer the Phone</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  No ticket systems, no 'we'll get back to you in 48 hours' nonsense. When something breaks, you call us, a real person answers, and we fix it. That's how IT support should work.
+                </p>
+              </div>
+
+              {/* Pillar 2 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px'
+                }}>Flat-Rate Pricing, No Surprises</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  One predictable monthly rate covers everything — unlimited support, monitoring, updates, and advice. No hourly billing, no surprise invoices, no wondering if you should call us because the meter's running.
+                </p>
+              </div>
+
+              {/* Pillar 3 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6" stroke="white" strokeWidth="2"/>
+                    <line x1="8" y1="2" x2="8" y2="6" stroke="white" strokeWidth="2"/>
+                    <line x1="3" y1="10" x2="21" y2="10" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px'
+                }}>We Plan Ahead, Not Just React</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  Most IT companies wait for things to break and then charge you to fix them. We monitor, update, and maintain everything proactively so problems don't happen in the first place. Prevention is cheaper than emergency repairs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Responsive styles for new section */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @media (max-width: 768px) {
+              div[style*="gridTemplateColumns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `
+        }} />
 
       {/* Main Services Section */}
       <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 20px' }}>
@@ -699,7 +997,7 @@ export const ManagedITServicesPage = () => {
               margin: '0 auto',
               lineHeight: '1.6'
             }}>
-              Optimize your IT infrastructure with proactive and fully managed services designed to reduce downtime, improve security, and enhance productivity.
+              Technology should enable your business, not slow it down. We take care of everything from backups to updates to security so you can focus on your customers, not your computer problems.
             </p>
           </div>
           
@@ -1272,7 +1570,7 @@ export const ManagedITServicesPage = () => {
               {
                 icon: '🏨',
                 title: 'Hospitality & Tourism',
-                description: 'Comprehensive IT solutions for hotels, resorts, and tourism businesses across New Brunswick.',
+                description: 'Keep guest Wi-Fi working, POS systems running, and booking systems online — because one system failure during peak season costs thousands in lost revenue',
                 features: ['Booking systems', 'Guest Wi-Fi management', 'POS integration', 'Property management']
               }
             ].map((industry, index) => (
@@ -1447,6 +1745,16 @@ export const ManagedITServicesPage = () => {
       <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
         <div className="container">
           <h2 className="section-title">Our Managed IT Service Process</h2>
+          <p style={{
+            fontSize: '1.2rem',
+            color: colors.text.secondary,
+            maxWidth: '700px',
+            margin: '0 auto 50px auto',
+            textAlign: 'center',
+            lineHeight: '1.6'
+          }}>
+            We don't just drop a bunch of software on your network and disappear. Here's how we actually become your IT department:
+          </p>
           <div style={{ marginTop: '40px', paddingTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
             <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
               <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>1</div>
@@ -1559,19 +1867,19 @@ export const ManagedITServicesPage = () => {
         textAlign: 'center' 
       }}>
         <div className="container">
-          <h2 style={{ 
-            fontSize: 'clamp(2rem, 4vw, 3rem)', 
-            fontWeight: '700', 
+          <h2 style={{
+            fontSize: 'clamp(2rem, 4vw, 3rem)',
+            fontWeight: '700',
             marginBottom: '30px'
-          }}>Ready to optimize your IT infrastructure?</h2>
-          <p style={{ 
-            fontSize: '1.3rem', 
-            marginBottom: '40px', 
-            maxWidth: '600px', 
+          }}>Ready to Stop Fighting Your Technology?</h2>
+          <p style={{
+            fontSize: '1.3rem',
+            marginBottom: '40px',
+            maxWidth: '600px',
             margin: '0 auto 40px auto',
             opacity: 0.9
           }}>
-            Let our managed IT services keep your New Brunswick business running smoothly and securely.
+            Book a free IT assessment. We'll review your current setup, identify what's at risk, and show you exactly what proactive IT support looks like — even if you don't work with us. No hard sell, no pressure, just honest advice.
           </p>
           <div style={{ 
             display: 'flex', 

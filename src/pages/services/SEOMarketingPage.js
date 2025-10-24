@@ -317,7 +317,7 @@ export const SEOMarketingPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  SEO & Marketing
+                  Invisible on Google? Let's Fix That.
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -326,12 +326,12 @@ export const SEOMarketingPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Improve your search rankings and drive more qualified traffic to your website with professional SEO optimization and digital marketing strategies.
+                  You have a great website, but nobody finds it. Your competitors rank on page 1 while you're buried on page 3 (which might as well be invisible). SEO isn't magic — it's technical work. We'll make Google actually notice you.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                   <a href="/contact" className="hero-button">
-                    Get Started
+                    See Where You Actually Rank
                   </a>
                 </div>
               </div>
@@ -449,6 +449,523 @@ export const SEOMarketingPage = () => {
                     </svg>
                   </div>
                 </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why You're Invisible on Google Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
+          padding: '80px 20px',
+          color: 'white'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: 'white',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Why Nobody Finds Your Website
+              </h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Card 1: Slow Site */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>Your Site Is Too Slow</h3>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  Google penalizes slow sites. If your page takes 5+ seconds to load, you're starting 3 positions lower than faster competitors — before content even matters.
+                </p>
+              </div>
+
+              {/* Card 2: Mobile Issues */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="2" width="14" height="20" rx="2" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M12 18h.01" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>Mobile Experience Sucks</h3>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  60% of searches happen on phones. If your site is broken on mobile, Google ranks you lower. Period. Mobile-first isn't optional anymore.
+                </p>
+              </div>
+
+              {/* Card 3: Technical SEO Issues */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>Technical SEO Disasters</h3>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  Broken code, duplicate content, missing metadata, bad URL structure. Google's robots can't even understand your site, so they rank competitors instead.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SEO Myths vs Reality Section */}
+        <section style={{ backgroundColor: '#f5f8fc', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Let's Talk About What SEO Actually Is
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                SEO companies promise magic. Here's the truth:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Myth 1 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 255, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="12" y1="9" x2="12" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <circle cx="12" cy="17" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                  Myth: "We'll get you page 1 in 30 days!"
+                </h3>
+                <div style={{
+                  padding: '15px',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    color: colors.text.primary,
+                    fontWeight: '600',
+                    margin: '0 0 8px 0'
+                  }}>Reality:</p>
+                  <p style={{
+                    color: colors.text.secondary,
+                    margin: '0',
+                    fontSize: '0.95rem'
+                  }}>
+                    SEO takes 3-6 months minimum for competitive keywords. Anyone promising instant results is lying or using black-hat tactics that will get you penalized later.
+                  </p>
+                </div>
+              </div>
+
+              {/* Myth 2 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 255, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="12" y1="9" x2="12" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <circle cx="12" cy="17" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                  Myth: "We have special relationships with Google"
+                </h3>
+                <div style={{
+                  padding: '15px',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    color: colors.text.primary,
+                    fontWeight: '600',
+                    margin: '0 0 8px 0'
+                  }}>Reality:</p>
+                  <p style={{
+                    color: colors.text.secondary,
+                    margin: '0',
+                    fontSize: '0.95rem'
+                  }}>
+                    Nobody does. Google doesn't care who you hire. Rankings come from good technical SEO, quality content, and legitimate backlinks. No shortcuts.
+                  </p>
+                </div>
+              </div>
+
+              {/* Myth 3 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 255, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="12" y1="9" x2="12" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <circle cx="12" cy="17" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                  Myth: "Just stuff keywords everywhere"
+                </h3>
+                <div style={{
+                  padding: '15px',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    color: colors.text.primary,
+                    fontWeight: '600',
+                    margin: '0 0 8px 0'
+                  }}>Reality:</p>
+                  <p style={{
+                    color: colors.text.secondary,
+                    margin: '0',
+                    fontSize: '0.95rem'
+                  }}>
+                    That stopped working in 2012. Google's smart now. Keyword-stuffing gets you penalized. Natural, helpful content ranks. Spam doesn't.
+                  </p>
+                </div>
+              </div>
+
+              {/* Myth 4 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 255, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="12" y1="9" x2="12" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <circle cx="12" cy="17" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                  Myth: "Buy 10,000 backlinks for $99!"
+                </h3>
+                <div style={{
+                  padding: '15px',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    color: colors.text.primary,
+                    fontWeight: '600',
+                    margin: '0 0 8px 0'
+                  }}>Reality:</p>
+                  <p style={{
+                    color: colors.text.secondary,
+                    margin: '0',
+                    fontSize: '0.95rem'
+                  }}>
+                    Garbage backlinks from spam sites hurt you, not help. One quality link from a real website beats 1,000 paid junk links.
+                  </p>
+                </div>
+              </div>
+
+              {/* Myth 5 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 255, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="12" y1="9" x2="12" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <circle cx="12" cy="17" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                  Myth: "SEO is a one-time thing"
+                </h3>
+                <div style={{
+                  padding: '15px',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    color: colors.text.primary,
+                    fontWeight: '600',
+                    margin: '0 0 8px 0'
+                  }}>Reality:</p>
+                  <p style={{
+                    color: colors.text.secondary,
+                    margin: '0',
+                    fontSize: '0.95rem'
+                  }}>
+                    Google's algorithm changes constantly. Competitors improve. SEO is ongoing or your rankings decay. Monthly maintenance isn't upselling, it's required.
+                  </p>
+                </div>
+              </div>
+
+              {/* Myth 6 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 255, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="12" y1="9" x2="12" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <circle cx="12" cy="17" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                  Myth: "More traffic = success"
+                </h3>
+                <div style={{
+                  padding: '15px',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    color: colors.text.primary,
+                    fontWeight: '600',
+                    margin: '0 0 8px 0'
+                  }}>Reality:</p>
+                  <p style={{
+                    color: colors.text.secondary,
+                    margin: '0',
+                    fontSize: '0.95rem'
+                  }}>
+                    Traffic from people who'll never buy doesn't matter. We optimize for qualified traffic — people actually searching for what you offer in your area.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -583,8 +1100,8 @@ export const SEOMarketingPage = () => {
                     margin: '0 auto 25px auto'
                   }}>
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13 9-5 9-5 9-5 9 5z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M3.21 10c0 2.61 2.08 4.79 4.79 4.79 2.71 0 4.79-2.18 4.79-4.79s-2.08-4.79-4.79-4.79c-2.71 0-4.79 2.18-4.79 4.79z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="12" cy="10" r="3" stroke="white" strokeWidth="2" fill="none"/>
                     </svg>
                   </div>
                   <h3 style={{
@@ -725,8 +1242,8 @@ export const SEOMarketingPage = () => {
                       )}
                       {optimization.icon === 'local' && (
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13 9-5 9-5 9-5 9 5z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M3.21 10c0 2.61 2.08 4.79 4.79 4.79 2.71 0 4.79-2.18 4.79-4.79s-2.08-4.79-4.79-4.79c-2.71 0-4.79 2.18-4.79 4.79z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                          <circle cx="12" cy="10" r="3" stroke="white" strokeWidth="2" fill="none"/>
                         </svg>
                       )}
                       {optimization.icon === 'content' && (
@@ -788,7 +1305,7 @@ export const SEOMarketingPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                A strategic approach to improving your search visibility
+                We don't promise miracles. We do the actual technical work that makes Google notice you:
               </p>
             </div>
             
@@ -834,6 +1351,751 @@ export const SEOMarketingPage = () => {
                 fontStyle: 'italic'
               }}>
                 <strong>Important:</strong> SEO is a long-term strategy that typically shows significant results in 3-6 months. Results vary based on competition, industry, and current website status.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* What SEO Actually Includes Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What You're Actually Paying For
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                SEO isn't one thing. It's a bunch of technical fixes and ongoing work:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Technical SEO Fixes */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  Technical SEO Fixes
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "Fix page speed issues",
+                    "Mobile optimization",
+                    "Proper URL structure",
+                    "XML sitemap setup",
+                    "Schema markup (helps Google understand your content)",
+                    "Fix broken links and redirects"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: colors.primary,
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>→</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* On-Page Optimization */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <polyline points="14,2 14,8 20,8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <polyline points="10,9 9,9 8,9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  On-Page Optimization
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "Keyword research (what people actually search)",
+                    "Page title and meta description optimization",
+                    "Heading structure (H1, H2, H3 done right)",
+                    "Image optimization and alt tags",
+                    "Internal linking strategy"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: colors.primary,
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>→</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Content Strategy */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  Content Strategy
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "Write content around what customers actually search for",
+                    "Update existing pages to be more relevant",
+                    "Blog posts targeting specific questions",
+                    "Local content (for New Brunswick businesses)"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: colors.primary,
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>→</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Local SEO */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="12" cy="10" r="3" stroke="white" strokeWidth="2" fill="none"/>
+                    </svg>
+                  </div>
+                  Local SEO (for local businesses)
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "Google Business Profile optimization",
+                    "Local citations and directories",
+                    "Review management strategy",
+                    "\"Near me\" search optimization"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: colors.primary,
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>→</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Ongoing Monitoring */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <line x1="18" y1="20" x2="18" y2="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="12" y1="20" x2="12" y2="4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="6" y1="20" x2="6" y2="14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  Ongoing Monitoring
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "Monthly ranking reports",
+                    "Traffic and conversion analysis",
+                    "Competitor analysis",
+                    "Algorithm update responses",
+                    "Continuous improvements"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: colors.primary,
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>→</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Callout Box */}
+            <div style={{
+              marginTop: '40px',
+              padding: '25px',
+              background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1), rgba(29, 122, 175, 0.05))',
+              borderRadius: '16px',
+              border: '1px solid rgba(29, 122, 175, 0.2)',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                fontWeight: '600',
+                color: colors.text.primary,
+                margin: '0',
+                lineHeight: '1.5'
+              }}>
+                Notice what's NOT on this list: buying links, keyword stuffing, spammy tactics, or promising guaranteed rankings. We do legitimate work that lasts.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Who Actually Needs SEO Section */}
+        <section style={{ backgroundColor: '#f5f8fc', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Do You Even Need SEO?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                SEO isn't for everyone. Here's when it makes sense vs. when you're wasting money:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              {/* SEO Makes Sense If */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `2px solid ${colors.primary}`
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <polyline points="20 6 9 17 4 12" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  SEO Makes Sense If:
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "You sell products/services people actively search for (\"plumber Moncton,\" \"web designer Fredericton\")",
+                    "You're competing for local customers in your area",
+                    "Your website has the basics (works on mobile, loads reasonably fast)",
+                    "You're willing to wait 3-6 months for real results",
+                    "You have competition ranking above you on Google",
+                    "Organic search would actually bring you customers (not all businesses work this way)"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: colors.primary,
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Don't Waste Money on SEO If */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `1px solid #e5e7eb`
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.secondary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #6b7280, #4b5563)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                      <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  Don't Waste Money on SEO If:
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "You have zero web presence yet (build a decent site first)",
+                    "Your site is so broken Google can't even crawl it (fix technical issues first)",
+                    "Nobody searches for what you do (very niche B2B might need other marketing)",
+                    "You expect instant results (that's paid ads, not SEO)",
+                    "Your business is word-of-mouth only and you like it that way"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: '#6b7280',
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>○</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Callout Box */}
+            <div style={{
+              marginTop: '40px',
+              padding: '25px',
+              background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1), rgba(29, 122, 175, 0.05))',
+              borderRadius: '16px',
+              border: '1px solid rgba(29, 122, 175, 0.2)',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                fontWeight: '600',
+                color: colors.text.primary,
+                margin: '0',
+                lineHeight: '1.5'
+              }}>
+                Honest answer: If your business doesn't show up when locals search for your service, you need SEO. If you're already ranking well, maybe you don't. We'll tell you the truth.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SEO vs. Paid Ads Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                SEO or Google Ads? What's the Difference?
+              </h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              {/* SEO (Organic Search) */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="11" cy="11" r="8" stroke="white" strokeWidth="2"/>
+                      <path d="m21 21-4.35-4.35" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  SEO (Organic Search)
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    { label: "Cost:", value: "Monthly ongoing work ($500-2000/month typical)" },
+                    { label: "Timeline:", value: "3-6 months to see results" },
+                    { label: "Sustainability:", value: "Lasts even if you pause (rankings stick around)" },
+                    { label: "Trust:", value: "People trust organic results more than ads" },
+                    { label: "Best for:", value: "Long-term growth, building authority" }
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: colors.primary,
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>{item.label}</span>
+                      {item.value}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Google Ads (Paid Search) */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  Google Ads (Paid Search)
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    { label: "Cost:", value: "Pay per click (varies widely by industry)" },
+                    { label: "Timeline:", value: "Instant traffic when you turn it on" },
+                    { label: "Sustainability:", value: "Stops immediately when you stop paying" },
+                    { label: "Trust:", value: "People know it's an ad (lower trust)" },
+                    { label: "Best for:", value: "Immediate leads, testing markets, short-term campaigns" }
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: colors.primary,
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>{item.label}</span>
+                      {item.value}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Recommendation */}
+            <div style={{
+              marginTop: '40px',
+              padding: '25px',
+              background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1), rgba(29, 122, 175, 0.05))',
+              borderRadius: '16px',
+              border: '1px solid rgba(29, 122, 175, 0.2)',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                fontWeight: '600',
+                color: colors.text.primary,
+                margin: '0',
+                lineHeight: '1.5'
+              }}>
+                Best strategy: Both. SEO for long-term, ads for immediate. But if you can only pick one, SEO gives better ROI over 12+ months.
               </p>
             </div>
           </div>
@@ -941,7 +2203,7 @@ export const SEOMarketingPage = () => {
               fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: '700',
               marginBottom: '30px'
-            }}>Ready to improve your search rankings?</h2>
+            }}>Ready to Stop Being Invisible on Google?</h2>
             <p style={{
               fontSize: '1.3rem',
               marginBottom: '40px',
@@ -949,7 +2211,7 @@ export const SEOMarketingPage = () => {
               margin: '0 auto 40px auto',
               opacity: 0.9
             }}>
-              Let's conduct a comprehensive SEO audit and create a strategy to boost your online visibility and attract more qualified traffic.
+              Let's do a free SEO audit. We'll show you exactly where you rank now, what's broken, and what it would realistically take to outrank your competitors. No promises of page 1 in 30 days. No BS. Just honest assessment of whether SEO makes sense for your business.
             </p>
             <div style={{
               display: 'flex',

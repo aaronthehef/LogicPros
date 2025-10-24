@@ -319,7 +319,7 @@ export const CustomWebsitesPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Custom Websites That Convert Visitors to Customers
+                  Tired of Looking Like Everyone Else Online?
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -328,14 +328,12 @@ export const CustomWebsitesPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Professional custom website design and development for New Brunswick businesses. 
-                  Fast, secure, and optimized for conversions. Stand out from template-based websites 
-                  with a unique digital presence that drives real results.
+                  Your competitors all use the same 5 WordPress templates. Visitors can tell. They click away because your site looks generic, loads slowly, or doesn't work on mobile. A custom website isn't just 'nicer' — it's the difference between looking like a professional business and looking like you used a DIY builder on a weekend.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                   <a href="/contact" className="hero-button">
-                    Free Website Consultation
+                    See What Your Site Could Be
                   </a>
                 </div>
               </div>
@@ -479,22 +477,24 @@ export const CustomWebsitesPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Stand out from the competition with a website that's uniquely yours
+                Templates seem cheaper until you realize what you're actually giving up. Here's what happens when you go custom instead of settling for off-the-shelf:
               </p>
             </div>
             
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '30px',
-              alignItems: 'stretch'
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
             }}>
-              <div style={{ 
+              {/* Problem 1: Templates Look Generic */}
+              <div style={{
                 background: 'white',
                 borderRadius: '20px',
                 padding: '40px 35px',
                 boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: `2px solid ${colors.primary}`,
+                border: `1px solid #e5e7eb`,
                 position: 'relative',
                 transition: 'all 0.3s ease',
                 display: 'flex',
@@ -511,62 +511,67 @@ export const CustomWebsitesPage = () => {
                     height: '80px',
                     background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                     borderRadius: '20px',
-                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    boxShadow: '0 8px 25px rgba(31, 124, 175, 0.3)',
                     transition: 'all 0.3s ease',
                     margin: '0 auto 15px auto'
                   }}>
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 9h6v6h-6z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M3 9h6v6h-6z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M15 9h6v6h-6z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M3 3h6v6h-6z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M15 3h6v6h-6z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M3 15h6v6h-6z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M15 15h6v6h-6z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                   <h3 style={{
                     fontSize: '1.8rem',
                     fontWeight: '700',
-                    color: colors.text.primary,
+                    color: '#1F7CFF',
                     marginBottom: '8px'
-                  }}>Unique Brand Identity</h3>
+                  }}>Templates Look Generic</h3>
                   <p style={{
-                    color: colors.primary,
+                    color: '#1F7CFF',
                     fontWeight: '600',
                     fontSize: '1.1rem'
-                  }}>Stand Out From Competition</p>
+                  }}>Template Problem</p>
                 </div>
-                <ul style={{ 
-                  listStyle: 'none',
-                  padding: 0,
-                  marginBottom: '25px'
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  marginBottom: '20px'
                 }}>
-                  {[
-                    'Custom design matching your brand',
-                    'No cookie-cutter template limitations',
-                    'Unique user experience',
-                    'Tailored to your industry needs',
-                    'Memorable online presence'
-                  ].map((feature, index) => (
-                    <li key={index} style={{ 
-                      padding: '8px 0',
-                      fontSize: '1rem',
-                      color: colors.text.secondary,
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}>
-                      <span style={{ 
-                        color: colors.primary, 
-                        marginRight: '10px',
-                        fontWeight: 'bold'
-                      }}>✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                  That Wix/Squarespace site looks exactly like 10,000 other businesses. Visitors notice. They assume you're small-time or not established.
+                </p>
+                <div style={{
+                  padding: '15px',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    color: colors.text.primary,
+                    fontWeight: '600',
+                    margin: '0 0 8px 0'
+                  }}>Custom Solution:</p>
+                  <p style={{
+                    color: colors.text.secondary,
+                    margin: '0',
+                    fontSize: '0.95rem'
+                  }}>
+                    Unique design that matches your brand. No one else looks like you. Instant credibility boost just from having a professional, original site.
+                  </p>
+                </div>
               </div>
 
-              <div style={{ 
+              {/* Problem 2: Template Performance Issues */}
+              <div style={{
                 background: 'white',
                 borderRadius: '20px',
                 padding: '40px 35px',
                 boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: `2px solid ${colors.primary}`,
+                border: `1px solid #e5e7eb`,
                 position: 'relative',
                 transition: 'all 0.3s ease',
                 display: 'flex',
@@ -583,63 +588,62 @@ export const CustomWebsitesPage = () => {
                     height: '80px',
                     background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                     borderRadius: '20px',
-                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    boxShadow: '0 8px 25px rgba(31, 124, 175, 0.3)',
                     transition: 'all 0.3s ease',
                     margin: '0 auto 15px auto'
                   }}>
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                      <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                      <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                   <h3 style={{
                     fontSize: '1.8rem',
                     fontWeight: '700',
-                    color: colors.text.primary,
+                    color: '#1F7CFF',
                     marginBottom: '8px'
-                  }}>Optimized Performance</h3>
+                  }}>Template Performance Issues</h3>
                   <p style={{
-                    color: colors.primary,
+                    color: '#1F7CFF',
                     fontWeight: '600',
                     fontSize: '1.1rem'
-                  }}>Speed & SEO Excellence</p>
+                  }}>Template Problem</p>
                 </div>
-                <ul style={{ 
-                  listStyle: 'none',
-                  padding: 0,
-                  marginBottom: '25px'
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  marginBottom: '20px'
                 }}>
-                  {[
-                    'Lightning-fast load times',
-                    'Clean, optimized code',
-                    'Better SEO rankings',
-                    'Mobile-first responsive design',
-                    'Enhanced user experience'
-                  ].map((feature, index) => (
-                    <li key={index} style={{ 
-                      padding: '8px 0',
-                      fontSize: '1rem',
-                      color: colors.text.secondary,
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}>
-                      <span style={{ 
-                        color: colors.primary, 
-                        marginRight: '10px',
-                        fontWeight: 'bold'
-                      }}>✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                  Templates load slow because they include code for 100 features you'll never use. Google penalizes slow sites. Visitors bounce after 3 seconds.
+                </p>
+                <div style={{
+                  padding: '15px',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    color: colors.text.primary,
+                    fontWeight: '600',
+                    margin: '0 0 8px 0'
+                  }}>Custom Solution:</p>
+                  <p style={{
+                    color: colors.text.secondary,
+                    margin: '0',
+                    fontSize: '0.95rem'
+                  }}>
+                    Built for speed from scratch. Only the code you actually need. Loads in under 1 second. Google rewards you with better rankings.
+                  </p>
+                </div>
               </div>
 
-              <div style={{ 
+              {/* Problem 3: Template Limitations */}
+              <div style={{
                 background: 'white',
                 borderRadius: '20px',
                 padding: '40px 35px',
                 boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                border: `2px solid ${colors.primary}`,
+                border: `1px solid #e5e7eb`,
                 position: 'relative',
                 transition: 'all 0.3s ease',
                 display: 'flex',
@@ -656,54 +660,271 @@ export const CustomWebsitesPage = () => {
                     height: '80px',
                     background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
                     borderRadius: '20px',
-                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    boxShadow: '0 8px 25px rgba(31, 124, 175, 0.3)',
                     transition: 'all 0.3s ease',
                     margin: '0 auto 15px auto'
                   }}>
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 20h9M3 20h9M12 4v16M12 4l3 3M12 4l-3 3M12 20l3-3M12 20l-3-3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <rect x="3" y="11" width="18" height="10" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2"/>
                     </svg>
                   </div>
                   <h3 style={{
                     fontSize: '1.8rem',
                     fontWeight: '700',
-                    color: colors.text.primary,
+                    color: '#1F7CFF',
                     marginBottom: '8px'
-                  }}>Scalable & Flexible</h3>
+                  }}>Template Limitations</h3>
                   <p style={{
-                    color: colors.primary,
+                    color: '#1F7CFF',
                     fontWeight: '600',
                     fontSize: '1.1rem'
-                  }}>Grows With Your Business</p>
+                  }}>Template Problem</p>
                 </div>
-                <ul style={{ 
-                  listStyle: 'none',
-                  padding: 0,
-                  marginBottom: '25px'
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  marginBottom: '20px'
                 }}>
-                  {[
-                    'Easy to add new features',
-                    'Integrates with your tools',
-                    'Future-proof architecture',
-                    'No template restrictions',
-                    'Custom functionality'
-                  ].map((feature, index) => (
-                    <li key={index} style={{ 
-                      padding: '8px 0',
-                      fontSize: '1rem',
-                      color: colors.text.secondary,
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}>
-                      <span style={{ 
-                        color: colors.primary, 
-                        marginRight: '10px',
-                        fontWeight: 'bold'
-                      }}>✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                  Want a custom booking system? Special calculator? Industry-specific feature? Too bad. Templates only do what the template builder thought of.
+                </p>
+                <div style={{
+                  padding: '15px',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    color: colors.text.primary,
+                    fontWeight: '600',
+                    margin: '0 0 8px 0'
+                  }}>Custom Solution:</p>
+                  <p style={{
+                    color: colors.text.secondary,
+                    margin: '0',
+                    fontSize: '0.95rem'
+                  }}>
+                    Build exactly what your business needs. Custom forms, integrations with your CRM, automated workflows — if you need it, we build it.
+                  </p>
+                </div>
+              </div>
+
+              {/* Problem 4: Mobile Experience */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `1px solid #e5e7eb`,
+                position: 'relative',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}>
+                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 175, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 15px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                      <line x1="12" y1="18" x2="12.01" y2="18" stroke="white" strokeWidth="2"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.8rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '8px'
+                  }}>Mobile Experience</h3>
+                  <p style={{
+                    color: '#1F7CFF',
+                    fontWeight: '600',
+                    fontSize: '1.1rem'
+                  }}>Template Problem</p>
+                </div>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  marginBottom: '20px'
+                }}>
+                  Templates claim 'mobile responsive' but your menu breaks, images don't scale right, and forms are impossible to fill out on phones. 60% of your traffic sees a broken site.
+                </p>
+                <div style={{
+                  padding: '15px',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    color: colors.text.primary,
+                    fontWeight: '600',
+                    margin: '0 0 8px 0'
+                  }}>Custom Solution:</p>
+                  <p style={{
+                    color: colors.text.secondary,
+                    margin: '0',
+                    fontSize: '0.95rem'
+                  }}>
+                    Mobile-first design tested on actual devices. Looks perfect on every screen size. Works flawlessly whether someone's on an iPhone 8 or a 4K monitor.
+                  </p>
+                </div>
+              </div>
+
+              {/* Problem 5: SEO Disasters */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `1px solid #e5e7eb`,
+                position: 'relative',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}>
+                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 175, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 15px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="11" cy="11" r="8" stroke="white" strokeWidth="2"/>
+                      <path d="m21 21-4.35-4.35" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.8rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '8px'
+                  }}>SEO Disasters</h3>
+                  <p style={{
+                    color: '#1F7CFF',
+                    fontWeight: '600',
+                    fontSize: '1.1rem'
+                  }}>Template Problem</p>
+                </div>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  marginBottom: '20px'
+                }}>
+                  Template builders generate messy code that Google hates. Duplicate content issues, slow load times, poor mobile scores = invisible on search.
+                </p>
+                <div style={{
+                  padding: '15px',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    color: colors.text.primary,
+                    fontWeight: '600',
+                    margin: '0 0 8px 0'
+                  }}>Custom Solution:</p>
+                  <p style={{
+                    color: colors.text.secondary,
+                    margin: '0',
+                    fontSize: '0.95rem'
+                  }}>
+                    Clean, semantic code optimized for search engines from day one. Proper heading structure, fast load times, technical SEO built in — not bolted on later.
+                  </p>
+                </div>
+              </div>
+
+              {/* Problem 6: You're Stuck Forever */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `1px solid #e5e7eb`,
+                position: 'relative',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column'
+              }}>
+                <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 175, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 15px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="5" y="11" width="14" height="10" rx="2" stroke="white" strokeWidth="2" fill="none"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="12" cy="16" r="1.5" fill="white"/>
+                      <path d="M2 16h4M18 16h4" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.8rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '8px'
+                  }}>You're Stuck Forever</h3>
+                  <p style={{
+                    color: '#1F7CFF',
+                    fontWeight: '600',
+                    fontSize: '1.1rem'
+                  }}>Template Problem</p>
+                </div>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  marginBottom: '20px'
+                }}>
+                  Switching from Wix/Squarespace later means rebuilding from scratch. You're locked in. They raise prices, you pay or lose your site.
+                </p>
+                <div style={{
+                  padding: '15px',
+                  backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    color: colors.text.primary,
+                    fontWeight: '600',
+                    margin: '0 0 8px 0'
+                  }}>Custom Solution:</p>
+                  <p style={{
+                    color: colors.text.secondary,
+                    margin: '0',
+                    fontSize: '0.95rem'
+                  }}>
+                    You own everything. Code, design, content. Move hosts anytime. No proprietary lock-in. Your site, your rules.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -898,10 +1119,359 @@ export const CustomWebsitesPage = () => {
           </div>
         </section>
 
+        {/* Is Custom Right For You Section */}
+        <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Is Custom Right For You?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Custom websites aren't for everyone. Here's when it makes sense — and when a template is fine:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              {/* You Need Custom If */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `2px solid ${colors.primary}`
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 11l3 3L22 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  You Need Custom If:
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "You're competing for customers who expect professionalism (lawyers, accountants, consultants, contractors)",
+                    "Your website needs to DO something specific (booking, quoting, calculators, custom workflows)",
+                    "You want to rank on Google for competitive keywords in your area",
+                    "You're embarrassed to share your current site because it looks dated or generic",
+                    "You have a real business with revenue — and your website should reflect that"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: colors.primary,
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* A Template Is Fine If */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `1px solid #e5e7eb`
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.secondary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #6b7280, #4b5563)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                      <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  A Template Is Fine If:
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "You're literally just starting out and need SOMETHING online fast (upgrade later)",
+                    "Your business doesn't rely on your website for leads",
+                    "You're okay looking like everyone else in your industry",
+                    "Your budget is truly $0 and DIY is the only option right now"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: '#6b7280',
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>○</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Callout Box */}
+            <div style={{
+              marginTop: '40px',
+              padding: '25px',
+              background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1), rgba(29, 122, 175, 0.05))',
+              borderRadius: '16px',
+              border: '1px solid rgba(29, 122, 175, 0.2)',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                fontWeight: '600',
+                color: colors.text.primary,
+                margin: '0',
+                lineHeight: '1.5'
+              }}>
+                Be honest: Does your current website make you look as professional as you actually are? If not, that's costing you customers.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* What You Own Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                You Own Everything. For Real.
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Unlike website builders that hold your site hostage, when we build your custom site, you own it all:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* You Own the Code */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px'
+                }}>You Own the Code</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  All source files, designs, and code belong to you. Want to move to a different host? Take it. Want another developer to work on it later? They can. No proprietary lock-in BS.
+                </p>
+              </div>
+
+              {/* You Own the Design */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px'
+                }}>You Own the Design</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  Every graphic, layout, and visual element is yours. Use them in marketing materials, update the design yourself, or hire someone else to refresh it in 5 years. We don't control it.
+                </p>
+              </div>
+
+              {/* You Own the Content */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="14,2 14,8 20,8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2"/>
+                    <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2"/>
+                    <polyline points="10,9 9,9 8,9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px'
+                }}>You Own the Content</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  Your text, images, videos — obviously yours. But also your blog posts, SEO metadata, and analytics data. Export it, back it up, or migrate it anytime.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Development Process */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <h2 className="section-title">Our Custom Website Development Process</h2>
+            <p style={{
+              fontSize: '1.2rem',
+              color: colors.text.secondary,
+              maxWidth: '700px',
+              margin: '0 auto 50px auto',
+              textAlign: 'center',
+              lineHeight: '1.6'
+            }}>
+              We don't disappear for 3 months and then unveil a 'ta-da!' moment you hate. Here's how we actually work with you:
+            </p>
             <div style={{ marginTop: '40px', paddingTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>1</div>
@@ -1022,15 +1592,15 @@ export const CustomWebsitesPage = () => {
               fontSize: 'clamp(2rem, 4vw, 3rem)', 
               fontWeight: '700', 
               marginBottom: '30px'
-            }}>Ready for a Website That Stands Out?</h2>
-            <p style={{ 
-              fontSize: '1.3rem', 
-              marginBottom: '40px', 
-              maxWidth: '600px', 
+            }}>Ready to Stop Looking Like a Template?</h2>
+            <p style={{
+              fontSize: '1.3rem',
+              marginBottom: '40px',
+              maxWidth: '600px',
               margin: '0 auto 40px auto',
               opacity: 0.9
             }}>
-              Let's create a custom website that drives real results for your New Brunswick business.
+              Let's build you a website you're actually proud to share. Free consultation, honest assessment of what you actually need, and a flat-rate quote with no hourly-billing surprises. Even if we're not the right fit, we'll tell you what to look for.
             </p>
             <div style={{ 
               display: 'flex', 
@@ -1064,7 +1634,7 @@ export const CustomWebsitesPage = () => {
                   e.target.style.transform = 'translateY(0)';
                 }}
               >
-                Get Free Website Consultation
+                See What Your Site Could Be
               </a>
               <a 
                 href="/contact" 

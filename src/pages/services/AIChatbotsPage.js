@@ -317,7 +317,7 @@ export const AIChatbotsPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  AI Chatbots
+                  Stop Losing Leads at 2 AM
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -326,12 +326,12 @@ export const AIChatbotsPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Provide instant customer support and engagement with intelligent chatbots that answer questions, qualify leads, and improve customer experience.
+                  Someone visits your website at 11 PM with questions. You're asleep. They email your competitor who has a chatbot that answers instantly. You just lost a sale. AI chatbots capture leads 24/7, answer common questions, and book appointments while you sleep.
                 </p>
-                
+                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                   <a href="/contact" className="hero-button">
-                    Get Started
+                    See How It Works
                   </a>
                 </div>
               </div>
@@ -449,6 +449,157 @@ export const AIChatbotsPage = () => {
                     </svg>
                   </div>
                 </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* The Cost of Being Offline Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
+          padding: '80px 20px',
+          color: 'white'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#ffffff',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What You're Losing Without 24/7 Support
+              </h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  67%
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  of website visitors arrive outside business hours. Without a chatbot, they leave, find a competitor, or forget about you by morning.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <polyline points="12,6 12,12 16,14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  3 Minutes
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Average wait time before visitors leave your site if they can't find answers. Chatbots respond in seconds, keeping them engaged.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Lost Leads
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Every unanswered question is a potential lost sale. Chatbots qualify leads, answer FAQs, and book appointments even when you're unavailable.
+                </p>
               </div>
             </div>
           </div>
@@ -844,7 +995,7 @@ export const AIChatbotsPage = () => {
           </div>
         </section>
 
-        {/* Who Benefits From AI Chatbots Section */}
+        {/* Signs You Need a Chatbot Section */}
         <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 20px' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: '60px' }}>
@@ -855,7 +1006,7 @@ export const AIChatbotsPage = () => {
                 marginBottom: '20px',
                 lineHeight: '1.2'
               }}>
-                Who Benefits From AI Chatbots
+                Signs You Need a Chatbot
               </h2>
               <p style={{
                 fontSize: '1.2rem',
@@ -864,55 +1015,769 @@ export const AIChatbotsPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Business types that see the most value from AI-powered conversations
+                Chatbots aren't for everyone. Here's when they make sense vs. when you're wasting money:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr',
+              gap: '30px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                transition: 'all 0.3s ease'
+              }}>
+                <h3 style={{
+                  color: colors.primary,
+                  marginBottom: '15px',
+                  fontSize: '1.4rem',
+                  fontWeight: '600'
+                }}>You're Missing After-Hours Leads</h3>
+                <p style={{
+                  color: '#ef4444',
+                  fontWeight: '500',
+                  marginBottom: '10px',
+                  fontSize: '1rem'
+                }}>Problem:</p>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem',
+                  marginBottom: '20px'
+                }}>
+                  Your phone only rings during business hours, but website traffic spikes at night. Competitors with chatbots are capturing those leads while you sleep.
+                </p>
+                <p style={{
+                  color: '#22c55e',
+                  fontWeight: '500',
+                  marginBottom: '10px',
+                  fontSize: '1rem'
+                }}>Solution:</p>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  Chatbot qualifies leads 24/7, books appointments, and sends you notifications so you wake up to new opportunities.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                transition: 'all 0.3s ease'
+              }}>
+                <h3 style={{
+                  color: colors.primary,
+                  marginBottom: '15px',
+                  fontSize: '1.4rem',
+                  fontWeight: '600'
+                }}>You Answer the Same Questions Over and Over</h3>
+                <p style={{
+                  color: '#ef4444',
+                  fontWeight: '500',
+                  marginBottom: '10px',
+                  fontSize: '1rem'
+                }}>Problem:</p>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem',
+                  marginBottom: '20px'
+                }}>
+                  90% of your customer inquiries are the same 10 questions. You're wasting hours answering "What are your hours?" and "Do you serve my area?"
+                </p>
+                <p style={{
+                  color: '#22c55e',
+                  fontWeight: '500',
+                  marginBottom: '10px',
+                  fontSize: '1rem'
+                }}>Solution:</p>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  Chatbot handles FAQs instantly, freeing you to focus on actual sales conversations and complex customer needs.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                transition: 'all 0.3s ease'
+              }}>
+                <h3 style={{
+                  color: colors.primary,
+                  marginBottom: '15px',
+                  fontSize: '1.4rem',
+                  fontWeight: '600'
+                }}>Website Visitors Leave Without Engaging</h3>
+                <p style={{
+                  color: '#ef4444',
+                  fontWeight: '500',
+                  marginBottom: '10px',
+                  fontSize: '1rem'
+                }}>Problem:</p>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem',
+                  marginBottom: '20px'
+                }}>
+                  Google Analytics shows traffic, but nobody calls or fills out forms. Visitors can't find what they need and leave silently.
+                </p>
+                <p style={{
+                  color: '#22c55e',
+                  fontWeight: '500',
+                  marginBottom: '10px',
+                  fontSize: '1rem'
+                }}>Solution:</p>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  Chatbot proactively offers help, guides visitors to relevant pages, and captures contact info before they bounce.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                transition: 'all 0.3s ease'
+              }}>
+                <h3 style={{
+                  color: colors.primary,
+                  marginBottom: '15px',
+                  fontSize: '1.4rem',
+                  fontWeight: '600'
+                }}>You Can't Respond Fast Enough</h3>
+                <p style={{
+                  color: '#ef4444',
+                  fontWeight: '500',
+                  marginBottom: '10px',
+                  fontSize: '1rem'
+                }}>Problem:</p>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem',
+                  marginBottom: '20px'
+                }}>
+                  Someone submits a contact form at 3 PM. You're with a client. You respond at 5 PM. They already chose a competitor who replied instantly.
+                </p>
+                <p style={{
+                  color: '#22c55e',
+                  fontWeight: '500',
+                  marginBottom: '10px',
+                  fontSize: '1rem'
+                }}>Solution:</p>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  Chatbot provides immediate acknowledgment, sets expectations, and can even start the qualification process while you're busy.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                transition: 'all 0.3s ease'
+              }}>
+                <h3 style={{
+                  color: colors.primary,
+                  marginBottom: '15px',
+                  fontSize: '1.4rem',
+                  fontWeight: '600'
+                }}>You Want to Pre-Qualify Leads</h3>
+                <p style={{
+                  color: '#ef4444',
+                  fontWeight: '500',
+                  marginBottom: '10px',
+                  fontSize: '1rem'
+                }}>Problem:</p>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem',
+                  marginBottom: '20px'
+                }}>
+                  You waste time on calls with people outside your service area, budget, or who aren't a good fit.
+                </p>
+                <p style={{
+                  color: '#22c55e',
+                  fontWeight: '500',
+                  marginBottom: '10px',
+                  fontSize: '1rem'
+                }}>Solution:</p>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  Chatbot asks qualifying questions upfront. Only serious, qualified leads make it to your calendar. Less time wasted.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Chatbot vs. Live Chat Section */}
+        <section style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                AI Chatbot vs. Live Chat: What's the Difference?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                They're not the same thing. Here's what you're actually getting:
               </p>
             </div>
             
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '30px'
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
             }}>
-              {[
-                {
-                  title: 'E-commerce Stores with Product Questions',
-                  description: 'Online retailers who need to help customers find products, answer questions about features or availability, and guide purchasing decisions without requiring constant staff attention.'
-                },
-                {
-                  title: 'Service Businesses with Booking Inquiries',
-                  description: 'Consultants, salons, healthcare providers, and other service businesses that need to handle appointment scheduling, service inquiries, and basic information requests 24/7.'
-                },
-                {
-                  title: 'Healthcare Practices with Appointment Scheduling',
-                  description: 'Medical clinics, dental offices, and therapy practices that can automate appointment booking, answer common patient questions, and collect preliminary information before visits.'
-                },
-                {
-                  title: 'B2B Companies Qualifying Leads',
-                  description: 'Business-to-business companies that need to engage website visitors, qualify potential leads, and gather contact information for their sales teams to follow up with.'
-                }
-              ].map((benefit, index) => (
-                <div key={index} style={{
-                  background: 'white',
-                  borderRadius: '20px',
-                  padding: '40px 30px',
-                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                  border: '1px solid rgba(29, 122, 175, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%'
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
                 }}>
-                  <h3 style={{
-                    color: colors.primary,
-                    marginBottom: '15px',
-                    fontSize: '1.4rem',
-                    fontWeight: '600'
-                  }}>{benefit.title}</h3>
-                  <p style={{
-                    color: colors.text.secondary,
-                    lineHeight: '1.6',
-                    fontSize: '1rem'
-                  }}>{benefit.description}</p>
+                  Live Chat (Human-Powered)
+                </h3>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Cost:</strong> $15-50/hour per agent
                 </div>
-              ))}
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Availability:</strong> Only when someone's staffing it
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Response time:</strong> Varies based on agent workload
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Consistency:</strong> Depends on who's answering
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Scalability:</strong> Can only handle 2-3 chats simultaneously
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>After hours:</strong> Offline or outsourced overseas
+                </div>
+                <div>
+                  <strong style={{ color: '#1f2937' }}>Best for:</strong> Complex questions requiring human judgment
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  AI Chatbot (Automated)
+                </h3>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Cost:</strong> $500-2,000 one-time setup, minimal monthly
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Availability:</strong> 24/7/365, never takes breaks
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Response time:</strong> Instant, every time
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Consistency:</strong> Same quality answers always
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Scalability:</strong> Handles unlimited conversations simultaneously
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>After hours:</strong> Always active
+                </div>
+                <div>
+                  <strong style={{ color: '#1f2937' }}>Best for:</strong> FAQs, lead capture, appointment booking, initial qualification
+                </div>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+              color: 'white',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0
+              }}>
+                Best strategy: Chatbot handles common questions 24/7, escalates complex issues to you during business hours. You get the coverage without paying for 24/7 human staff.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* What Chatbots Can Actually Do Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What Your Chatbot Can Handle
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                AI chatbots aren't perfect, but they're surprisingly capable for common business tasks:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#22c55e',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  What Chatbots CAN Do
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Answer frequently asked questions (hours, pricing, services, location)</li>
+                  <li>Qualify leads with targeted questions</li>
+                  <li>Book appointments directly into your calendar</li>
+                  <li>Collect contact information for follow-up</li>
+                  <li>Provide instant quotes for standard services</li>
+                  <li>Guide visitors to relevant pages on your site</li>
+                  <li>Escalate complex questions to you via email/text</li>
+                  <li>Integrate with your CRM to log conversations</li>
+                  <li>Operate in multiple languages</li>
+                  <li>Learn from conversations and improve over time</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#ef4444',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  What Chatbots CAN'T Do (Yet)
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Handle highly complex, nuanced situations</li>
+                  <li>Show genuine empathy (they can be programmed to sound sympathetic, but it's scripted)</li>
+                  <li>Make judgment calls outside their programming</li>
+                  <li>Solve problems that require accessing external systems they're not integrated with</li>
+                  <li>Replace human expertise for technical troubleshooting</li>
+                  <li>Close high-value deals that need relationship building</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'rgba(31, 124, 255, 0.1)',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0,
+                color: colors.text.secondary
+              }}>
+                <strong style={{ color: '#1F7CFF' }}>Think of chatbots as your 24/7 receptionist</strong> who handles the routine stuff, not a replacement for you. They capture and qualify leads so you spend time on actual sales, not answering "What's your email address?"
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Chatbot Personality & Tone Section */}
+        <section style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Will It Sound Like a Robot?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Fair question. Here's how we make chatbots that don't suck:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>
+                  Match Your Brand Voice
+                </h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  We program the chatbot to sound like YOU, not a generic corporate drone. Casual and friendly? Professional and formal? We match your style. Uses your terminology, not tech jargon customers don't understand.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>
+                  Be Honest About Being a Bot
+                </h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  No pretending to be human (customers hate that). "Hi! I'm the LogicPros assistant bot. I can help you with..." Option to request human contact is always visible.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M8 12h8M12 8v8" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>
+                  Fail Gracefully
+                </h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  When the bot doesn't understand, it admits it and offers alternatives. "I'm not sure about that. Let me get you to a real person" or "Can you rephrase that?" Never traps people in frustrating loops.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Is a Chatbot Right for You? Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Do You Actually Need a Chatbot?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Be honest with yourself:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#22c55e',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  You SHOULD Get a Chatbot If:
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>You get website traffic but few inquiries</li>
+                  <li>People ask the same questions repeatedly</li>
+                  <li>You want to capture leads outside business hours</li>
+                  <li>You're in a competitive industry where response speed matters</li>
+                  <li>You offer appointment-based services</li>
+                  <li>Your website has high bounce rates</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#ef4444',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  SKIP the Chatbot If:
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Your website gets less than 100 visitors per month (not enough volume)</li>
+                  <li>Your service is so complex no FAQ can cover it</li>
+                  <li>You don't have a website yet (build that first)</li>
+                  <li>You already respond to inquiries within minutes manually</li>
+                  <li>Your business model doesn't rely on lead generation</li>
+                  <li>You prefer phone calls only and don't want online inquiries</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'rgba(31, 124, 255, 0.1)',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0,
+                color: colors.text.secondary
+              }}>
+                <strong style={{ color: '#1F7CFF' }}>If you're not sure, we'll look at your website traffic and typical inquiries</strong> to give you an honest assessment of whether a chatbot makes sense for your business. No point building a chatbot if you don't need one.
+              </p>
             </div>
           </div>
         </section>
@@ -946,7 +1811,7 @@ export const AIChatbotsPage = () => {
               fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: '700',
               marginBottom: '30px'
-            }}>Ready to add AI chat to your website?</h2>
+            }}>Ready to Stop Missing After-Hours Leads?</h2>
             <p style={{
               fontSize: '1.3rem',
               marginBottom: '40px',
@@ -954,7 +1819,7 @@ export const AIChatbotsPage = () => {
               margin: '0 auto 40px auto',
               opacity: 0.9
             }}>
-              Let's discuss how an AI chatbot can improve your customer engagement, provide 24/7 support, and help qualify leads automatically.
+              Let's talk about what questions you're answering repeatedly and how a chatbot could handle them 24/7. Free consultation, honest assessment of whether a chatbot makes sense for your business. We'll show you examples and even prototype a few responses so you can see how it would work before committing.
             </p>
             <div style={{
               display: 'flex',

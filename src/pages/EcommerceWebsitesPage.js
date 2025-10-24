@@ -311,7 +311,7 @@ export const EcommerceWebsitesPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  E-Commerce Website Design
+                  Selling Online Shouldn't Be This Complicated
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -320,12 +320,12 @@ export const EcommerceWebsitesPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Professional online stores built to showcase your products and provide seamless shopping experiences for your customers. Secure, user-friendly e-commerce solutions that help New Brunswick businesses thrive online.
+                  Shopify fees eating your profit? Etsy taking 20% of every sale? Your current e-commerce site abandoned because checkout's too confusing? Let's build you a store that actually converts browsers into buyers — without the monthly ransom or transaction fees that kill your margins.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                   <a href="/contact" className="hero-button">
-                    Get Started
+                    See What You're Losing to Fees
                   </a>
                 </div>
               </div>
@@ -451,6 +451,158 @@ export const EcommerceWebsitesPage = () => {
           </div>
         </section>
 
+        {/* The Real Cost of Bad E-Commerce Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
+          padding: '80px 20px',
+          color: 'white'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: 'white',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What's Actually Killing Your Online Sales
+              </h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Card 1: Cart Abandonment */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="9" cy="21" r="1" stroke="white" strokeWidth="2" fill="none"/>
+                    <circle cx="20" cy="21" r="1" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M23 6l-2 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '3rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>70%</h3>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  Average cart abandonment rate. If your checkout takes more than 3 steps or doesn't work on mobile, you're losing 7 out of 10 sales.
+                </p>
+              </div>
+
+              {/* Card 2: Transaction Fees */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '3rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>2.9% + $0.30</h3>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  What Shopify/Big Commerce charge per transaction — on top of monthly fees. Sell $10K/month? That's $300+ just in transaction fees, every single month.
+                </p>
+              </div>
+
+              {/* Card 3: Mobile Speed */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                    <line x1="12" y1="18" x2="12.01" y2="18" stroke="white" strokeWidth="2"/>
+                    <path d="M12 6v4M10 8h4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '3rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>53%</h3>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  of mobile shoppers abandon sites that take longer than 3 seconds to load. Slow e-commerce platforms cost you half your potential sales.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* What We Build Section */}
         <section style={{ backgroundColor: 'linear-gradient(135deg, #f8faff 0%, #ffffff 100%)', padding: '80px 20px' }}>
           <div className="container">
@@ -474,7 +626,7 @@ export const EcommerceWebsitesPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Professional e-commerce websites designed to convert visitors into customers
+                Stop losing sales to clunky checkouts and hidden fees. Here's what actually matters in an e-commerce store:
               </p>
             </div>
             
@@ -672,33 +824,33 @@ export const EcommerceWebsitesPage = () => {
               {[
                 {
                   icon: '📦',
-                  title: 'Product Catalog Management',
-                  description: 'Easy-to-use product management with categories, variants, pricing options, and inventory tracking.'
-                },
-                {
-                  icon: '🔒',
-                  title: 'Secure Payment Processing',
-                  description: 'PCI-compliant payment processing with multiple payment options and secure checkout.'
-                },
-                {
-                  icon: '📊',
-                  title: 'Inventory Management',
-                  description: 'Real-time inventory tracking, automatic stock updates, and low-stock notifications.'
+                  title: 'Shopping Cart That Actually Works',
+                  description: 'No more "I tried to buy but your cart was confusing" messages. One-click add to cart, clear shipping calculations, save-for-later — everything customers expect from Amazon, but for your store.'
                 },
                 {
                   icon: '📱',
-                  title: 'Mobile Shopping Experience',
-                  description: 'Fully responsive design optimized for mobile shopping with touch-friendly interfaces.'
+                  title: 'Mobile Checkout That Doesn\'t Suck',
+                  description: '60% of your shoppers are on phones. If they have to pinch-zoom to fill out forms or your buttons don\'t work on mobile, they leave. Mobile-first checkout means sales, not frustration.'
+                },
+                {
+                  icon: '🔒',
+                  title: 'Zero Transaction Fees',
+                  description: 'Shopify/Big Commerce take 2-3% of EVERY sale plus monthly fees. We build you a custom store — you pay credit card processing (unavoidable) but zero platform transaction fees. Keep your profit.'
+                },
+                {
+                  icon: '📊',
+                  title: 'Inventory Management That Makes Sense',
+                  description: 'No more "I ordered but you\'re out of stock" embarrassments. Real-time inventory tracking, low-stock alerts, automatic "sold out" badges. Your store knows what you actually have.'
                 },
                 {
                   icon: '📋',
-                  title: 'Order Management',
-                  description: 'Complete order tracking, status updates, shipping management, and customer notifications.'
+                  title: 'Shipping Integration',
+                  description: 'Customers abandon carts when shipping is surprise-expensive at checkout. Integrated real-time shipping calculations from Canada Post, Purolator, etc. No surprises = more completed sales.'
                 },
                 {
                   icon: '👤',
-                  title: 'Customer Accounts',
-                  description: 'Customer registration, order history, saved addresses, and personalized shopping experiences.'
+                  title: 'You Own The Customer Data',
+                  description: 'On Etsy/Amazon, they own your customers. You\'re just a vendor. With your own store, you get the email list, purchase history, and customer relationships. Market to them directly, build loyalty.'
                 }
               ].map((feature, index) => (
                 <div key={index} style={{ 
@@ -796,6 +948,389 @@ export const EcommerceWebsitesPage = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Shopify vs. Custom Section */}
+        <section style={{ backgroundColor: '#f5f8fc', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Let's Talk About What Shopify Doesn't Tell You
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Shopify seems easy until you add up what you're actually paying:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              {/* Shopify/Platform Costs */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 20h9M3 20h9M12 4v16M12 4l3 3M12 4l-3 3M12 20l3-3M12 20l-3-3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  Shopify/Platform Costs (1 Year)
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "Monthly fee: $39-$399/month = $468-$4,788/year",
+                    "Transaction fees: 2.9% + $0.30 per sale (on $50K revenue = $1,450+)",
+                    "Apps you need: Inventory, email, reviews, upsells ($20-100/month = $240-$1,200/year)",
+                    "Theme limitations: Can't customize without expensive developer or looking generic"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: colors.primary,
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>→</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div style={{
+                  marginTop: '20px',
+                  padding: '15px',
+                  background: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    fontSize: '1.1rem',
+                    fontWeight: '700',
+                    color: colors.text.primary,
+                    margin: '0 0 5px 0'
+                  }}>
+                    Total Year 1: $2,158 - $7,438+
+                  </p>
+                  <p style={{
+                    fontSize: '0.9rem',
+                    color: colors.text.secondary,
+                    margin: '0'
+                  }}>
+                    (and repeats every year)
+                  </p>
+                </div>
+              </div>
+
+              {/* Custom E-Commerce */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  Custom E-Commerce
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "One-time build: $3,000-$8,000 (you own it forever)",
+                    "Monthly hosting: $20-50/month = $240-$600/year",
+                    "Transaction fees: Just credit card processing (unavoidable either way)",
+                    "Customization: Built exactly how you need it, no app fees for basic features"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: colors.primary,
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>→</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div style={{
+                  marginTop: '20px',
+                  padding: '15px',
+                  background: 'rgba(29, 122, 175, 0.05)',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(29, 122, 175, 0.1)'
+                }}>
+                  <p style={{
+                    fontSize: '1.1rem',
+                    fontWeight: '700',
+                    color: colors.text.primary,
+                    margin: '0 0 5px 0'
+                  }}>
+                    Total Year 1: $3,240-$8,600 | Year 2+: $240-$600/year
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Callout Box */}
+            <div style={{
+              marginTop: '40px',
+              padding: '25px',
+              background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1), rgba(29, 122, 175, 0.05))',
+              borderRadius: '16px',
+              border: '1px solid rgba(29, 122, 175, 0.2)',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                fontWeight: '600',
+                color: colors.text.primary,
+                margin: '0',
+                lineHeight: '1.5'
+              }}>
+                Break-even is usually 12-18 months. After that, you're saving thousands per year — and you OWN the platform, not renting it.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Who Should Use Custom E-Commerce Section */}
+        <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: colors.text.primary,
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Is Custom E-Commerce Right For You?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Custom isn't always the answer. Here's when it makes sense vs. when Shopify is fine:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              {/* Custom Makes Sense If */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `2px solid ${colors.primary}`
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 11l3 3L22 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  Custom Makes Sense If:
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "You're selling $20K+/year (transaction fees start hurting)",
+                    "You need custom features Shopify doesn't offer (special calculators, B2B pricing, custom workflows)",
+                    "You're tired of monthly fees and want to own your platform",
+                    "You need full control over customer data and marketing",
+                    "You're selling locally/regionally and don't need Shopify's global infrastructure"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: colors.primary,
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Shopify is Fine If */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: `1px solid #e5e7eb`
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.secondary,
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    background: 'linear-gradient(135deg, #6b7280, #4b5563)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                      <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  Shopify is Fine If:
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {[
+                    "You're literally just starting and have zero sales yet",
+                    "Your revenue is under $10K/year (fees won't kill you)",
+                    "You need to be live in 48 hours and have no time for custom",
+                    "You want absolute zero technical involvement"
+                  ].map((item, index) => (
+                    <li key={index} style={{
+                      padding: '12px 0',
+                      borderBottom: '1px solid #f3f4f6',
+                      color: colors.text.secondary,
+                      display: 'flex',
+                      alignItems: 'flex-start'
+                    }}>
+                      <span style={{
+                        color: '#6b7280',
+                        marginRight: '10px',
+                        fontWeight: 'bold',
+                        flexShrink: 0
+                      }}>○</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -997,15 +1532,15 @@ export const EcommerceWebsitesPage = () => {
               fontSize: 'clamp(2rem, 4vw, 3rem)', 
               fontWeight: '700', 
               marginBottom: '30px'
-            }}>Ready to launch your online store?</h2>
-            <p style={{ 
-              fontSize: '1.3rem', 
-              marginBottom: '40px', 
-              maxWidth: '600px', 
+            }}>Ready to Stop Paying Rent on Your Online Store?</h2>
+            <p style={{
+              fontSize: '1.3rem',
+              marginBottom: '40px',
+              maxWidth: '600px',
               margin: '0 auto 40px auto',
               opacity: 0.9
             }}>
-              Let's create an e-commerce website that provides a seamless shopping experience for your customers.
+              Let's calculate what you're actually losing to platform fees and abandoned carts. Free consultation, honest math on custom vs. platform costs for your specific sales volume, and a flat-rate quote if custom makes sense. We'll tell you if Shopify is smarter for your situation.
             </p>
             <div style={{ 
               display: 'flex', 

@@ -13,7 +13,7 @@ export const CloudServicesPage = () => {
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional cloud services in New Brunswick. Secure cloud migration, storage, backup, and management solutions for flexible, scalable business operations.');
+      metaDescription.setAttribute('content', 'Tired of data trapped on specific computers and servers that will fail eventually? Professional cloud migration for New Brunswick businesses—secure, accessible storage with automatic backups. Work from anywhere.');
     }
     
     // Hero background animation styles
@@ -316,7 +316,7 @@ export const CloudServicesPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Cloud Services
+                  Your Files Are Trapped on Dave's Computer. Dave's on Vacation.
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -325,7 +325,7 @@ export const CloudServicesPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Secure cloud solutions that provide flexibility, scalability, and reliable access to your business data from anywhere.
+                  When important files only exist on one person's computer, your business grinds to a halt the moment they're unavailable. Cloud storage means your team can access what they need from anywhere—no more "I'll email it to you when I'm back at the office" or panic when someone's laptop dies and takes six months of work with it.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -353,7 +353,7 @@ export const CloudServicesPage = () => {
                       e.target.style.transform = 'translateY(0)';
                     }}
                   >
-                    Get Started
+                    Move Your Data to the Cloud
                   </a>
                 </div>
               </div>
@@ -581,7 +581,7 @@ export const CloudServicesPage = () => {
                 marginBottom: '20px',
                 lineHeight: '1.2'
               }}>
-                Why Move to the Cloud
+                Why Businesses Are Still Using Server Closets in 2025
               </h2>
               <p style={{
                 fontSize: '1.2rem',
@@ -590,7 +590,7 @@ export const CloudServicesPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                The strategic advantages of cloud computing for modern businesses
+                You're not behind the times. You're being cautious with your data. But that caution is costing you flexibility, creating risk you don't realize, and making simple tasks unnecessarily complicated. Here's what's really happening with on-premises-only infrastructure:
               </p>
             </div>
             
@@ -648,14 +648,14 @@ export const CloudServicesPage = () => {
                     marginBottom: '15px',
                     lineHeight: '1.3',
                     textAlign: 'center'
-                  }}>Flexibility & Accessibility</h3>
+                  }}>Your Data Is Held Hostage by Location</h3>
                   <p style={{
                     color: '#6b7280',
                     lineHeight: '1.7',
                     fontSize: '1rem',
                     textAlign: 'center'
                   }}>
-                    Cloud solutions enable your team to access business data and applications from anywhere with an internet connection. This flexibility supports remote work, improves collaboration, and ensures business continuity regardless of location.
+                    Files on the office server? Can't access them from home. Document saved to Sarah's laptop? Nobody else can get it until she's online. Proposal stuck on the office computer? Your weekend is ruined. The cloud doesn't magically solve everything, but it does solve the fundamental problem of "I can't access the thing I need because it's physically somewhere else." Your team can work from the office, from home, from a coffee shop, from a hotel—anywhere with internet.
                   </p>
                 </div>
               </div>
@@ -707,14 +707,14 @@ export const CloudServicesPage = () => {
                     marginBottom: '15px',
                     lineHeight: '1.3',
                     textAlign: 'center'
-                  }}>Scalability & Cost-Effectiveness</h3>
+                  }}>Your Server Is a Single Point of Failure</h3>
                   <p style={{
                     color: '#6b7280',
                     lineHeight: '1.7',
                     fontSize: '1rem',
                     textAlign: 'center'
                   }}>
-                    Cloud infrastructure scales with your business needs, allowing you to pay only for resources you use. This eliminates the need for large upfront hardware investments and reduces maintenance costs.
+                    That server in the closet? When it fails—not if, when—you're looking at days of downtime while you scramble to replace hardware, restore backups (if they even worked), and pray nothing was lost. Cloud storage means your data exists in redundant datacenters with automatic backups. If one server fails, you don't even notice because everything's replicated. The cloud isn't invincible, but it's far more resilient than one box in your office.
                   </p>
                 </div>
               </div>
@@ -745,7 +745,7 @@ export const CloudServicesPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Comprehensive cloud solutions tailored to your business needs
+                Moving to the cloud isn't one thing—it's a collection of services that replace the physical infrastructure you're currently managing (or more likely, not managing). Here's what we actually set up:
               </p>
             </div>
             
@@ -758,33 +758,33 @@ export const CloudServicesPage = () => {
               {[
                 {
                   icon: 'migration',
-                  title: 'Cloud Migration',
-                  description: 'Strategic planning and execution of moving your data, applications, and infrastructure to the cloud with minimal disruption to business operations.'
+                  title: 'Getting Your Data Out of the Server Closet',
+                  description: 'You have years of files, emails, and applications living on physical servers or individual computers. Cloud migration is the process of moving all that to cloud storage (Microsoft 365, Google Workspace, etc.) without losing anything or breaking your workflow. We plan the move, handle the technical migration, and make sure everything works the same—just accessible from anywhere now.'
                 },
                 {
                   icon: 'storage',
-                  title: 'Cloud Storage & Backup',
-                  description: 'Secure cloud storage solutions with automated backup systems to protect your data and ensure business continuity in case of emergencies.'
+                  title: 'Files That Don\'t Die When Hardware Does',
+                  description: 'Cloud storage means your files live on someone else\'s servers (Microsoft, Google, AWS) instead of your office server. Automatic backups mean if you accidentally delete something or ransomware encrypts your files, you can restore from yesterday\'s backup. No more praying the external hard drive backup actually ran last night.'
                 },
                 {
                   icon: 'microsoft',
-                  title: 'Microsoft 365 Management',
-                  description: 'Setup, configuration, and ongoing management of Microsoft 365 services including email, document storage, and collaboration tools.'
+                  title: 'Making Office 365 Actually Work For You',
+                  description: 'You\'re probably already paying for Microsoft 365 but only using it for email. We set up OneDrive for file storage, SharePoint for team collaboration, Teams for communication, and configure everything so it\'s secure and accessible. Most businesses use about 20% of what they\'re paying for because nobody showed them how it all works together.'
                 },
                 {
                   icon: 'security',
-                  title: 'Cloud Security',
-                  description: 'Implementation of security measures to protect your cloud infrastructure, including access controls, encryption, and compliance monitoring.'
+                  title: 'Because Cloud Doesn\'t Mean "Automatically Secure"',
+                  description: 'Moving to the cloud doesn\'t magically protect your data—you still need proper security configuration. We implement multi-factor authentication, access controls (who can see what), encryption for sensitive data, and monitoring to detect unauthorized access attempts. The cloud is secure if you configure it correctly. Most businesses don\'t.'
                 },
                 {
                   icon: 'remote',
-                  title: 'Remote Desktop Services',
-                  description: 'Cloud-based virtual desktop solutions that allow your team to access their work environment securely from any device or location.'
+                  title: 'Your Work Computer, From Any Computer',
+                  description: 'Cloud-based virtual desktops let your team access their full work environment from any device—laptop, home computer, tablet. Everything looks and works exactly like they\'re at the office because they\'re remotely connecting to a cloud computer, not trying to access files piecemeal. Useful for remote workers, traveling employees, or anyone who needs their full setup away from the office.'
                 },
                 {
                   icon: 'infrastructure',
-                  title: 'Cloud Infrastructure',
-                  description: 'Design and management of cloud infrastructure that supports your business applications with optimal performance and reliability.'
+                  title: 'Running Business Applications Without Physical Servers',
+                  description: 'Your accounting software, CRM, industry-specific applications—these can run in the cloud instead of requiring a server in your office. We design and manage cloud infrastructure that hosts your applications, handles performance, and scales when you need more capacity. You get enterprise-level infrastructure without the enterprise-level hardware investment.'
                 }
               ].map((service, index) => (
                 <div key={index} style={{
@@ -890,6 +890,174 @@ export const CloudServicesPage = () => {
           </div>
         </section>
 
+        {/* What 'The Cloud' Actually Means Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What 'The Cloud' Actually Means
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Everyone talks about 'the cloud' like it's one thing. It's not. Here's what we're actually talking about when we say cloud services:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr 1fr',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Cloud Storage */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '2px solid rgba(31, 124, 175, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Cloud Storage (Your Files, Accessible Anywhere)</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Instead of files living on your office computer or server, they live on Microsoft's servers (OneDrive, SharePoint), Google's servers (Google Drive), or other cloud storage providers. You access them through the internet, which means you can work from anywhere. When you save a file, it's automatically synced to the cloud so everyone with permission can access the latest version. That's cloud storage—files that aren't tied to one physical device.
+                </p>
+              </div>
+              
+              {/* Cloud Applications */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '2px solid rgba(31, 124, 175, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Cloud Applications (Software You Don't Install)</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Gmail, Office 365, QuickBooks Online, Salesforce—these are cloud applications. Instead of installing software on your computer, you access it through a web browser. The software runs on the vendor's servers, not yours. This means automatic updates, access from any device, and no 'this only works on Jim's computer' problems. You're already using cloud applications; we just make sure they're properly configured and integrated.
+                </p>
+              </div>
+              
+              {/* Cloud Infrastructure */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '2px solid rgba(31, 124, 175, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="4" width="20" height="16" rx="2" ry="2" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="6" y="8" width="4" height="8" fill="white"/>
+                    <rect x="14" y="8" width="4" height="8" fill="white"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Cloud Infrastructure (Servers You Don't Own)</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Traditional setup: you buy a physical server, put it in your office, and run applications on it. Cloud infrastructure: you rent computing power from Microsoft Azure, Amazon AWS, or Google Cloud, and your applications run on their servers in their datacenters. You pay monthly, scale up or down as needed, and never touch physical hardware. It's like renting vs. buying—different cost structure, different flexibility.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Our Cloud Implementation Process Section */}
         <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 20px' }}>
           <div className="container">
@@ -910,7 +1078,7 @@ export const CloudServicesPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                A structured approach to successful cloud migration and management
+                Cloud migration isn't 'flip a switch and everything's in the cloud.' It's a planned process that minimizes disruption and makes sure nothing gets lost or broken.
               </p>
             </div>
             
@@ -918,25 +1086,25 @@ export const CloudServicesPage = () => {
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>1</div>
                 <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Assessment & Planning</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We evaluate your current infrastructure, identify cloud opportunities, and create a detailed migration plan tailored to your business requirements.</p>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We inventory what you currently have—files, applications, email systems, collaboration tools, backups. Then we identify what should move to the cloud (almost everything), what needs to stay on-premises (rare, usually specific industry software), and what order makes sense. The plan includes timelines, potential disruptions, and cost estimates so you know exactly what's involved.</p>
               </div>
               
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>2</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Migration Strategy</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We develop a phased migration approach that minimizes disruption to your business operations while ensuring data integrity and security throughout the process.</p>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Moving Data Without Breaking Everything</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We don't migrate everything at once on a Friday afternoon and hope it works by Monday. Migration happens in phases—email first, then file storage, then applications. We run old and new systems in parallel temporarily so if something doesn't work as expected, you're not dead in the water. Critical data gets migrated outside business hours when possible.</p>
               </div>
               
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>3</div>
                 <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Implementation & Testing</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Our team executes the migration, configures cloud services, and conducts thorough testing to ensure everything works as expected before going live.</p>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We execute the migration, configure cloud services, set up security and access permissions, and test everything before declaring it 'done.' This includes making sure files are accessible, applications work correctly, permissions are set properly, and backups are running. We verify that what worked before still works now—just in the cloud instead of on your server.</p>
               </div>
               
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>4</div>
                 <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Training & Support</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We provide comprehensive training for your team and ongoing support to ensure a smooth transition and continued success with your cloud solutions.</p>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Your team needs to know how to access files in the new system, how to collaborate on documents, where to find things that moved, and who to call when something doesn't work. We provide hands-on training (not just 'here's a manual'), ongoing support during the adjustment period, and documentation for common tasks. The goal is confidence, not confusion.</p>
               </div>
             </div>
             
@@ -972,7 +1140,7 @@ export const CloudServicesPage = () => {
                 marginBottom: '20px',
                 lineHeight: '1.2'
               }}>
-                Who Benefits From Cloud Services
+                Is Your Business Ready for Cloud Migration?
               </h2>
               <p style={{
                 fontSize: '1.2rem',
@@ -981,7 +1149,7 @@ export const CloudServicesPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Business types that gain the most value from cloud solutions
+                Cloud services solve specific problems. If you're experiencing these situations, moving to the cloud probably makes sense:
               </p>
             </div>
             
@@ -992,20 +1160,20 @@ export const CloudServicesPage = () => {
             }}>
               {[
                 {
-                  title: 'Remote or Hybrid Workforces',
-                  description: 'Companies with employees working from different locations who need secure, reliable access to business applications and data from anywhere.'
+                  title: 'Remote Work Is Painful or Impossible',
+                  description: 'Your team works from home sometimes (or wants to) but can\'t access the files they need. They\'re emailing documents back and forth, using personal Dropbox accounts, or VPNing into a slow office connection that barely works. If remote access is currently a workaround instead of a solution, cloud services fix that by making \'work from anywhere\' the default, not the exception.'
                 },
                 {
-                  title: 'Businesses with Limited IT Infrastructure',
-                  description: 'Organizations that want enterprise-level technology capabilities without investing in expensive on-premises hardware and maintenance staff.'
+                  title: 'You\'re One Hardware Failure Away From Disaster',
+                  description: 'Your business data lives on a server that\'s 7 years old, hasn\'t been backed up properly in months, and makes concerning noises. When (not if) it dies, you\'re facing days of downtime, potential data loss, and a scramble to replace hardware and restore backups that might not work. Cloud services move that risk from \'one box in your closet\' to \'redundant datacenters with automatic failover.\''
                 },
                 {
-                  title: 'Growing Companies Needing Scalability',
-                  description: 'Expanding businesses that require technology solutions that can quickly scale up or down to match changing business needs and seasonal demands.'
+                  title: 'File Collaboration Is Email Hell',
+                  description: 'Your team is emailing documents back and forth with filenames like \'Proposal_Final_v3_FINAL_USE_THIS.docx\' because nobody knows which version is current or where the real file lives. Multiple people editing the same document means conflicts, overwrites, and lost work. Cloud collaboration tools (OneDrive, SharePoint, Google Docs) let multiple people work on the same file simultaneously with version history.'
                 },
                 {
-                  title: 'Organizations Concerned About Data Backup',
-                  description: 'Companies that need robust disaster recovery solutions and automated backup systems to protect critical business data from loss or corruption.'
+                  title: 'You Don\'t Have IT Staff to Manage Servers',
+                  description: 'Managing physical servers requires expertise, time, and budget most small businesses don\'t have. Updates get skipped, backups aren\'t tested, security patches are months behind, and nobody\'s monitoring for problems. Cloud infrastructure is managed by Microsoft/Google/Amazon—they handle updates, security, hardware failures, and monitoring. You pay for the service, not the staff to maintain it.'
                 }
               ].map((benefit, index) => (
                 <div key={index} style={{
@@ -1045,7 +1213,205 @@ export const CloudServicesPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Serving businesses across New Brunswick including Fredericton, Saint John, Moncton, and surrounding communities
+                Providing cloud migration and management services throughout New Brunswick—Fredericton, Moncton, Saint John, and across the province. Cloud setup is mostly remote work. Training and on-site support available when needed.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* What Cloud Services Can't Fix Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What Cloud Services Can't Fix
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Cloud services solve infrastructure problems. They don't solve workflow problems, user training problems, or bad data organization. Be realistic about what you're getting:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '40px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Can Fix */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px',
+                border: '2px solid rgba(31, 124, 175, 0.2)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '25px',
+                  textAlign: 'center'
+                }}>
+                  Cloud Services Fix
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    Data trapped on specific devices
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    Server hardware failures causing downtime
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    Inability to access files remotely
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    Collaboration requiring email attachments
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    Manual backup processes that don't run
+                  </li>
+                </ul>
+              </div>
+              
+              {/* Can't Fix */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(255, 198, 0, 0.1), rgba(255, 198, 0, 0.05))',
+                borderRadius: '20px',
+                padding: '40px',
+                border: '2px solid rgba(255, 198, 0, 0.2)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#FFC600',
+                  marginBottom: '25px',
+                  textAlign: 'center'
+                }}>
+                  Cloud Services Don't Fix
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>✗</span>
+                    Poor internet connections (cloud requires reliable internet)
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>✗</span>
+                    Disorganized files (moving a mess to the cloud creates a cloud mess)
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>✗</span>
+                    Employees who won't adopt new tools
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>✗</span>
+                    Applications that fundamentally can't run in the cloud
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>✗</span>
+                    Security if you configure it poorly
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div style={{
+              textAlign: 'center',
+              marginTop: '40px',
+              background: 'rgba(31, 124, 175, 0.05)',
+              padding: '20px',
+              borderRadius: '12px'
+            }}>
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#666',
+                margin: '0',
+                lineHeight: '1.5'
+              }}>
+                Cloud migration fixes infrastructure problems—accessibility, reliability, scalability. If your problems are people or processes, the cloud won't magically solve them. But if your problems are "files are trapped on specific computers" or "our server is a disaster waiting to happen," cloud services are the right solution.
               </p>
             </div>
           </div>
@@ -1063,7 +1429,7 @@ export const CloudServicesPage = () => {
               fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: '700',
               marginBottom: '30px'
-            }}>Ready to move to the cloud?</h2>
+            }}>Stop Worrying About Server Failures and File Access</h2>
             <p style={{
               fontSize: '1.3rem',
               marginBottom: '40px',
@@ -1071,7 +1437,7 @@ export const CloudServicesPage = () => {
               margin: '0 auto 40px auto',
               opacity: 0.9
             }}>
-              Let's discuss how cloud solutions can improve your business flexibility, reduce costs, and provide secure access to your data from anywhere.
+              Moving to the cloud isn't magic—it's migrating your data and applications from physical hardware you maintain to cloud infrastructure someone else maintains. Let's talk about cloud services that make your business more flexible, less dependent on specific devices, and protected against the hardware failures that will definitely happen eventually.
             </p>
             <div style={{
               display: 'flex',
@@ -1105,7 +1471,7 @@ export const CloudServicesPage = () => {
                   e.target.style.transform = 'translateY(0)';
                 }}
               >
-                Schedule a Consultation
+                Plan Your Cloud Migration
               </a>
             </div>
           </div>

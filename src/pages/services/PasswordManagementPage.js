@@ -251,7 +251,7 @@ export const PasswordManagementPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Enterprise Password Management
+                  Still Using 'Password123' for Everything?
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -260,8 +260,7 @@ export const PasswordManagementPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Eliminate password-related security risks with professional enterprise password management.
-                  Secure, scalable password solutions serving Fredericton, Moncton, Saint John, and across New Brunswick.
+                  Weak passwords cause 81% of data breaches. You know you should use strong, unique passwords for everything. But remembering 50+ complex passwords is impossible, so everyone uses the same password everywhere. That's how companies get hacked. Password managers solve this.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -289,7 +288,7 @@ export const PasswordManagementPage = () => {
                       e.target.style.transform = 'translateY(0)';
                     }}
                   >
-                    Get Password Management
+                    Stop the Password Madness
                   </a>
                 </div>
               </div>
@@ -516,61 +515,212 @@ export const PasswordManagementPage = () => {
           </div>
         </section>
 
+        {/* The Password Problem Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
+          padding: '80px 20px',
+          color: 'white'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#ffffff',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Why Password Security Fails
+              </h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Same Password
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  59% of people use the same password for multiple accounts. One breach = all accounts compromised.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Weak Passwords
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  The most common passwords are still 'password,' '123456,' and 'qwerty.' Hackers crack these in seconds.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="14,2 14,8 20,8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="10,9 9,9 8,9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Written Down
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Employees write passwords on sticky notes or save them in unencrypted text files. Defeats the entire purpose.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Password Crisis Stats */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
           <div className="container">
             <div className="section-header" style={{ marginBottom: '60px', textAlign: 'center' }}>
-              <h2 style={{ 
-                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', 
-                fontWeight: '700', 
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
                 background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 color: 'transparent',
                 marginBottom: '20px',
                 lineHeight: '1.2'
-              }}>The Password Security Crisis</h2>
-              <p style={{ 
-                fontSize: '1.2rem', 
-                color: '#6b7280', 
-                maxWidth: '600px', 
+              }}>The Real Cost of Bad Passwords</h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: '#6b7280',
+                maxWidth: '600px',
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Weak passwords are the #1 cause of data breaches. Don't let poor password practices destroy your New Brunswick business.
+                It's not about if you'll get hacked - it's about when. Your employees' password habits are the biggest security risk you're ignoring.
               </p>
             </div>
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
               gap: '25px',
               padding: '0 20px',
               marginBottom: '40px'
             }}>
               {[
                 {
-                  stat: '81%',
-                  desc: 'of data breaches involve weak or stolen passwords',
+                  stat: '59%',
+                  desc: 'of employees reuse passwords across work and personal accounts',
                   icon: 'lock',
                   color: '#1d7aaf',
                   bgColor: 'rgba(29, 122, 175, 0.08)',
-                  title: 'Breach Rate'
-                },
-                {
-                  stat: '59%',
-                  desc: 'of people reuse passwords across multiple accounts',
-                  icon: 'refresh',
-                  color: '#1e40af',
-                  bgColor: 'rgba(30, 64, 175, 0.08)',
                   title: 'Password Reuse'
                 },
                 {
-                  stat: '$4.88M',
-                  desc: 'average cost of a password-related data breach',
+                  stat: '65%',
+                  desc: 'of small businesses close within 6 months of a cyber attack',
+                  icon: 'refresh',
+                  color: '#1e40af',
+                  bgColor: 'rgba(30, 64, 175, 0.08)',
+                  title: 'Business Survival'
+                },
+                {
+                  stat: '49%',
+                  desc: 'of employees don\'t change their default passwords',
                   icon: 'cost',
                   color: '#155e8a',
                   bgColor: 'rgba(21, 94, 138, 0.08)',
-                  title: 'Breach Cost'
+                  title: 'Default Passwords'
                 }
               ].map((item, index) => (
                 <div key={index} style={{ 
@@ -682,6 +832,491 @@ export const PasswordManagementPage = () => {
                   }}></div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How Password Managers Actually Work */}
+        <section style={{
+          background: 'white',
+          padding: '80px 20px'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                How Password Managers Actually Work
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: '#666',
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                No more "forgot password" links. No more sticky notes under keyboards. Here's how modern password management solves your password problems for good.
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                textAlign: 'center',
+                padding: '30px 20px',
+                borderRadius: '16px',
+                background: 'rgba(31, 124, 255, 0.05)',
+                border: '1px solid rgba(31, 124, 255, 0.1)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '70px',
+                  height: '70px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.3rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Secure Vault
+                </h3>
+                <p style={{
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  color: '#666'
+                }}>
+                  All passwords stored in an encrypted vault that only you can access. Military-grade encryption keeps everything safe.
+                </p>
+              </div>
+              
+              <div style={{
+                textAlign: 'center',
+                padding: '30px 20px',
+                borderRadius: '16px',
+                background: 'rgba(31, 124, 255, 0.05)',
+                border: '1px solid rgba(31, 124, 255, 0.1)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '70px',
+                  height: '70px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.3rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  One Master Password
+                </h3>
+                <p style={{
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  color: '#666'
+                }}>
+                  Remember just ONE strong password. The password manager handles all your other passwords automatically.
+                </p>
+              </div>
+              
+              <div style={{
+                textAlign: 'center',
+                padding: '30px 20px',
+                borderRadius: '16px',
+                background: 'rgba(31, 124, 255, 0.05)',
+                border: '1px solid rgba(31, 124, 255, 0.1)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '70px',
+                  height: '70px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.3rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Auto-Fill
+                </h3>
+                <p style={{
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  color: '#666'
+                }}>
+                  Password manager automatically fills in login forms on websites and apps. No more typing passwords manually.
+                </p>
+              </div>
+              
+              <div style={{
+                textAlign: 'center',
+                padding: '30px 20px',
+                borderRadius: '16px',
+                background: 'rgba(31, 124, 255, 0.05)',
+                border: '1px solid rgba(31, 124, 255, 0.1)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '70px',
+                  height: '70px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="9" cy="7" r="4" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.3rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  Secure Sharing
+                </h3>
+                <p style={{
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  color: '#666'
+                }}>
+                  Share passwords with team members securely. Control who can access what and track usage automatically.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Business Password Manager vs Personal */}
+        <section style={{
+          background: '#f8f9fa',
+          padding: '80px 20px'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Business vs. Personal Password Managers
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: '#666',
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Free personal password managers are great for individuals. But businesses need enterprise-grade features, control, and security.
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '40px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 255, 0.1)',
+                height: '100%'
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '25px'
+                }}>
+                  <div style={{
+                    width: '60px',
+                    height: '60px',
+                    background: 'linear-gradient(135deg, #FFC600, #FFB800)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: '20px'
+                  }}>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#1a1a2e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="8.5" cy="7" r="4" stroke="#1a1a2e" strokeWidth="2" fill="none"/>
+                      <line x1="20" y1="8" x2="20" y2="14" stroke="#1a1a2e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <line x1="23" y1="11" x2="17" y2="11" stroke="#1a1a2e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.8rem',
+                    fontWeight: '700',
+                    color: '#1a1a2e',
+                    margin: '0'
+                  }}>
+                    Personal Password Manager
+                  </h3>
+                </div>
+                
+                <div style={{ marginBottom: '20px' }}>
+                  <div style={{
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    color: '#FFC600',
+                    marginBottom: '10px'
+                  }}>
+                    Good for: Individuals, families
+                  </div>
+                </div>
+                
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '12px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Free or low cost
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '12px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Basic password storage
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '12px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Auto-fill on personal devices
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '12px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '10px', fontSize: '1.2rem' }}>✗</span>
+                    No admin control
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '12px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '10px', fontSize: '1.2rem' }}>✗</span>
+                    No employee offboarding
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '10px', fontSize: '1.2rem' }}>✗</span>
+                    No business features
+                  </li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 255, 0.1)',
+                height: '100%',
+                position: 'relative'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-10px',
+                  right: '20px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  color: 'white',
+                  padding: '8px 20px',
+                  borderRadius: '20px',
+                  fontSize: '0.9rem',
+                  fontWeight: '600'
+                }}>
+                  Recommended for Business
+                </div>
+                
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '25px'
+                }}>
+                  <div style={{
+                    width: '60px',
+                    height: '60px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: '20px'
+                  }}>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="9" cy="7" r="4" stroke="white" strokeWidth="2" fill="none"/>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.8rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    margin: '0'
+                  }}>
+                    Business Password Manager
+                  </h3>
+                </div>
+                
+                <div style={{ marginBottom: '20px' }}>
+                  <div style={{
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    color: '#1F7CFF',
+                    marginBottom: '10px'
+                  }}>
+                    Essential for: Teams, companies, organizations
+                  </div>
+                </div>
+                
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '12px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Admin dashboard & control
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '12px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Employee onboarding/offboarding
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '12px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Role-based access control
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '12px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Security policies enforcement
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '12px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Activity monitoring & reports
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Emergency access procedures
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -884,6 +1519,118 @@ export const PasswordManagementPage = () => {
               </div>
             </div>
 
+          </div>
+        </section>
+
+        {/* Common Objections */}
+        <section style={{
+          background: 'white',
+          padding: '80px 20px'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Common Objections (And Why They're Wrong)
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: '#666',
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                We've heard every excuse for not implementing proper password management. Here are the most common ones - and why they're putting your business at risk.
+              </p>
+            </div>
+            
+            <div style={{
+              maxWidth: '900px',
+              margin: '0 auto'
+            }}>
+              {[
+                {
+                  objection: "We're too small to be a target",
+                  response: "Hackers don't target businesses - they target vulnerabilities. Automated bots scan millions of websites looking for weak passwords. Small businesses are actually preferred targets because they typically have weaker security.",
+                  icon: '🎯'
+                },
+                {
+                  objection: "Our employees are trustworthy",
+                  response: "Trust has nothing to do with it. Good people make mistakes: they use weak passwords, reuse them across accounts, write them down, or fall for phishing emails. Password management protects against human error, not malicious intent.",
+                  icon: '👥'
+                },
+                {
+                  objection: "It's too expensive",
+                  response: "The average data breach costs $4.88 million. A business password manager costs a few hundred dollars per year. Which is more expensive? Plus, think about the time employees waste on password resets and lockouts.",
+                  icon: '💰'
+                },
+                {
+                  objection: "It's too complicated to implement",
+                  response: "That's why we exist. We handle the entire setup, migration, and training. Your team just needs to learn one new habit - using the password manager instead of remembering passwords.",
+                  icon: '⚙️'
+                },
+                {
+                  objection: "What if the password manager gets hacked?",
+                  response: "Legitimate password managers use zero-knowledge encryption. Even if their servers were compromised, your data remains encrypted and inaccessible without your master password. It's infinitely safer than storing passwords in browsers or spreadsheets.",
+                  icon: '🔒'
+                },
+                {
+                  objection: "We'll do it later when we have time",
+                  response: "You won't have time after a breach. The average breach takes 287 days to discover. By the time you realize there's a problem, the damage has been done for months. This is one of those 'pay now or pay much more later' situations.",
+                  icon: '⏰'
+                }
+              ].map((item, index) => (
+                <div key={index} style={{
+                  background: '#f8f9fa',
+                  borderRadius: '16px',
+                  padding: '30px',
+                  marginBottom: '20px',
+                  border: '1px solid rgba(31, 124, 255, 0.1)',
+                  display: 'flex',
+                  gap: '20px',
+                  alignItems: 'flex-start'
+                }}>
+                  <div style={{
+                    fontSize: '2.5rem',
+                    flexShrink: 0,
+                    width: '60px',
+                    height: '60px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '50%',
+                    color: 'white'
+                  }}>
+                    {item.icon}
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <h3 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '700',
+                      color: '#1F7CFF',
+                      marginBottom: '10px',
+                      margin: '0 0 10px 0'
+                    }}>
+                      "{item.objection}"
+                    </h3>
+                    <p style={{
+                      fontSize: '1rem',
+                      lineHeight: '1.6',
+                      color: '#666',
+                      margin: '0'
+                    }}>
+                      {item.response}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -1243,13 +1990,491 @@ export const PasswordManagementPage = () => {
           `}} />
         </section>
 
+        {/* What We Set Up for You */}
+        <section style={{
+          background: '#f8f9fa',
+          padding: '80px 20px'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What We Actually Set Up for You
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: '#666',
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                We don't just sell you software. We configure everything specifically for your business needs and train your team to use it effectively.
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'white',
+                borderRadius: '16px',
+                padding: '30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 255, 0.1)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.3rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>
+                  Enterprise Password Manager
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '10px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Admin dashboard setup
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '10px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    User accounts creation
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '10px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Security policies configured
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Emergency access setup
+                  </li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '16px',
+                padding: '30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 255, 0.1)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="14,2 14,8 20,8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.3rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>
+                  Password Migration
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '10px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Existing passwords imported
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '10px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Weak passwords identified
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '10px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Duplicate passwords flagged
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Secure password updates
+                  </li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '16px',
+                padding: '30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 255, 0.1)',
+                height: '100%'
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="9" cy="7" r="4" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.3rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>
+                  Team Training
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '10px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Hands-on training sessions
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '10px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Best practices guidance
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '10px',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Mobile app setup
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '10px', fontSize: '1.2rem' }}>✓</span>
+                    Browser extensions installed
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Who Needs Password Management */}
+        <section style={{
+          background: 'white',
+          padding: '80px 20px'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Who Actually Needs Password Management?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: '#666',
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Password management isn't just for large corporations. If you have employees, customer data, or business accounts - you need proper password security.
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '40px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 255, 0.1), rgba(31, 124, 255, 0.05))',
+                borderRadius: '20px',
+                padding: '40px',
+                border: '2px solid rgba(31, 124, 255, 0.2)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '25px',
+                  textAlign: 'center'
+                }}>
+                  You Need Password Management If:
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    You have 2+ employees with system access
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    You store customer information
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    You use online banking or payment systems
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    You have shared business accounts
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    Employees work remotely or on multiple devices
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    You need to track who accessed what and when
+                  </li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(255, 198, 0, 0.1), rgba(255, 198, 0, 0.05))',
+                borderRadius: '20px',
+                padding: '40px',
+                border: '2px solid rgba(255, 198, 0, 0.2)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#FFC600',
+                  marginBottom: '25px',
+                  textAlign: 'center'
+                }}>
+                  Warning Signs You're at Risk:
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>⚠</span>
+                    Employees share passwords via email or Slack
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>⚠</span>
+                    Former employees still have access to accounts
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>⚠</span>
+                    Passwords written on sticky notes or in spreadsheets
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>⚠</span>
+                    No way to reset passwords when employees leave
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>⚠</span>
+                    Same password used across multiple accounts
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>⚠</span>
+                    You can't remember all your business passwords
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA Section */}
         <section className="section" style={{ backgroundColor: '#000', color: 'white', marginBottom: '0', paddingBottom: '60px' }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title" style={{ color: 'white' }}>Ready to Eliminate Password Risks?</h2>
+              <h2 className="section-title" style={{ color: 'white' }}>Ready to Stop the Password Madness?</h2>
               <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
-                Stop password-related breaches before they happen. Implement professional password management today.
+                Book a free password security consultation. We'll review your current password practices, identify your biggest risks, and show you exactly how to fix them. Even if you don't work with us, you'll leave knowing exactly what you need to do to protect your business.
               </p>
             </div>
             <div style={{ 

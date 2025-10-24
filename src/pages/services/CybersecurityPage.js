@@ -346,7 +346,7 @@ export const CybersecurityPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Enterprise Cybersecurity Solutions
+                  One Breach Can Destroy Everything You've Built
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -355,8 +355,9 @@ export const CybersecurityPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Protect your business from evolving cyber threats with comprehensive security services,
-                  audits, and compliance solutions tailored for New Brunswick and Maritime businesses.
+                  Your business has customer data, financial records, and years of reputation at stake.
+                  A single ransomware attack can cost tens of thousands in recovery — if you recover at all.
+                  We protect Maritime businesses with enterprise-grade security at prices small businesses can actually afford.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -365,7 +366,7 @@ export const CybersecurityPage = () => {
                   </a>
                   
                   <a href="/contact" className="secondary-button">
-                    Get Cybersecurity Quote
+                    Learn What's At Risk
                   </a>
                 </div>
               </div>
@@ -490,6 +491,184 @@ export const CybersecurityPage = () => {
           </div>
         </section>
 
+        {/* The Real Cost of a Breach Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
+          padding: '80px 0',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
+                color: 'white',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Why Cybersecurity Can't Wait</h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Card 1: Business Closure */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '3rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1'
+                }}>60%</div>
+                <p style={{
+                  color: 'white',
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  of small businesses close within 6 months of a cyberattack. They can't afford the recovery costs or lost reputation.
+                </p>
+              </div>
+
+              {/* Card 2: Ransomware Cost */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '3rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1'
+                }}>$200K+</div>
+                <p style={{
+                  color: 'white',
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  Average cost of a ransomware attack for small businesses — including ransom, recovery, lost revenue, and legal fees.
+                </p>
+              </div>
+
+              {/* Card 3: Recovery Time */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '3rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1'
+                }}>21 Days</div>
+                <p style={{
+                  color: 'white',
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  Average time to recover from a cyberattack. That's 3 weeks your business is crippled or completely shut down.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Cybersecurity Services Section */}
         <section className="section" style={{ backgroundColor: '#f8faff', padding: '80px 0' }}>
           <div className="container">
@@ -508,7 +687,7 @@ export const CybersecurityPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Comprehensive security solutions to protect your business from cyber threats
+                Stop hackers before they get in. Recover fast if they do.
               </p>
             </div>
             
@@ -556,7 +735,7 @@ export const CybersecurityPage = () => {
                     Security Audits
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Comprehensive evaluation of your security posture to identify vulnerabilities before cybercriminals do
+                    Find your weaknesses before hackers do. We'll show you exactly where you're exposed and how to fix it — in plain English, not tech jargon.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -603,7 +782,7 @@ export const CybersecurityPage = () => {
                     Password Management
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Secure password generation, encrypted storage, and team password sharing to eliminate weak password risks
+                    Still using 'Password123' or the same password everywhere? That's how 81% of breaches happen. We'll set up secure password management so your team stops being the weak link.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -650,7 +829,7 @@ export const CybersecurityPage = () => {
                     Multi-Factor Authentication
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Add an extra layer of security that blocks 99.9% of automated attacks and protects against compromised passwords
+                    Even if hackers steal your password, they can't get in without the second factor. MFA blocks 99.9% of automated attacks — it's the easiest security win you'll ever get.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -672,15 +851,14 @@ export const CybersecurityPage = () => {
                 marginBottom: '20px',
                 lineHeight: '1.2'
               }}>Comprehensive Cybersecurity Solutions</h2>
-              <p style={{ 
-                fontSize: '1.1rem', 
-                color: colors.text.secondary, 
-                maxWidth: '700px', 
+              <p style={{
+                fontSize: '1.1rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Protect your business with enterprise-grade security solutions designed for small to medium businesses. 
-                From threat detection to compliance, we've got you covered.
+                You don't need a massive IT department to be secure. You just need someone who knows what they're doing and actually cares if you get hacked.
               </p>
             </div>
             
@@ -920,15 +1098,14 @@ export const CybersecurityPage = () => {
               }}>
                 Cybersecurity Services NB & Maritime Solutions
               </h2>
-              <p style={{ 
-                fontSize: '1.2rem', 
-                color: '#6b7280', 
-                maxWidth: '600px', 
+              <p style={{
+                fontSize: '1.2rem',
+                color: '#6b7280',
+                maxWidth: '600px',
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Comprehensive cybersecurity compliance New Brunswick and Maritime cybersecurity solutions 
-                designed for SMB and enterprise clients across the region
+                Beyond the basics — for businesses that handle sensitive data or need compliance with industry regulations
               </p>
             </div>
             
@@ -1308,15 +1485,188 @@ export const CybersecurityPage = () => {
           </div>
         </section>
 
+        {/* Why Maritime Businesses Trust Us For Security Section */}
+        <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Why Maritime Businesses Trust Us With Their Security</h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Pillar 1: Government-Grade Security Expertise */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                padding: '40px 30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>Government-Grade Security Expertise</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Our founder led IT for New Brunswick's provincial government. We bring the same security thinking that protects government data to your small business — without the government-sized price tag.
+                </p>
+              </div>
+
+              {/* Pillar 2: We Explain What's Actually Wrong */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                padding: '40px 30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="14,2 14,8 20,8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2"/>
+                    <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2"/>
+                    <polyline points="10,9 9,9 8,9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>We Explain What's Actually Wrong</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  No scary tech jargon designed to upsell you. We'll show you exactly what's vulnerable, what the real risks are, and what fixes actually matter vs. what's just nice to have.
+                </p>
+              </div>
+
+              {/* Pillar 3: Ongoing Protection */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                padding: '40px 30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 16v6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>Ongoing Protection, Not Just a One-Time Audit</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Cybersecurity isn't a one-and-done project. New threats emerge constantly. We monitor, update, and keep you protected as the threat landscape changes — you won't be left exposed 6 months after we're done.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Implementation Process */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Our Cybersecurity Implementation Process</h2>
               <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
-                No surprises, no delays. Our cybersecurity implementation process is designed for busy
-                business owners. You'll know exactly what's happening at every step,
-                and we handle all the technical details.
+                We don't just hand you a 50-page report full of technical jargon and leave. We find the problems, explain them in plain English,
+                fix what matters most first, and make sure you're actually protected — not just checked off a compliance box.
               </p>
             </div>
             
@@ -1594,9 +1944,10 @@ export const CybersecurityPage = () => {
         <section className="section" style={{ backgroundColor: '#000', color: 'white', marginBottom: '0', paddingBottom: '60px' }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title" style={{ color: 'white' }}>Ready to Secure Your Business?</h2>
+              <h2 className="section-title" style={{ color: 'white' }}>Ready to Stop Worrying About Getting Hacked?</h2>
               <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
-                Don't wait for a security incident. Protect your business with enterprise-grade cybersecurity solutions.
+                Book a free security assessment. We'll review your current setup, identify your biggest risks, and show you exactly what needs fixing —
+                even if you don't work with us. No scare tactics, no pressure, just honest advice from someone who's been protecting data for 21 years.
               </p>
             </div>
             <div style={{ 

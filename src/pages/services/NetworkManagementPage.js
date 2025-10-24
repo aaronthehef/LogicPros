@@ -13,7 +13,7 @@ export const NetworkManagementPage = () => {
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional network management services in New Brunswick. Reliable, secure network infrastructure with proactive monitoring, maintenance, and support.');
+      metaDescription.setAttribute('content', 'Tired of Wi-Fi that randomly fails and networks nobody understands? Professional network management for New Brunswick businesses—reliable connectivity, proactive monitoring, actual solutions to chronic problems.');
     }
     
     // Hero background animation styles
@@ -316,7 +316,7 @@ export const NetworkManagementPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Network Management
+                  The Wi-Fi Works. Until It Doesn't.
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -325,7 +325,7 @@ export const NetworkManagementPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Reliable, secure network infrastructure that keeps your business connected. Proactive monitoring, maintenance, and support for your network systems.
+                  Nobody knows why the network is slow today. Nobody knows why the Wi-Fi drops in certain rooms. And everyone just accepts that "rebooting the router" is normal IT maintenance. Your business network shouldn't be a mystery that randomly fails—professional network management means predictable performance and someone who actually understands what's wrong when things break.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -353,7 +353,7 @@ export const NetworkManagementPage = () => {
                       e.target.style.transform = 'translateY(0)';
                     }}
                   >
-                    Get Started
+                    Fix Your Network Problems
                   </a>
                 </div>
               </div>
@@ -581,7 +581,7 @@ export const NetworkManagementPage = () => {
                 marginBottom: '20px',
                 lineHeight: '1.2'
               }}>
-                Why Network Management Matters
+                What Unreliable Networks Actually Cost
               </h2>
               <p style={{
                 fontSize: '1.2rem',
@@ -590,7 +590,7 @@ export const NetworkManagementPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                The foundation of your business technology infrastructure
+                Slow internet is annoying. Wi-Fi that drops during video calls is embarrassing. Networks that mysteriously stop working are terrifying—because nobody knows how to fix them, how long it'll take, or whether you'll lose customers while you're offline. The real cost isn't just downtime. It's the uncertainty.
               </p>
             </div>
             
@@ -648,14 +648,14 @@ export const NetworkManagementPage = () => {
                     marginBottom: '15px',
                     lineHeight: '1.3',
                     textAlign: 'center'
-                  }}>Preventing Downtime</h3>
+                  }}>Your Business Runs on Wi-Fi Nobody Understands</h3>
                   <p style={{
                     color: '#6b7280',
                     lineHeight: '1.7',
                     fontSize: '1rem',
                     textAlign: 'center'
                   }}>
-                    Network disruptions can bring business operations to a halt, affecting everything from customer communications to internal processes. Proactive network management helps identify and address potential issues before they cause costly downtime, keeping your business running smoothly.
+                    Internet access, file sharing, cloud applications, point-of-sale systems, security cameras—everything depends on your network working. When it fails, your entire operation stops. And usually, nobody on your team knows why it failed or how to fix it beyond "turn it off and on again." You're at the mercy of equipment you don't understand, hoping today isn't the day it completely dies.
                   </p>
                 </div>
               </div>
@@ -706,14 +706,14 @@ export const NetworkManagementPage = () => {
                     marginBottom: '15px',
                     lineHeight: '1.3',
                     textAlign: 'center'
-                  }}>Security & Performance</h3>
+                  }}>Networks Get Slower and More Vulnerable Over Time</h3>
                   <p style={{
                     color: '#6b7280',
                     lineHeight: '1.7',
                     fontSize: '1rem',
                     textAlign: 'center'
                   }}>
-                    Networks require ongoing maintenance to maintain security and optimal performance. Regular updates, security patches, and performance tuning ensure your network infrastructure remains reliable and protected against evolving threats.
+                    That router you installed five years ago? It hasn't had a firmware update since 2019, has known security vulnerabilities, and is running configuration settings someone Googled and hoped would work. Networks don't maintain themselves—they slowly accumulate problems until performance degrades to "barely usable" and security is "basically nonexistent." By the time you notice, you're years behind on patches and updates.
                   </p>
                 </div>
               </div>
@@ -744,7 +744,7 @@ export const NetworkManagementPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Comprehensive network infrastructure management services
+                Your network isn't magic. It's hardware, configuration, and maintenance—all things that can be understood, monitored, and fixed properly.
               </p>
             </div>
             
@@ -757,33 +757,33 @@ export const NetworkManagementPage = () => {
               {[
                 {
                   icon: 'monitoring',
-                  title: 'Network Monitoring',
-                  description: '24/7 monitoring of network performance, bandwidth usage, and device health to detect issues before they impact business operations.'
+                  title: 'We Know When Things Break (Before You Do)',
+                  description: 'Right now, you find out your network\'s failing when someone yells "the internet\'s down!" We monitor your network 24/7—bandwidth usage, device health, connection stability—and get alerts when something\'s wrong. Often we\'re fixing problems before anyone notices they existed. You shouldn\'t learn about network failures from frustrated employees.'
                 },
                 {
                   icon: 'router',
-                  title: 'Router & Switch Management',
-                  description: 'Configuration, firmware updates, and maintenance of network hardware to ensure reliable data flow and connectivity.'
+                  title: 'Your Router Needs Updates You\'re Not Getting',
+                  description: 'Business routers and switches need firmware updates for security, performance, and bug fixes. When\'s the last time yours were updated? If the answer is "when we bought them" or "I have no idea," you\'re running outdated, vulnerable equipment. We keep your network hardware current, properly configured, and actually doing what it\'s supposed to do.'
                 },
                 {
                   icon: 'wifi',
-                  title: 'Wi-Fi & Connectivity',
-                  description: 'Optimization of wireless networks for coverage, speed, and security, including access point placement and channel management.'
+                  title: 'Why the Wi-Fi Dies in Certain Rooms',
+                  description: 'Dead zones, slow spots, constant dropouts—Wi-Fi problems usually come from poor access point placement, wrong channel settings, or interference from neighboring networks. We optimize your wireless coverage so the Wi-Fi actually works in the conference room, the back office, and everywhere else people need to work. Reliable connectivity shouldn\'t be location-dependent.'
                 },
                 {
                   icon: 'security',
-                  title: 'Network Security',
-                  description: 'Implementation of security measures including firewalls, access controls, and intrusion detection to protect your network.'
+                  title: 'Your Network Is Probably Wide Open',
+                  description: 'Default passwords on routers, no firewall rules, guest Wi-Fi that can access internal systems, devices you don\'t recognize connected to your network—most small business networks have zero security because nobody knew what needed to be secured. We implement proper firewalls, access controls, and monitoring to actually protect your network from unauthorized access.'
                 },
                 {
                   icon: 'performance',
-                  title: 'Performance Optimization',
-                  description: 'Analysis and tuning of network infrastructure to maximize speed, reduce latency, and improve overall performance.'
+                  title: 'Why Everything Feels Slow Even With Fast Internet',
+                  description: 'You\'re paying for 500Mbps internet but video calls still stutter and file uploads crawl. The problem isn\'t your internet speed—it\'s how your network is configured. Outdated equipment, poor Quality of Service settings, bandwidth-hogging devices—we tune your network so you actually get the performance you\'re paying for.'
                 },
                 {
                   icon: 'troubleshooting',
-                  title: 'Troubleshooting & Repairs',
-                  description: 'Rapid diagnosis and resolution of network issues, with both remote and on-site support options available.'
+                  title: 'Actual Diagnosis, Not Just Guessing',
+                  description: 'When your network fails, most "fixes" are just trying random things and hoping they work. We diagnose the actual problem—failed hardware, configuration errors, overloaded devices—and fix the root cause so it doesn\'t break again next week. Remote fixes for most issues, on-site for hardware problems that need hands-on work.'
                 }
               ].map((service, index) => (
                 <div key={index} style={{
@@ -902,7 +902,7 @@ export const NetworkManagementPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                A systematic process for maintaining network health and performance
+                Good network management isn't magic—it's a systematic process of understanding what you have, configuring it properly, and maintaining it before problems become emergencies.
               </p>
             </div>
             
@@ -910,25 +910,25 @@ export const NetworkManagementPage = () => {
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>1</div>
                 <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Network Assessment</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We evaluate your current network infrastructure, identifying strengths, weaknesses, and areas for improvement to create a tailored management plan.</p>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We start by mapping your current network—what equipment you have, how it's configured, what's working and what's barely holding together. Most businesses discover they have hardware they didn't know existed, bottlenecks nobody identified, and security gaps that make us wince. This assessment creates the roadmap for fixing the underlying problems.</p>
               </div>
               
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>2</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Configuration & Setup</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Our team implements optimal network configurations, security settings, and monitoring tools to establish a solid foundation for ongoing management.</p>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>We Fix the Foundational Problems</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Based on the assessment, we implement proper network configuration—secure settings, optimal performance tuning, monitoring tools that actually tell us when something's wrong. This means rebuilding weak parts of your network infrastructure before they fail catastrophically. The goal is predictable, reliable performance instead of crossing your fingers daily.</p>
               </div>
               
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>3</div>
                 <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Ongoing Monitoring</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We continuously monitor network performance, security, and availability, addressing issues proactively before they impact your business operations.</p>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Once your network is properly configured, we monitor it continuously for performance degradation, security threats, and hardware failures. We get alerts when issues develop—often before they impact your business. Proactive monitoring means we're fixing problems during the 'warning sign' phase instead of the 'everything's broken' phase.</p>
               </div>
               
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>4</div>
-                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Maintenance & Updates</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Regular firmware updates, security patches, and performance tuning keep your network infrastructure running optimally and securely.</p>
+                <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Regular Upkeep That Actually Happens</h3>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Firmware updates, security patches, performance optimization, configuration adjustments as your business changes—we handle the ongoing maintenance that most networks never receive. This prevents the slow degradation where networks gradually get slower, less secure, and more unstable until they're 'mysteriously' failing weekly.</p>
               </div>
             </div>
             
@@ -953,6 +953,315 @@ export const NetworkManagementPage = () => {
           </div>
         </section>
 
+        {/* Common Network Problems We Fix Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Common Network Problems We Fix
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Every business network develops problems. Here are the ones we see most often in Maritime small businesses:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Problem 1 */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '2px solid rgba(31, 124, 175, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12.55a11 11 0 0 1 14.08 0" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M1.42 9a16 16 0 0 1 21.16 0" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 20v.01" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M12 2L12 8" stroke="#ff4444" strokeWidth="2" strokeLinecap="round"/>
+                    <circle cx="12" cy="10" r="1" fill="#ff4444"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Wi-Fi Dead Zones and Slow Spots</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Conference room has no signal. Back office gets one bar. Someone's desk randomly disconnects three times a day. Usually caused by poor access point placement, interference, or trying to cover too much area with consumer-grade equipment. We add access points where needed, optimize placement and channels, and actually test coverage.
+                </p>
+              </div>
+              
+              {/* Problem 2 */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '2px solid rgba(31, 124, 175, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Network That's Randomly Slow</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Some days the internet is fine. Other days everything crawls for no apparent reason. Often caused by outdated equipment, Quality of Service not configured, or bandwidth-hogging devices (security camera uploads, cloud backups, software updates) competing with actual work. We identify what's consuming bandwidth and prioritize business-critical traffic.
+                </p>
+              </div>
+              
+              {/* Problem 3 */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '2px solid rgba(31, 124, 175, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Equipment That's Silently Failing</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Your network switch has been overheating for months but nobody noticed until it started dropping connections. Routers running at 98% CPU capacity. Network cables that are barely making contact. Hardware failures usually give warnings—we monitor for those warnings so you can replace equipment on your schedule, not in an emergency.
+                </p>
+              </div>
+              
+              {/* Problem 4 */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '2px solid rgba(31, 124, 175, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Security That's Basically Nonexistent</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Default admin passwords still set. No firewall rules configured. Guest Wi-Fi can access internal servers. Devices connected that nobody recognizes. Most small business networks were set up by "someone who knows computers" and have zero actual security. We audit what's exposed and lock down what should be protected.
+                </p>
+              </div>
+              
+              {/* Problem 5 */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '2px solid rgba(31, 124, 175, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="3" width="7" height="7" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="14" y="14" width="7" height="7" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M10 6.5h4M10 17.5h4M6.5 10v4M17.5 10v4" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Networks That Grew Organically Into Chaos</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Started with one router. Added a switch when you ran out of ports. Someone brought in another access point. Now you have a Frankenstein network where nobody knows what device does what, and changing anything might break everything. We document and organize what you actually have so changes don't cause panic.
+                </p>
+              </div>
+              
+              {/* Problem 6 */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '2px solid rgba(31, 124, 175, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2v20" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M9 22h6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M12 6c-4 0-7 3-7 7M12 6c4 0 7 3 7 7" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M12 10c-2 0-3.5 1.5-3.5 3.5M12 10c2 0 3.5 1.5 3.5 3.5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <circle cx="12" cy="14" r="1.5" fill="white"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Remote Access That Barely Works</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  VPN connections that timeout, drop constantly, or are so slow they're unusable. Remote workers who can't access files. Employees who just email documents around because the "proper" way doesn't work. Remote access requires specific configuration—we set up reliable VPN, remote desktop, or cloud access that actually functions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Who Needs Network Management Section */}
         <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 20px' }}>
           <div className="container">
@@ -964,7 +1273,7 @@ export const NetworkManagementPage = () => {
                 marginBottom: '20px',
                 lineHeight: '1.2'
               }}>
-                Who Needs Network Management
+                Signs Your Network Needs Professional Management
               </h2>
               <p style={{
                 fontSize: '1.2rem',
@@ -973,7 +1282,7 @@ export const NetworkManagementPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Business types that benefit most from professional network services
+                You don't need network management if everything works perfectly and never breaks. For everyone in reality, here's when DIY network management stops being sufficient:
               </p>
             </div>
             
@@ -984,20 +1293,20 @@ export const NetworkManagementPage = () => {
             }}>
               {[
                 {
-                  title: 'Businesses with Multiple Locations',
-                  description: 'Organizations operating across several sites that need reliable connectivity between locations, centralized management, and consistent security policies.'
+                  title: '"The Internet Is Down" Is a Weekly Event',
+                  description: 'If network problems are a regular occurrence, not a rare emergency, something is fundamentally wrong with your infrastructure. You shouldn\'t be restarting routers weekly, dealing with "slow Wi-Fi days," or accepting that certain areas just "don\'t get good signal." Chronic problems mean your network isn\'t properly configured or maintained—and hoping it\'ll fix itself doesn\'t work.'
                 },
                 {
-                  title: 'Companies with Remote Workers',
-                  description: 'Businesses with employees working from home or traveling who need secure, reliable remote access to company resources and optimal VPN performance.'
+                  title: 'Nobody Knows How Your Network Actually Works',
+                  description: 'The person who set it up left. Or it was installed years ago and nobody remembers the configuration. You don\'t have network diagrams, admin passwords are lost, and making any change feels like defusing a bomb because you don\'t know what\'s connected to what. When your network is a mystery to everyone, you need someone to document, understand, and properly manage it.'
                 },
                 {
-                  title: 'Organizations with Aging Network Equipment',
-                  description: 'Companies using older network hardware that may be prone to failures, performance issues, or security vulnerabilities requiring proactive management.'
+                  title: 'You\'re Growing Faster Than Your Network Can Handle',
+                  description: 'That consumer-grade router that worked fine for five people is choking under ten. You\'re running out of network ports, Wi-Fi capacity, and bandwidth. New employees slow everything down because your network wasn\'t designed to scale. Growth is good—but your network infrastructure needs to grow with you, not slowly collapse under increased load.'
                 },
                 {
-                  title: 'Growing Businesses Outgrowing Basic Setups',
-                  description: 'Expanding organizations whose simple network configurations are no longer sufficient for their needs, requiring more sophisticated infrastructure.'
+                  title: 'You Have Remote Workers or Multiple Locations',
+                  description: 'Connecting multiple offices, setting up reliable VPN access, ensuring remote workers can access files securely—these aren\'t tasks you can Google your way through. Multi-site and remote access require proper network design, security, and ongoing management. If you\'re doing it DIY and it barely works, that\'s costing you productivity every single day.'
                 }
               ].map((benefit, index) => (
                 <div key={index} style={{
@@ -1037,7 +1346,206 @@ export const NetworkManagementPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Serving businesses across New Brunswick including Fredericton, Saint John, Moncton, and surrounding communities
+                Providing network management services throughout New Brunswick—Fredericton, Moncton, Saint John, and across the province. Network monitoring is remote. Configuration and equipment work includes on-site visits when needed.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* What Network Management Can't Fix Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What Network Management Can't Fix
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Network management solves most connectivity and performance problems. But some issues are outside the network's control:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '40px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Can Fix */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px',
+                border: '2px solid rgba(31, 124, 175, 0.2)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '25px',
+                  textAlign: 'center'
+                }}>
+                  Can Fix
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    Slow Wi-Fi from poor configuration
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    Random disconnections from failing equipment
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    Security vulnerabilities in network devices
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    Dead zones and coverage gaps
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    Performance problems from improper settings
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#22c55e', marginRight: '15px', fontSize: '1.3rem' }}>✓</span>
+                    Equipment failures before they become emergencies
+                  </li>
+                </ul>
+              </div>
+              
+              {/* Can't Fix */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(255, 198, 0, 0.1), rgba(255, 198, 0, 0.05))',
+                borderRadius: '20px',
+                padding: '40px',
+                border: '2px solid rgba(255, 198, 0, 0.2)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#FFC600',
+                  marginBottom: '25px',
+                  textAlign: 'center'
+                }}>
+                  Can't Fix
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>✗</span>
+                    Your ISP being terrible (we can help you switch ISPs, but if rural internet options are limited, we can't magic faster service into existence)
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>✗</span>
+                    Software problems on individual computers (that's helpdesk support, not network management)
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>✗</span>
+                    Physical damage to cables you accidentally cut with a shovel
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#ef4444', marginRight: '15px', fontSize: '1.3rem' }}>✗</span>
+                    Power outages taking down equipment (though we can set up proper UPS backup power)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div style={{
+              textAlign: 'center',
+              marginTop: '40px',
+              background: 'rgba(31, 124, 175, 0.05)',
+              padding: '20px',
+              borderRadius: '12px'
+            }}>
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#666',
+                margin: '0',
+                lineHeight: '1.5'
+              }}>
+                Network management makes your internal network reliable and fast. It doesn't fix your internet provider being slow or unreliable—though we can help evaluate whether switching ISPs makes sense, and optimize your network to get the best performance from whatever internet you have.
               </p>
             </div>
           </div>
@@ -1055,7 +1563,7 @@ export const NetworkManagementPage = () => {
               fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: '700',
               marginBottom: '30px'
-            }}>Ready for reliable network infrastructure?</h2>
+            }}>Stop Accepting Network Problems as Normal</h2>
             <p style={{
               fontSize: '1.3rem',
               marginBottom: '40px',
@@ -1063,7 +1571,7 @@ export const NetworkManagementPage = () => {
               margin: '0 auto 40px auto',
               opacity: 0.9
             }}>
-              Let's discuss how our network management services can improve your connectivity, security, and overall business performance.
+              Your network shouldn't be the thing everyone blames when technology doesn't work. Let's talk about network management that makes your infrastructure predictable, reliable, and actually understood by someone who knows what they're doing.
             </p>
             <div style={{
               display: 'flex',
@@ -1097,7 +1605,7 @@ export const NetworkManagementPage = () => {
                   e.target.style.transform = 'translateY(0)';
                 }}
               >
-                Schedule a Consultation
+                Get a Network Assessment
               </a>
             </div>
           </div>

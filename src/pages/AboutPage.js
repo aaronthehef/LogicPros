@@ -259,7 +259,7 @@ export const AboutPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  About LogicPros: Complete Digital Solutions
+                  Technology Partner You Can Actually Trust
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -268,8 +268,7 @@ export const AboutPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Maritime-based technology company providing professional website design, hosting, IT services,
-                  cybersecurity, and AI automation to businesses throughout Atlantic Canada.
+                  Most IT companies disappear after the sale or nickel-and-dime you with hourly billing. We're different. We're a local New Brunswick company that answers the phone, shows up when we say we will, and charges flat rates so you never wonder if calling us is 'worth it.'
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -518,7 +517,7 @@ export const AboutPage = () => {
                     color: '#2c3e50',
                     textAlign: 'left'
                   }}>
-                    After 21 years in technology—from leading IT projects for the provincial government to building websites for contractors across New Brunswick—I founded LogicPros with one mission: helping businesses leverage technology to work smarter, not harder.
+                    After 21 years in technology—from leading IT security for New Brunswick's provincial government to fixing late-night server crashes for local contractors—I founded LogicPros because I was tired of seeing businesses get burned by IT companies that overpromise and underdeliver.
                   </div>
                 </div>
               </div>
@@ -545,7 +544,7 @@ export const AboutPage = () => {
                       fontWeight: '600'
                     }}>Why LogicPros?</h4>
                     <p style={{ marginBottom: '0' }}>
-                      After years of providing IT services across Atlantic Canada, I saw the need for automating and simplifying processes that goes beyond just fixing problems. What truly energizes me is working collaboratively with fellow business owners - we're all in this together, and the best results come when we support each other to succeed. I'm passionate about using automation to eliminate repetitive tasks and free up time for the work that truly matters.
+                      I started LogicPros because I kept seeing the same pattern: businesses paying too much for IT support that didn't show up when they needed it, getting locked into expensive contracts with big providers who didn't care, or trying to DIY everything and ending up with security nightmares. There had to be a better way. So I built a company that does three things differently: we answer the phone, we charge flat rates so you're never afraid to call, and we actually explain things in plain English instead of using tech jargon to justify our existence.
                     </p>
                   </div>
                   
@@ -557,7 +556,7 @@ export const AboutPage = () => {
                       fontWeight: '600'
                     }}>My Vision</h4>
                     <p style={{ marginBottom: '0' }}>
-                      To become Atlantic Canada's leading and trusted IT services provider by focusing on collaboration, reliability, and results that make a real difference for local businesses.
+                      To be the IT company you recommend to your fellow business owners — not because we're the cheapest, but because we're the most reliable, honest, and effective technology partner you've ever worked with.
                     </p>
                   </div>
                   
@@ -578,7 +577,7 @@ export const AboutPage = () => {
                       fontSize: '1.1rem',
                       margin: '0'
                     }}>
-                      Ready to collaborate? Let's talk about how LogicPros can help secure, automate, and grow your operations.
+                      Tired of IT providers who talk a big game and disappear when you need them? Let's talk about what's actually broken with your technology and how to fix it — no pressure, no sales pitch.
                     </p>
                   </div>
                 </div>
@@ -630,8 +629,7 @@ export const AboutPage = () => {
                 </div>
                 <h3>Cybersecurity Experts</h3>
                 <p>
-                  Protect your business with comprehensive security audits, managed IT services, and proactive
-                  threat protection. We keep your data and systems secure so you can focus on running your business.
+                  Led IT security for New Brunswick's provincial government before founding LogicPros. We bring enterprise-level security thinking to small business budgets — protecting your data like it actually matters, because it does.
                 </p>
               </div>
 
@@ -674,8 +672,7 @@ export const AboutPage = () => {
                 </div>
                 <h3>AI Automation Specialists</h3>
                 <p>
-                  Streamline your operations with intelligent chatbots, automated workflows, and AI-powered
-                  solutions that save time and reduce manual tasks, letting you focus on growth.
+                  We build automation that actually works, not just demos that look cool. Google review requests that run themselves, social media posting you don't think about, data that flows between systems without you copy-pasting. Real time savings, not tech buzzwords.
                 </p>
               </div>
 
@@ -700,8 +697,7 @@ export const AboutPage = () => {
                 </div>
                 <h3>Professional Web Design</h3>
                 <p>
-                  Modern, mobile-responsive websites designed to convert visitors into customers. We create
-                  professional online presences that build trust and drive business growth.
+                  Websites that don't embarrass you when you share them. Fast, mobile-friendly, SEO-optimized, and built to convert visitors into customers — not just digital brochures that sit there looking pretty.
                 </p>
               </div>
 
@@ -724,8 +720,7 @@ export const AboutPage = () => {
                 </div>
                 <h3>Fast Implementation</h3>
                 <p>
-                  Get results quickly with our streamlined processes. Website examples in 48 hours, security
-                  audits within a week, and rapid deployment of AI solutions to accelerate your business.
+                  Most IT projects take months. We deliver website examples in 48 hours, security audits in a week, and automations in days — not 'we'll get back to you in 6-8 weeks' nonsense. When you're ready to move, we move.
                 </p>
               </div>
 
@@ -748,8 +743,7 @@ export const AboutPage = () => {
                 </div>
                 <h3>Local Maritime Expertise</h3>
                 <p>
-                  Based in New Brunswick with deep understanding of Maritime business needs. We're your local
-                  technology partner, providing personalized service and support throughout Atlantic Canada.
+                  Born and raised in New Brunswick. We understand Maritime business challenges, we answer the phone when you call, and we show up in person when you need us — not 'submit a ticket to our overseas call center.'
                 </p>
               </div>
 
@@ -773,19 +767,171 @@ export const AboutPage = () => {
                 </div>
                 <h3>Measurable Results</h3>
                 <p>
-                  Track what matters with detailed analytics and reporting. We measure security improvements,
-                  automation efficiency, website performance, and ROI so you can see the value we deliver.
+                  We don't hide behind vague promises. You'll know exactly what's improving: fewer security vulnerabilities, hours saved per week on automation, website traffic and conversions, uptime percentages. No 'trust us, it's working' — you see the data.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
+        {/* What Makes Us Different Section */}
+        <section className="section" style={{ backgroundColor: 'white', padding: '80px 0' }}>
+          <div className="container">
+            <h2 className="section-title" style={{
+              textAlign: 'center',
+              fontSize: '2.5rem',
+              fontWeight: '700',
+              marginBottom: '60px',
+              color: '#1a1a2e'
+            }}>Why We're Not Like Other IT Companies</h2>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Differentiator 1 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: '#1a1a2e',
+                  marginBottom: '15px'
+                }}>No Ticket Systems, No Waiting</h3>
+                <p style={{
+                  color: '#6b7280',
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  When something breaks, you call us. A real person answers (usually within 3 rings). We fix it. That's how IT support should work — not 'submit a ticket and we'll respond in 24-48 hours.'
+                </p>
+              </div>
+
+              {/* Differentiator 2 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: '#1a1a2e',
+                  marginBottom: '15px'
+                }}>One Price, No Surprises</h3>
+                <p style={{
+                  color: '#6b7280',
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  You pay one monthly rate that covers everything — support, monitoring, advice, updates. No hourly billing, no surprise invoices, no wondering if it's 'worth calling' because the meter's running.
+                </p>
+              </div>
+
+              {/* Differentiator 3 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="14,2 14,8 20,8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2"/>
+                    <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2"/>
+                    <polyline points="10,9 9,9 8,9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: '#1a1a2e',
+                  marginBottom: '15px'
+                }}>We Explain Things Like Humans</h3>
+                <p style={{
+                  color: '#6b7280',
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  No 'synergistic cloud-native solutions' or tech jargon to confuse you. We explain what's broken, why it matters, and how to fix it using words normal people actually use.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Responsive styles for new section */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @media (max-width: 768px) {
+              div[style*="gridTemplateColumns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `
+        }} />
 
         {/* Our Process */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
-            <h2 className="section-title">How We Collaborate</h2>
+            <h2 className="section-title">How We Actually Work Together</h2>
             <div className="services-grid" style={{ marginTop: '40px', paddingTop: '20px', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
               <div className="service-card" style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>1</div>

@@ -251,7 +251,7 @@ export const SecurityAuditPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Security Audits & Assessments
+                  You Don't Know What You Don't Know
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -260,8 +260,7 @@ export const SecurityAuditPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Comprehensive security assessments to identify vulnerabilities and strengthen your business defenses.
-                  Professional cybersecurity audits serving Fredericton, Moncton, Saint John, and across New Brunswick.
+                  Most businesses think they're secure until they're not. A security audit finds the vulnerabilities hackers would exploit before they actually exploit them. Think of it as finding the unlocked doors in your digital fortress before thieves do.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -289,7 +288,7 @@ export const SecurityAuditPage = () => {
                       e.target.style.transform = 'translateY(0)';
                     }}
                   >
-                    Get Security Assessment
+                    Find My Vulnerabilities
                   </a>
                 </div>
               </div>
@@ -505,6 +504,157 @@ export const SecurityAuditPage = () => {
           </div>
         </section>
 
+        {/* Why Audits Matter Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
+          padding: '80px 20px',
+          color: 'white'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#ffffff',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What Security Audits Actually Prevent
+              </h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  60%
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  of small businesses close within 6 months of a cyberattack. They can't afford the recovery costs, legal fees, or reputation damage.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5.5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  $200K+
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Average cost of a data breach for small businesses — including forensics, recovery, legal fees, lost revenue, and customer notification.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" fill="none"/>
+                    <polyline points="12,6 12,12 16,14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  287 Days
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Average time to identify and contain a data breach. That's 9+ months of attackers inside your systems before you even know.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Critical Stats Section */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
           <div className="container">
@@ -683,28 +833,99 @@ export const SecurityAuditPage = () => {
           </div>
         </section>
 
+        {/* What is a Security Audit Section */}
+        <section style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What a Security Audit Actually Is
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                No scare tactics. Just honest assessment of where you're exposed.
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr',
+              gap: '40px',
+              maxWidth: '800px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)'
+              }}>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1.1rem',
+                  marginBottom: '20px'
+                }}>
+                  A security audit is basically a professional hacker (ethical, working for you) trying to break into your systems. We look for the same vulnerabilities real attackers look for — weak passwords, outdated software, misconfigured firewalls, missing encryption, exposed data.
+                </p>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1.1rem',
+                  marginBottom: '20px'
+                }}>
+                  The difference: we tell you what we found instead of stealing your data. Then we show you exactly how to fix it, prioritized by actual risk level. Not everything needs fixing immediately — we help you focus on what actually matters.
+                </p>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1.1rem'
+                }}>
+                  Think of it like a home security assessment. We check if your doors are locked, windows are secure, alarm system works, and valuables are hidden. Except for your digital business.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* What is Security Audit */}
         <section className="section" style={{ padding: '80px 0' }}>
           <div className="container">
             <div className="section-header" style={{ marginBottom: '60px' }}>
-              <h2 style={{ 
-                fontSize: 'clamp(2rem, 3.5vw, 3rem)', 
-                fontWeight: '700', 
-                color: colors.text.primary,
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
                 marginBottom: '20px',
                 lineHeight: '1.2',
                 textAlign: 'center'
-              }}>What is a Cybersecurity Audit?</h2>
-              <p style={{ 
-                fontSize: '1.2rem', 
-                color: colors.text.secondary, 
-                maxWidth: '800px', 
-                margin: '0 auto', 
+              }}>What We Look For in a Security Audit</h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
                 lineHeight: '1.6',
                 textAlign: 'center'
               }}>
-                A cybersecurity audit is a comprehensive evaluation of your organization's security posture, examining every aspect 
-                of your digital infrastructure to identify vulnerabilities before cybercriminals do.
+                Here's what we actually examine (in plain English, not tech jargon):
               </p>
             </div>
 
@@ -742,31 +963,29 @@ export const SecurityAuditPage = () => {
                     <path d="m21 21-4.35-4.35" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h3 style={{ 
-                  color: colors.text.primary, 
+                <h3 style={{
+                  color: colors.text.primary,
                   marginBottom: '15px',
                   fontSize: '1.5rem',
                   fontWeight: '700',
                   textAlign: 'center'
-                }}>Network Security Assessment</h3>
-                <p style={{ 
-                  color: colors.text.secondary, 
+                }}>Network Security</h3>
+                <p style={{
+                  color: colors.text.secondary,
                   marginBottom: '20px',
                   lineHeight: '1.7',
                   textAlign: 'center'
                 }}>
-                  Thorough evaluation of your network infrastructure, firewalls, and access controls to identify 
-                  potential entry points for cyber attacks.
+                  Who can access your network and from where
                 </p>
-                <ul style={{ 
-                  color: colors.text.secondary, 
-                  paddingLeft: '20px', 
+                <ul style={{
+                  color: colors.text.secondary,
+                  paddingLeft: '20px',
                   lineHeight: '1.8'
                 }}>
-                  <li>Firewall configuration analysis</li>
-                  <li>Network segmentation review</li>
-                  <li>Wireless security assessment</li>
-                  <li>VPN and remote access evaluation</li>
+                  <li>Firewall configuration (is it actually protecting you?)</li>
+                  <li>Wi-Fi security (is your guest network exposing your business network?)</li>
+                  <li>VPN setup for remote workers</li>
                 </ul>
               </div>
               <div style={{ 
@@ -798,31 +1017,30 @@ export const SecurityAuditPage = () => {
                     <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h3 style={{ 
-                  color: colors.text.primary, 
+                <h3 style={{
+                  color: colors.text.primary,
                   marginBottom: '15px',
                   fontSize: '1.5rem',
                   fontWeight: '700',
                   textAlign: 'center'
-                }}>Employee Security Practices</h3>
-                <p style={{ 
-                  color: colors.text.secondary, 
+                }}>Password & Access Security</h3>
+                <p style={{
+                  color: colors.text.secondary,
                   marginBottom: '20px',
                   lineHeight: '1.7',
                   textAlign: 'center'
                 }}>
-                  Review of user behavior, password policies, and security awareness to address the human 
-                  element of cybersecurity risks.
+                  Who can access what and how they prove it
                 </p>
-                <ul style={{ 
-                  color: colors.text.secondary, 
-                  paddingLeft: '20px', 
+                <ul style={{
+                  color: colors.text.secondary,
+                  paddingLeft: '20px',
                   lineHeight: '1.8'
                 }}>
-                  <li>Password policy effectiveness</li>
-                  <li>User access controls audit</li>
-                  <li>Security awareness assessment</li>
-                  <li>Social engineering vulnerability tests</li>
+                  <li>Weak or default passwords</li>
+                  <li>Accounts that should be disabled but aren't</li>
+                  <li>Admin access given to people who don't need it</li>
+                  <li>Missing multi-factor authentication</li>
                 </ul>
               </div>
               <div style={{ 
@@ -851,31 +1069,92 @@ export const SecurityAuditPage = () => {
                     <path d="M21 21H4.6C4.03995 21 3.75992 21 3.54601 20.891C3.35785 20.7951 3.20487 20.6422 3.10899 20.454C3 20.2401 3 19.9601 3 19.4V3M7 10.5V17.5M11.5 5.5V17.5M16 10.5V17.5M20.5 5.5V17.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h3 style={{ 
-                  color: colors.text.primary, 
+                <h3 style={{
+                  color: colors.text.primary,
                   marginBottom: '15px',
                   fontSize: '1.5rem',
                   fontWeight: '700',
                   textAlign: 'center'
-                }}>Compliance & Risk Assessment</h3>
-                <p style={{ 
-                  color: colors.text.secondary, 
+                }}>Software & Systems</h3>
+                <p style={{
+                  color: colors.text.secondary,
                   marginBottom: '20px',
                   lineHeight: '1.7',
                   textAlign: 'center'
                 }}>
-                  Assess your current security posture against industry standards and regulatory requirements 
-                  to ensure full compliance.
+                  What you're running and how current it is
                 </p>
-                <ul style={{ 
-                  color: colors.text.secondary, 
-                  paddingLeft: '20px', 
+                <ul style={{
+                  color: colors.text.secondary,
+                  paddingLeft: '20px',
                   lineHeight: '1.8'
                 }}>
-                  <li>PIPEDA compliance review</li>
-                  <li>Industry standard alignment</li>
-                  <li>Risk assessment and scoring</li>
-                  <li>Regulatory gap analysis</li>
+                  <li>Outdated software with known vulnerabilities</li>
+                  <li>Missing security patches and updates</li>
+                  <li>Unnecessary services running (more doors for hackers)</li>
+                  <li>End-of-life systems that no longer get security updates</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Additional Security Areas */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '30px',
+              marginBottom: '60px',
+              padding: '0 20px'
+            }}>
+              <div style={{
+                background: 'white',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                padding: '40px 30px',
+                borderRadius: '20px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s ease'
+              }}>
+                <h3 style={{
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  textAlign: 'center'
+                }}>Data Protection</h3>
+                <ul style={{
+                  color: colors.text.secondary,
+                  paddingLeft: '20px',
+                  lineHeight: '1.8'
+                }}>
+                  <li>Where sensitive data is stored (and who can access it)</li>
+                  <li>Encryption status (or lack thereof)</li>
+                  <li>Backup systems (do they work? are they tested?)</li>
+                  <li>Data that should be deleted but isn't</li>
+                </ul>
+              </div>
+              <div style={{
+                background: 'white',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                padding: '40px 30px',
+                borderRadius: '20px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s ease'
+              }}>
+                <h3 style={{
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  textAlign: 'center'
+                }}>Compliance & Policy</h3>
+                <ul style={{
+                  color: colors.text.secondary,
+                  paddingLeft: '20px',
+                  lineHeight: '1.8'
+                }}>
+                  <li>PIPEDA requirements (Canadian privacy law)</li>
+                  <li>Industry-specific regulations</li>
+                  <li>Employee security training (or lack thereof)</li>
+                  <li>Incident response plan (what happens when you're breached)</li>
                 </ul>
               </div>
             </div>
@@ -975,13 +1254,620 @@ export const SecurityAuditPage = () => {
           </div>
         </section>
 
+        {/* Audit vs. Penetration Testing Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Security Audit vs. Penetration Test: What's the Difference?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                They're related but not the same thing:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Security Audit (What We Do)
+                </h3>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>What it is:</strong> Comprehensive review of your security posture
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Approach:</strong> Check configurations, policies, access controls, vulnerabilities
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Goal:</strong> Find everything that's wrong or risky
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Typical findings:</strong> 20-50+ issues ranging from critical to minor
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Time:</strong> 1-3 days depending on business size
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Cost:</strong> $2,000-$5,000 typical for small business
+                </div>
+                <div>
+                  <strong style={{ color: '#1f2937' }}>Best for:</strong> Understanding your overall security status
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Penetration Testing (More Intensive)
+                </h3>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>What it is:</strong> Simulated attack trying to actually break in
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Approach:</strong> Actively exploit vulnerabilities like real hackers
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Goal:</strong> See if we can actually breach your systems
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Typical findings:</strong> Proof that specific attack vectors work
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Time:</strong> 3-10+ days depending on scope
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <strong style={{ color: '#1f2937' }}>Cost:</strong> $5,000-$25,000+ depending on complexity
+                </div>
+                <div>
+                  <strong style={{ color: '#1f2937' }}>Best for:</strong> Testing if your defenses actually hold up
+                </div>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+              color: 'white',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0
+              }}>
+                Most small businesses start with a security audit. It's cheaper, less disruptive, and finds 80%+ of vulnerabilities. Penetration testing makes sense for businesses handling highly sensitive data or meeting compliance requirements.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* What Happens After the Audit Section */}
+        <section style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What You Actually Get
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                We don't just hand you a 50-page technical report and disappear:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Step 1: The Audit Itself (1-3 Days)
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>We examine your systems, network, policies, and practices</li>
+                  <li>Non-disruptive to your business (you keep working normally)</li>
+                  <li>May ask questions about your processes and policies</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Step 2: Findings Report (Plain English)
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>List of every vulnerability we found</li>
+                  <li>Risk level for each (critical, high, medium, low)</li>
+                  <li>Explanation of what it means and why it matters</li>
+                  <li>NO tech jargon — explained like you're a smart business owner, not a security expert</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Step 3: Prioritized Roadmap
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>What to fix first (critical risks)</li>
+                  <li>What to fix soon (high risks)</li>
+                  <li>What to fix eventually (medium/low risks)</li>
+                  <li>Realistic timeline and cost estimates</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Step 4: Fix It (Optional)
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>We can fix it for you, or</li>
+                  <li>Work with your existing IT person/team, or</li>
+                  <li>You can DIY with our guidance</li>
+                  <li>Your choice — no forced upselling</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'rgba(31, 124, 255, 0.1)',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0,
+                color: colors.text.secondary
+              }}>
+                Most audits find 20-50 issues. Don't panic — that's normal. We help you prioritize so you fix what actually matters first, not everything at once.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Who Needs Security Audits Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Do You Actually Need a Security Audit?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Be honest about your situation:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#22c55e',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  You SHOULD Get an Audit If:
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>You handle customer data (names, emails, payments, health info)</li>
+                  <li>You've never had a professional security review</li>
+                  <li>You're not sure if your security measures are working</li>
+                  <li>You have remote workers accessing company systems</li>
+                  <li>You've grown but security hasn't kept pace</li>
+                  <li>Cyber insurance requires it (many policies do now)</li>
+                  <li>You're in healthcare, legal, finance, or other regulated industry</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#ef4444',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  You Probably DON'T Need One If:
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>You're a solo freelancer with no customer data</li>
+                  <li>You just had a comprehensive audit within the last year</li>
+                  <li>You have a dedicated IT security team (they should be auditing)</li>
+                  <li>Your business is entirely offline with no digital systems</li>
+                  <li>You have literally nothing digital to protect (very rare)</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'rgba(31, 124, 255, 0.1)',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0,
+                color: colors.text.secondary
+              }}>
+                <strong style={{ color: '#1F7CFF' }}>When in doubt, get audited.</strong> The cost of an audit ($2K-$5K) is way less than the cost of a breach ($200K+ average). It's cheap insurance.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Common Findings Section */}
+        <section style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What We Usually Find
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Almost every small business audit reveals these issues:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Weak Password Policies
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Passwords like "Password123" or "Company2024"</li>
+                  <li>Same password used for everything</li>
+                  <li>No password expiration or complexity requirements</li>
+                  <li>Shared accounts (multiple people use "admin")</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Missing Updates
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Windows updates disabled "because they're annoying"</li>
+                  <li>Software 2-3 versions behind current</li>
+                  <li>Known security holes that patches would fix</li>
+                  <li>End-of-life systems still running (Windows 7, etc.)</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Poor Access Control
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Former employees still have access</li>
+                  <li>Everyone has admin rights (nobody should)</li>
+                  <li>No multi-factor authentication anywhere</li>
+                  <li>Guest Wi-Fi can access business network</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                height: '100%'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '20px',
+                  textAlign: 'center'
+                }}>
+                  Unencrypted Data
+                </h3>
+                <ul style={{
+                  paddingLeft: '20px',
+                  margin: 0,
+                  color: colors.text.secondary,
+                  lineHeight: '1.7'
+                }}>
+                  <li>Sensitive files stored in plain text</li>
+                  <li>No encryption on laptops (theft = immediate breach)</li>
+                  <li>Email sent unencrypted</li>
+                  <li>Cloud storage without encryption</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div style={{
+              background: 'rgba(31, 124, 255, 0.1)',
+              borderRadius: '20px',
+              padding: '30px',
+              marginTop: '40px',
+              textAlign: 'center',
+              maxWidth: '800px',
+              margin: '40px auto 0 auto'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                lineHeight: '1.6',
+                margin: 0,
+                color: colors.text.secondary
+              }}>
+                <strong style={{ color: '#1F7CFF' }}>If you're thinking "oh no, we do that"</strong> — you're not alone. These are the most common issues we fix. Awareness is the first step.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA */}
         <section className="section" style={{ backgroundColor: '#000', color: 'white', marginBottom: '0', paddingBottom: '60px' }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title" style={{ color: 'white' }}>Don't Wait for a Cyber Attack</h2>
+              <h2 className="section-title" style={{ color: 'white' }}>Ready to Find Out Where You're Exposed?</h2>
               <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
-                Every day you delay a security audit is another day cybercriminals could be exploiting vulnerabilities in your systems.
+                Book a free security consultation. We'll discuss your current setup, what you're worried about, and whether a full audit makes sense. No scare tactics, no pressure — just honest assessment of whether you actually need this. If you're already secure, we'll tell you.
               </p>
             </div>
             <div style={{ 

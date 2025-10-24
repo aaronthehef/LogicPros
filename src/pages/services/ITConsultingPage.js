@@ -13,7 +13,7 @@ export const ITConsultingPage = () => {
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional IT consulting services in New Brunswick. Strategic technology guidance, infrastructure planning, and expert advice to optimize your IT investments.');
+      metaDescription.setAttribute('content', 'Tired of technology advice from people trying to sell you things? Objective IT consulting for New Brunswick businesses—honest recommendations, vendor evaluation, strategic planning without the sales pitch.');
     }
     
     // Hero background animation styles
@@ -316,7 +316,7 @@ export const ITConsultingPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  IT Consulting
+                  Every Vendor Says Theirs Is the Best Solution.
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -325,7 +325,7 @@ export const ITConsultingPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Strategic technology guidance to help your business make informed decisions, plan for growth, and optimize your IT infrastructure.
+                  When you're evaluating technology, every salesperson has the perfect solution—which coincidentally is whatever they sell. IT consulting gives you objective advice from someone who isn't trying to sell you specific products. We help you understand what you actually need, evaluate options honestly, and avoid expensive mistakes that vendors won't warn you about.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -353,7 +353,7 @@ export const ITConsultingPage = () => {
                       e.target.style.transform = 'translateY(0)';
                     }}
                   >
-                    Get Started
+                    Get Objective IT Advice
                   </a>
                 </div>
               </div>
@@ -582,7 +582,7 @@ export const ITConsultingPage = () => {
                 marginBottom: '20px',
                 lineHeight: '1.2'
               }}>
-                Why IT Consulting Matters
+                Why Technology Decisions Go Wrong
               </h2>
               <p style={{
                 fontSize: '1.2rem',
@@ -591,7 +591,7 @@ export const ITConsultingPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Strategic guidance to make the most of your technology investments
+                You're not an IT expert. That's fine—you're busy running your business. But that means every technology decision is a leap of faith based on vendor promises, online reviews, and hoping you're not being taken advantage of. Here's what happens without objective guidance:
               </p>
             </div>
             
@@ -649,14 +649,14 @@ export const ITConsultingPage = () => {
                     marginBottom: '15px',
                     lineHeight: '1.3',
                     textAlign: 'center'
-                  }}>Informed Technology Decisions</h3>
+                  }}>You're Making Expensive Guesses</h3>
                   <p style={{
                     color: '#6b7280',
                     lineHeight: '1.7',
                     fontSize: '1rem',
                     textAlign: 'center'
                   }}>
-                    Technology decisions have long-term impacts on your business. Expert consulting helps you evaluate options objectively, consider future needs, and avoid costly mistakes that could limit your growth.
+                    Should you replace that server or just upgrade it? Move to the cloud or stay on-premises? Invest in this software or that one? You're making decisions that cost thousands of dollars based on information from people who are paid to sell you specific solutions. Vendor recommendations aren't evil—they're just not objective. IT consulting means someone evaluates your actual needs and gives you honest advice about what makes sense, not what's most profitable to sell.
                   </p>
                 </div>
               </div>
@@ -708,14 +708,14 @@ export const ITConsultingPage = () => {
                     marginBottom: '15px',
                     lineHeight: '1.3',
                     textAlign: 'center'
-                  }}>Ongoing Strategic Planning</h3>
+                  }}>Your IT 'Strategy' Is Reacting to Problems</h3>
                   <p style={{
                     color: '#6b7280',
                     lineHeight: '1.7',
                     fontSize: '1rem',
                     textAlign: 'center'
                   }}>
-                    Technology planning isn't a one-time event. Regular strategic reviews ensure your IT infrastructure evolves with your business, addressing new challenges and opportunities as they arise.
+                    Most small businesses don't have an IT strategy—they have a series of emergency fixes and vendor-driven upgrades. Something breaks, so you buy a replacement. A salesperson pitches new software, so you try it. Years pass and you've accumulated a patchwork of systems nobody fully understands. Strategic planning means looking ahead, evaluating what's working and what isn't, and making proactive decisions instead of just reacting to whatever crisis or sales pitch comes next.
                   </p>
                 </div>
               </div>
@@ -746,7 +746,7 @@ export const ITConsultingPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Strategic guidance across all aspects of your technology infrastructure
+                IT consulting is objective advice about technology decisions. We're not selling specific products—we're helping you evaluate options and make informed choices.
               </p>
             </div>
             
@@ -759,33 +759,33 @@ export const ITConsultingPage = () => {
               {[
                 {
                   icon: 'planning',
-                  title: 'Technology Planning',
-                  description: 'Strategic roadmaps for technology adoption and upgrades that align with your business goals and budget constraints.'
+                  title: 'Planning Upgrades Before Things Break',
+                  description: 'Right now you\'re probably replacing technology when it fails, not before. This means emergency purchases, rushed decisions, and downtime while you scramble. Technology planning means knowing what will need upgrading in the next 1-3 years, budgeting for it, and replacing things on your schedule—not when they catastrophically fail at the worst possible time.'
                 },
                 {
                   icon: 'assessment',
-                  title: 'Infrastructure Assessment',
-                  description: 'Comprehensive evaluation of your current IT infrastructure to identify strengths, weaknesses, and opportunities for improvement.'
+                  title: 'Understanding What You Actually Have',
+                  description: 'Most businesses can\'t accurately describe their IT infrastructure. They have \'a server,\' \'some computers,\' and \'the cloud thing.\' An infrastructure assessment documents what you have, how old it is, what it\'s supposed to do, and whether it\'s actually doing that. This baseline lets you make informed decisions instead of guessing what needs fixing or upgrading.'
                 },
                 {
                   icon: 'security',
-                  title: 'Security Reviews',
-                  description: 'Thorough security assessments to identify vulnerabilities and develop strategies to protect your business data and systems.'
+                  title: 'Finding Vulnerabilities Before Hackers Do',
+                  description: 'You probably have security problems you don\'t know about—outdated software, weak passwords, missing backups, exposed systems. Security reviews identify those vulnerabilities and prioritize what needs fixing. We\'re not trying to scare you into buying expensive security products; we\'re showing you where your actual risks are so you can address them systematically.'
                 },
                 {
                   icon: 'analytics',
-                  title: 'Budget & ROI Analysis',
-                  description: 'Financial analysis of technology investments to ensure you\'re getting maximum value and planning for future expenses.'
+                  title: 'Figuring Out If IT Spending Makes Sense',
+                  description: 'Are you spending too much on technology? Too little? Spending on the wrong things? Budget analysis shows you where your IT money goes and whether you\'re getting value. This includes identifying subscriptions you\'re paying for but not using, finding cheaper alternatives that work just as well, and calculating whether proposed investments will actually deliver the benefits vendors promise.'
                 },
                 {
                   icon: 'vendor',
-                  title: 'Vendor Selection',
-                  description: 'Objective guidance in selecting technology vendors and solutions that best fit your specific business requirements.'
+                  title: 'Evaluating Vendors Who All Claim to Be Best',
+                  description: 'When you\'re choosing software, cloud providers, hardware vendors, or service providers, everyone claims their solution is perfect for you. Objective vendor selection means evaluating options based on your specific needs, comparing real costs (not just sticker price), checking references honestly, and identifying red flags in contracts or capabilities that sales pitches gloss over.'
                 },
                 {
                   icon: 'growth',
-                  title: 'Growth Strategy',
-                  description: 'Technology planning that supports your business growth objectives, ensuring your infrastructure can scale with your success.'
+                  title: 'Making Sure Technology Can Scale With You',
+                  description: 'The system that works fine for 5 employees often collapses under 15. Growth planning means anticipating what breaks as you scale and addressing it before it becomes a crisis. This includes network capacity, software licenses, server performance, backup systems, and all the infrastructure that needs to grow with your business—not scramble to catch up after you\'ve already outgrown it.'
                 }
               ].map((service, index) => (
                 <div key={index} style={{
@@ -883,6 +883,175 @@ export const ITConsultingPage = () => {
           </div>
         </section>
 
+        {/* What IT Consulting Actually Is Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What IT Consulting Actually Is
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                IT consulting gets confused with other IT services. Here's what we're actually providing:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr 1fr',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Strategic Advice */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '2px solid rgba(31, 124, 175, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23 6l-9.5 9.5-5-5L1 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="17,6 23,6 23,12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Strategic Advice, Not Implementation</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  IT consulting is recommending what you should do and why. Implementation is actually doing it. We can do both, but they're different services. Consulting means we analyze your situation, research options, provide recommendations, and explain the reasoning. You make the decision, then either you implement it, we implement it, or a vendor implements it. The value is objective expertise informing your choices.
+                </p>
+              </div>
+              
+              {/* Objective Analysis */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '2px solid rgba(31, 124, 175, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 11l3 3L22 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Objective Analysis, Not Sales</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  We're not selling specific hardware, software, or cloud services. We evaluate options based on your needs and give honest recommendations—even if that recommendation is "don't spend money on this right now." When vendors pitch solutions, they're optimizing for their commission. When we consult, we're optimizing for what actually solves your problem at a price that makes sense.
+                </p>
+              </div>
+              
+              {/* Proactive Planning */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                border: '2px solid rgba(31, 124, 175, 0.2)',
+                height: '100%'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 15px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <polyline points="12,6 12,12 16,14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '15px',
+                  textAlign: 'center'
+                }}>Proactive Planning, Not Emergency Fixes</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Most IT work is reactive—something breaks, you fix it. Consulting is proactive—looking ahead to prevent problems, planning upgrades before they're emergencies, and developing strategies that support your business goals instead of just keeping the lights on. This doesn't eliminate all emergencies, but it dramatically reduces the "scrambling in crisis mode" that defines most small business IT.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Our Consulting Process Section */}
         <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 20px' }}>
           <div className="container">
@@ -903,7 +1072,7 @@ export const ITConsultingPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                A collaborative approach to developing technology strategies that work for your business
+                Consulting isn't one meeting where we tell you what to do. It's a collaborative process where we understand your business, analyze your technology, and develop recommendations that actually make sense for your situation.
               </p>
             </div>
             
@@ -911,25 +1080,25 @@ export const ITConsultingPage = () => {
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>1</div>
                 <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Discovery & Assessment</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We learn about your business goals, current technology challenges, and future needs to establish a clear understanding of your requirements.</p>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We learn what your business does, what technology you currently use, what problems you're experiencing, and what you're trying to accomplish. This includes understanding your budget constraints, growth plans, and pain points. We're not just inventorying equipment—we're understanding context so recommendations make sense for your actual business, not a theoretical ideal.</p>
               </div>
               
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>2</div>
                 <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Analysis & Recommendations</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Our team analyzes your current state and develops practical, actionable recommendations tailored to your specific business needs and budget.</p>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We analyze your current state against best practices, identify gaps and risks, research options that fit your needs, and develop specific recommendations with reasoning. These aren't vague suggestions like 'improve security'—they're actionable recommendations like 'replace the 2017 server with X or Y option, because it's reaching end-of-life and has these specific vulnerabilities, estimated cost $3,000-5,000.'</p>
               </div>
               
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>3</div>
                 <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Implementation Planning</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We create detailed implementation roadmaps with timelines, resource requirements, and success metrics to ensure smooth execution.</p>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Recommendations are useless without execution plans. We create roadmaps that break large projects into phases, prioritize what's urgent versus important, estimate timelines and costs, and identify who needs to do what. This includes coordinating with vendors if needed, planning around your busy seasons, and setting success criteria so you know if changes actually delivered the promised benefits.</p>
               </div>
               
               <div style={{ position: 'relative', padding: '60px 40px 40px 40px', marginTop: '35px', overflow: 'visible', background: 'white', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ position: 'absolute', top: '-25px', left: '30px', width: '50px', height: '50px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(31, 124, 255, 0.3)', zIndex: 10, background: '#1F7CFF', color: 'white' }}>4</div>
                 <h3 style={{ color: colors.text.primary, marginBottom: '15px', marginTop: '20px' }}>Ongoing Advisory</h3>
-                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>We provide continued guidance as you implement changes, helping you adapt to new challenges and opportunities as they arise.</p>
+                <p style={{ color: colors.text.secondary, lineHeight: '1.6' }}>Technology changes. Your business changes. Consulting isn't a one-time report that sits on a shelf—it's ongoing guidance as you implement changes, encounter new challenges, or consider new opportunities. This might be quarterly check-ins, ad-hoc calls when you're evaluating a major purchase, or strategic planning sessions when you're expanding. The goal is consistent, objective advice as your needs evolve.</p>
               </div>
             </div>
             
@@ -965,7 +1134,7 @@ export const ITConsultingPage = () => {
                 marginBottom: '20px',
                 lineHeight: '1.2'
               }}>
-                Who Benefits From IT Consulting
+                When You Actually Need IT Consulting
               </h2>
               <p style={{
                 fontSize: '1.2rem',
@@ -974,7 +1143,7 @@ export const ITConsultingPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Business scenarios where expert guidance makes the biggest difference
+                Not every business needs consulting. If your technology is working fine and you're confident in your decisions, you're probably okay. But if you're experiencing these situations, objective expertise pays for itself:
               </p>
             </div>
             
@@ -985,20 +1154,20 @@ export const ITConsultingPage = () => {
             }}>
               {[
                 {
-                  title: 'Businesses Planning Technology Investments',
-                  description: 'Companies considering significant technology purchases or upgrades who need objective analysis to ensure they make the right decisions for their specific needs.'
+                  title: 'You\'re About to Make a Major Technology Purchase',
+                  description: 'New server, cloud migration, major software implementation, network overhaul—anything costing $10,000+ deserves objective analysis before you commit. Consulting fees (typically a fraction of the purchase cost) can save you from buying the wrong solution, overpaying dramatically, or missing critical requirements that become expensive problems later. Get a second opinion before signing contracts.'
                 },
                 {
-                  title: 'Companies with Outdated Infrastructure',
-                  description: 'Organizations using aging technology systems that need strategic guidance on modernization paths that balance cost, disruption, and business benefits.'
+                  title: 'Your Technology Is Old and You\'re Not Sure What to Do',
+                  description: 'You have aging servers, outdated software, unsupported systems—you know you need to modernize but don\'t know where to start or what\'s actually urgent. Infrastructure assessment identifies what\'s high-risk versus just old, develops a phased modernization plan you can afford, and helps you prioritize what to tackle first based on actual risk and business impact.'
                 },
                 {
-                  title: 'Organizations Facing IT Challenges',
-                  description: 'Businesses experiencing ongoing technology problems or performance issues that require expert analysis to identify root causes and effective solutions.'
+                  title: 'You\'re Growing and Technology Is Becoming a Problem',
+                  description: 'What worked fine at 5 employees is breaking under 15. Systems are slow, workflows don\'t scale, employees are frustrated by limitations. Growth strategy consulting helps you anticipate what needs upgrading before it becomes a bottleneck, plan infrastructure that can handle your 3-year growth projections, and avoid the painful \'rip and replace everything\' scenario that happens when you outgrow your systems.'
                 },
                 {
-                  title: 'Growing Businesses Needing Scalability Planning',
-                  description: 'Expanding companies that need to ensure their technology infrastructure can support growth without becoming a bottleneck to their success.'
+                  title: 'Vendors Give You Conflicting Advice (And All Want Your Money)',
+                  description: 'You\'re evaluating solutions and every vendor says theirs is the best. One recommends cloud, another says keep it on-premises. Software A claims it does everything, Software B says A is overpriced. You can\'t tell who\'s being honest because everyone has skin in the game. Objective consulting evaluates vendors based on your needs, not their commissions, and gives you honest pros and cons.'
                 }
               ].map((benefit, index) => (
                 <div key={index} style={{
@@ -1038,7 +1207,205 @@ export const ITConsultingPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                Serving businesses across New Brunswick including Fredericton, Saint John, Moncton, and surrounding communities
+                Providing IT consulting services throughout New Brunswick—Fredericton, Moncton, Saint John, and across the province. Most consulting work is remote (document review, analysis, research). In-person meetings available when needed.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* What Consulting Costs (And What It Saves) Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                What Consulting Costs (And What It Saves)
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                IT consulting is an upfront cost that prevents larger downstream costs. Here's the honest math:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '40px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Typical Consulting Costs */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(31, 124, 175, 0.1), rgba(31, 124, 175, 0.05))',
+                borderRadius: '20px',
+                padding: '40px',
+                border: '2px solid rgba(31, 124, 175, 0.2)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '25px',
+                  textAlign: 'center'
+                }}>
+                  Typical Consulting Costs
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#1F7CFF', marginRight: '15px', fontSize: '1.3rem' }}>•</span>
+                    Infrastructure assessment: $1,500-3,000 (depending on complexity)
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#1F7CFF', marginRight: '15px', fontSize: '1.3rem' }}>•</span>
+                    Technology planning/roadmap: $2,000-4,000
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#1F7CFF', marginRight: '15px', fontSize: '1.3rem' }}>•</span>
+                    Vendor selection assistance: $1,000-2,500
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#1F7CFF', marginRight: '15px', fontSize: '1.3rem' }}>•</span>
+                    Security review: $1,500-3,000
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#1F7CFF', marginRight: '15px', fontSize: '1.3rem' }}>•</span>
+                    Ongoing advisory (quarterly): $500-1,000/quarter
+                  </li>
+                </ul>
+              </div>
+              
+              {/* What It Typically Saves */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(255, 198, 0, 0.1), rgba(255, 198, 0, 0.05))',
+                borderRadius: '20px',
+                padding: '40px',
+                border: '2px solid rgba(255, 198, 0, 0.2)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#FFC600',
+                  marginBottom: '25px',
+                  textAlign: 'center'
+                }}>
+                  What It Typically Saves
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: '0',
+                  margin: '0'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#FFC600', marginRight: '15px', fontSize: '1.3rem' }}>•</span>
+                    Avoiding wrong software purchase: $5,000-20,000+ (software costs + implementation time)
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#FFC600', marginRight: '15px', fontSize: '1.3rem' }}>•</span>
+                    Preventing over-spec'd hardware: $2,000-10,000 (buying what you need vs. what you're sold)
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    marginBottom: '15px',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#FFC600', marginRight: '15px', fontSize: '1.3rem' }}>•</span>
+                    Catching security issues early: $10,000-50,000+ (vs. breach recovery costs)
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#FFC600', marginRight: '15px', fontSize: '1.3rem' }}>•</span>
+                    Planning upgrades strategically: 30-50% of emergency replacement costs
+                  </li>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    fontSize: '1.1rem',
+                    color: '#666'
+                  }}>
+                    <span style={{ color: '#FFC600', marginRight: '15px', fontSize: '1.3rem' }}>•</span>
+                    Negotiating better vendor contracts: 10-20% savings on major purchases
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div style={{
+              textAlign: 'center',
+              marginTop: '40px',
+              background: 'rgba(31, 124, 175, 0.05)',
+              padding: '20px',
+              borderRadius: '12px'
+            }}>
+              <p style={{
+                fontSize: '1.1rem',
+                color: '#666',
+                margin: '0',
+                lineHeight: '1.5'
+              }}>
+                Consulting isn't free, but it typically saves 3-10x its cost by preventing expensive mistakes, identifying unnecessary spending, and negotiating better deals. Think of it as insurance against bad technology decisions—you pay upfront to avoid much larger costs later.
               </p>
             </div>
           </div>
@@ -1056,7 +1423,7 @@ export const ITConsultingPage = () => {
               fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: '700',
               marginBottom: '30px'
-            }}>Ready for strategic IT guidance?</h2>
+            }}>Get Advice That Isn't a Sales Pitch</h2>
             <p style={{
               fontSize: '1.3rem',
               marginBottom: '40px',
@@ -1064,7 +1431,7 @@ export const ITConsultingPage = () => {
               margin: '0 auto 40px auto',
               opacity: 0.9
             }}>
-              Let's discuss how our IT consulting services can help you make informed technology decisions that support your business goals.
+              Technology decisions are expensive and long-lasting. Get objective advice from someone who isn't trying to sell you specific products. We'll help you understand your options, evaluate what makes sense, and avoid mistakes that vendors won't warn you about.
             </p>
             <div style={{
               display: 'flex',

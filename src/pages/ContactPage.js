@@ -398,7 +398,7 @@ export const ContactPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Let's Grow Your Business Together
+                  No Sales Pitch. Just Honest Tech Advice.
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -407,8 +407,7 @@ export const ContactPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Ready to enhance your cybersecurity, streamline operations, or attract more customers?
-                  Get your free consultation today.
+                  Most IT companies use 'free consultations' to pressure you into expensive contracts. We don't. We'll give you honest advice about what you actually need — even if that means telling you we're not the right fit or you don't need anything yet.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -417,7 +416,7 @@ export const ContactPage = () => {
                     className="hero-button"
                     style={{ minWidth: '200px' }}
                   >
-                    Get Free Consultation
+                    Book a No-Pressure Call
                   </button>
                 </div>
               </div>
@@ -554,6 +553,163 @@ export const ContactPage = () => {
           </div>
         </section>
 
+        {/* What to Expect Section */}
+        <section className="section" style={{ backgroundColor: '#f5f8fc', padding: '80px 0' }}>
+          <div className="container">
+            <h2 style={{
+              color: '#1a1a2e',
+              fontSize: '2.5rem',
+              fontWeight: '700',
+              marginBottom: '60px',
+              textAlign: 'center'
+            }}>What Happens When You Reach Out</h2>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Step 1 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 4.702a.75.75 0 0 1 1 0l.596 1.724a.75.75 0 0 0 .596.596l1.724.596a.75.75 0 0 1 0 1l-1.724.596a.75.75 0 0 0-.596.596l-.596 1.724a.75.75 0 0 1-1 0l-.596-1.724a.75.75 0 0 0-.596-.596L7.084 8.618a.75.75 0 0 1 0-1l1.724-.596a.75.75 0 0 0 .596-.596L11 4.702z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M20.25 12.75a.75.75 0 0 1 0 1h-1.5a.75.75 0 0 1 0-1h1.5z" stroke="white" strokeWidth="2"/>
+                    <path d="M6.75 12.75a.75.75 0 0 1 0 1h-1.5a.75.75 0 0 1 0-1h1.5z" stroke="white" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: '#1a1a2e',
+                  marginBottom: '15px'
+                }}>We Actually Listen</h3>
+                <p style={{
+                  color: '#6b7280',
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  No canned pitches. We ask about your business, your challenges, and what's keeping you up at night. If we can't help, we'll tell you.
+                </p>
+              </div>
+
+              {/* Step 2 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <rect x="9" y="3" width="6" height="4" rx="1" stroke="white" strokeWidth="2"/>
+                    <path d="M9 14l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: '#1a1a2e',
+                  marginBottom: '15px'
+                }}>Honest Assessment</h3>
+                <p style={{
+                  color: '#6b7280',
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  We'll explain what's actually broken, what's risky, and what can wait. No scare tactics about how you'll get hacked tomorrow if you don't buy everything today.
+                </p>
+              </div>
+
+              {/* Step 3 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(29, 122, 175, 0.1)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="14,2 14,8 20,8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <line x1="16" y1="13" x2="8" y2="13" stroke="white" strokeWidth="2"/>
+                    <line x1="16" y1="17" x2="8" y2="17" stroke="white" strokeWidth="2"/>
+                    <polyline points="10,9 9,9 8,9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: '#1a1a2e',
+                  marginBottom: '15px'
+                }}>Clear Options</h3>
+                <p style={{
+                  color: '#6b7280',
+                  lineHeight: '1.6',
+                  fontSize: '1rem'
+                }}>
+                  If we're a good fit, you'll get a plain-English proposal with flat-rate pricing. No hidden fees, no hourly billing surprise, no pressure to decide on the call.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Responsive styles for new section */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @media (max-width: 768px) {
+              div[style*="gridTemplateColumns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `
+        }} />
+
         {/* Contact Section */}
         <section id="contact-form-section" className="section" style={{
           backgroundColor: '#f5f8fc'
@@ -585,7 +741,7 @@ export const ContactPage = () => {
                   margin: '0 auto',
                   lineHeight: '1.6'
                 }}>
-                  Schedule a time that works for you - we'll send you a calendar invitation with meeting details and answer all your questions about cybersecurity, IT services, or web development.
+                  Pick a time that works for you. No forms to fill out first, no 'qualifying questions' to see if you're worth our time. Just book a slot and we'll talk.
                 </p>
               </div>
 
@@ -620,15 +776,15 @@ export const ContactPage = () => {
                 padding: '40px',
                 border: highlightForm ? '2px solid rgba(255, 193, 7, 0.4)' : '1px solid rgba(0, 0, 0, 0.1)'
               }}>
-                <h2 style={{ color: '#1a1a2e' }}>Or Send Us a Message</h2>
+                <h2 style={{ color: '#1a1a2e' }}>Prefer to Write First? No Problem.</h2>
                 <p className="form-subtitle">
-                  Tell us about your business and goals. Whether you need cybersecurity, AI automation, website development, or IT support - our team will provide a customized solution.
+                  Not ready to talk yet? That's fine. Tell us what's going on, and we'll email you back with honest thoughts — no obligation, no follow-up calls unless you ask for them.
                 </p>
 
                 {submitStatus === 'success' && (
                   <div className="alert alert-success">
-                    <h3>Thank You!</h3>
-                    <p>Your message has been received by our team. We'll respond within 24 hours with next steps!</p>
+                    <h3>Got it!</h3>
+                    <p>We'll email you back within 24 hours (usually sooner). No automated drip campaigns, no sales calls unless you specifically asked for one. Just a real response from a real person.</p>
                   </div>
                 )}
 
@@ -796,7 +952,7 @@ export const ContactPage = () => {
                     disabled={isSubmitting}
                     style={{ width: '100%', fontSize: '1.2rem', padding: '20px 40px', marginTop: '1.5rem', marginBottom: '1.5rem' }}
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message to LogicPros'}
+                    {isSubmitting ? 'Sending...' : 'Send (No Spam, Promise)'}
                   </button>
 
                   <p className="form-note">
@@ -919,6 +1075,24 @@ export const ContactPage = () => {
                       }}>Mon-Fri, 8am-5pm EST</small>
                     </div>
                   </div>
+                  
+                  <div style={{
+                    marginTop: '20px',
+                    padding: '15px',
+                    backgroundColor: 'rgba(29, 122, 175, 0.05)',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(29, 122, 175, 0.15)',
+                    textAlign: 'center'
+                  }}>
+                    <p style={{
+                      margin: '0',
+                      fontSize: '0.9rem',
+                      color: '#6b7280',
+                      lineHeight: '1.5'
+                    }}>
+                      Call or email anytime. If we don't pick up, it means we're helping another client — we'll call you back within an hour.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -963,6 +1137,170 @@ export const ContactPage = () => {
           </div>
         </section>
 
+        {/* Why People Hesitate Section */}
+        <section className="section" style={{ backgroundColor: '#f5f8fc', padding: '80px 0' }}>
+          <div className="container">
+            <h2 style={{
+              color: '#1a1a2e',
+              fontSize: '2.5rem',
+              fontWeight: '700',
+              marginBottom: '60px',
+              textAlign: 'center'
+            }}>We Know Why You're Hesitant</h2>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              {/* Concern 1 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '16px',
+                padding: '30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
+                border: '1px solid rgba(29, 122, 175, 0.08)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.2rem',
+                  fontWeight: '700',
+                  color: '#1a1a2e',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <span style={{
+                    color: '#1F7CFF',
+                    fontSize: '1.5rem'
+                  }}>❝</span>
+                  They'll Try to Sell Me Things I Don't Need
+                </h3>
+                <p style={{
+                  color: '#6b7280',
+                  lineHeight: '1.6',
+                  margin: '0',
+                  paddingLeft: '30px'
+                }}>
+                  We only recommend what you actually need right now. If your current setup is fine, we'll tell you. If you can wait 6 months on something, we'll say that too. Our reputation matters more than one sale.
+                </p>
+              </div>
+
+              {/* Concern 2 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '16px',
+                padding: '30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
+                border: '1px solid rgba(29, 122, 175, 0.08)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.2rem',
+                  fontWeight: '700',
+                  color: '#1a1a2e',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <span style={{
+                    color: '#1F7CFF',
+                    fontSize: '1.5rem'
+                  }}>❝</span>
+                  I'll Get Locked Into an Expensive Contract
+                </h3>
+                <p style={{
+                  color: '#6b7280',
+                  lineHeight: '1.6',
+                  margin: '0',
+                  paddingLeft: '30px'
+                }}>
+                  We don't do multi-year contracts or cancellation fees. Month-to-month agreements, flat-rate pricing, and you can leave anytime. If we're not delivering value, you shouldn't have to stay.
+                </p>
+              </div>
+
+              {/* Concern 3 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '16px',
+                padding: '30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
+                border: '1px solid rgba(29, 122, 175, 0.08)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.2rem',
+                  fontWeight: '700',
+                  color: '#1a1a2e',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <span style={{
+                    color: '#1F7CFF',
+                    fontSize: '1.5rem'
+                  }}>❝</span>
+                  They'll Use Tech Jargon to Confuse Me
+                </h3>
+                <p style={{
+                  color: '#6b7280',
+                  lineHeight: '1.6',
+                  margin: '0',
+                  paddingLeft: '30px'
+                }}>
+                  If we can't explain it in plain English, we probably don't understand it ourselves. We talk like humans, not like we're trying to impress you with buzzwords.
+                </p>
+              </div>
+
+              {/* Concern 4 */}
+              <div style={{
+                background: 'white',
+                borderRadius: '16px',
+                padding: '30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
+                border: '1px solid rgba(29, 122, 175, 0.08)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.2rem',
+                  fontWeight: '700',
+                  color: '#1a1a2e',
+                  marginBottom: '15px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <span style={{
+                    color: '#1F7CFF',
+                    fontSize: '1.5rem'
+                  }}>❝</span>
+                  They Won't Actually Answer When I Need Help
+                </h3>
+                <p style={{
+                  color: '#6b7280',
+                  lineHeight: '1.6',
+                  margin: '0',
+                  paddingLeft: '30px'
+                }}>
+                  We answer the phone. Usually within 3 rings. No ticket systems, no 'we'll get back to you in 24-48 hours.' When something breaks, you call us, and we fix it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Responsive styles for new section */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @media (max-width: 768px) {
+              div[style*="gridTemplateColumns: repeat(2, 1fr)"] {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `
+        }} />
+
         {/* Final CTA */}
         <section className="section cta-section" style={{
           background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
@@ -976,14 +1314,14 @@ export const ContactPage = () => {
                 fontWeight: '700',
                 marginBottom: '20px',
                 color: 'white'
-              }}>Ready to Grow Your Business?</h2>
-              <p style={{ 
-                fontSize: '1.2rem',
-                marginBottom: '40px',
-                maxWidth: '600px',
-                margin: '0 auto 40px auto',
-                color: 'rgba(255, 255, 255, 0.9)'
-              }}>Get personalized recommendations for your business growth. Whether it's cybersecurity, automation, or web development - we'll create the perfect solution.</p>
+              }}>Ready to Stop Fighting Your Technology?</h2>
+             <p style={{
+               fontSize: '1.2rem',
+               marginBottom: '40px',
+               maxWidth: '600px',
+               margin: '0 auto 40px auto',
+               color: 'rgba(255, 255, 255, 0.9)'
+             }}>Book a free consultation. We'll review your current setup, identify what's at risk, and show you exactly what proactive IT support looks like — even if you don't work with us. No hard sell, no pressure, just honest advice.</p>
               <div className="cta-buttons" style={{ 
                 display: 'flex',
                 gap: '20px',
@@ -995,7 +1333,7 @@ export const ContactPage = () => {
                   className="hero-button"
                   style={{ minWidth: '200px' }}
                 >
-                  Get Free Consultation
+                  Book a No-Pressure Call
                 </button>
                 <a href="tel:+15064782949" className="secondary-button" style={{ color: 'white', borderColor: 'white', minWidth: '200px', textAlign: 'center' }}>
                   Call Now

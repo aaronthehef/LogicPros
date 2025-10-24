@@ -306,7 +306,7 @@ export const AutomationsPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  AI Business Automations That Work While You Sleep
+                  Drowning in Repetitive Tasks? Let AI Do the Boring Stuff.
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -315,9 +315,9 @@ export const AutomationsPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Google review request systems, social media auto-posting, calendar integrations, and more.
-                  Full backend setup with ongoing monitoring using the powerful n8n automation platform.
-                  Save hours each week with intelligent business automation.
+                  Imagine never sending another review request email. Never manually posting to social media.
+                  Never copying data between systems. AI automation handles the repetitive busywork that eats up your day —
+                  so you can actually run your business instead of just maintaining it.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -450,6 +450,183 @@ export const AutomationsPage = () => {
           </div>
         </section>
 
+        {/* The Cost of Manual Work Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
+          padding: '80px 0',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
+                color: 'white',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>The Hidden Cost of Doing Everything Manually</h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Card 1: Time Wasted */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '3rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1'
+                }}>15+ Hours</div>
+                <p style={{
+                  color: 'white',
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  The average small business owner spends every week on repetitive tasks that could be automated.
+                </p>
+              </div>
+
+              {/* Card 2: Growth Prevention */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '3rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1'
+                }}>32%</div>
+                <p style={{
+                  color: 'white',
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  of small business owners say administrative tasks prevent them from focusing on growth.
+                </p>
+              </div>
+
+              {/* Card 3: Speed */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '3rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1'
+                }}>5x Faster</div>
+                <p style={{
+                  color: 'white',
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  Automated workflows complete tasks 5x faster than manual processes, with zero errors.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* AI Automation Services Section */}
         <section className="section" style={{ backgroundColor: '#f8faff', padding: '80px 0' }}>
           <div className="container">
@@ -468,7 +645,7 @@ export const AutomationsPage = () => {
                 margin: '0 auto',
                 lineHeight: '1.6'
               }}>
-                From business process automation to intelligent chatbots, we help streamline your operations
+                Stop wasting time on tasks a computer can do better, faster, and without complaining
               </p>
             </div>
             
@@ -516,7 +693,7 @@ export const AutomationsPage = () => {
                     Business Automation
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Streamline operations and reduce manual work with custom automation solutions for your business processes
+                    Tired of copy-pasting between systems? We connect your tools so data flows automatically — no more double-entry, no more 'I forgot to update that.'
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -562,7 +739,7 @@ export const AutomationsPage = () => {
                     AI Chatbots
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Provide instant customer support and engagement with intelligent chatbots that answer questions and qualify leads
+                    Stop losing leads at 2 AM when you're asleep. AI chatbots answer questions, book appointments, and qualify prospects 24/7 — so you wake up to new opportunities, not missed ones.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -611,7 +788,7 @@ export const AutomationsPage = () => {
                     Workflow Automation
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Connect your business tools and automate repetitive workflows to eliminate manual tasks and improve productivity
+                    Every time you think 'I do this same thing every week' — that's a workflow we can automate. Save hours on invoicing, follow-ups, reporting, and all the other stuff you hate doing.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -627,8 +804,7 @@ export const AutomationsPage = () => {
           <div className="container">
             <h2 className="section-title">Essential Business Automations</h2>
             <p className="service-intro">
-              These proven automations handle repetitive tasks so you can focus on what matters most - 
-              growing your business and serving customers.
+              These are the automations our clients implement first — because they save the most time and make the biggest impact.
             </p>
             
             <div className="automation-grid">
@@ -661,7 +837,7 @@ export const AutomationsPage = () => {
                   <li>Detailed reporting and analytics</li>
                 </ul>
                 <div className="automation-result">
-                  <strong>Typical Result:</strong> 300-500% increase in Google reviews within 6 months
+                  <strong>Typical Result:</strong> Most clients see 3-5x more reviews within 6 months
                 </div>
               </div>
 
@@ -694,7 +870,7 @@ export const AutomationsPage = () => {
                   <li>Engagement tracking and optimization</li>
                 </ul>
                 <div className="automation-result">
-                  <strong>Typical Result:</strong> 200% increase in social media engagement
+                  <strong>Typical Result:</strong> Stay visible online without spending hours creating content
                 </div>
               </div>
 
@@ -730,7 +906,7 @@ export const AutomationsPage = () => {
                   <li>No-show reduction automation</li>
                 </ul>
                 <div className="automation-result">
-                  <strong>Typical Result:</strong> 40% reduction in no-shows and missed appointments
+                  <strong>Typical Result:</strong> Never miss a follow-up and save 5-10 hours per week on scheduling
                 </div>
               </div>
             </div>
@@ -1121,13 +1297,183 @@ export const AutomationsPage = () => {
           `}} />
         </section>
 
+        {/* Why Maritime Businesses Choose Our Automation Services Section */}
+        <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                fontWeight: '700',
+                color: '#1F7CFF',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Why Maritime Businesses Trust Us With Their Automation</h2>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              {/* Pillar 1: We Build It, You Own It */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                padding: '40px 30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>We Build It, You Own It</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  Unlike subscription automation services that lock you in, we build custom solutions using n8n — an open-source platform you can control. No surprise price hikes, no vendor lock-in. Just automation that works.
+                </p>
+              </div>
+
+              {/* Pillar 2: Built for Real Businesses */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                padding: '40px 30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="9" cy="7" r="4" stroke="white" strokeWidth="2"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>Built for Real Businesses, Not Tech Companies</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  We don't assume you're a tech expert. We explain what's happening in plain English, set everything up for you, and make sure it actually works with your existing tools — not against them.
+                </p>
+              </div>
+
+              {/* Pillar 3: Ongoing Support */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                borderRadius: '12px',
+                padding: '40px 30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease',
+                  margin: '0 auto 1.5rem auto',
+                  color: 'white'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12L11 14L15 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '15px',
+                  lineHeight: '1.3',
+                  textAlign: 'center'
+                }}>Ongoing Support, Not 'Figure It Out Yourself'</h3>
+                <p style={{
+                  color: colors.text.secondary,
+                  lineHeight: '1.7',
+                  fontSize: '1rem',
+                  textAlign: 'center'
+                }}>
+                  When something breaks or you want to add a new automation, we're here. No 'submit a ticket and wait 72 hours' nonsense. We monitor your automations and fix issues before you even notice.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Industry Applications */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <h2 className="section-title">Automation Solutions for Every Industry</h2>
             <p className="service-intro">
-              We work with businesses across all industries throughout the Maritimes, creating automation solutions
-              that save time, reduce errors, and improve customer satisfaction.
+              From contractors to consultants, retailers to restaurants — if you're doing the same tasks over and over, we can automate them. Here's how we help different industries.
             </p>
             
             <div className="industry-detailed-grid">
