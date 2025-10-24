@@ -50,7 +50,7 @@ body {
 
 /* Modern Glass Morphism Header */
 .sticky-header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -901,7 +901,7 @@ body {
 
 /* Add header clearance for first hero section on non-homepage pages */
 .main-content > .hero-section:first-child:not(.homepage-hero) {
-  padding-top: 160px; /* 80px for header + 80px for section spacing */
+  padding-top: 80px; /* Normal section spacing */
 }
 
 /* Homepage Hero Section - completely separate styling */
@@ -1395,7 +1395,7 @@ body {
   
   /* Mobile header clearance for first hero section */
   .main-content > .hero-section:first-child:not(.homepage-hero) {
-    padding-top: 100px; /* 60px for mobile header + 40px for section spacing */
+    padding-top: 40px; /* Normal section spacing for mobile */
   }
 
   /* Hide hero service cards on mobile */

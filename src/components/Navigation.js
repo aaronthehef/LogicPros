@@ -79,6 +79,30 @@ export const Navigation = () => {
           <div className="dropdown-hover-bridge"></div>
         </div>
 
+        <div
+          className="nav-dropdown"
+          onMouseEnter={() => handleMouseEnter('locations')}
+          onMouseLeave={handleMouseLeave}
+        >
+          <a href="#" className="nav-link" onClick={(e) => e.preventDefault()}>
+            Locations
+            <span className="dropdown-arrow">▼</span>
+          </a>
+          <div className={`dropdown-content ${dropdownOpen === 'locations' ? 'show' : ''}`}>
+            <div className="dropdown-arrow-up"></div>
+            <a href="/locations/fredericton" onClick={handleLinkClick}>
+              Fredericton
+            </a>
+            <a href="/locations/moncton" onClick={handleLinkClick}>
+              Moncton
+            </a>
+            <a href="/locations/saint-john" onClick={handleLinkClick}>
+              Saint John
+            </a>
+          </div>
+          <div className="dropdown-hover-bridge"></div>
+        </div>
+
         <a href="/about" className="nav-link">About</a>
         <a href="/contact" className="nav-link">Contact</a>
       </div>
@@ -148,7 +172,14 @@ export const Navigation = () => {
               <a href="/services/automations" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>AI Automations</a>
               <a href="/services/cybersecurity" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Cybersecurity</a>
               <a href="/services/managed-it" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: 'none', fontWeight: '500' }}>Managed IT Services</a>
-              
+
+              <div style={{ marginTop: '1.5rem' }}>
+                <h3 style={{ color: '#ffffff', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: 'bold' }}>Locations</h3>
+                <a href="/locations/fredericton" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Fredericton</a>
+                <a href="/locations/moncton" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Moncton</a>
+                <a href="/locations/saint-john" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: 'none', fontWeight: '500' }}>Saint John</a>
+              </div>
+
               <div style={{ marginTop: '0.5rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.3)' }}>
                 <a href="/about" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>About</a>
                 <a href="/contact" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Contact</a>
