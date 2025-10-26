@@ -196,7 +196,9 @@ export const FrederictonPage = () => {
       @media (max-width: 768px) {
         div[style*="gridTemplateColumns: repeat(2, 1fr)"],
         div[style*="gridTemplateColumns: repeat(3, 1fr)"],
-        div[style*="gridTemplateColumns: repeat(4, 1fr)"] {
+        div[style*="gridTemplateColumns: repeat(4, 1fr)"],
+        div[style*="gridTemplateColumns: repeat(auto-fit, minmax(280px, 1fr))"],
+        div[style*="gridTemplateColumns: repeat(auto-fit, minmax(200px, 1fr))"] {
           grid-template-columns: 1fr !important;
         }
       }

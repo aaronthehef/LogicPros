@@ -911,6 +911,7 @@ body {
   padding: 0;
   background: none;
   text-align: center;
+  min-height: calc(100vh - 110px) !important; /* Account for 110px header */
 }
 
 .hero-image {
@@ -1924,6 +1925,22 @@ body {
   .challenge-item,
   .solution-item {
     padding: 20px;
+  }
+
+  /* Force all multi-column grids to stack on mobile */
+  div[style*="display: grid"][style*="gridTemplateColumns"],
+  div[style*="display:grid"][style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Specific overrides for grid patterns */
+  div[style*="gridTemplateColumns: repeat(2, 1fr)"],
+  div[style*="gridTemplateColumns: repeat(3, 1fr)"],
+  div[style*="gridTemplateColumns: repeat(4, 1fr)"],
+  div[style*="grid-template-columns: repeat(2, 1fr)"],
+  div[style*="grid-template-columns: repeat(3, 1fr)"],
+  div[style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: 1fr !important;
   }
 }
 

@@ -1,64 +1,51 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
-import { Animations } from '../../components/Animations';
 import { Footer } from '../../components/Footer';
 import { colors } from '../../styles/colors';
-import { gsap } from 'gsap';
 
 export const MonctonPage = () => {
-  const heroRef = useRef(null);
-  const headerRef = useRef(null);
-
   useEffect(() => {
-    // Enhanced GSAP scroll animations for header
-    const header = headerRef.current;
-    let lastScrollY = 0;
+    // Set page title
+    document.title = "Moncton Technology Services | IT Support, Web Design, Cybersecurity & Automation | LogicPros";
     
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > 100) {
-        // Add enhanced blur and shadow when scrolled
-        gsap.to(header, {
-          duration: 0.3,
-          css: {
-            backdropFilter: "blur(25px) saturate(200%)",
-            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(29, 122, 175, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
-          },
-          ease: "power2.out"
-        });
-      } else {
-        // Return to original state
-        gsap.to(header, {
-          duration: 0.3,
-          css: {
-            backdropFilter: "blur(20px) saturate(180%)",
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(29, 122, 175, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
-          },
-          ease: "power2.out"
-        });
-      }
-      
-      lastScrollY = currentScrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Complete technology solutions for Moncton businesses. Professional websites, cybersecurity protection, business automation, and managed IT support. Local team, fixed pricing, rapid response. Free tech audits.');
+    }
     
-    // Initial header animation on load
-    gsap.fromTo(header, 
-      { y: -100, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 1, 
-        ease: "power3.out",
-        delay: 0.2 
-      }
-    );
-
-    // Background panning animation
+    // Add structured data
+    const structuredData = document.createElement('script');
+    structuredData.type = 'application/ld+json';
+    structuredData.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "LogicPros - Technology Services Moncton",
+      "description": "Complete technology services including web design, cybersecurity, business automation, and managed IT support for Moncton businesses",
+      "url": "https://logicpros.ca/locations/moncton",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Moncton",
+        "addressRegion": "NB",
+        "addressCountry": "CA"
+      },
+      "areaServed": "Moncton, New Brunswick",
+      "serviceType": [
+        "Website Design",
+        "Web Development",
+        "Cybersecurity Services",
+        "Business Automation",
+        "Managed IT Services",
+        "IT Support",
+        "Network Management",
+        "Cloud Services"
+      ]
+    });
+    document.head.appendChild(structuredData);
+    
+    // Hero background animation styles
     const style = document.createElement('style');
     style.textContent = `
       @keyframes panLeft {
@@ -108,8 +95,8 @@ export const MonctonPage = () => {
       .floating-particle:nth-child(5) { animation: float2 16s ease-in-out infinite reverse; }
       .floating-particle:nth-child(6) { animation: float3 25s ease-in-out infinite reverse; }
       .hero-button {
-        background: linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%) !important;
-        color: white !important;
+        background: linear-gradient(135deg, #FFC600 0%, #FFB800 100%) !important;
+        color: #1a1a2e !important;
         padding: 18px 40px !important;
         border-radius: 50px !important;
         text-decoration: none !important;
@@ -123,51 +110,117 @@ export const MonctonPage = () => {
         box-sizing: border-box !important;
       }
       .hero-button:hover {
-        box-shadow: 0 8px 30px rgba(29, 122, 175, 0.5) !important;
+        box-shadow: 0 8px 30px rgba(255, 198, 0, 0.6) !important;
         transform: translateY(-3px) !important;
-        color: white !important;
+        color: #1a1a2e !important;
       }
-      .secondary-button {
-        background: transparent !important;
-        color: #1a79af !important;
-        border: 2px solid #1a79af !important;
-        padding: 18px 40px !important;
-        font-size: 1.1rem !important;
-        font-weight: 600 !important;
-        border-radius: 50px !important;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        text-decoration: none !important;
-        display: inline-block !important;
+      
+      /* Hero Service Card Animations */
+      @keyframes pulseGlow {
+        0%, 100% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.15), 0 0 20px rgba(29, 122, 175, 0.3);
+        }
+        50% {
+          box-shadow: 0 8px 32px rgba(29, 122, 175, 0.25), 0 0 30px rgba(29, 122, 175, 0.5);
+        }
       }
-      .secondary-button:hover {
-        box-shadow: 0 8px 25px rgba(29, 122, 175, 0.4) !important;
-        transform: translateY(-3px) !important;
+
+      .hero-service-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        box-shadow: 0 20px 60px rgba(29, 122, 175, 0.3), 0 0 40px rgba(29, 122, 175, 0.6) !important;
         border-color: rgba(29, 122, 175, 0.8) !important;
       }
-      /* White secondary button styling for dark backgrounds */
-      .secondary-button[style*="color: white"] {
-        color: white !important;
-        border-color: white !important;
+
+      .hero-service-card:hover h3 {
+        color: #ffffff !important;
+        textShadow: 0 0 10px rgba(29, 122, 175, 0.8) !important;
       }
-      .secondary-button[style*="color: white"]:hover {
-        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4) !important;
-        border-color: rgba(255, 255, 255, 0.8) !important;
+
+      .hero-service-card:hover svg {
+        transform: scale(1.1) !important;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) !important;
+      }
+      
+      /* Professional Service Cards Hover Effects */
+      .professional-card:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 20px 60px rgba(31, 124, 255, 0.15), 0 8px 32px rgba(31, 124, 255, 0.2) !important;
+        border-color: rgba(31, 124, 255, 0.3) !important;
+      }
+      
+      .professional-card:hover .service-icon {
+        transform: scale(1.1) rotate(5deg) !important;
+        box-shadow: 0 12px 35px rgba(31, 124, 255, 0.4) !important;
+      }
+      
+      .professional-card:hover .feature-highlight {
+        background: linear-gradient(135deg, #1F7CFF, #1e40af) !important;
+        transform: scale(1.05) !important;
+      }
+      
+      /* Override existing service card styles for professional cards */
+      .professional-card .service-icon {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 1rem !important;
+        background-color: transparent !important;
+        border-radius: 20px !important;
+      }
+      
+      .professional-card h3 {
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.3 !important;
+      }
+      
+      .professional-card p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 0 !important;
+      }
+      
+      .feature-highlight {
+        background: linear-gradient(135deg, #1F7CFF, #1e40af);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+      
+      /* Responsive grid styles */
+      @media (max-width: 768px) {
+        div[style*="gridTemplateColumns: repeat(2, 1fr)"],
+        div[style*="gridTemplateColumns: repeat(3, 1fr)"],
+        div[style*="gridTemplateColumns: repeat(4, 1fr)"],
+        div[style*="gridTemplateColumns: repeat(auto-fit, minmax(280px, 1fr))"],
+        div[style*="gridTemplateColumns: repeat(auto-fit, minmax(200px, 1fr))"] {
+          grid-template-columns: 1fr !important;
+        }
+      }
+      @media (max-width: 1024px) and (min-width: 769px) {
+        div[style*="gridTemplateColumns: repeat(3, 1fr)"],
+        div[style*="gridTemplateColumns: repeat(4, 1fr)"] {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
       }
     `;
     document.head.appendChild(style);
-
-    // Cleanup function
+    
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       document.head.removeChild(style);
+      document.head.removeChild(structuredData);
     };
   }, []);
+
   return (
-    <div className="landing-page homepage">
-      <Animations />
-      
-      {/* Sticky Header */}
-      <header className="sticky-header" ref={headerRef}>
+    <div className="landing-page">
+      {/* Header */}
+      <header className="sticky-header">
         <div className="header-content">
           <div className="logo">
             <Logo />
@@ -178,934 +231,2095 @@ export const MonctonPage = () => {
 
       <main className="main-content">
         {/* Hero Section */}
-        <section ref={heroRef} className="hero-section homepage-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', overflow: 'hidden' }}>
-          <svg 
-            className="hero-background-svg"
-            style={{ 
-              position: 'absolute', 
-              top: '-10%', 
-              left: '-10%', 
-              width: '120%', 
-              height: '120%', 
+        <section className="hero-section homepage-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', overflow: 'hidden' }}>
+          {/* Circuit Board Background - matching front page */}
+          <svg
+            className="circuit-background"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
               zIndex: 1,
-              opacity: 0.7
-            }} 
-            viewBox="0 0 1200 800" 
-            xmlns="http://www.w3.org/2000/svg"
+              opacity: 0.4
+            }}
+            viewBox="0 0 1200 800"
+            preserveAspectRatio="xMidYMid slice"
           >
             <defs>
-              <linearGradient id="techGradientMoncton" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#1d7aaf" />
-                <stop offset="100%" stopColor="#1e40af" />
-              </linearGradient>
-              <linearGradient id="pulseGradientMoncton" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#1d7aaf" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#1e40af" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#1d7aaf" stopOpacity="0.8" />
-              </linearGradient>
+              {/* Subtle glow filter */}
+              <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
             </defs>
-            
-            {/* Main Grid Lines */}
-            <g className="grid-lines" filter="blur(0.5px)">
-              <line x1="0" y1="100" x2="1200" y2="100" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.4" strokeDasharray="20,10" />
-              <line x1="0" y1="200" x2="1200" y2="200" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="0" y1="300" x2="1200" y2="300" stroke="#1d7aaf" strokeWidth="2" opacity="0.5" strokeDasharray="25,5" />
-              <line x1="0" y1="400" x2="1200" y2="400" stroke="#1e40af" strokeWidth="1" opacity="0.2" strokeDasharray="30,10" />
-              <line x1="0" y1="500" x2="1200" y2="500" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.3" strokeDasharray="20,15" />
-              
-              <line x1="200" y1="0" x2="200" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,10" />
-              <line x1="400" y1="0" x2="400" y2="800" stroke="#1e40af" strokeWidth="1.5" opacity="0.3" strokeDasharray="15,15" />
-              <line x1="600" y1="0" x2="600" y2="800" stroke="#1d7aaf" strokeWidth="2" opacity="0.4" strokeDasharray="25,5" />
-              <line x1="800" y1="0" x2="800" y2="800" stroke="#1e40af" strokeWidth="1" opacity="0.1" strokeDasharray="30,10" />
-              <line x1="1000" y1="0" x2="1000" y2="800" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.2" strokeDasharray="20,15" />
-            </g>
 
-            {/* Circuit Board Patterns */}
-            <g className="circuit-patterns" filter="blur(0.3px)">
-              <path d="M100,150 L250,150 L270,170 L400,170 L420,150 L600,150" stroke="#1d7aaf" strokeWidth="1" opacity="0.4" fill="none" strokeDasharray="5,3" />
-              <path d="M150,250 L300,250 L320,230 L500,230 L520,250 L750,250" stroke="#1e40af" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="8,4" />
-              <path d="M80,350 L200,350 L220,330 L350,330 L370,350 L550,350" stroke="#1d7aaf" strokeWidth="1.5" opacity="0.5" fill="none" strokeDasharray="6,2" />
-              
-              <path d="M300,50 L300,180 L280,200 L280,320 L300,340 L300,450" stroke="#1e40af" strokeWidth="1" opacity="0.2" fill="none" strokeDasharray="4,3" />
-              <path d="M500,80 L500,200 L520,220 L520,300 L500,320 L500,480" stroke="#1d7aaf" strokeWidth="1" opacity="0.3" fill="none" strokeDasharray="7,3" />
-              <path d="M700,60 L700,150 L680,170 L680,280 L700,300 L700,420" stroke="#1e40af" strokeWidth="1.5" opacity="0.4" fill="none" strokeDasharray="5,4" />
-            </g>
+            {/* Professional circuit background with slow panning */}
+            <g transform="translate(0,0)">
+              <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0; -500,0; -500,-350; 0,-350; 0,0"
+                dur="150s"
+                repeatCount="indefinite"
+              />
 
-            {/* Tech Nodes/Connection Points */}
-            <g className="tech-nodes">
-              <circle cx="150" cy="120" r="4" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="270" cy="170" r="3" fill="#1e40af" opacity="0.8" />
-              <circle cx="420" cy="150" r="5" fill="#1d7aaf" opacity="1.0" />
-              <circle cx="350" cy="180" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="520" cy="250" r="4" fill="#1d7aaf" opacity="0.8" />
-              <circle cx="650" cy="110" r="6" fill="#1e40af" opacity="0.9" />
-              <circle cx="850" cy="200" r="3" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="950" cy="140" r="4" fill="#1e40af" opacity="0.8" />
-              <circle cx="300" cy="340" r="5" fill="#1d7aaf" opacity="0.9" />
-              <circle cx="500" cy="320" r="3" fill="#1e40af" opacity="0.7" />
-              <circle cx="700" cy="300" r="4" fill="#1d7aaf" opacity="0.8" />
-            </g>
+              {/* Clean circuit grid layout */}
+              {[0, 1, 2, 3, 4, 5].map(layerX => (
+                [...Array(4)].map((_, layerY) => (
+                  <g key={`layer-${layerX}-${layerY}`} transform={`translate(${layerX * 400}, ${layerY * 250})`}>
 
-            {/* Glowing Orbs */}
-            <g className="glowing-orbs">
-              <circle cx="100" cy="100" r="8" fill="url(#techGradientMoncton)" opacity="0.4" />
-              <circle cx="900" cy="300" r="6" fill="url(#techGradientMoncton)" opacity="0.5" />
-              <circle cx="1100" cy="150" r="10" fill="url(#techGradientMoncton)" opacity="0.3" />
-              <circle cx="200" cy="400" r="7" fill="url(#techGradientMoncton)" opacity="0.4" />
+                    {/* Single clean horizontal trace */}
+                    <g stroke="#1F7CFF" strokeWidth="1.5" fill="none">
+                      <path d="M50 120 L350 120" strokeDasharray="20,12" opacity="0.5">
+                        <animate attributeName="stroke-dashoffset" values="0;-32" dur="3s" repeatCount="indefinite"/>
+                      </path>
+                    </g>
+
+                    {/* Single clean vertical trace */}
+                    {(layerX + layerY) % 2 === 0 && (
+                      <g stroke="#22c55e" strokeWidth="1.5" fill="none">
+                        <path d="M200 30 L200 220" strokeDasharray="18,10" opacity="0.4">
+                          <animate attributeName="stroke-dashoffset" values="0;-28" dur="2.8s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Occasional L-shaped route */}
+                    {(layerX + layerY) % 3 === 0 && (
+                      <g stroke="#f59e0b" strokeWidth="1" fill="none">
+                        <path d="M100 80 L100 160 L300 160" strokeDasharray="15,8" opacity="0.35">
+                          <animate attributeName="stroke-dashoffset" values="0;-23" dur="3.5s" repeatCount="indefinite"/>
+                        </path>
+                      </g>
+                    )}
+
+                    {/* Subtle floating dots */}
+                    <g>
+                      {[...Array(3)].map((_, dotIndex) => {
+                        const x = 80 + (dotIndex * 120);
+                        const y = 60 + (dotIndex * 40);
+                        const delay = dotIndex * 1.5;
+                        return (
+                          <circle
+                            key={`dot-${dotIndex}`}
+                            cx={x}
+                            cy={y}
+                            r="1.5"
+                            fill="#1F7CFF"
+                            opacity="0.6"
+                          >
+                            <animateTransform
+                              attributeName="transform"
+                              type="translate"
+                              values="0,0; 8,-12; -5,10; 0,0"
+                              dur="6s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                            <animate
+                              attributeName="opacity"
+                              values="0.3;0.6;0.3"
+                              dur="4s"
+                              repeatCount="indefinite"
+                              begin={`${delay}s`}
+                            />
+                          </circle>
+                        );
+                      })}
+                    </g>
+                  </g>
+                ))
+              ))}
             </g>
           </svg>
 
-          {/* Floating Particles */}
-          <div className="floating-particle" style={{ top: '15%', left: '10%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '25%', right: '15%', width: '6px', height: '6px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '45%', left: '20%', width: '3px', height: '3px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '35%', right: '25%', width: '5px', height: '5px', background: '#1e40af', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '60%', left: '15%', width: '4px', height: '4px', background: '#1d7aaf', borderRadius: '50%' }}></div>
-          <div className="floating-particle" style={{ top: '70%', right: '20%', width: '3px', height: '3px', background: '#1e40af', borderRadius: '50%' }}></div>
-
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-            <div className="hero-content" style={{ textAlign: 'center', color: 'white' }}>
-              <h1 style={{ 
-                fontSize: 'clamp(2.5rem, 6vw, 4rem)', 
-                fontWeight: '900', 
-                lineHeight: '1.1', 
-                marginBottom: '1rem',
-                color: 'white'
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: '4rem', alignItems: 'center' }}>
+              <div style={{ textAlign: 'left', color: 'white' }}>
+                <h1 style={{
+                  fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                  fontWeight: '900',
+                  lineHeight: '0.9',
+                  marginBottom: '1rem',
+                  color: '#1F7CFF',
+                  textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
+                }}>
+                  Technology Problems Draining Your Moncton Business?
+                </h1>
+                <p style={{
+                  fontSize: 'clamp(1rem, 2vw, 1.3rem)',
+                  color: '#e2e8f0',
+                  marginBottom: '2.5rem',
+                  fontWeight: '300',
+                  maxWidth: '500px'
+                }}>
+                  Your website doesn't bring in leads, cybersecurity threats keep you up at night, manual processes waste hours every week, and IT breakdowns halt operations. Moncton businesses lose thousands each month to technology problems. We provide complete solutions: professional websites that convert, robust cybersecurity protection, workflow automation, and 24/7 managed IT support.
+                </p>
+                
+                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                  <a
+                    href="/contact"
+                    className="hero-button"
+                  >
+                    Get Moncton Tech Solutions
+                  </a>
+                </div>
+              </div>
+
+              <div className="hero-service-cards" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                height: 'auto',
+                justifyContent: 'center'
               }}>
-                Web Design & Digital Marketing in Moncton, New Brunswick
-              </h1>
-              <p style={{ 
-                fontSize: 'clamp(1rem, 2vw, 1.3rem)', 
-                color: '#e2e8f0', 
-                marginBottom: '40px',
-                fontWeight: '300',
+                {/* Professional Websites Card */}
+                <a href="/services/website-design" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(29, 122, 175, 0.3), 0 0 40px rgba(29, 122, 175, 0.6)';
+                  e.currentTarget.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+                  const h3 = e.currentTarget.querySelector('h3');
+                  if (h3) {
+                    h3.style.color = '#ffffff';
+                    h3.style.textShadow = '0 0 10px rgba(29, 122, 175, 0.8)';
+                  }
+                  const svg = e.currentTarget.querySelector('svg');
+                  if (svg) {
+                    svg.style.transform = 'scale(1.1)';
+                    svg.style.filter = 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)';
+                  e.currentTarget.style.borderColor = 'rgba(29, 122, 175, 0.3)';
+                  const h3 = e.currentTarget.querySelector('h3');
+                  if (h3) {
+                    h3.style.color = '#1F7CFF';
+                    h3.style.textShadow = 'none';
+                  }
+                  const svg = e.currentTarget.querySelector('svg');
+                  if (svg) {
+                    svg.style.transform = 'scale(1)';
+                    svg.style.filter = 'none';
+                  }
+                }}
+                >
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Professional Websites</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Convert Visitors to Customers</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="3" width="18" height="18" rx="2" stroke="white" strokeWidth="2"/>
+                      <path d="M3 8 h18" stroke="white" strokeWidth="2"/>
+                      <circle cx="6" cy="5.5" r="0.5" fill="white"/>
+                      <circle cx="8" cy="5.5" r="0.5" fill="white"/>
+                      <circle cx="10" cy="5.5" r="0.5" fill="white"/>
+                      <rect x="6" y="11" width="5" height="4" rx="0.5" stroke="white" strokeWidth="1.5"/>
+                      <line x1="13" y1="11.5" x2="18" y2="11.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="13" y1="13.5" x2="18" y2="13.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="13" y1="15.5" x2="16" y2="15.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* Total Security Card */}
+                <a href="/services/cybersecurity" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 1s'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(29, 122, 175, 0.3), 0 0 40px rgba(29, 122, 175, 0.6)';
+                  e.currentTarget.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+                  const h3 = e.currentTarget.querySelector('h3');
+                  if (h3) {
+                    h3.style.color = '#ffffff';
+                    h3.style.textShadow = '0 0 10px rgba(29, 122, 175, 0.8)';
+                  }
+                  const svg = e.currentTarget.querySelector('svg');
+                  if (svg) {
+                    svg.style.transform = 'scale(1.1)';
+                    svg.style.filter = 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)';
+                  e.currentTarget.style.borderColor = 'rgba(29, 122, 175, 0.3)';
+                  const h3 = e.currentTarget.querySelector('h3');
+                  if (h3) {
+                    h3.style.color = '#1F7CFF';
+                    h3.style.textShadow = 'none';
+                  }
+                  const svg = e.currentTarget.querySelector('svg');
+                  if (svg) {
+                    svg.style.transform = 'scale(1)';
+                    svg.style.filter = 'none';
+                  }
+                }}
+                >
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Total Security</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Stop Cyberattacks Before They Start</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      <rect x="9" y="10" width="6" height="7" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                      <path d="M10 10V8a2 2 0 0 1 4 0v2" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                      <circle cx="12" cy="14" r="1" fill="white"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* Automate Everything Card */}
+                <a href="/services/automation" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 2s'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(29, 122, 175, 0.3), 0 0 40px rgba(29, 122, 175, 0.6)';
+                  e.currentTarget.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+                  const h3 = e.currentTarget.querySelector('h3');
+                  if (h3) {
+                    h3.style.color = '#ffffff';
+                    h3.style.textShadow = '0 0 10px rgba(29, 122, 175, 0.8)';
+                  }
+                  const svg = e.currentTarget.querySelector('svg');
+                  if (svg) {
+                    svg.style.transform = 'scale(1.1)';
+                    svg.style.filter = 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)';
+                  e.currentTarget.style.borderColor = 'rgba(29, 122, 175, 0.3)';
+                  const h3 = e.currentTarget.querySelector('h3');
+                  if (h3) {
+                    h3.style.color = '#1F7CFF';
+                    h3.style.textShadow = 'none';
+                  }
+                  const svg = e.currentTarget.querySelector('svg');
+                  if (svg) {
+                    svg.style.transform = 'scale(1)';
+                    svg.style.filter = 'none';
+                  }
+                }}
+                >
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Automate Everything</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Eliminate Repetitive Tasks</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21.5 2v6h-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M2.5 22v-6h6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M21 8A10 10 0 0 0 8 3.5L2.5 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M3 16A10 10 0 0 0 16 20.5l5.5-5.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* IT That Works Card */}
+                <a href="/services/managed-it" className="hero-service-card" style={{
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
+                  border: '2px solid rgba(29, 122, 175, 0.3)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  backdropFilter: 'blur(10px)',
+                  boxShadow: '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  minHeight: '80px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  animation: 'pulseGlow 3s ease-in-out infinite 3s'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(29, 122, 175, 0.3), 0 0 40px rgba(29, 122, 175, 0.6)';
+                  e.currentTarget.style.borderColor = 'rgba(29, 122, 175, 0.8)';
+                  const h3 = e.currentTarget.querySelector('h3');
+                  if (h3) {
+                    h3.style.color = '#ffffff';
+                    h3.style.textShadow = '0 0 10px rgba(29, 122, 175, 0.8)';
+                  }
+                  const svg = e.currentTarget.querySelector('svg');
+                  if (svg) {
+                    svg.style.transform = 'scale(1.1)';
+                    svg.style.filter = 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(29, 122, 175, 0.15), 0 0 0 rgba(29, 122, 175, 0.4)';
+                  e.currentTarget.style.borderColor = 'rgba(29, 122, 175, 0.3)';
+                  const h3 = e.currentTarget.querySelector('h3');
+                  if (h3) {
+                    h3.style.color = '#1F7CFF';
+                    h3.style.textShadow = 'none';
+                  }
+                  const svg = e.currentTarget.querySelector('svg');
+                  if (svg) {
+                    svg.style.transform = 'scale(1)';
+                    svg.style.filter = 'none';
+                  }
+                }}
+                >
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>IT That Works</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Expert Support When Needed</p>
+                    <span style={{
+                      color: '#1F7CFF',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: '500',
+                      marginTop: '0.25rem'
+                    }}>Learn More</span>
+                  </div>
+                  <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Cost of Tech Problems Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
+          padding: '80px 20px',
+          color: 'white'
+        }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#ffffff',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                The Hidden Cost of Technology Problems
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: 'rgba(255, 255, 255, 0.9)',
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Moncton business owners are losing time and money trying to handle technology problems themselves. The real cost isn't just the immediate issue—it's the ongoing impact on your business growth and peace of mind.
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <polyline points="12,6 12,12 16,14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  20+ Hours/Week
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Average time Moncton businesses waste dealing with tech issues. That's 1,040 hours per year you could spend serving customers or growing your business.
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  $15K+ Average
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Annual cost of downtime, lost customers, and security incidents. Most businesses don't even realize they're paying this "tech tax."
+                </p>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                padding: '40px 30px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 25px auto'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '15px'
+                }}>
+                  92% of Businesses
+                </div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6',
+                  color: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                  Experience at least one major technology problem annually. The question isn't IF you'll have problems—it's WHEN and how much they'll cost you.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Technology Challenges Section */}
+        <section style={{ backgroundColor: colors.backgrounds.light, padding: '80px 0' }}>
+          <div className="container">
+            <div className="section-header" style={{ marginBottom: '60px', textAlign: 'center' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', 
+                fontWeight: '700', 
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>Common Tech Problems We Solve in Moncton</h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: '#6b7280',
                 maxWidth: '600px',
-                margin: '0 auto 40px auto'
+                margin: '0 auto',
+                lineHeight: '1.6'
               }}>
-                Professional websites, AI business automations, and managed IT services for contractors 
-                and businesses in Moncton, Dieppe, Riverview, and throughout Greater Moncton. 
-                Serving the Hub City with cutting-edge digital solutions.
-              </p>
-              
-              <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <a href="/contact" className="hero-button">
-                  Get Your Free Quote
-                </a>
-                
-                <a href="/free-example" className="secondary-button" style={{ borderColor: 'white', color: 'white' }}>
-                  See Free Example
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Local Services */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">Digital Solutions for Greater Moncton Businesses</h2>
-              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
-                From downtown Moncton to Dieppe's growing tech corridor and Riverview's thriving business community, 
-                we help Maritime businesses succeed with modern technology solutions.
+                Whether you're a retail shop downtown, a professional services firm, a restaurant, or any business in Greater Moncton—technology challenges are universal. You don't need every service we offer. But you probably need help with at least one of these problems:
               </p>
             </div>
-            
-            <div className="services-grid" style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-              gap: '2rem',
-              maxWidth: '1400px',
-              margin: '0 auto'
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+              gap: '25px',
+              padding: '0 20px',
+              marginBottom: '40px'
             }}>
-              <div className="service-card professional-card" style={{
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
+              {/* Website Problems */}
+              <div style={{ 
+                background: 'white',
                 borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                padding: '30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                height: '100%'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
               }}>
-                <div className="service-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
+                <div style={{
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s ease'
-                }}>🌐</div>
-                <h3>Moncton Website Development</h3>
-                <p>
-                  Custom WordPress and React websites optimized for Greater Moncton searches. 
-                  Perfect for contractors, retailers, and service providers in Canada's fastest-growing city.
+                  marginBottom: '15px'
+                }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: '15px',
+                    flexShrink: 0
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                      <line x1="8" y1="21" x2="16" y2="21" stroke="white" strokeWidth="2"/>
+                      <line x1="12" y1="17" x2="12" y2="21" stroke="white" strokeWidth="2"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#1F7CFF',
+                    margin: '0',
+                    lineHeight: '1.3'
+                  }}>Your Website Looks Outdated</h3>
+                </div>
+                <p style={{
+                  color: '#4b5563',
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  Customers leave within seconds. Mobile users can't navigate. You're losing sales to competitors with modern sites.
                 </p>
-                <ul className="service-benefits">
-                  <li>Moncton local SEO optimization</li>
-                  <li>Bilingual website options</li>
-                  <li>E-commerce capabilities</li>
-                  <li>Mobile-first design approach</li>
-                </ul>
               </div>
 
-              <div className="service-card professional-card" style={{
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
+              <div style={{ 
+                background: 'white',
                 borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                padding: '30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                height: '100%'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
               }}>
-                <div className="service-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
+                <div style={{
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s ease'
-                }}>🤖</div>
-                <h3>Marketing Automation</h3>
-                <p>
-                  Automated systems for Google reviews, social media posting, and customer relationship 
-                  management. Essential for busy Moncton contractors and service businesses.
+                  marginBottom: '15px'
+                }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: '15px',
+                    flexShrink: 0
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                      <line x1="8" y1="21" x2="16" y2="21" stroke="white" strokeWidth="2"/>
+                      <line x1="12" y1="17" x2="12" y2="21" stroke="white" strokeWidth="2"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#1F7CFF',
+                    margin: '0',
+                    lineHeight: '1.3'
+                  }}>Zero Online Presence</h3>
+                </div>
+                <p style={{
+                  color: '#4b5563',
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  No website means no credibility. Customers search for you and find competitors instead.
                 </p>
-                <ul className="service-benefits">
-                  <li>Review generation automation</li>
-                  <li>Social media scheduling</li>
-                  <li>Lead nurturing sequences</li>
-                  <li>Customer retention systems</li>
-                </ul>
               </div>
 
-              <div className="service-card professional-card" style={{
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
+              {/* Security Problems */}
+              <div style={{ 
+                background: 'white',
                 borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                padding: '30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                height: '100%'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
               }}>
-                <div className="service-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
+                <div style={{
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1d7aaf, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(29, 122, 175, 0.3)',
-                  transition: 'all 0.3s ease'
-                }}>💻</div>
-                <h3>Business IT Management</h3>
-                <p>
-                  Complete managed IT services for Moncton businesses. Security, data protection, 
-                  system monitoring, and technical support tailored to Maritime business needs.
+                  marginBottom: '15px'
+                }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: '15px',
+                    flexShrink: 0
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#1F7CFF',
+                    margin: '0',
+                    lineHeight: '1.3'
+                  }}>Ransomware Could Lock Your Business Tomorrow</h3>
+                </div>
+                <p style={{
+                  color: '#4b5563',
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  One click on a malicious email. All files encrypted. Operations shut down for days or weeks.
                 </p>
-                <ul className="service-benefits">
-                  <li>Cybersecurity protection</li>
-                  <li>Cloud backup solutions</li>
-                  <li>Remote technical support</li>
-                  <li>Compliance management</li>
-                </ul>
+              </div>
+
+              <div style={{ 
+                background: 'white',
+                borderRadius: '16px',
+                padding: '30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                height: '100%'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '15px'
+                }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: '15px',
+                    flexShrink: 0
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="white" strokeWidth="2" fill="none"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#1F7CFF',
+                    margin: '0',
+                    lineHeight: '1.3'
+                  }}>Employee Passwords Are Compromised</h3>
+                </div>
+                <p style={{
+                  color: '#4b5563',
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  Same password everywhere. No two-factor authentication. Hackers already have access.
+                </p>
+              </div>
+
+              {/* Automation Problems */}
+              <div style={{ 
+                background: 'white',
+                borderRadius: '16px',
+                padding: '30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                height: '100%'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '15px'
+                }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: '15px',
+                    flexShrink: 0
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#1F7CFF',
+                    margin: '0',
+                    lineHeight: '1.3'
+                  }}>Manual Data Entry Every Single Day</h3>
+                </div>
+                <p style={{
+                  color: '#4b5563',
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  Hours copying information between systems, creating invoices, updating spreadsheets manually.
+                </p>
+              </div>
+
+              <div style={{ 
+                background: 'white',
+                borderRadius: '16px',
+                padding: '30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                height: '100%'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '15px'
+                }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: '15px',
+                    flexShrink: 0
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#1F7CFF',
+                    margin: '0',
+                    lineHeight: '1.3'
+                  }}>You Miss Important Client Follow-Ups</h3>
+                </div>
+                <p style={{
+                  color: '#4b5563',
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  Lost opportunities because reminders slip through. No automated system to track leads.
+                </p>
+              </div>
+
+              {/* IT Problems */}
+              <div style={{ 
+                background: 'white',
+                borderRadius: '16px',
+                padding: '30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                height: '100%'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '15px'
+                }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: '15px',
+                    flexShrink: 0
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="3" width="20" height="7" rx="1" stroke="white" strokeWidth="2"/>
+                      <rect x="2" y="14" width="20" height="7" rx="1" stroke="white" strokeWidth="2"/>
+                      <circle cx="6" cy="6.5" r="1" fill="white"/>
+                      <circle cx="10" cy="6.5" r="1" fill="white"/>
+                      <circle cx="6" cy="17.5" r="1" fill="white"/>
+                      <circle cx="10" cy="17.5" r="1" fill="white"/>
+                      <line x1="15" y1="6" x2="19" y2="6" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="15" y1="8" x2="19" y2="8" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="15" y1="17" x2="19" y2="17" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="15" y1="19" x2="19" y2="19" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#1F7CFF',
+                    margin: '0',
+                    lineHeight: '1.3'
+                  }}>Internet Goes Down, Business Stops</h3>
+                </div>
+                <p style={{
+                  color: '#4b5563',
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  No backup connection. No IT support. Employees sit idle for hours.
+                </p>
+              </div>
+
+              <div style={{ 
+                background: 'white',
+                borderRadius: '16px',
+                padding: '30px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                height: '100%'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 40px rgba(0, 0, 0, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '15px'
+                }}>
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: '15px',
+                    flexShrink: 0
+                  }}>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="3" width="20" height="7" rx="1" stroke="white" strokeWidth="2"/>
+                      <rect x="2" y="14" width="20" height="7" rx="1" stroke="white" strokeWidth="2"/>
+                      <circle cx="6" cy="6.5" r="1" fill="white"/>
+                      <circle cx="10" cy="6.5" r="1" fill="white"/>
+                      <circle cx="6" cy="17.5" r="1" fill="white"/>
+                      <circle cx="10" cy="17.5" r="1" fill="white"/>
+                      <line x1="15" y1="6" x2="19" y2="6" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="15" y1="8" x2="19" y2="8" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="15" y1="17" x2="19" y2="17" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="15" y1="19" x2="19" y2="19" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    color: '#1F7CFF',
+                    margin: '0',
+                    lineHeight: '1.3'
+                  }}>Old Equipment Keeps Breaking</h3>
+                </div>
+                <p style={{
+                  color: '#4b5563',
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>
+                  Computers crash, servers fail, printers jam. No maintenance plan, just emergency fixes.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Areas We Serve */}
-        <section className="section">
+        {/* Complete Solutions Section */}
+        <section style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
           <div className="container">
-            <h2 className="section-title">Serving Greater Moncton and Surrounding Areas</h2>
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                All Your Technology Needs, One Moncton Partner
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                We're not going to sell you every service. We're going to help you solve specific technology problems that are actually hurting your business right now. Here's what we do:
+              </p>
+            </div>
             
-            <div className="services-grid" style={{
+            <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '2rem',
-              maxWidth: '1400px',
+              gap: '40px',
+              maxWidth: '1200px',
               margin: '0 auto'
             }}>
-              <div className="service-card" style={{
+              {/* Website Design */}
+              <div className="professional-card" style={{
                 background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transition: 'transform 0.3s ease'
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 175, 0.1)',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
               }}>
-                <h4>📍 Downtown Moncton</h4>
-                <p>
-                  Professional services, retail businesses, and restaurants in the central business district. 
-                  Main Street, St. George Street, Church Street, and the cultural precinct.
-                </p>
-              </div>
-              
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transition: 'transform 0.3s ease'
-              }}>
-                <h4>📍 Dieppe & Surrounding</h4>
-                <p>
-                  Growing tech companies, bilingual businesses, and service providers in New Brunswick's 
-                  fourth-largest city. Strong focus on innovation and technology adoption.
-                </p>
-              </div>
-              
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transition: 'transform 0.3s ease'
-              }}>
-                <h4>📍 Riverview & Hillsborough</h4>
-                <p>
-                  Residential service contractors, professional services, and retail businesses 
-                  serving Riverview, Hillsborough, and Albert County communities.
-                </p>
-              </div>
-              
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transition: 'transform 0.3s ease'
-              }}>
-                <h4>📍 Salisbury & Petitcodiac</h4>
-                <p>
-                  Rural contractors and service providers throughout Westmorland County. 
-                  Agricultural businesses and rural service specialists.
-                </p>
-              </div>
-              
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transition: 'transform 0.3s ease'
-              }}>
-                <h4>📍 Shediac & Coastal Areas</h4>
-                <p>
-                  Seasonal businesses, tourism-related services, and contractors serving 
-                  the beautiful Shediac Bay and southeastern New Brunswick coast.
-                </p>
-              </div>
-              
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                transition: 'transform 0.3s ease'
-              }}>
-                <h4>📍 Sackville & Border Communities</h4>
-                <p>
-                  Cross-border businesses, university-related services, and contractors 
-                  serving the Tantramar region and Nova Scotia border area.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Moncton Business Focus */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-          <div className="container">
-            <h2 className="section-title">Industries We Serve in Greater Moncton</h2>
-            
-            <div className="industries-content">
-              <div className="industries-text">
-                <h3>Transportation & Logistics</h3>
-                <p>
-                  As the transportation hub of the Maritimes, Moncton hosts numerous logistics and 
-                  transportation companies. We help trucking companies, freight forwarders, and 
-                  logistics providers establish strong digital presences and streamline operations.
-                </p>
-                
-                <h3>Construction & Development</h3>
-                <p>
-                  Greater Moncton's rapid growth drives constant construction activity. We specialize 
-                  in websites for general contractors, residential builders, commercial developers, 
-                  and specialty trades serving the booming market.
-                </p>
-                
-                <h3>Healthcare & Professional Services</h3>
-                <p>
-                  The Moncton Hospital and numerous private practices make healthcare a major sector. 
-                  We provide compliant IT solutions and professional websites for medical practices, 
-                  dental offices, and healthcare professionals.
-                </p>
-                
-                <h3>Technology & Innovation</h3>
-                <p>
-                  Dieppe's Emergence commercial park and Moncton's growing tech scene include many 
-                  innovative companies. We provide scalable solutions for startups, software companies, 
-                  and technology service providers.
-                </p>
-              </div>
-              
-              <div className="industries-stats">
-                <div className="stat-item">
-                  <h4>71,000+</h4>
-                  <p>Moncton residents</p>
-                </div>
-                <div className="stat-item">
-                  <h4>157,000+</h4>
-                  <p>Greater Moncton CMA</p>
-                </div>
-                <div className="stat-item">
-                  <h4>Fastest Growing</h4>
-                  <p>City in Atlantic Canada</p>
-                </div>
-                <div className="stat-item">
-                  <h4>Transportation Hub</h4>
-                  <p>Maritime logistics center</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Bilingual Services */}
-        <section className="section">
-          <div className="container">
-            <h2 className="section-title">Bilingual Digital Solutions for New Brunswick</h2>
-            
-            <div className="bilingual-content">
-              <div className="bilingual-text">
-                <h3>🇫🇷 Services Bilingues Disponibles</h3>
-                <p>
-                  En tant qu'entreprise basée au Nouveau-Brunswick, nous comprenons l'importance 
-                  du bilinguisme pour les entreprises de Moncton et du Grand Moncton. Nous offrons 
-                  des sites web bilingues et des services en français.
-                </p>
-                
-                <h3>🇨🇦 English & French Website Design</h3>
-                <p>
-                  Many Greater Moncton businesses serve both English and French-speaking customers. 
-                  We create fully bilingual websites that provide seamless experiences in both languages, 
-                  essential for businesses in New Brunswick's officially bilingual environment.
-                </p>
-                
-                <h3>📈 Bilingual SEO & Marketing</h3>
-                <p>
-                  Optimize your online presence for both English and French search terms. 
-                  We understand the unique SEO challenges of bilingual markets and create 
-                  strategies that capture customers in both languages.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Success Stories */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-          <div className="container">
-            <h2 className="section-title">Greater Moncton Client Success Stories</h2>
-            
-            <div className="services-grid" style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem',
-              maxWidth: '1400px',
-              margin: '0 auto'
-            }}>
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                textAlign: 'center'
-              }}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🚛</div>
-                <h4>Maritime Transport Solutions</h4>
-                <p>
-                  "LogicPros built us a bilingual WordPress website that showcases our cross-Canada 
-                  capabilities. The automated lead follow-up system helped us convert 40% more 
-                  inquiries into actual contracts. Great ROI."
-                </p>
-                <div className="story-results">
-                  <span>Bilingual website</span>
-                  <span>+40% lead conversion</span>
-                </div>
-              </div>
-              
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                textAlign: 'center'
-              }}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🏗️</div>
-                <h4>Dieppe Construction Group</h4>
-                <p>
-                  "The React website loads incredibly fast and looks professional on all devices. 
-                  Combined with the Google review automation, we've established ourselves as 
-                  the premium choice for commercial construction in Greater Moncton."
-                </p>
-                <div className="story-results">
-                  <span>Premium positioning</span>
-                  <span>Fast performance</span>
-                </div>
-              </div>
-              
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-                textAlign: 'center'
-              }}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '15px' }}>🏥</div>
-                <h4>Riverview Medical Practice</h4>
-                <p>
-                  "The managed IT services ensure our patient data is secure and compliant. 
-                  The automated appointment reminders reduced no-shows by 35%, improving 
-                  our scheduling efficiency significantly."
-                </p>
-                <div className="story-results">
-                  <span>HIPAA compliant</span>
-                  <span>-35% no-shows</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Maritime Advantages */}
-        <section className="section">
-          <div className="container">
-            <h2 className="section-title">Why Choose Local for Your Digital Needs</h2>
-            
-            <div className="services-grid" style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '2rem',
-              maxWidth: '1400px',
-              margin: '0 auto'
-            }}>
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)'
-              }}>
-                <h4>🌊 Maritime Business Understanding</h4>
-                <p>
-                  We understand the unique challenges and opportunities of doing business in the Maritimes. 
-                  Seasonal fluctuations, interprovincial commerce, and the importance of relationship-building 
-                  in smaller communities.
-                </p>
-              </div>
-              
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)'
-              }}>
-                <h4>⏰ Atlantic Time Zone Advantage</h4>
-                <p>
-                  Working in the same time zone means real-time communication and support. 
-                  No waiting for responses from companies in other time zones - we're here 
-                  when you need us during Maritime business hours.
-                </p>
-              </div>
-              
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)'
-              }}>
-                <h4>🤝 Personal Relationships</h4>
-                <p>
-                  In the Maritimes, business is personal. We build long-term relationships with our clients, 
-                  understanding your business evolution and providing ongoing support that grows with you.
-                </p>
-              </div>
-              
-              <div className="service-card" style={{
-                background: 'white',
-                padding: '2rem',
-                borderRadius: '12px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)'
-              }}>
-                <h4>💼 Regional Market Knowledge</h4>
-                <p>
-                  Deep understanding of Maritime markets, from Moncton's rapid growth to seasonal 
-                  tourism patterns. We tailor solutions to work effectively in regional contexts.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Getting Started */}
-        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
-          <div className="container">
-            <h2 className="section-title">Ready to Grow Your Moncton Business Online?</h2>
-            
-            <div className="getting-started-content">
-              <div className="steps-content">
-                <h3>Get Started with Your Digital Transformation:</h3>
-                
-                <div className="start-option">
-                  <h4>🆓 Free Website Mockup</h4>
-                  <p>
-                    See exactly what your professional website will look like before you commit. 
-                    We'll create a custom sample page for your Greater Moncton business at no cost.
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div className="service-icon" style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                      <line x1="8" y1="21" x2="16" y2="21" stroke="white" strokeWidth="2"/>
+                      <line x1="12" y1="17" x2="12" y2="21" stroke="white" strokeWidth="2"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>Website Design & Development</h3>
+                  <p style={{
+                    color: colors.text.secondary,
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    Custom websites that generate leads and sales. Modern, mobile-responsive sites that you can update yourself or we can maintain for you.
                   </p>
-                  <a href="/free-example" className="hero-button">Get Free Mockup</a>
+                  <ul style={{
+                    color: colors.text.secondary,
+                    paddingLeft: '20px',
+                    lineHeight: '1.7',
+                    fontSize: '0.95rem',
+                    textAlign: 'left',
+                    marginBottom: '20px'
+                  }}>
+                    <li>Custom design or WordPress development</li>
+                    <li>Mobile-responsive (works on all devices)</li>
+                    <li>SEO optimization for Google</li>
+                    <li>E-commerce, booking systems, integrations</li>
+                  </ul>
+                  <div style={{ textAlign: 'center' }}>
+                    <a href="/services/website-design" style={{
+                      color: '#1F7CFF',
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      transition: 'all 0.3s ease'
+                    }}>
+                      → Learn More About Website Design
+                    </a>
+                  </div>
                 </div>
-                
-                <div className="start-option">
-                  <h4>📞 Digital Strategy Call</h4>
-                  <p>
-                    15-minute consultation to discuss your business goals and recommend the best 
-                    digital marketing strategies for the competitive Moncton market.
+              </div>
+              
+              {/* Cybersecurity */}
+              <div className="professional-card" style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 175, 0.1)',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div className="service-icon" style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>Cybersecurity Protection</h3>
+                  <p style={{
+                    color: colors.text.secondary,
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    Stop ransomware, phishing, and data breaches. Password management, multi-factor authentication, monitoring, and incident response.
                   </p>
-                  <a href="/contact" className="hero-button">Book Strategy Call</a>
+                  <ul style={{
+                    color: colors.text.secondary,
+                    paddingLeft: '20px',
+                    lineHeight: '1.7',
+                    fontSize: '0.95rem',
+                    textAlign: 'left',
+                    marginBottom: '20px'
+                  }}>
+                    <li>Security audits and vulnerability assessment</li>
+                    <li>Password management implementation</li>
+                    <li>Multi-factor authentication setup</li>
+                    <li>Ongoing security monitoring</li>
+                  </ul>
+                  <div style={{ textAlign: 'center' }}>
+                    <a href="/services/cybersecurity" style={{
+                      color: '#1F7CFF',
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      transition: 'all 0.3s ease'
+                    }}>
+                      → Learn More About Cybersecurity
+                    </a>
+                  </div>
                 </div>
-                
-                <div className="start-option">
-                  <h4>💬 Project Quote</h4>
-                  <p>
-                    Tell us about your project requirements and receive a detailed proposal 
-                    for website design, automation, or IT services in Greater Moncton.
+              </div>
+              
+              {/* Business Automation */}
+              <div className="professional-card" style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 175, 0.1)',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div className="service-icon" style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>Business Process Automation</h3>
+                  <p style={{
+                    color: colors.text.secondary,
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    Eliminate repetitive tasks, automate workflows. AI chatbots that handle customer questions 24/7. Custom integrations that eliminate manual work.
                   </p>
-                  <a href="/contact" className="hero-button">Request Project Quote</a>
+                  <ul style={{
+                    color: colors.text.secondary,
+                    paddingLeft: '20px',
+                    lineHeight: '1.7',
+                    fontSize: '0.95rem',
+                    textAlign: 'left',
+                    marginBottom: '20px'
+                  }}>
+                    <li>AI chatbots for website/social media</li>
+                    <li>Workflow automation between apps</li>
+                    <li>Custom business process automation</li>
+                    <li>Data integration and synchronization</li>
+                  </ul>
+                  <div style={{ textAlign: 'center' }}>
+                    <a href="/services/automation" style={{
+                      color: '#1F7CFF',
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      transition: 'all 0.3s ease'
+                    }}>
+                      → Learn More About Automation
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Managed IT */}
+              <div className="professional-card" style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 175, 0.1)',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div className="service-icon" style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="3" width="20" height="7" rx="1" stroke="white" strokeWidth="2"/>
+                      <rect x="2" y="14" width="20" height="7" rx="1" stroke="white" strokeWidth="2"/>
+                      <circle cx="6" cy="6.5" r="1" fill="white"/>
+                      <circle cx="10" cy="6.5" r="1" fill="white"/>
+                      <circle cx="6" cy="17.5" r="1" fill="white"/>
+                      <circle cx="10" cy="17.5" r="1" fill="white"/>
+                      <line x1="15" y1="6" x2="19" y2="6" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="15" y1="8" x2="19" y2="8" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="15" y1="17" x2="19" y2="17" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="15" y1="19" x2="19" y2="19" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>Managed IT Services</h3>
+                  <p style={{
+                    color: colors.text.secondary,
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    Reliable IT support without hiring staff. Helpdesk support, network management, cloud services, and IT consulting. Available when you need us.
+                  </p>
+                  <ul style={{
+                    color: colors.text.secondary,
+                    paddingLeft: '20px',
+                    lineHeight: '1.7',
+                    fontSize: '0.95rem',
+                    textAlign: 'left',
+                    marginBottom: '20px'
+                  }}>
+                    <li>Helpdesk support (remote and on-site)</li>
+                    <li>Network setup, management, monitoring</li>
+                    <li>Cloud migration and management</li>
+                    <li>Strategic IT consulting</li>
+                  </ul>
+                  <div style={{ textAlign: 'center' }}>
+                    <a href="/services/managed-it" style={{
+                      color: '#1F7CFF',
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      transition: 'all 0.3s ease'
+                    }}>
+                      → Learn More About Managed IT
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="section" style={{ backgroundColor: '#000', color: 'white' }}>
+        {/* Why Choose Local Section */}
+        <section style={{ backgroundColor: 'white', padding: '80px 20px' }}>
           <div className="container">
-            <div className="section-header">
-              <h2 className="section-title" style={{ color: 'white' }}>Powering Greater Moncton's Digital Future</h2>
-              <p style={{ color: '#ccc', fontSize: '1.2rem' }}>
-                From the Hub City to the entire Maritime region - we're your technology partners 
-                for sustainable business growth.
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Why Choose LogicPros for Moncton
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '700px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                You could hire a Toronto agency that charges $200/hour and schedules meetings around their availability. Or an offshore company where you're ticket #47,832 in a queue. Here's why Moncton businesses choose local technology partners:
               </p>
             </div>
-            <div className="cta-buttons">
-              <a href="/contact" className="hero-button" style={{ backgroundColor: 'white', color: '#000' }}>
-                Start Your Project
-              </a>
-              <a href="/free-example" className="secondary-button" style={{ borderColor: 'white', color: 'white' }}>
-                See Free Example
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '40px',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="12" cy="10" r="3" stroke="white" strokeWidth="2"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>New Brunswick Based</h3>
+                  <p style={{
+                    color: colors.text.secondary,
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center'
+                  }}>
+                    Need on-site IT support? We're in New Brunswick, not scheduling flights from Toronto. Want to meet in person to discuss a website project? Let's grab coffee downtown. Need emergency help with a security issue? We're 30 minutes away. Your technology partner shouldn't be someone you've never met in a different time zone.
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="8.5" cy="7" r="4" stroke="white" strokeWidth="2"/>
+                      <polyline points="17,11 19,13 23,9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>Complete Technology Partner</h3>
+                  <p style={{
+                    color: colors.text.secondary,
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center'
+                  }}>
+                    Everything from websites to cybersecurity to IT support—no juggling vendors. One point of contact for all your technology needs, with consistent service and support across all areas.
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>Transparent Fixed Pricing</h3>
+                  <p style={{
+                    color: colors.text.secondary,
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center'
+                  }}>
+                    Know your costs upfront. No surprise bills or hidden fees. Fixed monthly pricing that makes budgeting predictable and eliminates the stress of hourly billing.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Moncton Industries Section */}
+        <section style={{ backgroundColor: '#f8f9fa', padding: '80px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+              <h2 style={{
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #1d7aaf 0%, #1e40af 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+                marginBottom: '20px',
+                lineHeight: '1.2'
+              }}>
+                Technology Solutions for Every Moncton Industry
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Not every business needs our help. If all your technology is working perfectly, you're probably fine. But if any of these situations sound familiar, let's talk:
+              </p>
+            </div>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '40px',
+              maxWidth: '1000px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 175, 0.1)',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="white" strokeWidth="2"/>
+                      <line x1="8" y1="21" x2="16" y2="21" stroke="white" strokeWidth="2"/>
+                      <line x1="12" y1="17" x2="12" y2="21" stroke="white" strokeWidth="2"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>Your Website Is Turning Customers Away</h3>
+                  <p style={{
+                    color: colors.text.secondary,
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center'
+                  }}>
+                    It's old, unprofessional, doesn't work on phones, or you can't update it yourself. Potential customers judge your entire business by your website—and right now, it's making you look like you're not keeping up. You're losing business to competitors with better online presence.
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 175, 0.1)',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>You're Worried About Security (And You Should Be)</h3>
+                  <p style={{
+                    color: colors.text.secondary,
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center'
+                  }}>
+                    You don't have proper backups, your team uses weak passwords, you're not sure if you'd even know if you were breached. Attacks on small businesses are increasing, and you're wondering if you're protected or just lucky so far. The uncertainty is exhausting.
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 175, 0.1)',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>You're Wasting Money on Manual Work</h3>
+                  <p style={{
+                    color: colors.text.secondary,
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center'
+                  }}>
+                    Someone manually enters data into multiple systems. Customer questions go unanswered after hours. Invoices are created by hand. You know this could be automated but don't know where to start, whether it's affordable, or if it would actually save more time than it costs to implement.
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{
+                background: 'white',
+                borderRadius: '20px',
+                padding: '40px 35px',
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                border: '1px solid rgba(31, 124, 175, 0.1)',
+                height: '100%',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                  borderRadius: '50%',
+                  zIndex: 0
+                }}></div>
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                    borderRadius: '20px',
+                    boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                    transition: 'all 0.3s ease',
+                    margin: '0 auto 25px auto'
+                  }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="3" width="20" height="7" rx="1" stroke="white" strokeWidth="2"/>
+                      <rect x="2" y="14" width="20" height="7" rx="1" stroke="white" strokeWidth="2"/>
+                      <circle cx="6" cy="6.5" r="1" fill="white"/>
+                      <circle cx="10" cy="6.5" r="1" fill="white"/>
+                      <circle cx="6" cy="17.5" r="1" fill="white"/>
+                      <circle cx="10" cy="17.5" r="1" fill="white"/>
+                      <line x1="15" y1="6" x2="19" y2="6" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="15" y1="8" x2="19" y2="8" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="15" y1="17" x2="19" y2="17" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="15" y1="19" x2="19" y2="19" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '15px',
+                    lineHeight: '1.3',
+                    textAlign: 'center'
+                  }}>Technology Problems Keep Interrupting Your Day</h3>
+                  <p style={{
+                    color: colors.text.secondary,
+                    lineHeight: '1.7',
+                    fontSize: '1rem',
+                    textAlign: 'center'
+                  }}>
+                    Printers break, Wi-Fi drops, software crashes, networks are slow, and you're the person everyone asks to fix it. You're Googling solutions and hoping they work, but you're not an IT expert—you're a business owner who's tired of being the tech support department.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Local Service Area Section */}
+        <section style={{ backgroundColor: colors.backgrounds.light, padding: '40px 20px' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center' }}>
+              <p style={{
+                fontSize: '1.1rem',
+                color: colors.text.secondary,
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: '1.6'
+              }}>
+                Proudly serving Moncton, Dieppe, Riverview, and the greater Greater Moncton area with comprehensive technology solutions tailored to New Brunswick businesses.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section style={{
+          background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+          color: 'white',
+          padding: '80px 20px',
+          textAlign: 'center'
+        }}>
+          <div className="container">
+            <h2 style={{
+              fontSize: 'clamp(2rem, 4vw, 3rem)',
+              fontWeight: '700',
+              marginBottom: '30px'
+            }}>Stop Losing Money to Technology Problems</h2>
+            <p style={{
+              fontSize: '1.3rem',
+              marginBottom: '40px',
+              maxWidth: '600px',
+              margin: '0 auto 40px auto',
+              opacity: 0.9,
+              lineHeight: '1.6'
+            }}>
+              Free technology audit for Moncton businesses. We'll analyze your current setup—website performance, security vulnerabilities, workflow inefficiencies, and IT infrastructure—and show you exactly where you're bleeding money. Clear solutions, no sales pressure.
+            </p>
+            <div style={{
+              display: 'flex',
+              flexDirection: window.innerWidth <= 768 ? 'column' : 'row',
+              gap: '20px',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexWrap: 'wrap'
+            }}>
+              <a
+                href="/contact"
+                style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '18px 40px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '50px',
+                  boxShadow: '0 10px 30px rgba(29, 78, 216, 0.4)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.boxShadow = '0 15px 40px rgba(29, 78, 216, 0.5)';
+                  e.target.style.transform = 'translateY(-3px) scale(1.02)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.boxShadow = '0 10px 30px rgba(29, 78, 216, 0.4)';
+                  e.target.style.transform = 'translateY(0) scale(1)';
+                }}
+              >
+                Schedule Free Moncton Tech Audit
               </a>
             </div>
           </div>
         </section>
       </main>
+
       <Footer />
     </div>
   );
 };
-
-// Enhanced styles matching homepage professional design
-const locationStyles = `
-/* Professional service card hover effects */
-.professional-card:hover {
-  transform: translateY(-8px) !important;
-  box-shadow: 0 20px 60px rgba(29, 122, 175, 0.15), 0 8px 32px rgba(29, 122, 175, 0.2) !important;
-  border-color: rgba(29, 122, 175, 0.3) !important;
-}
-
-.professional-card:hover .service-icon {
-  transform: scale(1.1) rotate(5deg) !important;
-  box-shadow: 0 12px 35px rgba(29, 122, 175, 0.4) !important;
-}
-
-/* Ensure responsive grid behavior */
-@media (max-width: 768px) {
-  .services-grid[style*="repeat(2, 1fr)"] {
-    grid-template-columns: 1fr !important;
-  }
-  
-  .services-grid[style*="repeat(auto-fit"] {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* Remove old styles */
-.local-services-grid {
-  display: none;
-}
-
-/* Remove old card styles - replaced with inline styles */
-.local-service-card {
-  display: none;
-}
-
-.service-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.local-service-card h3 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  font-size: 1.4rem;
-}
-
-.local-service-card p {
-  color: var(--text-secondary);
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.service-benefits {
-  list-style: none;
-  padding: 0;
-}
-
-.service-benefits li {
-  padding: 5px 0;
-  color: var(--text-secondary);
-  position: relative;
-  padding-left: 20px;
-  font-size: 0.95rem;
-}
-
-.service-benefits li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--primary-color);
-  font-weight: bold;
-}
-
-/* Remove old area card styles - replaced with service-card */
-.service-areas-grid, .service-area-card {
-  display: none;
-}
-
-.industries-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-.industries-text h3 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  margin-top: 30px;
-  font-size: 1.3rem;
-}
-
-.industries-text h3:first-child {
-  margin-top: 0;
-}
-
-.industries-text p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.industries-stats {
-  display: grid;
-  gap: 20px;
-}
-
-.stat-item {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.stat-item h4 {
-  font-size: 1.8rem;
-  color: var(--primary-color);
-  margin-bottom: 8px;
-}
-
-.stat-item p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
-
-.bilingual-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-}
-
-.bilingual-text h3 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  margin-top: 30px;
-  font-size: 1.3rem;
-}
-
-.bilingual-text h3:first-child {
-  margin-top: 0;
-}
-
-.bilingual-text p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.success-stories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.story-card {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
-
-.story-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
-.story-card h4 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
-
-.story-card p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 20px;
-  font-style: italic;
-}
-
-.story-results {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.story-results span {
-  background: #f8f9fa;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  color: var(--primary-color);
-  font-weight: 600;
-}
-
-.maritime-advantages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.advantage-item {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.advantage-item h4 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
-
-.advantage-item p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.getting-started-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-}
-
-.steps-content h3 {
-  color: var(--primary-color);
-  margin-bottom: 30px;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-.start-option {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.start-option h4 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  font-size: 1.3rem;
-}
-
-.start-option p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-/* Updated mobile responsive styles */
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-  }
-  
-  .industries-content {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-  }
-  
-  .story-results {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .service-card {
-    padding: 1.5rem !important;
-  }
-}
-`;
-
-// Inject additional styles
-if (typeof document !== 'undefined') {
-  const styleSheet = document.createElement('style');
-  styleSheet.textContent = locationStyles;
-  document.head.appendChild(styleSheet);
-}
