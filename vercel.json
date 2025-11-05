@@ -3,6 +3,18 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "framework": "create-react-app",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/logicpros",
+      "has": [
+        {
+          "type": "host",
+          "value": "login.logicpros.ca"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     { "source": "/locations/fredericton/web-design", "destination": "/index.html" },
     { "source": "/locations/fredericton/cybersecurity", "destination": "/index.html" },
@@ -18,6 +30,7 @@
     { "source": "/contractors/(.*)", "destination": "/index.html" },
     { "source": "/about", "destination": "/index.html" },
     { "source": "/contact", "destination": "/index.html" },
-    { "source": "/free-example", "destination": "/index.html" }
+    { "source": "/free-example", "destination": "/index.html" },
+    { "source": "/logicpros", "destination": "/index.html" }
   ]
 }
