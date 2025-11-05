@@ -7,6 +7,7 @@
     {
       "source": "/",
       "destination": "/logicpros",
+      "permanent": false,
       "has": [
         {
           "type": "host",
