@@ -136,7 +136,10 @@ export const Navigation = () => {
           onMouseLeave={handleMouseLeave}
         >
           <button className="user-menu-button">
-            <span className="user-icon">👤</span>
+            <svg className="user-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M20 21C20 17.134 16.4183 14 12 14C7.58172 14 4 17.134 4 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
             <span className="dropdown-arrow">▼</span>
           </button>
           <div className={`dropdown-content user-dropdown ${dropdownOpen === 'user' ? 'show' : ''}`}>
@@ -157,7 +160,11 @@ export const Navigation = () => {
         </div>
       ) : (
         <a href="/logicpros" className="login-link">
-          <span className="user-icon">👤</span> Login
+          <svg className="user-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M20 21C20 17.134 16.4183 14 12 14C7.58172 14 4 17.134 4 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          <span>Login</span>
         </a>
       )}
 
@@ -596,7 +603,9 @@ const dropdownStyles = `
 }
 
 .user-icon {
-  font-size: 1.2rem;
+  width: 20px;
+  height: 20px;
+  color: white;
 }
 
 .user-dropdown {

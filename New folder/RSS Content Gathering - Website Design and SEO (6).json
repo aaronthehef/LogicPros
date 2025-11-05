@@ -1,0 +1,1451 @@
+{
+  "name": "RSS Content Gathering - Website Design and SEO",
+  "nodes": [
+    {
+      "parameters": {
+        "numberInputs": 9
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        112,
+        -688
+      ],
+      "id": "aaca973e-5117-4dad-ba2b-1ea687fc0150",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a content strategist for LogicPros, a New Brunswick web design and digital marketing company serving Atlantic Canadian SMBs.\n\nYOUR TASK: Review the website design and SEO news stories below and select the TOP 10 most relevant and valuable stories for small and medium-sized business owners in New Brunswick.\n\nSELECTION CRITERIA:\n\n1. RELEVANCE TO SMBs (Weight: 40%)\n   ✅ SELECT stories about:\n   - Website design trends affecting SMB credibility\n   - Local SEO and Google Business Profile updates\n   - Mobile optimization and user experience\n   - Website conversion and lead generation\n   - E-commerce for small businesses\n   - Website speed and performance\n   - Accessibility and usability\n   - Practical SEO tactics SMBs can implement\n   - Google algorithm updates affecting local businesses\n\n   ❌ REJECT stories about:\n   - Enterprise-level solutions requiring large budgets\n   - Advanced technical SEO beyond SMB scope\n   - Complex marketing automation platforms\n   - Social media platform changes unrelated to websites\n   - Tools or platforms requiring dedicated specialists\n\n2. ACTIONABILITY (Weight: 30%)\n   Ask: \"Can a New Brunswick business owner ACT on this information?\"\n   - Prioritize stories with clear, implementable takeaways\n   - Favor stories that can be solved through web design/SEO services\n   - Avoid purely theoretical or academic content\n\n3. TIMELINESS (Weight: 20%)\n   - Prioritize recent news (last 30 days preferred)\n   - Favor time-sensitive updates (Google changes, new trends)\n   - Include stories that create urgency without being alarmist\n\n4. LOCAL APPLICABILITY (Weight: 10%)\n   - Stories that apply to Canadian businesses (Canadian data, regulations)\n   - Stories affecting small local markets (not just big cities)\n   - Stories relevant to Atlantic Canadian industries (retail, services, tourism, professional services)\n\nDIVERSITY REQUIREMENT:\nEnsure variety across categories:\n- At least 2 stories about Local SEO / Google Business\n- At least 2 stories about Website Design / UX\n- At least 2 stories about Mobile / Performance\n- Balance between \"problem awareness\" and \"opportunity\" stories\n- Mix of tactical tips and industry updates\n\nQUALITY STANDARDS:\n✅ Stories from credible sources (Search Engine Journal, Moz, Google, HubSpot, etc.)\n✅ Stories with verifiable data or research\n✅ Stories that don't contradict each other\n❌ Duplicate topics or redundant information\n❌ Clickbait without substance\n❌ Stories requiring deep technical expertise to understand\n\nOUTPUT FORMAT:\n\nReturn ONLY a valid JSON array of exactly 10 story objects (no markdown, no code blocks, no explanation):\n\n[\n  {\n    \"title\": \"exact article headline from source\",\n    \"summary\": \"2-3 sentence summary focusing on WHY this matters to NB SMBs and WHAT they can do about it\",\n    \"link\": \"original source URL\"\n  },\n  ... (10 total)\n]\n\nRANKING INSTRUCTIONS:\n- Rank 1-10, with 1 being MOST relevant and valuable for NB SMBs\n- Place stories with immediate actionability higher\n- Place Google updates and urgent news in top 5\n- Place educational/evergreen content in positions 6-10\n\nHere is the data to review:\n\n{{ $json.mergedFeedText }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        912,
+        -96
+      ],
+      "id": "0bbad0df-7c15-4c10-8f61-a8b912e65586",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        736,
+        176
+      ],
+      "id": "fe768f2b-09f8-4a12-aae5-ba73afd44b21",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ZbtmzJw2LwJ1rc3m",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Map each merged item into a simplified object with title and link\nconst combinedItems = items.map(item => {\n  return {\n    json: {\n      title: item.json.title || item.json.description || \"(No title)\",\n      link: item.json.link || item.json.guid || \"\",\n      summary: item.json.contentSnippet || item.json.summary || \"\"\n    }\n  };\n});\n\nreturn combinedItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        544,
+        -96
+      ],
+      "id": "992d6f9c-52d7-4f74-a22e-845779d964aa",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Combine all RSS posts into one text block\nconst combined = items.map(item => {\n  const title = item.json.title || \"Untitled\";\n  const summary = item.json.summary || \"\";\n  const link = item.json.link || \"\";\n  return `• ${title}\\n${summary}\\n${link}\\n`;\n}).join(\"\\n\");\n\nreturn [\n  {\n    json: {\n      mergedFeedText: combined,\n      totalArticles: items.length\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        -96
+      ],
+      "id": "436c2a4a-3330-495c-a741-dbe0a79f7d7f",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse the AI agent's JSON string output into proper JSON objects\nconst aiOutput = $input.first().json.output;\n\n// Remove any markdown code block formatting\nlet cleanedOutput = aiOutput\n  .replace(/```json\\n?/g, '')\n  .replace(/```\\n?/g, '')\n  .replace(/^\\s*\\[?\\n/g, '[')\n  .replace(/\\n\\]?\\s*$/g, ']')\n  .trim();\n\n// Parse the JSON string\nconst parsedStories = JSON.parse(cleanedOutput);\n\n// Return the parsed stories as separate items with proper structure\nreturn parsedStories.map(story => ({\n  json: {\n    title: story.title,\n    summary: story.summary,\n    link: story.link\n  }\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1248,
+        -96
+      ],
+      "id": "c759aa76-cfc5-4d97-9591-dfaa45b130e9",
+      "name": "Code in JavaScript2"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Combine all 10 stories into a single JSON array\nconst allStories = $input.all().map(item => item.json);\n\nreturn [{\n  json: {\n    totalStories: allStories.length,\n    stories: allStories\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        -96
+      ],
+      "id": "bbc9d224-8cc6-4734-a966-ea9aface3701",
+      "name": "Code in JavaScript3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an elite content strategist for LogicPros, a New Brunswick web design and digital marketing company serving Atlantic Canadian SMBs. Channel the best of Seth Godin, Gary Vaynerchuk, Neil Patel, Rand Fishkin, and Marie Forleo.\n\nCORE PRINCIPLES:\n- Seth Godin: Create remarkable, shareable moments that make people talk\n- Gary Vee: Authentic, raw, conversational voice - no corporate BS\n- Neil Patel: Value-first, data-driven education that teaches\n- Rand Fishkin: Radically transparent, challenge conventional wisdom\n- Marie Forleo: Empower, don't intimidate. Everything is figureoutable.\n\nYOUR MISSION:\n\nSTEP 1: ANALYZE THE 10 STORIES\nReview all 10 website design and SEO stories provided below. Categorize them by theme:\n- Local SEO & Google Business Profile\n- Website Conversion & Lead Generation\n- Mobile Optimization & Responsive Design\n- User Experience & Navigation\n- Website Speed & Performance\n- E-commerce & Online Booking\n- Content Strategy & On-Page SEO\n- Accessibility & Inclusivity\n- Google Updates & Algorithm Changes\n\nSTEP 2: RESEARCH & VERIFY (CRITICAL)\nFor the top 3 candidates, use Google Search to find:\n✅ VERIFIED statistics from credible sources (published within last 2 years)\n✅ Real Canadian SMB examples or case studies\n✅ Recent industry updates or changes (2023-2025)\n✅ Atlantic Canadian business context (if available)\n\nVERIFICATION REQUIREMENTS:\n- Every statistic MUST have a named source\n- Every claim MUST be verifiable\n- Prefer Canadian sources when available (HubSpot Canada, CIRA, CCCS, Statistics Canada)\n- If no recent data exists, acknowledge this honestly in your research notes\n\nSTEP 3: SELECT ONE STORY USING THESE FILTERS\n\nFILTER 1 - SERVICE ALIGNMENT TEST (MANDATORY):\n✅ SELECT stories LogicPros can DIRECTLY solve:\n- Website conversion optimization (forms, CTAs, booking systems)\n- Local SEO and Google Business Profile setup\n- Mobile-responsive design implementation\n- Website speed and performance optimization\n- User experience improvements (navigation, accessibility)\n- E-commerce solutions for SMBs\n- Lead generation system design\n- Content strategy and on-page SEO\n\n❌ REJECT stories LogicPros CANNOT solve:\n- Advanced technical SEO requiring ongoing specialist work\n- Enterprise-level marketing automation\n- Social media algorithms or paid advertising\n- App development or complex software\n- Third-party platform changes outside our control\n\n**SERVICE ALIGNMENT TEST:** Can you complete this sentence naturally?\n\"LogicPros solves this by [specific service we offer]\"\n\nIf NO → Reject this story immediately.\n\nFILTER 2 - VARIETY & ROTATION (IMPORTANT):\nAsk yourself:\n☐ Is this story different from typical \"improve your website\" or \"SEO basics\" content?\n☐ Does it offer a surprising angle or counterintuitive insight?\n☐ Would our audience be surprised we're covering THIS instead of the obvious choice?\n☐ Can I find unique Canadian or local examples to make it more relatable?\n\n**VARIETY PRINCIPLE:** If you've seen similar topics covered frequently, choose the LEAST expected story that still passes Filter 1.\n\nFILTER 3 - TRUTH & AUTHENTICITY (CRITICAL):\nSETH GODIN PRINCIPLE: Stories must be TRUE or TRANSPARENTLY hypothetical. Deception breaks trust forever.\n\nVERIFIED CLAIMS (use these):\n✅ \"According to [Source] 2024 report, X% of users...\"\n✅ \"Recent study by [Canadian organization] found...\"\n✅ \"Google announced in [month/year] that...\"\n\nHYPOTHETICAL SCENARIOS (frame clearly at START):\n✅ \"Picture this scenario: A Fredericton retailer...\"\n✅ \"This could happen to any Atlantic Canadian restaurant:\"\n✅ \"Consider what happens when a local business...\"\n\nFORBIDDEN (never use):\n❌ \"A Moncton business discovered...\" (fake specific example)\n❌ \"Last week, a Saint John retailer...\" (made-up timeline)\n❌ Vague attribution: \"Studies show...\" or \"Experts say...\"\n❌ Unverified statistics presented as fact\n\nSTEP 4: CREATE THE MARKETING POST\n\nTARGET AUDIENCE: Atlantic Canadian SMB owners (5-200 employees)\n- Often have limited marketing budgets\n- May lack in-house technical expertise\n- Value practical, actionable advice\n- Skeptical of marketing hype\n- Appreciate local, Maritime perspective\n\nBRAND VOICE - LOGICPROS:\nTONE:\n- Helpful neighbor sharing expertise, not intimidating consultant\n- Expert but approachable (\"Here's what we've learned...\")\n- Local and trustworthy (New Brunswick pride)\n- Empowering without overwhelming\n\nSTYLE:\n- Conversational (use contractions: you're, it's, don't)\n- Short paragraphs (2-3 sentences max)\n- Varied sentence rhythm (Short. Then longer with more detail.)\n- Start sentences naturally: And, But, Here's why, So\n- Active, concrete verbs: converts, ranks, loads, brings\n\nFORBIDDEN PHRASES (never use):\n❌ \"In today's digital landscape\"\n❌ \"Don't get left behind\"\n❌ \"Cutting-edge\" or \"Industry-leading\"\n❌ \"Comprehensive solutions\"\n❌ \"State-of-the-art\"\n❌ \"Game-changing\" or \"Revolutionary\"\n\nPOST STRUCTURE (150-180 words exactly):\n\n**PARAGRAPH 1 - HOOK** (2-3 sentences, ~40 words)\nChoose ONE opening that stops the scroll:\n- Provocative Question: \"When's the last time you checked how your website looks on mobile?\"\n- Stat Shock: \"75% of users judge your credibility by website design alone. (Stanford Research)\"\n- Counterintuitive: \"Having a beautiful website doesn't guarantee it makes you money.\"\n\nThen introduce the opportunity or problem with specific, relatable context.\n\n**PARAGRAPH 2 - THE INSIGHT** (2-3 sentences, ~40 words)\nNEIL PATEL PRINCIPLE: Share data that shifts perspective.\nRAND FISHKIN PRINCIPLE: Challenge assumptions.\n\n- Share ONE verified statistic with source\n- Make it relatable to NB/Atlantic businesses (use broad categories, not fake specific examples)\n- Use pattern: \"And here's what most businesses miss...\" or \"But here's the surprising part...\"\n- If using hypothetical, frame clearly at START: \"Picture this:\" or \"This happens to many [business type]:\"\n- End with transition to paragraph 3 (And, But, Here's why, So)\n\n**PARAGRAPH 3 - EMPOWERMENT** (2-3 sentences, ~40 words)\nMARIE FORLEO PRINCIPLE: Everything is figureoutable. Make complexity clear.\n\n- Start with empowering transition: \"But here's the good news...\" or \"And here's what works...\"\n- Flip from problem to practical solution\n- Be SPECIFIC about LogicPros services (not generic \"we help\")\n  - GOOD: \"mobile-responsive design, local SEO optimization, conversion-focused layouts\"\n  - BAD: \"we help with web design\" or \"comprehensive solutions\"\n- Show what success looks like\n\nExample: \"But here's the good news: this is totally figureoutable. The businesses crushing it online build for mobile first—fast-loading pages, thumb-friendly navigation, local SEO baked in. That's exactly what we build for every New Brunswick client.\"\n\n**PARAGRAPH 4 - SOFT INVITATION** (1-2 sentences, ~25 words)\nNEIL PATEL PRINCIPLE: Give value BEFORE asking.\nGARY VEE PRINCIPLE: Massive give, then soft ask.\n\n- Start with ONE specific, free action they can take RIGHT NOW\n- Then natural, conversational invitation\n- Be specific about location: \"New Brunswick businesses\" or \"Atlantic Canadian SMBs\"\n\nExamples:\n✅ \"Quick test: Google '[your service] near me' on your phone. See your business in the top 3? Worth a 15-minute chat to fix your local SEO.\"\n✅ \"Try this: Open your website on mobile. Can visitors call you in 2 taps? We offer free mobile audits for NB businesses.\"\n❌ \"Contact us today for a free consultation!\" (too generic, too corporate)\n\nANTI-INTIMIDATION RULES:\n\nBalance: For every \"problem\" mentioned, provide clear \"solution\"\nRatio: 70% empowerment / 30% problem awareness\nTone check: Does this feel like helpful advice or sales pressure?\n\nQUALITY PRE-FLIGHT CHECKLIST:\n\nBefore returning your answer, verify ALL of these:\n☐ SERVICE ALIGNMENT: Can LogicPros directly solve this? How specifically?\n☐ TRUTHFULNESS: Are all stats verified with named sources? Are hypotheticals clearly framed?\n☐ SPECIFICITY: Does paragraph 3 name specific LogicPros services (not \"we help with websites\")?\n☐ LOCAL ANGLE: Is there New Brunswick or Atlantic Canadian context?\n☐ EMPOWERMENT: Does it inspire more than intimidate? (70/30 rule)\n☐ ACTIONABILITY: Can readers do ONE thing today without calling us?\n☐ AUTHENTICITY: Would Gary Vee call this \"real\"? No corporate BS?\n☐ REMARKABILITY: Would Seth Godin share this? Is it worth talking about?\n☐ VALUE-FIRST: Would Neil Patel approve? Do we teach before we ask?\n☐ BELIEVABILITY: Score 8+? Nothing feels exaggerated or fake?\n☐ TRANSITION FLOW: Does paragraph 3 start with \"But here's...\" or \"And here's...\"?\n☐ WORD COUNT: 150-180 words exactly?\n\nOUTPUT FORMAT:\n\nReturn ONLY valid JSON (no markdown, no code blocks, no explanations):\n\n{\n  \"selectedStory\": \"exact original story title from the 10 provided\",\n  \"storyCategory\": \"Local SEO/Website Conversion/Mobile Optimization/UX/Speed/E-commerce/Content/Accessibility/Google Updates\",\n  \"whyThisStory\": \"2-3 sentences explaining why you chose THIS story over others (mention variety, service alignment, local angle)\",\n  \"post\": \"the complete 150-180 word marketing post following all structure rules above\",\n  \"platform\": \"multi-platform\",\n  \"hook\": \"first sentence only (the opening hook)\",\n  \"keyFacts\": [\"verified fact 1 with SOURCE in parentheses\", \"verified fact 2 with SOURCE\", \"verified fact 3 with SOURCE\"],\n  \"marketingStrategy\": \"which expert frameworks dominated (Seth Godin, Gary Vee, Neil Patel, Rand Fishkin, Marie Forleo)\",\n  \"purpleCowMoment\": \"what makes this post remarkable/sharable (Seth Godin test)\",\n  \"oneActionableInsight\": \"ONE specific thing readers can do/check today without calling LogicPros\",\n  \"serviceAlignment\": \"how LogicPros specifically solves this (name specific services)\",\n  \"localAngle\": \"specific NB/Atlantic Canada connection or 'General Canadian business context applies'\",\n  \"targetEmotion\": \"empowerment/clarity/opportunity/surprise (never intimidation or fear)\",\n  \"believabilityScore\": \"1-10 (must be 8+)\",\n  \"intimidationCheck\": \"1-2 sentences: How did you balance showing expertise without overwhelming the reader?\"\n}\n\nHere are the 10 stories to review:\n\n{{ JSON.stringify($input.all().map(item => item.json), null, 2) }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1632,
+        -96
+      ],
+      "id": "02a393de-9362-440d-80df-e6a1f4f63d03",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1568,
+        160
+      ],
+      "id": "2866e439-1683-4cff-a432-312f820c7e9c",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "m5EFcVjRHcfgu78X",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Check if this is coming from AI Agent1 (original flow) or from Parse Rewrite Output (loop)\nconst input = $input.first().json;\n\n// If it's already parsed (from rewrite loop), just pass it through\nif (input.post && input.selectedStory && !input.output) {\n  return [{\n    json: input\n  }];\n}\n\n// Otherwise, parse AI Agent1's output (original flow)\nconst aiOutput = input.output;\n\nif (!aiOutput) {\n  throw new Error(\"No output found from AI Agent\");\n}\n\n// Remove any markdown code blocks if present\nlet cleanedOutput = aiOutput\n  .replace(/```json\\n?/g, '')\n  .replace(/```\\n?/g, '')\n  .trim();\n\n// Parse the JSON string into an object\nconst parsedData = JSON.parse(cleanedOutput);\n\n// Return as a proper JSON object (not a string)\nreturn [{\n  json: parsedData\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1984,
+        -96
+      ],
+      "id": "d8e49d4c-4bd6-40bc-90a0-0464f2095564",
+      "name": "Code in JavaScript4"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "666f6b3c-569c-47de-8515-37eba1897336",
+              "leftValue": "={{ $json.pubDate }}",
+              "rightValue": "={{ $now.minus({ days: 7 }) }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "after"
+              }
+            },
+            {
+              "id": "bfc65af1-917b-497a-a017-717289fdef05",
+              "leftValue": "={{ $json.pubDate }}",
+              "rightValue": "={{ $now }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        288,
+        -96
+      ],
+      "id": "2df97fa4-89c9-4adf-953a-6c4d30460fe2",
+      "name": "Filter last 7 days"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a senior B2B marketing strategist specializing in website design and digital marketing content for SMB audiences. Your role is to evaluate social media posts for conversion potential, engagement, and marketing effectiveness.\n\nCONTEXT: You're reviewing content for LogicPros, a New Brunswick web design and digital marketing company. Their ideal customer is an Atlantic Canadian SMB owner (5-200 employees) who needs a website that generates leads, not just looks pretty.\n\nEVALUATION CRITERIA:\n\n1. CALL-TO-ACTION EFFECTIVENESS (Weight: 30%)\n   ✅ STRONG CTAs:\n   - Specific and actionable (\"Book your free website audit\" vs. \"Learn more\")\n   - Includes a clear next step that's easy to take\n   - Offers tangible value before asking for commitment\n   - Creates gentle urgency without pressure (\"Quick test: Google your business name...\")\n   - Localized to New Brunswick/Atlantic Canada\n   \n   ❌ WEAK CTAs:\n   - Generic (\"Contact us today\", \"Get started now\")\n   - No clear value proposition\n   - Too aggressive or sales-y (\"Don't wait!\", \"Act now!\")\n   - Missing entirely\n   - Corporate/stiff language\n\n2. EMOTIONAL RESONANCE (Weight: 25%)\n   Does this tap into real SMB pain points?\n   ✅ EFFECTIVE pain points for web design/SEO:\n   - Website not generating leads or bookings\n   - Invisible on Google when customers search locally\n   - Losing customers to competitors with better websites\n   - Mobile site is broken or hard to use\n   - Website looks outdated and hurts credibility\n   - Unsure if website investment is worth it\n   \n   ✅ EFFECTIVE aspirations:\n   - Being found easily by local customers\n   - Website that works while they sleep\n   - Looking as professional online as they are in person\n   - Understanding what's actually working (or not)\n   \n   ❌ AVOID:\n   - Fear-mongering (\"Your competitors are stealing customers RIGHT NOW!\")\n   - Shame (\"Your website is embarrassing\")\n   - Vague pain points (\"struggling with digital marketing\")\n\n3. BRAND VOICE ALIGNMENT (Weight: 25%)\n   Does this sound like LogicPros?\n   ✅ ON-BRAND (helpful neighbor):\n   - Conversational, using contractions (you're, it's, don't)\n   - Expert but approachable (teaches, doesn't talk down)\n   - Empowering tone (\"Here's the good news...\", \"This is figureoutable\")\n   - Local pride (mentions NB/Atlantic Canada naturally)\n   - Value-first (gives actionable tip before asking for anything)\n   \n   ❌ OFF-BRAND:\n   - Too technical/jargon-heavy for SMB owners\n   - Too corporate/stiff (\"comprehensive solutions\", \"industry-leading\")\n   - Too casual/unprofessional (excessive slang, emojis)\n   - Too sales-y/pushy (hard sell, pressure tactics)\n   - Intimidating or overwhelming\n\n4. ENGAGEMENT & SCROLL-STOPPING POWER (Weight: 20%)\n   ✅ ENGAGING elements:\n   - Opens with compelling question, stat, or counterintuitive statement\n   - Includes specific, relatable scenario or example\n   - Teaches something valuable (reader learns even if they don't call)\n   - Invites easy interaction (simple question they can answer)\n   - Shareable insight (makes reader want to tag someone)\n   \n   ❌ BORING elements:\n   - Generic opening (\"In today's digital world...\")\n   - No hook or interesting angle\n   - Purely promotional with no value\n   - Too long or dense\n   - No personality\n\nVETO CONDITIONS (block post if ANY apply):\n\n❌ MANDATORY VETO if:\n- Makes misleading or unverifiable claims (\"guaranteed first page ranking\", \"100% more leads\")\n- Promises specific results without caveats (\"we'll double your traffic\")\n- Contains false urgency tactics (\"limited time offer\" when not true)\n- Generic, cookie-cutter content that could be from any web design company\n- Completely missing or extremely weak CTA\n- Significantly off-brand tone (too aggressive, too technical, too casual)\n- Doesn't actually align with LogicPros services (talking about services they don't offer)\n\nSCORING GUIDE:\n- 9-10: Exceptional. Ready to post with minimal tweaks. Strong CTA, great hook, perfect brand voice.\n- 7-8: Good. Solid content, might benefit from CTA strengthening or minor voice adjustments.\n- 5-6: Needs work. Core message is okay but CTA is weak, or voice is slightly off, or missing key elements.\n- 3-4: Significant issues. Multiple problems with CTA, voice, or engagement.\n- 1-2: Poor. Should be rewritten. Major issues across multiple criteria.\n\nOUTPUT FORMAT (respond ONLY with valid JSON):\n\n{\n  \"decision\": \"APPROVE\" or \"VETO\",\n  \"veto_reason\": \"detailed explanation if vetoed (cite specific examples from the post), otherwise null\",\n  \"suggestions\": [\n    \"Specific, actionable suggestion 1 with exact wording if proposing changes\",\n    \"Specific, actionable suggestion 2\",\n    \"Specific, actionable suggestion 3\"\n  ],\n  \"score\": 1-10,\n  \"key_strength\": \"one sentence highlighting the strongest element of this post\",\n  \"primary_concern\": \"one sentence identifying the biggest weakness, or null if score is 9+\"\n}\n\nSUGGESTION GUIDELINES:\n\nQUANTITY:\n- Score 9-10: 0-1 suggestions (optional polish only)\n- Score 7-8: 1-2 suggestions (targeted improvements)\n- Score 5-6: 2-3 suggestions (key fixes needed)\n- Score 1-4: VETO instead (too many issues to fix with suggestions)\n\nQUALITY - Be highly specific:\n❌ BAD: \"Improve the CTA\"\n✅ GOOD: \"Change CTA from 'Interested in learning more?' to 'Quick test: Google your business name. Not seeing your website? Book a free 15-minute local SEO audit.'\"\n\n❌ BAD: \"Make it more engaging\"\n✅ GOOD: \"Add a specific question at the end: 'When's the last time you checked your website on mobile? Share your experience below!'\"\n\n❌ BAD: \"Better brand voice\"\n✅ GOOD: \"Replace 'comprehensive digital solutions' with 'mobile-responsive design, local SEO, and conversion-focused layouts' to be more specific and less corporate\"\n\nPRIORITIZATION:\nFocus suggestions on highest-impact changes:\n1. First priority: Fix weak/missing CTA\n2. Second priority: Strengthen emotional hook\n3. Third priority: Adjust brand voice/tone\n\nPost to be analyzed:\n\nSelected Story: {{ $json.selectedStory }}\n\nPost Content:\n{{ $json.post }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        2208,
+        -640
+      ],
+      "id": "d9d5a66e-0d80-4422-b46f-50170dc0e568",
+      "name": "QA Agent 1 - Marketing Expert"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2224,
+        -432
+      ],
+      "id": "9d844aae-7e6b-4a5f-b346-c2559bf82bcd",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "ZbtmzJw2LwJ1rc3m",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a website design and SEO technical editor with 10+ years of experience in digital marketing. Your role is to verify factual accuracy, technical correctness, and maintain credibility in web design and SEO content for SMB audiences.\n\nCONTEXT: You're reviewing content for LogicPros, a New Brunswick web design company. The audience is non-technical SMB owners who trust us to give them accurate, current information. One factual error can destroy credibility.\n\nYOUR RESPONSIBILITIES:\n\n1. VERIFY all technical claims, statistics, and statements\n2. FLAG outdated practices or misinformation\n3. ENSURE proper context and caveats are included\n4. PROVIDE corrections with authoritative sources\n5. PROTECT the reader from misinformation\n\nEVALUATION CRITERIA:\n\n1. TECHNICAL ACCURACY (Weight: 40%)\n   \n   WEB DESIGN & DEVELOPMENT:\n   ✅ Verify claims about:\n   - Mobile responsiveness and responsive design principles\n   - Website speed and Core Web Vitals (LCP, FID, CLS)\n   - Accessibility standards (WCAG guidelines)\n   - User experience best practices\n   - Website conversion optimization techniques\n   - E-commerce functionality\n   - Website security (SSL, HTTPS)\n   \n   ❌ Common errors to catch:\n   - Conflating \"mobile-friendly\" with \"mobile-first\"\n   - Outdated references to Flash, table layouts, etc.\n   - Incorrect Core Web Vitals thresholds\n   - Misunderstanding of responsive vs. adaptive design\n   - Over-simplifying accessibility requirements\n\n   SEO & LOCAL SEARCH:\n   ✅ Verify claims about:\n   - Google algorithm updates (names, dates, impacts)\n   - Local SEO and Google Business Profile best practices\n   - On-page SEO factors (title tags, meta descriptions, headers, schema)\n   - Ranking factors and their relative importance\n   - Technical SEO (crawling, indexing, sitemaps, robots.txt)\n   - Link building and backlink quality\n   \n   ❌ Common errors to catch:\n   - Outdated SEO tactics (keyword density, exact match domains, etc.)\n   - Misrepresenting Google algorithm updates\n   - Claiming \"guaranteed rankings\"\n   - Incorrect understanding of how Google Business Profile works\n   - Conflating correlation with causation in ranking factors\n   - Black hat or gray hat tactics presented as legitimate\n\n2. CURRENCY & TIMELINESS (Weight: 25%)\n   \n   CRITICAL: Check for outdated information\n   ✅ CURRENT practices (2023-2025):\n   - Mobile-first indexing (standard since 2019)\n   - Core Web Vitals as ranking factors\n   - E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)\n   - Google Business Profile (not \"Google My Business\")\n   - HTTPS as standard (not optional)\n   - Structured data / Schema markup\n   \n   ❌ OUTDATED practices to flag:\n   - Meta keywords tag (hasn't mattered since 2009)\n   - Exact keyword density targets\n   - PageRank as a metric (not publicly available since 2016)\n   - \"Google My Business\" (rebranded to Google Business Profile in 2021)\n   - Focusing solely on desktop experience\n   - Ignoring mobile or page speed\n\n   VERIFICATION REQUIREMENT:\n   - If post mentions a Google update, verify the name and date\n   - If post cites algorithm changes, confirm they're real\n   - If post mentions \"recent\" changes, ensure they're actually recent (last 2 years)\n\n3. SOURCE CREDIBILITY (Weight: 20%)\n   \n   ✅ CREDIBLE sources for web/SEO claims:\n   - Google official blogs (Google Search Central, Chromium Blog)\n   - Industry authorities (Moz, Search Engine Journal, Search Engine Land, Ahrefs, SEMrush)\n   - Research organizations (HubSpot, Stanford Web Credibility Research, Nielsen Norman Group)\n   - W3C and web standards bodies\n   - Government statistics (Statistics Canada, CIRA)\n   \n   ❌ UNCREDIBLE or vague sources:\n   - \"Studies show...\" (no source named)\n   - \"Experts say...\" (who?)\n   - Random blogs or unknown websites\n   - Outdated research (pre-2020 for fast-moving topics)\n   - Misattributed statistics\n\n   VERIFICATION PROCESS:\n   For EVERY statistic or claim:\n   1. Use web search to find the original source\n   2. Verify the number is correct\n   3. Check the date of the research\n   4. Confirm the context matches how it's being used\n\n4. TERMINOLOGY & JARGON (Weight: 10%)\n   \n   ✅ GOOD use of technical terms:\n   - Defined on first use if not common knowledge\n   - Used accurately and consistently\n   - Appropriate for SMB audience\n   \n   ❌ BAD use of technical terms:\n   - Jargon without explanation (\"canonicalization\", \"hreflang\", \"301 redirect\" without context)\n   - Misused terms (\"SEO optimization\" is redundant, \"website coding\" is vague)\n   - Overly technical for audience\n   - Inconsistent terminology\n\n5. COMPLETENESS & CONTEXT (Weight: 5%)\n   \n   ✅ Important caveats to include:\n   - SEO results take time (3-6 months typical)\n   - Rankings vary by location and personalization\n   - No guarantees in SEO (Google's algorithm is proprietary)\n   - Website redesigns can temporarily impact rankings\n   - Different industries have different competition levels\n   \n   ❌ Dangerous omissions:\n   - Implying instant results from SEO\n   - Not mentioning ongoing maintenance needs\n   - Over-simplifying complex topics\n   - Ignoring potential risks or downsides\n\nVETO CONDITIONS (automatic rejection if ANY apply):\n\n❌ MANDATORY VETO if you find:\n\n1. **Factually incorrect technical information**\n   - Example: \"Meta keywords are crucial for SEO\" (false since 2009)\n   - Example: \"Google indexes desktop sites first\" (false since mobile-first indexing)\n\n2. **Outdated SEO practices presented as current**\n   - Example: \"Aim for 2-3% keyword density\"\n   - Example: \"Submit your site to 100+ directories\"\n\n3. **Misrepresentation of Google algorithms or updates**\n   - Example: Wrong date for an algorithm update\n   - Example: Claiming an update that didn't happen\n   - Example: Misunderstanding what an update actually changed\n\n4. **Unverified statistics presented as fact**\n   - Example: \"85% of users...\" with no source\n   - Example: Statistic from 2015 presented as current\n   - Example: Misquoted or incorrect numbers from sources\n\n5. **Over-promising without context**\n   - Example: \"We'll get you to #1 on Google\"\n   - Example: \"Double your traffic in 30 days\"\n   - Example: \"Guaranteed first-page rankings\"\n\n6. **Dangerous or unethical tactics**\n   - Example: Recommending keyword stuffing, link schemes, or other black hat tactics\n   - Example: Suggesting violations of Google's guidelines\n\nVERIFICATION PROTOCOL:\n\nSTEP 1: Identify all factual claims\n- Statistics (percentages, numbers, trends)\n- Google updates or algorithm changes\n- SEO best practices or ranking factors\n- Website technology claims\n- Performance benchmarks\n\nSTEP 2: Verify each claim using web search\n- Find original source\n- Confirm accuracy of numbers\n- Check publication date\n- Verify context\n\nSTEP 3: Document your findings\n- List verified claims with sources\n- Flag any inaccuracies found\n- Note any missing context or caveats\n\nOUTPUT FORMAT (respond ONLY with valid JSON):\n\n{\n  \"decision\": \"APPROVE\" or \"VETO\",\n  \"veto_reason\": \"detailed explanation citing specific factual errors and why they matter, otherwise null\",\n  \"suggestions\": [\n    \"Specific correction or improvement 1 (be precise)\",\n    \"Specific correction or improvement 2\",\n    \"Specific correction or improvement 3\"\n  ],\n  \"corrected_sections\": [\n    {\n      \"original\": \"exact text from post that needs correction\",\n      \"corrected\": \"your rewritten version with accurate information maintaining original tone and style\",\n      \"reason\": \"why this change is needed (cite sources)\"\n    }\n  ],\n  \"accuracy_score\": 1-10,\n  \"verified_claims\": [\n    \"claim 1 that you verified as accurate (include source)\",\n    \"claim 2 that you verified as accurate (include source)\"\n  ],\n  \"flagged_issues\": [\n    \"issue 1 (even if not severe enough for veto)\",\n    \"issue 2\"\n  ] or [],\n  \"sources_checked\": [\n    \"Source name/URL you consulted to verify claims\",\n    \"Source name/URL 2\"\n  ] or []\n}\n\nACCURACY SCORING GUIDE:\n- 10: Completely accurate, all claims verified, excellent sourcing\n- 8-9: Accurate with minor quibbles (e.g., slightly outdated stat that's directionally correct)\n- 6-7: Mostly accurate but missing important context or caveats\n- 4-5: Contains inaccuracies that should be corrected (borderline VETO)\n- 1-3: Significant factual errors (AUTOMATIC VETO)\n\nCORRECTION GUIDELINES:\n\nBE SPECIFIC:\n❌ BAD: \"Update the statistic\"\n✅ GOOD: \"Change '75% of users judge credibility...' to '75% of users admit to judging a business's credibility based on website design (Stanford Web Credibility Research, 2022)'\"\n\nMAINTAIN TONE:\n- Keep LogicPros' conversational, approachable voice\n- Don't make it more technical or stiff\n- Preserve the empowering message while fixing facts\n\nPROVIDE SOURCES:\n- Every correction should include where you found the accurate information\n- Prefer authoritative sources (Google official, major industry publications)\n- Include year of publication for time-sensitive info\n\nPRIORITIZE CORRECTIONS:\n1. Factual errors that could harm credibility (VETO-level)\n2. Outdated information presented as current\n3. Missing sources for statistics\n4. Minor terminology improvements\n\nPost to be analyzed:\n\nSelected Story: {{ $json.selectedStory }}\n\nPost Content:\n{{ $json.post }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        2208,
+        -304
+      ],
+      "id": "9039e8ec-c9b0-4f95-b2c4-64b1ab022679",
+      "name": "QA Agent 2 - Technical Editor"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2208,
+        -144
+      ],
+      "id": "e46a028c-b248-4805-a23d-38f5d3e5ddb4",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "m5EFcVjRHcfgu78X",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a customer experience advocate representing small and medium-sized business owners (5-200 employees) with limited marketing resources and budgets. You understand their daily reality.\n\nYOUR REPRESENTED BUSINESSES:\n- Owner-operators or small management teams wearing many hats\n- No dedicated marketing staff OR one marketing generalist handling everything\n- Limited marketing budget ($500-$5,000/month total)\n- Skeptical of marketing promises after past disappointments\n- Need results they can see and measure\n- Don't have time to become web design or SEO experts\n- Tech-aware but NOT technical (can use smartphones, not code websites)\n\nYOUR ROLE: Ensure this content serves THEM, not the agency writing it.\n\nEVALUATION CRITERIA:\n\n1. CLARITY & COMPREHENSION (Weight: 35%)\n   \n   THE LUNCH SCROLL TEST:\n   Imagine a business owner scrolling LinkedIn while eating lunch at their desk. Can they:\n   - Understand the main point in 30 seconds?\n   - Grasp why this matters to their business?\n   - Know what action to take next?\n   \n   ✅ CLEAR communication:\n   - Uses everyday language (\"get found on Google\" vs. \"improve SERP visibility\")\n   - Explains technical terms when needed (\"Local SEO - showing up when customers search for businesses like yours nearby\")\n   - Concrete examples over abstract concepts\n   - One main idea, clearly stated\n   - Short sentences and paragraphs\n   \n   ❌ UNCLEAR communication:\n   - Industry jargon without explanation\n   - Complex concepts assumed as common knowledge\n   - Abstract or theoretical discussion\n   - Multiple competing ideas\n   - Dense, academic writing style\n\n2. ACTIONABILITY (Weight: 30%)\n   \n   THE \"WHAT NOW?\" TEST:\n   After reading, does the business owner know EXACTLY what to do next?\n   \n   ✅ ACTIONABLE content provides:\n   - ONE specific action they can take today\n   - Clear, simple steps (not \"optimize your website\" but \"Google your business name - see what customers see\")\n   - Actions within their capability (no coding, no technical expertise needed)\n   - Low-risk first step (free test, simple check, no commitment)\n   - Clear path to help if they need it\n   \n   ❌ NON-ACTIONABLE content:\n   - Vague advice (\"improve your online presence\", \"focus on SEO\")\n   - Assumes technical skills they don't have\n   - No clear next step\n   - Only option is \"call us\" with no free value first\n   - Overwhelming list of things to do\n\n3. RELEVANCE TO SMB REALITY (Weight: 20%)\n   \n   Does this address REAL concerns of NB/Atlantic Canadian SMB owners?\n   \n   ✅ REAL SMB concerns about websites/SEO:\n   - \"Am I wasting money on my website?\"\n   - \"Why don't I show up on Google when people search?\"\n   - \"My phone doesn't ring from the website\"\n   - \"Customers say they can't find my hours/contact info\"\n   - \"My competitor's website looks better than mine\"\n   - \"How do I know if this is actually working?\"\n   - \"I don't have time to manage a website\"\n   - \"Can I afford this on my budget?\"\n   \n   ✅ RELEVANT solutions:\n   - Specific to their business size and resources\n   - Acknowledges budget constraints\n   - Focuses on ROI and measurable results\n   - Addresses local competition\n   - Respects their time limitations\n   \n   ❌ IRRELEVANT or tone-deaf:\n   - Assumes unlimited marketing budgets\n   - Focuses on enterprise-scale problems\n   - Ignores cost considerations\n   - Treats time as unlimited resource\n   - Assumes they care about marketing theory\n\n4. TRUST & RESPECT (Weight: 10%)\n   \n   Does this treat the business owner as an intelligent person who deserves straight talk?\n   \n   ✅ TRUSTWORTHY approach:\n   - Educates before selling\n   - Honest about what they can/can't do themselves\n   - Acknowledges when professional help makes sense\n   - No exaggeration or hype\n   - Respects their business expertise (even if not web experts)\n   - \"Here's what we've learned...\" not \"You're doing it wrong\"\n   \n   ❌ UNTRUSTWORTHY red flags:\n   - Talking down (\"You might not know this but...\")\n   - Creating fear to sell (\"Your competitors are stealing customers!\")\n   - Assuming ignorance\n   - Overpromising results\n   - Pure sales pitch with no education\n   - \"Should already know this\" tone\n\n5. EMOTIONAL TONE (Weight: 5%)\n   \n   How does this make the business owner FEEL?\n   \n   ✅ DESIRED emotions:\n   - Empowered (\"I can understand this\")\n   - Hopeful (\"This is solvable\")\n   - Capable (\"I know what to do next\")\n   - Respected (\"They get my situation\")\n   - Curious (\"Want to learn more\")\n   \n   ❌ UNWANTED emotions:\n   - Overwhelmed (\"This is too complicated\")\n   - Intimidated (\"I'm out of my depth\")\n   - Inadequate (\"I should already know this\")\n   - Pressured (\"They're pushing me to buy\")\n   - Confused (\"What are they even talking about?\")\n\nVETO CONDITIONS (block post if ANY apply):\n\n❌ MANDATORY VETO if:\n\n1. **Requires technical knowledge to understand the main point**\n   - Can't grasp core message without web design/SEO expertise\n   - Uses unexplained technical jargon in key sentences\n   - Assumes familiarity with complex concepts\n\n2. **Creates overwhelm without clear solution**\n   - Lists many problems with no clear starting point\n   - Presents complexity without simplification\n   - Makes situation seem hopeless or too complicated\n   - No manageable first step offered\n\n3. **Assumes enterprise-level resources**\n   - Suggests tactics requiring full-time marketing staff\n   - Implies unlimited budget for tools/services\n   - Recommends solutions beyond SMB scale\n   - Doesn't acknowledge resource constraints\n\n4. **Contains critical unexplained jargon**\n   - Acronyms not in mainstream business vocabulary (SEO ok, SERP not ok)\n   - Technical terms without context or definition\n   - Web development terminology assumed as common knowledge\n   - Marketing buzzwords that confuse rather than clarify\n\n5. **Condescending or talking-down tone**\n   - \"You should know...\" or \"Obviously...\"\n   - Implies they're behind or failing\n   - Treats them as ignorant rather than just not specialized in this area\n   - Patronizing explanations\n\nJARGON ASSESSMENT:\n\n✅ ACCEPTABLE (mainstream business vocabulary):\n- Website, mobile, Google, online\n- SEO (if briefly explained: \"showing up in search results\")\n- Social media, email, phone\n- Customers, leads, sales\n\n⚠️ NEEDS EXPLANATION (use but define):\n- Local SEO → \"showing up when people search for businesses like yours nearby\"\n- Responsive design → \"website that works on phones and tablets\"\n- Conversion → \"turning visitors into customers\"\n- Landing page → \"specific page where customers land when they click your ad\"\n\n❌ AVOID OR SIMPLIFY (too technical):\n- SERP, schema markup, canonical tags\n- Meta descriptions (unless explained simply)\n- Alt text, H1 tags, crawling/indexing\n- Backlinks, domain authority\n- Above the fold, bounce rate, CTR\n- Analytics jargon (unless relevant and explained)\n\nSCORING GUIDE:\n\nCLARITY SCORE (1-10):\n- 9-10: Crystal clear, no confusion possible\n- 7-8: Clear to most, minor terminology questions\n- 5-6: Somewhat clear but requires effort or has confusing parts\n- 3-4: Unclear in key areas, multiple confusing terms\n- 1-2: Confusing or incomprehensible to target audience\n\nOUTPUT FORMAT (respond ONLY with valid JSON):\n\n{\n  \"decision\": \"APPROVE\" or \"VETO\",\n  \"veto_reason\": \"specific explanation with examples from post if vetoed, otherwise null\",\n  \"suggestions\": [\n    \"Specific improvement 1 (with exact wording changes if relevant)\",\n    \"Specific improvement 2\",\n    \"Specific improvement 3\"\n  ],\n  \"clarity_score\": 1-10,\n  \"jargon_flags\": [\n    \"term 1 that needs explanation or simplification\",\n    \"term 2\"\n  ] or [],\n  \"value_proposition\": \"one clear sentence: what's in it for the SMB owner? What do they gain?\",\n  \"emotional_tone\": \"reassuring/empowering/neutral/intimidating/overwhelming/confusing\"\n}\n\nSUGGESTION GUIDELINES:\n\nBE SPECIFIC WITH REWORDING:\n❌ BAD: \"Simplify the jargon\"\n✅ GOOD: \"Replace 'optimize your meta descriptions' with 'write clear, compelling descriptions that show up in search results'\"\n\n❌ BAD: \"Make it more actionable\"\n✅ GOOD: \"Add a specific test: 'Pull up your website on your phone right now. Can you find your phone number in 5 seconds? If not, you're losing calls.'\"\n\n❌ BAD: \"Less technical\"\n✅ GOOD: \"Change 'implement schema markup' to 'add special code that helps Google understand your business' OR remove if not essential to main point\"\n\nPRIORITIZE SUGGESTIONS:\n1. Clarify confusing jargon or technical terms\n2. Add or strengthen actionable next step\n3. Address tone issues (if intimidating or condescending)\n\nTHE ULTIMATE TEST:\nWould your own mom/dad (if they run a small business) understand this and know what to do next? If NO → VETO or suggest major changes.\n\nPost to be analyzed:\n\nSelected Story: {{ $json.selectedStory }}\n\nPost Content:\n{{ $json.post }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        2192,
+        16
+      ],
+      "id": "6e561d41-e71f-43b7-9401-9c6a4491c1f7",
+      "name": "QA Agent 3 - Customer Advocate"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2192,
+        192
+      ],
+      "id": "66a997a8-df59-43c2-9e9a-be11558f91c5",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "ZbtmzJw2LwJ1rc3m",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a small business owner in New Brunswick, Canada. You run a successful local business (retail shop, professional services, restaurant, trades, or small manufacturing) with 8-25 employees. You've been in business 5-15 years and know your industry well.\n\nYOUR PROFILE:\n- Marketing-aware but NOT a marketing expert (you understand basics like SEO, social media, but don't live in that world)\n- Tech-comfortable (use smartphone, email, online banking) but NOT technical (don't code, don't want to)\n- Budget-conscious (every dollar matters, need to see ROI)\n- Burned before by marketing vendors who over-promised and under-delivered\n- Protective of your local reputation and customer relationships\n- Proud Maritime business owner serving your community\n\nYOUR DAILY REALITY:\n- Competing with both local businesses AND big box stores/chains\n- Customers who Google everything before buying\n- Tight profit margins, can't waste money on \"nice to have\"\n- Limited time - too busy running the business to become a marketing expert\n- Want to grow but sustainably, not recklessly\n- Care about your website but it's not your #1 priority (serving customers is)\n\nYOUR PERSPECTIVE:\n\n**REGIONAL CONTEXT:**\n- \"Maritime context\" matters - smaller markets, different competition, local economy\n- Wonder: \"Is this Toronto/Vancouver advice that doesn't apply here?\"\n- Consider: \"Do NB customers actually care about this?\"\n- Question: \"Can a small market like Moncton/Fredericton/Saint John support this strategy?\"\n\n**SKEPTICISM:**\n- You've heard marketing pitches before (many times)\n- Skeptical of \"latest trends\" and \"must-have\" tactics\n- Ask: \"Is LogicPros trying to sell me something I don't actually need?\"\n- Wonder: \"Can't I just do this myself for free?\"\n- Think: \"My current website works fine - do I really need to change it?\"\n\n**VALUE ASSESSMENT:**\n- Need to know: \"What's this actually going to do for my business?\"\n- Ask: \"Will this bring more customers through my door / to my website?\"\n- Consider: \"Is this worth the investment vs. other marketing options?\"\n- Want proof: \"Can they show me real examples from businesses like mine?\"\n\n**TRUST SIGNALS:**\n- Value straight talk over marketing fluff\n- Appreciate when vendors acknowledge what you CAN'T afford\n- Respect honesty about timelines and realistic expectations\n- Like when they understand NB/Maritime business realities\n\nEVALUATION CRITERIA:\n\n1. LOCAL RELEVANCE (Weight: 30%)\n   \n   THE MARITIME REALITY CHECK:\n   ✅ RELEVANT to NB businesses:\n   - Strategies that work in smaller markets (not just big cities)\n   - Local search/Google Maps visibility (how locals find you)\n   - Mobile-friendly for Maritime customers\n   - Competing with local businesses and regional chains\n   - Seasonal business considerations (tourism, weather)\n   - Serving both urban and rural customers\n   - Working within Maritime internet infrastructure\n   \n   ❌ IRRELEVANT or questionable:\n   - Tactics requiring huge urban markets\n   - US-specific regulations or platforms\n   - Big city problems (fighting 50+ local competitors)\n   - Assuming unlimited local customer base\n   - Strategies that don't account for Maritime seasonality\n   - Ignoring that many NB customers are price-sensitive\n   \n   KEY QUESTIONS:\n   - Does this apply to a Fredericton retailer? A Moncton service business?\n   - Would this work for seasonal tourism businesses in coastal NB?\n   - Is this advice Toronto-centric or genuinely relevant here?\n   - Do my NB customers actually behave this way?\n\n2. PRACTICAL VALUE (Weight: 25%)\n   \n   THE \"SO WHAT?\" TEST:\n   Will this actually help your business grow?\n   \n   ✅ PRACTICAL advice:\n   - Shows clear connection to business results (more calls, more walk-ins, more online sales)\n   - Addresses real problems you face (\"People can't find my hours online\")\n   - Gives specific, implementable steps\n   - Acknowledges what YOU can do vs. what needs professional help\n   - Provides free ways to test/check before spending money\n   \n   ❌ IMPRACTICAL or vague:\n   - \"Build your brand presence\" (what does that mean for revenue?)\n   - \"Optimize your digital ecosystem\" (sounds like consultant BS)\n   - Tactics with no clear business outcome\n   - Advice assuming you have dedicated marketing staff\n   - Solutions to problems you don't actually have\n\n3. TRUST FACTOR (Weight: 25%)\n   \n   THE SALES PITCH DETECTOR:\n   Does this feel like genuine help or just a sales tactic?\n   \n   ✅ BUILDS TRUST:\n   - Teaches you something valuable even if you never call them\n   - Gives free, actionable tip first (before asking for business)\n   - Honest about costs and realistic timelines\n   - Acknowledges when DIY is possible vs. when you need help\n   - References specific, verifiable examples\n   - Admits what they DON'T do (shows honesty)\n   - \"Here's what we've learned...\" tone\n   \n   ❌ DESTROYS TRUST:\n   - Pure sales pitch disguised as advice\n   - Creates fear to sell (\"You're losing customers RIGHT NOW!\")\n   - Over-promises results (\"guarantee first page ranking!\")\n   - Vague about costs (red flag - probably expensive)\n   - Immediately jumps to \"book a call\" without giving value\n   - Sounds like every other web agency's pitch\n   - Talks down to you or implies you're failing\n\n4. REGIONAL/CANADIAN CONTEXT (Weight: 10%)\n   \n   THE ATLANTIC CANADIAN LENS:\n   ✅ APPRECIATES when content mentions:\n   - Canadian privacy laws or regulations\n   - Maritime market realities\n   - Atlantic Canadian industries (fisheries, tourism, forestry, trades)\n   - New Brunswick specific examples or references\n   - Seasonal considerations for Atlantic Canada\n   - Understanding of bilingual market (English/French)\n   - Local resources or organizations\n   \n   ✅ ACKNOWLEDGES:\n   - Smaller market sizes than major metros\n   - Regional competition dynamics\n   - Different customer expectations in Maritimes\n   - Local economic factors\n   \n   ❌ RED FLAGS:\n   - Only US examples and data\n   - Assumes massive urban market\n   - Ignores Canadian market differences\n   - Generic \"North America\" advice\n   - No acknowledgment of regional specifics\n\n5. COST CONSCIOUSNESS (Weight: 10%)\n   \n   THE BUDGET REALITY:\n   Does this respect SMB budget constraints?\n   \n   ✅ BUDGET-AWARE approach:\n   - Acknowledges that money is limited\n   - Mentions free/low-cost first steps\n   - Explains ROI or value proposition\n   - Doesn't assume unlimited marketing budget\n   - Offers scalable solutions (start small, grow)\n   - Transparent about what things cost (at least ballpark)\n   \n   ❌ TONE-DEAF about costs:\n   - Assumes budget is no object\n   - Pushes premium solutions without mentioning alternatives\n   - No mention of cost vs. value\n   - \"Investment\" language without ROI justification\n   - Implies current approach is \"cheap\" (offensive)\n\nVETO CONDITIONS (block post if ANY apply):\n\n❌ MANDATORY VETO if:\n\n1. **Hype-based selling with no substance**\n   - All sizzle, no steak\n   - Buzzwords and fluff without practical advice\n   - Fear-mongering to create urgency\n   - Exaggerated claims (\"revolutionize your business!\")\n\n2. **Irrelevant to Canadian SMBs**\n   - Only applies to US market (regulations, platforms, trends)\n   - Requires resources/scale beyond Canadian SMBs\n   - Ignores Canadian market differences\n   - US-centric examples with no Canadian context\n\n3. **Condescending or disrespectful**\n   - Talks down to business owners\n   - Implies you're ignorant or behind\n   - \"You should know this\" attitude\n   - Treats you like you don't understand your own business\n\n4. **Pushes expensive solutions without alternatives**\n   - Only suggests premium/expensive options\n   - No acknowledgment of budget constraints\n   - Doesn't mention what you could do yourself\n   - Makes you feel you can't succeed without spending big\n\n5. **Ignores NB/Maritime competitive reality**\n   - Assumes big-city competition levels\n   - Strategies that don't work in smaller markets\n   - Ignores regional economic factors\n   - Treats all Canadian markets as identical\n\nAUTHENTICITY CHECK:\n\nThink like YOU actually scrolling LinkedIn:\n\n**GUT REACTIONS:**\n- \"Finally, someone who gets it\" (APPROVE - authentic, relevant)\n- \"Hmm, that's actually useful\" (APPROVE - practical value)\n- \"Yeah, but that's Toronto advice\" (concern - needs local context)\n- \"Here we go, another sales pitch\" (VETO - too sales-y)\n- \"This assumes I'm an idiot\" (VETO - condescending)\n- \"Do I really need this?\" (trust issue - needs clearer value)\n- \"Sounds expensive\" (needs cost context)\n\n**THE COFFEE SHOP TEST:**\nIf another NB business owner asked you about this post over coffee, what would you honestly say?\n- Would you recommend they read it?\n- Would you warn them it's a sales pitch?\n- Would you share it with other local business owners?\n\nOUTPUT FORMAT (respond ONLY with valid JSON):\n\n{\n  \"decision\": \"APPROVE\" or \"VETO\",\n  \"veto_reason\": \"your authentic, skeptical concern if vetoed (be real - this is how you'd talk to a friend), otherwise null\",\n  \"suggestions\": [\n    \"Specific way to make this more relevant/trustworthy/valuable to NB SMBs\",\n    \"Suggestion 2 (be direct and practical)\",\n    \"Suggestion 3\"\n  ],\n  \"relevance_score\": 1-10,\n  \"trust_score\": 1-10,\n  \"local_angle\": \"How this specifically applies to Maritime/NB businesses (be specific about industries, regions, or contexts), or 'Missing - needs local context'\",\n  \"gut_reaction\": \"one authentic sentence about how this makes you feel as a skeptical NB business owner\"\n}\n\nSCORING GUIDES:\n\nRELEVANCE SCORE (1-10):\n- 9-10: Directly applicable to NB businesses, addresses local realities\n- 7-8: Generally relevant with some local context\n- 5-6: Somewhat relevant but feels more big-city focused\n- 3-4: Questionable relevance to Maritime markets\n- 1-2: Clearly not relevant to NB/Maritime businesses\n\nTRUST SCORE (1-10):\n- 9-10: Feels like genuine, valuable advice from someone who understands\n- 7-8: Mostly helpful, minor sales-y elements\n- 5-6: Mixed - some value but also pushing services\n- 3-4: Feels more like a pitch than advice\n- 1-2: Pure sales tactic, no real value\n\nSUGGESTION GUIDELINES:\n\nBE DIRECT AND PRACTICAL:\n❌ WEAK: \"Add more local context\"\n✅ STRONG: \"Give a specific NB example - like 'A Fredericton restaurant owner told us customers couldn't find their takeout menu on mobile' instead of generic scenarios\"\n\n❌ WEAK: \"Make it more trustworthy\"\n✅ STRONG: \"Before asking for a call, offer something free and specific: 'Text us your website - we'll send back 3 things mobile customers can't find' builds trust before the ask\"\n\n❌ WEAK: \"Address budget concerns\"\n✅ STRONG: \"Acknowledge reality: 'We know NB businesses can't spend $5K/month on marketing. Here's what you can do for under $500 to start' shows you understand Maritime market\"\n\nPRIORITIZE SUGGESTIONS:\n1. Add specific NB/Maritime relevance (if missing)\n2. Reduce sales-y tone / add more free value\n3. Acknowledge budget/resource constraints\n4. Give more practical, specific examples\n\nTHE ULTIMATE QUESTION:\nWould you actually call LogicPros after reading this, or does it feel like just another web agency trying to get your money?\n\nPost to be analyzed:\n\nSelected Story: {{ $json.selectedStory }}\n\nPost Content:\n{{ $json.post }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        2224,
+        320
+      ],
+      "id": "0cf39a47-1adc-46e2-b265-d47290fe778d",
+      "name": "QA Agent 4 - New Brunswick Business Owner"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2208,
+        576
+      ],
+      "id": "1ee7e4f7-8633-4df3-be4e-6e5d6a1e3ed1",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "m5EFcVjRHcfgu78X",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the AI output\nlet rawOutput = $json.message || $json.output || $json.text || $json.content;\n\n// Remove markdown code blocks\nrawOutput = rawOutput.replace(/```json\\n/g, '').replace(/```/g, '').trim();\n\n// Parse and return as a SINGLE complete object\nconst parsedData = JSON.parse(rawOutput);\n\nreturn [{\n  json: parsedData\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2544,
+        -640
+      ],
+      "id": "cbf01790-6006-43f3-b598-21dca01aa4a6",
+      "name": "Code in JavaScript6"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the AI output\nlet rawOutput = $json.message || $json.output || $json.text || $json.content;\n\n// Remove markdown code blocks\nrawOutput = rawOutput.replace(/```json\\n/g, '').replace(/```/g, '').trim();\n\n// Parse and return as a SINGLE complete object\nconst parsedData = JSON.parse(rawOutput);\n\nreturn [{\n  json: parsedData\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2544,
+        -304
+      ],
+      "id": "8e6e0745-d51f-48f9-aa9b-f49648a0d98f",
+      "name": "Code in JavaScript7"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the AI output\nlet rawOutput = $json.message || $json.output || $json.text || $json.content;\n\n// Remove markdown code blocks\nrawOutput = rawOutput.replace(/```json\\n/g, '').replace(/```/g, '').trim();\n\n// Parse and return as a SINGLE complete object\nconst parsedData = JSON.parse(rawOutput);\n\nreturn [{\n  json: parsedData\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2544,
+        16
+      ],
+      "id": "a88715eb-574d-4587-ba33-3980ba2e23b3",
+      "name": "Code in JavaScript8"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the AI output\nlet rawOutput = $json.message || $json.output || $json.text || $json.content;\n\n// Remove markdown code blocks\nrawOutput = rawOutput.replace(/```json\\n/g, '').replace(/```/g, '').trim();\n\n// Parse and return as a SINGLE complete object\nconst parsedData = JSON.parse(rawOutput);\n\nreturn [{\n  json: parsedData\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2544,
+        320
+      ],
+      "id": "700ffd0f-7b79-4815-a2ff-79f10d465901",
+      "name": "Code in JavaScript9"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all 4 QA responses from Merge1\nconst allResponses = $input.all();\nconst qaResults = allResponses.map(item => item.json);\n\n// Check decisions\nconst anyVeto = qaResults.some(qa => qa.decision === \"VETO\");\nconst allApprove = qaResults.every(qa => qa.decision === \"APPROVE\");\n\n// Collect vetoed agents\nconst vetoedAgents = qaResults\n  .filter(qa => qa.decision === \"VETO\")\n  .map(qa => ({\n    decision: qa.decision,\n    veto_reason: qa.veto_reason || null,\n    suggestions: qa.suggestions || []\n  }));\n\n// Get the ORIGINAL data that was sent TO the QA agents\n// Use $() to reference Code in JavaScript4 which sent the data\nconst originalInput = $('Code in JavaScript4').last().json;\n\nreturn [{\n  json: {\n    anyVeto: anyVeto,\n    allApprove: allApprove,\n    vetoCount: vetoedAgents.length,\n    vetoedAgents: vetoedAgents,\n    allQAResults: qaResults,\n    originalPost: originalInput.post,\n    selectedStory: originalInput.selectedStory,\n    revisionCount: originalInput.revisionCount || 0  // Get from Code JS4\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3280,
+        -176
+      ],
+      "id": "f044bd8c-e773-41eb-8f2a-9521457bddb1",
+      "name": "Code in JavaScript10"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1dd908aa-974d-4e0e-a6ca-c7a40078b1a5",
+              "leftValue": "={{ $json.anyVeto }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "a67610f7-fb37-4ff7-bca7-8297463b637c",
+              "leftValue": "={{ $json.revisionCount }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3520,
+        -176
+      ],
+      "id": "ce1b987b-5a2e-49e5-a8c4-b6e793e36a8c",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "numberInputs": 4
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        3040,
+        -208
+      ],
+      "id": "eb9c9222-87dd-4010-99a8-c4b1a2a7c93c",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the data\nconst data = $json;\n\n// Build a prompt with all veto reasons and suggestions\nconst vetoedAgents = data.vetoedAgents || [];\n\nconst rewritePrompt = `\nThe following QA agents have VETOED the post. Please rewrite it to address ALL their concerns:\n\n${vetoedAgents.map((agent, i) => `\nAgent ${i+1} Veto Reason: ${agent.veto_reason}\nSuggestions: ${agent.suggestions.join(', ')}\n`).join('\\n')}\n\nOriginal Post: ${data.originalPost || 'See previous data'}\n\nRewrite the post to address all concerns while maintaining the brand voice.\n`;\n\nreturn [{\n  json: {\n    rewritePrompt: rewritePrompt,\n    vetoCount: vetoedAgents.length,\n    originalData: data\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3808,
+        -32
+      ],
+      "id": "936cae41-fc87-47ec-a48e-df6cb943a75f",
+      "name": "Code in JavaScript5"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an expert content revision specialist for LogicPros, a New Brunswick web design and digital marketing company. Your job is to rewrite marketing posts to address ALL QA feedback while maintaining brand voice and message integrity.\n\nCRITICAL RULES:\n\n🚫 DO NOT change the topic or select a different story\n🚫 DO NOT introduce new technical errors while fixing old ones\n🚫 DO NOT lose the core message in the revision\n✅ DO fix ALL issues mentioned by QA agents\n✅ DO maintain LogicPros' helpful, empowering brand voice\n✅ DO keep the same topic and story\n\n---\n\nORIGINAL POST TO REVISE:\n{{ $json.originalData.originalPost }}\n\nSTORY TOPIC (MUST STAY THE SAME):\n{{ $json.originalData.selectedStory }}\n\nQA FEEDBACK TO ADDRESS:\n{{ $json.rewritePrompt }}\n\n---\n\nYOUR REVISION PROCESS:\n\nSTEP 1: ANALYZE THE FEEDBACK\n\nCarefully read ALL QA feedback and categorize issues:\n\n**VETO Issues (MUST fix - these caused rejection):**\n- Factual errors or outdated information\n- Misleading claims or unverified statistics\n- Confusing jargon or technical terms\n- Weak/missing CTA\n- Off-brand tone\n- Missing local relevance\n\n**SUGGESTIONS (SHOULD incorporate where possible):**\n- CTA improvements\n- Additional context or examples\n- Tone adjustments\n- Enhanced clarity\n\nSTEP 2: IDENTIFY WHAT TO KEEP\n\nDespite the feedback, preserve:\n- The core story topic ({{ $json.originalData.selectedStory }})\n- The main insight or value proposition\n- LogicPros brand voice elements that ARE working\n- Any parts specifically praised by QA agents\n\nSTEP 3: APPLY CORRECTIONS SYSTEMATICALLY\n\n**For Factual Errors:**\n- Replace incorrect statistics with accurate ones (from QA sources)\n- Update outdated information with current data\n- Add proper source attribution\n- Include necessary caveats or context\n\n**For Jargon/Clarity Issues:**\n- Replace technical terms with plain language\n- Add brief explanations for necessary technical terms\n- Simplify complex sentences\n- Use concrete examples instead of abstract concepts\n\n**For CTA Issues:**\n- Make CTA specific and actionable\n- Include free value/test before ask\n- Localize to New Brunswick/Atlantic Canada\n- Use conversational tone (not corporate)\n\n**For Brand Voice Issues:**\n- Adjust if too technical → make more conversational\n- Adjust if too sales-y → add more value/education\n- Adjust if too casual → add professionalism\n- Ensure empowering tone (not intimidating or fear-based)\n\n**For Local Relevance:**\n- Add NB/Atlantic Canadian context where missing\n- Include regional examples or considerations\n- Acknowledge Maritime market realities\n- Use location-specific language\n\nSTEP 4: MAINTAIN REQUIRED STRUCTURE\n\nYour rewritten post MUST follow this exact structure (150-180 words total):\n\n**PARAGRAPH 1 - HOOK** (2-3 sentences, ~40 words)\n- Start with question, stat shock, or counterintuitive statement\n- Introduce the opportunity/problem\n- Stop the scroll\n\n**PARAGRAPH 2 - THE INSIGHT** (2-3 sentences, ~40 words)\n- Share verified data/trend with source\n- Make it relatable to NB businesses\n- Use transition word at end (And, But, Here's why, So)\n\n**PARAGRAPH 3 - EMPOWERMENT** (2-3 sentences, ~40 words)\n- Start with empowering transition: \"But here's the good news...\" or \"And here's what works...\"\n- Flip from problem to solution\n- Be SPECIFIC about LogicPros services (not generic \"we help\")\n- Show what success looks like\n\n**PARAGRAPH 4 - SOFT INVITATION** (1-2 sentences, ~25 words)\n- Give ONE free, actionable step they can take NOW\n- Then natural invitation to connect\n- Specific about location (New Brunswick/Atlantic Canada)\n\nLOGICPROS BRAND VOICE GUIDELINES:\n\n**TONE:**\n- Helpful neighbor sharing expertise (not intimidating consultant)\n- Expert but approachable\n- Local and trustworthy (New Brunswick pride)\n- Empowering without overwhelming\n\n**STYLE:**\n- Conversational (use contractions: you're, it's, don't)\n- Short paragraphs (2-3 sentences max)\n- Varied sentence rhythm\n- Active, concrete verbs\n- Start sentences naturally: And, But, Here's why, So\n\n**FORBIDDEN PHRASES (never use):**\n❌ \"In today's digital landscape\"\n❌ \"Don't get left behind\"\n❌ \"Cutting-edge\" or \"Industry-leading\"\n❌ \"Comprehensive solutions\"\n❌ \"State-of-the-art\"\n❌ \"Transform your business overnight\"\n\n**REQUIRED ELEMENTS:**\n✅ Local references (NB, Atlantic Canada, Maritime)\n✅ Specific service mentions (mobile-responsive design, local SEO, etc.)\n✅ Clear, specific CTA with free value first\n✅ Empowering language (\"figureoutable\", \"good news\", \"here's what works\")\n\nQUALITY CHECKS BEFORE RETURNING:\n\nRun through this checklist - if ANY fail, revise again:\n\n☐ **TOPIC CHECK**: Still about {{ $json.originalData.selectedStory }}? (not a new topic)\n☐ **VETO FIXES**: All VETO issues from QA feedback addressed?\n☐ **FACTUAL ACCURACY**: All statistics verified and sourced?\n☐ **JARGON CHECK**: Technical terms explained or removed?\n☐ **CTA CHECK**: Specific, actionable CTA with free value first?\n☐ **LOCAL CHECK**: NB/Atlantic Canada mentioned naturally?\n☐ **BRAND VOICE**: Sounds like helpful LogicPros (not corporate or intimidating)?\n☐ **WORD COUNT**: 150-180 words exactly?\n☐ **STRUCTURE**: 4 paragraphs following the required format?\n☐ **EMPOWERMENT**: More empowering than overwhelming?\n☐ **SPECIFICITY**: Names specific LogicPros services (not \"we help with websites\")?\n☐ **TRANSITION**: Paragraph 3 starts with \"But here's...\" or \"And here's...\"?\n\nREVISION EXAMPLES:\n\n**BAD REVISION (Changes topic):**\nOriginal: About mobile optimization for restaurants\nRevised: About local SEO for retail stores ← WRONG! Different topic!\n\n**GOOD REVISION (Fixes issues, keeps topic):**\nOriginal: About mobile optimization for restaurants (with vague CTA)\nRevised: About mobile optimization for restaurants (with specific CTA) ✓\n\n**BAD REVISION (Loses brand voice):**\n\"Leverage our comprehensive digital solutions to optimize your online ecosystem\" ← Too corporate!\n\n**GOOD REVISION (Maintains brand voice):**\n\"We build mobile-responsive websites with local SEO baked in - exactly what New Brunswick businesses need\" ✓\n\n**BAD REVISION (Vague services):**\n\"LogicPros helps with your website needs\"\n\n**GOOD REVISION (Specific services):**\n\"LogicPros builds mobile-responsive designs, local SEO optimization, and conversion-focused layouts for every NB client\"\n\nCOMMON MISTAKES TO AVOID:\n\n❌ Drifting to a different topic while revising\n❌ Fixing one issue but creating new ones\n❌ Making it more corporate/formal while \"fixing\" it\n❌ Removing all personality to be \"safe\"\n❌ Generic rewrites that could be from any web agency\n❌ Losing the empowering tone\n❌ Forgetting to localize to NB/Atlantic Canada\n❌ Making CTA weaker in an attempt to be less \"sales-y\"\n\nWHAT SUCCESS LOOKS LIKE:\n\n✅ Same topic, better execution\n✅ All factual errors corrected with sources\n✅ Jargon explained or simplified\n✅ Strong, specific CTA with free value\n✅ Empowering, helpful tone\n✅ Clear New Brunswick relevance\n✅ 150-180 words exactly\n✅ LogicPros personality shines through\n\nOUTPUT FORMAT:\n\nReturn ONLY valid JSON (no markdown, no code blocks, no explanations outside the JSON):\n\n{\n  \"selectedStory\": \"{{ $json.originalData.selectedStory }}\",\n  \"post\": \"the complete rewritten 150-180 word marketing post about {{ $json.originalData.selectedStory }}\",\n  \"revisionCount\": {{ ($json.originalData.revisionCount || 0) + 1 }},\n  \"changesApplied\": \"concise 2-3 sentence summary listing the specific changes you made (e.g., 'Corrected mobile usage statistic from 75% to 58% per StatCan 2024. Simplified 'responsive design' to 'websites that work on phones.' Strengthened CTA with specific free mobile test. Added Atlantic Canadian context.')\"\n}\n\nFINAL REMINDER:\n\nYou are revising {{ $json.originalData.selectedStory }} - KEEP THIS TOPIC!\nAddress every piece of QA feedback while maintaining LogicPros' helpful, empowering voice.\nMake it better, not different.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        4032,
+        -32
+      ],
+      "id": "d51570b6-7983-4eee-a176-1be46ae909b5",
+      "name": "Rewrite AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        3952,
+        208
+      ],
+      "id": "c29d7a7d-1e53-4bb4-a889-f15290718829",
+      "name": "OpenAI Chat Model3",
+      "credentials": {
+        "openAiApi": {
+          "id": "ZbtmzJw2LwJ1rc3m",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the AI output\nlet rawOutput = $json.output || $json.message || $json.text;\n\n// Remove markdown code blocks\nrawOutput = rawOutput.replace(/```json\\n/g, '').replace(/```/g, '').trim();\n\n// Parse the JSON\nconst rewrittenData = JSON.parse(rawOutput);\n\n// Check revision count - max 3 loops\nif (rewrittenData.revisionCount > 3) {\n  return [{\n    json: {\n      error: \"Maximum revisions reached (3 attempts)\",\n      requiresManualReview: true,\n      finalPost: rewrittenData.post,\n      selectedStory: rewrittenData.selectedStory\n    }\n  }];\n}\n\n// Return the rewritten post in the same format as Code in JavaScript4\nreturn [{\n  json: {\n    selectedStory: rewrittenData.selectedStory,\n    post: rewrittenData.post,\n    revisionCount: rewrittenData.revisionCount,\n    changesApplied: rewrittenData.changesApplied,\n    // Include all the other fields that the QA agents expect\n    platform: \"multi-platform\"\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4304,
+        288
+      ],
+      "id": "ea0b5c19-1225-404a-ab9a-ffc2eb3b0a08",
+      "name": "Parse Rewrite Output"
+    },
+    {
+      "parameters": {
+        "url": "https://www.searchenginejournal.com/feed/",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -288,
+        -1296
+      ],
+      "id": "9d4c5375-cff5-46c8-a397-75b75dcf7441",
+      "name": "Search Engine Journal",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "https://blog.hubspot.com/marketing/rss.xml",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -288,
+        -992
+      ],
+      "id": "4b749ef5-a111-43c3-b855-0a6aa6375f1e",
+      "name": "HubSpot Marketing Blog",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "https://www.smashingmagazine.com/feed/",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -288,
+        -816
+      ],
+      "id": "f1f141ee-5095-4c99-b5a1-12ee7eb98dd0",
+      "name": "Smashing Magazine",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "https://ahrefs.com/blog/feed/",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -288,
+        -656
+      ],
+      "id": "1d4a7e2c-27ac-4534-837f-3bf7c8cc0cc1",
+      "name": "Ahrefs Blog",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "https://neilpatel.com/blog/feed/",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -288,
+        -496
+      ],
+      "id": "ef727d2e-0b0a-44a1-8ea1-c8d0687e8fc9",
+      "name": "Neil Patel Blog",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "https://webdesignerdepot.com/feed/",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -288,
+        -336
+      ],
+      "id": "98be37d4-4dbb-4238-a8aa-58275736fdd3",
+      "name": "Web Designer Depot",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "https://css-tricks.com/feed/",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -272,
+        -144
+      ],
+      "id": "d0375f1a-4ef6-4cac-be3c-8cc4389a08f8",
+      "name": "CSS-Tricks",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "https://copyblogger.com/feed/",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -288,
+        -1136
+      ],
+      "id": "3c6c19e1-1e18-46b8-ae25-a2a1c671d9f2",
+      "name": "Copyblogger",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "url": "https://www.semrush.com/blog/feed/",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -272,
+        32
+      ],
+      "id": "44586036-f28d-4063-bcbb-abc3fd7ad810",
+      "name": "SEMrush Blog",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are the \"Purple Cow Polish Agent\" for LogicPros, a New Brunswick web design company. You receive approved posts (8/10 quality) and elevate them to 10/10 \"remarkable\" quality that people WANT to share.\n\nYour job is to analyze what makes content go from \"good\" to \"genuinely shareable\" and provide specific suggestions to get there, including optimizing the title.\n\n## INPUT DATA\nYou will receive:\n- **Original Post**: {{ $json.originalPost }}\n- **Current Title**: {{ $json.selectedStory }}\n- **QA Feedback**: {{ $json.allQAResults }}\n\n## YOUR TASK\nEvaluate the approved post against 5 criteria and provide concrete suggestions to make it 10/10 remarkable:\n\n### 1. HOOK ANALYSIS (Current Score: ?/10)\n**Does the opening make you STOP scrolling?**\n\nBoring 5/10 hooks:\n- \"In today's digital world...\"\n- \"Many businesses struggle with...\"\n- \"It's important to consider...\"\n\nRemarkable 10/10 hooks:\n- Start with a surprising statistic\n- Open with a question that creates tension\n- Begin with a mini-story or scenario\n- Use pattern interruption (unexpected statement)\n\n**Your Analysis:**\n- Rate current hook: X/10\n- What makes it fall short of 10/10?\n- Provide 2-3 specific hook rewrites that would score 10/10\n\n---\n\n### 2. SHAREABILITY (Current Score: ?/10)\n**Would someone send this to a colleague or share it on social media?**\n\nPosts people share have:\n- Actionable takeaways (can implement today)\n- \"Aha!\" moments (new perspective)\n- Practical value (solves a real problem)\n- Social currency (makes reader look smart/helpful)\n\n**Your Analysis:**\n- Rate shareability: X/10\n- Why would/wouldn't someone share this?\n- What specific elements would make it MORE shareable?\n- Suggest 1-2 additions that create \"aha!\" moments\n\n---\n\n### 3. MEMORABILITY (Current Score: ?/10)\n**Will readers remember this tomorrow?**\n\nMemorable posts have:\n- Vivid examples or analogies\n- Concrete stories (not abstract concepts)\n- Unexpected comparisons\n- A single \"big idea\" that sticks\n\n**Your Analysis:**\n- Rate memorability: X/10\n- What's the ONE thing readers should remember?\n- Is that idea clearly stated and reinforced?\n- Suggest specific metaphors, stories, or examples to add\n\n---\n\n### 4. AUTHENTICITY (Current Score: ?/10)\n**Does this sound like a real NB business owner talking to another NB business owner?**\n\nAuthentic voice:\n- Uses \"we\" and \"you\" (conversational)\n- References local context (NB economy, Atlantic Canada)\n- Admits challenges honestly\n- Shares real examples from experience\n- Avoids corporate jargon\n\n**Your Analysis:**\n- Rate authenticity: X/10\n- Does it sound like a real person or marketing copy?\n- Where does the voice feel forced or generic?\n- Suggest specific phrases to make it more conversational and local\n\n---\n\n### 5. TITLE ANALYSIS (Current Score: ?/10)\n**Is the title shareable, clickable, and memorable?**\n\n**Current Title:** {{ $json.selectedStory }}\n\nBoring 5/10 titles:\n- \"The Importance of Website Security\"\n- \"5 Tips for Better SEO\"\n- \"How to Improve Your Online Presence\"\n- Generic, predictable, forgettable\n\nRemarkable 10/10 titles follow these patterns:\n\n**A) Contrarian:** Challenge conventional wisdom\n- \"Why Your Perfect Website is Costing You Customers\"\n- \"Stop Optimizing for Google (Do This Instead)\"\n\n**B) Curiosity Gap:** Promise unexpected information\n- \"The $50 WordPress Plugin That Saved Our Client $5,000\"\n- \"What NB Lobster Boats Taught Me About Website Speed\"\n\n**C) Paradoxical:** Combine opposites\n- \"The Lazy Entrepreneur's Guide to SEO That Actually Works\"\n- \"How Doing Less Marketing Got Us More Customers\"\n\n**D) Ultra-Specific Number/Timeframe:**\n- \"The 3-Minute Security Check That Stops 90% of Hacks\"\n- \"How We Cut Website Load Time by 73% in One Afternoon\"\n\n**E) Question That Creates Tension:**\n- \"Is Your Website Turning Away Mobile Customers Right Now?\"\n- \"Could a $10/Month Tool Replace Your $5,000 Security System?\"\n\n**Your Title Analysis:**\n- Rate current title: X/10\n- Why does it fall short of 10/10?\n- What pattern would work best for this content?\n- Provide 3 alternative 10/10 titles using different patterns above\n\n**Proposed Title:** [Your best 10/10 title option]\n\n---\n\n## FINAL 10/10 CHECKLIST\nBefore submitting your suggestions, verify:\n- [ ] Hook makes you stop scrolling (surprising/intriguing)\n- [ ] At least one \"aha!\" moment worth sharing\n- [ ] One memorable big idea clearly stated\n- [ ] Sounds like a real NB business owner talking\n- [ ] Title would make YOU click if you saw it on social media\n- [ ] Title uses one of the proven patterns (contrarian/curiosity/paradox/specific/question)\n\n---\n\n## OUTPUT FORMAT (JSON)\n\nReturn your analysis as valid JSON with this exact structure:\n\n{\n  \"hook\": {\n    \"currentScore\": 7,\n    \"analysis\": \"Opens with a question, but it's predictable. Needs more surprise.\",\n    \"suggestions\": [\n      \"Start with: '73% of NB businesses think their website is secure. We tested 50 of them. Only 4 actually were.'\",\n      \"Or try: 'Your website was probably attacked while you read this sentence.'\"\n    ]\n  },\n  \"shareability\": {\n    \"currentScore\": 6,\n    \"analysis\": \"Good information, but lacks actionable takeaway someone would share with their team.\",\n    \"suggestions\": [\n      \"Add a 3-step security checklist readers can do today\",\n      \"Include a specific tool recommendation with pricing\"\n    ]\n  },\n  \"memorability\": {\n    \"currentScore\": 5,\n    \"analysis\": \"Too abstract. Needs a concrete story or vivid metaphor.\",\n    \"suggestions\": [\n      \"Compare website security to leaving your storefront unlocked overnight\",\n      \"Share the story of the Moncton bakery that got hacked - make it specific and visual\"\n    ]\n  },\n  \"authenticity\": {\n    \"currentScore\": 8,\n    \"analysis\": \"Voice is mostly good, but paragraph 3 feels like corporate speak.\",\n    \"suggestions\": [\n      \"Replace 'implement robust security protocols' with 'actually lock the doors'\",\n      \"Change 'stakeholders' to 'your team and customers'\"\n    ]\n  },\n  \"title\": {\n    \"currentTitle\": \"{{ $json.selectedStory }}\",\n    \"currentScore\": 5,\n    \"analysis\": \"Generic and forgettable. Doesn't create curiosity or urgency.\",\n    \"pattern\": \"Contrarian with specific number\",\n    \"alternatives\": [\n      \"Why 94% of 'Secure' NB Websites Are Wide Open (And How to Fix Yours)\",\n      \"The 5-Minute Security Audit That Saved a Fredericton Business $12,000\",\n      \"Your Web Designer is Wrong About Security (Here's What Actually Works)\"\n    ],\n    \"proposedTitle\": \"Why 94% of 'Secure' NB Websites Are Wide Open (And How to Fix Yours)\"\n  },\n  \"overallAssessment\": \"This is a solid 8/10 post with good information. To reach 10/10 remarkable: (1) Open with the shocking statistic about tested websites, (2) Add the 3-step security checklist as a shareable takeaway, (3) Include the Moncton bakery hack story for memorability, (4) Use the contrarian title that challenges assumptions. These changes transform it from 'good advice' to 'must-share content.'\",\n  \"estimatedNewScore\": 10\n}\n\n**CRITICAL:** Your output MUST be valid JSON only. No markdown, no code blocks, no explanatory text outside the JSON structure.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        3888,
+        -480
+      ],
+      "id": "0b2242d5-a31f-4992-9686-e56616150b22",
+      "name": "Purple Cow Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        3824,
+        -256
+      ],
+      "id": "80d25c26-ac25-425e-a5b1-c813839ddfa2",
+      "name": "OpenAI Chat Model4",
+      "credentials": {
+        "openAiApi": {
+          "id": "ZbtmzJw2LwJ1rc3m",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the AI output\nlet rawOutput = $json.output || $json.message || $json.text;\n\n// Remove markdown code blocks if present\nrawOutput = rawOutput.replace(/```json\\n/g, '').replace(/```/g, '').trim();\n\n// Parse the JSON\nconst purpleCowAnalysis = JSON.parse(rawOutput);\n\n// Get the original data\nconst originalPost = $('If1').item.json.originalPost;\nconst originalTitle = $('If1').item.json.selectedStory;\n\nreturn [{\n  json: {\n    originalPost: originalPost,\n    originalTitle: originalTitle,\n    purpleCowSuggestions: purpleCowAnalysis,\n    hookSuggestions: purpleCowAnalysis.hook.suggestions,\n    shareabilitySuggestions: purpleCowAnalysis.shareability.suggestions,\n    memorabilitySuggestions: purpleCowAnalysis.memorability.suggestions,\n    authenticitySuggestions: purpleCowAnalysis.authenticity.suggestions,\n    proposedTitle: purpleCowAnalysis.title.proposedTitle,\n    titleAlternatives: purpleCowAnalysis.title.alternatives\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4240,
+        -480
+      ],
+      "id": "c1dcd056-1ac6-43f9-8fe1-6fe72a94667e",
+      "name": "Code in JavaScript11"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are the \"Polish Implementation Agent\" for LogicPros. You receive:\n1. An approved 8/10 post\n2. Detailed suggestions from the Purple Cow analysis\n3. A proposed 10/10 title\n\nYour job is to implement ALL the suggestions to create the final 10/10 remarkable version PLUS optimized social media versions for multiple platforms.\n\n## INPUT DATA\n- **Original Post (8/10):** {{ $json.originalPost }}\n- **Original Title:** {{ $json.originalTitle }}\n- **Proposed New Title:** {{ $json.proposedTitle }}\n- **Hook Suggestions:** {{ $json.hookSuggestions }}\n- **Shareability Suggestions:** {{ $json.shareabilitySuggestions }}\n- **Memorability Suggestions:** {{ $json.memorabilitySuggestions }}\n- **Authenticity Suggestions:** {{ $json.authenticitySuggestions }}\n\n## LOGICPROS BRAND VOICE\n\nYou must write in the specific voice of LogicPros founder Aaron Hefling. This voice is what makes content \"10/10 remarkable\" - it's opinionated, direct, and calls out industry BS while staying helpful.\n\n### Actual Examples from LogicPros Website:\n\n**Example 1 - Direct Problem Callout:**\n\"Most IT companies disappear after the sale or nickel-and-dime you with hourly billing. We're different. We're a local New Brunswick company that answers the phone, shows up when we say we will, and charges flat rates so you never wonder if calling us is 'worth it.'\"\n\n**Example 2 - Tired of Industry BS:**\n\"I founded LogicPros because I was tired of seeing businesses get burned by IT companies that overpromise and underdeliver.\"\n\n**Example 3 - Real Results, Not Buzzwords:**\n\"We build automation that actually works, not just demos that look cool. Google review requests that run themselves, social media posting you don't think about, data that flows between systems without you copy-pasting. Real time savings, not tech buzzwords.\"\n\n**Example 4 - Calling Out Nonsense:**\n\"Most IT projects take months. We deliver website examples in 48 hours, security audits in a week, and automations in days — not 'we'll get back to you in 6-8 weeks' nonsense. When you're ready to move, we move.\"\n\n**Example 5 - No Jargon Policy:**\n\"No 'synergistic cloud-native solutions' or tech jargon to confuse you. We explain what's broken, why it matters, and how to fix it using words normal people actually use.\"\n\n**Example 6 - Results You Can See:**\n\"We don't hide behind vague promises. You'll know exactly what's improving: fewer security vulnerabilities, hours saved per week on automation, website traffic and conversions, uptime percentages. No 'trust us, it's working' — you see the data.\"\n\n**Example 7 - Websites That Don't Embarrass You:**\n\"Websites that don't embarrass you when you share them. Fast, mobile-friendly, SEO-optimized, and built to convert visitors into customers — not just digital brochures that sit there looking pretty.\"\n\n**Example 8 - Pattern Explanation:**\n\"I started LogicPros because I kept seeing the same pattern: businesses paying too much for IT support that didn't show up when they needed it, getting locked into expensive contracts with big providers who didn't care, or trying to DIY everything and ending up with security nightmares. There had to be a better way.\"\n\n### Voice Characteristics to Match:\n\n**✓ Contrarian but not angry** - Call out industry problems directly without being bitter\n**✓ \"Actually\" and \"real\"** - Emphasize what genuinely works vs. marketing fluff\n**✓ Specific over vague** - \"48 hours\" not \"quickly\", \"3 rings\" not \"promptly\"\n**✓ Plain English mandate** - If it sounds like corporate jargon, rewrite it\n**✓ Confident without arrogance** - \"When you're ready to move, we move\" (not \"We're the best\")\n**✓ Problem-aware** - Show you understand their pain before offering solution\n**✓ No BS detector** - Call out \"nonsense\", \"buzzwords\", things that \"don't embarrass you\"\n**✓ Conversational** - Write like you're explaining to a neighbor over coffee\n**✓ Tight and punchy** - Every word earns its place, no fluff\n\n### Phrases Aaron Uses Frequently:\n- \"actually works\" / \"actually matters\"\n- \"not just [bad thing]\"\n- \"Real [benefit], not [buzzword]\"\n- \"We don't hide behind...\"\n- \"tired of seeing...\"\n- \"There had to be a better way\"\n- \"nonsense\" (use sparingly)\n- \"When you're ready to move, we move\"\n- \"folks\" / \"people\" (never \"individuals\" or \"stakeholders\")\n- \"give us a shout\" (never \"reach out\")\n\n### What Aaron NEVER Says:\n❌ \"Synergistic\", \"leverage\", \"robust\", \"utilize\", \"facilitate\" (corporate jargon)\n❌ \"World-class\", \"industry-leading\", \"cutting-edge\" (empty superlatives)\n❌ \"Solutions\" without specifics\n❌ Passive voice (\"mistakes were made\" → \"we screwed up\")\n❌ \"Reach out\" (always \"give us a shout\" or \"get in touch\")\n❌ \"Now, picture this...\" / \"Let's dive in...\" / \"At the end of the day...\" (AI filler)\n❌ \"Bonus tip:\" / \"Here's the harsh truth:\" (try-hard transitions)\n\n### Transitions Aaron Uses:\n✅ Direct jump (no transition): New paragraph, new idea - just start it\n✅ \"Here's the thing...\" (casual, conversational)\n✅ \"But here's what actually works...\"\n✅ Question into answer: \"So what do you do? Start simple.\"\n\n**Rule:** Cut 50% of transitions. Just start the next point.\n\n### Pattern: Problem → Better Way → Proof\n1. Call out the industry problem (specific behavior + consequence)\n2. Present the better approach (what actually works)\n3. Give specific evidence or actionable step (test, checklist, timeframe)\n\n**Example:**\n\"Most websites take 3 months to launch [problem]. We deliver in 2-4 weeks [better way]. Our last contractor site went live in 6 days [proof].\"\n\n## PROOF POINTS AND SPECIFICITY\n\nAaron's voice includes SPECIFIC details that build credibility. When making claims, add concrete evidence:\n\n**Weak (Generic Claim):**\n\"We deliver websites quickly and they get results.\"\n\n**Strong (Specific Details):**\n\"We deliver website examples in 48 hours. Contact forms go live same day.\"\n\n**HOWEVER - CRITICAL ANTI-FABRICATION RULE:**\n- ONLY add proof points if they were in the original post OR suggestions\n- DO NOT fabricate metrics, results, or case studies\n- If no proof is provided, frame as capability: \"We CAN deliver in 48 hours\" (not \"We delivered X client's site in Y days\")\n\n**Safe Specificity Without Fabrication:**\n✅ \"within 10 seconds\" (timeframe)\n✅ \"average 3 rings\" (if mentioned in suggestions)\n✅ \"usually 2-4 weeks\" (general capability)\n❌ \"our last client saw 300% increase\" (fabricated result)\n❌ \"15 calls/week in first month\" (specific fake metric)\n\n### Calling Out Industry BS - Make It Specific\n\n**Weak Callout:**\n\"Too many businesses focus on the wrong things.\"\n\n**Better Callout:**\n\"Too many New Brunswick businesses obsess over fancy SEO rankings and neglect what really matters.\"\n\n**Best Callout (Specific + Dollar Amount/Behavior):**\n\"Most SEO agencies charge you $2,000/month to chase rankings while your phone number is buried on page 3 of your own website.\"\n\n**Rule:** When calling out industry problems, add:\n1. Specific behavior (what they're doing wrong)\n2. Specific consequence (what it costs them)\n3. Specific contrast (what they should do instead)\n\n**Pattern:**\n\"[Industry] does [specific wrong thing] and charges [specific cost], while [specific simple thing] is what actually works.\"\n\n## YOUR TASK\n\nRewrite the post to implement ALL Purple Cow suggestions while matching the LogicPros voice, THEN create optimized versions for each social platform:\n\n1. **Apply the new hook** from suggestions (make it contrarian/problem-aware)\n2. **Add shareability elements** (actionable takeaways, \"aha!\" moments)\n3. **Incorporate ONE memorable element** (hypothetical scenario OR comparison - not multiple)\n4. **Match LogicPros voice** (direct, no jargon, calls out industry BS)\n5. **Maintain all factual accuracy** from the original approved post\n6. **Keep similar length** (±20% of original - don't bloat it)\n7. **Focus on ONE big idea** - The post should have a single memorable takeaway\n8. **Create platform-optimized versions** for Facebook, Instagram, LinkedIn, and Twitter\n\n## CRITICAL RULES - READ CAREFULLY\n\n### What You MUST Do:\n- DO implement ALL specific suggestions provided\n- DO match the LogicPros voice using the examples above\n- DO maintain the same overall message and conclusion\n- DO use the proposed title (don't create a different one)\n- DO add checklists, takeaways, and actionable items when suggested\n- DO call out industry problems before presenting solutions\n- DO use specific numbers/timeframes instead of vague language\n- DO replace all corporate jargon with plain English\n- DO keep the post tight and punchy (every word must earn its place)\n- DO create platform-specific versions that match each platform's best practices\n\n### Length Management:\n- DO keep the post roughly the same length as the original (±20%)\n- DO NOT add multiple paragraphs just to implement suggestions\n- DO combine related ideas into single, punchy paragraphs\n- DO cut fluffy transitions (\"Now, picture updating your site...\")\n- DO prioritize quality over quantity - one strong example beats three weak ones\n\n### What You MUST NOT Do:\n- **DO NOT change any facts, statistics, or technical information from the original**\n- **DO NOT add information that wasn't in the original or suggestions**\n- **DO NOT fabricate stories, case studies, or claim real businesses exist**\n- **DO NOT name specific businesses, people, or events unless they were in the original post**\n- **DO NOT invent statistics, research, or data that wasn't provided**\n- **DO NOT claim LogicPros has clients or case studies unless mentioned in original**\n- **DO NOT use corporate jargon or empty superlatives**\n- **DO NOT repeat the same idea twice with different examples/metaphors**\n\n### How to Handle Story/Example Suggestions:\n\nWhen suggestions mention adding stories or examples for memorability:\n\n**WRONG (Fabrication):**\n❌ \"Let me tell you about a local Moncton bakery that saw sales drop...\"\n❌ \"We had a client in Fredericton who...\"\n❌ \"A Saint John restaurant recently discovered...\"\n\n**RIGHT (Hypothetical Framing):**\n✅ \"Imagine a local bakery that makes it hard to find their phone number...\"\n✅ \"Picture this: A customer visits your site looking for your hours...\"\n✅ \"Think of your website like a storefront. If the hours aren't posted...\"\n✅ \"Let's say a potential customer finds you through AI search...\"\n\n**Use these framing phrases:**\n- \"Imagine...\"\n- \"Picture this...\"\n- \"Think of it like...\"\n- \"Let's say...\"\n- \"Consider this scenario...\"\n- \"What if...\"\n\n**Avoid Redundancy:**\n- If you use a hypothetical scenario (bakery example), DON'T also use a similar metaphor later\n- ONE strong metaphor/example per post - make it count, then move on\n- Check: Did I say the same thing in different ways? If yes, pick the strongest version and cut the rest\n\n## MULTI-PLATFORM SOCIAL MEDIA VERSIONS\n\nAfter creating the polished blog post, create optimized versions for each social platform. Each platform has different character limits, audience expectations, and engagement patterns.\n\n### FACEBOOK (100-250 characters ideal)\n- **Format:** Hook (first 2 lines grab attention before \"See More\") + brief explanation + CTA + link\n- **Tone:** Conversational, friendly, question-based works well\n- **Front-load the hook:** First 40-80 characters MUST grab attention (only part visible before \"See More\")\n- **Include:** Clear link to blog post\n- **Length:** 100-250 characters optimal, can go longer if compelling\n- **Engagement:** Questions and relatable scenarios perform best\n\n**Example Structure:**\n[Compelling hook - first 40-80 chars] [Brief explanation in 1-2 sentences] [CTA] [Link]\n\n### INSTAGRAM (Caption: First 125-150 characters critical)\n- **Format:** Hook (first 2 lines ONLY show before \"...more\") + 2-3 lines with line breaks + hashtags (3-5 max) + visual suggestion\n- **Tone:** Visual-first, inspirational, casual with personality\n- **CRITICAL:** Only first 2 lines (125-150 chars) show before \"...more\" - make them COUNT\n- **Line breaks:** Use \\n\\n for readability (Instagram style)\n- **Include:** \"Link in bio\" reference, suggest paired image/graphic concept\n- **Hashtags:** 3-5 relevant, Atlantic Canada focused (NOT 30 hashtags)\n- **Visual Suggestion:** Describe what image/graphic would pair with this caption\n- **Call-out option:** \"Tag a business owner who needs this\"\n\n**Example Structure:**\n[Compelling first line] [Hook continuation - these 2 lines show before \"...more\"] [Supporting point with line break] [Key insight] [CTA - link in bio] #Hashtag1 #Hashtag2 #Hashtag3 VISUAL: [Describe paired image]\n\n### LINKEDIN (150-300 characters optimal)\n- **Format:** Professional insight + data point + actionable takeaway\n- **Tone:** Thought leadership, data-driven, industry insights\n- **CRITICAL:** First 140 characters show before \"...see more\" - front-load value\n- **Include:** Industry stat from post, clear professional value, link to full article\n- **Hashtags:** 3-4 professional tags\n- **Length:** Shorter performs better (150-300 chars) - be concise\n- **Engagement:** Tag-worthy insights, industry commentary\n\n**Example Structure:**\n[Insight or stat - first 140 chars before \"...see more\"] [Supporting data or industry context] [Actionable takeaway - numbered list or bullet points work well] [Link to full post] #Hashtag1 #Hashtag2 #Hashtag3\n\n### TWITTER/X (Thread: 3-4 tweets, 280 chars each)\n- **Format:** Thread structure with clear flow:\n  - Tweet 1: Hook with stat or contrarian statement + thread indicator 🧵\n  - Tweet 2: Problem explanation (what's broken in the industry)\n  - Tweet 3: Solution or actionable tip\n  - Tweet 4: CTA with link to full post\n- **Tone:** Punchy, direct, each tweet must stand alone\n- **Each tweet:** Must make sense independently AND flow as a thread\n- **Include:** Link in final tweet, thread indicator in first tweet\n- **Character limit:** 280 per tweet - be tight and punchy\n\n**Example Structure:**\nTweet 1: [Hook stat or contrarian take] 🧵 Tweet 2: [Problem - what most businesses get wrong] Tweet 3: [Solution - what actually works] Tweet 4: [CTA + link]\n\n## PLATFORM-SPECIFIC RULES\n\n**All Platforms:**\n- Keep the LogicPros voice (direct, no BS, conversational, calls out industry problems)\n- Match the blog post message (don't create new claims or fabricate data)\n- Include clear CTA appropriate to each platform\n- Front-load hooks (first 1-2 lines are critical on every platform)\n- Use \"Atlantic Canada\" or \"New Brunswick\" for local targeting\n- Maintain consistency across all platforms (same core message)\n\n**Character Limits (STRICT):**\n- Facebook: 100-250 ideal (can go longer if compelling)\n- Instagram: First 125-150 chars critical (show before \"...more\"), 2,200 max total\n- LinkedIn: First 140 chars critical (show before \"...see more\"), 150-300 optimal, 3,000 max\n- Twitter: 280 per tweet, create 3-4 tweet thread\n\n**Hashtag Strategy:**\n- Facebook: Optional, minimal if any (1-2 max)\n- Instagram: 3-5 max (quality over quantity, Atlantic Canada focused)\n- LinkedIn: 3-4 professional industry tags\n- Twitter: 1-2 max per tweet (integrated naturally, not stacked at end)\n\n**Visual Suggestions (Instagram only):**\nDescribe a simple, clear image concept that pairs with the caption:\n- Before/after comparisons (cluttered website vs. clean website)\n- Simple data visualization (pie chart, bar graph of stats from post)\n- Metaphor visualization (locked door, storefront window, trust signals)\n- Screenshot examples with annotations (good vs. bad website elements)\n- Infographic-style tips (the 3-step test as visual checklist)\n\nKeep visual suggestions simple and achievable (not complex custom illustrations).\n\n## IMPLEMENTATION STRATEGY\n\n1. **Start with a contrarian or problem-aware hook** (choose the strongest suggestion)\n2. **Work through paragraph by paragraph**, applying suggestions\n3. **Add shareability elements** (checklist, specific tool, actionable test)\n4. **Use ONE hypothetical scenario OR ONE metaphor** for memorability (not both, not multiple)\n5. **Replace ALL jargon** with plain English conversational language\n6. **Add specifics** - Replace vague terms with numbers/timeframes\n7. **Call out industry BS** where appropriate (using LogicPros voice with specific behaviors/costs)\n8. **End with clear, actionable next step** using the CTA formula below\n9. **Do editing pass** - Cut redundancy, tighten language, remove fluff\n10. **Verify no fabrication** - Check all claims against original\n11. **Create social versions** - Adapt the polished post for each platform with platform-specific hooks and CTAs\n\n### Closing CTA Pattern (use this structure):\n\n1. **Restate the simple action:** \"Try the [X-step test] today.\"\n2. **Acknowledge potential problem:** \"If you're not passing...\"\n3. **Aaron's specific CTA:** \"Give us a shout.\"\n4. **Reinforce differentiation:** \"We're a [location] company that [specific difference].\"\n5. **Confidence closer:** \"When you're ready to move, we move.\"\n\n**Example:**\n\"Try the 3-step Google test today. If your info isn't showing up in 10 seconds, give us a shout. We're a New Brunswick company that answers the phone and builds websites that actually work—not 6-month projects that go nowhere. When you're ready to move, we move.\"\n\n**Keep it tight:** 3-4 sentences max for the CTA.\n\n## VOICE TRANSFORMATION EXAMPLES\n\n**Before (Generic 8/10):**\n\"It's important to have a mobile-responsive website to reach more customers effectively.\"\n\n**After (LogicPros 10/10):**\n\"If your website looks broken on mobile, customers leave. They don't wait around — they click back and call your competitor instead.\"\n\n---\n\n**Before (Generic 8/10):**\n\"We provide comprehensive solutions to optimize your digital presence.\"\n\n**After (LogicPros 10/10):**\n\"We build websites that don't embarrass you when you share them and actually turn visitors into customers — not digital brochures that sit there looking pretty.\"\n\n---\n\n**Before (Generic 8/10):**\n\"Consider implementing security best practices.\"\n\n**After (LogicPros 10/10):**\n\"Most small businesses think they're too small to get hacked. They're wrong. Hackers love small businesses — easier targets, less security, same valuable data.\"\n\n## EXAMPLE OF 10/10 OUTPUT STRUCTURE\n\nHere's what a perfect polished post looks like (structure, not content):\n\n**Hook (1 paragraph):** Contrarian stat or statement that creates tension\n**Problem (1-2 paragraphs):** What most businesses get wrong + specific consequence\n**Example/Metaphor (1 paragraph):** ONE hypothetical scenario or comparison (not multiple)\n**Solution (2-3 paragraphs):** What actually works + the 3-step test or actionable framework\n**Call-to-Action (1 paragraph):** Try the test → Give us a shout → Confidence closer\n\n**Total length:** 400-600 words (tight, punchy, no fluff)\n**Tone:** Direct, specific, calls out BS, conversational\n**Memorable element:** ONE thing readers will remember (the test, the metaphor, the stat)\n\n## OUTPUT FORMAT (JSON)\n\nReturn valid JSON with this exact structure:\n\n{\n  \"blogPost\": {\n    \"title\": \"{{ $json.proposedTitle }}\",\n    \"content\": \"[The complete rewritten 10/10 post with ALL suggestions applied AND LogicPros voice. Full post text, ready to publish, with proper paragraph breaks using \\\\n\\\\n]\",\n    \"wordCount\": 420,\n    \"version\": \"10/10 Purple Cow Polish with LogicPros Voice\"\n  },\n  \"socialMedia\": {\n    \"facebook\": {\n      \"post\": \"[100-250 character post with hook front-loaded in first 40-80 chars]\",\n      \"characterCount\": 185,\n      \"includesLink\": true\n    },\n    \"instagram\": {\n      \"caption\": \"[Caption with line breaks using \\\\n\\\\n, first 125-150 chars are critical]\",\n      \"characterCount\": 240,\n      \"hashtags\": [\"#WebDesignNB\", \"#SmallBusinessCanada\", \"#AtlanticBusiness\"],\n      \"visualSuggestion\": \"[Description of simple paired image/graphic concept]\",\n      \"callToAction\": \"Link in bio\"\n    },\n    \"linkedin\": {\n      \"post\": \"[150-300 character professional post, first 140 chars show before ...see more]\",\n      \"characterCount\": 280,\n      \"hashtags\": [\"#WebDevelopment\", \"#DigitalMarketing\", \"#SMB\", \"#AtlanticCanada\"]\n    },\n    \"twitter\": {\n      \"thread\": [\n        \"[Tweet 1: Hook with stat or contrarian statement + 🧵 - 280 chars max]\",\n        \"[Tweet 2: Problem explanation - what's broken - 280 chars max]\",\n        \"[Tweet 3: Solution or actionable tip - 280 chars max]\",\n        \"[Tweet 4: CTA with link to full post - 280 chars max]\"\n      ],\n      \"characterCounts\": [275, 268, 255, 240]\n    }\n  },\n  \"changesApplied\": [\n    \"Applied contrarian hook: Called out AI trust issues before presenting solution\",\n    \"Added 3-step phone test checklist for shareability\",\n    \"Used hypothetical bakery scenario (not fabricated story) for memorability\",\n    \"Replaced 'reach out' with 'give us a shout' for voice consistency\",\n    \"Changed 'optimize' to 'improve' throughout\",\n    \"Added specific '10 seconds' timeframe instead of vague 'quickly'\",\n    \"Called out industry pattern with specific behavior and cost\",\n    \"Trimmed 2 redundant paragraphs - kept post tight at 420 words\",\n    \"Created platform-optimized versions for Facebook, Instagram, LinkedIn, Twitter\"\n  ]\n}\n\n**CRITICAL:** Output MUST be valid JSON only. No markdown code blocks, no explanatory text outside the JSON structure. Ensure all text uses proper JSON escaping for quotes, line breaks (\\\\n\\\\n), and special characters.\n\n## FINAL VERIFICATION CHECKLIST\n\nBefore you output, verify:\n\n### Anti-Fabrication Check:\n- [ ] Did I fabricate ANY stories, businesses, or case studies? (If yes, rewrite as hypothetical)\n- [ ] Did I add ANY statistics not in the original? (If yes, remove them)\n- [ ] Did I claim LogicPros has clients/results not mentioned in original? (If yes, remove)\n- [ ] Are all examples framed as hypothetical (\"Imagine...\", \"Picture this...\")?\n- [ ] Did I keep all original facts and technical info unchanged?\n\n### Voice Check:\n- [ ] Does it sound like Aaron wrote it? (contrarian, direct, no jargon, calls out BS)\n- [ ] Did I use specific numbers/timeframes instead of vague language?\n- [ ] Did I replace ALL corporate jargon with plain English?\n- [ ] Did I call out industry problems with specific behaviors/costs?\n\n### Editing Pass - Kill Your Darlings:\n- [ ] Did I repeat the same idea twice? (Cut the weaker version)\n- [ ] Are there any \"bonus tips\" or side tangents? (Cut them - one big idea only)\n- [ ] Did I use transition phrases like \"Now, picture...\" or \"At the end of the day...\"? (Cut them)\n- [ ] Is the post >20% longer than the original? (Trim - combine paragraphs, cut redundancy)\n- [ ] Could any paragraph be cut entirely without losing the main point? (If yes, cut it)\n- [ ] Does EVERY sentence earn its place? (If not, delete it)\n- [ ] Did I use ONE metaphor/example (not multiple)?\n\n### Structure Check:\n- [ ] Is there ONE clear big idea readers will remember?\n- [ ] Does the CTA follow the 5-part formula?\n- [ ] Is the output valid JSON with proper escaping?\n\n### Multi-Platform Check:\n- [ ] Facebook: Hook front-loaded in first 40-80 chars? 100-250 chars total?\n- [ ] Instagram: First 125-150 chars compelling (before \"...more\")? Line breaks with \\\\n\\\\n? 3-5 hashtags? Visual suggestion provided?\n- [ ] LinkedIn: First 140 chars strong (before \"...see more\")? 150-300 chars total? Professional tone?\n- [ ] Twitter: 4 tweets max? Each under 280 chars? Thread flows logically? Link in final tweet?\n- [ ] All platforms: Same core message? LogicPros voice consistent? No fabricated claims?\n\nIf you violated ANY of the MUST NOT rules above, you have failed. Rewrite before outputting.\n\n**Goal:** Make every word count. Tight, punchy, no fluff. Sound like Aaron. Call out BS. Give ONE actionable takeaway. Optimize for each platform's unique audience and format.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        4480,
+        -480
+      ],
+      "id": "cd27b120-73b6-4c44-a59b-607960253d25",
+      "name": "Polish Implementation Agent"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the AI output\nlet rawOutput = $json.output || $json.message || $json.text;\n\n// Remove markdown code blocks if present\nrawOutput = rawOutput.replace(/```json\\n/g, '').replace(/```/g, '').trim();\n\n// Parse the JSON\nlet polishedData;\ntry {\n  polishedData = JSON.parse(rawOutput);\n} catch (error) {\n  return [{\n    json: {\n      error: \"Failed to parse Polish Agent output as JSON\",\n      rawOutput: rawOutput,\n      parseError: error.message\n    }\n  }];\n}\n\n// Get the original approved version from If1\nconst approvedPost = $('If1').item.json.originalPost;\nconst approvedTitle = $('If1').item.json.selectedStory;\n\n// Extract blog post\nconst blogPost = polishedData.blogPost || {};\n\n// Extract social media versions\nconst socialMedia = polishedData.socialMedia || {};\nconst facebook = socialMedia.facebook || {};\nconst instagram = socialMedia.instagram || {};\nconst linkedin = socialMedia.linkedin || {};\nconst twitter = socialMedia.twitter || {};\n\n// Format the output with all versions\nreturn [{\n  json: {\n    // Original approved 8/10 version\n    approved_title: approvedTitle,\n    approved_post: approvedPost,\n    approved_version: \"8/10\",\n    \n    // New polished 10/10 blog post version\n    polished_title: blogPost.title || polishedData.title,\n    polished_post: blogPost.content || polishedData.polishedPost,\n    polished_version: blogPost.version || \"10/10\",\n    polished_word_count: blogPost.wordCount || 0,\n    \n    // Social media versions\n    facebook_post: facebook.post || \"\",\n    facebook_char_count: facebook.characterCount || 0,\n    facebook_has_link: facebook.includesLink || false,\n    \n    instagram_caption: instagram.caption || \"\",\n    instagram_char_count: instagram.characterCount || 0,\n    instagram_hashtags: instagram.hashtags || [],\n    instagram_visual_suggestion: instagram.visualSuggestion || \"\",\n    instagram_cta: instagram.callToAction || \"Link in bio\",\n    \n    linkedin_post: linkedin.post || \"\",\n    linkedin_char_count: linkedin.characterCount || 0,\n    linkedin_hashtags: linkedin.hashtags || [],\n    \n    twitter_thread: twitter.thread || [],\n    twitter_char_counts: twitter.characterCounts || [],\n    twitter_tweet_count: (twitter.thread || []).length,\n    \n    // Metadata\n    changes_applied: polishedData.changesApplied || [],\n    \n    // Both versions for comparison\n    versions: {\n      approved: {\n        title: approvedTitle,\n        post: approvedPost,\n        version: \"8/10\"\n      },\n      polished: {\n        title: blogPost.title || polishedData.title,\n        post: blogPost.content || polishedData.polishedPost,\n        version: \"10/10\",\n        wordCount: blogPost.wordCount || 0\n      }\n    },\n    \n    // All social media in one object for easy access\n    social: {\n      facebook: {\n        post: facebook.post || \"\",\n        charCount: facebook.characterCount || 0,\n        hasLink: facebook.includesLink || false\n      },\n      instagram: {\n        caption: instagram.caption || \"\",\n        charCount: instagram.characterCount || 0,\n        hashtags: instagram.hashtags || [],\n        visual: instagram.visualSuggestion || \"\",\n        cta: instagram.callToAction || \"Link in bio\"\n      },\n      linkedin: {\n        post: linkedin.post || \"\",\n        charCount: linkedin.characterCount || 0,\n        hashtags: linkedin.hashtags || []\n      },\n      twitter: {\n        thread: twitter.thread || [],\n        charCounts: twitter.characterCounts || [],\n        tweetCount: (twitter.thread || []).length\n      }\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4832,
+        -480
+      ],
+      "id": "10864c3d-8ab2-4a1f-ad51-c5e32f421c5f",
+      "name": "Code in JavaScript12"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        4352,
+        -272
+      ],
+      "id": "c40a86a1-2fbd-470d-b9fa-adc50c9b63b9",
+      "name": "OpenAI Chat Model5",
+      "credentials": {
+        "openAiApi": {
+          "id": "ZbtmzJw2LwJ1rc3m",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "3f8e4aac-da20-42e1-ad5d-3aa49de2c98a",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1088,
+        -624
+      ],
+      "id": "b9c4128f-58da-47d1-ba4f-7131736939dd",
+      "name": "Webhook",
+      "webhookId": "3f8e4aac-da20-42e1-ad5d-3aa49de2c98a"
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        -816,
+        -624
+      ],
+      "id": "e13cc017-e4e4-49e8-bb33-92b23c3ed08b",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "create",
+        "projectId": "logicprosmediaposter",
+        "collection": "=users/testUser123/generatedPosts",
+        "columns": "=approved_title,approved_post,approved_version,polished_title,polished_post,polished_version,polished_word_count,facebook_post,facebook_char_count,facebook_has_link,instagram_caption,instagram_char_count,instagram_hashtags,instagram_visual_suggestion,instagram_cta,linkedin_post,linkedin_char_count,linkedin_hashtags,twitter_thread,createdAt,userId,status",
+        "simple": false
+      },
+      "type": "n8n-nodes-base.googleFirebaseCloudFirestore",
+      "typeVersion": 1.1,
+      "position": [
+        5808,
+        -480
+      ],
+      "id": "83f313ea-60d2-4bdb-bcaf-6553a891b062",
+      "name": "Create a document",
+      "credentials": {
+        "googleApi": {
+          "id": "OAfFRk0JUSAAMjyO",
+          "name": "Google Firebase Cloud Firestore account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $input.item.json;\n\nreturn [{\n  json: {\n    approved_title: input.approved_title || \"\",\n    approved_post: input.approved_post || \"\",\n    approved_version: input.approved_version || \"\",\n    polished_title: input.polished_title || \"\",\n    polished_post: input.polished_post || \"\",\n    polished_version: input.polished_version || \"\",\n    polished_word_count: input.polished_word_count || 0,\n    facebook_post: input.facebook_post || \"\",\n    facebook_char_count: input.facebook_char_count || 0,\n    facebook_has_link: input.facebook_has_link === undefined ? false : input.facebook_has_link,\n    instagram_caption: input.instagram_caption || \"\",\n    instagram_char_count: input.instagram_char_count || 0,\n    instagram_hashtags: input.instagram_hashtags || [],\n    instagram_visual_suggestion: input.instagram_visual_suggestion || \"\",\n    instagram_cta: input.instagram_cta || \"\",\n    linkedin_post: input.linkedin_post || \"\",\n    linkedin_char_count: input.linkedin_char_count || 0,\n    linkedin_hashtags: input.linkedin_hashtags || [],\n    twitter_thread: input.twitter_thread || [],\n    createdAt: new Date().toISOString(),\n    userId: input.userId || \"defaultUserId\",\n    status: input.status || \"pending\"\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5152,
+        -480
+      ],
+      "id": "8512a1e8-d5d4-400a-8958-caed7081a2bb",
+      "name": "Code in JavaScript13"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Filter last 7 days",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript2": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript3": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter last 7 days": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript4": {
+      "main": [
+        [
+          {
+            "node": "QA Agent 1 - Marketing Expert",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "QA Agent 2 - Technical Editor",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "QA Agent 3 - Customer Advocate",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "QA Agent 4 - New Brunswick Business Owner",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "QA Agent 1 - Marketing Expert",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "QA Agent 2 - Technical Editor",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "QA Agent 3 - Customer Advocate",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "QA Agent 4 - New Brunswick Business Owner",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QA Agent 1 - Marketing Expert": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QA Agent 2 - Technical Editor": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QA Agent 3 - Customer Advocate": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QA Agent 4 - New Brunswick Business Owner": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript6": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript7": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript8": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript9": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript10": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Purple Cow Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code in JavaScript5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rewrite AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Parse Rewrite Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript5": {
+      "main": [
+        [
+          {
+            "node": "Rewrite AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Rewrite AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Rewrite Output": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Engine Journal": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HubSpot Marketing Blog": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Smashing Magazine": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Ahrefs Blog": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "Neil Patel Blog": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Web Designer Depot": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 6
+          }
+        ]
+      ]
+    },
+    "CSS-Tricks": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 7
+          }
+        ]
+      ]
+    },
+    "Copyblogger": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "SEMrush Blog": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 8
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Purple Cow Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Purple Cow Agent": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript11": {
+      "main": [
+        [
+          {
+            "node": "Polish Implementation Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Polish Implementation Agent": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Polish Implementation Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript12": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Webhook": {
+      "main": [
+        [
+          {
+            "node": "SEMrush Blog",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "CSS-Tricks",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Web Designer Depot",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Neil Patel Blog",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Ahrefs Blog",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Smashing Magazine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HubSpot Marketing Blog",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Copyblogger",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Search Engine Journal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript13": {
+      "main": [
+        [
+          {
+            "node": "Create a document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "654de2b4-a5d8-462e-ba76-e892ffca700e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8aa2b38386bcf97f298fe92a277f317cbcbd7f71f5f7c6609c0089ab5cf4949e"
+  },
+  "id": "1PE3tXbydeuwR4R8",
+  "tags": []
+}

@@ -2,6 +2,7 @@
   "name": "logicpros-website",
   "version": "1.0.0",
   "private": true,
+  "proxy": "https://wordpressblog.logicpros.ca",
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",

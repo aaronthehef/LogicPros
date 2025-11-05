@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Block access to admin and development files
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.git/
+
+# Allow search engines to find important files
+Allow: /src/
+Allow: /public/
+
+# Sitemap location
+Sitemap: https://logicpros.ca/sitemap.xml
+
+# Crawl delay (optional, be nice to servers)
+Crawl-delay: 1

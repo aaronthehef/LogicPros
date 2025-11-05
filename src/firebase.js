@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'firebase/auth';
 import { getAnalytics } from 'firebase/analytics';
-import { getFirestore, collection, addDoc, query, orderBy, limit, onSnapshot } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, query, orderBy, limit, onSnapshot, deleteDoc, doc, updateDoc, serverTimestamp, getDoc, getDocs, where, arrayUnion, arrayRemove, setDoc, deleteField } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -25,4 +25,31 @@ console.log('Firestore initialized successfully');
 
 const googleProvider = new GoogleAuthProvider();
 
-export { auth, analytics, db, collection, addDoc, query, orderBy, limit, onSnapshot, signInWithEmailAndPassword, googleProvider, signInWithPopup };
+export {
+  auth,
+  analytics,
+  db,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  limit,
+  onSnapshot,
+  signInWithEmailAndPassword,
+  googleProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+  deleteDoc,
+  doc,
+  onAuthStateChanged,
+  signOut,
+  updateDoc,
+  serverTimestamp,
+  getDoc,
+  getDocs,
+  where,
+  arrayUnion,
+  arrayRemove,
+  setDoc,
+  deleteField
+};

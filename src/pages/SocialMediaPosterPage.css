@@ -10,8 +10,8 @@
 
 .ai-indicator {
   display: inline-block;
-  background: #e3f2fd;
-  color: white;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a1a2e;
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 0.8rem;

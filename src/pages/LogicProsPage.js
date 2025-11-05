@@ -4,11 +4,9 @@ import '../responsive-style.css';
 import { Logo } from '../components/Logo';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import { auth, signInWithEmailAndPassword, googleProvider, signInWithPopup } from '../firebase';
+import { signInWithGoogle } from '../services/authService';
 
 export const LogicProsPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -121,57 +119,6 @@ export const LogicProsPage = () => {
     };
   }, []);
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
-
-    try {
-      // Firebase login implementation
-      console.log('Attempting Firebase login with:', email);
-      
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-      
-      console.log('Login successful:', user);
-      
-      // Redirect to dashboard after successful login
-      alert(`Login successful! Welcome ${user.email}`);
-      
-      // Redirect to dashboard page
-      window.location.href = '/dashboard';
-      
-    } catch (err) {
-      console.error('Firebase login error:', err);
-      
-      // Handle specific Firebase error codes
-      switch (err.code) {
-        case 'auth/user-not-found':
-          setError('No account found with this email address.');
-          break;
-        case 'auth/wrong-password':
-          setError('Incorrect password. Please try again.');
-          break;
-        case 'auth/invalid-email':
-          setError('Invalid email address format.');
-          break;
-        case 'auth/user-disabled':
-          setError('This account has been disabled.');
-          break;
-        case 'auth/too-many-requests':
-          setError('Too many failed attempts. Please try again later.');
-          break;
-        case 'auth/configuration-not-found':
-          setError('Firebase configuration error. Please check your Firebase setup.');
-          break;
-        default:
-          setError('Failed to login. Please check your credentials and try again.');
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const handleGoogleSignIn = async () => {
     setError('');
     setLoading(true);
@@ -179,16 +126,18 @@ export const LogicProsPage = () => {
     try {
       console.log('Attempting Google Sign-In');
       
-      const result = await signInWithPopup(auth, googleProvider);
-      const user = result.user;
+      const result = await signInWithGoogle();
       
-      console.log('Google Sign-In successful:', user);
-      
-      // Redirect to dashboard after successful login
-      alert(`Google Sign-In successful! Welcome ${user.displayName || user.email}`);
-      
-      // Redirect to dashboard page
-      window.location.href = '/dashboard';
+      if (result.success) {
+        console.log('Google Sign-In successful:', result.user);
+        
+        // Redirect to dashboard after successful login
+        setTimeout(() => {
+          window.location.href = '/dashboard';
+        }, 1000);
+      } else {
+        setError(result.message);
+      }
       
     } catch (err) {
       console.error('Google Sign-In error:', err);
@@ -221,76 +170,21 @@ export const LogicProsPage = () => {
         
         <h1 className="login-title">LogicPros Portal</h1>
         
+        <p style={{
+          textAlign: 'center',
+          color: '#6b7280',
+          fontSize: '1rem',
+          marginBottom: '30px',
+          lineHeight: '1.6'
+        }}>
+          Sign in with your Google account to access your dashboard
+        </p>
+
         {error && (
           <div className="error-message">
             {error}
           </div>
         )}
-        
-        <form onSubmit={handleLogin}>
-          <div className="form-group">
-            <label className="form-label" htmlFor="email">
-              Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="form-input"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Enter your email"
-            />
-          </div>
-          
-          <div className="form-group">
-            <label className="form-label" htmlFor="password">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              className="form-input"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Enter your password"
-            />
-          </div>
-          
-          <button
-            type="submit"
-            className="login-button"
-            disabled={loading}
-          >
-            {loading ? 'Signing in...' : 'Sign In'}
-          </button>
-        </form>
-
-        <div style={{
-          textAlign: 'center',
-          margin: '20px 0',
-          position: 'relative'
-        }}>
-          <div style={{
-            display: 'inline-block',
-            padding: '0 10px',
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            fontSize: '0.9rem',
-            color: '#6b7280'
-          }}>
-            OR
-          </div>
-          <div style={{
-            position: 'absolute',
-            top: '50%',
-            left: '0',
-            right: '0',
-            height: '1px',
-            backgroundColor: '#e1e5e9',
-            zIndex: '-1'
-          }}></div>
-        </div>
 
         <button
           type="button"
@@ -299,12 +193,12 @@ export const LogicProsPage = () => {
           disabled={loading}
           style={{
             width: '100%',
-            padding: '14px 24px',
+            padding: '16px 24px',
             backgroundColor: 'white',
             color: '#1a1a2e',
             border: '2px solid #e1e5e9',
-            borderRadius: '8px',
-            fontSize: '1rem',
+            borderRadius: '12px',
+            fontSize: '1.05rem',
             fontWeight: '600',
             cursor: 'pointer',
             transition: 'all 0.3s ease',
@@ -312,15 +206,22 @@ export const LogicProsPage = () => {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '12px',
-            marginBottom: '10px'
+            marginBottom: '10px',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
           }}
           onMouseOver={(e) => {
-            e.target.style.backgroundColor = '#f8f9fa';
-            e.target.style.borderColor = '#d1d5db';
+            if (!loading) {
+              e.currentTarget.style.backgroundColor = '#f8f9fa';
+              e.currentTarget.style.borderColor = '#4285F4';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(66, 133, 244, 0.3)';
+            }
           }}
           onMouseOut={(e) => {
-            e.target.style.backgroundColor = 'white';
-            e.target.style.borderColor = '#e1e5e9';
+            e.currentTarget.style.backgroundColor = 'white';
+            e.currentTarget.style.borderColor = '#e1e5e9';
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
           }}
         >
           <svg width="20" height="20" viewBox="0 0 24 24">
@@ -331,17 +232,6 @@ export const LogicProsPage = () => {
           </svg>
           {loading ? 'Signing in...' : 'Sign in with Google'}
         </button>
-        
-        <div style={{
-          textAlign: 'center',
-          marginTop: '20px',
-          fontSize: '0.9rem',
-          color: '#6b7280'
-        }}>
-          <p>
-            Don't have an account? <a href="/contact" style={{ color: '#1F7CFF', textDecoration: 'none' }}>Contact us</a>
-          </p>
-        </div>
       </div>
     </div>
   );
