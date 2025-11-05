@@ -32,17 +32,29 @@ const WORDPRESS_CONFIG = {
 
 // Helper functions
 export const getWordPressUrl = () => {
-  // Use relative URL for development to leverage proxy
-  if (process.env.NODE_ENV === 'development') {
-    return '';
+  // Use Vercel serverless function proxy for production
+  // This avoids CORS issues by making requests server-side
+  if (process.env.NODE_ENV === 'production') {
+    return '/api/wordpress-proxy';
   }
-  return WORDPRESS_CONFIG.SITE_URL.replace(/\/$/, '');
+  // Use relative URL for development to leverage proxy
+  return '';
 };
 
 export const getApiEndpoint = (endpoint) => {
   const baseUrl = getWordPressUrl();
   const apiPath = WORDPRESS_CONFIG.API_ENDPOINTS[endpoint];
-  // Handle query parameters correctly
+
+  // For production proxy, convert to proxy format
+  if (process.env.NODE_ENV === 'production') {
+    // Extract the rest_route value
+    const match = apiPath.match(/rest_route=([^&]+)/);
+    if (match) {
+      return `${baseUrl}?endpoint=${encodeURIComponent(match[1])}`;
+    }
+  }
+
+  // Handle query parameters correctly for development
   if (apiPath.startsWith('?')) {
     return `${baseUrl}${apiPath}`;
   }
