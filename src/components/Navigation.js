@@ -342,13 +342,14 @@ const dropdownStyles = `
   left: 0;
   padding: 12px 0;
   border: 1px solid rgba(255,255,255,0.1);
-  
+  overflow: hidden;
+
   /* Sliding animation properties */
   opacity: 0;
   visibility: hidden;
   transform: translateY(-15px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   /* Modern backdrop effect */
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -602,6 +603,7 @@ const dropdownStyles = `
   min-width: 200px;
   right: 0;
   left: auto;
+  overflow: hidden;
 }
 
 .user-info {
@@ -620,7 +622,7 @@ const dropdownStyles = `
 }
 
 .logout-button {
-  width: 100%;
+  width: calc(100% - 24px);
   background: none;
   border: none;
   color: #ffffff;
@@ -635,6 +637,7 @@ const dropdownStyles = `
   display: flex;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
 .logout-button::before {
