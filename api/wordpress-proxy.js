@@ -23,13 +23,17 @@ export default async function handler(req, res) {
     // Get the WordPress endpoint from query params
     const { endpoint, ...queryParams } = req.query;
 
-    if (!endpoint) {
-      return res.status(400).json({ error: 'Missing endpoint parameter' });
+    // If no endpoint is provided, try to extract from path
+    let wpEndpoint = endpoint;
+
+    if (!wpEndpoint) {
+      // Default to posts endpoint if not specified
+      wpEndpoint = '/wp/v2/posts';
     }
 
     // Build WordPress API URL
     const wpUrl = new URL(WORDPRESS_SITE_URL);
-    wpUrl.searchParams.set('rest_route', endpoint);
+    wpUrl.searchParams.set('rest_route', wpEndpoint);
 
     // Add additional query parameters
     Object.keys(queryParams).forEach(key => {
@@ -57,7 +61,16 @@ export default async function handler(req, res) {
 
     // Make request to WordPress
     const wpResponse = await fetch(wpUrl.toString(), fetchOptions);
-    const data = await wpResponse.json();
+
+    // Handle both JSON and non-JSON responses
+    const contentType = wpResponse.headers.get('content-type');
+    let data;
+
+    if (contentType && contentType.includes('application/json')) {
+      data = await wpResponse.json();
+    } else {
+      data = await wpResponse.text();
+    }
 
     // Return WordPress response
     res.status(wpResponse.status).json(data);

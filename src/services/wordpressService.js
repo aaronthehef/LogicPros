@@ -246,22 +246,29 @@ export const deleteWordPressPost = async (postId) => {
 export const fetchWordPressPosts = async (options = {}) => {
   try {
     const params = new URLSearchParams();
-    
+
     // Add parameters
     if (options.perPage) params.append('per_page', options.perPage.toString());
     if (options.status) params.append('status', options.status);
     if (options.search) params.append('search', options.search);
-    
+
     // Always embed featured media and author
     params.append('_embed', 'wp:featuredmedia,author');
-    
-    // Use the same approach as BlogPage - direct API endpoint with query parameters
-    const baseUrl = getWordPressUrl();
-    const apiPath = WORDPRESS_CONFIG.API_ENDPOINTS.POSTS;
-    const queryString = params.toString();
-    
-    const url = `${baseUrl}${apiPath}&per_page=${options.perPage || 20}&_embed=${queryString ? '&' + queryString : ''}`;
-    
+
+    // Build URL using proper proxy method
+    let url;
+    if (process.env.NODE_ENV === 'production') {
+      // For production, use the proxy with query parameters
+      const queryString = params.toString();
+      url = `/api/wordpress-proxy?endpoint=${encodeURIComponent('/wp/v2/posts')}&${queryString}`;
+    } else {
+      // For development, use direct WordPress URL
+      const baseUrl = getWordPressUrl();
+      const apiPath = WORDPRESS_CONFIG.API_ENDPOINTS.POSTS;
+      const queryString = params.toString();
+      url = `${baseUrl}${apiPath}&${queryString}`;
+    }
+
     const response = await fetch(url, {
       method: 'GET',
       headers: getAuthHeaders()
