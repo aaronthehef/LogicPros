@@ -257,21 +257,27 @@ export const fetchWordPressPosts = async (options = {}) => {
 
     // Build URL using proper proxy method
     let url;
+    let headers;
+
     if (process.env.NODE_ENV === 'production') {
       // For production, use the proxy with query parameters
       const queryString = params.toString();
       url = `/api/wordpress-proxy?endpoint=${encodeURIComponent('/wp/v2/posts')}&${queryString}`;
+      // Proxy handles authentication, so just send content-type
+      headers = { 'Content-Type': 'application/json' };
     } else {
       // For development, use direct WordPress URL
       const baseUrl = getWordPressUrl();
       const apiPath = WORDPRESS_CONFIG.API_ENDPOINTS.POSTS;
       const queryString = params.toString();
       url = `${baseUrl}${apiPath}&${queryString}`;
+      // Send auth headers for direct WordPress connection
+      headers = getAuthHeaders();
     }
 
     const response = await fetch(url, {
       method: 'GET',
-      headers: getAuthHeaders()
+      headers: headers
     });
 
     if (!response.ok) {
