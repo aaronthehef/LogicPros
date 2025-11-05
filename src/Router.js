@@ -48,6 +48,8 @@ import { ManagedITServicesPage as SaintJohnManagedITPage } from './pages/locatio
 import { MonctonWebDesignPage } from './pages/locations/moncton/WebDesignPage';
 import { MonctonCybersecurityPage } from './pages/locations/moncton/CybersecurityPage';
 import { ManagedITServicesPage as MonctonManagedITPage } from './pages/locations/moncton/ManagedITPage';
+import { LogicProsPage } from './pages/LogicProsPage';
+import { SocialMediaPosterPage } from './pages/SocialMediaPosterPage';
 
 export const Router = () => {
   const [currentPath, setCurrentPath] = React.useState(() => {
@@ -180,6 +182,10 @@ export const Router = () => {
         return <MonctonPage />;
       case '/locations/saint-john':
         return <SaintJohnPage />;
+      case '/logicpros':
+        return <LogicProsPage />;
+      case '/dashboard':
+        return <SocialMediaPosterPage />;
       default:
         console.log('No route matched, showing landing page for path:', currentPath);
         return <ResponsiveLandingPage />;
