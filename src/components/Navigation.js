@@ -1,9 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { auth } from '../firebase';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 export const Navigation = () => {
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
+  // Listen for auth state changes
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return unsubscribe;
+  }, []);
 
   // Cleanup body styles on unmount
   useEffect(() => {
@@ -32,7 +43,7 @@ export const Navigation = () => {
     const newState = !mobileMenuOpen;
     setMobileMenuOpen(newState);
     setDropdownOpen(null);
-    
+
     // Prevent body scroll when mobile menu is open
     if (newState) {
       document.body.style.overflow = 'hidden';
@@ -46,6 +57,15 @@ export const Navigation = () => {
       document.body.style.width = '';
       document.body.style.top = '';
       window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      window.location.href = '/';
+    } catch (error) {
+      console.error('Error signing out:', error);
     }
   };
 
@@ -104,10 +124,43 @@ export const Navigation = () => {
         </div>
 
         <a href="/about" className="nav-link">About</a>
+        <a href="/blog" className="nav-link">Blog</a>
         <a href="/contact" className="nav-link">Contact</a>
       </div>
-      
-      
+
+      {/* User Menu - Compact dropdown */}
+      {user ? (
+        <div
+          className="nav-dropdown user-menu"
+          onMouseEnter={() => handleMouseEnter('user')}
+          onMouseLeave={handleMouseLeave}
+        >
+          <button className="user-menu-button">
+            <span className="user-icon">👤</span>
+            <span className="dropdown-arrow">▼</span>
+          </button>
+          <div className={`dropdown-content user-dropdown ${dropdownOpen === 'user' ? 'show' : ''}`}>
+            <div className="dropdown-arrow-up"></div>
+            <div className="user-info">
+              <div className="user-email">{user.email}</div>
+            </div>
+            <a href="/dashboard" onClick={handleLinkClick}>
+              <span className="dropdown-icon">📊</span>
+              Dashboard
+            </a>
+            <button onClick={handleLogout} className="logout-button">
+              <span className="dropdown-icon">🚪</span>
+              Logout
+            </button>
+          </div>
+          <div className="dropdown-hover-bridge"></div>
+        </div>
+      ) : (
+        <a href="/logicpros" className="login-link">
+          <span className="user-icon">👤</span> Login
+        </a>
+      )}
+
       {/* Mobile Menu - Portal to Body for Proper Positioning */}
       {mobileMenuOpen && createPortal(
         <div 
@@ -182,8 +235,18 @@ export const Navigation = () => {
 
               <div style={{ marginTop: '0.5rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.3)' }}>
                 <a href="/about" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>About</a>
+                <a href="/blog" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Blog</a>
                 <a href="/contact" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Contact</a>
-                
+
+                {user ? (
+                  <>
+                    <a href="/dashboard" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>📊 Dashboard</a>
+                    <button onClick={() => { handleLogout(); handleLinkClick(); }} style={{ display: 'block', width: '100%', textAlign: 'left', background: 'none', border: 'none', color: '#ffffff', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500', cursor: 'pointer' }}>🚪 Logout ({user.email})</button>
+                  </>
+                ) : (
+                  <a href="/logicpros" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>👤 Login</a>
+                )}
+
                 <a href="/contact" onClick={handleLinkClick} style={{
                   display: 'block',
                   background: 'linear-gradient(135deg, #FFC600, #FFB800)',
@@ -507,6 +570,119 @@ const dropdownStyles = `
   background: linear-gradient(135deg, #FFC600 0%, #FFB800 100%) !important;
 }
 
+/* User Menu Styles */
+.user-menu {
+  margin-right: 1rem;
+}
+
+.user-menu-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.user-menu-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.user-icon {
+  font-size: 1.2rem;
+}
+
+.user-dropdown {
+  min-width: 200px;
+  right: 0;
+  left: auto;
+}
+
+.user-info {
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 8px;
+}
+
+.user-email {
+  color: #aaa;
+  font-size: 0.85rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logout-button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 8px;
+  margin: 2px 12px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.logout-button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #dc3545;
+  border-radius: 0 4px 4px 0;
+  transform: scaleY(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.logout-button:hover {
+  background: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+  transform: translateX(8px);
+  padding-left: 28px;
+}
+
+.logout-button:hover::before {
+  transform: scaleY(1);
+}
+
+.login-link {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-right: 1rem;
+}
+
+.login-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
 /* Mobile Menu Styles removed - using inline styles for mobile menu */
 
 /* Mobile responsive design */
@@ -526,7 +702,12 @@ const dropdownStyles = `
   .btn-nav-cta {
     display: none !important;
   }
-  
+
+  .user-menu,
+  .login-link {
+    display: none !important;
+  }
+
   .mobile-menu-toggle {
     display: flex !important;
     background: transparent !important;
