@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Special rule for n8n service account to write generated posts
+    // MUST come before the wildcard rule to take precedence
+    match /users/{userId}/generatedPosts/{postId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if true; // Allow service account writes without auth
+    }
+
+    // Allow users to create and manage their own posts
+    match /users/{userId}/posts/{postId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // General rule: Users can only access their own documents
+    // This is a catch-all for other subcollections
+    match /users/{userId}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Global read rule for authenticated users (fallback)
+    match /{document=**} {
+      allow read: if request.auth != null;
+    }
+  }
+}
