@@ -74,8 +74,17 @@ export default async function handler(req, res) {
     if (contentType && contentType.includes('application/json')) {
       data = await wpResponse.json();
     } else {
-      data = await wpResponse.text();
+      const textData = await wpResponse.text();
+      // Try to parse as JSON if it looks like JSON
+      try {
+        data = JSON.parse(textData);
+      } catch {
+        data = textData;
+      }
     }
+
+    console.log('WordPress response status:', wpResponse.status);
+    console.log('WordPress response data:', JSON.stringify(data).substring(0, 200));
 
     // Return WordPress response
     res.status(wpResponse.status).json(data);
