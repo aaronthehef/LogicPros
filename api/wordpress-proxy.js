@@ -20,6 +20,10 @@ export default async function handler(req, res) {
   const WORDPRESS_APP_PASSWORD = 'PmWS 6lyc gPhb jm7Y dq4Q ns5t';
 
   try {
+    console.log('WordPress proxy called with method:', req.method);
+    console.log('Query params:', req.query);
+    console.log('Headers:', req.headers);
+
     // Get the WordPress endpoint from query params
     const { endpoint, _method, ...queryParams } = req.query;
 
@@ -125,9 +129,11 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error('WordPress proxy error:', error);
+    console.error('Error stack:', error.stack);
     res.status(500).json({
       error: 'Failed to proxy WordPress request',
-      message: error.message
+      message: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
 }
