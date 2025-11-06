@@ -80,6 +80,8 @@ export const publishPostToWordPress = async (postData) => {
  */
 export const uploadFeaturedImage = async (imageUrl) => {
   try {
+    console.log('Uploading featured image from URL:', imageUrl);
+
     // First, fetch the image from the URL
     const imageResponse = await fetch(imageUrl);
     if (!imageResponse.ok) {
@@ -87,31 +89,56 @@ export const uploadFeaturedImage = async (imageUrl) => {
     }
 
     const imageBlob = await imageResponse.blob();
-    const fileName = imageUrl.split('/').pop() || 'featured-image.jpg';
-    
+    const fileName = imageUrl.split('/').pop().split('?')[0] || 'featured-image.jpg';
+
+    console.log('Image blob size:', imageBlob.size, 'bytes');
+    console.log('Image filename:', fileName);
+
     // Create FormData for file upload
     const formData = new FormData();
     formData.append('file', imageBlob, fileName);
-    
-    // Upload to WordPress media library
-    const mediaResponse = await fetch(getApiEndpoint('MEDIA'), {
-      method: 'POST',
-      headers: {
+
+    // Build the media upload URL
+    let mediaUrl;
+    let headers;
+
+    if (process.env.NODE_ENV === 'production') {
+      // For production, use the proxy
+      mediaUrl = `/api/wordpress-proxy?endpoint=${encodeURIComponent('/wp/v2/media')}`;
+      // For FormData, we only need to pass Authorization (Content-Type is set automatically)
+      // The proxy will handle adding the WordPress auth
+      headers = {};
+    } else {
+      // For development, use direct WordPress URL
+      mediaUrl = `${getWordPressUrl()}${WORDPRESS_CONFIG.API_ENDPOINTS.MEDIA}`;
+      headers = {
         'Authorization': getAuthHeaders().Authorization
         // Don't set Content-Type for FormData - browser will set it with boundary
-      },
+      };
+    }
+
+    console.log('Uploading to:', mediaUrl);
+
+    // Upload to WordPress media library
+    const mediaResponse = await fetch(mediaUrl, {
+      method: 'POST',
+      headers: headers,
       body: formData
     });
 
+    console.log('Media upload response status:', mediaResponse.status);
+
     if (!mediaResponse.ok) {
       const errorData = await mediaResponse.json().catch(() => ({}));
+      console.error('Media upload error data:', errorData);
       throw new Error(
-        errorData.message || 
+        errorData.message ||
         `Media upload error: ${mediaResponse.status} ${mediaResponse.statusText}`
       );
     }
 
     const mediaData = await mediaResponse.json();
+    console.log('Media uploaded successfully! Media ID:', mediaData.id);
     return mediaData.id;
 
   } catch (error) {

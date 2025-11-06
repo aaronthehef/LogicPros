@@ -11,6 +11,28 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { publishPostToWordPress, deleteWordPressPost, fetchWordPressPosts } from '../services/wordpressService';
 import BlankDashboardPage from './BlankDashboardPage';
 
+// Helper function to get platform-specific colors - Simple solid colors only
+const getPlatformColors = (platform) => {
+  const colors = {
+    'Instagram': {
+      color: '#E4405F'
+    },
+    'Facebook': {
+      color: '#1877F2'
+    },
+    'Twitter/X': {
+      color: '#000000'
+    },
+    'LinkedIn': {
+      color: '#0A66C2'
+    },
+    'Blog': {
+      color: '#6366F1'
+    }
+  };
+  return colors[platform] || colors['Blog'];
+};
+
 export const SocialMediaPosterPage = () => {
   const [posts, setPosts] = useState([
     {
@@ -81,11 +103,14 @@ export const SocialMediaPosterPage = () => {
   useEffect(() => {
     // Listen for auth state changes - this waits for Firebase to initialize
     const unsubscribeAuth = onAuthStateChanged(auth, async (currentUser) => {
-      console.log('Auth state changed, current user:', currentUser);
+      console.log('🔍 Auth state changed, current user:', currentUser);
+      console.log('🔍 User UID:', currentUser?.uid);
+      console.log('🔍 User email:', currentUser?.email);
       setUser(currentUser);
 
       if (currentUser) {
         try {
+          console.log('🔍 Checking dashboard configuration for user:', currentUser.email);
           // Check if user has a dashboard configuration in Firestore
           const userDocRef = doc(db, 'users', currentUser.uid);
           const userDocSnap = await getDoc(userDocRef);
@@ -93,10 +118,12 @@ export const SocialMediaPosterPage = () => {
           if (userDocSnap.exists()) {
             // User document exists - check if dashboard is configured
             const userData = userDocSnap.data();
-            console.log('User document found:', userData);
+            console.log('✅ User document found:', userData);
+            console.log('🔍 Dashboard configured value:', userData.dashboardConfigured);
 
             // Handle both boolean true and string "true" for dashboardConfigured
             const isConfigured = userData.dashboardConfigured === true || userData.dashboardConfigured === 'true';
+            console.log('📊 Is dashboard configured?', isConfigured);
             setIsDashboardConfigured(isConfigured);
             setUserConfig(userData);
 
@@ -149,7 +176,9 @@ export const SocialMediaPosterPage = () => {
             setIsDashboardConfigured(false);
           }
         } catch (error) {
-          console.error('Error loading user configuration:', error);
+          console.error('❌ Error loading user configuration:', error);
+          console.error('❌ Error code:', error.code);
+          console.error('❌ Error message:', error.message);
           setMessage('Error loading dashboard configuration: ' + error.message);
           setIsDashboardConfigured(false);
         }
@@ -846,16 +875,9 @@ export const SocialMediaPosterPage = () => {
     const icons = {
       'Instagram': (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#instagram-gradient)" strokeWidth="2" fill="none"/>
-          <circle cx="12" cy="12" r="4" stroke="url(#instagram-gradient)" strokeWidth="2"/>
-          <circle cx="17.5" cy="6.5" r="1.5" fill="url(#instagram-gradient)"/>
-          <defs>
-            <linearGradient id="instagram-gradient" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#FD5949"/>
-              <stop offset="0.5" stopColor="#D6249F"/>
-              <stop offset="1" stopColor="#285AEB"/>
-            </linearGradient>
-          </defs>
+          <rect x="2" y="2" width="20" height="20" rx="5" stroke="#E4405F" strokeWidth="2" fill="none"/>
+          <circle cx="12" cy="12" r="4" stroke="#E4405F" strokeWidth="2"/>
+          <circle cx="17.5" cy="6.5" r="1.5" fill="#E4405F"/>
         </svg>
       ),
       'Facebook': (
@@ -890,22 +912,17 @@ export const SocialMediaPosterPage = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)'
+        background: '#f8f9fa',
+        position: 'relative'
       }}>
-        <div style={{
-          textAlign: 'center',
-          color: 'white'
-        }}>
-          <div style={{
-            width: '50px',
-            height: '50px',
-            border: '4px solid rgba(255, 255, 255, 0.1)',
-            borderTop: '4px solid #1F7CFF',
-            borderRadius: '50%',
-            animation: 'spin 1s linear infinite',
-            margin: '0 auto 20px'
-          }}></div>
-          <p>Loading dashboard...</p>
+        <div className="loading-content">
+          <div className="spinner"></div>
+          <h2 className="loading-text">Loading Dashboard</h2>
+          <p style={{
+            fontSize: '0.9rem',
+            color: '#6b7280',
+            marginTop: '10px'
+          }}>Checking authentication and configuration...</p>
         </div>
       </div>
     );
@@ -930,13 +947,12 @@ export const SocialMediaPosterPage = () => {
       </header>
 
       <div className="dashboard-container">
-        {/* Dashboard Title Section */}
-        <div className="dashboard-title">
-          <h1>Social Media Poster</h1>
-          <p>
-            Create and manage social media posts for Instagram, Facebook, Twitter/X, and LinkedIn
-            <span className="ai-indicator">AI Powered</span>
-          </p>
+        {/* Header Section */}
+        <div className="dashboard-header">
+          <div className="dashboard-title">
+            <h1>Social Media Dashboard</h1>
+            <p>Create and manage social media posts for Instagram, Facebook, Twitter/X, and LinkedIn <span className="ai-indicator">AI Powered</span></p>
+          </div>
         </div>
 
       {/* Loading Overlay */}
@@ -959,17 +975,27 @@ export const SocialMediaPosterPage = () => {
         >
           {loading ? (
             <>
-              <div className="spinner small-spinner"></div>
+              <div className="spinner small-spinner" style={{
+                borderTop: '3px solid transparent',
+                borderTopColor: 'white'
+              }}></div>
               Generating...
             </>
           ) : (
             <>
-              🤖 Generate All Posts with AI
+              🚀 Generate All Posts with AI
             </>
           )}
         </button>
 
-        <h2 className="section-title">
+        <h2 className="section-title" style={{
+          color: '#1a1a2e',
+          fontSize: '2rem',
+          fontWeight: '700',
+          marginBottom: '30px',
+          textAlign: 'center',
+          position: 'relative'
+        }}>
           Create Posts
         </h2>
 
@@ -980,8 +1006,8 @@ export const SocialMediaPosterPage = () => {
         )}
 
         <div className="posts-grid">
-          {/* Blog Post Card - Moved to Top */}
-          <div className="post-card blog-post-card">
+          {/* Blog Post Create Card */}
+          <div className="post-card">
             <div className="platform-header">
               <span className="platform-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -989,13 +1015,11 @@ export const SocialMediaPosterPage = () => {
                   <path d="M14 2V8H20M16 13H8M16 17H8M10 9H8" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </span>
-              <span className="platform-name">Blog Post</span>
+              <span className="platform-name">Create Blog Post</span>
             </div>
 
             <div className="form-group">
-              <label className="form-label">
-                Title *
-              </label>
+              <label className="form-label">Title *</label>
               <input
                 type="text"
                 className="form-input"
@@ -1006,9 +1030,7 @@ export const SocialMediaPosterPage = () => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">
-                Content *
-              </label>
+              <label className="form-label">Content *</label>
               <textarea
                 className="form-textarea"
                 value={blogPost.content}
@@ -1019,9 +1041,7 @@ export const SocialMediaPosterPage = () => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">
-                Featured Image URL (optional)
-              </label>
+              <label className="form-label">Featured Image URL (optional)</label>
               <input
                 type="url"
                 className="form-input"
@@ -1040,186 +1060,177 @@ export const SocialMediaPosterPage = () => {
             </button>
           </div>
 
-          {/* Blog Posts Management Section */}
-          <div className="posts-container" style={{ marginTop: '30px' }}>
-            <div className="dashboard-title">
-              <h2>WordPress Blog Posts</h2>
-              <p>
-                View and manage your published WordPress blog posts
-                <span className="ai-indicator">Live from WordPress</span>
-              </p>
-              <button
-                className="post-button"
-                onClick={loadWordPressPosts}
-                disabled={wordpressLoading}
-                style={{
-                  backgroundColor: '#1F7CFF',
-                  color: 'white',
-                  border: 'none',
-                  padding: '8px 16px',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                  fontSize: '0.9rem',
-                  marginLeft: '10px'
-                }}
-              >
-                {wordpressLoading ? 'Refreshing...' : '🔄 Refresh'}
-              </button>
+          {/* Blog Posts Management Card */}
+          <div className="post-card">
+            <div className="platform-header">
+              <span className="platform-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M14 2V8H20M16 13H8M16 17H8M10 9H8" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
+              <span className="platform-name">Blog Posts</span>
+              <span className="ai-indicator" style={{ marginLeft: 'auto' }}>Live</span>
             </div>
 
-            {message && (
-              <div className={`message ${message.includes('success') ? 'success-message' : 'error-message'}`}>
-                {message}
-              </div>
-            )}
+            <button
+              className="post-button"
+              onClick={loadWordPressPosts}
+              disabled={wordpressLoading}
+              style={{ marginBottom: '16px' }}
+            >
+              {wordpressLoading ? 'Refreshing...' : '🔄 Refresh Posts'}
+            </button>
 
-            <div className="posts-grid">
+            <div style={{ maxHeight: '600px', overflowY: 'auto' }}>
               {wordpressLoading ? (
                 <div style={{ textAlign: 'center', padding: '40px' }}>
                   <div className="spinner"></div>
-                  <p>Loading WordPress posts...</p>
+                  <p>Loading blog posts...</p>
                 </div>
               ) : wordpressPosts.length === 0 ? (
                 <div className="empty-history">
                   <p>
-                    No blog posts found on WordPress. Create your first blog post above!
+                    No blog posts found. Create your first blog post!
                   </p>
                 </div>
               ) : (
-                wordpressPosts.map(post => (
-                  <div key={post.id} className="post-card">
-                    <div className="platform-header">
-                      <span className="platform-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M14 2V8H20M16 13H8M16 17H8M10 9H8" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </span>
-                      <span className="platform-name">
-                        {post.title || 'Untitled Blog Post'}
-                      </span>
-                    </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  {wordpressPosts.map(post => {
+                    // Construct the logicpros.ca blog URL using the slug
+                    const blogUrl = `https://logicpros.ca/blog/${post.slug}`;
 
-                    <div className="history-post-content">
-                      <div
-                        dangerouslySetInnerHTML={{ __html: post.excerpt || post.content.substring(0, 200) + '...' }}
-                        style={{
-                          fontSize: '0.9rem',
-                          lineHeight: '1.6',
-                          color: '#2c3e50',
-                          marginBottom: '15px'
-                        }}
-                      />
-
-                      {post.featuredImageUrl && (
-                        <img
-                          src={post.featuredImageUrl}
-                          alt="Post"
-                          className="history-post-image"
-                        />
-                      )}
-
-                      <div className="history-post-meta">
-                        <div>
-                          {post.createdAt ? new Date(post.createdAt).toLocaleString() : 'Just now'}
+                    return (
+                      <div key={post.id} style={{
+                        border: '1px solid #e5e7eb',
+                        borderRadius: '6px',
+                        padding: '16px',
+                        backgroundColor: '#f9fafb'
+                      }}>
+                        <div style={{
+                          fontWeight: '600',
+                          fontSize: '1rem',
+                          color: '#1a1a1a',
+                          marginBottom: '8px'
+                        }}>
+                          {post.title || 'Untitled Blog Post'}
                         </div>
-                        <div style={{ marginTop: '5px', fontSize: '0.9rem', color: '#666' }}>
-                          Author: {post.author}
-                        </div>
-                        {post.link && (
-                          <div style={{ marginTop: '10px' }}>
-                            <a href={post.link} target="_blank" rel="noopener noreferrer" style={{ color: '#1F7CFF', textDecoration: 'none' }}>
-                              View on WordPress →
-                            </a>
-                          </div>
-                        )}
-                        {post.wordpressPostId && (
-                          <div style={{ marginTop: '5px', fontSize: '0.9rem', color: '#666' }}>
-                            WordPress ID: {post.wordpressPostId}
-                          </div>
-                        )}
-                      </div>
 
-                      <div className="blog-post-actions" style={{ marginTop: '15px' }}>
-                        <button
-                          className="post-button"
-                          onClick={() => handleDeleteWordPressPost(post.id)}
-                          disabled={loading}
+                        <div
+                          dangerouslySetInnerHTML={{ __html: post.excerpt || post.content.substring(0, 150) + '...' }}
                           style={{
-                            backgroundColor: '#dc3545',
-                            color: 'white',
-                            border: 'none',
-                            padding: '8px 16px',
-                            borderRadius: '4px',
-                            cursor: 'pointer',
-                            fontSize: '0.9rem'
+                            fontSize: '0.875rem',
+                            lineHeight: '1.5',
+                            color: '#6b7280',
+                            marginBottom: '12px'
                           }}
-                        >
-                          🗑️ Delete
-                        </button>
+                        />
+
+                        <div style={{
+                          fontSize: '0.75rem',
+                          color: '#9ca3af',
+                          marginBottom: '12px'
+                        }}>
+                          {post.createdAt ? new Date(post.createdAt).toLocaleString() : 'Just now'}
+                          {post.author && ` • ${post.author}`}
+                        </div>
+
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                          <a
+                            href={blogUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              flex: 1,
+                              textAlign: 'center',
+                              padding: '8px 12px',
+                              backgroundColor: '#3b82f6',
+                              color: 'white',
+                              borderRadius: '6px',
+                              textDecoration: 'none',
+                              fontSize: '0.875rem',
+                              fontWeight: '500'
+                            }}
+                          >
+                            View
+                          </a>
+                          <button
+                            onClick={() => handleDeleteWordPressPost(post.id)}
+                            disabled={loading}
+                            style={{
+                              flex: 1,
+                              padding: '8px 12px',
+                              backgroundColor: '#ef4444',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '6px',
+                              cursor: 'pointer',
+                              fontSize: '0.875rem',
+                              fontWeight: '500'
+                            }}
+                          >
+                            Delete
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                ))
+                    );
+                  })}
+                </div>
               )}
             </div>
           </div>
 
           {/* Social Media Posts */}
-          {posts.map(post => (
-            <div key={post.id} className="post-card">
-              <div className="platform-header">
-                <span className="platform-icon">{getPlatformIcon(post.platform)}</span>
-                <span className="platform-name">{post.platform}</span>
-              </div>
+          {posts.map(post => {
+            return (
+              <div key={post.id} className="post-card">
+                <div className="platform-header">
+                  <span className="platform-icon">{getPlatformIcon(post.platform)}</span>
+                  <span className="platform-name">{post.platform}</span>
+                </div>
 
-              <div className="form-group">
-                <label className="form-label">
-                  Content
-                </label>
-                <textarea
-                  className="form-textarea"
-                  value={post.content}
-                  onChange={(e) => handleContentChange(post.id, e.target.value)}
-                  placeholder={`Enter your ${post.platform} post content here...`}
-                />
-              </div>
+                <div className="form-group">
+                  <label className="form-label">Content</label>
+                  <textarea
+                    className="form-textarea"
+                    value={post.content}
+                    onChange={(e) => handleContentChange(post.id, e.target.value)}
+                    placeholder={`Enter your ${post.platform} post content here...`}
+                  />
+                </div>
 
-              <div className="form-group">
-                <label className="form-label">
-                  Image URL (optional)
-                </label>
-                <input
-                  type="url"
-                  className="form-input"
-                  value={post.imageUrls[0] || ''}
-                  onChange={(e) => handleImageChange(post.id, e.target.value)}
-                  placeholder="https://example.com/image.jpg"
-                />
-              </div>
+                <div className="form-group">
+                  <label className="form-label">Image URL (optional)</label>
+                  <input
+                    type="url"
+                    className="form-input"
+                    value={post.imageUrls[0] || ''}
+                    onChange={(e) => handleImageChange(post.id, e.target.value)}
+                    placeholder="https://example.com/image.jpg"
+                  />
+                </div>
 
-              <div className="form-group">
-                <label className="form-label">
-                  Notes (optional)
-                </label>
-                <textarea
-                  className="form-textarea"
-                  value={post.notes}
-                  onChange={(e) => handleNotesChange(post.id, e.target.value)}
-                  placeholder="Add any notes or reminders about this post..."
-                  style={{ minHeight: '60px' }}
-                />
-              </div>
+                <div className="form-group">
+                  <label className="form-label">Notes (optional)</label>
+                  <textarea
+                    className="form-textarea"
+                    value={post.notes}
+                    onChange={(e) => handleNotesChange(post.id, e.target.value)}
+                    placeholder="Add any notes or reminders about this post..."
+                    style={{ minHeight: '60px' }}
+                  />
+                </div>
 
-              <button
-                className="post-button"
-                onClick={() => handleSavePost(post)}
-                disabled={loading}
-              >
-                {loading ? 'Saving...' : `Save ${post.platform} Post`}
-              </button>
-            </div>
-          ))}
+                <button
+                  className="post-button"
+                  onClick={() => handleSavePost(post)}
+                  disabled={loading}
+                >
+                  {loading ? 'Saving...' : `Save ${post.platform} Post`}
+                </button>
+              </div>
+            );
+          })}
         </div>
 
       </div>
@@ -1261,12 +1272,28 @@ export const SocialMediaPosterPage = () => {
                           {post.content}
                         </p>
 
+                        {/* Display featured image for blog posts */}
                         {post.featuredImageUrl && (
                           <img
                             src={post.featuredImageUrl}
                             alt="Post"
                             className="history-post-image"
                           />
+                        )}
+
+                        {/* Display images for social media posts */}
+                        {post.imageUrls && post.imageUrls.length > 0 && (
+                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '12px' }}>
+                            {post.imageUrls.map((imageUrl, index) => (
+                              <img
+                                key={index}
+                                src={imageUrl}
+                                alt={`Post image ${index + 1}`}
+                                className="history-post-image"
+                                style={{ maxWidth: '100%' }}
+                              />
+                            ))}
+                          </div>
                         )}
 
                         <div className="history-post-meta">

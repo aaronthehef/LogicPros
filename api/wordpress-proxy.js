@@ -47,11 +47,20 @@ export default async function handler(req, res) {
       wpUrl.searchParams.set(key, queryParams[key]);
     });
 
+    // Check if this is a media upload (FormData)
+    const isMediaUpload = wpEndpoint.includes('/media') && actualMethod === 'POST';
+    const contentType = req.headers['content-type'] || '';
+    const isFormData = contentType.includes('multipart/form-data');
+
     // Prepare headers
     const headers = {
-      'Content-Type': 'application/json',
       'Authorization': `Basic ${Buffer.from(`${WORDPRESS_USERNAME}:${WORDPRESS_APP_PASSWORD}`).toString('base64')}`
     };
+
+    // Only add Content-Type for JSON requests (not FormData)
+    if (!isFormData && !isMediaUpload) {
+      headers['Content-Type'] = 'application/json';
+    }
 
     // If DELETE is requested, use POST with X-HTTP-Method-Override header
     // This works around nginx blocking DELETE requests
@@ -69,7 +78,13 @@ export default async function handler(req, res) {
 
     // Add body for POST/PUT requests (but not for overridden DELETE)
     if ((actualMethod === 'POST' || actualMethod === 'PUT') && actualMethod !== 'DELETE') {
-      fetchOptions.body = JSON.stringify(req.body);
+      if (isFormData || isMediaUpload) {
+        // For FormData/media uploads, pass the raw body
+        fetchOptions.body = req.body;
+      } else {
+        // For JSON requests, stringify the body
+        fetchOptions.body = JSON.stringify(req.body);
+      }
     }
 
     // For DELETE requests, add force parameter to permanently delete
