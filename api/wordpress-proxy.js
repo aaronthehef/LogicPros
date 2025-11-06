@@ -74,37 +74,56 @@ export default async function handler(req, res) {
       headers: headers
     };
 
-    // Handle media upload with base64 image
-    if (isMediaUpload && req.body && req.body.file) {
-      console.log('Handling base64 image upload');
+    // Handle media upload with URL (download image and upload to WordPress)
+    if (isMediaUpload && req.body && req.body.imageUrl) {
+      console.log('Handling image upload from URL');
+      console.log('Image URL:', req.body.imageUrl);
       console.log('File name:', req.body.fileName);
-      console.log('MIME type:', req.body.mimeType);
 
-      // Convert base64 to Buffer
-      const imageBuffer = Buffer.from(req.body.file, 'base64');
-      console.log('Image buffer size:', imageBuffer.length, 'bytes');
+      try {
+        // Fetch the image from the external URL
+        const imageResponse = await fetch(req.body.imageUrl);
+        if (!imageResponse.ok) {
+          throw new Error(`Failed to fetch image: ${imageResponse.statusText}`);
+        }
 
-      // Create FormData with the image
-      const FormData = require('form-data');
-      const formData = new FormData();
+        // Get the image as a buffer
+        const imageArrayBuffer = await imageResponse.arrayBuffer();
+        const imageBuffer = Buffer.from(imageArrayBuffer);
+        console.log('Downloaded image size:', imageBuffer.length, 'bytes');
 
-      // Append the buffer as a file with proper options
-      formData.append('file', imageBuffer, {
-        filename: req.body.fileName,
-        contentType: req.body.mimeType,
-        knownLength: imageBuffer.length
-      });
+        // Determine MIME type from response headers
+        const contentType = imageResponse.headers.get('content-type') || 'image/jpeg';
+        console.log('Image MIME type:', contentType);
 
-      // Update fetch options with FormData
-      fetchOptions.body = formData;
+        // Create FormData with the image
+        const FormData = require('form-data');
+        const formData = new FormData();
 
-      // Merge FormData headers (includes Content-Type with boundary)
-      const formHeaders = formData.getHeaders();
-      Object.keys(formHeaders).forEach(key => {
-        headers[key] = formHeaders[key];
-      });
+        // Append the buffer as a file with proper options
+        formData.append('file', imageBuffer, {
+          filename: req.body.fileName || 'image.jpg',
+          contentType: contentType,
+          knownLength: imageBuffer.length
+        });
 
-      console.log('FormData headers:', formHeaders);
+        // Update fetch options with FormData
+        fetchOptions.body = formData;
+
+        // Merge FormData headers (includes Content-Type with boundary)
+        const formHeaders = formData.getHeaders();
+        Object.keys(formHeaders).forEach(key => {
+          headers[key] = formHeaders[key];
+        });
+
+        console.log('FormData headers:', formHeaders);
+      } catch (imageError) {
+        console.error('Error downloading image:', imageError);
+        return res.status(400).json({
+          error: 'Failed to download image',
+          message: imageError.message
+        });
+      }
     }
     // Add body for POST/PUT requests (but not for overridden DELETE or media uploads)
     else if ((actualMethod === 'POST' || actualMethod === 'PUT') && actualMethod !== 'DELETE') {

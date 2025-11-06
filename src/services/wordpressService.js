@@ -82,38 +82,60 @@ export const uploadFeaturedImage = async (imageUrl) => {
   try {
     console.log('Uploading featured image from URL:', imageUrl);
 
-    // First, fetch the image from the URL
-    const imageResponse = await fetch(imageUrl);
-    if (!imageResponse.ok) {
-      throw new Error(`Failed to fetch image: ${imageResponse.statusText}`);
+    // Check if it's a Pexels URL (or any external URL)
+    const isExternalUrl = imageUrl.startsWith('http://') || imageUrl.startsWith('https://');
+
+    if (!isExternalUrl) {
+      console.warn('Image URL is not external, skipping upload');
+      return null;
     }
 
-    const imageBlob = await imageResponse.blob();
-    const fileName = imageUrl.split('/').pop().split('?')[0] || 'featured-image.jpg';
-
-    console.log('Image blob size:', imageBlob.size, 'bytes');
-    console.log('Image filename:', fileName);
-
-    // Convert blob to base64 for JSON transport through proxy
-    const base64Image = await new Promise((resolve) => {
-      const reader = new FileReader();
-      reader.onloadend = () => resolve(reader.result.split(',')[1]); // Remove data:image/...;base64, prefix
-      reader.readAsDataURL(imageBlob);
-    });
-
-    // Determine MIME type
-    const mimeType = imageBlob.type || 'image/jpeg';
-
-    // Build URL and headers based on environment
-    let url;
-    let headers;
-
+    // In production, use WordPress media sideload endpoint that accepts URLs
+    // This avoids the complexity of FormData through serverless functions
     if (process.env.NODE_ENV === 'production') {
-      // In production, use proxy with base64 image in JSON body
-      url = `/api/wordpress-proxy?endpoint=${encodeURIComponent('/wp/v2/media')}`;
-      headers = { 'Content-Type': 'application/json' };
+      console.log('Using media sideload from URL in production');
+
+      // Use a custom proxy endpoint that handles URL-based media uploads
+      const url = `/api/wordpress-proxy?endpoint=${encodeURIComponent('/wp/v2/media')}&image_url=${encodeURIComponent(imageUrl)}`;
+
+      const mediaResponse = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          imageUrl: imageUrl,
+          fileName: imageUrl.split('/').pop().split('?')[0] || 'featured-image.jpg'
+        })
+      });
+
+      console.log('Media upload response status:', mediaResponse.status);
+
+      if (!mediaResponse.ok) {
+        const errorData = await mediaResponse.json().catch(() => ({}));
+        console.error('Media upload error data:', errorData);
+        throw new Error(
+          errorData.message ||
+          `Media upload error: ${mediaResponse.status} ${mediaResponse.statusText}`
+        );
+      }
+
+      const mediaData = await mediaResponse.json();
+      console.log('Media uploaded successfully! Media ID:', mediaData.id);
+      return mediaData.id;
     } else {
       // In development, use direct WordPress upload with FormData (proxy allows CORS)
+      const imageResponse = await fetch(imageUrl);
+      if (!imageResponse.ok) {
+        throw new Error(`Failed to fetch image: ${imageResponse.statusText}`);
+      }
+
+      const imageBlob = await imageResponse.blob();
+      const fileName = imageUrl.split('/').pop().split('?')[0] || 'featured-image.jpg';
+
+      console.log('Image blob size:', imageBlob.size, 'bytes');
+      console.log('Image filename:', fileName);
+
       const formData = new FormData();
       formData.append('file', imageBlob, fileName);
 
@@ -138,34 +160,6 @@ export const uploadFeaturedImage = async (imageUrl) => {
       console.log('Media uploaded successfully! Media ID:', mediaData.id);
       return mediaData.id;
     }
-
-    console.log('Uploading via proxy to:', url);
-
-    // Send base64 image through proxy in production
-    const mediaResponse = await fetch(url, {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify({
-        file: base64Image,
-        fileName: fileName,
-        mimeType: mimeType
-      })
-    });
-
-    console.log('Media upload response status:', mediaResponse.status);
-
-    if (!mediaResponse.ok) {
-      const errorData = await mediaResponse.json().catch(() => ({}));
-      console.error('Media upload error data:', errorData);
-      throw new Error(
-        errorData.message ||
-        `Media upload error: ${mediaResponse.status} ${mediaResponse.statusText}`
-      );
-    }
-
-    const mediaData = await mediaResponse.json();
-    console.log('Media uploaded successfully! Media ID:', mediaData.id);
-    return mediaData.id;
 
   } catch (error) {
     console.error('Error uploading featured image:', error);
