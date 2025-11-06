@@ -82,11 +82,9 @@ export default async function handler(req, res) {
 
     // Add body for POST/PUT requests (but not for overridden DELETE)
     if ((actualMethod === 'POST' || actualMethod === 'PUT') && actualMethod !== 'DELETE') {
-      if (isFormData || isMediaUpload) {
-        // For FormData/media uploads, pass the raw body from the request
-        // In Vercel, req is the raw Node.js request object for multipart data
-        fetchOptions.body = req;
-      } else if (req.body) {
+      // For now, skip FormData through proxy - it requires special handling in Vercel
+      // Image uploads will be done directly from browser to WordPress in development
+      if (req.body && !isFormData && !isMediaUpload) {
         // For JSON requests, stringify the body (req.body is already parsed by Vercel)
         fetchOptions.body = JSON.stringify(req.body);
       }

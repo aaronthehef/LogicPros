@@ -99,23 +99,13 @@ export const uploadFeaturedImage = async (imageUrl) => {
     formData.append('file', imageBlob, fileName);
 
     // Build the media upload URL
-    let mediaUrl;
-    let headers;
-
-    if (process.env.NODE_ENV === 'production') {
-      // For production, use the proxy
-      mediaUrl = `/api/wordpress-proxy?endpoint=${encodeURIComponent('/wp/v2/media')}`;
-      // For FormData, we only need to pass Authorization (Content-Type is set automatically)
-      // The proxy will handle adding the WordPress auth
-      headers = {};
-    } else {
-      // For development, use direct WordPress URL
-      mediaUrl = `${getWordPressUrl()}${WORDPRESS_CONFIG.API_ENDPOINTS.MEDIA}`;
-      headers = {
-        'Authorization': getAuthHeaders().Authorization
-        // Don't set Content-Type for FormData - browser will set it with boundary
-      };
-    }
+    // NOTE: FormData through Vercel proxy requires special handling
+    // For now, upload directly to WordPress from both environments
+    const mediaUrl = `${WORDPRESS_CONFIG.SITE_URL}${WORDPRESS_CONFIG.API_ENDPOINTS.MEDIA}`;
+    const headers = {
+      'Authorization': getAuthHeaders().Authorization
+      // Don't set Content-Type for FormData - browser will set it with boundary
+    };
 
     console.log('Uploading to:', mediaUrl);
 
