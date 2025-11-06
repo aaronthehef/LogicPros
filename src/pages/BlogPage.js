@@ -97,14 +97,27 @@ export const BlogPage = () => {
     const fetchPosts = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${getApiEndpoint('POSTS')}&per_page=${WORDPRESS_CONFIG.DISPLAY.POSTS_PER_PAGE}&_embed`, {
-          headers: getAuthHeaders()
-        });
-        
+
+        // Build the fetch URL and headers
+        let url;
+        let headers;
+
+        if (process.env.NODE_ENV === 'production') {
+          // In production, use the proxy without auth headers (proxy handles auth)
+          url = `/api/wordpress-proxy?endpoint=${encodeURIComponent('/wp/v2/posts')}&per_page=${WORDPRESS_CONFIG.DISPLAY.POSTS_PER_PAGE}&_embed=wp:featuredmedia,author`;
+          headers = { 'Content-Type': 'application/json' };
+        } else {
+          // In development, use direct WordPress URL with auth
+          url = `${getApiEndpoint('POSTS')}&per_page=${WORDPRESS_CONFIG.DISPLAY.POSTS_PER_PAGE}&_embed`;
+          headers = getAuthHeaders();
+        }
+
+        const response = await fetch(url, { headers });
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const data = await response.json();
         const formattedPosts = data.map(formatPostData);
         setPosts(formattedPosts);
