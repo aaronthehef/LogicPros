@@ -1,6 +1,9 @@
 // Vercel Serverless Function to proxy WordPress API requests
 // This handles CORS by making the request server-side
 
+// Use node-fetch for proper FormData stream handling
+const nodeFetch = require('node-fetch');
+
 export default async function handler(req, res) {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -149,7 +152,9 @@ export default async function handler(req, res) {
     console.log('Request endpoint:', wpEndpoint);
 
     // Make request to WordPress
-    const wpResponse = await fetch(wpUrl.toString(), fetchOptions);
+    // Use node-fetch for FormData support, native fetch for everything else
+    const fetchFn = (isMediaUpload && req.body && req.body.imageUrl) ? nodeFetch : fetch;
+    const wpResponse = await fetchFn(wpUrl.toString(), fetchOptions);
 
     // Handle both JSON and non-JSON responses
     const contentType = wpResponse.headers.get('content-type');
