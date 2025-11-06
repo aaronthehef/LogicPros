@@ -94,26 +94,62 @@ export const uploadFeaturedImage = async (imageUrl) => {
     console.log('Image blob size:', imageBlob.size, 'bytes');
     console.log('Image filename:', fileName);
 
-    // Create FormData for file upload
-    const formData = new FormData();
-    formData.append('file', imageBlob, fileName);
+    // Convert blob to base64 for JSON transport through proxy
+    const base64Image = await new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result.split(',')[1]); // Remove data:image/...;base64, prefix
+      reader.readAsDataURL(imageBlob);
+    });
 
-    // Build the media upload URL
-    // NOTE: FormData through Vercel proxy requires special handling
-    // For now, upload directly to WordPress from both environments
-    const mediaUrl = `${WORDPRESS_CONFIG.SITE_URL}${WORDPRESS_CONFIG.API_ENDPOINTS.MEDIA}`;
-    const headers = {
-      'Authorization': getAuthHeaders().Authorization
-      // Don't set Content-Type for FormData - browser will set it with boundary
-    };
+    // Determine MIME type
+    const mimeType = imageBlob.type || 'image/jpeg';
 
-    console.log('Uploading to:', mediaUrl);
+    // Build URL and headers based on environment
+    let url;
+    let headers;
 
-    // Upload to WordPress media library
-    const mediaResponse = await fetch(mediaUrl, {
+    if (process.env.NODE_ENV === 'production') {
+      // In production, use proxy with base64 image in JSON body
+      url = `/api/wordpress-proxy?endpoint=${encodeURIComponent('/wp/v2/media')}`;
+      headers = { 'Content-Type': 'application/json' };
+    } else {
+      // In development, use direct WordPress upload with FormData (proxy allows CORS)
+      const formData = new FormData();
+      formData.append('file', imageBlob, fileName);
+
+      const mediaUrl = `${WORDPRESS_CONFIG.SITE_URL}${WORDPRESS_CONFIG.API_ENDPOINTS.MEDIA}`;
+      const mediaResponse = await fetch(mediaUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': getAuthHeaders().Authorization
+        },
+        body: formData
+      });
+
+      if (!mediaResponse.ok) {
+        const errorData = await mediaResponse.json().catch(() => ({}));
+        throw new Error(
+          errorData.message ||
+          `Media upload error: ${mediaResponse.status} ${mediaResponse.statusText}`
+        );
+      }
+
+      const mediaData = await mediaResponse.json();
+      console.log('Media uploaded successfully! Media ID:', mediaData.id);
+      return mediaData.id;
+    }
+
+    console.log('Uploading via proxy to:', url);
+
+    // Send base64 image through proxy in production
+    const mediaResponse = await fetch(url, {
       method: 'POST',
       headers: headers,
-      body: formData
+      body: JSON.stringify({
+        file: base64Image,
+        fileName: fileName,
+        mimeType: mimeType
+      })
     });
 
     console.log('Media upload response status:', mediaResponse.status);

@@ -51,24 +51,18 @@ export default async function handler(req, res) {
       wpUrl.searchParams.set(key, queryParams[key]);
     });
 
-    // Check if this is a media upload (FormData)
+    // Check if this is a media upload
     const isMediaUpload = wpEndpoint.includes('/media') && actualMethod === 'POST';
     const requestContentType = req.headers['content-type'] || '';
     const isFormData = requestContentType.includes('multipart/form-data');
 
-    // Prepare headers
+    // If DELETE is requested, use POST with X-HTTP-Method-Override header
+    // This works around nginx blocking DELETE requests
+    let requestMethod = actualMethod;
     const headers = {
       'Authorization': `Basic ${Buffer.from(`${WORDPRESS_USERNAME}:${WORDPRESS_APP_PASSWORD}`).toString('base64')}`
     };
 
-    // Only add Content-Type for JSON requests (not FormData)
-    if (!isFormData && !isMediaUpload) {
-      headers['Content-Type'] = 'application/json';
-    }
-
-    // If DELETE is requested, use POST with X-HTTP-Method-Override header
-    // This works around nginx blocking DELETE requests
-    let requestMethod = actualMethod;
     if (actualMethod === 'DELETE') {
       requestMethod = 'POST';
       headers['X-HTTP-Method-Override'] = 'DELETE';
@@ -80,14 +74,42 @@ export default async function handler(req, res) {
       headers: headers
     };
 
-    // Add body for POST/PUT requests (but not for overridden DELETE)
-    if ((actualMethod === 'POST' || actualMethod === 'PUT') && actualMethod !== 'DELETE') {
-      // For now, skip FormData through proxy - it requires special handling in Vercel
-      // Image uploads will be done directly from browser to WordPress in development
+    // Handle media upload with base64 image
+    if (isMediaUpload && req.body && req.body.file) {
+      console.log('Handling base64 image upload');
+      console.log('File name:', req.body.fileName);
+      console.log('MIME type:', req.body.mimeType);
+
+      // Convert base64 to Buffer
+      const imageBuffer = Buffer.from(req.body.file, 'base64');
+      console.log('Image buffer size:', imageBuffer.length, 'bytes');
+
+      // Create FormData with the image
+      const FormData = require('form-data');
+      const formData = new FormData();
+      formData.append('file', imageBuffer, {
+        filename: req.body.fileName,
+        contentType: req.body.mimeType
+      });
+
+      // Set the FormData as the body
+      fetchOptions.body = formData;
+      // FormData sets its own Content-Type with boundary, so remove ours
+      delete headers['Content-Type'];
+      // Copy FormData headers (including Content-Type with boundary)
+      Object.assign(headers, formData.getHeaders());
+    }
+    // Add body for POST/PUT requests (but not for overridden DELETE or media uploads)
+    else if ((actualMethod === 'POST' || actualMethod === 'PUT') && actualMethod !== 'DELETE') {
       if (req.body && !isFormData && !isMediaUpload) {
         // For JSON requests, stringify the body (req.body is already parsed by Vercel)
         fetchOptions.body = JSON.stringify(req.body);
+        headers['Content-Type'] = 'application/json';
       }
+    }
+    // For non-POST/PUT requests, set Content-Type for JSON
+    else if (!isMediaUpload) {
+      headers['Content-Type'] = 'application/json';
     }
 
     // For DELETE requests, add force parameter to permanently delete

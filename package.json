@@ -9,6 +9,7 @@
     "@mui/material": "^5.15.0",
     "@playwright/mcp": "^0.0.42",
     "firebase": "^12.5.0",
+    "form-data": "^4.0.4",
     "gsap": "^3.13.0",
     "nodemailer": "^7.0.5",
     "prop-types": "^15.8.0",

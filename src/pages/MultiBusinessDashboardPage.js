@@ -19,6 +19,132 @@ import BlankDashboardPage from './BlankDashboardPage';
 import { LogicProsPage } from './LogicProsPage';
 
 export const MultiBusinessDashboardPage = () => {
+  // Add CSS animations for the dashboard
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes slideIn {
+        from { opacity: 0; transform: translateX(-20px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+      
+      .dashboard-card {
+        animation: fadeIn 0.6s ease-out;
+        transition: all 0.3s ease;
+      }
+      
+      .dashboard-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(29, 122, 175, 0.15);
+      }
+      
+      .dashboard-button {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .dashboard-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.6s;
+      }
+      
+      .dashboard-button:hover::before {
+        left: 100%;
+      }
+      
+      .dashboard-form-input {
+        transition: all 0.3s ease;
+      }
+      
+      .dashboard-form-input:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(31, 124, 255, 0.15);
+      }
+      
+      .platform-gradient-instagram {
+        background: linear-gradient(45deg, #E4405F, #C13584);
+      }
+      
+      .platform-gradient-facebook {
+        background: linear-gradient(45deg, #1877F2, #166FE5);
+      }
+      
+      .platform-gradient-twitter {
+        background: linear-gradient(45deg, #000000, #333333);
+      }
+      
+      .platform-gradient-linkedin {
+        background: linear-gradient(45deg, #0A66C2, #004182);
+      }
+      
+      .platform-gradient-blog {
+        background: linear-gradient(45deg, #6366F1, #8B5CF6);
+      }
+      
+      /* Responsive design improvements */
+      @media (max-width: 768px) {
+        .dashboard-grid {
+          grid-template-columns: 1fr !important;
+          gap: 20px !important;
+        }
+        
+        .dashboard-hero-title {
+          font-size: 2rem !important;
+        }
+        
+        .dashboard-card {
+          padding: 20px !important;
+        }
+        
+        .dashboard-button {
+          padding: 12px 20px !important;
+          font-size: 0.9rem !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .dashboard-hero-title {
+          font-size: 1.5rem !important;
+        }
+        
+        .dashboard-card {
+          padding: 15px !important;
+        }
+        
+        .dashboard-form-input {
+          padding: 10px 12px !important;
+          font-size: 16px !important; /* Prevents zoom on iOS */
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
   const [authState, setAuthState] = useState({
     user: null,
     businessContext: null,
@@ -548,6 +674,29 @@ export const MultiBusinessDashboardPage = () => {
     );
   }, []);
 
+  // Helper functions for platform styling
+  const getPlatformColor = useCallback((platform) => {
+    const colors = {
+      'Instagram': '#E4405F',
+      'Facebook': '#1877F2',
+      'Twitter/X': '#000000',
+      'LinkedIn': '#0A66C2',
+      'Blog': '#6366F1'
+    };
+    return colors[platform] || '#1F7CFF';
+  }, []);
+
+  const getPlatformGradient = useCallback((platform) => {
+    const gradients = {
+      'Instagram': 'linear-gradient(45deg, #E4405F, #C13584)',
+      'Facebook': 'linear-gradient(45deg, #1877F2, #166FE5)',
+      'Twitter/X': 'linear-gradient(45deg, #000000, #333333)',
+      'LinkedIn': 'linear-gradient(45deg, #0A66C2, #004182)',
+      'Blog': 'linear-gradient(45deg, #6366F1, #8B5CF6)'
+    };
+    return gradients[platform] || 'linear-gradient(45deg, #1F7CFF, #1e40af)';
+  }, []);
+
   // Show loading state
   if (loading) {
     return (
@@ -599,354 +748,1045 @@ export const MultiBusinessDashboardPage = () => {
         </div>
       </header>
 
-      <div className="dashboard-container">
-        {/* Business Info Header */}
-        {authState.currentBusiness && (
-          <div className="business-header" style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            padding: '20px',
-            borderRadius: '8px',
-            marginBottom: '30px',
-            border: '1px solid rgba(255, 255, 255, 0.2)'
-          }}>
+      {/* Hero Section with Animated Background */}
+      <section className="hero-section blog-hero" style={{
+        position: 'relative',
+        minHeight: '20vh',
+        display: 'flex',
+        alignItems: 'center',
+        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+        overflow: 'hidden'
+      }}>
+        {/* Circuit Board Background */}
+        <svg
+          className="circuit-background"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 1,
+            opacity: 0.4
+          }}
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <defs>
+            <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          <g transform="translate(0,0)">
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              values="0,0; -500,0; -500,-350; 0,-350; 0,0"
+              dur="150s"
+              repeatCount="indefinite"
+            />
+
+            {[0, 1, 2, 3, 4, 5].map((layerX, layerY) => (
+              <g key={`layer-${layerX}-${layerY}`} transform={`translate(${layerX * 400}, ${layerY * 250})`}>
+                 
+                <g stroke="#1F7CFF" strokeWidth="1.5" fill="none">
+                  <path d="M50 120 L350 120" strokeDasharray="20,12" opacity="0.5">
+                    <animate attributeName="stroke-dashoffset" values="0;-32" dur="3s" repeatCount="indefinite"/>
+                  </path>
+                </g>
+                
+                {(layerX + layerY) % 2 === 0 && (
+                  <g stroke="#22c55e" strokeWidth="1.5" fill="none">
+                    <path d="M200 30 L200 220" strokeDasharray="18,10" opacity="0.4">
+                      <animate attributeName="stroke-dashoffset" values="0;-28" dur="2.8s" repeatCount="indefinite"/>
+                    </path>
+                  </g>
+                )}
+                
+                {(layerX + layerY) % 3 === 0 && (
+                  <g stroke="#f59e0b" strokeWidth="1.5" fill="none">
+                    <path d="M100 80 L100 160 L300 160" strokeDasharray="15,8" opacity="0.35">
+                      <animate attributeName="stroke-dashoffset" values="0;-23" dur="3.5s" repeatCount="indefinite"/>
+                    </path>
+                  </g>
+                )}
+                
+                <g>
+                  {[...Array(3)].map((_, dotIndex) => {
+                    const x = 80 + (dotIndex * 120);
+                    const y = 60 + (dotIndex * 40);
+                    const delay = dotIndex * 1.5;
+                    return (
+                      <circle
+                        key={`dot-${dotIndex}`}
+                        cx={x}
+                        cy={y}
+                        r="1.5"
+                        fill="#1F7CFF"
+                        opacity="0.6"
+                      >
+                        <animateTransform
+                          attributeName="transform"
+                          type="translate"
+                          values="0,0; 8,-12; -5,10; 0,0"
+                          dur="6s"
+                          repeatCount="indefinite"
+                          begin={`${delay}s`}
+                        />
+                        <animate
+                          attributeName="opacity"
+                          values="0.3;0.6;0.3"
+                          dur="4s"
+                          repeatCount="indefinite"
+                          begin={`${delay}s`}
+                        />
+                      </circle>
+                    );
+                  })}
+                </g>
+              </g>
+            ))}
+          </g>
+        </svg>
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div style={{ textAlign: 'center', color: 'white' }}>
+            <h1 style={{
+              fontSize: 'clamp(2rem, 5vw, 3rem)',
+              fontWeight: '900',
+              lineHeight: '0.9',
+              marginBottom: '1rem',
+              color: '#1F7CFF',
+              textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
+            }}>
+              Content Creation Dashboard
+            </h1>
+            <p style={{
+              fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+              color: '#e2e8f0',
+              marginBottom: '1rem',
+              fontWeight: '300',
+              maxWidth: '600px'
+            }}>
+              Create and manage content for your blog and social media platforms with AI-powered assistance
+              <span className="ai-indicator" style={{
+                background: 'linear-gradient(45deg, #1F7CFF, #22c55e)',
+                padding: '4px 12px',
+                borderRadius: '20px',
+                fontSize: '0.8rem',
+                marginLeft: '10px',
+                fontWeight: '500',
+                display: 'inline-block'
+              }}>AI Powered</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <main className="main-content">
+          {/* Business Info Header */}
+          {authState.currentBusiness && (
+            <div className="business-header" style={{
+              background: 'white',
+              padding: '25px',
+              borderRadius: '12px',
+              marginBottom: '40px',
+              border: '1px solid rgba(29, 122, 175, 0.1)',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '20px'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                  {authState.currentBusiness.business.branding?.logo && (
+                    <img
+                      src={authState.currentBusiness.business.branding.logo}
+                      alt="Business Logo"
+                      style={{ height: '50px', width: 'auto', borderRadius: '8px' }}
+                    />
+                  )}
+                  <div>
+                    <h2 style={{ margin: '0', color: '#1a1a2e', fontSize: '1.6rem', fontWeight: '700' }}>
+                      {authState.currentBusiness.business.name}
+                    </h2>
+                    <p style={{ margin: '5px 0 0 0', color: '#6b7280', fontSize: '0.95rem' }}>
+                      {authState.user.email} • {authState.userRole} role
+                    </p>
+                  </div>
+                </div>
+                
+                {authState.currentBusiness.business.wordpressConfig?.siteUrl && (
+                  <div style={{
+                    background: 'linear-gradient(45deg, #22c55e, #16a34a)',
+                    padding: '10px 20px',
+                    borderRadius: '25px',
+                    fontSize: '0.9rem',
+                    color: 'white',
+                    fontWeight: '500',
+                    boxShadow: '0 4px 12px rgba(34, 197, 94, 0.3)'
+                  }}>
+                    📝 Connected to WordPress
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Loading Overlay */}
+          {loading && (
             <div style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'rgba(0, 0, 0, 0.7)',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
-              gap: '15px'
+              justifyContent: 'center',
+              zIndex: 9999,
+              backdropFilter: 'blur(5px)'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                {authState.currentBusiness.business.branding?.logo && (
-                  <img 
-                    src={authState.currentBusiness.business.branding.logo} 
-                    alt="Business Logo" 
-                    style={{ height: '40px', width: 'auto' }}
-                  />
-                )}
-                <div>
-                  <h2 style={{ margin: '0', color: 'white', fontSize: '1.5rem' }}>
-                    {authState.currentBusiness.business.name}
-                  </h2>
-                  <p style={{ margin: '5px 0 0 0', color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.9rem' }}>
-                    {authState.user.email} • {authState.userRole} role
-                  </p>
-                </div>
-              </div>
-              
-              {authState.currentBusiness.business.wordpressConfig?.siteUrl && (
+              <div style={{
+                background: 'white',
+                padding: '40px',
+                borderRadius: '16px',
+                textAlign: 'center',
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2)',
+                maxWidth: '400px'
+              }}>
                 <div style={{
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  padding: '8px 16px',
-                  borderRadius: '20px',
+                  width: '50px',
+                  height: '50px',
+                  border: '4px solid rgba(31, 124, 255, 0.1)',
+                  borderTop: '4px solid #1F7CFF',
+                  borderRadius: '50%',
+                  animation: 'spin 1s linear infinite',
+                  margin: '0 auto 20px'
+                }}></div>
+                <p style={{
+                  fontSize: '1.1rem',
+                  color: '#1a1a2e',
+                  fontWeight: '500',
+                  marginBottom: '10px'
+                }}>{loadingMessage}</p>
+                <p style={{
                   fontSize: '0.9rem',
-                  color: 'rgba(255, 255, 255, 0.9)'
-                }}>
-                  📝 Connected to WordPress
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Dashboard Title */}
-        <div className="dashboard-title">
-          <h1>Social Media Poster</h1>
-          <p>
-            Create and manage social media posts for Instagram, Facebook, Twitter/X, and LinkedIn
-            <span className="ai-indicator">AI Powered</span>
-          </p>
-        </div>
-
-        {/* Loading Overlay */}
-        {loading && (
-          <div className="loading-overlay">
-            <div className="loading-content">
-              <div className="spinner"></div>
-              <p className="loading-text">{loadingMessage}</p>
-            </div>
-          </div>
-        )}
-
-        {/* Posts Section */}
-        <div className="posts-container">
-          {/* Generate All Posts with AI Button */}
-          {hasPermission('manage_wordpress') && (
-            <button
-              className="generate-button full-width-button"
-              onClick={handleGeneratePosts}
-              disabled={loading}
-            >
-              {loading ? (
-                <>
-                  <div className="spinner small-spinner"></div>
-                  Generating...
-                </>
-              ) : (
-                <>
-                  🤖 Generate All Posts with AI
-                </>
-              )}
-            </button>
-          )}
-
-          <h2 className="section-title">
-            Create Posts
-          </h2>
-
-          {message && (
-            <div className={`message ${message.includes('success') ? 'success-message' : 'error-message'}`}>
-              {message}
-            </div>
-          )}
-
-          <div className="posts-grid">
-            {/* Blog Post Card */}
-            {hasPermission('manage_wordpress') && (
-              <div className="post-card blog-post-card">
-                <div className="platform-header">
-                  <span className="platform-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M14 2V8H20M16 13H8M16 17H8M10 9H8" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                  <span className="platform-name">Blog Post</span>
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label">
-                    Title *
-                  </label>
-                  <input
-                    type="text"
-                    className="form-input"
-                    value={blogPost.title}
-                    onChange={(e) => handleBlogChange('title', e.target.value)}
-                    placeholder="Enter blog post title..."
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label">
-                    Content *
-                  </label>
-                  <textarea
-                    className="form-textarea"
-                    value={blogPost.content}
-                    onChange={(e) => handleBlogChange('content', e.target.value)}
-                    placeholder="Enter your blog post content here..."
-                    style={{ minHeight: '300px' }}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label">
-                    Featured Image URL (optional)
-                  </label>
-                  <input
-                    type="url"
-                    className="form-input"
-                    value={blogPost.featuredImageUrl}
-                    onChange={(e) => handleBlogChange('featuredImageUrl', e.target.value)}
-                    placeholder="https://example.com/featured-image.jpg"
-                  />
-                </div>
-
-                <button
-                  className="post-button"
-                  onClick={handleSaveBlogPost}
-                  disabled={loading}
-                >
-                  {loading ? 'Publishing...' : 'Publish to Blog'}
-                </button>
+                  color: '#6b7280'
+                }}>Please wait while we work our magic...</p>
               </div>
-            )}
+            </div>
+          )}
 
-            {/* Social Media Posts */}
-            {posts.map(post => (
-              hasPermission('manage_wordpress') && (
-                <div key={post.id} className="post-card">
-                  <div className="platform-header">
-                    <span className="platform-icon">{getPlatformIcon(post.platform)}</span>
-                    <span className="platform-name">{post.platform}</span>
-                  </div>
-
-                  <div className="form-group">
-                    <label className="form-label">
-                      Content
-                    </label>
-                    <textarea
-                      className="form-textarea"
-                      value={post.content}
-                      onChange={(e) => handleContentChange(post.id, e.target.value)}
-                      placeholder={`Enter your ${post.platform} post content here...`}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label className="form-label">
-                      Image URL (optional)
-                    </label>
-                    <input
-                      type="url"
-                      className="form-input"
-                      value={post.imageUrls[0] || ''}
-                      onChange={(e) => handleImageChange(post.id, e.target.value)}
-                      placeholder="https://example.com/image.jpg"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label className="form-label">
-                      Notes (optional)
-                    </label>
-                    <textarea
-                      className="form-textarea"
-                      value={post.notes}
-                      onChange={(e) => handleNotesChange(post.id, e.target.value)}
-                      placeholder="Add any notes or reminders about this post..."
-                      style={{ minHeight: '60px' }}
-                    />
-                  </div>
-
+          {/* Posts Section */}
+          <section className="section" style={{ backgroundColor: '#f5f8fc', padding: '60px 0' }}>
+            <div className="container">
+              {/* Generate All Posts with AI Button */}
+              {hasPermission('manage_wordpress') && (
+                <div style={{ textAlign: 'center', marginBottom: '50px' }}>
                   <button
-                    className="post-button"
-                    onClick={() => handleSavePost(post)}
+                    style={{
+                      background: 'linear-gradient(135deg, #1F7CFF 0%, #1e40af 100%)',
+                      color: 'white',
+                      padding: '18px 40px',
+                      borderRadius: '50px',
+                      border: 'none',
+                      fontSize: '1.1rem',
+                      fontWeight: '600',
+                      cursor: 'pointer',
+                      boxShadow: '0 8px 25px rgba(31, 124, 255, 0.4)',
+                      transition: 'all 0.3s ease',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      position: 'relative',
+                      overflow: 'hidden'
+                    }}
+                    onClick={handleGeneratePosts}
                     disabled={loading}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = 'translateY(-3px)';
+                      e.target.style.boxShadow = '0 12px 35px rgba(31, 124, 255, 0.5)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'translateY(0)';
+                      e.target.style.boxShadow = '0 8px 25px rgba(31, 124, 255, 0.4)';
+                    }}
                   >
-                    {loading ? 'Saving...' : `Save ${post.platform} Post`}
+                    {loading ? (
+                      <>
+                        <div style={{
+                          width: '20px',
+                          height: '20px',
+                          border: '2px solid rgba(255, 255, 255, 0.3)',
+                          borderTop: '2px solid white',
+                          borderRadius: '50%',
+                          animation: 'spin 1s linear infinite'
+                        }}></div>
+                        Generating...
+                      </>
+                    ) : (
+                      <>
+                        🤖 Generate All Posts with AI
+                      </>
+                    )}
                   </button>
                 </div>
-              )
-            ))}
-          </div>
-        </div>
+              )}
 
-        {/* WordPress Posts Management */}
-        {hasPermission('view_analytics') && (
-          <div className="posts-container" style={{ marginTop: '30px' }}>
-            <div className="dashboard-title">
-              <h2>WordPress Blog Posts</h2>
-              <p>
-                View and manage your published WordPress blog posts
-                <span className="ai-indicator">Live from WordPress</span>
-              </p>
-            </div>
+              <h2 style={{
+                textAlign: 'center',
+                fontSize: '2.5rem',
+                fontWeight: '700',
+                marginBottom: '50px',
+                color: '#1a1a2e'
+              }}>
+                Create Content
+              </h2>
 
-            <div className="posts-grid">
-              {wordpressLoading ? (
-                <div style={{ textAlign: 'center', padding: '40px' }}>
-                  <div className="spinner"></div>
-                  <p>Loading WordPress posts...</p>
+              {message && (
+                <div style={{
+                  textAlign: 'center',
+                  marginBottom: '30px',
+                  padding: '15px 25px',
+                  borderRadius: '8px',
+                  background: message.includes('success') ? 'linear-gradient(45deg, #d4edda, #c3e6cb)' : 'linear-gradient(45deg, #f8d7da, #f5c6cb)',
+                  border: `1px solid ${message.includes('success') ? '#c3e6cb' : '#f5c6cb'}`,
+                  color: message.includes('success') ? '#155724' : '#721c24',
+                  fontWeight: '500',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+                }}>
+                  {message}
                 </div>
-              ) : wordpressPosts.length === 0 ? (
-                <div className="empty-history">
-                  <p>No blog posts found on WordPress. Create your first blog post above!</p>
-                </div>
-              ) : (
-                wordpressPosts.map(post => (
-                  <div key={post.id} className="post-card">
-                    <div className="platform-header">
-                      <span className="platform-icon">
+              )}
+
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+                gap: '30px'
+              }}>
+                {/* Blog Post Card */}
+                {hasPermission('manage_wordpress') && (
+                  <div style={{
+                    background: 'white',
+                    borderRadius: '16px',
+                    padding: '30px',
+                    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                    border: '1px solid rgba(29, 122, 175, 0.1)',
+                    transition: 'all 0.3s ease',
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}>
+                    <div style={{
+                      position: 'absolute',
+                      top: '0',
+                      left: '0',
+                      right: '0',
+                      height: '4px',
+                      background: 'linear-gradient(90deg, #6366F1, #8B5CF6, #EC4899)',
+                    }}></div>
+                    
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      marginBottom: '25px'
+                    }}>
+                      <div style={{
+                        width: '40px',
+                        height: '40px',
+                        background: 'linear-gradient(45deg, #6366F1, #8B5CF6)',
+                        borderRadius: '10px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M14 2V8H20M16 13H8M16 17H8M10 9H8" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M14 2V8H20M16 13H8M16 17H8M10 9H8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
-                      </span>
-                      <span className="platform-name">{post.title || 'Untitled Blog Post'}</span>
+                      </div>
+                      <div>
+                        <h3 style={{
+                          margin: '0',
+                          fontSize: '1.3rem',
+                          fontWeight: '700',
+                          color: '#1a1a2e'
+                        }}>Blog Post</h3>
+                        <p style={{
+                          margin: '2px 0 0 0',
+                          fontSize: '0.9rem',
+                          color: '#6b7280'
+                        }}>Create engaging blog content</p>
+                      </div>
                     </div>
 
-                    <div className="history-post-content">
-                      <div
-                        dangerouslySetInnerHTML={{ __html: post.excerpt || post.content.substring(0, 200) + '...' }}
+                    <div style={{ marginBottom: '20px' }}>
+                      <label style={{
+                        display: 'block',
+                        fontWeight: '600',
+                        marginBottom: '8px',
+                        color: '#1a1a2e',
+                        fontSize: '0.95rem'
+                      }}>
+                        Title *
+                      </label>
+                      <input
+                        type="text"
                         style={{
-                          fontSize: '0.9rem',
-                          lineHeight: '1.6',
-                          color: '#2c3e50',
-                          marginBottom: '15px'
+                          width: '100%',
+                          padding: '12px 16px',
+                          border: '2px solid #e0e0e0',
+                          borderRadius: '8px',
+                          fontSize: '1rem',
+                          transition: 'all 0.3s ease',
+                          background: 'white'
+                        }}
+                        value={blogPost.title}
+                        onChange={(e) => handleBlogChange('title', e.target.value)}
+                        placeholder="Enter blog post title..."
+                        onFocus={(e) => {
+                          e.target.style.borderColor = '#6366F1';
+                          e.target.style.boxShadow = '0 0 0 3px rgba(99, 102, 241, 0.1)';
+                        }}
+                        onBlur={(e) => {
+                          e.target.style.borderColor = '#e0e0e0';
+                          e.target.style.boxShadow = 'none';
                         }}
                       />
+                    </div>
 
-                      {post.featuredImageUrl && (
-                        <img
-                          src={post.featuredImageUrl}
-                          alt="Post"
-                          className="history-post-image"
-                        />
-                      )}
+                    <div style={{ marginBottom: '20px' }}>
+                      <label style={{
+                        display: 'block',
+                        fontWeight: '600',
+                        marginBottom: '8px',
+                        color: '#1a1a2e',
+                        fontSize: '0.95rem'
+                      }}>
+                        Content *
+                      </label>
+                      <textarea
+                        style={{
+                          width: '100%',
+                          padding: '12px 16px',
+                          border: '2px solid #e0e0e0',
+                          borderRadius: '8px',
+                          fontSize: '1rem',
+                          transition: 'all 0.3s ease',
+                          background: 'white',
+                          minHeight: '250px',
+                          resize: 'vertical',
+                          fontFamily: 'inherit'
+                        }}
+                        value={blogPost.content}
+                        onChange={(e) => handleBlogChange('content', e.target.value)}
+                        placeholder="Enter your blog post content here..."
+                        onFocus={(e) => {
+                          e.target.style.borderColor = '#6366F1';
+                          e.target.style.boxShadow = '0 0 0 3px rgba(99, 102, 241, 0.1)';
+                        }}
+                        onBlur={(e) => {
+                          e.target.style.borderColor = '#e0e0e0';
+                          e.target.style.boxShadow = 'none';
+                        }}
+                      />
+                    </div>
 
-                      <div className="history-post-meta">
+                    <div style={{ marginBottom: '25px' }}>
+                      <label style={{
+                        display: 'block',
+                        fontWeight: '600',
+                        marginBottom: '8px',
+                        color: '#1a1a2e',
+                        fontSize: '0.95rem'
+                      }}>
+                        Featured Image URL (optional)
+                      </label>
+                      <input
+                        type="url"
+                        className="dashboard-form-input"
+                        style={{
+                          width: '100%',
+                          padding: '12px 16px',
+                          border: '2px solid #e0e0e0',
+                          borderRadius: '8px',
+                          fontSize: '1rem',
+                          background: 'white'
+                        }}
+                        value={blogPost.featuredImageUrl}
+                        onChange={(e) => handleBlogChange('featuredImageUrl', e.target.value)}
+                        placeholder="https://example.com/featured-image.jpg"
+                        onFocus={(e) => {
+                          e.target.style.borderColor = '#6366F1';
+                          e.target.style.boxShadow = '0 0 0 3px rgba(99, 102, 241, 0.1)';
+                        }}
+                        onBlur={(e) => {
+                          e.target.style.borderColor = '#e0e0e0';
+                          e.target.style.boxShadow = 'none';
+                        }}
+                      />
+                    </div>
+
+                    <button
+                      style={{
+                        width: '100%',
+                        background: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
+                        color: 'white',
+                        padding: '14px 24px',
+                        borderRadius: '8px',
+                        border: 'none',
+                        fontSize: '1rem',
+                        fontWeight: '600',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        boxShadow: '0 4px 15px rgba(99, 102, 241, 0.3)'
+                      }}
+                      onClick={handleSaveBlogPost}
+                      disabled={loading}
+                      onMouseEnter={(e) => {
+                        e.target.style.transform = 'translateY(-2px)';
+                        e.target.style.boxShadow = '0 6px 20px rgba(99, 102, 241, 0.4)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.transform = 'translateY(0)';
+                        e.target.style.boxShadow = '0 4px 15px rgba(99, 102, 241, 0.3)';
+                      }}
+                    >
+                      {loading ? 'Publishing...' : 'Publish to Blog'}
+                    </button>
+                  </div>
+                )}
+
+                {/* Social Media Posts */}
+                {posts.map(post => (
+                  hasPermission('manage_wordpress') && (
+                    <div key={post.id} style={{
+                      background: 'white',
+                      borderRadius: '16px',
+                      padding: '30px',
+                      boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                      border: '1px solid rgba(29, 122, 175, 0.1)',
+                      transition: 'all 0.3s ease',
+                      position: 'relative',
+                      overflow: 'hidden'
+                    }}>
+                      <div style={{
+                        position: 'absolute',
+                        top: '0',
+                        left: '0',
+                        right: '0',
+                        height: '4px',
+                        background: getPlatformGradient(post.platform)
+                      }}></div>
+                      
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '12px',
+                        marginBottom: '25px'
+                      }}>
+                        <div style={{
+                          width: '40px',
+                          height: '40px',
+                          background: getPlatformGradient(post.platform),
+                          borderRadius: '10px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
+                        }}>
+                          {getPlatformIcon(post.platform)}
+                        </div>
                         <div>
-                          {post.createdAt ? new Date(post.createdAt).toLocaleString() : 'Just now'}
+                          <h3 style={{
+                            margin: '0',
+                            fontSize: '1.3rem',
+                            fontWeight: '700',
+                            color: '#1a1a2e'
+                          }}>{post.platform}</h3>
+                          <p style={{
+                            margin: '2px 0 0 0',
+                            fontSize: '0.9rem',
+                            color: '#6b7280'
+                          }}>Create engaging social content</p>
                         </div>
-                        <div style={{ marginTop: '5px', fontSize: '0.9rem', color: '#666' }}>
-                          Author: {post.author}
-                        </div>
-                        {post.link && (
-                          <div style={{ marginTop: '10px' }}>
-                            <a href={post.link} target="_blank" rel="noopener noreferrer" style={{ color: '#1F7CFF', textDecoration: 'none' }}>
-                              View on WordPress →
-                            </a>
-                          </div>
-                        )}
                       </div>
-                    </div>
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
-        )}
 
-        {/* Post History Section */}
-        {hasPermission('view_analytics') && postHistory.length > 0 && (
-          <div className="posts-container history-container">
-            <div className="history-header">
-              <h2>Post History</h2>
-            </div>
-
-            <div className="history-content">
-              <div className="posts-grid">
-                {postHistory.map(post => (
-                  <div key={post.id} className="post-card">
-                    <div className="platform-header">
-                      <span className="platform-icon">{getPlatformIcon(post.platform || 'Blog')}</span>
-                      <span className="platform-name">{post.platform || 'Blog'}</span>
-                    </div>
-
-                    <div className="history-post-content">
-                      <p>{post.content}</p>
-
-                      {post.featuredImageUrl && (
-                        <img
-                          src={post.featuredImageUrl}
-                          alt="Post"
-                          className="history-post-image"
+                      <div style={{ marginBottom: '20px' }}>
+                        <label style={{
+                          display: 'block',
+                          fontWeight: '600',
+                          marginBottom: '8px',
+                          color: '#1a1a2e',
+                          fontSize: '0.95rem'
+                        }}>
+                          Content
+                        </label>
+                        <textarea
+                          style={{
+                            width: '100%',
+                            padding: '12px 16px',
+                            border: '2px solid #e0e0e0',
+                            borderRadius: '8px',
+                            fontSize: '1rem',
+                            transition: 'all 0.3s ease',
+                            background: 'white',
+                            minHeight: '120px',
+                            resize: 'vertical',
+                            fontFamily: 'inherit'
+                          }}
+                          value={post.content}
+                          onChange={(e) => handleContentChange(post.id, e.target.value)}
+                          placeholder={`Enter your ${post.platform} post content here...`}
+                          onFocus={(e) => {
+                            e.target.style.borderColor = getPlatformColor(post.platform);
+                            e.target.style.boxShadow = `0 0 0 3px ${getPlatformColor(post.platform)}20`;
+                          }}
+                          onBlur={(e) => {
+                            e.target.style.borderColor = '#e0e0e0';
+                            e.target.style.boxShadow = 'none';
+                          }}
                         />
-                      )}
-
-                      <div className="history-post-meta">
-                        {post.createdAt ? new Date(post.createdAt.toDate ? post.createdAt.toDate() : post.createdAt).toLocaleString() : 'Just now'}
-                        {post.publishedUrl && (
-                          <div style={{ marginTop: '10px' }}>
-                            <a href={post.publishedUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#1F7CFF', textDecoration: 'none' }}>
-                              View Published Post →
-                            </a>
-                          </div>
-                        )}
                       </div>
+
+                      <div style={{ marginBottom: '20px' }}>
+                        <label style={{
+                          display: 'block',
+                          fontWeight: '600',
+                          marginBottom: '8px',
+                          color: '#1a1a2e',
+                          fontSize: '0.95rem'
+                        }}>
+                          Image URL (optional)
+                        </label>
+                        <input
+                          type="url"
+                          style={{
+                            width: '100%',
+                            padding: '12px 16px',
+                            border: '2px solid #e0e0e0',
+                            borderRadius: '8px',
+                            fontSize: '1rem',
+                            transition: 'all 0.3s ease',
+                            background: 'white'
+                          }}
+                          value={post.imageUrls[0] || ''}
+                          onChange={(e) => handleImageChange(post.id, e.target.value)}
+                          placeholder="https://example.com/image.jpg"
+                          onFocus={(e) => {
+                            e.target.style.borderColor = getPlatformColor(post.platform);
+                            e.target.style.boxShadow = `0 0 0 3px ${getPlatformColor(post.platform)}20`;
+                          }}
+                          onBlur={(e) => {
+                            e.target.style.borderColor = '#e0e0e0';
+                            e.target.style.boxShadow = 'none';
+                          }}
+                        />
+                      </div>
+
+                      <div style={{ marginBottom: '25px' }}>
+                        <label style={{
+                          display: 'block',
+                          fontWeight: '600',
+                          marginBottom: '8px',
+                          color: '#1a1a2e',
+                          fontSize: '0.95rem'
+                        }}>
+                          Notes (optional)
+                        </label>
+                        <textarea
+                          style={{
+                            width: '100%',
+                            padding: '12px 16px',
+                            border: '2px solid #e0e0e0',
+                            borderRadius: '8px',
+                            fontSize: '1rem',
+                            transition: 'all 0.3s ease',
+                            background: 'white',
+                            minHeight: '80px',
+                            resize: 'vertical',
+                            fontFamily: 'inherit'
+                          }}
+                          value={post.notes}
+                          onChange={(e) => handleNotesChange(post.id, e.target.value)}
+                          placeholder="Add any notes or reminders about this post..."
+                          onFocus={(e) => {
+                            e.target.style.borderColor = getPlatformColor(post.platform);
+                            e.target.style.boxShadow = `0 0 0 3px ${getPlatformColor(post.platform)}20`;
+                          }}
+                          onBlur={(e) => {
+                            e.target.style.borderColor = '#e0e0e0';
+                            e.target.style.boxShadow = 'none';
+                          }}
+                        />
+                      </div>
+
+                      <button
+                        style={{
+                          width: '100%',
+                          background: getPlatformGradient(post.platform),
+                          color: 'white',
+                          padding: '14px 24px',
+                          borderRadius: '8px',
+                          border: 'none',
+                          fontSize: '1rem',
+                          fontWeight: '600',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s ease',
+                          boxShadow: `0 4px 15px ${getPlatformColor(post.platform)}40`
+                        }}
+                        onClick={() => handleSavePost(post)}
+                        disabled={loading}
+                        onMouseEnter={(e) => {
+                          e.target.style.transform = 'translateY(-2px)';
+                          e.target.style.boxShadow = `0 6px 20px ${getPlatformColor(post.platform)}50`;
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.transform = 'translateY(0)';
+                          e.target.style.boxShadow = `0 4px 15px ${getPlatformColor(post.platform)}40`;
+                        }}
+                      >
+                        {loading ? 'Saving...' : `Save ${post.platform} Post`}
+                      </button>
                     </div>
-                  </div>
+                  )
                 ))}
               </div>
             </div>
-          </div>
-        )}
-      </div>
+          </section>
 
-      <Footer />
-    </>
+          {/* WordPress Posts Management */}
+          {hasPermission('view_analytics') && (
+            <section className="section" style={{ backgroundColor: '#ffffff', padding: '60px 0' }}>
+              <div className="container">
+                <h2 style={{
+                  textAlign: 'center',
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  marginBottom: '50px',
+                  color: '#1a1a2e'
+                }}>
+                  Published Blog Posts
+                </h2>
+                <p style={{
+                  textAlign: 'center',
+                  fontSize: '1.1rem',
+                  color: '#6b7280',
+                  marginBottom: '50px',
+                  maxWidth: '600px',
+                  margin: '0 auto 50px'
+                }}>
+                  View and manage your published WordPress blog posts
+                  <span style={{
+                    background: 'linear-gradient(45deg, #22c55e, #16a34a)',
+                    padding: '4px 12px',
+                    borderRadius: '20px',
+                    fontSize: '0.8rem',
+                    marginLeft: '10px',
+                    fontWeight: '500',
+                    display: 'inline-block',
+                    color: 'white'
+                  }}>Live from WordPress</span>
+                </p>
+
+                {wordpressLoading ? (
+                  <div style={{ textAlign: 'center', padding: '60px' }}>
+                    <div style={{
+                      width: '50px',
+                      height: '50px',
+                      border: '4px solid rgba(31, 124, 255, 0.1)',
+                      borderTop: '4px solid #1F7CFF',
+                      borderRadius: '50%',
+                      animation: 'spin 1s linear infinite',
+                      margin: '0 auto 20px'
+                    }}></div>
+                    <p style={{ color: '#6b7280' }}>Loading WordPress posts...</p>
+                  </div>
+                ) : wordpressPosts.length === 0 ? (
+                  <div style={{
+                    textAlign: 'center',
+                    padding: '60px 20px',
+                    background: '#f8f9fa',
+                    borderRadius: '12px',
+                    border: '1px solid #e0e0e0'
+                  }}>
+                    <div style={{
+                      width: '60px',
+                      height: '60px',
+                      background: 'linear-gradient(45deg, #6366F1, #8B5CF6)',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      margin: '0 auto 20px',
+                      fontSize: '24px'
+                    }}>📝</div>
+                    <h3 style={{ color: '#1a1a2e', marginBottom: '10px' }}>No Blog Posts Yet</h3>
+                    <p style={{ color: '#6b7280' }}>Create your first blog post above to get started!</p>
+                  </div>
+                ) : (
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+                    gap: '30px'
+                  }}>
+                    {wordpressPosts.map(post => (
+                      <div key={post.id} style={{
+                        background: 'white',
+                        borderRadius: '16px',
+                        padding: '30px',
+                        boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                        border: '1px solid rgba(29, 122, 175, 0.1)',
+                        transition: 'all 0.3s ease',
+                        cursor: 'pointer'
+                      }}>
+                        <div style={{
+                          position: 'absolute',
+                          top: '0',
+                          left: '0',
+                          right: '0',
+                          height: '4px',
+                          background: 'linear-gradient(90deg, #6366F1, #8B5CF6, #EC4899)',
+                        }}></div>
+                        
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '12px',
+                          marginBottom: '20px'
+                        }}>
+                          <div style={{
+                            width: '40px',
+                            height: '40px',
+                            background: 'linear-gradient(45deg, #6366F1, #8B5CF6)',
+                            borderRadius: '10px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M14 2V8H20M16 13H8M16 17H8M10 9H8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <div style={{ flex: 1 }}>
+                            <h3 style={{
+                              margin: '0',
+                              fontSize: '1.1rem',
+                              fontWeight: '700',
+                              color: '#1a1a2e',
+                              lineHeight: '1.3'
+                            }}>{post.title || 'Untitled Blog Post'}</h3>
+                          </div>
+                        </div>
+
+                        <div style={{
+                          fontSize: '0.9rem',
+                          lineHeight: '1.6',
+                          color: '#2c3e50',
+                          marginBottom: '20px',
+                          maxHeight: '100px',
+                          overflow: 'hidden'
+                        }}>
+                          <div dangerouslySetInnerHTML={{ __html: post.excerpt || post.content.substring(0, 150) + '...' }} />
+                        </div>
+
+                        {post.featuredImageUrl && (
+                          <img
+                            src={post.featuredImageUrl}
+                            alt="Post"
+                            style={{
+                              width: '100%',
+                              height: '150px',
+                              objectFit: 'cover',
+                              borderRadius: '8px',
+                              marginBottom: '15px'
+                            }}
+                          />
+                        )}
+
+                        <div style={{
+                          fontSize: '0.85rem',
+                          color: '#6b7280',
+                          marginBottom: '15px'
+                        }}>
+                          {post.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Just now'}
+                          <div style={{ marginTop: '5px' }}>
+                            Author: {post.author}
+                          </div>
+                        </div>
+                        
+                        {post.link && (
+                          <a
+                            href={post.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              display: 'inline-block',
+                              background: 'linear-gradient(135deg, #1F7CFF 0%, #1e40af 100%)',
+                              color: 'white',
+                              padding: '10px 20px',
+                              borderRadius: '8px',
+                              textDecoration: 'none',
+                              fontWeight: '600',
+                              fontSize: '0.9rem',
+                              transition: 'all 0.3s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.target.style.transform = 'translateY(-2px)';
+                              e.target.style.boxShadow = '0 4px 12px rgba(31, 124, 255, 0.4)';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.target.style.transform = 'translateY(0)';
+                              e.target.style.boxShadow = 'none';
+                            }}
+                          >
+                            View on WordPress →
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
+
+          {/* Post History Section */}
+          {hasPermission('view_analytics') && postHistory.length > 0 && (
+            <section className="section" style={{ backgroundColor: '#f5f8fc', padding: '60px 0' }}>
+              <div className="container">
+                <h2 style={{
+                  textAlign: 'center',
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  marginBottom: '50px',
+                  color: '#1a1a2e'
+                }}>
+                  Post History
+                </h2>
+
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+                  gap: '30px'
+                }}>
+                  {postHistory.map(post => (
+                    <div key={post.id} style={{
+                      background: 'white',
+                      borderRadius: '16px',
+                      padding: '30px',
+                      boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
+                      border: '1px solid rgba(29, 122, 175, 0.1)',
+                      transition: 'all 0.3s ease'
+                    }}>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '12px',
+                        marginBottom: '20px'
+                      }}>
+                        <div style={{
+                          width: '40px',
+                          height: '40px',
+                          background: getPlatformGradient(post.platform || 'Blog'),
+                          borderRadius: '10px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
+                        }}>
+                          {getPlatformIcon(post.platform || 'Blog')}
+                        </div>
+                        <div>
+                          <h3 style={{
+                            margin: '0',
+                            fontSize: '1.1rem',
+                            fontWeight: '700',
+                            color: '#1a1a2e'
+                          }}>{post.platform || 'Blog'}</h3>
+                        </div>
+                      </div>
+
+                      <div style={{
+                        fontSize: '0.9rem',
+                        lineHeight: '1.6',
+                        color: '#2c3e50',
+                        marginBottom: '15px',
+                        maxHeight: '120px',
+                        overflow: 'hidden'
+                      }}>
+                        {post.content}
+                      </div>
+
+                      {post.featuredImageUrl && (
+                        <img
+                          src={post.featuredImageUrl}
+                          alt="Post"
+                          style={{
+                            width: '100%',
+                            height: '120px',
+                            objectFit: 'cover',
+                            borderRadius: '8px',
+                            marginBottom: '15px'
+                          }}
+                        />
+                      )}
+
+                      <div style={{
+                        fontSize: '0.85rem',
+                        color: '#6b7280',
+                        marginBottom: '15px'
+                      }}>
+                        {post.createdAt ? new Date(post.createdAt.toDate ? post.createdAt.toDate() : post.createdAt).toLocaleString() : 'Just now'}
+                      </div>
+                      
+                      {post.publishedUrl && (
+                        <a
+                          href={post.publishedUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            display: 'inline-block',
+                            background: 'linear-gradient(135deg, #1F7CFF 0%, #1e40af 100%)',
+                            color: 'white',
+                            padding: '10px 20px',
+                            borderRadius: '8px',
+                            textDecoration: 'none',
+                            fontWeight: '600',
+                            fontSize: '0.9rem',
+                            transition: 'all 0.3s ease'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.target.style.transform = 'translateY(-2px)';
+                            e.target.style.boxShadow = '0 4px 12px rgba(31, 124, 255, 0.4)';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.target.style.transform = 'translateY(0)';
+                            e.target.style.boxShadow = 'none';
+                          }}
+                        >
+                          View Published Post →
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+        </main>
+
+        <Footer />
+      </>
   );
 };
 
