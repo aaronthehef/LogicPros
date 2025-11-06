@@ -32,8 +32,9 @@ export default async function handler(req, res) {
     }
 
     // Build WordPress API URL
-    // For better compatibility, construct the URL directly with the REST API path
-    const wpUrl = new URL(`${WORDPRESS_SITE_URL}/wp-json${wpEndpoint}`);
+    // Use rest_route query parameter (required for some WordPress configurations)
+    const wpUrl = new URL(WORDPRESS_SITE_URL);
+    wpUrl.searchParams.set('rest_route', wpEndpoint);
 
     // Add additional query parameters
     Object.keys(queryParams).forEach(key => {
@@ -52,12 +53,14 @@ export default async function handler(req, res) {
       headers: headers
     };
 
-    // Add body for POST/PUT/DELETE requests
-    if (req.method === 'POST' || req.method === 'PUT' || req.method === 'DELETE') {
-      // DELETE may or may not have a body, but include it if present
-      if (req.body && Object.keys(req.body).length > 0) {
-        fetchOptions.body = JSON.stringify(req.body);
-      }
+    // Add body for POST/PUT requests
+    if (req.method === 'POST' || req.method === 'PUT') {
+      fetchOptions.body = JSON.stringify(req.body);
+    }
+
+    // For DELETE requests, add force parameter to permanently delete
+    if (req.method === 'DELETE') {
+      wpUrl.searchParams.set('force', 'true');
     }
 
     console.log('Proxying request to:', wpUrl.toString());
