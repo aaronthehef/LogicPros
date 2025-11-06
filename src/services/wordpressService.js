@@ -296,6 +296,9 @@ export const fetchWordPressPosts = async (options = {}) => {
       headers: headers
     });
 
+    console.log('Fetch response status:', response.status);
+    console.log('Fetch response ok:', response.ok);
+
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
       throw new Error(
@@ -305,11 +308,17 @@ export const fetchWordPressPosts = async (options = {}) => {
     }
 
     const posts = await response.json();
-    
+    console.log('Posts received:', posts);
+    console.log('Is array?', Array.isArray(posts));
+    console.log('Posts type:', typeof posts);
+
+    // Ensure posts is an array
+    const postsArray = Array.isArray(posts) ? posts : [];
+
     return {
       success: true,
-      posts: posts,
-      message: `Successfully fetched ${posts.length} posts from WordPress!`
+      posts: postsArray,
+      message: `Successfully fetched ${postsArray.length} posts from WordPress!`
     };
 
   } catch (error) {

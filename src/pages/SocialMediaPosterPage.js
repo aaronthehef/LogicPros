@@ -174,8 +174,12 @@ export const SocialMediaPosterPage = () => {
         perPage: 20,
         status: 'publish'
       });
-      
-      if (result.success) {
+
+      console.log('Fetch result:', result);
+      console.log('Result success:', result.success);
+      console.log('Result posts:', result.posts);
+
+      if (result.success && Array.isArray(result.posts)) {
         // Format posts to match the expected structure
         const formattedPosts = result.posts.map(post => ({
           id: post.id.toString(),
@@ -191,10 +195,11 @@ export const SocialMediaPosterPage = () => {
           author: post._embedded?.author?.[0]?.name || 'Unknown',
           wordpressPostId: post.id // Store WordPress post ID for deletion
         }));
-        
+
         setWordpressPosts(formattedPosts);
       } else {
-        console.error('Failed to load WordPress posts:', result.error);
+        console.error('Failed to load WordPress posts:', result.error || 'Invalid result format');
+        console.error('Result structure:', result);
       }
     } catch (error) {
       console.error('Error loading WordPress posts:', error);
