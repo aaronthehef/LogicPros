@@ -53,8 +53,8 @@ export default async function handler(req, res) {
 
     // Check if this is a media upload (FormData)
     const isMediaUpload = wpEndpoint.includes('/media') && actualMethod === 'POST';
-    const contentType = req.headers['content-type'] || '';
-    const isFormData = contentType.includes('multipart/form-data');
+    const requestContentType = req.headers['content-type'] || '';
+    const isFormData = requestContentType.includes('multipart/form-data');
 
     // Prepare headers
     const headers = {
