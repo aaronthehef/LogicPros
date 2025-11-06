@@ -209,21 +209,25 @@ export const deleteWordPressPost = async (postId) => {
     // Build URL using proper proxy method
     let url;
     let headers;
+    let method;
 
     if (process.env.NODE_ENV === 'production') {
       // For production, use the proxy with the post ID in the endpoint
-      url = `/api/wordpress-proxy?endpoint=${encodeURIComponent(`/wp/v2/posts/${postId}`)}`;
+      // Use POST with _method=DELETE as a workaround for Vercel blocking DELETE
+      url = `/api/wordpress-proxy?endpoint=${encodeURIComponent(`/wp/v2/posts/${postId}`)}&_method=DELETE`;
       // Proxy handles authentication, so just send content-type
       headers = { 'Content-Type': 'application/json' };
+      method = 'POST'; // Vercel may block DELETE, so use POST with _method parameter
     } else {
       // For development, use direct WordPress URL
       url = `${getApiEndpoint('POSTS')}/${postId}`;
       // Send auth headers for direct WordPress connection
       headers = getAuthHeaders();
+      method = 'DELETE';
     }
 
     const response = await fetch(url, {
-      method: 'DELETE',
+      method: method,
       headers: headers
     });
 

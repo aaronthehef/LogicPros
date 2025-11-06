@@ -21,7 +21,7 @@ export default async function handler(req, res) {
 
   try {
     // Get the WordPress endpoint from query params
-    const { endpoint, ...queryParams } = req.query;
+    const { endpoint, _method, ...queryParams } = req.query;
 
     // If no endpoint is provided, try to extract from path
     let wpEndpoint = endpoint;
@@ -29,6 +29,12 @@ export default async function handler(req, res) {
     if (!wpEndpoint) {
       // Default to posts endpoint if not specified
       wpEndpoint = '/wp/v2/posts';
+    }
+
+    // Handle method override for DELETE (Vercel may block DELETE requests)
+    let actualMethod = req.method;
+    if (_method && req.method === 'POST') {
+      actualMethod = _method.toUpperCase();
     }
 
     // Build WordPress API URL
@@ -49,22 +55,23 @@ export default async function handler(req, res) {
 
     // Prepare fetch options
     const fetchOptions = {
-      method: req.method,
+      method: actualMethod, // Use the actual method (may be overridden from _method)
       headers: headers
     };
 
-    // Add body for POST/PUT requests
-    if (req.method === 'POST' || req.method === 'PUT') {
+    // Add body for POST/PUT requests (but not for overridden DELETE)
+    if ((actualMethod === 'POST' || actualMethod === 'PUT') && actualMethod !== 'DELETE') {
       fetchOptions.body = JSON.stringify(req.body);
     }
 
     // For DELETE requests, add force parameter to permanently delete
-    if (req.method === 'DELETE') {
+    if (actualMethod === 'DELETE') {
       wpUrl.searchParams.set('force', 'true');
     }
 
     console.log('Proxying request to:', wpUrl.toString());
-    console.log('Request method:', req.method);
+    console.log('Original method:', req.method);
+    console.log('Actual method:', actualMethod);
     console.log('Request endpoint:', wpEndpoint);
 
     // Make request to WordPress
