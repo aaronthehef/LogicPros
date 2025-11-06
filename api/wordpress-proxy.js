@@ -87,17 +87,24 @@ export default async function handler(req, res) {
       // Create FormData with the image
       const FormData = require('form-data');
       const formData = new FormData();
+
+      // Append the buffer as a file with proper options
       formData.append('file', imageBuffer, {
         filename: req.body.fileName,
-        contentType: req.body.mimeType
+        contentType: req.body.mimeType,
+        knownLength: imageBuffer.length
       });
 
-      // Set the FormData as the body
+      // Update fetch options with FormData
       fetchOptions.body = formData;
-      // FormData sets its own Content-Type with boundary, so remove ours
-      delete headers['Content-Type'];
-      // Copy FormData headers (including Content-Type with boundary)
-      Object.assign(headers, formData.getHeaders());
+
+      // Merge FormData headers (includes Content-Type with boundary)
+      const formHeaders = formData.getHeaders();
+      Object.keys(formHeaders).forEach(key => {
+        headers[key] = formHeaders[key];
+      });
+
+      console.log('FormData headers:', formHeaders);
     }
     // Add body for POST/PUT requests (but not for overridden DELETE or media uploads)
     else if ((actualMethod === 'POST' || actualMethod === 'PUT') && actualMethod !== 'DELETE') {
