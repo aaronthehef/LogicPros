@@ -206,9 +206,25 @@ export const updateWordPressPost = async (postId, postData) => {
  */
 export const deleteWordPressPost = async (postId) => {
   try {
-    const response = await fetch(`${getApiEndpoint('POSTS')}/${postId}`, {
+    // Build URL using proper proxy method
+    let url;
+    let headers;
+
+    if (process.env.NODE_ENV === 'production') {
+      // For production, use the proxy with the post ID in the endpoint
+      url = `/api/wordpress-proxy?endpoint=${encodeURIComponent(`/wp/v2/posts/${postId}`)}`;
+      // Proxy handles authentication, so just send content-type
+      headers = { 'Content-Type': 'application/json' };
+    } else {
+      // For development, use direct WordPress URL
+      url = `${getApiEndpoint('POSTS')}/${postId}`;
+      // Send auth headers for direct WordPress connection
+      headers = getAuthHeaders();
+    }
+
+    const response = await fetch(url, {
       method: 'DELETE',
-      headers: getAuthHeaders()
+      headers: headers
     });
 
     if (!response.ok) {
