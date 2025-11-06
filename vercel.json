@@ -3,6 +3,12 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "framework": "create-react-app",
+  "functions": {
+    "api/wordpress-proxy.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
   "redirects": [
     {
       "source": "/",

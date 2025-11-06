@@ -53,9 +53,17 @@ export default async function handler(req, res) {
       'Authorization': `Basic ${Buffer.from(`${WORDPRESS_USERNAME}:${WORDPRESS_APP_PASSWORD}`).toString('base64')}`
     };
 
+    // If DELETE is requested, use POST with X-HTTP-Method-Override header
+    // This works around nginx blocking DELETE requests
+    let requestMethod = actualMethod;
+    if (actualMethod === 'DELETE') {
+      requestMethod = 'POST';
+      headers['X-HTTP-Method-Override'] = 'DELETE';
+    }
+
     // Prepare fetch options
     const fetchOptions = {
-      method: actualMethod, // Use the actual method (may be overridden from _method)
+      method: requestMethod,
       headers: headers
     };
 
