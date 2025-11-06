@@ -104,7 +104,8 @@ export const BlogPage = () => {
 
         if (process.env.NODE_ENV === 'production') {
           // In production, use the proxy without auth headers (proxy handles auth)
-          url = `/api/wordpress-proxy?endpoint=${encodeURIComponent('/wp/v2/posts')}&per_page=${WORDPRESS_CONFIG.DISPLAY.POSTS_PER_PAGE}&_embed=wp:featuredmedia,author`;
+          // Use simple _embed to avoid URL encoding issues
+          url = `/api/wordpress-proxy?endpoint=${encodeURIComponent('/wp/v2/posts')}&per_page=${WORDPRESS_CONFIG.DISPLAY.POSTS_PER_PAGE}&_embed=1`;
           headers = { 'Content-Type': 'application/json' };
         } else {
           // In development, use direct WordPress URL with auth
