@@ -365,7 +365,7 @@ export const ResponsiveLandingPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Your Business Deserves Technology That Just Works
+                  Your Business Deserves IT That Actually Works
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -374,7 +374,7 @@ export const ResponsiveLandingPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Tired of IT headaches? Websites that don't convert? Worrying about cybersecurity at 3 AM? We help Maritime businesses stop fighting their technology and start growing.
+                  Proactive IT management and cybersecurity for New Brunswick businesses — with expert web design and automation when you need them.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -399,8 +399,8 @@ export const ResponsiveLandingPage = () => {
                 height: 'auto',
                 justifyContent: 'center'
               }}>
-                {/* Build Card */}
-                <a href="/services/websites" className="hero-service-card" style={{
+                {/* Secure Card - NOW FIRST (IT Focus) */}
+                <a href="/services/cybersecurity" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
@@ -417,8 +417,8 @@ export const ResponsiveLandingPage = () => {
                   animation: 'pulseGlow 3s ease-in-out infinite'
                 }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
-                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Build</h3>
-                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Websites, SEO & Online Marketing</p>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Secure</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Managed IT, Cyber Protection & Security Audits</p>
                     <span style={{
                       color: '#1F7CFF',
                       fontSize: '0.8rem',
@@ -428,15 +428,14 @@ export const ResponsiveLandingPage = () => {
                     }}>Learn More</span>
                   </div>
                   <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
-                      <rect x="8" y="16" width="8" height="2" fill="white"/>
-                      <rect x="9" y="18" width="6" height="1" fill="white"/>
+                    <svg width="40" height="40" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                 </a>
 
-                {/* Automate Card */}
+                {/* Automate Card - SECOND */}
                 <a href="/services/automations" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
@@ -476,8 +475,8 @@ export const ResponsiveLandingPage = () => {
                   </div>
                 </a>
 
-                {/* Secure Card */}
-                <a href="/services/cybersecurity" className="hero-service-card" style={{
+                {/* Build Card - THIRD (Web/Marketing) */}
+                <a href="/services/websites" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
@@ -494,8 +493,8 @@ export const ResponsiveLandingPage = () => {
                   animation: 'pulseGlow 3s ease-in-out infinite 2s'
                 }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
-                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Secure</h3>
-                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Managed IT, Cyber Protection & Security Audits</p>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Build</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Websites, SEO & Online Marketing</p>
                     <span style={{
                       color: '#1F7CFF',
                       fontSize: '0.8rem',
@@ -505,9 +504,10 @@ export const ResponsiveLandingPage = () => {
                     }}>Learn More</span>
                   </div>
                   <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
-                    <svg width="40" height="40" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                      <rect x="8" y="16" width="8" height="2" fill="white"/>
+                      <rect x="9" y="18" width="6" height="1" fill="white"/>
                     </svg>
                   </div>
                 </a>
@@ -535,14 +535,14 @@ export const ResponsiveLandingPage = () => {
           </div>
         </section>
 
-        {/* Why Technology Can't Wait Section */}
+        {/* The Real Cost of IT Problems Section */}
         <section style={{
           background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
           padding: '80px 0'
         }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title" style={{ color: 'white' }}>Why Technology Can't Wait</h2>
+              <h2 className="section-title" style={{ color: 'white' }}>The Real Cost of IT Problems</h2>
             </div>
             <div style={{
               display: 'grid',
@@ -551,80 +551,7 @@ export const ResponsiveLandingPage = () => {
               maxWidth: '1000px',
               margin: '0 auto'
             }}>
-              <div style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(10px)',
-                borderRadius: '16px',
-                padding: '2rem',
-                textAlign: 'center',
-                border: '1px solid rgba(255, 255, 255, 0.1)'
-              }}>
-                <div style={{
-                  width: '60px',
-                  height: '60px',
-                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 1.5rem auto'
-                }}>
-                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" stroke="white" strokeWidth="2" fill="none"/>
-                    <path d="M12 8v4m0 4h.01" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </div>
-                <h3 style={{
-                  color: '#1F7CFF',
-                  fontSize: '2.2rem',
-                  fontWeight: '700',
-                  marginBottom: '1rem'
-                }}>85%</h3>
-                <p style={{
-                  color: 'white',
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  margin: '0'
-                }}>of SMBs faced a cyberattack in the last year. Is your business protected?</p>
-              </div>
-              
-              <div style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(10px)',
-                borderRadius: '16px',
-                padding: '2rem',
-                textAlign: 'center',
-                border: '1px solid rgba(255, 255, 255, 0.1)'
-              }}>
-                <div style={{
-                  width: '60px',
-                  height: '60px',
-                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 1.5rem auto'
-                }}>
-                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" fill="none"/>
-                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 style={{
-                  color: '#1F7CFF',
-                  fontSize: '2.2rem',
-                  fontWeight: '700',
-                  marginBottom: '1rem'
-                }}>3 Seconds</h3>
-                <p style={{
-                  color: 'white',
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  margin: '0'
-                }}>That's how long you have to capture a website visitor's attention.</p>
-              </div>
-              
+              {/* IT Downtime - FIRST (80% focus) */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.1)',
                 backdropFilter: 'blur(10px)',
@@ -653,13 +580,89 @@ export const ResponsiveLandingPage = () => {
                   fontSize: '2.2rem',
                   fontWeight: '700',
                   marginBottom: '1rem'
-                }}>87 Hours</h3>
+                }}>5.6 Hours</h3>
                 <p style={{
                   color: 'white',
                   fontSize: '1rem',
                   lineHeight: '1.6',
                   margin: '0'
-                }}>Average downtime per year for small businesses.</p>
+                }}>Average time to resolve an IT outage without proper support. Every minute costs you customers.</p>
+              </div>
+
+              {/* Cybersecurity - SECOND */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '2rem',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 1.5rem auto'
+                }}>
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M12 8v4m0 4h.01" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  color: '#1F7CFF',
+                  fontSize: '2.2rem',
+                  fontWeight: '700',
+                  marginBottom: '1rem'
+                }}>60%</h3>
+                <p style={{
+                  color: 'white',
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>of small businesses close within 6 months of a cyberattack. Is your business protected?</p>
+              </div>
+
+              {/* Lost Productivity - THIRD */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '2rem',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 1.5rem auto'
+                }}>
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{
+                  color: '#1F7CFF',
+                  fontSize: '2.2rem',
+                  fontWeight: '700',
+                  marginBottom: '1rem'
+                }}>15 Hours/Week</h3>
+                <p style={{
+                  color: 'white',
+                  fontSize: '1rem',
+                  lineHeight: '1.6',
+                  margin: '0'
+                }}>Lost to IT issues and manual tasks. Get that time back with proactive IT support.</p>
               </div>
             </div>
           </div>
@@ -679,146 +682,7 @@ export const ResponsiveLandingPage = () => {
               maxWidth: '1200px',
               margin: '0 auto'
             }}>
-              <a href="/services/cybersecurity" className="service-card professional-card" style={{
-                textDecoration: 'none',
-                color: 'inherit',
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                display: 'block',
-                position: 'relative',
-                overflow: 'hidden'
-              }}>
-                <div className="service-icon floating-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
-                  transition: 'all 0.3s ease'
-                }}>
-                  <svg width="48" height="48" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3>Sleep Easy at Night</h3>
-                <p>
-                  One breach can destroy years of reputation and cost thousands in recovery. We protect your business with enterprise-grade security that actually works — at prices small businesses can afford.
-                </p>
-                <div style={{
-                  marginTop: '1rem',
-                  textAlign: 'center',
-                  color: '#1F7CFF',
-                  fontWeight: '600',
-                  fontSize: '0.9rem'
-                }}>
-                  Secure Your Business →
-                </div>
-              </a>
-              <a href="/services/websites" className="service-card professional-card" style={{ 
-                textDecoration: 'none', 
-                color: 'inherit',
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                display: 'block',
-                position: 'relative',
-                overflow: 'hidden'
-              }}>
-                <div className="service-icon floating-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
-                  transition: 'all 0.3s ease'
-                }}>
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
-                    <rect x="8" y="16" width="8" height="2" fill="white"/>
-                    <rect x="9" y="18" width="6" height="1" fill="white"/>
-                  </svg>
-                </div>
-                <h3>Websites That Actually Convert</h3>
-                <p>
-                  Stop losing customers to competitors with faster, better-looking sites. We build websites that turn visitors into paying customers — not digital brochures that sit there looking pretty.
-                </p>
-                <div style={{
-                  marginTop: '1rem',
-                  textAlign: 'center',
-                  color: '#1F7CFF',
-                  fontWeight: '600',
-                  fontSize: '0.9rem'
-                }}>
-                  See Our Website Solutions →
-                </div>
-              </a>
-              <a href="/services/automations" className="service-card professional-card" style={{ 
-                textDecoration: 'none', 
-                color: 'inherit',
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                display: 'block',
-                position: 'relative',
-                overflow: 'hidden'
-              }}>
-                <div className="service-icon floating-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
-                  transition: 'all 0.3s ease'
-                }}>
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
-                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="12" cy="5" r="1" fill="white"/>
-                    <circle cx="12" cy="19" r="1" fill="white"/>
-                    <circle cx="19" cy="12" r="1" fill="white"/>
-                    <circle cx="5" cy="12" r="1" fill="white"/>
-                  </svg>
-                </div>
-                <h3>Get Your Time Back</h3>
-                <p>
-                  Spending hours on repetitive tasks? Let AI handle the busywork while you focus on growing your business. Automate workflows, customer service, and data entry without hiring more staff.
-                </p>
-                <div style={{
-                  marginTop: '1rem',
-                  textAlign: 'center',
-                  color: '#1F7CFF',
-                  fontWeight: '600',
-                  fontSize: '0.9rem'
-                }}>
-                  Explore AI Automation →
-                </div>
-              </a>
+              {/* Managed IT - NOW FIRST (80% Focus) */}
               <a href="/services/managed-it" className="service-card professional-card" style={{
                 textDecoration: 'none',
                 color: 'inherit',
@@ -866,15 +730,158 @@ export const ResponsiveLandingPage = () => {
                   Get Reliable IT Support →
                 </div>
               </a>
+              {/* Cybersecurity - SECOND */}
+              <a href="/services/cybersecurity" className="service-card professional-card" style={{
+                textDecoration: 'none',
+                color: 'inherit',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                display: 'block',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div className="service-icon floating-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Sleep Easy at Night</h3>
+                <p>
+                  One breach can destroy years of reputation and cost thousands in recovery. We protect your business with enterprise-grade security that actually works — at prices small businesses can afford.
+                </p>
+                <div style={{
+                  marginTop: '1rem',
+                  textAlign: 'center',
+                  color: '#1F7CFF',
+                  fontWeight: '600',
+                  fontSize: '0.9rem'
+                }}>
+                  Secure Your Business →
+                </div>
+              </a>
+              {/* Automations - THIRD */}
+              <a href="/services/automations" className="service-card professional-card" style={{
+                textDecoration: 'none',
+                color: 'inherit',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                display: 'block',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div className="service-icon floating-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
+                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="12" cy="5" r="1" fill="white"/>
+                    <circle cx="12" cy="19" r="1" fill="white"/>
+                    <circle cx="19" cy="12" r="1" fill="white"/>
+                    <circle cx="5" cy="12" r="1" fill="white"/>
+                  </svg>
+                </div>
+                <h3>Get Your Time Back</h3>
+                <p>
+                  Spending hours on repetitive tasks? Let AI handle the busywork while you focus on growing your business. Automate workflows, customer service, and data entry without hiring more staff.
+                </p>
+                <div style={{
+                  marginTop: '1rem',
+                  textAlign: 'center',
+                  color: '#1F7CFF',
+                  fontWeight: '600',
+                  fontSize: '0.9rem'
+                }}>
+                  Explore AI Automation →
+                </div>
+              </a>
+              {/* Websites - FOURTH (20% positioning) */}
+              <a href="/services/websites" className="service-card professional-card" style={{
+                textDecoration: 'none',
+                color: 'inherit',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                display: 'block',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div className="service-icon floating-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="8" y="16" width="8" height="2" fill="white"/>
+                    <rect x="9" y="18" width="6" height="1" fill="white"/>
+                  </svg>
+                </div>
+                <h3>Websites That Actually Convert</h3>
+                <p>
+                  Stop losing customers to competitors with faster, better-looking sites. We build websites that turn visitors into paying customers — not digital brochures that sit there looking pretty.
+                </p>
+                <div style={{
+                  marginTop: '1rem',
+                  textAlign: 'center',
+                  color: '#1F7CFF',
+                  fontWeight: '600',
+                  fontSize: '0.9rem'
+                }}>
+                  See Our Website Solutions →
+                </div>
+              </a>
             </div>
           </div>
         </section>
 
-        {/* Why Maritime Businesses Choose LogicPros Section */}
+        {/* Why New Brunswick Businesses Choose LogicPros Section */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Why Maritime Businesses Choose LogicPros</h2>
+              <h2 className="section-title">Why New Brunswick Businesses Choose LogicPros</h2>
             </div>
             <div style={{
               display: 'grid',
