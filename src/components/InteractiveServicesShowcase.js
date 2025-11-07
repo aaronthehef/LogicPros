@@ -3,7 +3,7 @@ import { colors } from '../styles/colors';
 import './InteractiveServicesShowcase.css';
 
 export const InteractiveServicesShowcase = () => {
-  const [activeService, setActiveService] = useState('websites');
+  const [activeService, setActiveService] = useState('it');
 
   const switchService = (serviceId) => {
     setActiveService(serviceId);
@@ -11,22 +11,22 @@ export const InteractiveServicesShowcase = () => {
 
   const services = [
     {
-      id: 'websites',
-      label: 'Professional Websites',
-      icon: '🌐',
+      id: 'it',
+      label: 'Managed IT Services',
+      icon: '💻',
       color: '#1F7CFF',
-      title: 'Professional Websites That Convert Visitors',
-      description: 'Custom websites that attract customers and grow your business. Built in 2-4 weeks with mobile optimization, SEO, and security.',
+      title: 'Reliable IT Support That Keeps Your Business Running',
+      description: 'Comprehensive IT support to keep your business technology running smoothly. From network monitoring to personalized assistance.',
       features: [
-        'Professional Design',
-        'Mobile Optimization',
-        'SEO & Google Visibility',
-        'Lead Capture Forms',
-        'Secure Hosting',
-        'Performance Analytics'
+        '24/7 Network Monitoring',
+        'Personalized Support',
+        'Software Updates',
+        'IT Asset Management',
+        'Backup & Recovery',
+        'IT Strategy Planning'
       ],
-      ctaText: 'Get Your FREE Website Example',
-      ctaLink: '/free-example',
+      ctaText: 'Request IT Service Consultation',
+      ctaLink: '/contact',
       ctaColor: '#FFC600'
     },
     {
@@ -49,27 +49,8 @@ export const InteractiveServicesShowcase = () => {
       ctaColor: '#FFC600'
     },
     {
-      id: 'it',
-      label: 'Managed IT',
-      icon: '💻',
-      color: '#1F7CFF',
-      title: 'Reliable IT Support That Keeps Your Business Running',
-      description: 'Comprehensive IT support to keep your business technology running smoothly. From network monitoring to personalized assistance.',
-      features: [
-        '24/7 Network Monitoring',
-        'Personalized Support',
-        'Software Updates',
-        'IT Asset Management',
-        'Backup & Recovery',
-        'IT Strategy Planning'
-      ],
-      ctaText: 'Request IT Service Consultation',
-      ctaLink: '/contact',
-      ctaColor: '#FFC600'
-    },
-    {
       id: 'automations',
-      label: 'AI Automations',
+      label: 'Automations',
       icon: '🤖',
       color: '#1F7CFF',
       title: 'Automate Your Business with AI-Powered Solutions',
@@ -85,6 +66,25 @@ export const InteractiveServicesShowcase = () => {
       ctaText: 'Request Automation Consultation',
       ctaLink: '/contact',
       ctaColor: '#FFC600'
+    },
+    {
+      id: 'websites',
+      label: 'Professional Websites',
+      icon: '🌐',
+      color: '#1F7CFF',
+      title: 'Professional Websites That Convert Visitors',
+      description: 'Custom websites that attract customers and grow your business. Built in 2-4 weeks with mobile optimization, SEO, and security.',
+      features: [
+        'Professional Design',
+        'Mobile Optimization',
+        'SEO & Google Visibility',
+        'Lead Capture Forms',
+        'Secure Hosting',
+        'Performance Analytics'
+      ],
+      ctaText: 'Get Your FREE Website Example',
+      ctaLink: '/free-example',
+      ctaColor: '#FFC600'
     }
   ];
 
@@ -96,7 +96,7 @@ export const InteractiveServicesShowcase = () => {
         <div className="section-header">
           <h2 className="section-title">Transform Your Business with Our Complete Solutions</h2>
           <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '700px', margin: '0 auto' }}>
-            Professional websites, cybersecurity, and IT support to grow your New Brunswick business
+            Managed IT services, cybersecurity, and automation to grow your New Brunswick business
           </p>
         </div>
         
