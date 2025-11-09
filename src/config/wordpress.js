@@ -32,13 +32,12 @@ const WORDPRESS_CONFIG = {
 
 // Helper functions
 export const getWordPressUrl = () => {
-  // Use Vercel serverless function proxy for production
-  // This avoids CORS issues by making requests server-side
+  // In production, use Vercel proxy
   if (process.env.NODE_ENV === 'production') {
     return '/api/wordpress-proxy';
   }
-  // Use relative URL for development to leverage proxy
-  return '';
+  // In development, use direct WordPress URL
+  return WORDPRESS_CONFIG.SITE_URL;
 };
 
 export const getApiEndpoint = (endpoint) => {
@@ -47,18 +46,14 @@ export const getApiEndpoint = (endpoint) => {
 
   // For production proxy, convert to proxy format
   if (process.env.NODE_ENV === 'production') {
-    // Extract the rest_route value
     const match = apiPath.match(/rest_route=([^&]+)/);
     if (match) {
       return `${baseUrl}?endpoint=${encodeURIComponent(match[1])}`;
     }
   }
 
-  // Handle query parameters correctly for development
-  if (apiPath.startsWith('?')) {
-    return `${baseUrl}${apiPath}`;
-  }
-  return `${baseUrl}/${apiPath}`;
+  // For development, use direct WordPress API URL
+  return `${baseUrl}${apiPath}`;
 };
 
 export const getAuthHeaders = () => {
