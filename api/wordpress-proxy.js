@@ -17,10 +17,19 @@ export default async function handler(req, res) {
     return;
   }
 
-  // WordPress configuration
-  const WORDPRESS_SITE_URL = 'https://wordpressblog.logicpros.ca';
-  const WORDPRESS_USERNAME = 'admin';
-  const WORDPRESS_APP_PASSWORD = 'PmWS 6lyc gPhb jm7Y dq4Q ns5t';
+  // WordPress configuration from environment variables
+  const WORDPRESS_SITE_URL = process.env.WORDPRESS_SITE_URL || 'https://wordpressblog.logicpros.ca';
+  const WORDPRESS_USERNAME = process.env.WORDPRESS_USERNAME;
+  const WORDPRESS_APP_PASSWORD = process.env.WORDPRESS_APP_PASSWORD;
+
+  // Security check: Ensure credentials are configured
+  if (!WORDPRESS_USERNAME || !WORDPRESS_APP_PASSWORD) {
+    console.error('WordPress credentials not configured in environment variables');
+    return res.status(500).json({
+      error: 'Server configuration error',
+      message: 'WordPress credentials not configured'
+    });
+  }
 
   try {
     console.log('WordPress proxy called with method:', req.method);
