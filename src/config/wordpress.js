@@ -7,11 +7,11 @@ const WORDPRESS_CONFIG = {
   SITE_URL: process.env.REACT_APP_WORDPRESS_SITE_URL || 'https://wordpressblog.logicpros.ca',
   
   // WordPress username (with API access)
-  USERNAME: process.env.REACT_APP_WORDPRESS_USERNAME || 'admin',
-  
+  USERNAME: process.env.REACT_APP_WORDPRESS_USERNAME,
+
   // WordPress Application Password (NOT your regular password)
   // Generate this in WordPress admin: Users → Profile → Application Passwords
-  APP_PASSWORD: process.env.REACT_APP_WORDPRESS_APP_PASSWORD || 'PmWS 6lyc gPhb jm7Y dq4Q ns5t',
+  APP_PASSWORD: process.env.REACT_APP_WORDPRESS_APP_PASSWORD,
   
   // API endpoints - using REST route parameter for better compatibility
   API_ENDPOINTS: {
