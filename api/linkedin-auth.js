@@ -42,7 +42,8 @@ export default async function handler(req, res) {
     // Action: initiate - Generate authorization URL
     if (action === 'initiate') {
       const authState = Math.random().toString(36).substring(7);
-      const scope = 'openid profile w_member_social w_organization_social r_organization_social'; // Required scopes for posting to org pages
+      // Note: w_organization_social requires LinkedIn approval - using personal posting for now
+      const scope = 'openid profile w_member_social'; // Personal posting only
 
       const authUrl = new URL('https://www.linkedin.com/oauth/v2/authorization');
       authUrl.searchParams.set('response_type', 'code');
