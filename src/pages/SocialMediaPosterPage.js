@@ -574,7 +574,7 @@ export const SocialMediaPosterPage = () => {
             console.log(`Posting to personal profile: ${userData.linkedinUserInfo.name}`);
           }
 
-          // Post to LinkedIn via serverless function
+          // Post to LinkedIn via serverless function as DRAFT
           const linkedinResponse = await fetch('/api/linkedin-post', {
             method: 'POST',
             headers: {
@@ -584,7 +584,8 @@ export const SocialMediaPosterPage = () => {
               access_token: userData.linkedinAccessToken,
               authorUrn: authorUrn,
               content: post.content,
-              visibility: 'PUBLIC'
+              visibility: 'PUBLIC',
+              isDraft: true  // Save as draft instead of publishing live
             })
           });
 
@@ -638,7 +639,7 @@ export const SocialMediaPosterPage = () => {
       });
 
       if (postStatus !== 'failed') {
-        setMessage(`✅ Post ${post.platform === 'LinkedIn' && linkedinConnected ? 'published to' : 'saved to'} ${post.platform} successfully!`);
+        setMessage(`✅ Post ${post.platform === 'LinkedIn' && linkedinConnected ? 'saved as draft on' : 'saved to'} ${post.platform} successfully!`);
       }
 
       // Clear the form for this platform

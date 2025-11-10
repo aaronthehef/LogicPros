@@ -22,7 +22,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { access_token, authorUrn, userSub, content, visibility = 'PUBLIC' } = req.body;
+    const { access_token, authorUrn, userSub, content, visibility = 'PUBLIC', isDraft = false } = req.body;
 
     // Validation
     if (!access_token) {
@@ -51,14 +51,16 @@ export default async function handler(req, res) {
 
     console.log('Posting to LinkedIn as:', finalAuthorUrn);
     console.log('Post content length:', content.length);
+    console.log('Draft mode:', isDraft);
 
     // Escape double quotes in content to prevent JSON parsing errors
     const escapedContent = content.replace(/"/g, '\\"');
 
     // Build LinkedIn ugcPost payload
+    // lifecycleState can be: PUBLISHED (live post) or DRAFT (saved as draft)
     const postPayload = {
       author: finalAuthorUrn,
-      lifecycleState: 'PUBLISHED',
+      lifecycleState: isDraft ? 'DRAFT' : 'PUBLISHED',
       specificContent: {
         'com.linkedin.ugc.ShareContent': {
           shareCommentary: {
@@ -103,13 +105,14 @@ export default async function handler(req, res) {
       });
     }
 
-    console.log('LinkedIn post published successfully');
+    console.log(`LinkedIn post ${isDraft ? 'saved as draft' : 'published'} successfully`);
     console.log('Post ID:', responseData.id);
 
     return res.status(200).json({
       success: true,
       postId: responseData.id,
-      message: 'Post published to LinkedIn successfully',
+      isDraft: isDraft,
+      message: isDraft ? 'Post saved as draft on LinkedIn successfully' : 'Post published to LinkedIn successfully',
       data: responseData
     });
 
