@@ -272,28 +272,21 @@ export const SocialMediaPosterPage = () => {
       setLoading(true);
       setMessage('Connecting to LinkedIn...');
 
-      // Call serverless function to get authorization URL
-      const response = await fetch('/api/linkedin-auth?action=initiate');
-      const data = await response.json();
+      // Set up message listener BEFORE opening the window
+      const messageHandler = async (event) => {
+        // Verify the origin for security
+        if (event.origin !== window.location.origin) {
+          console.warn('Received message from unexpected origin:', event.origin);
+          return;
+        }
 
-      if (data.authUrl) {
-        // Open LinkedIn OAuth in new window
-        const width = 600;
-        const height = 700;
-        const left = window.screen.width / 2 - width / 2;
-        const top = window.screen.height / 2 - height / 2;
+        if (event.data.type === 'linkedin-oauth-success') {
+          console.log('LinkedIn OAuth success message received');
 
-        const authWindow = window.open(
-          data.authUrl,
-          'LinkedIn Authorization',
-          `width=${width},height=${height},left=${left},top=${top}`
-        );
+          // Remove the event listener
+          window.removeEventListener('message', messageHandler);
 
-        // Listen for OAuth callback
-        window.addEventListener('message', async (event) => {
-          if (event.data.type === 'linkedin-oauth-success') {
-            authWindow.close();
-
+          try {
             // Save tokens to Firestore
             const userDocRef = doc(db, 'users', user.uid);
             await setDoc(userDocRef, {
@@ -306,10 +299,57 @@ export const SocialMediaPosterPage = () => {
             setLinkedinConnected(true);
             setLinkedinUserInfo(event.data.userInfo);
             setMessage('LinkedIn connected successfully!');
+          } catch (err) {
+            console.error('Error saving LinkedIn tokens:', err);
+            setMessage('Error saving LinkedIn connection: ' + err.message);
+          } finally {
             setLoading(false);
           }
-        });
+        }
+      };
+
+      window.addEventListener('message', messageHandler);
+
+      // Call serverless function to get authorization URL
+      const response = await fetch('/api/linkedin-auth?action=initiate');
+      const data = await response.json();
+
+      if (!response.ok || !data.authUrl) {
+        window.removeEventListener('message', messageHandler);
+        throw new Error(data.message || 'Failed to generate authorization URL');
       }
+
+      // Open LinkedIn OAuth in new window
+      const width = 600;
+      const height = 700;
+      const left = window.screen.width / 2 - width / 2;
+      const top = window.screen.height / 2 - height / 2;
+
+      const authWindow = window.open(
+        data.authUrl,
+        'LinkedIn Authorization',
+        `width=${width},height=${height},left=${left},top=${top}`
+      );
+
+      // Set a timeout to clean up if the user closes the window without completing auth
+      const timeout = setTimeout(() => {
+        window.removeEventListener('message', messageHandler);
+        if (authWindow && !authWindow.closed) {
+          authWindow.close();
+        }
+        setLoading(false);
+        setMessage('LinkedIn connection timed out or was cancelled.');
+      }, 300000); // 5 minutes
+
+      // Clear timeout if we get a message
+      const originalHandler = messageHandler;
+      const wrappedHandler = async (event) => {
+        clearTimeout(timeout);
+        await originalHandler(event);
+      };
+      window.removeEventListener('message', messageHandler);
+      window.addEventListener('message', wrappedHandler);
+
     } catch (error) {
       console.error('Error connecting to LinkedIn:', error);
       setMessage('Error connecting to LinkedIn: ' + error.message);
