@@ -294,14 +294,21 @@ export const SocialMediaPosterPage = () => {
           window.removeEventListener('message', messageHandler);
 
           try {
-            // Save tokens to Firestore
+            // Save tokens to Firestore (only include defined values)
             const userDocRef = doc(db, 'users', user.uid);
-            await setDoc(userDocRef, {
+            const linkedinData = {
               linkedinAccessToken: event.data.access_token,
-              linkedinRefreshToken: event.data.refresh_token,
               linkedinExpiresAt: Date.now() + (event.data.expires_in * 1000),
               linkedinUserInfo: event.data.userInfo
-            }, { merge: true });
+            };
+
+            // Only add refresh token if it exists
+            if (event.data.refresh_token) {
+              linkedinData.linkedinRefreshToken = event.data.refresh_token;
+              linkedinData.linkedinRefreshTokenExpiresAt = Date.now() + (event.data.refresh_token_expires_in * 1000);
+            }
+
+            await setDoc(userDocRef, linkedinData, { merge: true });
 
             setLinkedinConnected(true);
             setLinkedinUserInfo(event.data.userInfo);
