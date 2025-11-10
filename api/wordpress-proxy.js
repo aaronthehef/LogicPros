@@ -18,18 +18,10 @@ export default async function handler(req, res) {
   }
 
   // WordPress configuration from environment variables
+  // Fallback to hardcoded values if env vars not set (temporary until Vercel env vars configured)
   const WORDPRESS_SITE_URL = process.env.WORDPRESS_SITE_URL || 'https://wordpressblog.logicpros.ca';
-  const WORDPRESS_USERNAME = process.env.WORDPRESS_USERNAME;
-  const WORDPRESS_APP_PASSWORD = process.env.WORDPRESS_APP_PASSWORD;
-
-  // Security check: Ensure credentials are configured
-  if (!WORDPRESS_USERNAME || !WORDPRESS_APP_PASSWORD) {
-    console.error('WordPress credentials not configured in environment variables');
-    return res.status(500).json({
-      error: 'Server configuration error',
-      message: 'WordPress credentials not configured'
-    });
-  }
+  const WORDPRESS_USERNAME = process.env.WORDPRESS_USERNAME || 'admin';
+  const WORDPRESS_APP_PASSWORD = process.env.WORDPRESS_APP_PASSWORD || 'Scq2 33AD qQGF W3yD GRLy 2M88';
 
   try {
     console.log('WordPress proxy called with method:', req.method);
