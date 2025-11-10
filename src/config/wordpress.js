@@ -32,34 +32,31 @@ const WORDPRESS_CONFIG = {
 
 // Helper functions
 export const getWordPressUrl = () => {
-  // In production, use Vercel proxy
-  if (process.env.NODE_ENV === 'production') {
-    return '/api/wordpress-proxy';
-  }
-  // In development, use direct WordPress URL
-  return WORDPRESS_CONFIG.SITE_URL;
+  // Always use the proxy endpoint (works in both dev and production)
+  // In development, setupProxy.js handles the routing
+  // In production, Vercel serverless function handles it
+  return '/api/wordpress-proxy';
 };
 
 export const getApiEndpoint = (endpoint) => {
   const baseUrl = getWordPressUrl();
   const apiPath = WORDPRESS_CONFIG.API_ENDPOINTS[endpoint];
 
-  // For production proxy, convert to proxy format
-  if (process.env.NODE_ENV === 'production') {
-    const match = apiPath.match(/rest_route=([^&]+)/);
-    if (match) {
-      return `${baseUrl}?endpoint=${encodeURIComponent(match[1])}`;
-    }
+  // Extract the rest_route value from API_ENDPOINTS
+  const match = apiPath.match(/rest_route=([^&]+)/);
+  if (match) {
+    // Use proxy format with endpoint parameter
+    return `${baseUrl}?endpoint=${encodeURIComponent(match[1])}`;
   }
 
-  // For development, use direct WordPress API URL
-  return `${baseUrl}${apiPath}`;
+  // Fallback for non-standard endpoints
+  return `${baseUrl}?endpoint=${encodeURIComponent(apiPath)}`;
 };
 
 export const getAuthHeaders = () => {
-  const credentials = btoa(`${WORDPRESS_CONFIG.USERNAME}:${WORDPRESS_CONFIG.APP_PASSWORD}`);
+  // DO NOT send Authorization from client - let the proxy handle it
+  // The setupProxy.js (dev) or Vercel function (prod) will add the correct auth
   return {
-    'Authorization': `Basic ${credentials}`,
     'Content-Type': 'application/json'
   };
 };
