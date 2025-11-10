@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Authorization</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 400px;
+    }
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #0A66C2;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    h2 {
+      color: #1a1a2e;
+      margin: 0 0 10px;
+    }
+    p {
+      color: #6b7280;
+      margin: 0;
+    }
+    .error {
+      background: #fee2e2;
+      border: 1px solid #ef4444;
+      color: #991b1b;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="spinner"></div>
+    <h2>Connecting to LinkedIn</h2>
+    <p id="status">Processing authorization...</p>
+    <div id="error" class="error" style="display: none;"></div>
+  </div>
+
+  <script>
+    (async function() {
+      const statusEl = document.getElementById('status');
+      const errorEl = document.getElementById('error');
+
+      try {
+        // Get authorization code from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        const state = urlParams.get('state');
+        const error = urlParams.get('error');
+        const errorDescription = urlParams.get('error_description');
+
+        // Handle OAuth error
+        if (error) {
+          throw new Error(errorDescription || error);
+        }
+
+        if (!code) {
+          throw new Error('No authorization code received from LinkedIn');
+        }
+
+        statusEl.textContent = 'Exchanging authorization code for access token...';
+
+        // Exchange code for access token via our serverless function
+        const response = await fetch(`/api/linkedin-auth?code=${code}&state=${state}`);
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.message || 'Failed to get access token');
+        }
+
+        statusEl.textContent = 'Authorization successful! Closing window...';
+
+        // Send token data to parent window
+        if (window.opener) {
+          window.opener.postMessage({
+            type: 'linkedin-oauth-success',
+            access_token: data.access_token,
+            refresh_token: data.refresh_token,
+            expires_in: data.expires_in,
+            refresh_token_expires_in: data.refresh_token_expires_in,
+            userInfo: data.userInfo
+          }, window.location.origin);
+
+          // Close window after a short delay
+          setTimeout(() => {
+            window.close();
+          }, 1000);
+        } else {
+          statusEl.textContent = 'Authorization successful! You can close this window.';
+        }
+
+      } catch (err) {
+        console.error('LinkedIn OAuth error:', err);
+        statusEl.textContent = 'Authorization failed';
+        errorEl.textContent = err.message;
+        errorEl.style.display = 'block';
+      }
+    })();
+  </script>
+</body>
+</html>

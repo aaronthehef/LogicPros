@@ -86,6 +86,8 @@ export const SocialMediaPosterPage = () => {
   const [isDashboardConfigured, setIsDashboardConfigured] = useState(null); // null = checking, true = configured, false = not configured
   const [wordpressPosts, setWordpressPosts] = useState([]);
   const [wordpressLoading, setWordpressLoading] = useState(false);
+  const [linkedinConnected, setLinkedinConnected] = useState(false);
+  const [linkedinUserInfo, setLinkedinUserInfo] = useState(null);
 
   const loadingMessages = [
     'Pondering...',
@@ -240,8 +242,110 @@ export const SocialMediaPosterPage = () => {
   useEffect(() => {
     if (isDashboardConfigured) {
       loadWordPressPosts();
+      loadLinkedInConnection();
     }
   }, [user, isDashboardConfigured]);
+
+  // Load LinkedIn connection status from Firestore
+  const loadLinkedInConnection = async () => {
+    if (!user) return;
+
+    try {
+      const userDocRef = doc(db, 'users', user.uid);
+      const userDocSnap = await getDoc(userDocRef);
+
+      if (userDocSnap.exists()) {
+        const userData = userDocSnap.data();
+        if (userData.linkedinAccessToken && userData.linkedinUserInfo) {
+          setLinkedinConnected(true);
+          setLinkedinUserInfo(userData.linkedinUserInfo);
+        }
+      }
+    } catch (error) {
+      console.error('Error loading LinkedIn connection:', error);
+    }
+  };
+
+  // Handle LinkedIn connection
+  const handleConnectLinkedIn = async () => {
+    try {
+      setLoading(true);
+      setMessage('Connecting to LinkedIn...');
+
+      // Call serverless function to get authorization URL
+      const response = await fetch('/api/linkedin-auth?action=initiate');
+      const data = await response.json();
+
+      if (data.authUrl) {
+        // Open LinkedIn OAuth in new window
+        const width = 600;
+        const height = 700;
+        const left = window.screen.width / 2 - width / 2;
+        const top = window.screen.height / 2 - height / 2;
+
+        const authWindow = window.open(
+          data.authUrl,
+          'LinkedIn Authorization',
+          `width=${width},height=${height},left=${left},top=${top}`
+        );
+
+        // Listen for OAuth callback
+        window.addEventListener('message', async (event) => {
+          if (event.data.type === 'linkedin-oauth-success') {
+            authWindow.close();
+
+            // Save tokens to Firestore
+            const userDocRef = doc(db, 'users', user.uid);
+            await setDoc(userDocRef, {
+              linkedinAccessToken: event.data.access_token,
+              linkedinRefreshToken: event.data.refresh_token,
+              linkedinExpiresAt: Date.now() + (event.data.expires_in * 1000),
+              linkedinUserInfo: event.data.userInfo
+            }, { merge: true });
+
+            setLinkedinConnected(true);
+            setLinkedinUserInfo(event.data.userInfo);
+            setMessage('LinkedIn connected successfully!');
+            setLoading(false);
+          }
+        });
+      }
+    } catch (error) {
+      console.error('Error connecting to LinkedIn:', error);
+      setMessage('Error connecting to LinkedIn: ' + error.message);
+      setLoading(false);
+    }
+  };
+
+  // Handle LinkedIn disconnection
+  const handleDisconnectLinkedIn = async () => {
+    if (!window.confirm('Are you sure you want to disconnect LinkedIn?')) {
+      return;
+    }
+
+    try {
+      setLoading(true);
+      setMessage('Disconnecting LinkedIn...');
+
+      // Remove tokens from Firestore
+      const userDocRef = doc(db, 'users', user.uid);
+      await setDoc(userDocRef, {
+        linkedinAccessToken: null,
+        linkedinRefreshToken: null,
+        linkedinExpiresAt: null,
+        linkedinUserInfo: null
+      }, { merge: true });
+
+      setLinkedinConnected(false);
+      setLinkedinUserInfo(null);
+      setMessage('LinkedIn disconnected successfully.');
+      setLoading(false);
+    } catch (error) {
+      console.error('Error disconnecting LinkedIn:', error);
+      setMessage('Error disconnecting LinkedIn: ' + error.message);
+      setLoading(false);
+    }
+  };
 
   // CSS is now imported from SocialMediaPosterPage.css
 
@@ -377,6 +481,55 @@ export const SocialMediaPosterPage = () => {
     try {
       console.log(`Saving post to ${post.platform}:`, post);
 
+      let platformPostId = null;
+      let platformUrl = null;
+      let postStatus = 'published';
+
+      // If LinkedIn, attempt to post via API
+      if (post.platform === 'LinkedIn' && linkedinConnected) {
+        try {
+          setMessage(`Publishing to LinkedIn...`);
+
+          // Get LinkedIn credentials from Firestore
+          const userDocRef = doc(db, 'users', user.uid);
+          const userDocSnap = await getDoc(userDocRef);
+
+          if (!userDocSnap.exists() || !userDocSnap.data().linkedinAccessToken) {
+            throw new Error('LinkedIn not connected. Please connect your LinkedIn account.');
+          }
+
+          const userData = userDocSnap.data();
+
+          // Post to LinkedIn via serverless function
+          const linkedinResponse = await fetch('/api/linkedin-post', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              access_token: userData.linkedinAccessToken,
+              userSub: userData.linkedinUserInfo.sub,
+              content: post.content,
+              visibility: 'PUBLIC'
+            })
+          });
+
+          const linkedinData = await linkedinResponse.json();
+
+          if (!linkedinResponse.ok) {
+            throw new Error(linkedinData.message || 'Failed to post to LinkedIn');
+          }
+
+          platformPostId = linkedinData.postId;
+          console.log('LinkedIn post published successfully:', platformPostId);
+
+        } catch (linkedinError) {
+          console.error('LinkedIn posting error:', linkedinError);
+          postStatus = 'failed';
+          setMessage(`⚠️ Saved locally but LinkedIn posting failed: ${linkedinError.message}`);
+        }
+      }
+
       // Save to Firestore with enhanced data structure
       await addDoc(collection(db, 'users', user.uid, 'posts'), {
         type: 'social',
@@ -386,16 +539,16 @@ export const SocialMediaPosterPage = () => {
         notes: post.notes || '',
 
         // Status tracking
-        status: 'published',
+        status: postStatus,
 
         // Timestamps
         createdAt: new Date(),
         updatedAt: new Date(),
         publishedAt: new Date(),
 
-        // Platform tracking (null until API posting implemented)
-        platformPostId: null,
-        platformUrl: null,
+        // Platform tracking
+        platformPostId: platformPostId,
+        platformUrl: platformUrl,
 
         // User tracking
         createdBy: user.uid,
@@ -410,7 +563,9 @@ export const SocialMediaPosterPage = () => {
         campaignTags: []
       });
 
-      setMessage(`✅ Post saved to ${post.platform} successfully!`);
+      if (postStatus !== 'failed') {
+        setMessage(`✅ Post ${post.platform === 'LinkedIn' && linkedinConnected ? 'published to' : 'saved to'} ${post.platform} successfully!`);
+      }
 
       // Clear the form for this platform
       setPosts(prevPosts =>
@@ -953,6 +1108,68 @@ export const SocialMediaPosterPage = () => {
             <h1>Social Media Dashboard</h1>
             <p>Create and manage social media posts for Instagram, Facebook, Twitter/X, and LinkedIn <span className="ai-indicator">AI Powered</span></p>
           </div>
+        </div>
+
+        {/* LinkedIn Connection Status */}
+        <div style={{
+          background: linkedinConnected ? '#d1fae5' : '#fef3c7',
+          border: `1px solid ${linkedinConnected ? '#10b981' : '#f59e0b'}`,
+          borderRadius: '8px',
+          padding: '16px',
+          margin: '20px 0',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '12px'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+            </svg>
+            <div>
+              <div style={{ fontWeight: '600', color: '#1a1a2e' }}>
+                {linkedinConnected ? 'LinkedIn Connected' : 'LinkedIn Not Connected'}
+              </div>
+              {linkedinConnected && linkedinUserInfo && (
+                <div style={{ fontSize: '0.9rem', color: '#6b7280', marginTop: '4px' }}>
+                  Connected as {linkedinUserInfo.name}
+                </div>
+              )}
+              {!linkedinConnected && (
+                <div style={{ fontSize: '0.9rem', color: '#6b7280', marginTop: '4px' }}>
+                  Connect your LinkedIn account to publish posts automatically
+                </div>
+              )}
+            </div>
+          </div>
+          <button
+            onClick={linkedinConnected ? handleDisconnectLinkedIn : handleConnectLinkedIn}
+            disabled={loading}
+            style={{
+              background: linkedinConnected ? '#ef4444' : '#0A66C2',
+              color: 'white',
+              border: 'none',
+              borderRadius: '6px',
+              padding: '10px 20px',
+              fontWeight: '600',
+              cursor: loading ? 'not-allowed' : 'pointer',
+              opacity: loading ? 0.7 : 1,
+              transition: 'all 0.2s ease'
+            }}
+            onMouseEnter={(e) => {
+              if (!loading) {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = 'none';
+            }}
+          >
+            {linkedinConnected ? 'Disconnect LinkedIn' : 'Connect LinkedIn'}
+          </button>
         </div>
 
       {/* Loading Overlay */}
