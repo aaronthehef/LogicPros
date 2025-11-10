@@ -1,8 +1,9 @@
 // Vercel Serverless Function to proxy WordPress API requests
 // This handles CORS by making the request server-side
 
-// Use node-fetch for proper FormData stream handling
-const nodeFetch = require('node-fetch');
+// Import dependencies as ES modules
+import nodeFetch from 'node-fetch';
+import FormData from 'form-data';
 
 export default async function handler(req, res) {
   // Enable CORS
@@ -110,7 +111,6 @@ export default async function handler(req, res) {
         console.log('Image MIME type:', contentType);
 
         // Create FormData with the image
-        const FormData = require('form-data');
         const formData = new FormData();
 
         // Append the buffer as a file with proper options

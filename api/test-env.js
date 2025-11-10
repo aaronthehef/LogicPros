@@ -11,6 +11,9 @@ export default async function handler(req, res) {
   const userKeys = allKeys.filter(k => k.toUpperCase().includes('USER'));
   const passKeys = allKeys.filter(k => k.toUpperCase().includes('PASS'));
 
+  // Show ALL environment variable names (for debugging ONLY - remove after fixing)
+  const allEnvVarNames = allKeys.sort();
+
   const envCheck = {
     // Exact checks
     WORDPRESS_SITE_URL: process.env.WORDPRESS_SITE_URL ? 'SET' : 'NOT SET',
@@ -31,8 +34,8 @@ export default async function handler(req, res) {
     keysContainingUSER: userKeys,
     keysContainingPASS: passKeys,
 
-    // First 10 env var names for debugging
-    first10Keys: allKeys.slice(0, 10),
+    // ALL environment variable names (for debugging)
+    allEnvVarNames: allEnvVarNames,
 
     timestamp: new Date().toISOString()
   };
