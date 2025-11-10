@@ -42,8 +42,8 @@ export default async function handler(req, res) {
     // Action: initiate - Generate authorization URL
     if (action === 'initiate') {
       const authState = Math.random().toString(36).substring(7);
-      // Note: w_organization_social requires LinkedIn approval - using personal posting for now
-      const scope = 'openid profile w_member_social'; // Personal posting only
+      // Using r_organization_admin to read org access, w_organization_social to post
+      const scope = 'openid profile email w_member_social r_organization_admin w_organization_social'; // Include org scopes
 
       const authUrl = new URL('https://www.linkedin.com/oauth/v2/authorization');
       authUrl.searchParams.set('response_type', 'code');
@@ -112,10 +112,12 @@ export default async function handler(req, res) {
       // Get organizations the user can post to
       let organizations = [];
       try {
-        const orgsResponse = await fetch('https://api.linkedin.com/v2/organizationAcls?q=roleAssignee&role=ADMINISTRATOR&projection=(elements*(organization~(localizedName,vanityName),organizationalTarget,roleAssignee,state))', {
+        // Try the newer organizations API endpoint first
+        const orgsResponse = await fetch('https://api.linkedin.com/v2/organizationalEntityAcls?q=roleAssignee&projection=(elements*(organizationalTarget~(localizedName),roleAssignee,state))', {
           headers: {
             'Authorization': `Bearer ${tokenData.access_token}`,
-            'LinkedIn-Version': '202210'
+            'LinkedIn-Version': '202405',
+            'X-Restli-Protocol-Version': '2.0.0'
           }
         });
 
@@ -126,9 +128,10 @@ export default async function handler(req, res) {
           // Extract organization IDs and names
           if (orgsData.elements && orgsData.elements.length > 0) {
             organizations = orgsData.elements.map(element => {
-              const orgUrn = element.organization;
+              const orgUrn = element.organizationalTarget || element.organization;
               const orgId = orgUrn ? orgUrn.split(':').pop() : null;
-              const orgName = element['organization~'] ? element['organization~'].localizedName : 'Unknown';
+              const orgName = element['organizationalTarget~'] ? element['organizationalTarget~'].localizedName :
+                              (element['organization~'] ? element['organization~'].localizedName : 'Unknown');
 
               return {
                 id: orgId,
