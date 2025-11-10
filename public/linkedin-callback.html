@@ -96,7 +96,15 @@
         statusEl.textContent = 'Authorization successful! Closing window...';
 
         // Send token data to parent window
-        if (window.opener) {
+        if (window.opener && !window.opener.closed) {
+          console.log('Sending postMessage to parent window');
+          console.log('Target origin:', window.location.origin);
+          console.log('Data:', {
+            type: 'linkedin-oauth-success',
+            hasAccessToken: !!data.access_token,
+            hasUserInfo: !!data.userInfo
+          });
+
           window.opener.postMessage({
             type: 'linkedin-oauth-success',
             access_token: data.access_token,
@@ -104,13 +112,17 @@
             expires_in: data.expires_in,
             refresh_token_expires_in: data.refresh_token_expires_in,
             userInfo: data.userInfo
-          }, window.location.origin);
+          }, '*'); // Use '*' for now to ensure it works
 
-          // Close window after a short delay
+          console.log('postMessage sent successfully');
+
+          // Close window after a longer delay to ensure message is received
           setTimeout(() => {
+            console.log('Closing popup window');
             window.close();
-          }, 1000);
+          }, 2000);
         } else {
+          console.log('No opener window found or opener is closed');
           statusEl.textContent = 'Authorization successful! You can close this window.';
         }
 

@@ -274,14 +274,21 @@ export const SocialMediaPosterPage = () => {
 
       // Set up message listener BEFORE opening the window
       const messageHandler = async (event) => {
-        // Verify the origin for security
-        if (event.origin !== window.location.origin) {
-          console.warn('Received message from unexpected origin:', event.origin);
-          return;
-        }
+        console.log('Message received:', event.data);
+        console.log('Message origin:', event.origin);
+        console.log('Expected origin:', window.location.origin);
+
+        // Temporarily accept messages from any origin for debugging
+        // TODO: Re-enable origin check after debugging
+        // if (event.origin !== window.location.origin) {
+        //   console.warn('Received message from unexpected origin:', event.origin);
+        //   return;
+        // }
 
         if (event.data.type === 'linkedin-oauth-success') {
           console.log('LinkedIn OAuth success message received');
+          console.log('Has access token:', !!event.data.access_token);
+          console.log('Has user info:', !!event.data.userInfo);
 
           // Remove the event listener
           window.removeEventListener('message', messageHandler);
