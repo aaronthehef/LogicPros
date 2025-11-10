@@ -299,7 +299,8 @@ export const SocialMediaPosterPage = () => {
             const linkedinData = {
               linkedinAccessToken: event.data.access_token,
               linkedinExpiresAt: Date.now() + (event.data.expires_in * 1000),
-              linkedinUserInfo: event.data.userInfo
+              linkedinUserInfo: event.data.userInfo,
+              linkedinOrganizations: event.data.organizations || []
             };
 
             // Only add refresh token if it exists
@@ -312,7 +313,14 @@ export const SocialMediaPosterPage = () => {
 
             setLinkedinConnected(true);
             setLinkedinUserInfo(event.data.userInfo);
-            setMessage('LinkedIn connected successfully!');
+
+            // Show success message with organization info
+            if (event.data.organizations && event.data.organizations.length > 0) {
+              const orgNames = event.data.organizations.map(org => org.name).join(', ');
+              setMessage(`LinkedIn connected successfully! Can post to: ${orgNames}`);
+            } else {
+              setMessage('LinkedIn connected successfully! Will post to personal profile.');
+            }
           } catch (err) {
             console.error('Error saving LinkedIn tokens:', err);
             setMessage('Error saving LinkedIn connection: ' + err.message);
@@ -554,6 +562,18 @@ export const SocialMediaPosterPage = () => {
 
           const userData = userDocSnap.data();
 
+          // Determine author URN - prefer organization if available
+          let authorUrn = `urn:li:person:${userData.linkedinUserInfo.sub}`; // Default to personal
+
+          if (userData.linkedinOrganizations && userData.linkedinOrganizations.length > 0) {
+            // Use the first organization (Logic Pros Solutions Inc.)
+            const org = userData.linkedinOrganizations[0];
+            authorUrn = org.urn;
+            console.log(`Posting to organization: ${org.name} (${org.urn})`);
+          } else {
+            console.log(`Posting to personal profile: ${userData.linkedinUserInfo.name}`);
+          }
+
           // Post to LinkedIn via serverless function
           const linkedinResponse = await fetch('/api/linkedin-post', {
             method: 'POST',
@@ -562,7 +582,7 @@ export const SocialMediaPosterPage = () => {
             },
             body: JSON.stringify({
               access_token: userData.linkedinAccessToken,
-              userSub: userData.linkedinUserInfo.sub,
+              authorUrn: authorUrn,
               content: post.content,
               visibility: 'PUBLIC'
             })

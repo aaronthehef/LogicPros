@@ -75,7 +75,11 @@
       "Bash(lsof:*)",
       "Bash(netstat:*)",
       "Bash(findstr:*)",
-      "Bash(firebase projects:list:*)"
+      "Bash(firebase projects:list:*)",
+      "Bash(git log:*)",
+      "Bash(xargs kill:*)",
+      "Bash(nul)",
+      "Bash(printf:*)"
     ],
     "deny": []
   }

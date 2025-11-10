@@ -22,7 +22,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { access_token, userSub, content, visibility = 'PUBLIC' } = req.body;
+    const { access_token, authorUrn, userSub, content, visibility = 'PUBLIC' } = req.body;
 
     // Validation
     if (!access_token) {
@@ -32,10 +32,13 @@ export default async function handler(req, res) {
       });
     }
 
-    if (!userSub) {
+    // Accept either authorUrn (new) or userSub (legacy)
+    const finalAuthorUrn = authorUrn || (userSub ? `urn:li:person:${userSub}` : null);
+
+    if (!finalAuthorUrn) {
       return res.status(400).json({
-        error: 'Missing user URN',
-        message: 'Please provide the user URN (sub from userinfo)'
+        error: 'Missing author URN',
+        message: 'Please provide either authorUrn or userSub'
       });
     }
 
@@ -46,7 +49,7 @@ export default async function handler(req, res) {
       });
     }
 
-    console.log('Posting to LinkedIn for user:', userSub);
+    console.log('Posting to LinkedIn as:', finalAuthorUrn);
     console.log('Post content length:', content.length);
 
     // Escape double quotes in content to prevent JSON parsing errors
@@ -54,7 +57,7 @@ export default async function handler(req, res) {
 
     // Build LinkedIn ugcPost payload
     const postPayload = {
-      author: `urn:li:person:${userSub}`,
+      author: finalAuthorUrn,
       lifecycleState: 'PUBLISHED',
       specificContent: {
         'com.linkedin.ugc.ShareContent': {

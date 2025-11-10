@@ -42,7 +42,7 @@ export default async function handler(req, res) {
     // Action: initiate - Generate authorization URL
     if (action === 'initiate') {
       const authState = Math.random().toString(36).substring(7);
-      const scope = 'openid profile w_member_social'; // Required scopes for posting
+      const scope = 'openid profile w_member_social w_organization_social r_organization_social'; // Required scopes for posting to org pages
 
       const authUrl = new URL('https://www.linkedin.com/oauth/v2/authorization');
       authUrl.searchParams.set('response_type', 'code');
@@ -108,6 +108,44 @@ export default async function handler(req, res) {
       const userInfo = await userInfoResponse.json();
       console.log('LinkedIn user info obtained:', userInfo.name);
 
+      // Get organizations the user can post to
+      let organizations = [];
+      try {
+        const orgsResponse = await fetch('https://api.linkedin.com/v2/organizationAcls?q=roleAssignee&role=ADMINISTRATOR&projection=(elements*(organization~(localizedName,vanityName),organizationalTarget,roleAssignee,state))', {
+          headers: {
+            'Authorization': `Bearer ${tokenData.access_token}`,
+            'LinkedIn-Version': '202210'
+          }
+        });
+
+        if (orgsResponse.ok) {
+          const orgsData = await orgsResponse.json();
+          console.log('LinkedIn organizations data:', JSON.stringify(orgsData, null, 2));
+
+          // Extract organization IDs and names
+          if (orgsData.elements && orgsData.elements.length > 0) {
+            organizations = orgsData.elements.map(element => {
+              const orgUrn = element.organization;
+              const orgId = orgUrn ? orgUrn.split(':').pop() : null;
+              const orgName = element['organization~'] ? element['organization~'].localizedName : 'Unknown';
+
+              return {
+                id: orgId,
+                urn: orgUrn,
+                name: orgName
+              };
+            }).filter(org => org.id && org.urn);
+          }
+
+          console.log('Processed organizations:', organizations);
+        } else {
+          console.warn('Failed to fetch organizations, will default to personal profile');
+        }
+      } catch (orgError) {
+        console.error('Error fetching organizations:', orgError);
+        // Continue without organizations - will post to personal profile
+      }
+
       // Return access token and user info to frontend
       return res.status(200).json({
         access_token: tokenData.access_token,
@@ -119,7 +157,8 @@ export default async function handler(req, res) {
           name: userInfo.name,
           email: userInfo.email,
           picture: userInfo.picture
-        }
+        },
+        organizations: organizations
       });
     }
 

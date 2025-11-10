@@ -111,7 +111,8 @@
             refresh_token: data.refresh_token,
             expires_in: data.expires_in,
             refresh_token_expires_in: data.refresh_token_expires_in,
-            userInfo: data.userInfo
+            userInfo: data.userInfo,
+            organizations: data.organizations || []
           }, '*'); // Use '*' for now to ensure it works
 
           console.log('postMessage sent successfully');
