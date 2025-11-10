@@ -2,8 +2,25 @@
 // This file is automatically loaded by Create React App in development mode
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
+// Load environment variables from .env file
+require('dotenv').config();
+
 module.exports = function(app) {
   console.log('🔧 setupProxy.js loaded - WordPress proxy active');
+
+  // Get credentials from environment variables
+  const username = process.env.WORDPRESS_USERNAME;
+  const password = process.env.WORDPRESS_APP_PASSWORD;
+
+  if (!username || !password) {
+    console.error('❌ WordPress credentials not found in .env file');
+    console.error('Please ensure WORDPRESS_USERNAME and WORDPRESS_APP_PASSWORD are set in .env');
+    return;
+  }
+
+  // Create base64 auth string from environment variables
+  const authString = Buffer.from(`${username}:${password}`).toString('base64');
+  console.log('🔐 WordPress credentials loaded from environment');
 
   // Proxy /api/wordpress-proxy requests to WordPress REST API
   const proxy = createProxyMiddleware({
@@ -48,9 +65,8 @@ module.exports = function(app) {
         // Remove any client-sent Authorization header
         proxyReq.removeHeader('Authorization');
 
-        // Add correct WordPress authentication using exact base64 from working curl
-        const correctAuth = 'YWRtaW46U2NxMiAzM0FEIHFRR0YgVzN5RCBHUkx5IDJNODg=';
-        proxyReq.setHeader('Authorization', `Basic ${correctAuth}`);
+        // Add WordPress authentication from environment variables
+        proxyReq.setHeader('Authorization', `Basic ${authString}`);
 
         // Handle DELETE requests (nginx blocks DELETE, so use POST with override header)
         if (req.method === 'DELETE') {
