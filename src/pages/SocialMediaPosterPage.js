@@ -801,15 +801,17 @@ export const SocialMediaPosterPage = () => {
 
         // Set up real-time listener for newly generated posts
         // This is more efficient than polling - Firebase pushes updates instantly
-        const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
+        // CRITICAL FIX: Capture EXACT timestamp when button was clicked
+        // This prevents loading old posts from previous generations
+        const workflowStartTime = new Date();
 
         // Temporarily remove orderBy to test if index is the issue
         // We'll get all docs and sort in memory
         const recentPostsQuery = collection(db, 'users', user.uid, 'generatedPosts');
 
         console.log('Setting up listener for collection path:', `users/${user.uid}/generatedPosts`);
-        console.log('Current time:', new Date().toISOString());
-        console.log('Five minutes ago:', fiveMinutesAgo.toISOString());
+        console.log('Workflow start time:', workflowStartTime.toISOString());
+        console.log('Will only populate form with posts created AFTER this timestamp');
 
         // Test: Try to manually fetch documents to see if they exist
         import('firebase/firestore').then(({ getDocs }) => {
@@ -858,10 +860,12 @@ export const SocialMediaPosterPage = () => {
               // createdAt might be a Firestore Timestamp or ISO string from n8n
               const postCreatedAt = latestPost.createdAt?.toDate ? latestPost.createdAt.toDate() : new Date(latestPost.createdAt);
               console.log('Post created at:', postCreatedAt);
-              console.log('Five minutes ago:', fiveMinutesAgo);
-              console.log('Is post recent?', postCreatedAt > fiveMinutesAgo);
+              console.log('Workflow start time:', workflowStartTime);
+              console.log('Is this a NEW post from THIS workflow run?', postCreatedAt > workflowStartTime);
 
-              if (postCreatedAt > fiveMinutesAgo) {
+              // CRITICAL FIX: Only populate form if post was created AFTER button click
+              // This prevents auto-filling with old posts from previous generations
+              if (postCreatedAt > workflowStartTime) {
                 console.log('Found newly generated posts!', latestPost);
 
                 // Stop listening
