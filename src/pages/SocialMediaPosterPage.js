@@ -80,7 +80,8 @@ export const SocialMediaPosterPage = () => {
   const [loadingMessage, setLoadingMessage] = useState('');
   const [message, setMessage] = useState('');
   const [showHistory, setShowHistory] = useState(false);
-  const [postHistory, setPostHistory] = useState([]);
+  const [postHistory, setPostHistory] = useState([]); // Manual posts from 'posts' collection
+  const [generatedPostsHistory, setGeneratedPostsHistory] = useState([]); // AI-generated posts from 'generatedPosts' collection
   const [user, setUser] = useState(null);
   const [userConfig, setUserConfig] = useState(null); // null = checking, object = config loaded
   const [isDashboardConfigured, setIsDashboardConfigured] = useState(null); // null = checking, true = configured, false = not configured
@@ -132,7 +133,7 @@ export const SocialMediaPosterPage = () => {
             if (isConfigured) {
               console.log('Dashboard is configured - loading user data');
 
-              // Load post history from Firestore
+              // Load post history from Firestore (manual posts)
               const postsQuery = query(
                 collection(db, 'users', currentUser.uid, 'posts'),
                 orderBy('createdAt', 'desc'),
@@ -152,8 +153,30 @@ export const SocialMediaPosterPage = () => {
                 setMessage('Error loading post history: ' + error.message);
               });
 
-              // Store unsubscribe function for cleanup
-              return () => unsubscribeSnapshot();
+              // Load AI-generated posts from Firestore (generatedPosts collection)
+              const generatedPostsQuery = query(
+                collection(db, 'users', currentUser.uid, 'generatedPosts'),
+                orderBy('createdAt', 'desc'),
+                limit(50)
+              );
+
+              const unsubscribeGeneratedPosts = onSnapshot(generatedPostsQuery, (snapshot) => {
+                console.log('Generated posts snapshot:', snapshot);
+                const generatedData = snapshot.docs.map(doc => ({
+                  id: doc.id,
+                  ...doc.data()
+                }));
+                console.log('Generated posts loaded:', generatedData);
+                setGeneratedPostsHistory(generatedData);
+              }, (error) => {
+                console.error('Firestore error loading generated posts:', error);
+              });
+
+              // Store unsubscribe functions for cleanup
+              return () => {
+                unsubscribeSnapshot();
+                unsubscribeGeneratedPosts();
+              };
             } else {
               console.log('Dashboard not configured - showing blank dashboard');
               setIsDashboardConfigured(false);
@@ -1550,12 +1573,12 @@ export const SocialMediaPosterPage = () => {
 
       </div>
 
-      {/* Post History Section */}
-      {user && (
+      {/* AI-Generated Posts History Section */}
+      {user && generatedPostsHistory.length > 0 && (
         <div className="posts-container history-container">
           <div className="history-header">
             <h2 className="history-header">
-              Post History
+              🤖 AI-Generated Content History
             </h2>
             <button
               className="history-toggle-button"
@@ -1567,65 +1590,100 @@ export const SocialMediaPosterPage = () => {
 
           {showHistory && (
             <div className="history-content">
-              {postHistory.length === 0 ? (
-                <div className="empty-history">
-                  <p>
-                    No posts yet. Create your first post above!
-                  </p>
-                </div>
-              ) : (
-                <div className="posts-grid">
-                  {postHistory.map(post => (
-                    <div key={post.id} className="post-card">
-                      <div className="platform-header">
-                        <span className="platform-icon">{getPlatformIcon(post.platform || 'Blog')}</span>
-                        <span className="platform-name">{post.platform || 'Blog'}</span>
+              <div className="posts-grid">
+                {generatedPostsHistory.map(post => {
+                  // Parse the post data - support both old flat and new nested structures
+                  const blogTitle = post.blogPost?.title || post.polished_title;
+                  const blogContent = post.blogPost?.content || post.polished_post;
+                  const blogExcerpt = post.blogPost?.excerpt;
+                  const blogSlug = post.blogPost?.slug;
+                  const featuredImage = post.blogPost?.featuredImageUrl || post.featured_image_url;
+
+                  const instagramCaption = post.socialMedia?.instagram?.caption || post.instagram_caption;
+                  const instagramHashtags = post.socialMedia?.instagram?.hashtags || post.instagram_hashtags;
+
+                  const facebookPost = post.socialMedia?.facebook?.post || post.facebook_post;
+                  const linkedinPost = post.socialMedia?.linkedin?.post || post.linkedin_post;
+                  const twitterThread = post.socialMedia?.twitter?.thread || post.twitter_thread;
+
+                  return (
+                    <div key={post.id} className="post-card" style={{ border: '2px solid #6366F1' }}>
+                      <div className="platform-header" style={{ backgroundColor: '#6366F1', color: 'white' }}>
+                        <span className="platform-icon">🤖</span>
+                        <span className="platform-name">AI-Generated Post Bundle</span>
                       </div>
 
                       <div className="history-post-content">
-                        <p>
-                          {post.content}
-                        </p>
-
-                        {/* Display featured image for blog posts */}
-                        {post.featuredImageUrl && (
-                          <img
-                            src={post.featuredImageUrl}
-                            alt="Post"
-                            className="history-post-image"
-                          />
+                        {/* Blog Post Section */}
+                        {blogTitle && blogContent && (
+                          <div style={{ marginBottom: '20px', padding: '15px', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
+                            <h4 style={{ margin: '0 0 10px 0', color: '#1a1a2e', fontSize: '1.1rem' }}>📝 Blog Post</h4>
+                            <p style={{ fontWeight: 'bold', margin: '5px 0' }}>{blogTitle}</p>
+                            {blogExcerpt && <p style={{ fontSize: '0.9rem', color: '#666', fontStyle: 'italic' }}>{blogExcerpt}</p>}
+                            <p style={{ fontSize: '0.9rem', marginTop: '10px' }}>{blogContent.substring(0, 200)}...</p>
+                            {blogSlug && <p style={{ fontSize: '0.8rem', color: '#888' }}>Slug: {blogSlug}</p>}
+                            {featuredImage && (
+                              <img
+                                src={featuredImage}
+                                alt="Featured"
+                                className="history-post-image"
+                                style={{ maxWidth: '100%', marginTop: '10px', borderRadius: '4px' }}
+                              />
+                            )}
+                          </div>
                         )}
 
-                        {/* Display images for social media posts */}
-                        {post.imageUrls && post.imageUrls.length > 0 && (
-                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '12px' }}>
-                            {post.imageUrls.map((imageUrl, index) => (
-                              <img
-                                key={index}
-                                src={imageUrl}
-                                alt={`Post image ${index + 1}`}
-                                className="history-post-image"
-                                style={{ maxWidth: '100%' }}
-                              />
+                        {/* Instagram Section */}
+                        {instagramCaption && (
+                          <div style={{ marginBottom: '15px', padding: '12px', backgroundColor: '#fef3f8', borderRadius: '8px' }}>
+                            <h5 style={{ margin: '0 0 8px 0', color: '#E4405F' }}>📸 Instagram</h5>
+                            <p style={{ fontSize: '0.85rem', whiteSpace: 'pre-wrap' }}>{instagramCaption}</p>
+                            {instagramHashtags && instagramHashtags.length > 0 && (
+                              <p style={{ fontSize: '0.75rem', color: '#E4405F', marginTop: '8px' }}>
+                                {instagramHashtags.join(' ')}
+                              </p>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Facebook Section */}
+                        {facebookPost && (
+                          <div style={{ marginBottom: '15px', padding: '12px', backgroundColor: '#f0f5ff', borderRadius: '8px' }}>
+                            <h5 style={{ margin: '0 0 8px 0', color: '#1877F2' }}>📘 Facebook</h5>
+                            <p style={{ fontSize: '0.85rem' }}>{facebookPost}</p>
+                          </div>
+                        )}
+
+                        {/* LinkedIn Section */}
+                        {linkedinPost && (
+                          <div style={{ marginBottom: '15px', padding: '12px', backgroundColor: '#f3f7fb', borderRadius: '8px' }}>
+                            <h5 style={{ margin: '0 0 8px 0', color: '#0A66C2' }}>💼 LinkedIn</h5>
+                            <p style={{ fontSize: '0.85rem' }}>{linkedinPost}</p>
+                          </div>
+                        )}
+
+                        {/* Twitter/X Section */}
+                        {twitterThread && Array.isArray(twitterThread) && (
+                          <div style={{ marginBottom: '15px', padding: '12px', backgroundColor: '#f9f9f9', borderRadius: '8px' }}>
+                            <h5 style={{ margin: '0 0 8px 0', color: '#000' }}>𝕏 Twitter/X Thread ({twitterThread.length} tweets)</h5>
+                            {twitterThread.map((tweet, idx) => (
+                              <p key={idx} style={{ fontSize: '0.85rem', marginBottom: '8px', paddingBottom: '8px', borderBottom: idx < twitterThread.length - 1 ? '1px solid #ddd' : 'none' }}>
+                                {idx + 1}. {tweet}
+                              </p>
                             ))}
                           </div>
                         )}
 
-                        <div className="history-post-meta">
-                          {post.createdAt ? new Date(post.createdAt.toDate ? post.createdAt.toDate() : post.createdAt).toLocaleString() : 'Just now'}
-                          {post.publishedUrl && (
-                            <div style={{ marginTop: '10px' }}>
-                              <a href={post.publishedUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#1F7CFF', textDecoration: 'none' }}>
-                                View Published Post →
-                              </a>
-                            </div>
-                          )}
+                        <div className="history-post-meta" style={{ borderTop: '1px solid #eee', paddingTop: '10px', marginTop: '15px' }}>
+                          <span style={{ fontSize: '0.85rem', color: '#666' }}>
+                            Generated: {post.createdAt ? new Date(post.createdAt.toDate ? post.createdAt.toDate() : post.createdAt).toLocaleString() : 'Just now'}
+                          </span>
                         </div>
                       </div>
                     </div>
-                  ))}
-                </div>
-              )}
+                  );
+                })}
+              </div>
             </div>
           )}
         </div>
