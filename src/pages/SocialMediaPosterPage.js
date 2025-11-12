@@ -892,40 +892,46 @@ export const SocialMediaPosterPage = () => {
 
                     switch (post.platform) {
                       case 'Instagram':
-                        if (generatedData.instagram_caption) {
-                          generatedContent = generatedData.instagram_caption;
-                          if (generatedData.instagram_visual_suggestion) {
-                            generatedImages = [generatedData.instagram_visual_suggestion];
+                        // Support BOTH new nested structure (socialMedia.instagram) AND old flat structure (instagram_caption)
+                        if (generatedData.socialMedia?.instagram?.caption || generatedData.instagram_caption) {
+                          generatedContent = generatedData.socialMedia?.instagram?.caption || generatedData.instagram_caption;
+                          const imageUrl = generatedData.socialMedia?.instagram?.imageUrl || generatedData.instagram_visual_suggestion;
+                          if (imageUrl) {
+                            generatedImages = [imageUrl];
                           }
                           metadata = {
-                            hashtags: generatedData.instagram_hashtags || [],
-                            charCount: generatedData.instagram_char_count || 0
+                            hashtags: generatedData.socialMedia?.instagram?.hashtags || generatedData.instagram_hashtags || [],
+                            charCount: generatedData.socialMedia?.instagram?.characterCount || generatedData.instagram_char_count || 0
                           };
                         }
                         break;
                       case 'Facebook':
-                        if (generatedData.facebook_post) {
-                          generatedContent = generatedData.facebook_post;
+                        // Support BOTH new nested structure (socialMedia.facebook) AND old flat structure (facebook_post)
+                        if (generatedData.socialMedia?.facebook?.post || generatedData.facebook_post) {
+                          generatedContent = generatedData.socialMedia?.facebook?.post || generatedData.facebook_post;
                           metadata = {
-                            charCount: generatedData.facebook_char_count || 0,
-                            hasLink: generatedData.facebook_has_link || false
+                            charCount: generatedData.socialMedia?.facebook?.characterCount || generatedData.facebook_char_count || 0,
+                            hasLink: generatedData.socialMedia?.facebook?.includesLink || generatedData.facebook_has_link || false
                           };
                         }
                         break;
                       case 'Twitter/X':
-                        if (generatedData.twitter_thread && Array.isArray(generatedData.twitter_thread)) {
-                          generatedContent = generatedData.twitter_thread.join('\n\n---\n\n');
+                        // Support BOTH new nested structure (socialMedia.twitter) AND old flat structure (twitter_thread)
+                        const twitterThread = generatedData.socialMedia?.twitter?.thread || generatedData.twitter_thread;
+                        if (twitterThread && Array.isArray(twitterThread)) {
+                          generatedContent = twitterThread.join('\n\n---\n\n');
                           metadata = {
-                            tweetCount: generatedData.twitter_tweet_count || generatedData.twitter_thread.length,
-                            originalThread: generatedData.twitter_thread
+                            tweetCount: generatedData.socialMedia?.twitter?.characterCounts?.length || generatedData.twitter_tweet_count || twitterThread.length,
+                            originalThread: twitterThread
                           };
                         }
                         break;
                       case 'LinkedIn':
-                        if (generatedData.linkedin_post) {
-                          generatedContent = generatedData.linkedin_post;
+                        // Support BOTH new nested structure (socialMedia.linkedin) AND old flat structure (linkedin_post)
+                        if (generatedData.socialMedia?.linkedin?.post || generatedData.linkedin_post) {
+                          generatedContent = generatedData.socialMedia?.linkedin?.post || generatedData.linkedin_post;
                           metadata = {
-                            hashtags: generatedData.linkedin_hashtags || []
+                            hashtags: generatedData.socialMedia?.linkedin?.hashtags || generatedData.linkedin_hashtags || []
                           };
                         }
                         break;
@@ -948,15 +954,23 @@ export const SocialMediaPosterPage = () => {
                   );
 
                   // Parse blog post from n8n structure
-                  if (generatedData.polished_title && generatedData.polished_post) {
+                  // Support BOTH new nested structure (blogPost.title/content) AND old flat structure (polished_title/polished_post)
+                  const blogTitle = generatedData.blogPost?.title || generatedData.polished_title;
+                  const blogContent = generatedData.blogPost?.content || generatedData.polished_post;
+                  const featuredImage = generatedData.blogPost?.featuredImageUrl || generatedData.featured_image_url;
+
+                  if (blogTitle && blogContent) {
                     setBlogPost(prev => ({
                       ...prev,
-                      title: generatedData.polished_title || '',
-                      content: generatedData.polished_post || '',
+                      title: blogTitle || '',
+                      content: blogContent || '',
+                      featuredImageUrl: featuredImage || '',
                       aiMetadata: {
                         generatedAt: new Date().toISOString(),
                         source: 'n8n',
-                        wordCount: generatedData.polished_word_count || 0
+                        wordCount: generatedData.blogPost?.wordCount || generatedData.polished_word_count || 0,
+                        excerpt: generatedData.blogPost?.excerpt || '',
+                        slug: generatedData.blogPost?.slug || ''
                       }
                     }));
                   }
