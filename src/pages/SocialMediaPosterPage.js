@@ -842,19 +842,24 @@ export const SocialMediaPosterPage = () => {
               docId: change.doc.id
             })));
 
-            if (!snapshot.empty) {
-              // Sort documents by createdAt in memory to find the most recent
-              const sortedDocs = snapshot.docs
-                .map(doc => ({ id: doc.id, ...doc.data() }))
+            // CRITICAL FIX: Only respond to newly ADDED documents, not initial query results
+            // This prevents auto-filling with existing old posts
+            const addedDocs = snapshot.docChanges().filter(change => change.type === 'added');
+            console.log('Number of newly added docs:', addedDocs.length);
+
+            if (addedDocs.length > 0) {
+              // Get the newly added documents and sort by createdAt
+              const newDocs = addedDocs
+                .map(change => ({ id: change.doc.id, ...change.doc.data() }))
                 .sort((a, b) => {
                   const aTime = a.createdAt?.toDate ? a.createdAt.toDate() : new Date(a.createdAt);
                   const bTime = b.createdAt?.toDate ? b.createdAt.toDate() : new Date(b.createdAt);
                   return bTime - aTime; // Descending order (newest first)
                 });
 
-              console.log('All documents:', sortedDocs);
-              const latestPost = sortedDocs[0];
-              console.log('Latest post raw data:', latestPost);
+              console.log('Newly added documents:', newDocs);
+              const latestPost = newDocs[0];
+              console.log('Latest newly added post:', latestPost);
 
               // Check if this post was created after we triggered the workflow
               // createdAt might be a Firestore Timestamp or ISO string from n8n
