@@ -6,7 +6,7 @@ import { Logo } from '../components/Logo';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { auth } from '../firebase';
-import { db, collection, addDoc, query, orderBy, limit, onSnapshot, doc, deleteDoc, getDoc, setDoc, updateDoc } from '../firebase';
+import { db, collection, addDoc, query, orderBy, limit, onSnapshot, doc, deleteDoc, getDoc, setDoc } from '../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { publishPostToWordPress, deleteWordPressPost, fetchWordPressPosts } from '../services/wordpressService';
 import BlankDashboardPage from './BlankDashboardPage';
@@ -93,10 +93,6 @@ export const SocialMediaPosterPage = () => {
     featuredImageUrl: '',
     aiMetadata: {}
   });
-
-  const [selectedCampaign, setSelectedCampaign] = useState(null);
-  const [activeTab, setActiveTab] = useState('blog');
-  const [campaigns, setCampaigns] = useState([]);
 
   const [loading, setLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState('');
@@ -194,26 +190,10 @@ export const SocialMediaPosterPage = () => {
                 console.error('Firestore error loading generated posts:', error);
               });
 
-              // Load campaigns
-              const campaignsQuery = query(
-                collection(db, 'users', currentUser.uid, 'campaigns'),
-                orderBy('createdAt', 'desc'),
-                limit(50)
-              );
-
-              const unsubscribeCampaigns = onSnapshot(campaignsQuery, (snapshot) => {
-                const campaignsData = snapshot.docs.map(doc => ({
-                  id: doc.id,
-                  ...doc.data()
-                }));
-                setCampaigns(campaignsData);
-              });
-
               // Store unsubscribe functions for cleanup
               return () => {
                 unsubscribeSnapshot();
                 unsubscribeGeneratedPosts();
-                unsubscribeCampaigns();
               };
             } else {
               console.log('Dashboard not configured - showing blank dashboard');
@@ -896,7 +876,7 @@ export const SocialMediaPosterPage = () => {
         // Set up real-time listener
         const unsubscribe = onSnapshot(
           recentPostsQuery,
-          async (snapshot) => {
+          (snapshot) => {
             console.log('========== FIREBASE SNAPSHOT UPDATE ==========');
             console.log('Received real-time update from Firestore');
             console.log('Snapshot empty?', snapshot.empty);
@@ -1082,85 +1062,7 @@ export const SocialMediaPosterPage = () => {
                   }
                 }
 
-                // AUTO-SAVE to campaigns collection
-                console.log('🔍 DEBUG: About to auto-save campaign');
-                console.log('🔍 DEBUG: latestPost data:', latestPost);
-                console.log('🔍 DEBUG: user.uid:', user.uid);
-
-                try {
-                  // Transform data from Firebase flat structure to nested campaign structure
-                  const generatedData = latestPost;
-
-                  const campaignData = {
-                    title: generatedData.blogPost?.title || generatedData.polished_title || 'Untitled Campaign',
-                    blogPost: {
-                      title: generatedData.blogPost?.title || generatedData.polished_title || '',
-                      content: generatedData.blogPost?.content || generatedData.polished_post || '',
-                      excerpt: generatedData.blogPost?.excerpt || generatedData.blog_excerpt || '',
-                      slug: generatedData.blogPost?.slug || generatedData.blog_slug || '',
-                      status: generatedData.blogPost?.status || generatedData.blog_status || 'draft',
-                      featuredImageUrl: generatedData.blogPost?.featuredImageUrl || generatedData.featured_image_url || '',
-                      wordCount: generatedData.blogPost?.wordCount || generatedData.polished_word_count || 0
-                    },
-                    socialMedia: {
-                      facebook: {
-                        post: generatedData.socialMedia?.facebook?.post || generatedData.facebook_post || '',
-                        linkUrl: generatedData.socialMedia?.facebook?.linkUrl || generatedData.facebook_link_url || '',
-                        charCount: generatedData.socialMedia?.facebook?.charCount || generatedData.facebook_char_count || 0
-                      },
-                      instagram: {
-                        caption: generatedData.socialMedia?.instagram?.caption || generatedData.instagram_caption || '',
-                        visual: generatedData.socialMedia?.instagram?.visual || generatedData.instagram_visual || '',
-                        hashtags: generatedData.socialMedia?.instagram?.hashtags || generatedData.instagram_hashtags || [],
-                        charCount: generatedData.socialMedia?.instagram?.charCount || generatedData.instagram_char_count || 0
-                      },
-                      linkedin: {
-                        post: generatedData.socialMedia?.linkedin?.post || generatedData.linkedin_post || '',
-                        visibility: generatedData.socialMedia?.linkedin?.visibility || generatedData.linkedin_visibility || 'PUBLIC',
-                        lifecycleState: generatedData.socialMedia?.linkedin?.lifecycleState || generatedData.linkedin_lifecycle_state || 'PUBLISHED',
-                        hashtags: generatedData.socialMedia?.linkedin?.hashtags || generatedData.linkedin_hashtags || []
-                      },
-                      twitter: {
-                        thread: generatedData.socialMedia?.twitter?.thread || generatedData.twitter_thread || [],
-                        tweetCount: generatedData.socialMedia?.twitter?.tweetCount || generatedData.twitter_tweet_count || 0
-                      }
-                    },
-                    createdAt: new Date(),
-                    updatedAt: new Date(),
-                    publishingStatus: {
-                      blog: false,
-                      facebook: false,
-                      instagram: false,
-                      linkedin: false,
-                      twitter: false
-                    }
-                  };
-
-                  console.log('🔍 DEBUG: campaignData to save:', campaignData);
-
-                  const campaignRef = await addDoc(
-                    collection(db, 'users', user.uid, 'campaigns'),
-                    campaignData
-                  );
-
-                  console.log('✅ Campaign auto-saved with ID:', campaignRef.id);
-                  console.log('✅ Setting selectedCampaign to:', { id: campaignRef.id, ...campaignData });
-
-                  // Auto-select the newly created campaign
-                  setSelectedCampaign({
-                    id: campaignRef.id,
-                    ...campaignData
-                  });
-                  setActiveTab('blog'); // Default to blog tab
-
-                  console.log('✅ selectedCampaign should now be set - tabs should appear!');
-                  setMessage('✅ Campaign created and ready to edit!');
-                } catch (error) {
-                  console.error('❌ Error saving campaign:', error);
-                  console.error('❌ Error details:', error.message, error.stack);
-                  setMessage('✅ Posts generated successfully! Review and edit below.');
-                }
-
+                setMessage('✅ Posts generated successfully! Review and edit below.');
                 setLoading(false);
               }
             }
@@ -1304,36 +1206,6 @@ export const SocialMediaPosterPage = () => {
       clearInterval(messageInterval);
       console.error('Error triggering n8n workflow:', error);
       setMessage(`❌ Failed to trigger workflow: ${error.message}`);
-      setLoading(false);
-    }
-  };
-
-  // Save campaign changes to Firestore
-  const handleSaveCampaign = async () => {
-    if (!selectedCampaign || !user) {
-      setMessage('❌ No campaign selected');
-      return;
-    }
-
-    try {
-      setLoading(true);
-      setMessage('Saving campaign...');
-
-      const campaignRef = doc(db, 'users', user.uid, 'campaigns', selectedCampaign.id);
-
-      await updateDoc(campaignRef, {
-        ...selectedCampaign,
-        updatedAt: new Date()
-      });
-
-      setMessage('✅ Campaign saved successfully!');
-
-      // Auto-hide success message after 3 seconds
-      setTimeout(() => setMessage(''), 3000);
-    } catch (error) {
-      console.error('Error saving campaign:', error);
-      setMessage(`❌ Failed to save campaign: ${error.message}`);
-    } finally {
       setLoading(false);
     }
   };
@@ -1494,556 +1366,405 @@ export const SocialMediaPosterPage = () => {
         </div>
       )}
 
-      {/* UNIFIED DASHBOARD LAYOUT */}
+      {/* Posts Section */}
       <div className="posts-container">
+        {/* Generate All Posts with AI Button - Moved to Top */}
+        <button
+          className="generate-button full-width-button"
+          onClick={handleGeneratePosts}
+          disabled={loading}
+        >
+          {loading ? (
+            <>
+              <div className="spinner small-spinner" style={{
+                borderTop: '3px solid transparent',
+                borderTopColor: 'white'
+              }}></div>
+              Generating...
+            </>
+          ) : (
+            <>
+              🚀 Generate All Posts with AI
+            </>
+          )}
+        </button>
+
+        <h2 className="section-title" style={{
+          color: '#1a1a2e',
+          fontSize: '2rem',
+          fontWeight: '700',
+          marginBottom: '30px',
+          textAlign: 'center',
+          position: 'relative'
+        }}>
+          Create Posts
+        </h2>
+
         {message && (
           <div className={`message ${message.includes('success') ? 'success-message' : 'error-message'}`}>
             {message}
           </div>
         )}
 
-        {/* TOP: Big "Generate New Campaign" Button - Centered */}
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <button
-            className="generate-button full-width-button"
-            onClick={handleGeneratePosts}
-            disabled={loading}
-            style={{
-              fontSize: '1.2rem',
-              padding: '20px 40px',
-              maxWidth: '500px',
-              margin: '0 auto',
-              display: 'inline-block'
-            }}
-          >
-            {loading ? (
-              <>
-                <div className="spinner small-spinner" style={{
-                  borderTop: '3px solid transparent',
-                  borderTopColor: 'white'
-                }}></div>
-                Generating...
-              </>
-            ) : (
-              <>
-                🚀 Generate New Campaign
-              </>
-            )}
-          </button>
-        </div>
-
-        {/* BELOW THAT: Previous Campaigns Section - LIST */}
-        <div style={{ marginBottom: '40px' }}>
-          <h2 style={{
-            fontSize: '1.5rem',
-            fontWeight: '600',
-            marginBottom: '20px',
-            color: '#1a1a2e'
-          }}>
-            Previous Campaigns
-          </h2>
-
-          {campaigns.length === 0 ? (
-            <div style={{
-              padding: '30px',
-              textAlign: 'center',
-              backgroundColor: '#f9fafb',
-              borderRadius: '8px',
-              border: '1px solid #e5e7eb'
-            }}>
-              <p style={{ color: '#6b7280', margin: 0 }}>
-                No campaigns yet. Click "Generate New Campaign" to create your first one!
-              </p>
-            </div>
-          ) : (
-            <div style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '12px'
-            }}>
-              {campaigns.map(campaign => (
-                <div
-                  key={campaign.id}
-                  onClick={() => {
-                    setSelectedCampaign(campaign);
-                    setActiveTab('blog');
-                  }}
-                  style={{
-                    padding: '16px 20px',
-                    backgroundColor: selectedCampaign?.id === campaign.id ? '#e0e7ff' : '#ffffff',
-                    border: selectedCampaign?.id === campaign.id ? '2px solid #6366f1' : '1px solid #e5e7eb',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center'
-                  }}
-                  onMouseEnter={(e) => {
-                    if (selectedCampaign?.id !== campaign.id) {
-                      e.currentTarget.style.backgroundColor = '#f9fafb';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (selectedCampaign?.id !== campaign.id) {
-                      e.currentTarget.style.backgroundColor = '#ffffff';
-                    }
-                  }}
-                >
-                  <div>
-                    <div style={{
-                      fontWeight: '600',
-                      fontSize: '1rem',
-                      color: '#1a1a2e',
-                      marginBottom: '4px'
-                    }}>
-                      {campaign.title || 'Untitled Campaign'}
-                    </div>
-                    <div style={{
-                      fontSize: '0.875rem',
-                      color: '#6b7280'
-                    }}>
-                      {campaign.createdAt ? new Date(campaign.createdAt.toDate ? campaign.createdAt.toDate() : campaign.createdAt).toLocaleDateString() : 'Just now'}
-                    </div>
-                  </div>
-                  {selectedCampaign?.id === campaign.id && (
-                    <div style={{
-                      color: '#6366f1',
-                      fontWeight: '600'
-                    }}>
-                      Selected
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* BELOW THAT: Campaign Content with TABS */}
-        {selectedCampaign && (
+        {/* Shared AI Metadata Section */}
+        {aiMetadata.visualSuggestion && (
           <div style={{
-            backgroundColor: '#ffffff',
-            border: '1px solid #e5e7eb',
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
             borderRadius: '12px',
-            padding: '24px',
-            marginBottom: '40px'
+            padding: '20px',
+            marginBottom: '25px',
+            boxShadow: '0 8px 25px rgba(102, 126, 234, 0.3)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            color: 'white'
           }}>
-            {/* Tab Navigation */}
             <div style={{
               display: 'flex',
-              gap: '8px',
-              borderBottom: '2px solid #e5e7eb',
-              marginBottom: '24px'
+              alignItems: 'flex-start',
+              gap: '15px'
             }}>
-              {['blog', 'facebook', 'instagram', 'linkedin', 'twitter'].map(tab => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  style={{
-                    padding: '12px 24px',
-                    border: 'none',
-                    backgroundColor: activeTab === tab ? '#6366f1' : 'transparent',
-                    color: activeTab === tab ? '#ffffff' : '#6b7280',
-                    fontWeight: activeTab === tab ? '600' : '400',
-                    cursor: 'pointer',
-                    borderRadius: '8px 8px 0 0',
-                    transition: 'all 0.2s ease',
-                    fontSize: '0.95rem'
-                  }}
-                  onMouseEnter={(e) => {
-                    if (activeTab !== tab) {
-                      e.currentTarget.style.backgroundColor = '#f3f4f6';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (activeTab !== tab) {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                    }
-                  }}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
+              <div style={{
+                fontSize: '2rem',
+                marginTop: '2px'
+              }}>
+                🎨
+              </div>
+              <div style={{ flex: 1 }}>
+                <h3 style={{
+                  margin: '0 0 8px 0',
+                  fontSize: '1.2rem',
+                  fontWeight: '700',
+                  color: 'white'
+                }}>
+                  AI Image Suggestion
+                </h3>
+                <p style={{
+                  margin: '0 0 6px 0',
+                  fontSize: '0.95rem',
+                  lineHeight: '1.5',
+                  color: 'rgba(255, 255, 255, 0.95)'
+                }}>
+                  {aiMetadata.visualSuggestion}
+                </p>
+                <p style={{
+                  margin: '0',
+                  fontSize: '0.8rem',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  fontStyle: 'italic'
+                }}>
+                  Use this description to generate images for any platform
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="posts-grid">
+          {/* Blog Post Create Card */}
+          <div className="post-card">
+            <div className="platform-header">
+              <span className="platform-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M14 2V8H20M16 13H8M16 17H8M10 9H8" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
+              <span className="platform-name">Create Blog Post</span>
             </div>
 
-            {/* Tab Content */}
-            {activeTab === 'blog' && (
-              <div>
-                <div className="form-group">
-                  <label className="form-label">Title</label>
-                  <input
-                    type="text"
-                    className="form-input"
-                    value={selectedCampaign.blogPost?.title || ''}
-                    onChange={(e) => {
-                      setSelectedCampaign({
-                        ...selectedCampaign,
-                        blogPost: { ...selectedCampaign.blogPost, title: e.target.value }
-                      });
-                    }}
-                    placeholder="Blog post title..."
-                  />
+            <div className="form-group">
+              <label className="form-label">Title *</label>
+              <input
+                type="text"
+                className="form-input"
+                value={blogPost.title}
+                onChange={(e) => handleBlogChange('title', e.target.value)}
+                placeholder="Enter blog post title..."
+              />
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">Content *</label>
+              <textarea
+                className="form-textarea"
+                value={blogPost.content}
+                onChange={(e) => handleBlogChange('content', e.target.value)}
+                placeholder="Enter your blog post content here..."
+                style={{ minHeight: '300px' }}
+              />
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">Excerpt</label>
+              <textarea
+                className="form-textarea"
+                value={blogPost.excerpt}
+                onChange={(e) => handleBlogChange('excerpt', e.target.value)}
+                placeholder="Brief summary for SEO and previews (150-250 characters)..."
+                style={{ minHeight: '80px' }}
+              />
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">URL Slug</label>
+              <input
+                type="text"
+                className="form-input"
+                value={blogPost.slug}
+                onChange={(e) => handleBlogChange('slug', e.target.value)}
+                placeholder="url-friendly-slug-for-post"
+              />
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">Status</label>
+              <select
+                className="form-input"
+                value={blogPost.status}
+                onChange={(e) => handleBlogChange('status', e.target.value)}
+                style={{ cursor: 'pointer' }}
+              >
+                <option value="draft">Draft</option>
+                <option value="publish">Publish</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">Featured Image URL (optional)</label>
+              <input
+                type="url"
+                className="form-input"
+                value={blogPost.featuredImageUrl}
+                onChange={(e) => handleBlogChange('featuredImageUrl', e.target.value)}
+                placeholder="https://example.com/featured-image.jpg"
+              />
+            </div>
+
+            <button
+              className="post-button"
+              onClick={handleSaveBlogPost}
+              disabled={loading}
+            >
+              {loading ? 'Publishing...' : 'Publish to Blog'}
+            </button>
+          </div>
+
+          {/* Blog Posts Management Card */}
+          <div className="post-card">
+            <div className="platform-header">
+              <span className="platform-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M14 2V8H20M16 13H8M16 17H8M10 9H8" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
+              <span className="platform-name">Blog Posts</span>
+              <span className="ai-indicator" style={{ marginLeft: 'auto' }}>Live</span>
+            </div>
+
+            <button
+              className="post-button"
+              onClick={loadWordPressPosts}
+              disabled={wordpressLoading}
+              style={{ marginBottom: '16px' }}
+            >
+              {wordpressLoading ? 'Refreshing...' : '🔄 Refresh Posts'}
+            </button>
+
+            <div style={{ maxHeight: '600px', overflowY: 'auto' }}>
+              {wordpressLoading ? (
+                <div style={{ textAlign: 'center', padding: '40px' }}>
+                  <div className="spinner"></div>
+                  <p>Loading blog posts...</p>
                 </div>
+              ) : wordpressPosts.length === 0 ? (
+                <div className="empty-history">
+                  <p>
+                    No blog posts found. Create your first blog post!
+                  </p>
+                </div>
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  {wordpressPosts.map(post => {
+                    // Construct the logicpros.ca blog URL using the slug
+                    const blogUrl = `https://logicpros.ca/blog/${post.slug}`;
+
+                    return (
+                      <div key={post.id} style={{
+                        border: '1px solid #e5e7eb',
+                        borderRadius: '6px',
+                        padding: '16px',
+                        backgroundColor: '#f9fafb'
+                      }}>
+                        <div style={{
+                          fontWeight: '600',
+                          fontSize: '1rem',
+                          color: '#1a1a1a',
+                          marginBottom: '8px'
+                        }}>
+                          {post.title || 'Untitled Blog Post'}
+                        </div>
+
+                        <div
+                          dangerouslySetInnerHTML={{ __html: post.excerpt || post.content.substring(0, 150) + '...' }}
+                          style={{
+                            fontSize: '0.875rem',
+                            lineHeight: '1.5',
+                            color: '#6b7280',
+                            marginBottom: '12px'
+                          }}
+                        />
+
+                        <div style={{
+                          fontSize: '0.75rem',
+                          color: '#9ca3af',
+                          marginBottom: '12px'
+                        }}>
+                          {post.createdAt ? new Date(post.createdAt).toLocaleString() : 'Just now'}
+                          {post.author && ` • ${post.author}`}
+                        </div>
+
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                          <a
+                            href={blogUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              flex: 1,
+                              textAlign: 'center',
+                              padding: '8px 12px',
+                              backgroundColor: '#3b82f6',
+                              color: 'white',
+                              borderRadius: '6px',
+                              textDecoration: 'none',
+                              fontSize: '0.875rem',
+                              fontWeight: '500'
+                            }}
+                          >
+                            View
+                          </a>
+                          <button
+                            onClick={() => handleDeleteWordPressPost(post.id)}
+                            disabled={loading}
+                            style={{
+                              flex: 1,
+                              padding: '8px 12px',
+                              backgroundColor: '#ef4444',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '6px',
+                              cursor: 'pointer',
+                              fontSize: '0.875rem',
+                              fontWeight: '500'
+                            }}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Social Media Posts */}
+          {posts.map(post => {
+            return (
+              <div key={post.id} className="post-card">
+                <div className="platform-header">
+                  <span className="platform-icon">{getPlatformIcon(post.platform)}</span>
+                  <span className="platform-name">{post.platform}</span>
+                </div>
+
                 <div className="form-group">
                   <label className="form-label">Content</label>
                   <textarea
                     className="form-textarea"
-                    value={selectedCampaign.blogPost?.content || ''}
-                    onChange={(e) => {
-                      setSelectedCampaign({
-                        ...selectedCampaign,
-                        blogPost: { ...selectedCampaign.blogPost, content: e.target.value }
-                      });
-                    }}
-                    placeholder="Blog post content..."
-                    style={{ minHeight: '300px' }}
+                    value={post.content}
+                    onChange={(e) => handleContentChange(post.id, e.target.value)}
+                    placeholder={`Enter your ${post.platform} post content here...`}
                   />
                 </div>
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  marginTop: '20px',
-                  paddingTop: '20px',
-                  borderTop: '1px solid #e5e7eb'
-                }}>
-                  <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
-                    {selectedCampaign.publishingStatus?.blog ? (
-                      <span style={{ color: '#10b981', fontWeight: '600' }}>Posted ✓ {selectedCampaign.blogPost?.publishedAt ? new Date(selectedCampaign.blogPost.publishedAt.toDate ? selectedCampaign.blogPost.publishedAt.toDate() : selectedCampaign.blogPost.publishedAt).toLocaleString() : ''}</span>
-                    ) : (
-                      <span style={{ color: '#6b7280' }}>Not Posted ○</span>
-                    )}
-                  </div>
-                  <div style={{ display: 'flex', gap: '10px' }}>
-                    <button
-                      className="post-button"
-                      onClick={handleSaveCampaign}
-                      disabled={loading}
-                      style={{ marginTop: 0, backgroundColor: '#6366f1' }}
-                    >
-                      Save Changes
-                    </button>
-                    <button
-                      className="post-button"
-                      onClick={async () => {
-                        // First save the campaign
-                        await handleSaveCampaign();
-                        // Then publish to WordPress
-                        await handleSaveBlogPost();
-                      }}
-                      disabled={loading || !selectedCampaign.blogPost?.title || !selectedCampaign.blogPost?.content}
-                      style={{ marginTop: 0, backgroundColor: '#10b981' }}
-                    >
-                      {selectedCampaign.publishingStatus?.blog ? 'Update Post' : 'Post to Blog'}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
 
-            {activeTab === 'facebook' && (
-              <div>
+                {/* Facebook-specific field: Link URL */}
+                {post.platform === 'Facebook' && (
+                  <div className="form-group">
+                    <label className="form-label">Link URL (optional)</label>
+                    <input
+                      type="url"
+                      className="form-input"
+                      value={post.linkUrl || ''}
+                      onChange={(e) => handlePostFieldChange(post.id, 'linkUrl', e.target.value)}
+                      placeholder="https://logicpros.ca/blog/your-post-slug"
+                    />
+                  </div>
+                )}
+
+                {/* LinkedIn-specific fields: Visibility & Lifecycle State */}
+                {post.platform === 'LinkedIn' && (
+                  <>
+                    <div className="form-group">
+                      <label className="form-label">Visibility</label>
+                      <select
+                        className="form-input"
+                        value={post.visibility || 'PUBLIC'}
+                        onChange={(e) => handlePostFieldChange(post.id, 'visibility', e.target.value)}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        <option value="PUBLIC">Public</option>
+                        <option value="CONNECTIONS">Connections Only</option>
+                      </select>
+                    </div>
+
+                    <div className="form-group">
+                      <label className="form-label">Status</label>
+                      <select
+                        className="form-input"
+                        value={post.lifecycleState || 'PUBLISHED'}
+                        onChange={(e) => handlePostFieldChange(post.id, 'lifecycleState', e.target.value)}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        <option value="PUBLISHED">Published</option>
+                        <option value="DRAFT">Draft</option>
+                      </select>
+                    </div>
+                  </>
+                )}
+
                 <div className="form-group">
-                  <label className="form-label">Content</label>
-                  <textarea
-                    className="form-textarea"
-                    value={selectedCampaign.socialMedia?.facebook?.post || ''}
-                    onChange={(e) => {
-                      setSelectedCampaign({
-                        ...selectedCampaign,
-                        socialMedia: {
-                          ...selectedCampaign.socialMedia,
-                          facebook: { ...selectedCampaign.socialMedia?.facebook, post: e.target.value }
-                        }
-                      });
-                    }}
-                    placeholder="Facebook post content..."
-                    style={{ minHeight: '200px' }}
-                  />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Link URL (optional)</label>
+                  <label className="form-label">Image URL (optional)</label>
                   <input
                     type="url"
                     className="form-input"
-                    value={selectedCampaign.socialMedia?.facebook?.linkUrl || ''}
-                    onChange={(e) => {
-                      setSelectedCampaign({
-                        ...selectedCampaign,
-                        socialMedia: {
-                          ...selectedCampaign.socialMedia,
-                          facebook: { ...selectedCampaign.socialMedia?.facebook, linkUrl: e.target.value }
-                        }
-                      });
-                    }}
-                    placeholder="https://logicpros.ca/blog/your-post"
-                  />
-                </div>
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  marginTop: '20px',
-                  paddingTop: '20px',
-                  borderTop: '1px solid #e5e7eb'
-                }}>
-                  <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
-                    {selectedCampaign.publishingStatus?.facebook ? (
-                      <span style={{ color: '#10b981', fontWeight: '600' }}>Posted ✓ {selectedCampaign.socialMedia?.facebook?.publishedAt ? new Date(selectedCampaign.socialMedia.facebook.publishedAt.toDate ? selectedCampaign.socialMedia.facebook.publishedAt.toDate() : selectedCampaign.socialMedia.facebook.publishedAt).toLocaleString() : ''}</span>
-                    ) : (
-                      <span style={{ color: '#6b7280' }}>Not Posted ○</span>
-                    )}
-                  </div>
-                  <div style={{ display: 'flex', gap: '10px' }}>
-                    <button
-                      className="post-button"
-                      onClick={handleSaveCampaign}
-                      disabled={loading}
-                      style={{ marginTop: 0, backgroundColor: '#6366f1' }}
-                    >
-                      Save Changes
-                    </button>
-                    <button
-                      className="post-button"
-                      onClick={async () => {
-                        await handleSaveCampaign();
-                        // TODO: Add Facebook post handler
-                        setMessage('Facebook posting coming soon!');
-                      }}
-                      disabled={loading || !selectedCampaign.socialMedia?.facebook?.post}
-                      style={{ marginTop: 0, backgroundColor: '#1877F2' }}
-                    >
-                      {selectedCampaign.publishingStatus?.facebook ? 'Update Post' : 'Post to Facebook'}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === 'instagram' && (
-              <div>
-                <div className="form-group">
-                  <label className="form-label">Caption</label>
-                  <textarea
-                    className="form-textarea"
-                    value={selectedCampaign.socialMedia?.instagram?.caption || ''}
-                    onChange={(e) => {
-                      setSelectedCampaign({
-                        ...selectedCampaign,
-                        socialMedia: {
-                          ...selectedCampaign.socialMedia,
-                          instagram: { ...selectedCampaign.socialMedia?.instagram, caption: e.target.value }
-                        }
-                      });
-                    }}
-                    placeholder="Instagram caption..."
-                    style={{ minHeight: '200px' }}
-                  />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Image URL</label>
-                  <input
-                    type="url"
-                    className="form-input"
-                    value={selectedCampaign.socialMedia?.instagram?.imageUrl || ''}
-                    onChange={(e) => {
-                      setSelectedCampaign({
-                        ...selectedCampaign,
-                        socialMedia: {
-                          ...selectedCampaign.socialMedia,
-                          instagram: { ...selectedCampaign.socialMedia?.instagram, imageUrl: e.target.value }
-                        }
-                      });
-                    }}
+                    value={post.imageUrls[0] || ''}
+                    onChange={(e) => handleImageChange(post.id, e.target.value)}
                     placeholder="https://example.com/image.jpg"
                   />
                 </div>
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  marginTop: '20px',
-                  paddingTop: '20px',
-                  borderTop: '1px solid #e5e7eb'
-                }}>
-                  <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
-                    {selectedCampaign.publishingStatus?.instagram ? (
-                      <span style={{ color: '#10b981', fontWeight: '600' }}>Posted ✓ {selectedCampaign.socialMedia?.instagram?.publishedAt ? new Date(selectedCampaign.socialMedia.instagram.publishedAt.toDate ? selectedCampaign.socialMedia.instagram.publishedAt.toDate() : selectedCampaign.socialMedia.instagram.publishedAt).toLocaleString() : ''}</span>
-                    ) : (
-                      <span style={{ color: '#6b7280' }}>Not Posted ○</span>
-                    )}
-                  </div>
-                  <div style={{ display: 'flex', gap: '10px' }}>
-                    <button
-                      className="post-button"
-                      onClick={handleSaveCampaign}
-                      disabled={loading}
-                      style={{ marginTop: 0, backgroundColor: '#6366f1' }}
-                    >
-                      Save Changes
-                    </button>
-                    <button
-                      className="post-button"
-                      onClick={async () => {
-                        await handleSaveCampaign();
-                        // TODO: Add Instagram post handler
-                        setMessage('Instagram posting coming soon!');
-                      }}
-                      disabled={loading || !selectedCampaign.socialMedia?.instagram?.caption}
-                      style={{ marginTop: 0, backgroundColor: '#E4405F' }}
-                    >
-                      {selectedCampaign.publishingStatus?.instagram ? 'Update Post' : 'Post to Instagram'}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
 
-            {activeTab === 'linkedin' && (
-              <div>
                 <div className="form-group">
-                  <label className="form-label">Content</label>
+                  <label className="form-label">Notes (optional)</label>
                   <textarea
                     className="form-textarea"
-                    value={selectedCampaign.socialMedia?.linkedin?.post || ''}
-                    onChange={(e) => {
-                      setSelectedCampaign({
-                        ...selectedCampaign,
-                        socialMedia: {
-                          ...selectedCampaign.socialMedia,
-                          linkedin: { ...selectedCampaign.socialMedia?.linkedin, post: e.target.value }
-                        }
-                      });
-                    }}
-                    placeholder="LinkedIn post content..."
-                    style={{ minHeight: '200px' }}
+                    value={post.notes}
+                    onChange={(e) => handleNotesChange(post.id, e.target.value)}
+                    placeholder="Add any notes or reminders about this post..."
+                    style={{ minHeight: '60px' }}
                   />
                 </div>
-                <div className="form-group">
-                  <label className="form-label">Visibility</label>
-                  <select
-                    className="form-input"
-                    value={selectedCampaign.socialMedia?.linkedin?.visibility || 'PUBLIC'}
-                    onChange={(e) => {
-                      setSelectedCampaign({
-                        ...selectedCampaign,
-                        socialMedia: {
-                          ...selectedCampaign.socialMedia,
-                          linkedin: { ...selectedCampaign.socialMedia?.linkedin, visibility: e.target.value }
-                        }
-                      });
-                    }}
-                    style={{ cursor: 'pointer' }}
-                  >
-                    <option value="PUBLIC">Public</option>
-                    <option value="CONNECTIONS">Connections Only</option>
-                  </select>
-                </div>
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  marginTop: '20px',
-                  paddingTop: '20px',
-                  borderTop: '1px solid #e5e7eb'
-                }}>
-                  <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
-                    {selectedCampaign.publishingStatus?.linkedin ? (
-                      <span style={{ color: '#10b981', fontWeight: '600' }}>Posted ✓ {selectedCampaign.socialMedia?.linkedin?.publishedAt ? new Date(selectedCampaign.socialMedia.linkedin.publishedAt.toDate ? selectedCampaign.socialMedia.linkedin.publishedAt.toDate() : selectedCampaign.socialMedia.linkedin.publishedAt).toLocaleString() : ''}</span>
-                    ) : (
-                      <span style={{ color: '#6b7280' }}>Not Posted ○</span>
-                    )}
-                  </div>
-                  <div style={{ display: 'flex', gap: '10px' }}>
-                    <button
-                      className="post-button"
-                      onClick={handleSaveCampaign}
-                      disabled={loading}
-                      style={{ marginTop: 0, backgroundColor: '#6366f1' }}
-                    >
-                      Save Changes
-                    </button>
-                    <button
-                      className="post-button"
-                      onClick={async () => {
-                        await handleSaveCampaign();
-                        // Call existing LinkedIn post handler
-                        await handlePostToLinkedIn();
-                      }}
-                      disabled={loading || !linkedinConnected || !selectedCampaign.socialMedia?.linkedin?.post}
-                      style={{ marginTop: 0, backgroundColor: '#0A66C2' }}
-                    >
-                      {selectedCampaign.publishingStatus?.linkedin ? 'Update Post' : 'Post to LinkedIn'}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
 
-            {activeTab === 'twitter' && (
-              <div>
-                <div className="form-group">
-                  <label className="form-label">Thread</label>
-                  <textarea
-                    className="form-textarea"
-                    value={(selectedCampaign.socialMedia?.twitter?.thread || []).join('\n\n---\n\n')}
-                    onChange={(e) => {
-                      const thread = e.target.value.split('\n\n---\n\n');
-                      setSelectedCampaign({
-                        ...selectedCampaign,
-                        socialMedia: {
-                          ...selectedCampaign.socialMedia,
-                          twitter: { ...selectedCampaign.socialMedia?.twitter, thread }
-                        }
-                      });
-                    }}
-                    placeholder="Twitter thread... (separate tweets with --- on its own line)"
-                    style={{ minHeight: '200px' }}
-                  />
-                </div>
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  marginTop: '20px',
-                  paddingTop: '20px',
-                  borderTop: '1px solid #e5e7eb'
-                }}>
-                  <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
-                    {selectedCampaign.publishingStatus?.twitter ? (
-                      <span style={{ color: '#10b981', fontWeight: '600' }}>Posted ✓ {selectedCampaign.socialMedia?.twitter?.publishedAt ? new Date(selectedCampaign.socialMedia.twitter.publishedAt.toDate ? selectedCampaign.socialMedia.twitter.publishedAt.toDate() : selectedCampaign.socialMedia.twitter.publishedAt).toLocaleString() : ''}</span>
-                    ) : (
-                      <span style={{ color: '#6b7280' }}>Not Posted ○</span>
-                    )}
-                  </div>
-                  <div style={{ display: 'flex', gap: '10px' }}>
-                    <button
-                      className="post-button"
-                      onClick={handleSaveCampaign}
-                      disabled={loading}
-                      style={{ marginTop: 0, backgroundColor: '#6366f1' }}
-                    >
-                      Save Changes
-                    </button>
-                    <button
-                      className="post-button"
-                      onClick={async () => {
-                        await handleSaveCampaign();
-                        // TODO: Add Twitter post handler
-                        setMessage('Twitter posting coming soon!');
-                      }}
-                      disabled={loading || !selectedCampaign.socialMedia?.twitter?.thread || selectedCampaign.socialMedia?.twitter?.thread.length === 0}
-                      style={{ marginTop: 0, backgroundColor: '#000000' }}
-                    >
-                      {selectedCampaign.publishingStatus?.twitter ? 'Update Thread' : 'Post to Twitter'}
-                    </button>
-                  </div>
-                </div>
+                <button
+                  className="post-button"
+                  onClick={() => handleSavePost(post)}
+                  disabled={loading}
+                >
+                  {loading ? 'Saving...' : `Save ${post.platform} Post`}
+                </button>
               </div>
-            )}
-          </div>
-        )}
+            );
+          })}
+        </div>
 
       </div>
 
