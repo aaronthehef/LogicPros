@@ -365,7 +365,7 @@ export const ResponsiveLandingPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Your Business Deserves IT That Actually Works
+                  IT Services & Support for New Brunswick Businesses
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -374,21 +374,13 @@ export const ResponsiveLandingPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Proactive IT management and cybersecurity for New Brunswick businesses — with expert web design and automation when you need them.
+                  Proactive IT support and cybersecurity for businesses in Fredericton, Moncton, and Saint John. We keep your technology running smoothly so you can focus on growing your business.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                   <a href="/contact" className="hero-button">
-                    Get Your Free Tech Assessment
+                    Get Your Free Technology Assessment
                   </a>
-                  <p style={{
-                    fontSize: '0.9rem',
-                    color: '#e2e8f0',
-                    marginTop: '1rem',
-                    opacity: 0.8
-                  }}>
-                    No pressure, no sales pitch — just great advice
-                  </p>
                 </div>
               </div>
 
