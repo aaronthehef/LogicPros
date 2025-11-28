@@ -12,39 +12,74 @@ import { gsap } from 'gsap';
 export const ResponsiveLandingPage = () => {
   const heroRef = useRef(null);
   const headerRef = useRef(null);
+  const parallaxRef = useRef(null);
+  const parallaxRef2 = useRef(null);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
     // Enhanced GSAP scroll animations for header with hide on scroll down
     const header = headerRef.current;
+    const parallaxSection = parallaxRef.current;
+    const parallaxSection2 = parallaxRef2.current;
     if (!header) return;
 
+    let ticking = false;
+
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
 
-      // Determine scroll direction
-      const scrollingDown = currentScrollY > lastScrollY.current && currentScrollY > 100;
-      const scrollingUp = currentScrollY < lastScrollY.current || currentScrollY <= 100;
+          // Determine scroll direction
+          const scrollingDown = currentScrollY > lastScrollY.current && currentScrollY > 100;
+          const scrollingUp = currentScrollY < lastScrollY.current || currentScrollY <= 100;
 
-      // Hide header when scrolling down, show when scrolling up
-      if (scrollingDown) {
-        header.style.transform = 'translateY(-120px)';
-        header.style.transition = 'transform 0.3s ease';
-      } else if (scrollingUp) {
-        header.style.transform = 'translateY(0)';
-        header.style.transition = 'transform 0.3s ease';
+          // Hide header when scrolling down, show when scrolling up
+          if (scrollingDown) {
+            header.style.transform = 'translateY(-120px)';
+            header.style.transition = 'transform 0.3s ease';
+          } else if (scrollingUp) {
+            header.style.transform = 'translateY(0)';
+            header.style.transition = 'transform 0.3s ease';
+          }
+
+          // Enhanced blur and shadow when scrolled
+          if (currentScrollY > 100) {
+            header.style.backdropFilter = "blur(25px) saturate(200%)";
+            header.style.boxShadow = "0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(29, 122, 175, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)";
+          } else {
+            header.style.backdropFilter = "blur(20px) saturate(180%)";
+            header.style.boxShadow = "0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(29, 122, 175, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)";
+          }
+
+          // Parallax effect - smooth scrolling with positive values
+          if (parallaxSection && window.innerWidth > 1024) {
+            const parallaxOffset = parallaxSection.offsetTop;
+            const parallaxHeight = parallaxSection.offsetHeight;
+
+            if (currentScrollY > parallaxOffset - window.innerHeight && currentScrollY < parallaxOffset + parallaxHeight) {
+              const yPos = (currentScrollY - parallaxOffset) * 0.5;
+              parallaxSection.style.backgroundPosition = `center ${yPos}px`;
+            }
+          }
+
+          // Second parallax effect for IT Problems section
+          if (parallaxSection2 && window.innerWidth > 1024) {
+            const parallaxOffset2 = parallaxSection2.offsetTop;
+            const parallaxHeight2 = parallaxSection2.offsetHeight;
+
+            if (currentScrollY > parallaxOffset2 - window.innerHeight && currentScrollY < parallaxOffset2 + parallaxHeight2) {
+              const yPos2 = (currentScrollY - parallaxOffset2) * 0.5;
+              parallaxSection2.style.backgroundPosition = `center ${yPos2}px`;
+            }
+          }
+
+          lastScrollY.current = currentScrollY;
+          ticking = false;
+        });
+
+        ticking = true;
       }
-
-      // Enhanced blur and shadow when scrolled
-      if (currentScrollY > 100) {
-        header.style.backdropFilter = "blur(25px) saturate(200%)";
-        header.style.boxShadow = "0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(29, 122, 175, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)";
-      } else {
-        header.style.backdropFilter = "blur(20px) saturate(180%)";
-        header.style.boxShadow = "0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(29, 122, 175, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)";
-      }
-
-      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -220,6 +255,100 @@ export const ResponsiveLandingPage = () => {
       .hero-service-card:hover svg {
         transform: scale(1.1) !important;
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) !important;
+      }
+
+      /* IT Services Showcase Image Styles */
+      .it-service-image {
+        object-fit: cover;
+      }
+
+      .it-service-image:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(29, 122, 175, 0.3) !important;
+      }
+
+      /* Responsive breakpoints for IT showcase grid */
+      @media (max-width: 1024px) {
+        .it-showcase-grid {
+          grid-template-columns: 1fr !important;
+          gap: 2.5rem !important;
+          margin-bottom: 3rem !important;
+        }
+
+        .it-showcase-reverse {
+          direction: ltr !important;
+        }
+
+        .it-showcase-reverse > div:first-child {
+          order: 2;
+        }
+
+        .it-showcase-reverse > div:last-child {
+          order: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .it-showcase-grid {
+          gap: 2rem !important;
+          margin-bottom: 2.5rem !important;
+        }
+
+        .it-showcase-image-wrapper {
+          margin-bottom: 1rem;
+        }
+
+        .it-service-image {
+          border-radius: 12px !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .it-showcase-grid {
+          gap: 1.5rem !important;
+        }
+
+        .it-service-image {
+          border-radius: 8px !important;
+          box-shadow: 0 8px 24px rgba(29, 122, 175, 0.15) !important;
+        }
+      }
+
+      /* Parallax Section Responsive */
+      @media (max-width: 1024px) {
+        .parallax-section {
+          background-attachment: scroll !important;
+          height: 400px !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .parallax-section {
+          height: 350px !important;
+        }
+
+        .parallax-section h2 {
+          font-size: 1.8rem !important;
+        }
+
+        .parallax-section > div > div {
+          gap: 1.5rem !important;
+        }
+
+        .parallax-section [style*="fontSize: '2.5rem'"] {
+          font-size: 2rem !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .parallax-section {
+          height: 300px !important;
+        }
+
+        .parallax-section > div > div {
+          flex-direction: column !important;
+          gap: 1rem !important;
+        }
       }
     `;
     document.head.appendChild(style);
@@ -528,11 +657,30 @@ export const ResponsiveLandingPage = () => {
         </section>
 
         {/* The Real Cost of IT Problems Section */}
-        <section style={{
-          background: 'linear-gradient(135deg, #16213e 0%, #0f3460 100%)',
-          padding: '80px 0'
-        }}>
-          <div className="container">
+        <section
+          ref={parallaxRef2}
+          className="parallax-section-2"
+          style={{
+            position: 'relative',
+            backgroundImage: 'url(/it-cybersecurity.jpg)',
+            backgroundPosition: 'center 0px',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '120%',
+            padding: '80px 0',
+            overflow: 'hidden'
+          }}
+        >
+          {/* Dark overlay to maintain readability */}
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(135deg, rgba(22, 33, 62, 0.92) 0%, rgba(15, 52, 96, 0.92) 100%)',
+            zIndex: 1
+          }} />
+          <div className="container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="section-header">
               <h2 className="section-title" style={{ color: 'white' }}>The Real Cost of IT Problems</h2>
             </div>
@@ -1007,8 +1155,318 @@ export const ResponsiveLandingPage = () => {
           </div>
         </section>
 
+        {/* Parallax Section */}
+        <section
+          ref={parallaxRef}
+          className="parallax-section"
+          style={{
+            position: 'relative',
+            height: '500px',
+            backgroundImage: 'url(/server-room-parallax.jpg)',
+            backgroundPosition: 'center 0px',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '120%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            overflow: 'hidden'
+          }}
+        >
+          {/* Dark Overlay */}
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(135deg, rgba(26, 33, 46, 0.85), rgba(15, 52, 96, 0.75))',
+            zIndex: 1
+          }} />
+
+          {/* Content */}
+          <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
+            <h2 style={{
+              fontSize: 'clamp(2rem, 5vw, 3rem)',
+              fontWeight: '700',
+              color: '#ffffff',
+              marginBottom: '1.5rem',
+              textShadow: '0 4px 12px rgba(0, 0, 0, 0.5)'
+            }}>
+              Enterprise-Grade IT Infrastructure for New Brunswick
+            </h2>
+            <p style={{
+              fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
+              color: '#e2e8f0',
+              maxWidth: '800px',
+              margin: '0 auto 2rem',
+              lineHeight: '1.6',
+              textShadow: '0 2px 8px rgba(0, 0, 0, 0.5)'
+            }}>
+              24/7 monitoring • Proactive maintenance • Rapid response
+            </p>
+            <div style={{
+              display: 'flex',
+              gap: '2rem',
+              justifyContent: 'center',
+              flexWrap: 'wrap'
+            }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '0.5rem',
+                  textShadow: '0 0 20px rgba(31, 124, 255, 0.5)'
+                }}>
+                  99.9%
+                </div>
+                <div style={{
+                  fontSize: '0.9rem',
+                  color: '#cbd5e0',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px'
+                }}>
+                  Uptime Guarantee
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '0.5rem',
+                  textShadow: '0 0 20px rgba(31, 124, 255, 0.5)'
+                }}>
+                  &lt;15min
+                </div>
+                <div style={{
+                  fontSize: '0.9rem',
+                  color: '#cbd5e0',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px'
+                }}>
+                  Average Response
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '0.5rem',
+                  textShadow: '0 0 20px rgba(31, 124, 255, 0.5)'
+                }}>
+                  24/7
+                </div>
+                <div style={{
+                  fontSize: '0.9rem',
+                  color: '#cbd5e0',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px'
+                }}>
+                  Monitoring
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Interactive Services Showcase Section */}
         <InteractiveServicesShowcase />
+
+        {/* IT Services Visual Showcase */}
+        <section className="section" style={{ backgroundColor: '#ffffff', padding: '4rem 0' }}>
+          <div className="container">
+            {/* Main Feature - IT Support Team */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '4rem',
+              alignItems: 'center',
+              marginBottom: '5rem'
+            }} className="it-showcase-grid">
+              <div className="it-showcase-image-wrapper">
+                <img
+                  src="/it-support-team.jpg"
+                  alt="Professional IT support team providing help desk services in Fredericton"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: '16px',
+                    boxShadow: '0 16px 48px rgba(29, 122, 175, 0.2)',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                    position: 'relative'
+                  }}
+                  className="it-service-image"
+                />
+              </div>
+              <div>
+                <h2 style={{
+                  fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '1.5rem',
+                  lineHeight: '1.2'
+                }}>
+                  Responsive IT Support When You Need It
+                </h2>
+                <p style={{
+                  fontSize: '1.1rem',
+                  color: colors.text.secondary,
+                  lineHeight: '1.8',
+                  marginBottom: '2rem'
+                }}>
+                  Our experienced IT support team is ready to help your Fredericton business resolve technical issues quickly. From network troubleshooting to user support, we keep your team productive and your technology running smoothly.
+                </p>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {['Fast response times', 'Remote and on-site support', 'Preventive monitoring', 'User-friendly help desk'].map((item, index) => (
+                    <li key={index} style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      marginBottom: '1rem',
+                      fontSize: '1rem',
+                      color: colors.text.secondary
+                    }}>
+                      <svg style={{ marginRight: '0.75rem', flexShrink: 0 }} width="20" height="20" fill={colors.primary} viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Alternating Section - Server Management */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '4rem',
+              alignItems: 'center',
+              marginBottom: '5rem'
+            }} className="it-showcase-grid it-showcase-reverse">
+              <div>
+                <h2 style={{
+                  fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '1.5rem',
+                  lineHeight: '1.2'
+                }}>
+                  Expert Network & Infrastructure Management
+                </h2>
+                <p style={{
+                  fontSize: '1.1rem',
+                  color: colors.text.secondary,
+                  lineHeight: '1.8',
+                  marginBottom: '2rem'
+                }}>
+                  We manage and maintain your critical IT infrastructure so you can focus on your business. From servers to network security, our proactive approach prevents problems before they impact your operations.
+                </p>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {['24/7 system monitoring', 'Regular maintenance & updates', 'Network optimization', 'Data backup & recovery'].map((item, index) => (
+                    <li key={index} style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      marginBottom: '1rem',
+                      fontSize: '1rem',
+                      color: colors.text.secondary
+                    }}>
+                      <svg style={{ marginRight: '0.75rem', flexShrink: 0 }} width="20" height="20" fill={colors.primary} viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="it-showcase-image-wrapper">
+                <img
+                  src="/it-server-work.jpg"
+                  alt="IT technician managing server infrastructure and network cables"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: '16px',
+                    boxShadow: '0 16px 48px rgba(29, 122, 175, 0.2)',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                  }}
+                  className="it-service-image"
+                />
+              </div>
+            </div>
+
+            {/* Cybersecurity Section */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '4rem',
+              alignItems: 'center'
+            }} className="it-showcase-grid">
+              <div className="it-showcase-image-wrapper">
+                <img
+                  src="/it-cybersecurity.jpg"
+                  alt="Cybersecurity monitoring and code analysis for business protection"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: '16px',
+                    boxShadow: '0 16px 48px rgba(29, 122, 175, 0.2)',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                  }}
+                  className="it-service-image"
+                />
+              </div>
+              <div>
+                <h2 style={{
+                  fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+                  fontWeight: '700',
+                  color: colors.text.primary,
+                  marginBottom: '1.5rem',
+                  lineHeight: '1.2'
+                }}>
+                  Comprehensive Cybersecurity Protection
+                </h2>
+                <p style={{
+                  fontSize: '1.1rem',
+                  color: colors.text.secondary,
+                  lineHeight: '1.8',
+                  marginBottom: '2rem'
+                }}>
+                  Protect your business from cyber threats with our multi-layered security approach. We combine advanced technology with employee training to keep your data and systems secure.
+                </p>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {['Threat detection & response', 'Security audits & assessments', 'Employee security training', 'Compliance assistance'].map((item, index) => (
+                    <li key={index} style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      marginBottom: '1rem',
+                      fontSize: '1rem',
+                      color: colors.text.secondary
+                    }}>
+                      <svg style={{ marginRight: '0.75rem', flexShrink: 0 }} width="20" height="20" fill={colors.primary} viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Why Choose Us Section */}
         <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
