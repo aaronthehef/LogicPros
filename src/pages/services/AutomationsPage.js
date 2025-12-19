@@ -3,6 +3,7 @@ import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
 import { Footer } from '../../components/Footer';
+import { ServiceSchema } from '../../components/ServiceSchema';
 import { colors } from '../../styles/colors';
 import { gsap } from 'gsap';
 
@@ -176,6 +177,13 @@ export const AutomationsPage = () => {
 
   return (
     <div className="landing-page">
+      <ServiceSchema
+        serviceName="AI Automation and Workflow Solutions"
+        description="AI-powered business automation for Fredericton and New Brunswick. Automate repetitive tasks, integrate systems, and deploy AI chatbots. Save hours per week with n8n workflow automation and AI agents."
+        priceRange="$$"
+        url="https://logicpros.ca/services/automations"
+      />
+
       {/* Header */}
       <header className="sticky-header" ref={headerRef}>
         <div className="header-content">
@@ -306,8 +314,17 @@ export const AutomationsPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Drowning in Repetitive Tasks? Let AI Do the Boring Stuff.
+                  AI Automation & Workflow Solutions in Fredericton
                 </h1>
+                <h2 style={{
+                  fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+                  fontWeight: '700',
+                  lineHeight: '1.2',
+                  marginBottom: '1.5rem',
+                  color: '#e2e8f0'
+                }}>
+                  Drowning in Repetitive Tasks? Let AI Do the Boring Stuff.
+                </h2>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
                   color: '#e2e8f0',
@@ -1221,9 +1238,9 @@ export const AutomationsPage = () => {
               </div>
               
               <div className="benefit-image n8n-workflow-container">
-                <img 
-                  src="/n8n.png" 
-                  alt="n8n Automation Workflow Dashboard showing AI Agent, HTTP Request, Google Sheets integration" 
+                <img
+                  src="/n8n.png"
+                  alt="n8n Automation Workflow Dashboard for New Brunswick businesses showing AI Agent HTTP Request Google Sheets integration"
                   className="n8n-workflow-image"
                 />
               </div>

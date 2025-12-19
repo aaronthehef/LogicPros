@@ -3,6 +3,8 @@ import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
 import { Footer } from '../../components/Footer';
+import { ServiceSchema } from '../../components/ServiceSchema';
+import { FAQSchema } from '../../components/FAQSchema';
 import { colors } from '../../styles/colors';
 import { gsap } from 'gsap';
 
@@ -189,6 +191,13 @@ export const ManagedITServicesPage = () => {
 
   return (
     <div className="landing-page">
+      <ServiceSchema
+        serviceName="Managed IT Services"
+        description="Reliable managed IT services for Fredericton and New Brunswick businesses. 24/7 monitoring, unlimited support, cybersecurity protection, and data backups with flat-rate pricing. No hourly billing surprises."
+        priceRange="$$"
+        url="https://logicpros.ca/services/managed-it"
+      />
+
       {/* Header */}
       <header className="sticky-header" ref={headerRef}>
         <div className="header-content">
@@ -319,8 +328,17 @@ export const ManagedITServicesPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Tired of Being Your Own IT Department?
+                  Reliable Managed IT Services in Fredericton
                 </h1>
+                <h2 style={{
+                  fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+                  fontWeight: '700',
+                  lineHeight: '1.2',
+                  marginBottom: '1.5rem',
+                  color: '#e2e8f0'
+                }}>
+                  Tired of Being Your Own IT Department?
+                </h2>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
                   color: '#e2e8f0',
@@ -1942,6 +1960,103 @@ export const ManagedITServicesPage = () => {
             >
               Get IT Management Quote
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{
+        background: 'linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%)',
+        padding: '80px 20px',
+        borderTop: '1px solid #e9ecef'
+      }}>
+        <FAQSchema faqs={[
+          {
+            question: "How much do managed IT services cost in Fredericton?",
+            answer: "Managed IT services in Fredericton typically range from $150-500/month depending on the number of devices and level of support. LogicPros offers flat-rate pricing with no hourly billing surprises. Contact us for a custom quote based on your business needs."
+          },
+          {
+            question: "What's included in managed IT services?",
+            answer: "Our managed IT services include 24/7 monitoring, unlimited support, cybersecurity protection, data backups, software updates, and IT consulting. You get a flat monthly rate that covers everything your business needs to stay running smoothly."
+          },
+          {
+            question: "Do I need managed IT if I'm a small business?",
+            answer: "Yes! Small businesses are the #1 target for cyberattacks because hackers know they often lack IT security. Managed IT services protect your data and keep your systems running smoothly without needing to hire a full-time IT person. It's more affordable and you get enterprise-level expertise."
+          },
+          {
+            question: "How quickly can you respond to IT issues?",
+            answer: "We provide same-day response for most IT issues in Fredericton and throughout New Brunswick. Critical issues are prioritized and addressed immediately. Our goal is to minimize downtime and keep your business running."
+          },
+          {
+            question: "Can you work with our existing IT setup?",
+            answer: "Absolutely! We work with all major business software, hardware, and cloud platforms. Whether you use Microsoft 365, Google Workspace, QuickBooks, or custom software, we integrate seamlessly with your existing technology stack."
+          }
+        ]} />
+
+        <div className="container" style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+            fontWeight: '700',
+            marginBottom: '20px',
+            textAlign: 'center',
+            color: '#1a1a2e'
+          }}>Frequently Asked Questions</h2>
+          <p style={{
+            fontSize: '1.1rem',
+            color: '#64748b',
+            textAlign: 'center',
+            marginBottom: '50px'
+          }}>
+            Common questions about managed IT services for Fredericton businesses
+          </p>
+
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '25px'
+          }}>
+            {[
+              {
+                q: "How much do managed IT services cost in Fredericton?",
+                a: "Managed IT services in Fredericton typically range from $150-500/month depending on the number of devices and level of support. LogicPros offers flat-rate pricing with no hourly billing surprises. Contact us for a custom quote based on your business needs."
+              },
+              {
+                q: "What's included in managed IT services?",
+                a: "Our managed IT services include 24/7 monitoring, unlimited support, cybersecurity protection, data backups, software updates, and IT consulting. You get a flat monthly rate that covers everything your business needs to stay running smoothly."
+              },
+              {
+                q: "Do I need managed IT if I'm a small business?",
+                a: "Yes! Small businesses are the #1 target for cyberattacks because hackers know they often lack IT security. Managed IT services protect your data and keep your systems running smoothly without needing to hire a full-time IT person. It's more affordable and you get enterprise-level expertise."
+              },
+              {
+                q: "How quickly can you respond to IT issues?",
+                a: "We provide same-day response for most IT issues in Fredericton and throughout New Brunswick. Critical issues are prioritized and addressed immediately. Our goal is to minimize downtime and keep your business running."
+              },
+              {
+                q: "Can you work with our existing IT setup?",
+                a: "Absolutely! We work with all major business software, hardware, and cloud platforms. Whether you use Microsoft 365, Google Workspace, QuickBooks, or custom software, we integrate seamlessly with your existing technology stack."
+              }
+            ].map((faq, index) => (
+              <div key={index} style={{
+                background: 'white',
+                padding: '30px',
+                borderRadius: '12px',
+                border: '1px solid #e9ecef',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.3rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '12px'
+                }}>{faq.q}</h3>
+                <p style={{
+                  color: '#64748b',
+                  lineHeight: '1.7',
+                  margin: 0
+                }}>{faq.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

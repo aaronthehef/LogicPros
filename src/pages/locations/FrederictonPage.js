@@ -2431,6 +2431,110 @@ export const FrederictonPage = () => {
             </div>
           </div>
         </section>
+
+        {/* We Also Serve - Location Cross-Links */}
+        <section style={{
+          background: 'linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%)',
+          padding: '60px 20px',
+          borderTop: '1px solid #e9ecef'
+        }}>
+          <div className="container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <h2 style={{
+              fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
+              fontWeight: '700',
+              marginBottom: '15px',
+              textAlign: 'center',
+              color: '#1a1a2e'
+            }}>We Also Serve</h2>
+            <p style={{
+              fontSize: '1.1rem',
+              color: '#64748b',
+              textAlign: 'center',
+              marginBottom: '40px',
+              maxWidth: '700px',
+              margin: '0 auto 40px auto'
+            }}>
+              LogicPros provides IT services, web design, cybersecurity, and automation solutions throughout New Brunswick
+            </p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : 'repeat(2, 1fr)',
+              gap: '25px',
+              maxWidth: '800px',
+              margin: '0 auto'
+            }}>
+              <a href="/locations/moncton" style={{
+                display: 'block',
+                background: 'white',
+                padding: '30px',
+                borderRadius: '15px',
+                border: '2px solid #e9ecef',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.05)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#1F7CFF';
+                e.currentTarget.style.transform = 'translateY(-5px)';
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(31, 124, 255, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '#e9ecef';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.05)';
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '10px'
+                }}>IT Services Moncton</h3>
+                <p style={{
+                  color: '#64748b',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  Professional IT support, cybersecurity, web design, and automation for Moncton businesses
+                </p>
+              </a>
+
+              <a href="/locations/saint-john" style={{
+                display: 'block',
+                background: 'white',
+                padding: '30px',
+                borderRadius: '15px',
+                border: '2px solid #e9ecef',
+                textDecoration: 'none',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.05)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#1F7CFF';
+                e.currentTarget.style.transform = 'translateY(-5px)';
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(31, 124, 255, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '#e9ecef';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.05)';
+              }}>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#1F7CFF',
+                  marginBottom: '10px'
+                }}>IT Services Saint John</h3>
+                <p style={{
+                  color: '#64748b',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  Reliable IT solutions, managed services, web development, and business automation for Saint John
+                </p>
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

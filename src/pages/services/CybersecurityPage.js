@@ -3,6 +3,8 @@ import '../../responsive-style.css';
 import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
 import { Footer } from '../../components/Footer';
+import { ServiceSchema } from '../../components/ServiceSchema';
+import { FAQSchema } from '../../components/FAQSchema';
 import { colors } from '../../styles/colors';
 
 export const CybersecurityPage = () => {
@@ -216,6 +218,13 @@ export const CybersecurityPage = () => {
 
   return (
     <div className="landing-page">
+      <ServiceSchema
+        serviceName="Cybersecurity Services"
+        description="Enterprise-level cybersecurity for Fredericton small businesses. Security audits, password management, multi-factor authentication, and data protection from experienced IT security professionals."
+        priceRange="$$"
+        url="https://logicpros.ca/services/cybersecurity"
+      />
+
       {/* Header */}
       <header className="sticky-header">
         <div className="header-content">
@@ -346,8 +355,17 @@ export const CybersecurityPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  One Breach Can Destroy Everything You've Built
+                  Enterprise-Level Cybersecurity for Fredericton Small Businesses
                 </h1>
+                <h2 style={{
+                  fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+                  fontWeight: '700',
+                  lineHeight: '1.2',
+                  marginBottom: '1.5rem',
+                  color: '#e2e8f0'
+                }}>
+                  One Breach Can Destroy Everything You've Built
+                </h2>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
                   color: '#e2e8f0',
@@ -1543,14 +1561,14 @@ export const CybersecurityPage = () => {
                   marginBottom: '15px',
                   lineHeight: '1.3',
                   textAlign: 'center'
-                }}>Government-Grade Security Expertise</h3>
+                }}>Enterprise-Level Security Expertise</h3>
                 <p style={{
                   color: colors.text.secondary,
                   lineHeight: '1.7',
                   fontSize: '1rem',
                   textAlign: 'center'
                 }}>
-                  Our founder led IT for New Brunswick's provincial government. We bring the same security thinking that protects government data to your small business — without the government-sized price tag.
+                  Our founder worked in IT for New Brunswick's provincial government. We bring the same enterprise-level security thinking that protects government data to your small business — without the government-sized price tag.
                 </p>
               </div>
 
@@ -2015,6 +2033,103 @@ export const CybersecurityPage = () => {
             </div>
           </div>
         </section>
+
+      {/* FAQ Section */}
+      <section style={{
+        background: 'linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%)',
+        padding: '80px 20px',
+        borderTop: '1px solid #e9ecef'
+      }}>
+        <FAQSchema faqs={[
+          {
+            question: "How much does a cybersecurity audit cost for a small business?",
+            answer: "Cybersecurity audits for Fredericton small businesses typically range from $500-2000 depending on the size of your business and number of systems. We provide a detailed security assessment with actionable recommendations to protect your data."
+          },
+          {
+            question: "What are the most common cybersecurity threats for small businesses?",
+            answer: "The top threats are phishing emails, ransomware attacks, weak passwords, unpatched software, and insider threats. Small businesses are targeted because hackers assume they lack proper security. One breach can cost thousands in downtime, data recovery, and lost customer trust."
+          },
+          {
+            question: "Do I really need cybersecurity if I'm just a small local business?",
+            answer: "Absolutely. 43% of cyberattacks target small businesses, and 60% of small companies go out of business within 6 months of a breach. Hackers target small businesses specifically because they often lack IT security. Enterprise-level protection is now affordable for small businesses."
+          },
+          {
+            question: "What's included in your cybersecurity services?",
+            answer: "Our cybersecurity services include security audits, password management, multi-factor authentication (MFA), employee training, data backup solutions, and ongoing monitoring. We bring enterprise-level security thinking to small business budgets."
+          },
+          {
+            question: "How long does it take to implement cybersecurity protections?",
+            answer: "Basic protections like password management and MFA can be set up in a week. A full security audit and implementation typically takes 2-4 weeks. We prioritize quick wins that immediately reduce your risk while working on comprehensive long-term protection."
+          }
+        ]} />
+
+        <div className="container" style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: 'clamp(2rem, 4vw, 2.8rem)',
+            fontWeight: '700',
+            marginBottom: '20px',
+            textAlign: 'center',
+            color: '#1a1a2e'
+          }}>Frequently Asked Questions</h2>
+          <p style={{
+            fontSize: '1.1rem',
+            color: '#64748b',
+            textAlign: 'center',
+            marginBottom: '50px'
+          }}>
+            Common questions about cybersecurity for Fredericton small businesses
+          </p>
+
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '25px'
+          }}>
+            {[
+              {
+                q: "How much does a cybersecurity audit cost for a small business?",
+                a: "Cybersecurity audits for Fredericton small businesses typically range from $500-2000 depending on the size of your business and number of systems. We provide a detailed security assessment with actionable recommendations to protect your data."
+              },
+              {
+                q: "What are the most common cybersecurity threats for small businesses?",
+                a: "The top threats are phishing emails, ransomware attacks, weak passwords, unpatched software, and insider threats. Small businesses are targeted because hackers assume they lack proper security. One breach can cost thousands in downtime, data recovery, and lost customer trust."
+              },
+              {
+                q: "Do I really need cybersecurity if I'm just a small local business?",
+                a: "Absolutely. 43% of cyberattacks target small businesses, and 60% of small companies go out of business within 6 months of a breach. Hackers target small businesses specifically because they often lack IT security. Enterprise-level protection is now affordable for small businesses."
+              },
+              {
+                q: "What's included in your cybersecurity services?",
+                a: "Our cybersecurity services include security audits, password management, multi-factor authentication (MFA), employee training, data backup solutions, and ongoing monitoring. We bring enterprise-level security thinking to small business budgets."
+              },
+              {
+                q: "How long does it take to implement cybersecurity protections?",
+                a: "Basic protections like password management and MFA can be set up in a week. A full security audit and implementation typically takes 2-4 weeks. We prioritize quick wins that immediately reduce your risk while working on comprehensive long-term protection."
+              }
+            ].map((faq, index) => (
+              <div key={index} style={{
+                background: 'white',
+                padding: '30px',
+                borderRadius: '12px',
+                border: '1px solid #e9ecef',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)'
+              }}>
+                <h3 style={{
+                  fontSize: '1.3rem',
+                  fontWeight: '600',
+                  color: '#1F7CFF',
+                  marginBottom: '12px'
+                }}>{faq.q}</h3>
+                <p style={{
+                  color: '#64748b',
+                  lineHeight: '1.7',
+                  margin: 0
+                }}>{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       </main>
 
       <Footer />

@@ -4,6 +4,7 @@ import { Logo } from '../../components/Logo';
 import { Navigation } from '../../components/Navigation';
 import { Animations } from '../../components/Animations';
 import { Footer } from '../../components/Footer';
+import { ServiceSchema } from '../../components/ServiceSchema';
 import { colors } from '../../styles/colors';
 
 export const WebsitesPage = () => {
@@ -200,6 +201,13 @@ export const WebsitesPage = () => {
   }, []);
   return (
     <div className="landing-page">
+      <ServiceSchema
+        serviceName="Web Design Services"
+        description="Professional website design and development in Fredericton, New Brunswick. Custom WordPress and React websites with SEO optimization, responsive design, and fast turnaround for small businesses."
+        priceRange="$$"
+        url="https://logicpros.ca/services/websites"
+      />
+
       {/* Header */}
       <header className="sticky-header">
         <div className="header-content">
@@ -331,8 +339,17 @@ export const WebsitesPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Is Your Website Costing You Customers?
+                  Professional Web Design in Fredericton
                 </h1>
+                <h2 style={{
+                  fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+                  fontWeight: '700',
+                  lineHeight: '1.2',
+                  marginBottom: '1.5rem',
+                  color: '#e2e8f0'
+                }}>
+                  Is Your Website Costing You Customers?
+                </h2>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
                   color: '#e2e8f0',
@@ -346,10 +363,6 @@ export const WebsitesPage = () => {
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-                  <a href="/free-example" className="hero-button">
-                    Get Your FREE Website Example
-                  </a>
-                  
                   <a href="/contact" className="hero-button">
                     Get Free Quote
                   </a>
@@ -724,53 +737,6 @@ export const WebsitesPage = () => {
                   </h3>
                   <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
                     Stand out from cookie-cutter competitors. Get a website that actually represents your brand — not a template that looks like everyone else's.
-                  </p>
-                  <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
-                    Learn More →
-                  </span>
-                </div>
-              </a>
-
-              {/* E-Commerce Sites Card */}
-              <a href="/services/websites/ecommerce" style={{ textDecoration: 'none' }}>
-                <div style={{
-                  background: 'white',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
-                  transition: 'all 0.3s ease',
-                  cursor: 'pointer',
-                  height: '100%'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-8px)';
-                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(31, 124, 255, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.08)';
-                }}>
-                  <div style={{
-                    width: '70px',
-                    height: '70px',
-                    background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                    borderRadius: '16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '20px'
-                  }}>
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 2L6 9H18L15 2H9Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M6 9H18V20C18 21 17 22 16 22H8C7 22 6 21 6 20V9Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M9 22V16H15V22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <h3 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '10px', color: '#1a1a2e' }}>
-                    E-Commerce Sites
-                  </h3>
-                  <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '15px' }}>
-                    Turn browsers into buyers. Sell 24/7 with a store that's easy to manage, secure for customers, and optimized to maximize every sale.
                   </p>
                   <span style={{ color: '#1F7CFF', fontWeight: '600', fontSize: '0.9rem' }}>
                     Learn More →
@@ -2032,7 +1998,7 @@ export const WebsitesPage = () => {
               }}>
                 Schedule Free Consultation
               </a>
-              <a href="/free-example" style={{
+              <a href="/portfolio" style={{
                 display: 'inline-block',
                 background: 'transparent',
                 color: 'white',
@@ -2055,7 +2021,7 @@ export const WebsitesPage = () => {
                 e.target.style.transform = 'translateY(0)';
                 e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
               }}>
-                See a Free Example
+                View Portfolio
               </a>
             </div>
           </div>
