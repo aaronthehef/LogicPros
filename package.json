@@ -15,17 +15,35 @@
     "nodemailer": "^7.0.5",
     "prop-types": "^15.8.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "start:clean": "BROWSER=none react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && node scripts/prerender.js",
+    "build:snap": "react-scripts build && node scripts/prerender.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "reactSnap": {
+    "inlineCss": true,
+    "minifyHtml": {
+      "collapseWhitespace": true,
+      "removeComments": true
+    },
+    "crawl": true,
+    "skipThirdPartyRequests": true,
+    "cacheAjaxRequests": false,
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "puppeteerExecutablePath": null
+  },
   "devDependencies": {
     "http-proxy-middleware": "^3.0.5",
+    "prerender-spa-plugin": "^3.4.0",
     "react-scripts": "^5.0.1"
   },
   "browserslist": {
