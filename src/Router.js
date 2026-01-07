@@ -52,6 +52,7 @@ import { LogicProsPage } from './pages/LogicProsPage';
 import { SocialMediaPosterPage } from './pages/SocialMediaPosterPage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
+import { PracticeShieldPage } from './pages/PracticeShieldPage';
 
 export const Router = () => {
   const [currentPath, setCurrentPath] = React.useState(() => {
@@ -84,7 +85,9 @@ export const Router = () => {
   }, [currentPath]);
 
   const renderPage = () => {
-    console.log('Current path:', currentPath); // Debug log
+    console.log('🔍 Router Debug - Current path:', currentPath); // Debug log
+    console.log('🔍 Router Debug - window.location.pathname:', window.location.pathname);
+    console.log('🔍 Router Debug - window.location.hash:', window.location.hash);
     switch (currentPath) {
       case '/services':
         // Redirect to home page services section
@@ -190,6 +193,9 @@ export const Router = () => {
         return <SocialMediaPosterPage />;
       case '/blog':
         return <BlogPage />;
+      case '/practiceshield':
+      case '/practiceshield/':
+        return <PracticeShieldPage />;
       default:
         // Check if this is a blog post URL
         if (currentPath.startsWith('/blog/') && currentPath.length > 6) {

@@ -39,6 +39,7 @@
     { "source": "/contact", "destination": "/index.html" },
     { "source": "/free-example", "destination": "/index.html" },
     { "source": "/logicpros", "destination": "/index.html" },
-    { "source": "/dashboard", "destination": "/index.html" }
+    { "source": "/dashboard", "destination": "/index.html" },
+    { "source": "/practiceshield", "destination": "/index.html" }
   ]
 }
