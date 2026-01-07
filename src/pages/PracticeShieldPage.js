@@ -16,6 +16,43 @@ export const PracticeShieldPage = () => {
       metaDescription.setAttribute('content', 'Professional IT management for dental practices in Fredericton and Saint John, NB. On-site and remote support, PIPEDA compliance, enterprise-grade security. Serving New Brunswick dental offices with local, personalized service.');
     }
 
+    // Add/Update additional meta tags
+    const updateOrCreateMeta = (attribute, attributeValue, contentValue) => {
+      let meta = document.querySelector(`meta[${attribute}="${attributeValue}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute(attribute, attributeValue);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', contentValue);
+    };
+
+    // Keywords
+    updateOrCreateMeta('name', 'keywords', 'dental IT support Fredericton, dental IT support Saint John, PIPEDA compliance New Brunswick, dental practice IT management, managed IT services dental, on-site IT support NB, remote IT support dental, dental cybersecurity, practice management software support');
+
+    // Open Graph tags for social media
+    updateOrCreateMeta('property', 'og:title', 'PracticeShield - IT Support for Dental Practices in Fredericton & Saint John');
+    updateOrCreateMeta('property', 'og:description', 'Professional IT management for dental practices in Fredericton and Saint John, NB. PIPEDA compliance support, enterprise security, and 24/7 monitoring. On-site and remote support from local NB experts.');
+    updateOrCreateMeta('property', 'og:type', 'website');
+    updateOrCreateMeta('property', 'og:url', 'https://logicpros.ca/practiceshield');
+    updateOrCreateMeta('property', 'og:image', 'https://logicpros.ca/practiceshield/PracticeShieldLogo.png');
+    updateOrCreateMeta('property', 'og:locale', 'en_CA');
+    updateOrCreateMeta('property', 'og:site_name', 'LogicPros');
+
+    // Twitter Card tags
+    updateOrCreateMeta('name', 'twitter:card', 'summary_large_image');
+    updateOrCreateMeta('name', 'twitter:title', 'PracticeShield - IT Support for Dental Practices in Fredericton & Saint John');
+    updateOrCreateMeta('name', 'twitter:description', 'Professional IT management for dental practices in Fredericton and Saint John, NB. PIPEDA compliance support, enterprise security, 24/7 monitoring.');
+    updateOrCreateMeta('name', 'twitter:image', 'https://logicpros.ca/practiceshield/PracticeShieldLogo.png');
+
+    // Geographic tags
+    updateOrCreateMeta('name', 'geo.region', 'CA-NB');
+    updateOrCreateMeta('name', 'geo.placename', 'Fredericton, Saint John');
+
+    // Additional SEO tags
+    updateOrCreateMeta('name', 'author', 'LogicPros');
+    updateOrCreateMeta('name', 'robots', 'index, follow');
+
     // Hero background animation styles
     const style = document.createElement('style');
     style.textContent = `
@@ -604,8 +641,27 @@ export const PracticeShieldPage = () => {
         </section>
 
         {/* Service Area Section */}
-        <section style={{ padding: '60px 20px', background: 'white' }}>
-          <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+        <section style={{
+          padding: '60px 20px',
+          background: 'white',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          {/* Background Image */}
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: 'url(/dat-tran-ylyASgyDEX8-unsplash.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.15,
+            zIndex: 0
+          }}></div>
+
+          <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
             <h2 style={{
               fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
               fontWeight: '800',
@@ -626,11 +682,12 @@ export const PracticeShieldPage = () => {
             <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap', marginTop: '30px' }}>
               <div style={{
                 textAlign: 'center',
-                background: '#f8f9fa',
+                background: 'rgba(248, 249, 250, 0.95)',
+                backdropFilter: 'blur(10px)',
                 padding: '30px',
                 borderRadius: '12px',
                 minWidth: '200px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.12)'
               }}>
                 <div style={{ fontSize: '2.5rem', marginBottom: '10px' }}>📍</div>
                 <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: '#1d7aaf', marginBottom: '5px' }}>Fredericton</h3>
@@ -638,11 +695,12 @@ export const PracticeShieldPage = () => {
               </div>
               <div style={{
                 textAlign: 'center',
-                background: '#f8f9fa',
+                background: 'rgba(248, 249, 250, 0.95)',
+                backdropFilter: 'blur(10px)',
                 padding: '30px',
                 borderRadius: '12px',
                 minWidth: '200px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.12)'
               }}>
                 <div style={{ fontSize: '2.5rem', marginBottom: '10px' }}>📍</div>
                 <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: '#1d7aaf', marginBottom: '5px' }}>Saint John</h3>
