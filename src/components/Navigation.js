@@ -10,6 +10,9 @@ export const Navigation = () => {
 
   // Listen for auth state changes
   useEffect(() => {
+    // Only set up auth listener if Firebase is configured
+    if (!auth) return;
+
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
@@ -61,6 +64,7 @@ export const Navigation = () => {
   };
 
   const handleLogout = async () => {
+    if (!auth) return;
     try {
       await signOut(auth);
       window.location.href = '/';
