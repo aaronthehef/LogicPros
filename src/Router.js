@@ -85,9 +85,6 @@ export const Router = () => {
   }, [currentPath]);
 
   const renderPage = () => {
-    console.log('🔍 Router Debug - Current path:', currentPath); // Debug log
-    console.log('🔍 Router Debug - window.location.pathname:', window.location.pathname);
-    console.log('🔍 Router Debug - window.location.hash:', window.location.hash);
     switch (currentPath) {
       case '/services':
         // Redirect to home page services section
@@ -201,7 +198,6 @@ export const Router = () => {
         if (currentPath.startsWith('/blog/') && currentPath.length > 6) {
           return <BlogPostPage />;
         }
-        console.log('No route matched, showing landing page for path:', currentPath);
         return <ResponsiveLandingPage />;
     }
   };
@@ -222,7 +218,6 @@ if (typeof window !== 'undefined') {
       // Only handle internal links (starting with /)
       if (href && href.startsWith('/') && !href.startsWith('//') && !href.includes('mailto:') && !href.includes('tel:')) {
         e.preventDefault();
-        console.log('Navigating to:', href);
         // Use pushState for clean URLs
         window.history.pushState({}, '', href);
         // Trigger popstate to update the router

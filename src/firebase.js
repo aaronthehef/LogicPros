@@ -3,15 +3,15 @@ import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopu
 import { getAnalytics } from 'firebase/analytics';
 import { getFirestore, collection, addDoc, query, orderBy, limit, onSnapshot, deleteDoc, doc, updateDoc, serverTimestamp, getDoc, getDocs, where, arrayUnion, arrayRemove, setDoc, deleteField } from 'firebase/firestore';
 
-// Your web app's Firebase configuration
+// Your web app's Firebase configuration - loaded from environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyC2tvXKLora6x2G2cW0D1hTWimNc15XDN8",
-  authDomain: "logicprosmediaposter.firebaseapp.com",
-  projectId: "logicprosmediaposter",
-  storageBucket: "logicprosmediaposter.firebasestorage.app",
-  messagingSenderId: "86380911943",
-  appId: "1:86380911943:web:0f5323f28da8e281bfc062",
-  measurementId: "G-B756BD4JF9"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
@@ -21,7 +21,6 @@ const analytics = getAnalytics(app);
 
 // Initialize Firestore
 const db = getFirestore(app);
-console.log('Firestore initialized successfully');
 
 const googleProvider = new GoogleAuthProvider();
 
