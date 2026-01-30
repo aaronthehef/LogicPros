@@ -62,6 +62,44 @@ function injectMetaTags(html, meta) {
 
 // Route-specific schemas
 const routes = {
+  // HOMEPAGE - Primary landing page, web design focused
+  '': {
+    meta: {
+      title: 'Web Design Fredericton | Professional Websites for NB Businesses | LogicPros',
+      description: 'Professional web design for businesses in Fredericton, Moncton, and Saint John. Custom websites, SEO optimization, and digital solutions that help New Brunswick businesses grow online.',
+      keywords: 'web design Fredericton, website design New Brunswick, web designer Fredericton, website designer Moncton, web development Saint John, Fredericton web design agency, website design NB, professional websites Fredericton',
+      canonical: 'https://logicpros.ca',
+      ogTitle: 'Web Design Fredericton | LogicPros',
+      ogDescription: 'Professional web design for New Brunswick businesses. Custom websites, SEO optimization, and digital solutions.'
+    },
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebDesign",
+        "name": "LogicPros - Web Design Fredericton",
+        "description": "Professional web design and digital solutions for businesses in Fredericton, Moncton, and Saint John, New Brunswick.",
+        "url": "https://logicpros.ca",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "LogicPros",
+          "telephone": "+1-506-478-2949",
+          "email": "contact@logicpros.ca",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Fredericton",
+            "addressRegion": "NB",
+            "addressCountry": "CA"
+          }
+        },
+        "areaServed": ["Fredericton", "Moncton", "Saint John", "New Brunswick"],
+        "offers": {
+          "@type": "Offer",
+          "priceRange": "$$"
+        }
+      }
+    ]
+  },
+
   'services/managed-it': {
     meta: {
       title: 'Managed IT Services Fredericton | IT Support New Brunswick | LogicPros',
@@ -272,12 +310,12 @@ const routes = {
   },
   'locations/fredericton': {
     meta: {
-      title: 'IT Services Fredericton | Web Design & Managed IT | LogicPros',
-      description: 'IT services and web design for Fredericton businesses. Managed IT, cybersecurity, custom websites, and business automation. Local support with flat-rate pricing.',
-      keywords: 'IT services Fredericton, web design Fredericton, managed IT Fredericton, cybersecurity Fredericton, IT support Fredericton NB',
+      title: 'Web Design Fredericton | Professional Websites & IT Services | LogicPros',
+      description: 'Professional web design and IT services for Fredericton businesses. Custom websites, SEO optimization, managed IT, and cybersecurity. Local experts serving NB.',
+      keywords: 'web design Fredericton, website design Fredericton, Fredericton web designer, IT services Fredericton, managed IT Fredericton, web development Fredericton NB',
       canonical: 'https://logicpros.ca/locations/fredericton',
-      ogTitle: 'IT Services Fredericton | LogicPros',
-      ogDescription: 'IT services and web design for Fredericton businesses. Managed IT, cybersecurity, custom websites, and business automation.'
+      ogTitle: 'Web Design Fredericton | LogicPros',
+      ogDescription: 'Professional web design and IT services for Fredericton businesses. Custom websites, SEO optimization, and managed IT.'
     },
     schemas: [
       {
@@ -314,12 +352,12 @@ const routes = {
   },
   'locations/moncton': {
     meta: {
-      title: 'IT Services Moncton | Web Design & Managed IT | LogicPros',
-      description: 'IT services and web design for Moncton businesses. Managed IT, cybersecurity, custom websites, and business automation. Local support with flat-rate pricing.',
-      keywords: 'IT services Moncton, web design Moncton, managed IT Moncton, cybersecurity Moncton, IT support Moncton NB',
+      title: 'Web Design Moncton | Professional Websites & IT Services | LogicPros',
+      description: 'Professional web design and IT services for Moncton businesses. Custom websites, SEO optimization, managed IT, and cybersecurity. Local experts serving NB.',
+      keywords: 'web design Moncton, website design Moncton, Moncton web designer, IT services Moncton, managed IT Moncton, web development Moncton NB',
       canonical: 'https://logicpros.ca/locations/moncton',
-      ogTitle: 'IT Services Moncton | LogicPros',
-      ogDescription: 'IT services and web design for Moncton businesses. Managed IT, cybersecurity, custom websites, and business automation.'
+      ogTitle: 'Web Design Moncton | LogicPros',
+      ogDescription: 'Professional web design and IT services for Moncton businesses. Custom websites, SEO optimization, and managed IT.'
     },
     schemas: [
       {
@@ -356,12 +394,12 @@ const routes = {
   },
   'locations/saint-john': {
     meta: {
-      title: 'IT Services Saint John | Web Design & Managed IT | LogicPros',
-      description: 'IT services and web design for Saint John businesses. Managed IT, cybersecurity, custom websites, and business automation. Local support with flat-rate pricing.',
-      keywords: 'IT services Saint John, web design Saint John, managed IT Saint John, cybersecurity Saint John, IT support Saint John NB',
+      title: 'Web Design Saint John | Professional Websites & IT Services | LogicPros',
+      description: 'Professional web design and IT services for Saint John businesses. Custom websites, SEO optimization, managed IT, and cybersecurity. Local experts serving NB.',
+      keywords: 'web design Saint John, website design Saint John, Saint John web designer, IT services Saint John, managed IT Saint John, web development Saint John NB',
       canonical: 'https://logicpros.ca/locations/saint-john',
-      ogTitle: 'IT Services Saint John | LogicPros',
-      ogDescription: 'IT services and web design for Saint John businesses. Managed IT, cybersecurity, custom websites, and business automation.'
+      ogTitle: 'Web Design Saint John | LogicPros',
+      ogDescription: 'Professional web design and IT services for Saint John businesses. Custom websites, SEO optimization, and managed IT.'
     },
     schemas: [
       {
