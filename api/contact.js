@@ -66,14 +66,14 @@ module.exports = async function handler(req, res) {
       port: 465,
       secure: true, // SSL for port 465
       auth: {
-        user: 'aaron@logicpros.ca', // Using the credentials from backend/.env
-        pass: '7WycykRn9aNd'  // App password from backend/.env
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
       }
     });
 
     // Email to Aaron
     const mailOptions = {
-      from: 'aaron@logicpros.ca',
+      from: process.env.EMAIL_USER,
       to: 'aaron@logicpros.ca',
       replyTo: formData.email,
       subject: `New Lead: ${formData.name} - ${formData.trade || 'General'} Contact`,
@@ -143,7 +143,7 @@ module.exports = async function handler(req, res) {
 
     // Auto-reply to client
     const autoReplyOptions = {
-      from: 'aaron@logicpros.ca',
+      from: process.env.EMAIL_USER,
       to: formData.email,
       subject: 'Thank you for contacting LogicPros - We\'ll be in touch soon!',
       html: `
