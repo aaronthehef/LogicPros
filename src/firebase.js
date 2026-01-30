@@ -14,13 +14,28 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const analytics = getAnalytics(app);
+// Check if Firebase config is valid (env vars are set)
+const isFirebaseConfigured = firebaseConfig.apiKey && firebaseConfig.projectId;
 
-// Initialize Firestore
-const db = getFirestore(app);
+// Initialize Firebase only if configured
+let app = null;
+let auth = null;
+let analytics = null;
+let db = null;
+
+if (isFirebaseConfigured) {
+  app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  // Only initialize analytics in browser environment
+  if (typeof window !== 'undefined') {
+    try {
+      analytics = getAnalytics(app);
+    } catch (e) {
+      // Analytics may fail in some environments
+    }
+  }
+  db = getFirestore(app);
+}
 
 const googleProvider = new GoogleAuthProvider();
 
