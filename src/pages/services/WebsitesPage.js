@@ -671,6 +671,99 @@ export const WebsitesPage = () => {
           </div>
         </section>
 
+        {/* Recent Clients */}
+        <section style={{ backgroundColor: '#ffffff', padding: '3rem 0', borderBottom: '1px solid rgba(29, 122, 175, 0.1)' }}>
+          <div className="container">
+            <p style={{
+              textAlign: 'center',
+              fontSize: '0.9rem',
+              fontWeight: '600',
+              color: '#94a3b8',
+              textTransform: 'uppercase',
+              letterSpacing: '2px',
+              marginBottom: '2rem'
+            }}>Recent Clients</p>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '2.5rem'
+            }}>
+              {[
+                { name: 'B Foulkes Plumbing', src: 'https://logicpros.ca/wp-content/uploads/2026/02/cropped-Logo-BF-175x75-1.png' },
+                { name: 'IJM Construction Management', src: 'https://logicpros.ca/wp-content/uploads/2026/02/LOGOdarkLowRes-300x169.png' },
+                { name: 'J. Parker Roofing', src: 'https://logicpros.ca/wp-content/uploads/2026/02/logoPNG--300x270.png' },
+                { name: 'Thomson Plumbing', src: 'https://logicpros.ca/wp-content/uploads/2026/02/thomson-300x91.png' },
+                { name: 'Volt Vision Electric', src: 'https://logicpros.ca/wp-content/uploads/2026/02/VoltVisionElectric_Transparent_400x350-300x300.png' },
+                { name: "Crawford's Plumbing and Heating", src: 'https://logicpros.ca/wp-content/uploads/2026/02/Logo-black-text-300x96.png' },
+              ].map(({ name, src }) => (
+                <img key={name} src={src} alt={name} style={{
+                  height: '50px',
+                  width: 'auto',
+                  maxWidth: '160px',
+                  objectFit: 'contain',
+                  filter: 'grayscale(100%)',
+                  opacity: 0.6,
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => { e.target.style.filter = 'grayscale(0%)'; e.target.style.opacity = '1'; }}
+                onMouseLeave={(e) => { e.target.style.filter = 'grayscale(100%)'; e.target.style.opacity = '0.6'; }}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Recent Websites We've Built */}
+        <section className="section" style={{ backgroundColor: '#f8faff', padding: '60px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: '700', color: '#1a1a2e', marginBottom: '0.75rem' }}>
+                Recent Websites We've Built
+              </h2>
+              <p style={{ fontSize: '1.05rem', color: '#6b7280', maxWidth: '600px', margin: '0 auto' }}>
+                Real businesses, real results. Here's a sample of what we've launched for Atlantic Canadian clients.
+              </p>
+            </div>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '2rem',
+              maxWidth: '1000px',
+              margin: '0 auto 2.5rem auto'
+            }}>
+              {[
+                { name: 'IJM Builders', img: 'https://logicpros.ca/wp-content/uploads/elementor/thumbs/ijm-riy9mvzivqcux5qaloznbc2eh3qj5stgif7vv2q8dc.webp', tag: 'Construction', href: 'https://www.ijmbuilders.ca/' },
+                { name: "Crawford's Plumbing", img: 'https://logicpros.ca/wp-content/uploads/elementor/thumbs/crawfords-riy9ly5c1p2jb73g3ad2tklt38dbgp34drqel44elc.webp', tag: 'Plumbing', href: 'https://www.crawfordsplumbing.ca/' },
+                { name: 'Volt Vision Electric', img: 'https://logicpros.ca/wp-content/uploads/elementor/thumbs/voltvision-riy9ly5c1p2jb73g3ad2tklt38dbgp34drqel44elc.webp', tag: 'Electrical', href: 'https://www.voltvisionelectric.ca/' },
+              ].map(({ name, img, tag, href }) => (
+                <a key={name} href={href} target="_blank" rel="noopener noreferrer" style={{
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  boxShadow: '0 8px 30px rgba(0,0,0,0.1)',
+                  background: '#fff',
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                  textDecoration: 'none',
+                  display: 'block'
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(29,122,175,0.15)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.1)'; }}
+                >
+                  <img src={img} alt={`${name} website by LogicPros`} style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }} />
+                  <div style={{ padding: '1rem 1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                      <span style={{ fontSize: '0.75rem', fontWeight: '600', color: '#1F7CFF', textTransform: 'uppercase', letterSpacing: '1px' }}>{tag}</span>
+                      <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#1a1a2e', margin: '0.25rem 0 0' }}>{name}</h3>
+                    </div>
+                    <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>Visit site ↗</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Website Design Services Section */}
         <section className="section" style={{ backgroundColor: '#f8faff', padding: '80px 0' }}>
           <div className="container">
@@ -695,9 +788,11 @@ export const WebsitesPage = () => {
             
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
               gap: '30px',
-              marginBottom: '40px'
+              marginBottom: '40px',
+              maxWidth: '1100px',
+              margin: '0 auto 40px auto'
             }}>
               {/* Custom Websites Card */}
               <a href="/services/websites/custom" style={{ textDecoration: 'none' }}>

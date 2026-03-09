@@ -19,14 +19,14 @@ export default async function handler(req, res) {
   }
 
   // WordPress configuration from environment variables
-  const WORDPRESS_SITE_URL = process.env.WORDPRESS_SITE_URL || 'https://wordpressblog.logicpros.ca';
-  const WORDPRESS_USERNAME = process.env.WORDPRESS_USERNAME;
-  const WORDPRESS_APP_PASSWORD = process.env.WORDPRESS_APP_PASSWORD;
+  const WORDPRESS_SITE_URL = process.env.WORDPRESS_SITE_URL || process.env.REACT_APP_WORDPRESS_SITE_URL || 'https://wordpressblog.logicpros.ca';
+  const WORDPRESS_USERNAME = process.env.WORDPRESS_USERNAME || process.env.REACT_APP_WORDPRESS_USERNAME;
+  const WORDPRESS_APP_PASSWORD = process.env.WORDPRESS_APP_PASSWORD || process.env.REACT_APP_WORDPRESS_APP_PASSWORD;
 
-  // Security check: Ensure credentials are configured
-  if (!WORDPRESS_USERNAME || !WORDPRESS_APP_PASSWORD) {
+  // Security check: Ensure credentials are configured for write operations
+  const isWriteRequest = req.method !== 'GET' && req.method !== 'OPTIONS';
+  if (isWriteRequest && (!WORDPRESS_USERNAME || !WORDPRESS_APP_PASSWORD)) {
     console.error('WordPress credentials not configured in environment variables');
-    console.error('Please set WORDPRESS_USERNAME and WORDPRESS_APP_PASSWORD in Vercel');
     return res.status(500).json({
       error: 'Server configuration error',
       message: 'WordPress credentials not configured. Please set environment variables in Vercel.'
@@ -73,9 +73,10 @@ export default async function handler(req, res) {
     // If DELETE is requested, use POST with X-HTTP-Method-Override header
     // This works around nginx blocking DELETE requests
     let requestMethod = actualMethod;
-    const headers = {
-      'Authorization': `Basic ${Buffer.from(`${WORDPRESS_USERNAME}:${WORDPRESS_APP_PASSWORD}`).toString('base64')}`
-    };
+    const headers = {};
+    if (WORDPRESS_USERNAME && WORDPRESS_APP_PASSWORD) {
+      headers['Authorization'] = `Basic ${Buffer.from(`${WORDPRESS_USERNAME}:${WORDPRESS_APP_PASSWORD}`).toString('base64')}`;
+    }
 
     if (actualMethod === 'DELETE') {
       requestMethod = 'POST';

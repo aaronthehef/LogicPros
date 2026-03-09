@@ -60,6 +60,28 @@ function injectMetaTags(html, meta) {
   return modified;
 }
 
+// Auto-generate BreadcrumbList from route path
+function generateBreadcrumbs(route) {
+  if (!route) return null;
+  const nameMap = {
+    'websites': 'Web Design', 'automations': 'AI Automation',
+    'managed-it': 'Managed IT', 'cybersecurity': 'Cybersecurity',
+    'about': 'About', 'contact': 'Contact', 'blog': 'Blog',
+    'fredericton': 'Fredericton', 'moncton': 'Moncton', 'saint-john': 'Saint John',
+    'web-design': 'Web Design',
+  };
+  const skipSegments = new Set(['services', 'locations']);
+  const parts = route.split('/');
+  const items = [{ name: 'Home', item: 'https://logicpros.ca' }];
+  let cumulativePath = '';
+  for (const part of parts) {
+    cumulativePath += '/' + part;
+    if (skipSegments.has(part)) continue;
+    items.push({ name: nameMap[part] || part, item: 'https://logicpros.ca' + cumulativePath });
+  }
+  return items;
+}
+
 // Route-specific schemas
 const routes = {
   // HOMEPAGE - Primary landing page, web design focused
@@ -95,6 +117,57 @@ const routes = {
         "offers": {
           "@type": "Offer",
           "priceRange": "$$"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "itemReviewed": {
+          "@type": "LocalBusiness",
+          "name": "LogicPros",
+          "url": "https://logicpros.ca"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "name": "Amazing to work with from start to finish",
+        "reviewBody": "Aaron at LogicPros was amazing to work with when I was building my company website. From our initial phone call all the way to the completion of the site, Aaron worked diligently, fully educated himself on what I do to provide the proper service, and had exceptional communication from start to finish. I recommend LogicPros to anyone that is looking to get their business online.",
+        "author": {
+          "@type": "Organization",
+          "name": "IJM Builders"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "LogicPros"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "LogicPros",
+        "description": "Web design, AI automation, and IT services for small businesses in Atlantic Canada. Based in Fredericton, New Brunswick.",
+        "url": "https://logicpros.ca",
+        "telephone": "+1-506-478-2949",
+        "email": "contact@logicpros.ca",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Fredericton",
+          "addressRegion": "NB",
+          "addressCountry": "CA"
+        },
+        "founder": { "@type": "Person", "name": "Aaron Hefling" },
+        "areaServed": ["Fredericton, NB", "Moncton, NB", "Saint John, NB", "New Brunswick"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "LogicPros Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Design", "url": "https://logicpros.ca/services/websites" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation", "url": "https://logicpros.ca/services/automations" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cybersecurity", "url": "https://logicpros.ca/services/cybersecurity" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Managed IT", "url": "https://logicpros.ca/services/managed-it" } }
+          ]
         }
       }
     ]
@@ -276,6 +349,52 @@ const routes = {
           "@type": "Offer",
           "priceRange": "$$"
         }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does a website cost in Fredericton?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most business websites we build range from $2,000 to $6,000 depending on complexity. A clean, professional site with a contact form, service pages, and local SEO typically falls in the $2,500–$4,000 range. We give you a fixed quote before we start — no surprise invoices."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to build a website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most websites are live within 2–4 weeks from the time we have your content and feedback. Simple sites can move faster. We give you a clear timeline at the start of the project."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will my website show up on Google?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — every site we build includes on-page SEO: proper title tags, meta descriptions, local schema markup, fast load times, and a sitemap submitted to Google. We build for search from day one, not as an add-on."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you build WordPress websites?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Most of our client websites are built on WordPress, which makes them easy to update yourself after launch. We also build custom sites depending on the project requirements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you redesign my existing website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. Redesigns are a large part of what we do. We audit your current site, keep what's working (including any existing Google rankings), and rebuild the rest to perform better."
+            }
+          }
+        ]
       }
     ]
   },
@@ -305,6 +424,52 @@ const routes = {
           "@type": "Offer",
           "priceRange": "$$"
         }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What can AI automation actually do for a small business?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The most common things we automate for small businesses: follow-up emails after a quote or inquiry, appointment reminders, Google review requests sent automatically after a job, social media posting on a schedule, and moving data between systems (like from a form into a spreadsheet or CRM) without anyone copy-pasting it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to know how to code to use AI automation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. We build and set up the automation for you. Once it's running, you don't touch it — it just works in the background. If something needs to change, you call us."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does AI automation cost for a small business?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A single automation (like an automatic follow-up email sequence or a review request system) typically runs $500–$1,500 to set up. More complex multi-step workflows cost more. Most clients see the setup cost recovered within a few months from time saved."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What tools do you use for automation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We primarily use n8n, which is an open-source workflow automation platform. It connects to almost any app or service — email, Google Sheets, CRMs, booking systems, social media, and more. We host it for you so there are no ongoing per-task fees like you'd pay with Zapier."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you build an AI chatbot for my website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We build AI chatbots that answer common customer questions, qualify leads, and collect contact information — 24/7, without you having to be available. The chatbot is trained on your business information so it gives accurate answers specific to what you offer."
+            }
+          }
+        ]
       }
     ]
   },
@@ -760,6 +925,98 @@ const routes = {
     ]
   },
 
+  'about': {
+    meta: {
+      title: 'About LogicPros | Aaron Hefling | Web Design & IT Fredericton NB',
+      description: 'Meet Aaron Hefling, founder of LogicPros. 21 years in technology, former Government of New Brunswick IT lead. Now helping Atlantic Canadian small businesses with web design, AI automation, and IT support.',
+      keywords: 'about LogicPros, Aaron Hefling, web designer Fredericton, IT consultant New Brunswick, Aboriginal-owned tech company NB',
+      canonical: 'https://logicpros.ca/about',
+      ogTitle: 'About LogicPros | Aaron Hefling',
+      ogDescription: '21 years in technology. Former Government of NB IT lead. Now building websites and automations for Atlantic Canadian small businesses.'
+    },
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About LogicPros",
+        "description": "Learn about Aaron Hefling and LogicPros — web design, AI automation, and IT services for Atlantic Canadian businesses.",
+        "url": "https://logicpros.ca/about",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Aaron Hefling",
+          "jobTitle": "Founder & Technology Solutions Specialist",
+          "worksFor": {
+            "@type": "LocalBusiness",
+            "name": "LogicPros"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Fredericton",
+            "addressRegion": "NB",
+            "addressCountry": "CA"
+          }
+        }
+      }
+    ]
+  },
+
+  'contact': {
+    meta: {
+      title: 'Contact LogicPros | Get a Free Quote | Fredericton NB',
+      description: 'Get in touch with LogicPros for web design, AI automation, or IT support in Fredericton, Moncton, or Saint John. Free quote, no sales pitch.',
+      keywords: 'contact LogicPros, web design quote Fredericton, IT support quote New Brunswick, free website quote NB',
+      canonical: 'https://logicpros.ca/contact',
+      ogTitle: 'Contact LogicPros | Free Quote',
+      ogDescription: 'Get a free quote for web design, AI automation, or IT support in New Brunswick. No sales pitch, just straight talk.'
+    },
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact LogicPros",
+        "description": "Contact LogicPros for web design, AI automation, and IT services in Fredericton, Moncton, and Saint John.",
+        "url": "https://logicpros.ca/contact",
+        "mainEntity": {
+          "@type": "LocalBusiness",
+          "name": "LogicPros",
+          "telephone": "+1-506-478-2949",
+          "email": "contact@logicpros.ca",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Fredericton",
+            "addressRegion": "NB",
+            "addressCountry": "CA"
+          }
+        }
+      }
+    ]
+  },
+
+  'blog': {
+    meta: {
+      title: 'Blog | Web Design & Tech Tips for NB Businesses | LogicPros',
+      description: 'Practical web design, AI automation, and IT tips for small businesses in New Brunswick. Written by Aaron Hefling at LogicPros in Fredericton.',
+      keywords: 'web design blog Fredericton, small business tech tips NB, IT advice New Brunswick, web design tips Atlantic Canada',
+      canonical: 'https://logicpros.ca/blog',
+      ogTitle: 'LogicPros Blog | Tech Tips for NB Businesses',
+      ogDescription: 'Practical web design, AI automation, and IT tips for small businesses in New Brunswick.'
+    },
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "LogicPros Blog",
+        "description": "Practical web design, AI automation, and IT advice for Atlantic Canadian small businesses.",
+        "url": "https://logicpros.ca/blog",
+        "publisher": {
+          "@type": "LocalBusiness",
+          "name": "LogicPros",
+          "url": "https://logicpros.ca"
+        }
+      }
+    ]
+  },
+
   // SAINT JOHN CYBERSECURITY
   'locations/saint-john/cybersecurity': {
     meta: {
@@ -793,10 +1050,153 @@ const routes = {
         }
       }
     ]
+  },
+
+  // FREDERICTON AI AUTOMATIONS
+  'locations/fredericton/automations': {
+    meta: {
+      title: 'AI Automation Fredericton | Business Automation Services | LogicPros',
+      description: 'AI automation services for Fredericton businesses. Workflow automation, AI chatbots, email marketing, social media scheduling, and data integrations built by a local NB team.',
+      keywords: 'AI automation Fredericton, business automation Fredericton, workflow automation Fredericton NB, AI chatbot Fredericton, social media automation Fredericton',
+      canonical: 'https://logicpros.ca/locations/fredericton/automations',
+      ogTitle: 'AI Automation Fredericton | LogicPros',
+      ogDescription: 'AI automation services for Fredericton businesses. Workflow automation, AI chatbots, email marketing, and social media scheduling.'
+    },
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "AI Automation Services",
+        "name": "AI Automation Fredericton",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "LogicPros",
+          "telephone": "+1-506-478-2949",
+          "email": "contact@logicpros.ca"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Fredericton"
+        },
+        "description": "AI automation and business process automation for Fredericton businesses including workflow automation, AI chatbots, email marketing, and social media scheduling.",
+        "offers": {
+          "@type": "Offer",
+          "priceRange": "$$"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How much does business automation cost in Fredericton?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects fall in the $500–$2,500 range depending on complexity and the number of systems involved. Simple single-workflow automations start lower; multi-system integrations with AI components are at the higher end. We quote every project individually after a free audit." } },
+          { "@type": "Question", "name": "Do I need to understand technology to use business automation?", "acceptedAnswer": { "@type": "Answer", "text": "No. We build and test everything, then hand it off running. You interact with the same forms, apps, and tools you already use — the automation works in the background without you needing to touch it." } },
+          { "@type": "Question", "name": "How long does it take to set up a business automation?", "acceptedAnswer": { "@type": "Answer", "text": "Most automations are live within 1–3 weeks of project start. Complex multi-system integrations may take 4–6 weeks. We provide a realistic timeline during the free audit call." } },
+          { "@type": "Question", "name": "What apps and tools do you connect for automation?", "acceptedAnswer": { "@type": "Answer", "text": "We can connect any combination of the 8,000+ apps supported by major automation platforms — including QuickBooks, Jobber, HubSpot, Stripe, Google Workspace, Shopify, Calendly, Mailchimp, and hundreds more." } },
+          { "@type": "Question", "name": "What happens if the automation breaks after an app update?", "acceptedAnswer": { "@type": "Answer", "text": "We monitor the workflows we build and fix any breakage quickly at no charge within the first 60 days. After that, we offer an affordable support plan." } },
+          { "@type": "Question", "name": "Can I start with just one automation?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Most clients start with one high-impact workflow — often the one that wastes the most time — and expand from there. There is no minimum commitment." } }
+        ]
+      }
+    ]
+  },
+
+  // MONCTON AI AUTOMATIONS
+  'locations/moncton/automations': {
+    meta: {
+      title: 'AI Automation Moncton | Business Automation Services | LogicPros',
+      description: 'AI automation services for Moncton businesses. Workflow automation, AI chatbots, email marketing, social media scheduling, and data integrations built by a local NB team.',
+      keywords: 'AI automation Moncton, business automation Moncton, workflow automation Moncton NB, AI chatbot Moncton, social media automation Moncton',
+      canonical: 'https://logicpros.ca/locations/moncton/automations',
+      ogTitle: 'AI Automation Moncton | LogicPros',
+      ogDescription: 'AI automation services for Moncton businesses. Workflow automation, AI chatbots, email marketing, and social media scheduling.'
+    },
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "AI Automation Services",
+        "name": "AI Automation Moncton",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "LogicPros",
+          "telephone": "+1-506-478-2949",
+          "email": "contact@logicpros.ca"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Moncton"
+        },
+        "description": "AI automation and business process automation for Moncton businesses including workflow automation, AI chatbots, email marketing, and social media scheduling.",
+        "offers": {
+          "@type": "Offer",
+          "priceRange": "$$"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How much does business automation cost in Moncton?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects fall in the $500–$2,500 range depending on complexity and the number of systems involved. Simple single-workflow automations start lower; multi-system integrations with AI components are at the higher end. We quote every project individually after a free audit." } },
+          { "@type": "Question", "name": "Do I need to understand technology to use business automation?", "acceptedAnswer": { "@type": "Answer", "text": "No. We build and test everything, then hand it off running. You interact with the same forms, apps, and tools you already use — the automation works in the background without you needing to touch it." } },
+          { "@type": "Question", "name": "How long does it take to set up a business automation?", "acceptedAnswer": { "@type": "Answer", "text": "Most automations are live within 1–3 weeks of project start. Complex multi-system integrations may take 4–6 weeks. We provide a realistic timeline during the free audit call." } },
+          { "@type": "Question", "name": "What apps and tools do you connect for automation?", "acceptedAnswer": { "@type": "Answer", "text": "We can connect any combination of the 8,000+ apps supported by major automation platforms — including QuickBooks, Jobber, HubSpot, Stripe, Google Workspace, Shopify, Calendly, Mailchimp, and hundreds more." } },
+          { "@type": "Question", "name": "What happens if the automation breaks after an app update?", "acceptedAnswer": { "@type": "Answer", "text": "We monitor the workflows we build and fix any breakage quickly at no charge within the first 60 days. After that, we offer an affordable support plan." } },
+          { "@type": "Question", "name": "Can I start with just one automation?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Most clients start with one high-impact workflow — often the one that wastes the most time — and expand from there. There is no minimum commitment." } }
+        ]
+      }
+    ]
+  },
+
+  // SAINT JOHN AI AUTOMATIONS
+  'locations/saint-john/automations': {
+    meta: {
+      title: 'AI Automation Saint John | Business Automation Services | LogicPros',
+      description: 'AI automation services for Saint John businesses. Workflow automation, AI chatbots, email marketing, social media scheduling, and data integrations built by a local NB team.',
+      keywords: 'AI automation Saint John, business automation Saint John, workflow automation Saint John NB, AI chatbot Saint John, social media automation Saint John',
+      canonical: 'https://logicpros.ca/locations/saint-john/automations',
+      ogTitle: 'AI Automation Saint John | LogicPros',
+      ogDescription: 'AI automation services for Saint John businesses. Workflow automation, AI chatbots, email marketing, and social media scheduling.'
+    },
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "AI Automation Services",
+        "name": "AI Automation Saint John",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "LogicPros",
+          "telephone": "+1-506-478-2949",
+          "email": "contact@logicpros.ca"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Saint John"
+        },
+        "description": "AI automation and business process automation for Saint John businesses including workflow automation, AI chatbots, email marketing, and social media scheduling.",
+        "offers": {
+          "@type": "Offer",
+          "priceRange": "$$"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How much does business automation cost in Saint John?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects fall in the $500–$2,500 range depending on complexity and the number of systems involved. Simple single-workflow automations start lower; multi-system integrations with AI components are at the higher end. We quote every project individually after a free audit." } },
+          { "@type": "Question", "name": "Do I need to understand technology to use business automation?", "acceptedAnswer": { "@type": "Answer", "text": "No. We build and test everything, then hand it off running. You interact with the same forms, apps, and tools you already use — the automation works in the background without you needing to touch it." } },
+          { "@type": "Question", "name": "How long does it take to set up a business automation?", "acceptedAnswer": { "@type": "Answer", "text": "Most automations are live within 1–3 weeks of project start. Complex multi-system integrations may take 4–6 weeks. We provide a realistic timeline during the free audit call." } },
+          { "@type": "Question", "name": "What apps and tools do you connect for automation?", "acceptedAnswer": { "@type": "Answer", "text": "We can connect any combination of the 8,000+ apps supported by major automation platforms — including QuickBooks, Jobber, HubSpot, Stripe, Google Workspace, Shopify, Calendly, Mailchimp, and hundreds more." } },
+          { "@type": "Question", "name": "What happens if the automation breaks after an app update?", "acceptedAnswer": { "@type": "Answer", "text": "We monitor the workflows we build and fix any breakage quickly at no charge within the first 60 days. After that, we offer an affordable support plan." } },
+          { "@type": "Question", "name": "Can I start with just one automation?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Most clients start with one high-impact workflow — often the one that wastes the most time — and expand from there. There is no minimum commitment." } }
+        ]
+      }
+    ]
   }
 };
 
 // Generate pre-rendered HTML for each route
+const sitemapUrls = [{ url: 'https://logicpros.ca', priority: '1.0' }];
+
 Object.entries(routes).forEach(([route, data]) => {
   let modifiedHtml = indexHtml;
 
@@ -813,14 +1213,51 @@ Object.entries(routes).forEach(([route, data]) => {
     });
   }
 
+  // Add BreadcrumbList schema
+  const breadcrumbs = generateBreadcrumbs(route);
+  if (breadcrumbs && breadcrumbs.length > 1) {
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbs.map((crumb, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": crumb.name,
+        "item": crumb.item
+      }))
+    };
+    const schemaScript = `<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`;
+    modifiedHtml = modifiedHtml.replace('</head>', `${schemaScript}</head>`);
+  }
+
   const routeDir = path.join(buildDir, route);
   if (!fs.existsSync(routeDir)) {
     fs.mkdirSync(routeDir, { recursive: true });
   }
 
   fs.writeFileSync(path.join(routeDir, 'index.html'), modifiedHtml);
-  console.log(`✓ Pre-rendered ${route}`);
+  console.log(`✓ Pre-rendered ${route || '/'}`);
+
+  // Collect for sitemap
+  if (route) {
+    const isHighPriority = route.includes('web-design') || route === 'locations/fredericton';
+    const isMediumPriority = route.startsWith('locations/') || route.startsWith('services/');
+    const priority = isHighPriority ? '0.9' : isMediumPriority ? '0.8' : '0.7';
+    sitemapUrls.push({ url: `https://logicpros.ca/${route}`, priority });
+  }
 });
+
+// Generate sitemap.xml
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapUrls.map(({ url, priority }) => `  <url>
+    <loc>${url}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>${priority}</priority>
+  </url>`).join('\n')}
+</urlset>`;
+fs.writeFileSync(path.join(buildDir, 'sitemap.xml'), sitemapXml);
+console.log(`✓ Generated sitemap.xml (${sitemapUrls.length} URLs)`);
 
 console.log(`\n🎉 Pre-rendering complete!`);
 console.log(`   Generated ${Object.keys(routes).length} routes with SEO meta tags and schemas.`);

@@ -13,7 +13,7 @@ export const AutomationsPage = () => {
 
   useEffect(() => {
     // Set page title
-    document.title = "AI Automation Solutions New Brunswick | LogicPros | Business Automation Maritime";
+    document.title = "AI Automation New Brunswick | Chatbots, Email Marketing Automation & Workflow Automation | LogicPros";
     
     // Enhanced GSAP scroll animations for header
     const header = headerRef.current;
@@ -179,7 +179,7 @@ export const AutomationsPage = () => {
     <div className="landing-page">
       <ServiceSchema
         serviceName="AI Automation and Workflow Solutions"
-        description="AI-powered business automation for Fredericton and New Brunswick. Automate repetitive tasks, integrate systems, and deploy AI chatbots. Save hours per week with n8n workflow automation and AI agents."
+        description="AI automation for New Brunswick small businesses. AI chatbots, email marketing automation, workflow automation, data analytics, customer personalization, inventory management, and accounting automation. Save hours every week — deployed by a local NB team."
         priceRange="$$"
         url="https://logicpros.ca/services/automations"
       />
@@ -314,7 +314,7 @@ export const AutomationsPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  AI Automation & Workflow Solutions in Fredericton
+                  AI Automation for New Brunswick Businesses
                 </h1>
                 <h2 style={{
                   fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
@@ -332,9 +332,9 @@ export const AutomationsPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Imagine never sending another review request email. Never manually posting to social media.
-                  Never copying data between systems. AI automation handles the repetitive busywork that eats up your day —
-                  so you can actually run your business instead of just maintaining it.
+                  AI chatbots that answer customers 24/7. Email marketing automation that nurtures leads while you sleep.
+                  Workflow automation that eliminates data entry. Data analytics that tell you what's actually working.
+                  We deploy AI integrations for New Brunswick businesses — fast, local, and built to last.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -812,6 +812,41 @@ export const AutomationsPage = () => {
                   </span>
                 </div>
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* AI Automation Types — Keyword Anchor Section */}
+        <section className="section" style={{ backgroundColor: '#ffffff', padding: '60px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: '700', color: '#1a1a2e', marginBottom: '12px' }}>
+                What We Automate for New Brunswick Businesses
+              </h2>
+              <p style={{ fontSize: '1.05rem', color: '#6b7280', maxWidth: '650px', margin: '0 auto', lineHeight: '1.6' }}>
+                From AI chatbots to email marketing automation — here's the full picture of what we can take off your plate.
+              </p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', maxWidth: '1100px', margin: '0 auto' }}>
+              {[
+                { title: 'AI Chatbots', desc: 'Answer customer questions 24/7, book appointments, and qualify leads automatically — without you lifting a finger.' },
+                { title: 'Email Marketing Automation', desc: 'Welcome sequences, follow-ups, review requests, and re-engagement campaigns that run on their own.' },
+                { title: 'Workflow Automation', desc: 'Connect your apps so data flows automatically between systems — no more copy-paste, no more dropped balls.' },
+                { title: 'Data Analytics', desc: 'Automated dashboards and reports so you always know your numbers without digging through spreadsheets.' },
+                { title: 'Customer Personalization', desc: 'Segment your audience and send the right message to the right person at the right time — automatically.' },
+                { title: 'Inventory Management', desc: 'Automated stock alerts, purchase order triggers, and supplier notifications keep your inventory under control.' },
+                { title: 'Accounting Automation', desc: 'Sync sales, invoices, and expenses automatically between your POS, e-commerce, and accounting software.' },
+              ].map(({ title, desc }) => (
+                <div key={title} style={{
+                  background: '#f8faff',
+                  border: '1px solid rgba(31, 124, 255, 0.12)',
+                  borderRadius: '14px',
+                  padding: '1.5rem'
+                }}>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#1F7CFF', marginBottom: '0.5rem' }}>{title}</h3>
+                  <p style={{ fontSize: '0.9rem', color: '#6b7280', lineHeight: '1.6', margin: 0 }}>{desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

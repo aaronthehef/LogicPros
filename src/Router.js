@@ -48,6 +48,9 @@ import { ManagedITServicesPage as SaintJohnManagedITPage } from './pages/locatio
 import { MonctonWebDesignPage } from './pages/locations/moncton/WebDesignPage';
 import { MonctonCybersecurityPage } from './pages/locations/moncton/CybersecurityPage';
 import { ManagedITServicesPage as MonctonManagedITPage } from './pages/locations/moncton/ManagedITPage';
+import { FrederictonAutomationsPage } from './pages/locations/fredericton/AutomationsPage';
+import { MonctonAutomationsPage } from './pages/locations/moncton/AutomationsPage';
+import { SaintJohnAutomationsPage } from './pages/locations/saint-john/AutomationsPage';
 import { LogicProsPage } from './pages/LogicProsPage';
 import { SocialMediaPosterPage } from './pages/SocialMediaPosterPage';
 import { BlogPage } from './pages/BlogPage';
@@ -63,12 +66,14 @@ export const Router = () => {
   });
 
   React.useEffect(() => {
-    const handleRouteChange = () => {
+    const handleRouteChange = (e) => {
       const pathname = window.location.pathname;
       const hashPath = window.location.hash.slice(1);
       setCurrentPath(pathname !== '/' ? pathname : (hashPath || '/'));
-      // Scroll to top when route changes
-      window.scrollTo(0, 0);
+      // Don't scroll to top for hash-only navigation (in-page anchors)
+      if (e.type !== 'hashchange') {
+        window.scrollTo(0, 0);
+      }
     };
 
     window.addEventListener('hashchange', handleRouteChange);
@@ -168,18 +173,24 @@ export const Router = () => {
         return <FrederictonCybersecurityPage />;
       case '/locations/fredericton/managed-it':
         return <FrederictonManagedITPage />;
+      case '/locations/fredericton/automations':
+        return <FrederictonAutomationsPage />;
       case '/locations/saint-john/web-design':
         return <SaintJohnWebDesignPage />;
       case '/locations/saint-john/cybersecurity':
         return <SaintJohnCybersecurityPage />;
       case '/locations/saint-john/managed-it':
         return <SaintJohnManagedITPage />;
+      case '/locations/saint-john/automations':
+        return <SaintJohnAutomationsPage />;
       case '/locations/moncton/web-design':
         return <MonctonWebDesignPage />;
       case '/locations/moncton/cybersecurity':
         return <MonctonCybersecurityPage />;
       case '/locations/moncton/managed-it':
         return <MonctonManagedITPage />;
+      case '/locations/moncton/automations':
+        return <MonctonAutomationsPage />;
       case '/locations/moncton':
         return <MonctonPage />;
       case '/locations/saint-john':

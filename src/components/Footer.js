@@ -108,6 +108,12 @@ export const Footer = () => {
                 fontSize: '0.95rem',
                 transition: 'all 0.3s ease'
               }}>Workflow Automation</a>
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', marginTop: '8px', paddingTop: '16px' }}>
+                <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>By Location</div>
+                <a href="/locations/fredericton/automations" style={{ display: 'block', color: '#ffffff', textDecoration: 'none', marginBottom: '12px', fontSize: '0.9rem', transition: 'all 0.3s ease' }}>Fredericton</a>
+                <a href="/locations/moncton/automations" style={{ display: 'block', color: '#ffffff', textDecoration: 'none', marginBottom: '12px', fontSize: '0.9rem', transition: 'all 0.3s ease' }}>Moncton</a>
+                <a href="/locations/saint-john/automations" style={{ display: 'block', color: '#ffffff', textDecoration: 'none', marginBottom: '12px', fontSize: '0.9rem', transition: 'all 0.3s ease' }}>Saint John</a>
+              </div>
             </div>
 
             {/* Cybersecurity Column */}

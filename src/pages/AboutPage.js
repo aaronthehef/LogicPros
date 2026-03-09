@@ -6,6 +6,8 @@ import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 
 export const AboutPage = () => {
+  useEffect(() => { document.title = 'About LogicPros | Aaron Hefling | Web Design & IT Fredericton NB'; }, []);
+
   useEffect(() => {
     // Hero background animation styles
     const style = document.createElement('style');
@@ -505,6 +507,15 @@ export const AboutPage = () => {
                       fontWeight: '500',
                       border: '1px solid #e3f0ff'
                     }}>Technology Solutions Specialist</span>
+                    <span style={{
+                      backgroundColor: '#fff7e6',
+                      color: '#b45309',
+                      padding: '8px 16px',
+                      borderRadius: '20px',
+                      fontSize: '0.9rem',
+                      fontWeight: '500',
+                      border: '1px solid #fde68a'
+                    }}>Proudly Aboriginal-Owned</span>
                   </div>
 
                   <div style={{

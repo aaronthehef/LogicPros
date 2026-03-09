@@ -494,7 +494,7 @@ export const ResponsiveLandingPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  IT Services & Support for New Brunswick Businesses
+                  Web Design & AI Automations for Atlantic Canadian Businesses
                 </h1>
                 <p style={{
                   fontSize: 'clamp(1rem, 2vw, 1.3rem)',
@@ -503,12 +503,26 @@ export const ResponsiveLandingPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Proactive IT support and cybersecurity for businesses in Fredericton, Moncton, and Saint John. We keep your technology running smoothly so you can focus on growing your business.
+                  We build websites that get found and automate the busywork — so Atlantic Canadian businesses can focus on what they do best.
                 </p>
-                
-                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+
+                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
                   <a href="/contact" className="hero-button">
-                    Get Your Free Technology Assessment
+                    Get My Free Quote
+                  </a>
+                  <a href="tel:5064782949" style={{
+                    color: '#e2e8f0',
+                    textDecoration: 'none',
+                    fontSize: '1.1rem',
+                    fontWeight: '500',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem'
+                  }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    (506) 478-2949
                   </a>
                 </div>
               </div>
@@ -520,8 +534,8 @@ export const ResponsiveLandingPage = () => {
                 height: 'auto',
                 justifyContent: 'center'
               }}>
-                {/* Secure Card - NOW FIRST (IT Focus) */}
-                <a href="/services/cybersecurity" className="hero-service-card" style={{
+                {/* Build Card - FIRST (Web Design Primary) */}
+                <a href="/services/websites" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
@@ -538,8 +552,8 @@ export const ResponsiveLandingPage = () => {
                   animation: 'pulseGlow 3s ease-in-out infinite'
                 }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
-                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Secure</h3>
-                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Managed IT, Cyber Protection & Security Audits</p>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Build</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Websites, SEO & Online Marketing</p>
                     <span style={{
                       color: '#1F7CFF',
                       fontSize: '0.8rem',
@@ -549,9 +563,10 @@ export const ResponsiveLandingPage = () => {
                     }}>Learn More</span>
                   </div>
                   <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
-                    <svg width="40" height="40" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                      <rect x="8" y="16" width="8" height="2" fill="white"/>
+                      <rect x="9" y="18" width="6" height="1" fill="white"/>
                     </svg>
                   </div>
                 </a>
@@ -596,8 +611,8 @@ export const ResponsiveLandingPage = () => {
                   </div>
                 </a>
 
-                {/* Build Card - THIRD (Web/Marketing) */}
-                <a href="/services/websites" className="hero-service-card" style={{
+                {/* Secure Card - THIRD */}
+                <a href="/services/cybersecurity" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
@@ -614,8 +629,8 @@ export const ResponsiveLandingPage = () => {
                   animation: 'pulseGlow 3s ease-in-out infinite 2s'
                 }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', alignItems: 'flex-start' }}>
-                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Build</h3>
-                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Websites, SEO & Online Marketing</p>
+                    <h3 style={{ color: '#1F7CFF', fontSize: '1.8rem', fontWeight: '700', margin: '0', lineHeight: '1.2', textAlign: 'left' }}>Secure</h3>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.85rem', margin: '0', lineHeight: '1.3', textAlign: 'left' }}>Managed IT, Cyber Protection & Security Audits</p>
                     <span style={{
                       color: '#1F7CFF',
                       fontSize: '0.8rem',
@@ -625,10 +640,9 @@ export const ResponsiveLandingPage = () => {
                     }}>Learn More</span>
                   </div>
                   <div style={{ marginLeft: '1rem', flexShrink: 0 }}>
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
-                      <rect x="8" y="16" width="8" height="2" fill="white"/>
-                      <rect x="9" y="18" width="6" height="1" fill="white"/>
+                    <svg width="40" height="40" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                 </a>
@@ -651,12 +665,88 @@ export const ResponsiveLandingPage = () => {
               margin: '0',
               letterSpacing: '0.5px'
             }}>
-              21 Years in Technology | New Brunswick Based | Former Provincial Government IT Professional
+              Fredericton Chamber of Commerce Member | 21 Years in Technology
             </p>
           </div>
         </section>
 
-        {/* The Real Cost of IT Problems Section */}
+        {/* Client Logos Section */}
+        <section style={{ backgroundColor: '#ffffff', padding: '3rem 0', borderBottom: '1px solid rgba(29, 122, 175, 0.1)' }}>
+          <div className="container">
+            <p style={{
+              textAlign: 'center',
+              fontSize: '0.9rem',
+              fontWeight: '600',
+              color: '#94a3b8',
+              textTransform: 'uppercase',
+              letterSpacing: '2px',
+              marginBottom: '2rem'
+            }}>Trusted by Atlantic Canadian Businesses</p>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '2.5rem'
+            }}>
+              {[
+                { name: 'B Foulkes Plumbing', src: 'https://logicpros.ca/wp-content/uploads/2026/02/cropped-Logo-BF-175x75-1.png' },
+                { name: 'IJM Construction Management', src: 'https://logicpros.ca/wp-content/uploads/2026/02/LOGOdarkLowRes-300x169.png' },
+                { name: 'J. Parker Roofing', src: 'https://logicpros.ca/wp-content/uploads/2026/02/logoPNG--300x270.png' },
+                { name: 'Thomson Plumbing', src: 'https://logicpros.ca/wp-content/uploads/2026/02/thomson-300x91.png' },
+                { name: 'Volt Vision Electric', src: 'https://logicpros.ca/wp-content/uploads/2026/02/VoltVisionElectric_Transparent_400x350-300x300.png' },
+                { name: "Crawford's Plumbing and Heating", src: 'https://logicpros.ca/wp-content/uploads/2026/02/Logo-black-text-300x96.png' },
+              ].map(({ name, src }) => (
+                <img key={name} src={src} alt={name} style={{
+                  height: '50px',
+                  width: 'auto',
+                  maxWidth: '160px',
+                  objectFit: 'contain',
+                  filter: 'grayscale(100%)',
+                  opacity: 0.6,
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => { e.target.style.filter = 'grayscale(0%)'; e.target.style.opacity = '1'; }}
+                onMouseLeave={(e) => { e.target.style.filter = 'grayscale(100%)'; e.target.style.opacity = '0.6'; }}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonial */}
+        <section style={{ backgroundColor: '#ffffff', padding: '60px 0' }}>
+          <div className="container">
+            <div style={{ maxWidth: '780px', margin: '0 auto', textAlign: 'center' }}>
+              <svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginBottom: '1.5rem', opacity: 0.2 }}>
+                <path d="M0 32V19.2C0 14.4 1.2 10.4 3.6 7.2 6 3.87 9.47 1.47 14 0l2 3.6C12.93 4.67 11.07 6.13 9.4 8c-1.6 1.87-2.53 3.87-2.8 6H12V32H0zm22 0V19.2c0-4.8 1.2-8.8 3.6-12 2.4-3.33 5.87-5.73 10.4-7.2l2 3.6c-3.07 1.07-4.93 2.53-5.6 4.4-1.6 1.87-2.53 3.87-2.8 6H34V32H22z" fill="#1F7CFF"/>
+              </svg>
+              <blockquote style={{
+                fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
+                lineHeight: '1.8',
+                color: '#374151',
+                fontStyle: 'italic',
+                margin: '0 0 2rem 0',
+                fontWeight: '400'
+              }}>
+                "Aaron at LogicPros was amazing to work with when I was building my company website. From our initial phone call all the way to the completion of the site, Aaron worked diligently, fully educated himself on what I do to provide the proper service, and had exceptional communication from start to finish. I recommend LogicPros to anyone that is looking to get their business online."
+              </blockquote>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
+                <img
+                  src="https://logicpros.ca/wp-content/uploads/2026/02/LOGOdarkLowRes-300x169.png"
+                  alt="IJM Builders"
+                  style={{ height: '36px', width: 'auto', objectFit: 'contain', opacity: 0.75 }}
+                />
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{ fontWeight: '700', color: '#1a1a2e', fontSize: '1rem' }}>IJM Builders</div>
+                  <div style={{ fontSize: '0.85rem', color: '#6b7280' }}>Construction — Fredericton, NB</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What We Actually Do for Local Businesses */}
         <section
           ref={parallaxRef2}
           className="parallax-section-2"
@@ -670,7 +760,6 @@ export const ResponsiveLandingPage = () => {
             overflow: 'hidden'
           }}
         >
-          {/* Dark overlay to maintain readability */}
           <div style={{
             position: 'absolute',
             top: 0,
@@ -682,7 +771,10 @@ export const ResponsiveLandingPage = () => {
           }} />
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="section-header">
-              <h2 className="section-title" style={{ color: 'white' }}>The Real Cost of IT Problems</h2>
+              <h2 className="section-title" style={{ color: 'white' }}>What We Actually Do</h2>
+              <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1.05rem', maxWidth: '580px', margin: '0 auto' }}>
+                Plain English. No jargon. No upselling services you don't need.
+              </p>
             </div>
             <div style={{
               display: 'grid',
@@ -691,7 +783,6 @@ export const ResponsiveLandingPage = () => {
               maxWidth: '1000px',
               margin: '0 auto'
             }}>
-              {/* IT Downtime - FIRST (80% focus) */}
               <div style={{
                 background: 'rgba(255, 255, 255, 0.1)',
                 backdropFilter: 'blur(10px)',
@@ -711,25 +802,44 @@ export const ResponsiveLandingPage = () => {
                   margin: '0 auto 1.5rem auto'
                 }}>
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="12" y1="1" x2="12" y2="23" stroke="white" strokeWidth="2"/>
-                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="8" y="16" width="8" height="2" fill="white"/>
                   </svg>
                 </div>
-                <h3 style={{
-                  color: '#1F7CFF',
-                  fontSize: '2.2rem',
-                  fontWeight: '700',
-                  marginBottom: '1rem'
-                }}>5.6 Hours</h3>
-                <p style={{
-                  color: 'white',
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  margin: '0'
-                }}>Average time to resolve an IT outage without proper support. Every minute costs you customers.</p>
+                <h3 style={{ color: '#1F7CFF', fontSize: '1.3rem', fontWeight: '700', marginBottom: '1rem' }}>Build you a site that gets found</h3>
+                <p style={{ color: 'white', fontSize: '1rem', lineHeight: '1.6', margin: '0' }}>
+                  We build websites that rank on Google for the searches your customers are actually making — not just something that looks nice.
+                </p>
               </div>
 
-              {/* Cybersecurity - SECOND */}
+              <div style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '16px',
+                padding: '2rem',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 1.5rem auto'
+                }}>
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 style={{ color: '#1F7CFF', fontSize: '1.3rem', fontWeight: '700', marginBottom: '1rem' }}>Automate the repetitive stuff</h3>
+                <p style={{ color: 'white', fontSize: '1rem', lineHeight: '1.6', margin: '0' }}>
+                  Follow-up emails, appointment reminders, social media posts — we set these up once so you stop doing them manually every week.
+                </p>
+              </div>
+
               <div style={{
                 background: 'rgba(255, 255, 255, 0.1)',
                 backdropFilter: 'blur(10px)',
@@ -750,59 +860,13 @@ export const ResponsiveLandingPage = () => {
                 }}>
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" stroke="white" strokeWidth="2" fill="none"/>
-                    <path d="M12 8v4m0 4h.01" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h3 style={{
-                  color: '#1F7CFF',
-                  fontSize: '2.2rem',
-                  fontWeight: '700',
-                  marginBottom: '1rem'
-                }}>60%</h3>
-                <p style={{
-                  color: 'white',
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  margin: '0'
-                }}>of small businesses close within 6 months of a cyberattack. Is your business protected?</p>
-              </div>
-
-              {/* Lost Productivity - THIRD */}
-              <div style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(10px)',
-                borderRadius: '16px',
-                padding: '2rem',
-                textAlign: 'center',
-                border: '1px solid rgba(255, 255, 255, 0.1)'
-              }}>
-                <div style={{
-                  width: '60px',
-                  height: '60px',
-                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 1.5rem auto'
-                }}>
-                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" fill="none"/>
-                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 style={{
-                  color: '#1F7CFF',
-                  fontSize: '2.2rem',
-                  fontWeight: '700',
-                  marginBottom: '1rem'
-                }}>15 Hours/Week</h3>
-                <p style={{
-                  color: 'white',
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  margin: '0'
-                }}>Lost to IT issues and manual tasks. Get that time back with proactive IT support.</p>
+                <h3 style={{ color: '#1F7CFF', fontSize: '1.3rem', fontWeight: '700', marginBottom: '1rem' }}>Keep your tech from holding you back</h3>
+                <p style={{ color: 'white', fontSize: '1rem', lineHeight: '1.6', margin: '0' }}>
+                  Slow computers, dead email, hacked accounts — we fix the things that quietly cost you time and customers every day.
+                </p>
               </div>
             </div>
           </div>
@@ -812,7 +876,7 @@ export const ResponsiveLandingPage = () => {
         <section id="services" className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">We're not just an IT company. We're your technology partner who speaks plain English, shows up when we say we will, and actually cares if your business succeeds.</h2>
+              <h2 className="section-title">We help Atlantic Canadian businesses get found online, automate the busywork, and stay secure — plain English, no jargon, no runaround.</h2>
             </div>
             <div className="services-grid animate-on-scroll" style={{
               display: 'grid',
@@ -822,8 +886,8 @@ export const ResponsiveLandingPage = () => {
               maxWidth: '1200px',
               margin: '0 auto'
             }}>
-              {/* Managed IT - NOW FIRST (80% Focus) */}
-              <a href="/services/managed-it" className="service-card professional-card" style={{
+              {/* Websites - FIRST (Primary Service) */}
+              <a href="/services/websites" className="service-card professional-card" style={{
                 textDecoration: 'none',
                 color: 'inherit',
                 background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
@@ -850,15 +914,14 @@ export const ResponsiveLandingPage = () => {
                   transition: 'all 0.3s ease'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="3" width="20" height="14" rx="2" stroke="white" strokeWidth="2" fill="none"/>
-                    <rect x="6" y="17" width="4" height="2" fill="white"/>
-                    <rect x="14" y="17" width="4" height="2" fill="white"/>
-                    <circle cx="12" cy="10" r="2" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="8" y="16" width="8" height="2" fill="white"/>
+                    <rect x="9" y="18" width="6" height="1" fill="white"/>
                   </svg>
                 </div>
-                <h3>Tech That Never Fails You</h3>
+                <h3>Websites That Actually Convert</h3>
                 <p>
-                  No more 'Can you look at this?' moments or surprise downtime. Get proactive IT support that fixes problems before they happen — and actually picks up the phone when you call.
+                  Stop losing customers to competitors with faster, better-looking sites. We build websites that turn visitors into paying customers — not digital brochures that sit there looking pretty.
                 </p>
                 <div style={{
                   marginTop: '1rem',
@@ -867,56 +930,10 @@ export const ResponsiveLandingPage = () => {
                   fontWeight: '600',
                   fontSize: '0.9rem'
                 }}>
-                  Get Reliable IT Support →
+                  See Our Website Solutions →
                 </div>
               </a>
-              {/* Cybersecurity - SECOND */}
-              <a href="/services/cybersecurity" className="service-card professional-card" style={{
-                textDecoration: 'none',
-                color: 'inherit',
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                display: 'block',
-                position: 'relative',
-                overflow: 'hidden'
-              }}>
-                <div className="service-icon floating-icon" style={{
-                  fontSize: '3rem',
-                  marginBottom: '1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                  borderRadius: '20px',
-                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
-                  transition: 'all 0.3s ease'
-                }}>
-                  <svg width="48" height="48" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3>Sleep Easy at Night</h3>
-                <p>
-                  One breach can destroy years of reputation and cost thousands in recovery. We protect your business with enterprise-grade security that actually works — at prices small businesses can afford.
-                </p>
-                <div style={{
-                  marginTop: '1rem',
-                  textAlign: 'center',
-                  color: '#1F7CFF',
-                  fontWeight: '600',
-                  fontSize: '0.9rem'
-                }}>
-                  Secure Your Business →
-                </div>
-              </a>
-              {/* Automations - THIRD */}
+              {/* Automations - SECOND */}
               <a href="/services/automations" className="service-card professional-card" style={{
                 textDecoration: 'none',
                 color: 'inherit',
@@ -966,8 +983,54 @@ export const ResponsiveLandingPage = () => {
                   Explore AI Automation →
                 </div>
               </a>
-              {/* Websites - FOURTH (20% positioning) */}
-              <a href="/services/websites" className="service-card professional-card" style={{
+              {/* Cybersecurity - THIRD */}
+              <a href="/services/cybersecurity" className="service-card professional-card" style={{
+                textDecoration: 'none',
+                color: 'inherit',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+                border: '2px solid rgba(29, 122, 175, 0.1)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                display: 'block',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <div className="service-icon floating-icon" style={{
+                  fontSize: '3rem',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '80px',
+                  height: '80px',
+                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 25px rgba(31, 124, 255, 0.3)',
+                  transition: 'all 0.3s ease'
+                }}>
+                  <svg width="48" height="48" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L4 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6l-8-4z" stroke="white" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Sleep Easy at Night</h3>
+                <p>
+                  One breach can destroy years of reputation and cost thousands in recovery. We protect your business with enterprise-grade security that actually works — at prices small businesses can afford.
+                </p>
+                <div style={{
+                  marginTop: '1rem',
+                  textAlign: 'center',
+                  color: '#1F7CFF',
+                  fontWeight: '600',
+                  fontSize: '0.9rem'
+                }}>
+                  Secure Your Business →
+                </div>
+              </a>
+              {/* Managed IT - FOURTH */}
+              <a href="/services/managed-it" className="service-card professional-card" style={{
                 textDecoration: 'none',
                 color: 'inherit',
                 background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
@@ -994,14 +1057,15 @@ export const ResponsiveLandingPage = () => {
                   transition: 'all 0.3s ease'
                 }}>
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="4" width="18" height="12" rx="1" stroke="white" strokeWidth="2" fill="none"/>
-                    <rect x="8" y="16" width="8" height="2" fill="white"/>
-                    <rect x="9" y="18" width="6" height="1" fill="white"/>
+                    <rect x="2" y="3" width="20" height="14" rx="2" stroke="white" strokeWidth="2" fill="none"/>
+                    <rect x="6" y="17" width="4" height="2" fill="white"/>
+                    <rect x="14" y="17" width="4" height="2" fill="white"/>
+                    <circle cx="12" cy="10" r="2" stroke="white" strokeWidth="2" fill="none"/>
                   </svg>
                 </div>
-                <h3>Websites That Actually Convert</h3>
+                <h3>Tech That Never Fails You</h3>
                 <p>
-                  Stop losing customers to competitors with faster, better-looking sites. We build websites that turn visitors into paying customers — not digital brochures that sit there looking pretty.
+                  No more 'Can you look at this?' moments or surprise downtime. Get proactive IT support that fixes problems before they happen — and actually picks up the phone when you call.
                 </p>
                 <div style={{
                   marginTop: '1rem',
@@ -1010,7 +1074,7 @@ export const ResponsiveLandingPage = () => {
                   fontWeight: '600',
                   fontSize: '0.9rem'
                 }}>
-                  See Our Website Solutions →
+                  Get Reliable IT Support →
                 </div>
               </a>
             </div>
@@ -1025,130 +1089,33 @@ export const ResponsiveLandingPage = () => {
             </div>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '2rem',
-              maxWidth: '1200px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '3rem',
+              maxWidth: '960px',
               margin: '0 auto'
             }}>
-              <div style={{
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2.5rem 2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                textAlign: 'center'
-              }}>
-                <div style={{
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 1.5rem auto'
-                }}>
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="white" strokeWidth="2" fill="none"/>
-                    <circle cx="12" cy="10" r="3" stroke="white" strokeWidth="2" fill="none"/>
-                  </svg>
-                </div>
-                <h3 style={{
-                  color: colors.text.primary,
-                  fontSize: '1.4rem',
-                  fontWeight: '700',
-                  marginBottom: '1rem',
-                  lineHeight: '1.3'
-                }}>Local Expertise That Gets It</h3>
-                <p style={{
-                  color: colors.text.secondary,
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  marginBottom: '0'
-                }}>
-                  We understand the unique challenges of running a business in Atlantic Canada. No outsourced call centers, no tech bro jargon — just straight talk from people who live and work here.
+              <div>
+                <h3 style={{ color: colors.text.primary, fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem' }}>
+                  We're based here — not outsourced to a call center
+                </h3>
+                <p style={{ color: colors.text.secondary, fontSize: '1rem', lineHeight: '1.7', margin: '0' }}>
+                  I'm Aaron. I run LogicPros out of Fredericton and I take every client call myself. If something breaks, you're not waiting on a ticket queue — you're calling someone who knows your setup.
                 </p>
               </div>
-
-              <div style={{
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2.5rem 2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                textAlign: 'center'
-              }}>
-                <div style={{
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 1.5rem auto'
-                }}>
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" stroke="white" strokeWidth="2" fill="none"/>
-                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 style={{
-                  color: colors.text.primary,
-                  fontSize: '1.4rem',
-                  fontWeight: '700',
-                  marginBottom: '1rem',
-                  lineHeight: '1.3'
-                }}>Security-First, Always</h3>
-                <p style={{
-                  color: colors.text.secondary,
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  marginBottom: '0'
-                }}>
-                  With a background leading IT for New Brunswick's provincial government, we bring enterprise-level security thinking to every small business we serve. Your data is protected like it matters — because it does.
+              <div>
+                <h3 style={{ color: colors.text.primary, fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem' }}>
+                  I've done this for the provincial government — now I'm doing it for small business
+                </h3>
+                <p style={{ color: colors.text.secondary, fontSize: '1rem', lineHeight: '1.7', margin: '0' }}>
+                  Before LogicPros, I led IT for the Government of New Brunswick. That background means I know what good looks like, and I can bring the same standard to a 10-person trades company without the government price tag.
                 </p>
               </div>
-
-              <div style={{
-                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
-                border: '2px solid rgba(29, 122, 175, 0.1)',
-                borderRadius: '16px',
-                padding: '2.5rem 2rem',
-                boxShadow: '0 8px 32px rgba(29, 122, 175, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                textAlign: 'center'
-              }}>
-                <div style={{
-                  width: '80px',
-                  height: '80px',
-                  background: 'linear-gradient(135deg, #1F7CFF, #1e40af)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 1.5rem auto'
-                }}>
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 style={{
-                  color: colors.text.primary,
-                  fontSize: '1.4rem',
-                  fontWeight: '700',
-                  marginBottom: '1rem',
-                  lineHeight: '1.3'
-                }}>We're Business Growth Partners, Not Just Tech Support</h3>
-                <p style={{
-                  color: colors.text.secondary,
-                  fontSize: '1rem',
-                  lineHeight: '1.6',
-                  marginBottom: '0'
-                }}>
-                  Technology should make you money, not cost you sleep. We measure our success by whether your business is growing, not by how many hours we bill.
+              <div>
+                <h3 style={{ color: colors.text.primary, fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem' }}>
+                  You should know what you're paying for
+                </h3>
+                <p style={{ color: colors.text.secondary, fontSize: '1rem', lineHeight: '1.7', margin: '0' }}>
+                  No retainers for things you don't need. No jargon designed to keep you dependent. Every recommendation I make, I explain in plain English first — and you decide.
                 </p>
               </div>
             </div>
@@ -1192,81 +1159,45 @@ export const ResponsiveLandingPage = () => {
               marginBottom: '1.5rem',
               textShadow: '0 4px 12px rgba(0, 0, 0, 0.5)'
             }}>
-              Enterprise-Grade IT Infrastructure for New Brunswick
+              21 Years in Technology. Based in Fredericton.
             </h2>
             <p style={{
-              fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
+              fontSize: 'clamp(1.1rem, 2vw, 1.25rem)',
               color: '#e2e8f0',
-              maxWidth: '800px',
-              margin: '0 auto 2rem',
-              lineHeight: '1.6',
+              maxWidth: '720px',
+              margin: '0 auto 2.5rem',
+              lineHeight: '1.7',
               textShadow: '0 2px 8px rgba(0, 0, 0, 0.5)'
             }}>
-              24/7 monitoring • Proactive maintenance • Rapid response
+              Before LogicPros, I led IT for the Government of New Brunswick. I've seen what happens when small businesses don't have the right tech support — and I built this company to fix that.
             </p>
             <div style={{
               display: 'flex',
-              gap: '2rem',
+              gap: '3rem',
               justifyContent: 'center',
               flexWrap: 'wrap'
             }}>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{
-                  fontSize: '2.5rem',
-                  fontWeight: '700',
-                  color: '#1F7CFF',
-                  marginBottom: '0.5rem',
-                  textShadow: '0 0 20px rgba(31, 124, 255, 0.5)'
-                }}>
-                  99.9%
+              {[
+                { stat: '21', label: 'Years in Technology' },
+                { stat: '6+', label: 'Atlantic Canadian Clients' },
+                { stat: 'NB', label: 'Fredericton Chamber Member' },
+              ].map(({ stat, label }) => (
+                <div key={label} style={{ textAlign: 'center' }}>
+                  <div style={{
+                    fontSize: '2.5rem',
+                    fontWeight: '700',
+                    color: '#1F7CFF',
+                    marginBottom: '0.5rem',
+                    textShadow: '0 0 20px rgba(31, 124, 255, 0.5)'
+                  }}>{stat}</div>
+                  <div style={{
+                    fontSize: '0.9rem',
+                    color: '#cbd5e0',
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px'
+                  }}>{label}</div>
                 </div>
-                <div style={{
-                  fontSize: '0.9rem',
-                  color: '#cbd5e0',
-                  textTransform: 'uppercase',
-                  letterSpacing: '1px'
-                }}>
-                  Uptime Guarantee
-                </div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{
-                  fontSize: '2.5rem',
-                  fontWeight: '700',
-                  color: '#1F7CFF',
-                  marginBottom: '0.5rem',
-                  textShadow: '0 0 20px rgba(31, 124, 255, 0.5)'
-                }}>
-                  &lt;15min
-                </div>
-                <div style={{
-                  fontSize: '0.9rem',
-                  color: '#cbd5e0',
-                  textTransform: 'uppercase',
-                  letterSpacing: '1px'
-                }}>
-                  Average Response
-                </div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{
-                  fontSize: '2.5rem',
-                  fontWeight: '700',
-                  color: '#1F7CFF',
-                  marginBottom: '0.5rem',
-                  textShadow: '0 0 20px rgba(31, 124, 255, 0.5)'
-                }}>
-                  24/7
-                </div>
-                <div style={{
-                  fontSize: '0.9rem',
-                  color: '#cbd5e0',
-                  textTransform: 'uppercase',
-                  letterSpacing: '1px'
-                }}>
-                  Monitoring
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -2056,45 +1987,154 @@ export const ResponsiveLandingPage = () => {
               </p>
             </div>
             <div className="services-grid animate-on-scroll">
-              <div className="service-card" style={{ textAlign: 'center' }}>
-                <h3>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '8px', verticalAlign: 'middle'}}>
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" strokeWidth="2" fill="none"/>
-                    <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  </svg>
-                  Fredericton
-                </h3>
-                <p>
-                  Cybersecurity audits, AI chatbots, hands free marketing, managed IT services, and professional websites 
-                  for Fredericton businesses. Expert technology solutions.
-                </p>
-              </div>
-              <div className="service-card" style={{ textAlign: 'center' }}>
-                <h3>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '8px', verticalAlign: 'middle'}}>
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" strokeWidth="2" fill="none"/>
-                    <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  </svg>
-                  Moncton
-                </h3>
-                <p>
-                  Security assessments, automated marketing, endpoint protection, and web development 
-                  for Moncton area SMEs. Comprehensive technology support.
-                </p>
-              </div>
-              <div className="service-card" style={{ textAlign: 'center' }}>
-                <h3>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '8px', verticalAlign: 'middle'}}>
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" strokeWidth="2" fill="none"/>
-                    <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  </svg>
-                  Saint John
-                </h3>
-                <p>
-                  MFA implementation, SEO optimization, patch management, and digital solutions 
-                  for Saint John businesses. Professional implementation support.
-                </p>
-              </div>
+              {[
+                {
+                  city: 'Fredericton', href: '/locations/fredericton',
+                  desc: 'Serving Fredericton, Oromocto, Gagetown, and the Capital Region.',
+                  links: [
+                    { label: 'Web Design', href: '/locations/fredericton/web-design' },
+                    { label: 'AI Automation', href: '/locations/fredericton/automations' },
+                    { label: 'Cybersecurity', href: '/locations/fredericton/cybersecurity' },
+                    { label: 'Managed IT', href: '/locations/fredericton/managed-it' },
+                  ]
+                },
+                {
+                  city: 'Moncton', href: '/locations/moncton',
+                  desc: 'Serving Moncton, Dieppe, Riverview, Shediac, and Greater Moncton.',
+                  links: [
+                    { label: 'Web Design', href: '/locations/moncton/web-design' },
+                    { label: 'AI Automation', href: '/locations/moncton/automations' },
+                    { label: 'Cybersecurity', href: '/locations/moncton/cybersecurity' },
+                    { label: 'Managed IT', href: '/locations/moncton/managed-it' },
+                  ]
+                },
+                {
+                  city: 'Saint John', href: '/locations/saint-john',
+                  desc: 'Serving Saint John, Quispamsis, Rothesay, and Greater Saint John.',
+                  links: [
+                    { label: 'Web Design', href: '/locations/saint-john/web-design' },
+                    { label: 'AI Automation', href: '/locations/saint-john/automations' },
+                    { label: 'Cybersecurity', href: '/locations/saint-john/cybersecurity' },
+                    { label: 'Managed IT', href: '/locations/saint-john/managed-it' },
+                  ]
+                }
+              ].map(({ city, href, desc, links }) => (
+                <div key={city} className="service-card" style={{ textAlign: 'center' }}>
+                  <h3>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ marginRight: '8px', verticalAlign: 'middle' }}>
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    </svg>
+                    <a href={href} style={{ color: 'inherit', textDecoration: 'none' }}>{city}</a>
+                  </h3>
+                  <p style={{ marginBottom: '1rem' }}>{desc}</p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center' }}>
+                    {links.map(({ label, href: lhref }) => (
+                      <a key={label} href={lhref} style={{ fontSize: '0.8rem', color: '#1F7CFF', background: 'rgba(31,124,255,0.08)', border: '1px solid rgba(31,124,255,0.25)', borderRadius: '20px', padding: '4px 12px', textDecoration: 'none', whiteSpace: 'nowrap', transition: 'all 0.2s ease' }}
+                        onMouseEnter={e => { e.currentTarget.style.background = 'rgba(31,124,255,0.18)'; }}
+                        onMouseLeave={e => { e.currentTarget.style.background = 'rgba(31,124,255,0.08)'; }}>
+                        {label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Recent Websites We've Built */}
+        <section style={{ backgroundColor: '#f8faff', padding: '60px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: '700', color: '#1a1a2e', marginBottom: '0.75rem' }}>
+                Recent Websites We've Built
+              </h2>
+              <p style={{ fontSize: '1.05rem', color: '#6b7280', maxWidth: '600px', margin: '0 auto' }}>
+                Real Atlantic Canadian businesses. Click any card to see the live site.
+              </p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
+              {[
+                { name: 'IJM Builders', img: 'https://logicpros.ca/wp-content/uploads/elementor/thumbs/ijm-riy9mvzivqcux5qaloznbc2eh3qj5stgif7vv2q8dc.webp', tag: 'Construction', href: 'https://www.ijmbuilders.ca/' },
+                { name: "Crawford's Plumbing", img: 'https://logicpros.ca/wp-content/uploads/elementor/thumbs/crawfords-riy9ly5c1p2jb73g3ad2tklt38dbgp34drqel44elc.webp', tag: 'Plumbing', href: 'https://www.crawfordsplumbing.ca/' },
+                { name: 'Volt Vision Electric', img: 'https://logicpros.ca/wp-content/uploads/elementor/thumbs/voltvision-riy9ly5c1p2jb73g3ad2tklt38dbgp34drqel44elc.webp', tag: 'Electrical', href: 'https://www.voltvisionelectric.ca/' },
+              ].map(({ name, img, tag, href }) => (
+                <a key={name} href={href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <div style={{
+                    borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                    backgroundColor: '#fff', transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                    cursor: 'pointer'
+                  }}
+                    onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.14)'; }}
+                    onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)'; }}
+                  >
+                    <div style={{ position: 'relative', paddingTop: '62%', backgroundColor: '#e5e7eb', overflow: 'hidden' }}>
+                      <img src={img} alt={name} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                    <div style={{ padding: '1.25rem' }}>
+                      <span style={{ fontSize: '0.75rem', fontWeight: '600', color: '#2563eb', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{tag}</span>
+                      <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#1a1a2e', margin: '0.4rem 0 0.5rem' }}>{name}</h3>
+                      <span style={{ fontSize: '0.9rem', color: '#2563eb' }}>Visit site ↗</span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works — 4-Step Process */}
+        <section className="section" style={{ backgroundColor: colors.backgrounds.light }}>
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">How It Works</h2>
+              <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '600px', margin: '0 auto' }}>
+                From first conversation to live results — here's exactly what to expect.
+              </p>
+            </div>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '2rem',
+              maxWidth: '1100px',
+              margin: '0 auto'
+            }}>
+              {[
+                { step: '01', title: 'Free Consultation', desc: "Tell us what you need. We'll listen, ask the right questions, and give you an honest recommendation — no jargon, no sales pressure." },
+                { step: '02', title: 'Custom Proposal', desc: "We send a clear scope of work, timeline, and fixed-price quote within 48 hours. No surprises. No hidden fees." },
+                { step: '03', title: 'We Build It', desc: "Websites go live in 2–4 weeks. Automations are deployed rapidly. You're kept in the loop every step of the way." },
+                { step: '04', title: 'You See Results', desc: "More leads, less busywork, better security. We measure what matters and keep optimizing after launch." }
+              ].map(({ step, title, desc }) => (
+                <div key={step} style={{
+                  background: '#ffffff',
+                  border: '2px solid rgba(29, 122, 175, 0.1)',
+                  borderRadius: '16px',
+                  padding: '2rem',
+                  boxShadow: '0 4px 16px rgba(29, 122, 175, 0.08)',
+                  position: 'relative'
+                }}>
+                  <div style={{
+                    fontSize: '3rem',
+                    fontWeight: '900',
+                    color: 'rgba(31, 124, 255, 0.12)',
+                    lineHeight: '1',
+                    marginBottom: '0.5rem'
+                  }}>{step}</div>
+                  <h3 style={{
+                    fontSize: '1.2rem',
+                    fontWeight: '700',
+                    color: colors.text.primary,
+                    marginBottom: '0.75rem'
+                  }}>{title}</h3>
+                  <p style={{
+                    fontSize: '0.95rem',
+                    color: colors.text.secondary,
+                    lineHeight: '1.6',
+                    margin: 0
+                  }}>{desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -2103,12 +2143,12 @@ export const ResponsiveLandingPage = () => {
         <section className="section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Ready to Stop Fighting Your Technology?</h2>
+              <h2 className="section-title">Ready to Get Started?</h2>
               <p style={{ fontSize: '1.1rem', color: colors.text.secondary, maxWidth: '600px', margin: '0 auto' }}>
-                Book a free 30-minute tech assessment. We'll review your current setup, identify vulnerabilities and opportunities, and give you an honest roadmap — even if you don't work with us.
+                Book a free 30-minute call. We'll look at your situation, tell you exactly what we'd recommend, and give you a quote — even if you don't end up working with us.
               </p>
             </div>
-            <div className="cta-buttons" style={{ textAlign: 'center', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="cta-buttons" style={{ textAlign: 'center', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center' }}>
               <a href="/contact" style={{
                 background: 'linear-gradient(135deg, #FFC600 0%, #FFB800 100%)',
                 color: '#1a1a2e',
@@ -2129,7 +2169,21 @@ export const ResponsiveLandingPage = () => {
               onMouseLeave={(e) => {
                 e.target.style.boxShadow = '0 6px 20px rgba(29, 122, 175, 0.4)';
                 e.target.style.transform = 'translateY(0)';
-              }}>Schedule Your Free Assessment</a>
+              }}>Get My Free Quote</a>
+              <a href="tel:5064782949" style={{
+                color: colors.text.secondary,
+                textDecoration: 'none',
+                fontSize: '1.05rem',
+                fontWeight: '500',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.4rem'
+              }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.82 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                (506) 478-2949
+              </a>
             </div>
             <p style={{
               textAlign: 'center',
@@ -2138,7 +2192,7 @@ export const ResponsiveLandingPage = () => {
               marginTop: '1.5rem',
               fontStyle: 'italic'
             }}>
-              No pressure, no sales pitch — just great advice from people who've been doing this for 21 years.
+              No pressure, no sales pitch — just honest advice from people who've been doing this for 21 years.
             </p>
           </div>
         </section>

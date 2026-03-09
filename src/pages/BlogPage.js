@@ -12,6 +12,8 @@ export const BlogPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  useEffect(() => { document.title = 'Blog | Web Design & Tech Tips for NB Businesses | LogicPros'; }, []);
+
   useEffect(() => {
     // Animation styles for blog posts and hero
     const style = document.createElement('style');

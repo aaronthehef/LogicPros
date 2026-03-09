@@ -112,17 +112,44 @@ export const Navigation = () => {
             Locations
             <span className="dropdown-arrow">▼</span>
           </a>
-          <div className={`dropdown-content ${dropdownOpen === 'locations' ? 'show' : ''}`}>
+          <div className={`dropdown-content locations-dropdown ${dropdownOpen === 'locations' ? 'show' : ''}`}>
             <div className="dropdown-arrow-up"></div>
-            <a href="/locations/fredericton" onClick={handleLinkClick}>
-              Fredericton
-            </a>
-            <a href="/locations/moncton" onClick={handleLinkClick}>
-              Moncton
-            </a>
-            <a href="/locations/saint-john" onClick={handleLinkClick}>
-              Saint John
-            </a>
+            <div className="nav-subdropdown">
+              <a href="/locations/fredericton" onClick={handleLinkClick} className="dropdown-item-with-submenu">
+                Fredericton
+                <span className="submenu-arrow">▶</span>
+              </a>
+              <div className="submenu-content">
+                <a href="/locations/fredericton/web-design" onClick={handleLinkClick}>Web Design</a>
+                <a href="/locations/fredericton/automations" onClick={handleLinkClick}>AI Automations</a>
+                <a href="/locations/fredericton/cybersecurity" onClick={handleLinkClick}>Cybersecurity</a>
+                <a href="/locations/fredericton/managed-it" onClick={handleLinkClick}>Managed IT</a>
+              </div>
+            </div>
+            <div className="nav-subdropdown">
+              <a href="/locations/moncton" onClick={handleLinkClick} className="dropdown-item-with-submenu">
+                Moncton
+                <span className="submenu-arrow">▶</span>
+              </a>
+              <div className="submenu-content">
+                <a href="/locations/moncton/web-design" onClick={handleLinkClick}>Web Design</a>
+                <a href="/locations/moncton/automations" onClick={handleLinkClick}>AI Automations</a>
+                <a href="/locations/moncton/cybersecurity" onClick={handleLinkClick}>Cybersecurity</a>
+                <a href="/locations/moncton/managed-it" onClick={handleLinkClick}>Managed IT</a>
+              </div>
+            </div>
+            <div className="nav-subdropdown">
+              <a href="/locations/saint-john" onClick={handleLinkClick} className="dropdown-item-with-submenu">
+                Saint John
+                <span className="submenu-arrow">▶</span>
+              </a>
+              <div className="submenu-content">
+                <a href="/locations/saint-john/web-design" onClick={handleLinkClick}>Web Design</a>
+                <a href="/locations/saint-john/automations" onClick={handleLinkClick}>AI Automations</a>
+                <a href="/locations/saint-john/cybersecurity" onClick={handleLinkClick}>Cybersecurity</a>
+                <a href="/locations/saint-john/managed-it" onClick={handleLinkClick}>Managed IT</a>
+              </div>
+            </div>
           </div>
           <div className="dropdown-hover-bridge"></div>
         </div>
@@ -239,9 +266,21 @@ export const Navigation = () => {
 
               <div style={{ marginTop: '1.5rem' }}>
                 <h3 style={{ color: '#ffffff', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: 'bold' }}>Locations</h3>
-                <a href="/locations/fredericton" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Fredericton</a>
-                <a href="/locations/moncton" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '500' }}>Moncton</a>
-                <a href="/locations/saint-john" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: 'none', fontWeight: '500' }}>Saint John</a>
+                <a href="/locations/fredericton" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', fontWeight: '600' }}>Fredericton</a>
+                <a href="/locations/fredericton/web-design" onClick={handleLinkClick} style={{ display: 'block', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', padding: '0.4rem 0 0.4rem 1.25rem', fontSize: '0.95rem', borderBottom: '1px solid rgba(255,255,255,0.08)', fontWeight: '400' }}>Web Design</a>
+                <a href="/locations/fredericton/automations" onClick={handleLinkClick} style={{ display: 'block', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', padding: '0.4rem 0 0.4rem 1.25rem', fontSize: '0.95rem', borderBottom: '1px solid rgba(255,255,255,0.08)', fontWeight: '400' }}>AI Automations</a>
+                <a href="/locations/fredericton/cybersecurity" onClick={handleLinkClick} style={{ display: 'block', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', padding: '0.4rem 0 0.4rem 1.25rem', fontSize: '0.95rem', borderBottom: '1px solid rgba(255,255,255,0.08)', fontWeight: '400' }}>Cybersecurity</a>
+                <a href="/locations/fredericton/managed-it" onClick={handleLinkClick} style={{ display: 'block', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', padding: '0.4rem 0 0.4rem 1.25rem', fontSize: '0.95rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '400' }}>Managed IT</a>
+                <a href="/locations/moncton" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', fontWeight: '600' }}>Moncton</a>
+                <a href="/locations/moncton/web-design" onClick={handleLinkClick} style={{ display: 'block', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', padding: '0.4rem 0 0.4rem 1.25rem', fontSize: '0.95rem', borderBottom: '1px solid rgba(255,255,255,0.08)', fontWeight: '400' }}>Web Design</a>
+                <a href="/locations/moncton/automations" onClick={handleLinkClick} style={{ display: 'block', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', padding: '0.4rem 0 0.4rem 1.25rem', fontSize: '0.95rem', borderBottom: '1px solid rgba(255,255,255,0.08)', fontWeight: '400' }}>AI Automations</a>
+                <a href="/locations/moncton/cybersecurity" onClick={handleLinkClick} style={{ display: 'block', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', padding: '0.4rem 0 0.4rem 1.25rem', fontSize: '0.95rem', borderBottom: '1px solid rgba(255,255,255,0.08)', fontWeight: '400' }}>Cybersecurity</a>
+                <a href="/locations/moncton/managed-it" onClick={handleLinkClick} style={{ display: 'block', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', padding: '0.4rem 0 0.4rem 1.25rem', fontSize: '0.95rem', borderBottom: '1px solid rgba(255, 255, 255, 0.3)', fontWeight: '400' }}>Managed IT</a>
+                <a href="/locations/saint-john" onClick={handleLinkClick} style={{ display: 'block', color: '#ffffff', textDecoration: 'none', padding: '0.75rem 0', fontSize: '1.1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.15)', fontWeight: '600' }}>Saint John</a>
+                <a href="/locations/saint-john/web-design" onClick={handleLinkClick} style={{ display: 'block', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', padding: '0.4rem 0 0.4rem 1.25rem', fontSize: '0.95rem', borderBottom: '1px solid rgba(255,255,255,0.08)', fontWeight: '400' }}>Web Design</a>
+                <a href="/locations/saint-john/automations" onClick={handleLinkClick} style={{ display: 'block', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', padding: '0.4rem 0 0.4rem 1.25rem', fontSize: '0.95rem', borderBottom: '1px solid rgba(255,255,255,0.08)', fontWeight: '400' }}>AI Automations</a>
+                <a href="/locations/saint-john/cybersecurity" onClick={handleLinkClick} style={{ display: 'block', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', padding: '0.4rem 0 0.4rem 1.25rem', fontSize: '0.95rem', borderBottom: '1px solid rgba(255,255,255,0.08)', fontWeight: '400' }}>Cybersecurity</a>
+                <a href="/locations/saint-john/managed-it" onClick={handleLinkClick} style={{ display: 'block', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', padding: '0.4rem 0 0.4rem 1.25rem', fontSize: '0.95rem', borderBottom: 'none', fontWeight: '400' }}>Managed IT</a>
               </div>
 
               <div style={{ marginTop: '0.5rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.3)' }}>
@@ -364,6 +403,11 @@ const dropdownStyles = `
   /* Modern backdrop effect */
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Locations dropdown needs overflow visible so flyout submenus aren't clipped */
+.locations-dropdown {
+  overflow: visible;
 }
 
 .dropdown-content.show {
@@ -525,6 +569,12 @@ const dropdownStyles = `
   margin-right: 8px;
   font-size: 1rem;
   width: 16px;
+}
+
+.nav-subdropdown:hover .submenu-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
 }
 
 /* Enhanced button animations */

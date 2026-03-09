@@ -9,6 +9,8 @@ import { colors } from '../../styles/colors';
 
 export const CybersecurityPage = () => {
   useEffect(() => {
+    document.title = "Cybersecurity New Brunswick | Password Management, MFA & Endpoint Security | LogicPros";
+
     // Hero background animation styles
     const style = document.createElement('style');
     style.textContent = `
@@ -220,7 +222,7 @@ export const CybersecurityPage = () => {
     <div className="landing-page">
       <ServiceSchema
         serviceName="Cybersecurity Services"
-        description="Enterprise-level cybersecurity for Fredericton small businesses. Security audits, password management, multi-factor authentication, and data protection from experienced IT security professionals."
+        description="Cybersecurity services for New Brunswick small businesses. Password management, multi-factor authentication (MFA), patch management, endpoint security, incident response planning, and cybersecurity assessments. Local NB team, plain-English advice."
         priceRange="$$"
         url="https://logicpros.ca/services/cybersecurity"
       />
@@ -355,7 +357,7 @@ export const CybersecurityPage = () => {
                   color: '#1F7CFF',
                   textShadow: '0 0 5px rgba(31, 124, 255, 0.3), 0 0 10px rgba(31, 124, 255, 0.2)'
                 }}>
-                  Enterprise-Level Cybersecurity for Fredericton Small Businesses
+                  Cybersecurity for New Brunswick Small Businesses
                 </h1>
                 <h2 style={{
                   fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
@@ -373,9 +375,9 @@ export const CybersecurityPage = () => {
                   fontWeight: '300',
                   maxWidth: '500px'
                 }}>
-                  Your business has customer data, financial records, and years of reputation at stake.
-                  A single ransomware attack can cost tens of thousands in recovery — if you recover at all.
-                  We protect Maritime businesses with enterprise-grade security at prices small businesses can actually afford.
+                  Password management, multi-factor authentication, patch management, endpoint security,
+                  and incident response planning — we handle the full cybersecurity stack for NB businesses
+                  at prices small businesses can actually afford. Local team, plain-English advice, no jargon.
                 </p>
                 
                 <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -854,6 +856,50 @@ export const CybersecurityPage = () => {
                   </span>
                 </div>
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Additional Cybersecurity Services */}
+        <section className="section" style={{ backgroundColor: '#ffffff', padding: '60px 0' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: '700', color: '#1a1a2e', marginBottom: '12px' }}>
+                Also Included: Patch Management, Endpoint Security & Incident Response
+              </h2>
+              <p style={{ fontSize: '1.05rem', color: '#6b7280', maxWidth: '650px', margin: '0 auto', lineHeight: '1.6' }}>
+                A complete cybersecurity program goes beyond passwords and MFA. Here's what else we cover for NB small businesses.
+              </p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', maxWidth: '960px', margin: '0 auto' }}>
+              {[
+                {
+                  title: 'Patch Management',
+                  desc: 'Outdated software is the #1 way attackers get in. We keep your operating systems, apps, and firmware up to date automatically — so known vulnerabilities are closed before they can be exploited.',
+                  icon: '🔧'
+                },
+                {
+                  title: 'Endpoint Security',
+                  desc: 'Every laptop, phone, and desktop in your business is a potential entry point. We deploy and manage endpoint protection across all your devices so nothing slips through the cracks.',
+                  icon: '🛡️'
+                },
+                {
+                  title: 'Incident Response Planning',
+                  desc: "Most businesses only think about incident response after something goes wrong. We help you build a clear plan so your team knows exactly what to do if — or when — an attack happens.",
+                  icon: '📋'
+                }
+              ].map(({ title, desc, icon }) => (
+                <div key={title} style={{
+                  background: '#f8faff',
+                  border: '1px solid rgba(31, 124, 255, 0.15)',
+                  borderRadius: '16px',
+                  padding: '2rem'
+                }}>
+                  <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{icon}</div>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: '700', color: '#1a1a2e', marginBottom: '0.75rem' }}>{title}</h3>
+                  <p style={{ fontSize: '0.95rem', color: '#6b7280', lineHeight: '1.6', margin: 0 }}>{desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

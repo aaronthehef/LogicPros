@@ -21,6 +21,8 @@ export const ContactPage = () => {
   const [submitStatus, setSubmitStatus] = useState('');
   const [highlightForm, setHighlightForm] = useState(false);
 
+  useEffect(() => { document.title = 'Contact LogicPros | Get a Free Quote | Fredericton NB'; }, []);
+
   useEffect(() => {
     // Hero background animation and mobile responsive styles
     const style = document.createElement('style');
