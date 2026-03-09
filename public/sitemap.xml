@@ -366,9 +366,37 @@
   <!-- Blog Pages -->
   <url>
     <loc>https://logicpros.ca/blog</loc>
-    <lastmod>2025-11-05</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2025-12-17</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://logicpros.ca/blog/could-your-small-business-be-the-next-cyberattack-headline-in-new-brunswick</loc>
+    <lastmod>2025-12-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://logicpros.ca/blog/is-your-firewall-secretly-letting-hackers-walk-right-in-what-nb-businesses-need-to-know</loc>
+    <lastmod>2025-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://logicpros.ca/blog/can-your-business-really-recover-from-ransomware-64-of-canadians-say-no</loc>
+    <lastmod>2025-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://logicpros.ca/blog/the-3-minute-google-hack-new-brunswick-businesses-use-to-boost-bookings-overnight</loc>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>

@@ -40,6 +40,7 @@
     { "source": "/contractors/(.*)", "destination": "/index.html" },
     { "source": "/about", "destination": "/index.html" },
     { "source": "/blog", "destination": "/index.html" },
+    { "source": "/blog/(.*)", "destination": "/index.html" },
     { "source": "/contact", "destination": "/index.html" },
     { "source": "/free-example", "destination": "/index.html" },
     { "source": "/logicpros", "destination": "/index.html" },
