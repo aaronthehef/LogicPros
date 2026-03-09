@@ -7,6 +7,9 @@
     "api/wordpress-proxy.js": {
       "memory": 1024,
       "maxDuration": 10
+    },
+    "api/sitemap.js": {
+      "maxDuration": 10
     }
   },
   "redirects": [
@@ -23,6 +26,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
     { "source": "/locations/fredericton/web-design", "destination": "/index.html" },
     { "source": "/locations/fredericton/cybersecurity", "destination": "/index.html" },
     { "source": "/locations/fredericton/managed-it", "destination": "/index.html" },
