@@ -57,6 +57,14 @@ function injectMetaTags(html, meta) {
     }
   }
 
+  // Inject H1 into root div so crawlers see it before JS runs
+  if (meta.h1) {
+    modified = modified.replace(
+      '<div id="root"></div>',
+      `<div id="root"><h1>${meta.h1}</h1></div>`
+    );
+  }
+
   return modified;
 }
 
@@ -87,12 +95,13 @@ const routes = {
   // HOMEPAGE - Primary landing page, web design focused
   '': {
     meta: {
-      title: 'Web Design Fredericton | Professional Websites for NB Businesses | LogicPros',
-      description: 'Professional web design for businesses in Fredericton, Moncton, and Saint John. Custom websites, SEO optimization, and digital solutions that help New Brunswick businesses grow online.',
+      title: 'Web Design Fredericton | LogicPros',
+      description: 'Professional web design for Fredericton businesses. Custom websites with local SEO to get found on Google and win more clients.',
       keywords: 'web design Fredericton, website design New Brunswick, web designer Fredericton, website designer Moncton, web development Saint John, Fredericton web design agency, website design NB, professional websites Fredericton',
       canonical: 'https://logicpros.ca',
+      h1: 'Web Design Fredericton — Websites That Actually Work',
       ogTitle: 'Web Design Fredericton | LogicPros',
-      ogDescription: 'Professional web design for New Brunswick businesses. Custom websites, SEO optimization, and digital solutions.'
+      ogDescription: 'Professional web design for Fredericton businesses. Custom websites with local SEO that win more clients.'
     },
     schemas: [
       {
@@ -175,12 +184,13 @@ const routes = {
 
   'services/managed-it': {
     meta: {
-      title: 'Managed IT Services Fredericton | IT Support New Brunswick | LogicPros',
-      description: 'Reliable managed IT services for Fredericton and New Brunswick businesses. 24/7 monitoring, unlimited support, cybersecurity protection, and data backups with flat-rate pricing.',
+      title: 'Managed IT Services Fredericton | LogicPros',
+      description: 'Reliable managed IT for NB businesses. 24/7 monitoring, unlimited support, and cybersecurity protection. Flat-rate pricing.',
       keywords: 'managed IT services Fredericton, IT support New Brunswick, managed IT Moncton, IT services Saint John, business IT support NB',
       canonical: 'https://logicpros.ca/services/managed-it',
+      h1: 'Managed IT Services for New Brunswick Businesses',
       ogTitle: 'Managed IT Services Fredericton | LogicPros',
-      ogDescription: 'Reliable managed IT services for Fredericton and New Brunswick businesses. 24/7 monitoring, unlimited support, flat-rate pricing.'
+      ogDescription: 'Reliable managed IT for NB businesses. 24/7 monitoring, unlimited support, flat-rate pricing.'
     },
     schemas: [
       {
@@ -250,12 +260,13 @@ const routes = {
   },
   'services/cybersecurity': {
     meta: {
-      title: 'Cybersecurity Services Fredericton | Business Security NB | LogicPros',
-      description: 'Enterprise-level cybersecurity for small businesses in New Brunswick. Security audits, threat monitoring, employee training, and compliance support.',
+      title: 'Cybersecurity Services Fredericton | LogicPros',
+      description: 'Cybersecurity for small businesses in New Brunswick. Security audits, threat monitoring, and employee training.',
       keywords: 'cybersecurity Fredericton, business security New Brunswick, IT security Moncton, cyber security Saint John, security audit NB',
       canonical: 'https://logicpros.ca/services/cybersecurity',
+      h1: 'Cybersecurity Services for New Brunswick Businesses',
       ogTitle: 'Cybersecurity Services Fredericton | LogicPros',
-      ogDescription: 'Enterprise-level cybersecurity for small businesses in New Brunswick. Security audits, threat monitoring, employee training.'
+      ogDescription: 'Cybersecurity for small businesses in New Brunswick. Security audits, threat monitoring, and employee training.'
     },
     schemas: [
       {
@@ -325,10 +336,11 @@ const routes = {
   },
   'services/websites': {
     meta: {
-      title: 'Web Design New Brunswick | Professional Website Development | LogicPros',
-      description: 'Professional, SEO-optimized web design in New Brunswick. Custom websites that convert visitors into customers. Serving Fredericton, Moncton, and Saint John.',
+      title: 'Web Design New Brunswick | LogicPros',
+      description: 'Professional, SEO-optimized web design in New Brunswick. Custom websites that convert visitors into customers.',
       keywords: 'web design New Brunswick, website development NB, web designer Fredericton, website design Moncton, web development Saint John',
       canonical: 'https://logicpros.ca/services/websites',
+      h1: 'Web Design New Brunswick — Built for Local Business',
       ogTitle: 'Web Design New Brunswick | LogicPros',
       ogDescription: 'Professional, SEO-optimized web design in New Brunswick. Custom websites that convert visitors into customers.'
     },
@@ -400,11 +412,12 @@ const routes = {
   },
   'services/automations': {
     meta: {
-      title: 'AI Automation & Workflow Solutions New Brunswick | LogicPros',
-      description: 'AI automation and workflow solutions for New Brunswick businesses. Automate repetitive tasks, integrate your tools, and save hours every week.',
+      title: 'AI Automation New Brunswick | LogicPros',
+      description: 'AI automation and workflow solutions for New Brunswick businesses. Automate repetitive tasks and save hours every week.',
       keywords: 'AI automation New Brunswick, workflow automation Fredericton, business automation Moncton, process automation Saint John',
       canonical: 'https://logicpros.ca/services/automations',
-      ogTitle: 'AI Automation Solutions New Brunswick | LogicPros',
+      h1: 'AI Automation for New Brunswick Businesses',
+      ogTitle: 'AI Automation New Brunswick | LogicPros',
       ogDescription: 'AI automation and workflow solutions for New Brunswick businesses. Automate repetitive tasks and save hours every week.'
     },
     schemas: [
@@ -475,12 +488,13 @@ const routes = {
   },
   'locations/fredericton': {
     meta: {
-      title: 'Web Design Fredericton | Professional Websites & IT Services | LogicPros',
-      description: 'Professional web design and IT services for Fredericton businesses. Custom websites, SEO optimization, managed IT, and cybersecurity. Local experts serving NB.',
+      title: 'Web Design Fredericton | IT Services | LogicPros',
+      description: 'Web design and IT services for Fredericton businesses. Websites, cybersecurity, managed IT, and automation. Free quotes.',
       keywords: 'web design Fredericton, website design Fredericton, Fredericton web designer, IT services Fredericton, managed IT Fredericton, web development Fredericton NB',
       canonical: 'https://logicpros.ca/locations/fredericton',
-      ogTitle: 'Web Design Fredericton | LogicPros',
-      ogDescription: 'Professional web design and IT services for Fredericton businesses. Custom websites, SEO optimization, and managed IT.'
+      h1: 'Web Design & IT Services in Fredericton, NB',
+      ogTitle: 'Web Design Fredericton | IT Services | LogicPros',
+      ogDescription: 'Web design and IT services for Fredericton businesses. Websites, cybersecurity, managed IT, and automation.'
     },
     schemas: [
       {
@@ -517,12 +531,13 @@ const routes = {
   },
   'locations/moncton': {
     meta: {
-      title: 'Web Design Moncton | Professional Websites & IT Services | LogicPros',
-      description: 'Professional web design and IT services for Moncton businesses. Custom websites, SEO optimization, managed IT, and cybersecurity. Local experts serving NB.',
+      title: 'Web Design Moncton | IT Services | LogicPros',
+      description: 'Web design and IT services for Moncton businesses. Websites, cybersecurity, managed IT, and automation. Free quotes.',
       keywords: 'web design Moncton, website design Moncton, Moncton web designer, IT services Moncton, managed IT Moncton, web development Moncton NB',
       canonical: 'https://logicpros.ca/locations/moncton',
-      ogTitle: 'Web Design Moncton | LogicPros',
-      ogDescription: 'Professional web design and IT services for Moncton businesses. Custom websites, SEO optimization, and managed IT.'
+      h1: 'Web Design & IT Services in Moncton, NB',
+      ogTitle: 'Web Design Moncton | IT Services | LogicPros',
+      ogDescription: 'Web design and IT services for Moncton businesses. Websites, cybersecurity, managed IT, and automation.'
     },
     schemas: [
       {
@@ -559,12 +574,13 @@ const routes = {
   },
   'locations/saint-john': {
     meta: {
-      title: 'Web Design Saint John | Professional Websites & IT Services | LogicPros',
-      description: 'Professional web design and IT services for Saint John businesses. Custom websites, SEO optimization, managed IT, and cybersecurity. Local experts serving NB.',
+      title: 'Web Design Saint John | IT Services | LogicPros',
+      description: 'Web design and IT services for Saint John businesses. Websites, cybersecurity, managed IT, and automation. Free quotes.',
       keywords: 'web design Saint John, website design Saint John, Saint John web designer, IT services Saint John, managed IT Saint John, web development Saint John NB',
       canonical: 'https://logicpros.ca/locations/saint-john',
-      ogTitle: 'Web Design Saint John | LogicPros',
-      ogDescription: 'Professional web design and IT services for Saint John businesses. Custom websites, SEO optimization, and managed IT.'
+      h1: 'Web Design & IT Services in Saint John, NB',
+      ogTitle: 'Web Design Saint John | IT Services | LogicPros',
+      ogDescription: 'Web design and IT services for Saint John businesses. Websites, cybersecurity, managed IT, and automation.'
     },
     schemas: [
       {
@@ -608,12 +624,13 @@ const routes = {
   // FREDERICTON WEB DESIGN - Primary target keyword
   'locations/fredericton/web-design': {
     meta: {
-      title: 'Web Design Fredericton | Professional Website Designer NB | LogicPros',
-      description: 'Professional websites for Fredericton businesses. Affordable web design services including custom WordPress development, local SEO optimization, and mobile-responsive design that gets you more customers.',
+      title: 'Web Design Fredericton | Professional Websites | LogicPros',
+      description: 'Professional websites for Fredericton businesses. Custom WordPress, local SEO, and mobile-responsive design. Free quotes.',
       keywords: 'web design Fredericton, website design Fredericton, Fredericton web designer, website designer Fredericton NB, web development Fredericton, Fredericton website design agency',
       canonical: 'https://logicpros.ca/locations/fredericton/web-design',
-      ogTitle: 'Web Design Fredericton | Professional Website Designer | LogicPros',
-      ogDescription: 'Professional websites for Fredericton businesses. Custom web design, local SEO, and mobile-responsive sites that convert.'
+      h1: 'Web Design Fredericton — Professional Websites for Local Business',
+      ogTitle: 'Web Design Fredericton | Professional Websites | LogicPros',
+      ogDescription: 'Professional websites for Fredericton businesses. Custom WordPress, local SEO, and mobile-responsive design.'
     },
     schemas: [
       {
@@ -683,11 +700,12 @@ const routes = {
   // FREDERICTON MANAGED IT
   'locations/fredericton/managed-it': {
     meta: {
-      title: 'Managed IT Services Fredericton | IT Support & Monitoring | LogicPros',
-      description: 'Managed IT services for Fredericton businesses. 24/7 monitoring, unlimited help desk support, cybersecurity protection, and flat-rate pricing. Local IT support you can count on.',
+      title: 'Managed IT Fredericton | IT Support NB | LogicPros',
+      description: 'Managed IT services for Fredericton businesses. 24/7 monitoring, unlimited help desk support, and flat-rate pricing.',
       keywords: 'managed IT Fredericton, IT services Fredericton, IT support Fredericton, managed IT services Fredericton NB, IT company Fredericton',
       canonical: 'https://logicpros.ca/locations/fredericton/managed-it',
-      ogTitle: 'Managed IT Services Fredericton | LogicPros',
+      h1: 'Managed IT Services in Fredericton, New Brunswick',
+      ogTitle: 'Managed IT Fredericton | IT Support NB | LogicPros',
       ogDescription: 'Managed IT services for Fredericton businesses. 24/7 monitoring, unlimited support, flat-rate pricing.'
     },
     schemas: [
@@ -718,12 +736,13 @@ const routes = {
   // FREDERICTON CYBERSECURITY
   'locations/fredericton/cybersecurity': {
     meta: {
-      title: 'Cybersecurity Services Fredericton | Business Security | LogicPros',
-      description: 'Cybersecurity services for Fredericton businesses. Security audits, threat monitoring, employee training, and compliance support. Protect your business from cyber threats.',
+      title: 'Cybersecurity Fredericton | Business Security | LogicPros',
+      description: 'Cybersecurity for Fredericton businesses. Security audits, threat monitoring, and employee training. Protect your business now.',
       keywords: 'cybersecurity Fredericton, IT security Fredericton, cyber security Fredericton NB, security audit Fredericton, business security Fredericton',
       canonical: 'https://logicpros.ca/locations/fredericton/cybersecurity',
-      ogTitle: 'Cybersecurity Services Fredericton | LogicPros',
-      ogDescription: 'Cybersecurity services for Fredericton businesses. Security audits, threat monitoring, and employee training.'
+      h1: 'Cybersecurity Services in Fredericton, New Brunswick',
+      ogTitle: 'Cybersecurity Fredericton | Business Security | LogicPros',
+      ogDescription: 'Cybersecurity for Fredericton businesses. Security audits, threat monitoring, and employee training.'
     },
     schemas: [
       {
@@ -753,12 +772,13 @@ const routes = {
   // MONCTON WEB DESIGN
   'locations/moncton/web-design': {
     meta: {
-      title: 'Web Design Moncton | Professional Website Designer NB | LogicPros',
-      description: 'Professional websites for Moncton businesses. Affordable web design services including custom development, local SEO optimization, and mobile-responsive design.',
+      title: 'Web Design Moncton | Professional Websites | LogicPros',
+      description: 'Professional websites for Moncton businesses. Custom development, local SEO, and mobile-responsive design. Free quotes.',
       keywords: 'web design Moncton, website design Moncton, Moncton web designer, website designer Moncton NB, web development Moncton',
       canonical: 'https://logicpros.ca/locations/moncton/web-design',
-      ogTitle: 'Web Design Moncton | Professional Website Designer | LogicPros',
-      ogDescription: 'Professional websites for Moncton businesses. Custom web design, local SEO, and mobile-responsive sites.'
+      h1: 'Web Design Moncton — Professional Websites for Local Business',
+      ogTitle: 'Web Design Moncton | Professional Websites | LogicPros',
+      ogDescription: 'Professional websites for Moncton businesses. Custom development, local SEO, and mobile-responsive design.'
     },
     schemas: [
       {
@@ -788,11 +808,12 @@ const routes = {
   // MONCTON MANAGED IT
   'locations/moncton/managed-it': {
     meta: {
-      title: 'Managed IT Services Moncton | IT Support & Monitoring | LogicPros',
-      description: 'Managed IT services for Moncton businesses. 24/7 monitoring, unlimited help desk support, cybersecurity protection, and flat-rate pricing.',
+      title: 'Managed IT Moncton | IT Support NB | LogicPros',
+      description: 'Managed IT services for Moncton businesses. 24/7 monitoring, unlimited help desk support, and flat-rate pricing.',
       keywords: 'managed IT Moncton, IT services Moncton, IT support Moncton, managed IT services Moncton NB, IT company Moncton',
       canonical: 'https://logicpros.ca/locations/moncton/managed-it',
-      ogTitle: 'Managed IT Services Moncton | LogicPros',
+      h1: 'Managed IT Services in Moncton, New Brunswick',
+      ogTitle: 'Managed IT Moncton | IT Support NB | LogicPros',
       ogDescription: 'Managed IT services for Moncton businesses. 24/7 monitoring, unlimited support, flat-rate pricing.'
     },
     schemas: [
@@ -823,11 +844,12 @@ const routes = {
   // MONCTON CYBERSECURITY
   'locations/moncton/cybersecurity': {
     meta: {
-      title: 'Cybersecurity Services Moncton | Business Security | LogicPros',
+      title: 'Cybersecurity Moncton | Business Security | LogicPros',
       description: 'Cybersecurity services for Moncton businesses. Security audits, threat monitoring, employee training, and compliance support.',
       keywords: 'cybersecurity Moncton, IT security Moncton, cyber security Moncton NB, security audit Moncton',
       canonical: 'https://logicpros.ca/locations/moncton/cybersecurity',
-      ogTitle: 'Cybersecurity Services Moncton | LogicPros',
+      h1: 'Cybersecurity Services in Moncton, New Brunswick',
+      ogTitle: 'Cybersecurity Moncton | Business Security | LogicPros',
       ogDescription: 'Cybersecurity services for Moncton businesses. Security audits, threat monitoring, and employee training.'
     },
     schemas: [
@@ -858,12 +880,13 @@ const routes = {
   // SAINT JOHN WEB DESIGN
   'locations/saint-john/web-design': {
     meta: {
-      title: 'Web Design Saint John | Professional Website Designer NB | LogicPros',
-      description: 'Professional websites for Saint John businesses. Affordable web design services including custom development, local SEO optimization, and mobile-responsive design.',
+      title: 'Web Design Saint John | Professional Websites | LogicPros',
+      description: 'Professional websites for Saint John businesses. Custom development, local SEO, and mobile-responsive design. Free quotes.',
       keywords: 'web design Saint John, website design Saint John, Saint John web designer, website designer Saint John NB, web development Saint John',
       canonical: 'https://logicpros.ca/locations/saint-john/web-design',
-      ogTitle: 'Web Design Saint John | Professional Website Designer | LogicPros',
-      ogDescription: 'Professional websites for Saint John businesses. Custom web design, local SEO, and mobile-responsive sites.'
+      h1: 'Web Design Saint John — Professional Websites for Local Business',
+      ogTitle: 'Web Design Saint John | Professional Websites | LogicPros',
+      ogDescription: 'Professional websites for Saint John businesses. Custom development, local SEO, and mobile-responsive design.'
     },
     schemas: [
       {
@@ -893,11 +916,12 @@ const routes = {
   // SAINT JOHN MANAGED IT
   'locations/saint-john/managed-it': {
     meta: {
-      title: 'Managed IT Services Saint John | IT Support & Monitoring | LogicPros',
-      description: 'Managed IT services for Saint John businesses. 24/7 monitoring, unlimited help desk support, cybersecurity protection, and flat-rate pricing.',
+      title: 'Managed IT Saint John | IT Support NB | LogicPros',
+      description: 'Managed IT services for Saint John businesses. 24/7 monitoring, unlimited help desk support, and flat-rate pricing.',
       keywords: 'managed IT Saint John, IT services Saint John, IT support Saint John, managed IT services Saint John NB, IT company Saint John',
       canonical: 'https://logicpros.ca/locations/saint-john/managed-it',
-      ogTitle: 'Managed IT Services Saint John | LogicPros',
+      h1: 'Managed IT Services in Saint John, New Brunswick',
+      ogTitle: 'Managed IT Saint John | IT Support NB | LogicPros',
       ogDescription: 'Managed IT services for Saint John businesses. 24/7 monitoring, unlimited support, flat-rate pricing.'
     },
     schemas: [
@@ -927,12 +951,13 @@ const routes = {
 
   'about': {
     meta: {
-      title: 'About LogicPros | Aaron Hefling | Web Design & IT Fredericton NB',
-      description: 'Meet Aaron Hefling, founder of LogicPros. 21 years in technology, former Government of New Brunswick IT lead. Now helping Atlantic Canadian small businesses with web design, AI automation, and IT support.',
+      title: 'About LogicPros | Aaron Hefling | Fredericton NB',
+      description: 'Aaron Hefling, founder of LogicPros. 21 years in tech, former NB Government IT lead. Web design and IT for Atlantic Canada.',
       keywords: 'about LogicPros, Aaron Hefling, web designer Fredericton, IT consultant New Brunswick, Aboriginal-owned tech company NB',
       canonical: 'https://logicpros.ca/about',
+      h1: 'About LogicPros — Aaron Hefling, Fredericton NB',
       ogTitle: 'About LogicPros | Aaron Hefling',
-      ogDescription: '21 years in technology. Former Government of NB IT lead. Now building websites and automations for Atlantic Canadian small businesses.'
+      ogDescription: '21 years in technology. Former Government of NB IT lead. Web design and IT for Atlantic Canadian small businesses.'
     },
     schemas: [
       {
@@ -963,11 +988,12 @@ const routes = {
   'contact': {
     meta: {
       title: 'Contact LogicPros | Get a Free Quote | Fredericton NB',
-      description: 'Get in touch with LogicPros for web design, AI automation, or IT support in Fredericton, Moncton, or Saint John. Free quote, no sales pitch.',
+      description: 'Get in touch with LogicPros for web design, AI automation, or IT support in NB. Free quote, no sales pitch.',
       keywords: 'contact LogicPros, web design quote Fredericton, IT support quote New Brunswick, free website quote NB',
       canonical: 'https://logicpros.ca/contact',
+      h1: 'Contact LogicPros — Get a Free Quote',
       ogTitle: 'Contact LogicPros | Free Quote',
-      ogDescription: 'Get a free quote for web design, AI automation, or IT support in New Brunswick. No sales pitch, just straight talk.'
+      ogDescription: 'Get a free quote for web design, AI automation, or IT support in New Brunswick. No sales pitch.'
     },
     schemas: [
       {
@@ -995,9 +1021,10 @@ const routes = {
   'blog': {
     meta: {
       title: 'Blog | Web Design & Tech Tips for NB Businesses | LogicPros',
-      description: 'Practical web design, AI automation, and IT tips for small businesses in New Brunswick. Written by Aaron Hefling at LogicPros in Fredericton.',
+      description: 'Practical web design, AI automation, and IT tips for small businesses in New Brunswick. Written by LogicPros in Fredericton.',
       keywords: 'web design blog Fredericton, small business tech tips NB, IT advice New Brunswick, web design tips Atlantic Canada',
       canonical: 'https://logicpros.ca/blog',
+      h1: 'Web Design & Tech Tips for New Brunswick Businesses',
       ogTitle: 'LogicPros Blog | Tech Tips for NB Businesses',
       ogDescription: 'Practical web design, AI automation, and IT tips for small businesses in New Brunswick.'
     },
@@ -1020,11 +1047,12 @@ const routes = {
   // SAINT JOHN CYBERSECURITY
   'locations/saint-john/cybersecurity': {
     meta: {
-      title: 'Cybersecurity Services Saint John | Business Security | LogicPros',
+      title: 'Cybersecurity Saint John | Business Security | LogicPros',
       description: 'Cybersecurity services for Saint John businesses. Security audits, threat monitoring, employee training, and compliance support.',
       keywords: 'cybersecurity Saint John, IT security Saint John, cyber security Saint John NB, security audit Saint John',
       canonical: 'https://logicpros.ca/locations/saint-john/cybersecurity',
-      ogTitle: 'Cybersecurity Services Saint John | LogicPros',
+      h1: 'Cybersecurity Services in Saint John, New Brunswick',
+      ogTitle: 'Cybersecurity Saint John | Business Security | LogicPros',
       ogDescription: 'Cybersecurity services for Saint John businesses. Security audits, threat monitoring, and employee training.'
     },
     schemas: [
@@ -1055,12 +1083,13 @@ const routes = {
   // FREDERICTON AI AUTOMATIONS
   'locations/fredericton/automations': {
     meta: {
-      title: 'AI Automation Fredericton | Business Automation Services | LogicPros',
-      description: 'AI automation services for Fredericton businesses. Workflow automation, AI chatbots, email marketing, social media scheduling, and data integrations built by a local NB team.',
+      title: 'AI Automation Fredericton | LogicPros',
+      description: 'AI automation for Fredericton businesses. Workflow automation, AI chatbots, email marketing, and data integrations. Free audit.',
       keywords: 'AI automation Fredericton, business automation Fredericton, workflow automation Fredericton NB, AI chatbot Fredericton, social media automation Fredericton',
       canonical: 'https://logicpros.ca/locations/fredericton/automations',
+      h1: 'AI Automation Services in Fredericton, New Brunswick',
       ogTitle: 'AI Automation Fredericton | LogicPros',
-      ogDescription: 'AI automation services for Fredericton businesses. Workflow automation, AI chatbots, email marketing, and social media scheduling.'
+      ogDescription: 'AI automation for Fredericton businesses. Workflow automation, AI chatbots, email marketing, and data integrations.'
     },
     schemas: [
       {
@@ -1102,12 +1131,13 @@ const routes = {
   // MONCTON AI AUTOMATIONS
   'locations/moncton/automations': {
     meta: {
-      title: 'AI Automation Moncton | Business Automation Services | LogicPros',
-      description: 'AI automation services for Moncton businesses. Workflow automation, AI chatbots, email marketing, social media scheduling, and data integrations built by a local NB team.',
+      title: 'AI Automation Moncton | LogicPros',
+      description: 'AI automation for Moncton businesses. Workflow automation, AI chatbots, email marketing, and data integrations. Free audit.',
       keywords: 'AI automation Moncton, business automation Moncton, workflow automation Moncton NB, AI chatbot Moncton, social media automation Moncton',
       canonical: 'https://logicpros.ca/locations/moncton/automations',
+      h1: 'AI Automation Services in Moncton, New Brunswick',
       ogTitle: 'AI Automation Moncton | LogicPros',
-      ogDescription: 'AI automation services for Moncton businesses. Workflow automation, AI chatbots, email marketing, and social media scheduling.'
+      ogDescription: 'AI automation for Moncton businesses. Workflow automation, AI chatbots, email marketing, and data integrations.'
     },
     schemas: [
       {
@@ -1149,12 +1179,13 @@ const routes = {
   // SAINT JOHN AI AUTOMATIONS
   'locations/saint-john/automations': {
     meta: {
-      title: 'AI Automation Saint John | Business Automation Services | LogicPros',
-      description: 'AI automation services for Saint John businesses. Workflow automation, AI chatbots, email marketing, social media scheduling, and data integrations built by a local NB team.',
+      title: 'AI Automation Saint John | LogicPros',
+      description: 'AI automation for Saint John businesses. Workflow automation, AI chatbots, email marketing, and data integrations. Free audit.',
       keywords: 'AI automation Saint John, business automation Saint John, workflow automation Saint John NB, AI chatbot Saint John, social media automation Saint John',
       canonical: 'https://logicpros.ca/locations/saint-john/automations',
+      h1: 'AI Automation Services in Saint John, New Brunswick',
       ogTitle: 'AI Automation Saint John | LogicPros',
-      ogDescription: 'AI automation services for Saint John businesses. Workflow automation, AI chatbots, email marketing, and social media scheduling.'
+      ogDescription: 'AI automation for Saint John businesses. Workflow automation, AI chatbots, email marketing, and data integrations.'
     },
     schemas: [
       {
