@@ -5,16 +5,6 @@ import { PortfolioPage } from './pages/PortfolioPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { FreeExamplePage } from './pages/FreeExamplePage';
-import { PlumbingPage } from './pages/contractors/PlumbingPage';
-import { ElectricalPage } from './pages/contractors/ElectricalPage';
-import { HVACPage } from './pages/contractors/HVACPage';
-import { RoofingPage } from './pages/contractors/RoofingPage';
-import { ConstructionPage } from './pages/contractors/ConstructionPage';
-import { LandscapingPage } from './pages/contractors/LandscapingPage';
-import { PaintingPage } from './pages/contractors/PaintingPage';
-import { FlooringPage } from './pages/contractors/FlooringPage';
-import { ConcretePage } from './pages/contractors/ConcretePage';
-import { RemodelingPage } from './pages/contractors/RemodelingPage';
 import { WebsitesPage } from './pages/services/WebsitesPage';
 import { CustomWebsitesPage } from './pages/services/CustomWebsitesPage';
 import { EcommerceWebsitesPage } from './pages/EcommerceWebsitesPage';
@@ -107,26 +97,6 @@ export const Router = () => {
         return <PrivacyPolicyPage />;
       case '/terms':
         return <TermsOfServicePage />;
-      case '/contractors/plumbing':
-        return <PlumbingPage />;
-      case '/contractors/electrical':
-        return <ElectricalPage />;
-      case '/contractors/hvac':
-        return <HVACPage />;
-      case '/contractors/roofing':
-        return <RoofingPage />;
-      case '/contractors/construction':
-        return <ConstructionPage />;
-      case '/contractors/landscaping':
-        return <LandscapingPage />;
-      case '/contractors/painting':
-        return <PaintingPage />;
-      case '/contractors/flooring':
-        return <FlooringPage />;
-      case '/contractors/concrete':
-        return <ConcretePage />;
-      case '/contractors/remodeling':
-        return <RemodelingPage />;
       case '/services/websites':
         return <WebsitesPage />;
       case '/services/websites/custom':

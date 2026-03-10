@@ -41,7 +41,6 @@
     { "source": "/locations/saint-john/automations", "destination": "/index.html" },
     { "source": "/locations/(.*)", "destination": "/index.html" },
     { "source": "/services/(.*)", "destination": "/index.html" },
-    { "source": "/contractors/(.*)", "destination": "/index.html" },
     { "source": "/about", "destination": "/index.html" },
     { "source": "/blog", "destination": "/index.html" },
     { "source": "/blog/(.*)", "destination": "/index.html" },

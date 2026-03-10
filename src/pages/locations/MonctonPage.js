@@ -379,7 +379,7 @@ export const MonctonPage = () => {
                 justifyContent: 'center'
               }}>
                 {/* Professional Websites Card */}
-                <a href="/services/website-design" className="hero-service-card" style={{
+                <a href="/locations/moncton/web-design" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
@@ -453,7 +453,7 @@ export const MonctonPage = () => {
                 </a>
 
                 {/* Total Security Card */}
-                <a href="/services/cybersecurity" className="hero-service-card" style={{
+                <a href="/locations/moncton/cybersecurity" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
@@ -522,7 +522,7 @@ export const MonctonPage = () => {
                 </a>
 
                 {/* Automate Everything Card */}
-                <a href="/services/automation" className="hero-service-card" style={{
+                <a href="/locations/moncton/automations" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
@@ -591,7 +591,7 @@ export const MonctonPage = () => {
                 </a>
 
                 {/* IT That Works Card */}
-                <a href="/services/managed-it" className="hero-service-card" style={{
+                <a href="/locations/moncton/managed-it" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
@@ -1447,7 +1447,7 @@ export const MonctonPage = () => {
                     <li>E-commerce, booking systems, integrations</li>
                   </ul>
                   <div style={{ textAlign: 'center' }}>
-                    <a href="/services/website-design" style={{
+                    <a href="/locations/moncton/web-design" style={{
                       color: '#1F7CFF',
                       fontSize: '1rem',
                       fontWeight: '600',
@@ -1536,7 +1536,7 @@ export const MonctonPage = () => {
                     <li>Ongoing security monitoring</li>
                   </ul>
                   <div style={{ textAlign: 'center' }}>
-                    <a href="/services/cybersecurity" style={{
+                    <a href="/locations/moncton/cybersecurity" style={{
                       color: '#1F7CFF',
                       fontSize: '1rem',
                       fontWeight: '600',
@@ -1624,7 +1624,7 @@ export const MonctonPage = () => {
                     <li>Data integration and synchronization</li>
                   </ul>
                   <div style={{ textAlign: 'center' }}>
-                    <a href="/services/automation" style={{
+                    <a href="/locations/moncton/automations" style={{
                       color: '#1F7CFF',
                       fontSize: '1rem',
                       fontWeight: '600',
@@ -1721,7 +1721,7 @@ export const MonctonPage = () => {
                     <li>Strategic IT consulting</li>
                   </ul>
                   <div style={{ textAlign: 'center' }}>
-                    <a href="/services/managed-it" style={{
+                    <a href="/locations/moncton/managed-it" style={{
                       color: '#1F7CFF',
                       fontSize: '1rem',
                       fontWeight: '600',

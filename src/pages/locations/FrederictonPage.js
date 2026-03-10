@@ -379,7 +379,7 @@ export const FrederictonPage = () => {
                 justifyContent: 'center'
               }}>
                 {/* Websites Card */}
-                <a href="/services/website-design" className="hero-service-card" style={{
+                <a href="/locations/fredericton/web-design" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
@@ -447,7 +447,7 @@ export const FrederictonPage = () => {
                 </a>
 
                 {/* Security Card */}
-                <a href="/services/cybersecurity" className="hero-service-card" style={{
+                <a href="/locations/fredericton/cybersecurity" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
@@ -514,7 +514,7 @@ export const FrederictonPage = () => {
                 </a>
 
                 {/* Automation Card */}
-                <a href="/services/automation" className="hero-service-card" style={{
+                <a href="/locations/fredericton/automations" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
@@ -580,7 +580,7 @@ export const FrederictonPage = () => {
                 </a>
 
                 {/* IT Support Card */}
-                <a href="/services/managed-it" className="hero-service-card" style={{
+                <a href="/locations/fredericton/managed-it" className="hero-service-card" style={{
                   background: 'linear-gradient(135deg, rgba(29, 122, 175, 0.15), rgba(29, 122, 175, 0.08))',
                   border: '2px solid rgba(29, 122, 175, 0.3)',
                   borderRadius: '12px',
@@ -1428,7 +1428,7 @@ export const FrederictonPage = () => {
                     <li>E-commerce, booking systems, integrations</li>
                   </ul>
                   <div style={{ textAlign: 'center' }}>
-                    <a href="/services/website-design" style={{
+                    <a href="/locations/fredericton/web-design" style={{
                       color: '#1F7CFF',
                       fontSize: '1rem',
                       fontWeight: '600',
@@ -1517,7 +1517,7 @@ export const FrederictonPage = () => {
                     <li>Ongoing security monitoring</li>
                   </ul>
                   <div style={{ textAlign: 'center' }}>
-                    <a href="/services/cybersecurity" style={{
+                    <a href="/locations/fredericton/cybersecurity" style={{
                       color: '#1F7CFF',
                       fontSize: '1rem',
                       fontWeight: '600',
@@ -1605,7 +1605,7 @@ export const FrederictonPage = () => {
                     <li>Data integration and synchronization</li>
                   </ul>
                   <div style={{ textAlign: 'center' }}>
-                    <a href="/services/automation" style={{
+                    <a href="/locations/fredericton/automations" style={{
                       color: '#1F7CFF',
                       fontSize: '1rem',
                       fontWeight: '600',
@@ -1697,7 +1697,7 @@ export const FrederictonPage = () => {
                     <li>Strategic IT consulting</li>
                   </ul>
                   <div style={{ textAlign: 'center' }}>
-                    <a href="/services/managed-it" style={{
+                    <a href="/locations/fredericton/managed-it" style={{
                       color: '#1F7CFF',
                       fontSize: '1rem',
                       fontWeight: '600',

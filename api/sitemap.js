@@ -42,16 +42,6 @@ const STATIC_URLS = [
   { loc: '/locations/saint-john/cybersecurity', priority: '0.8', changefreq: 'monthly', lastmod: '2025-10-26' },
   { loc: '/locations/saint-john/managed-it', priority: '0.8', changefreq: 'monthly', lastmod: '2025-10-26' },
   { loc: '/locations/saint-john/automations', priority: '0.9', changefreq: 'monthly', lastmod: '2026-03-09' },
-  { loc: '/contractors/plumbing', priority: '0.7', changefreq: 'monthly', lastmod: '2025-10-26' },
-  { loc: '/contractors/electrical', priority: '0.7', changefreq: 'monthly', lastmod: '2025-10-26' },
-  { loc: '/contractors/hvac', priority: '0.7', changefreq: 'monthly', lastmod: '2025-10-26' },
-  { loc: '/contractors/roofing', priority: '0.7', changefreq: 'monthly', lastmod: '2025-10-26' },
-  { loc: '/contractors/construction', priority: '0.7', changefreq: 'monthly', lastmod: '2025-10-26' },
-  { loc: '/contractors/landscaping', priority: '0.7', changefreq: 'monthly', lastmod: '2025-10-26' },
-  { loc: '/contractors/painting', priority: '0.7', changefreq: 'monthly', lastmod: '2025-10-26' },
-  { loc: '/contractors/flooring', priority: '0.7', changefreq: 'monthly', lastmod: '2025-10-26' },
-  { loc: '/contractors/concrete', priority: '0.7', changefreq: 'monthly', lastmod: '2025-10-26' },
-  { loc: '/contractors/remodeling', priority: '0.7', changefreq: 'monthly', lastmod: '2025-10-26' },
   { loc: '/blog', priority: '0.9', changefreq: 'weekly', lastmod: '2026-03-09' },
 ];
 
