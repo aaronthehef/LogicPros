@@ -690,12 +690,12 @@ export const ResponsiveLandingPage = () => {
               gap: '2.5rem'
             }}>
               {[
-                { name: 'B Foulkes Plumbing', src: 'https://logicpros.ca/wp-content/uploads/2026/02/cropped-Logo-BF-175x75-1.png' },
-                { name: 'IJM Construction Management', src: 'https://logicpros.ca/wp-content/uploads/2026/02/LOGOdarkLowRes-300x169.png' },
-                { name: 'J. Parker Roofing', src: 'https://logicpros.ca/wp-content/uploads/2026/02/logoPNG--300x270.png' },
-                { name: 'Thomson Plumbing', src: 'https://logicpros.ca/wp-content/uploads/2026/02/thomson-300x91.png' },
-                { name: 'Volt Vision Electric', src: 'https://logicpros.ca/wp-content/uploads/2026/02/VoltVisionElectric_Transparent_400x350-300x300.png' },
-                { name: "Crawford's Plumbing and Heating", src: 'https://logicpros.ca/wp-content/uploads/2026/02/Logo-black-text-300x96.png' },
+                { name: 'B Foulkes Plumbing', src: '/images/cropped-Logo-BF-175x75-1.png' },
+                { name: 'IJM Construction Management', src: '/images/LOGOdarkLowRes-300x169.png' },
+                { name: 'J. Parker Roofing', src: '/images/logoPNG--300x270.png' },
+                { name: 'Thomson Plumbing', src: '/images/thomson-300x91.png' },
+                { name: 'Volt Vision Electric', src: '/images/VoltVisionElectric_Transparent_400x350-300x300.png' },
+                { name: "Crawford's Plumbing and Heating", src: '/images/Logo-black-text-300x96.png' },
               ].map(({ name, src }) => (
                 <img key={name} src={src} alt={name} style={{
                   height: '50px',
@@ -2056,9 +2056,9 @@ export const ResponsiveLandingPage = () => {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
               {[
-                { name: 'IJM Builders', img: 'https://logicpros.ca/wp-content/uploads/elementor/thumbs/ijm-riy9mvzivqcux5qaloznbc2eh3qj5stgif7vv2q8dc.webp', tag: 'Construction', href: 'https://www.ijmbuilders.ca/' },
-                { name: "Crawford's Plumbing", img: 'https://logicpros.ca/wp-content/uploads/elementor/thumbs/crawfords-riy9ly5c1p2jb73g3ad2tklt38dbgp34drqel44elc.webp', tag: 'Plumbing', href: 'https://www.crawfordsplumbing.ca/' },
-                { name: 'Volt Vision Electric', img: 'https://logicpros.ca/wp-content/uploads/elementor/thumbs/voltvision-riy9ly5c1p2jb73g3ad2tklt38dbgp34drqel44elc.webp', tag: 'Electrical', href: 'https://www.voltvisionelectric.ca/' },
+                { name: 'IJM Builders', img: '/images/ijm-riy9mvzivqcux5qaloznbc2eh3qj5stgif7vv2q8dc.webp', tag: 'Construction', href: 'https://www.ijmbuilders.ca/' },
+                { name: "Crawford's Plumbing", img: '/images/crawfords-riy9ly5c1p2jb73g3ad2tklt38dbgp34drqel44elc.webp', tag: 'Plumbing', href: 'https://www.crawfordsplumbing.ca/' },
+                { name: 'Volt Vision Electric', img: '/images/voltvision.webp', tag: 'Electrical', href: 'https://www.voltvisionelectric.ca/' },
               ].map(({ name, img, tag, href }) => (
                 <a key={name} href={href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div style={{
